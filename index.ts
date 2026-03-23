@@ -6,6 +6,8 @@ const server = Bun.serve({
   port,
   routes: {
     "/": index,
+    "/result": index,
+    "/result/:payload": index,
   },
   development: {
     hmr: true,

@@ -17,10 +17,30 @@ import {
   type PaymentFrequency,
 } from "../domain/amortization";
 
+export type StoreMode =
+  | {
+      kind: "session";
+    }
+  | {
+      kind: "shared-result";
+    };
+
 export type DashboardViewModel = {
   values: LoanFormValues;
   mode: CalculationMode;
   calculation: CalculationResult;
+  storeMode: StoreMode["kind"];
+};
+
+export type LoanStore = {
+  useDashboardViewModel: () => DashboardViewModel;
+  setLoanAmount: (value: string) => void;
+  setYears: (value: string) => void;
+  setPaymentsPerYear: (value: PaymentFrequency) => void;
+  setEar: (value: string) => void;
+  setPaymentAmount: (value: string) => void;
+  getValues: () => LoanFormValues;
+  replaceValues: (values: LoanFormValues) => void;
 };
 
 const initialValues: LoanFormValues = {
@@ -60,7 +80,7 @@ const readStoredValue = (key: string, fallbackValue: string): string =>
     .with(null, () => fallbackValue)
     .otherwise((storage) => storage.getItem(key) ?? fallbackValue);
 
-const loadInitialValues = (): LoanFormValues => ({
+const loadLocalStorageValues = (): LoanFormValues => ({
   loanAmount: readStoredValue(storageKeys.loanAmount, initialValues.loanAmount),
   years: readStoredValue(storageKeys.years, initialValues.years),
   paymentsPerYear: parsePaymentFrequency(
@@ -76,28 +96,7 @@ const loadInitialValues = (): LoanFormValues => ({
   ),
 });
 
-const persistedValues = loadInitialValues();
-
-const loanAmountSubject = new BehaviorSubject(persistedValues.loanAmount);
-const yearsSubject = new BehaviorSubject(persistedValues.years);
-const paymentsPerYearSubject = new BehaviorSubject<PaymentFrequency>(
-  persistedValues.paymentsPerYear,
-);
-const earSubject = new BehaviorSubject(persistedValues.ear);
-const paymentAmountSubject = new BehaviorSubject(persistedValues.paymentAmount);
-
-const debouncedTextStream = (subject: BehaviorSubject<string>) =>
-  subject.pipe(debounceTime(CALCULATION_DEBOUNCE_MS), distinctUntilChanged());
-
-const values$ = combineLatest({
-  loanAmount: loanAmountSubject,
-  years: yearsSubject,
-  paymentsPerYear: paymentsPerYearSubject,
-  ear: earSubject,
-  paymentAmount: paymentAmountSubject,
-}).pipe(shareLatest());
-
-values$.subscribe((values) =>
+const persistValues = (values: LoanFormValues): void => {
   match(getStorage())
     .with(null, () => null)
     .otherwise((storage) => {
@@ -111,58 +110,133 @@ values$.subscribe((values) =>
       storage.setItem(storageKeys.paymentAmount, values.paymentAmount);
 
       return null;
+    });
+};
+
+export const saveLoanStateToLocalStorage = (values: LoanFormValues): void => {
+  persistValues(values);
+};
+
+export const clearLoanStateFromLocalStorage = (): void => {
+  match(getStorage())
+    .with(null, () => null)
+    .otherwise((storage) => {
+      storage.removeItem(storageKeys.loanAmount);
+      storage.removeItem(storageKeys.years);
+      storage.removeItem(storageKeys.paymentsPerYear);
+      storage.removeItem(storageKeys.ear);
+      storage.removeItem(storageKeys.paymentAmount);
+
+      return null;
+    });
+};
+
+const debouncedTextStream = (subject: BehaviorSubject<string>) =>
+  subject.pipe(debounceTime(CALCULATION_DEBOUNCE_MS), distinctUntilChanged());
+
+export const createLoanStore = ({
+  initialValues: initialStoreValues,
+  mode,
+}: {
+  initialValues: LoanFormValues;
+  mode: StoreMode;
+}): LoanStore => {
+  const loanAmountSubject = new BehaviorSubject(initialStoreValues.loanAmount);
+  const yearsSubject = new BehaviorSubject(initialStoreValues.years);
+  const paymentsPerYearSubject = new BehaviorSubject<PaymentFrequency>(
+    initialStoreValues.paymentsPerYear,
+  );
+  const earSubject = new BehaviorSubject(initialStoreValues.ear);
+  const paymentAmountSubject = new BehaviorSubject(initialStoreValues.paymentAmount);
+
+  const values$ = combineLatest({
+    loanAmount: loanAmountSubject,
+    years: yearsSubject,
+    paymentsPerYear: paymentsPerYearSubject,
+    ear: earSubject,
+    paymentAmount: paymentAmountSubject,
+  }).pipe(shareLatest());
+
+  values$.subscribe((values) =>
+    match(mode.kind)
+      .with("session", () => {
+        persistValues(values);
+        return null;
+      })
+      .with("shared-result", () => null)
+      .exhaustive(),
+  );
+
+  const calculationInputs$ = combineLatest({
+    loanAmount: debouncedTextStream(loanAmountSubject),
+    years: debouncedTextStream(yearsSubject),
+    paymentsPerYear: paymentsPerYearSubject,
+    ear: debouncedTextStream(earSubject),
+    paymentAmount: debouncedTextStream(paymentAmountSubject),
+  }).pipe(shareLatest());
+
+  const calculation$ = calculationInputs$.pipe(map(buildCalculation), shareLatest());
+
+  const viewModel$ = combineLatest({
+    values: values$,
+    calculation: calculation$,
+  }).pipe(
+    map(
+      ({ values, calculation }): DashboardViewModel => ({
+        values,
+        mode: determineMode(values.paymentAmount),
+        calculation,
+        storeMode: mode.kind,
+      }),
+    ),
+    shareLatest(),
+  );
+
+  const initialCalculation = buildCalculation(initialStoreValues);
+  const initialViewModel: DashboardViewModel = {
+    values: initialStoreValues,
+    mode: initialCalculation.mode,
+    calculation: initialCalculation,
+    storeMode: mode.kind,
+  };
+
+  const [useDashboardViewModel] = bind(viewModel$, initialViewModel);
+
+  return {
+    useDashboardViewModel,
+    setLoanAmount: (value) => {
+      loanAmountSubject.next(value);
+    },
+    setYears: (value) => {
+      yearsSubject.next(value);
+    },
+    setPaymentsPerYear: (value) => {
+      paymentsPerYearSubject.next(value);
+    },
+    setEar: (value) => {
+      earSubject.next(value);
+    },
+    setPaymentAmount: (value) => {
+      paymentAmountSubject.next(value);
+    },
+    getValues: () => ({
+      loanAmount: loanAmountSubject.getValue(),
+      years: yearsSubject.getValue(),
+      paymentsPerYear: paymentsPerYearSubject.getValue(),
+      ear: earSubject.getValue(),
+      paymentAmount: paymentAmountSubject.getValue(),
     }),
-);
-
-const calculationInputs$ = combineLatest({
-  loanAmount: debouncedTextStream(loanAmountSubject),
-  years: debouncedTextStream(yearsSubject),
-  paymentsPerYear: paymentsPerYearSubject,
-  ear: debouncedTextStream(earSubject),
-  paymentAmount: debouncedTextStream(paymentAmountSubject),
-}).pipe(shareLatest());
-
-const calculation$ = calculationInputs$.pipe(map(buildCalculation), shareLatest());
-
-const viewModel$ = combineLatest({
-  values: values$,
-  calculation: calculation$,
-}).pipe(
-  map(
-    ({ values, calculation }): DashboardViewModel => ({
-      values,
-      mode: determineMode(values.paymentAmount),
-      calculation,
-    }),
-  ),
-  shareLatest(),
-);
-
-const initialCalculation = buildCalculation(persistedValues);
-const initialViewModel: DashboardViewModel = {
-  values: persistedValues,
-  mode: initialCalculation.mode,
-  calculation: initialCalculation,
+    replaceValues: (values) => {
+      loanAmountSubject.next(values.loanAmount);
+      yearsSubject.next(values.years);
+      paymentsPerYearSubject.next(values.paymentsPerYear);
+      earSubject.next(values.ear);
+      paymentAmountSubject.next(values.paymentAmount);
+    },
+  };
 };
 
-export const [useDashboardViewModel] = bind(viewModel$, initialViewModel);
-
-export const setLoanAmount = (value: string): void => {
-  loanAmountSubject.next(value);
-};
-
-export const setYears = (value: string): void => {
-  yearsSubject.next(value);
-};
-
-export const setPaymentsPerYear = (value: PaymentFrequency): void => {
-  paymentsPerYearSubject.next(value);
-};
-
-export const setEar = (value: string): void => {
-  earSubject.next(value);
-};
-
-export const setPaymentAmount = (value: string): void => {
-  paymentAmountSubject.next(value);
-};
+export const defaultLoanStore = createLoanStore({
+  initialValues: loadLocalStorageValues(),
+  mode: { kind: "session" },
+});

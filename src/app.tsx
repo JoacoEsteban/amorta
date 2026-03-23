@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
-import { Landmark, Percent, Wallet } from "lucide-react";
-import { match } from "ts-pattern";
+import { Copy, Landmark, Percent, PencilLine, RotateCcw, Share2, Wallet } from "lucide-react";
+import toast from "react-hot-toast";
+import { P, match } from "ts-pattern";
 import {
   Bar,
   BarChart,
@@ -15,17 +16,16 @@ import {
 import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
 
 import type { PaymentFrequency } from "./domain/amortization";
+import { buildShareUrl, type RouteState } from "./domain/share";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./components/ui/card";
 import { Input } from "./components/ui/input";
 import { Label } from "./components/ui/label";
 import { Select } from "./components/ui/select";
 import {
-  setEar,
-  setLoanAmount,
-  setPaymentAmount,
-  setPaymentsPerYear,
-  setYears,
-  useDashboardViewModel,
+  clearLoanStateFromLocalStorage,
+  defaultLoanStore,
+  type LoanStore,
+  saveLoanStateToLocalStorage,
 } from "./state/loan-store";
 
 const paymentFrequencyOptions: Array<{
@@ -56,6 +56,9 @@ const percentFormatter = new Intl.NumberFormat("en-US", {
   maximumFractionDigits: 3,
 });
 
+const READONLY_MESSAGE =
+  "This shared result is readonly. Use “Edit this result” to continue from these values.";
+
 const parseFrequency = (rawValue: string): PaymentFrequency =>
   match(Number(rawValue))
     .with(1, () => 1 as const)
@@ -75,9 +78,81 @@ const formatShareOfTotal = (value: number, total: number): string =>
     .with(true, () => formatPercent(value / total))
     .otherwise(() => "0%");
 
-export const App = () => {
-  const { values, mode, calculation } = useDashboardViewModel();
+const copyShareUrl = (shareUrl: string): void => {
+  const clipboard = match(typeof navigator)
+    .with("undefined", () => null)
+    .otherwise(() => navigator.clipboard);
+
+  match(clipboard)
+    .with(null, () => {
+      toast.error("Clipboard access is not available here.");
+    })
+    .otherwise((resolvedClipboard) => {
+      resolvedClipboard
+        .writeText(shareUrl)
+        .then(() => {
+          toast.success("Share URL copied to the clipboard.");
+        })
+        .catch(() => {
+          toast.error("The share URL could not be copied.");
+        });
+    });
+};
+
+const navigateTo = (pathname: string): void => {
+  match(typeof window)
+    .with("undefined", () => null)
+    .otherwise(() => {
+      window.location.assign(pathname);
+      return null;
+    });
+};
+
+type AppProps =
+  | {
+      kind: "calculator";
+      routeState: Extract<RouteState, { kind: "index" | "result" }>;
+      store: LoanStore;
+    }
+  | {
+      kind: "invalid-result";
+      routeState: {
+        kind: "result";
+        payload: string | null;
+        decoded: Extract<
+          RouteState,
+          { kind: "result" }
+        >["decoded"] extends infer T
+          ? Exclude<T, { kind: "valid" }>
+          : never;
+      };
+    };
+
+export const App = (props: AppProps) =>
+  match(props)
+    .with({ kind: "invalid-result" }, ({ routeState }) => (
+      <InvalidResultPage routeState={routeState} />
+    ))
+    .with({ kind: "calculator" }, ({ routeState, store }) => (
+      <CalculatorPage routeState={routeState} store={store} />
+    ))
+    .exhaustive();
+
+const CalculatorPage = ({
+  routeState,
+  store,
+}: {
+  routeState: Extract<RouteState, { kind: "index" | "result" }>;
+  store: LoanStore;
+}) => {
+  const {
+    values,
+    mode,
+    calculation,
+    storeMode,
+  } = store.useDashboardViewModel();
   const isPaymentDriven = mode === "payment";
+  const isReadonly = storeMode === "shared-result";
   const displayedEarValue = match({ isPaymentDriven, calculation })
     .with(
       { isPaymentDriven: true, calculation: { kind: "ready" } },
@@ -86,48 +161,91 @@ export const App = () => {
     .with({ isPaymentDriven: true }, () => "")
     .otherwise(() => values.ear);
 
+  const shareUrl = match(typeof window)
+    .with("undefined", () => "")
+    .otherwise(() => buildShareUrl(store.getValues(), window.location));
+
   return (
     <main className="app-shell">
       <div className="app-layout">
+        <div className="page-toolbar">
+          <div className="page-toolbar__copy">
+            <p className="page-kicker">
+              {match(storeMode)
+                .with("shared-result", () => "Shared Result")
+                .otherwise(() => "Live Calculator")}
+            </p>
+            <h1 className="page-title">
+              {match(storeMode)
+                .with("shared-result", () => "Readonly French Mortgage Result")
+                .otherwise(() => "French Mortgage Inputs")}
+            </h1>
+          </div>
+          <button
+            type="button"
+            className="action-button action-button--primary"
+            onClick={() => copyShareUrl(shareUrl)}
+          >
+            <Share2 size={16} />
+            <span>Share result</span>
+          </button>
+        </div>
+
         <section className="app-grid">
           <Card className="panel-card panel-card--inputs">
             <CardHeader className="panel-card__header panel-card__header--accent">
-              <CardTitle>French Mortgage Inputs</CardTitle>
+              <CardTitle>
+                {match(storeMode)
+                  .with("shared-result", () => "Shared Inputs")
+                  .otherwise(() => "French Mortgage Inputs")}
+              </CardTitle>
               <CardDescription>
-                Change any value and the amortization schedule recomputes immediately.
+                {match(storeMode)
+                  .with(
+                    "shared-result",
+                    () =>
+                      "These values came from a shared result and cannot be edited in place.",
+                  )
+                  .otherwise(
+                    () =>
+                      "Change any value and the amortization schedule recomputes immediately.",
+                  )}
               </CardDescription>
             </CardHeader>
             <CardContent className="panel-card__content form-stack">
-              <div className="field-group">
+              <FieldShell readonly={isReadonly}>
                 <Label htmlFor="loan-amount">Loan amount</Label>
                 <Input
                   id="loan-amount"
                   inputMode="decimal"
                   value={values.loanAmount}
-                  onChange={(event) => setLoanAmount(event.currentTarget.value)}
+                  onChange={(event) => store.setLoanAmount(event.currentTarget.value)}
                   placeholder="250000"
+                  readOnly={isReadonly}
                 />
-              </div>
+              </FieldShell>
 
-              <div className="field-group">
+              <FieldShell readonly={isReadonly}>
                 <Label htmlFor="years">Time in years</Label>
                 <Input
                   id="years"
                   inputMode="decimal"
                   value={values.years}
-                  onChange={(event) => setYears(event.currentTarget.value)}
+                  onChange={(event) => store.setYears(event.currentTarget.value)}
                   placeholder="30"
+                  readOnly={isReadonly}
                 />
-              </div>
+              </FieldShell>
 
-              <div className="field-group">
+              <FieldShell readonly={isReadonly}>
                 <Label htmlFor="payments-per-year">Payments per year</Label>
                 <Select
                   id="payments-per-year"
                   value={String(values.paymentsPerYear)}
                   onChange={(event) =>
-                    setPaymentsPerYear(parseFrequency(event.currentTarget.value))
+                    store.setPaymentsPerYear(parseFrequency(event.currentTarget.value))
                   }
+                  disabled={isReadonly}
                 >
                   {paymentFrequencyOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -135,24 +253,26 @@ export const App = () => {
                     </option>
                   ))}
                 </Select>
-              </div>
+              </FieldShell>
 
-              <div className="field-group">
+              <FieldShell readonly={isReadonly}>
                 <Label htmlFor="ear">Effective annual rate</Label>
                 <Input
                   id="ear"
                   inputMode="decimal"
                   value={displayedEarValue}
-                  onChange={(event) => setEar(event.currentTarget.value)}
+                  onChange={(event) => store.setEar(event.currentTarget.value)}
                   placeholder={match(isPaymentDriven)
                     .with(true, () => "Calculated automatically")
                     .otherwise(() => "0.12")}
-                  disabled={isPaymentDriven}
+                  disabled={isReadonly || isPaymentDriven}
+                  readOnly={isReadonly}
                 />
                 <p className="field-note">
-                  {match(isPaymentDriven)
+                  {match({ isReadonly, isPaymentDriven })
+                    .with({ isReadonly: true }, () => READONLY_MESSAGE)
                     .with(
-                      true,
+                      { isPaymentDriven: true },
                       () =>
                         "Disabled while a payment amount is provided. The app derives EAR from that payment.",
                     )
@@ -161,21 +281,56 @@ export const App = () => {
                         "Use decimal format. Example: 0.12 means a 12% effective annual rate.",
                     )}
                 </p>
-              </div>
+              </FieldShell>
 
-              <div className="field-group">
+              <FieldShell readonly={isReadonly}>
                 <Label htmlFor="payment-amount">Payment amount (optional override)</Label>
                 <Input
                   id="payment-amount"
                   inputMode="decimal"
                   value={values.paymentAmount}
-                  onChange={(event) => setPaymentAmount(event.currentTarget.value)}
+                  onChange={(event) => store.setPaymentAmount(event.currentTarget.value)}
                   placeholder="Leave blank to derive payment"
+                  readOnly={isReadonly}
                 />
                 <p className="field-note">
-                  Fill this to switch into payment-driven mode and calculate the EAR dynamically.
+                  {match(isReadonly)
+                    .with(true, () => READONLY_MESSAGE)
+                    .otherwise(
+                      () =>
+                        "Fill this to switch into payment-driven mode and calculate the EAR dynamically.",
+                    )}
                 </p>
-              </div>
+              </FieldShell>
+
+              {match(routeState)
+                .with({ kind: "result", decoded: { kind: "valid" } }, () => (
+                  <div className="result-actions">
+                    <button
+                      type="button"
+                      className="action-button action-button--secondary"
+                      onClick={() => {
+                        clearLoanStateFromLocalStorage();
+                        navigateTo("/");
+                      }}
+                    >
+                      <RotateCcw size={16} />
+                      <span>Start new calculation</span>
+                    </button>
+                    <button
+                      type="button"
+                      className="action-button action-button--primary"
+                      onClick={() => {
+                        saveLoanStateToLocalStorage(values);
+                        navigateTo("/");
+                      }}
+                    >
+                      <PencilLine size={16} />
+                      <span>Edit this result</span>
+                    </button>
+                  </div>
+                ))
+                .otherwise(() => null)}
             </CardContent>
           </Card>
 
@@ -292,6 +447,74 @@ export const App = () => {
   );
 };
 
+const InvalidResultPage = ({
+  routeState,
+}: {
+  routeState: {
+    kind: "result";
+    payload: string | null;
+    decoded: Exclude<Extract<RouteState, { kind: "result" }>["decoded"], { kind: "valid" }>;
+  };
+}) => (
+  <main className="app-shell">
+    <div className="app-layout">
+      <div className="page-toolbar">
+        <div className="page-toolbar__copy">
+          <p className="page-kicker">Shared Result</p>
+          <h1 className="page-title">Shared result unavailable</h1>
+        </div>
+        <button
+          type="button"
+          className="action-button action-button--disabled"
+          disabled
+          title="A valid shared result is required before it can be shared again."
+        >
+          <Share2 size={16} />
+          <span>Share result</span>
+        </button>
+      </div>
+
+      <Card className="panel-card panel-card--message">
+        <CardHeader className="panel-card__header panel-card__header--plain">
+          <CardTitle>
+            {match(routeState.decoded.kind)
+              .with("missing", () => "No shared result found")
+              .otherwise(() => "This shared result is invalid")}
+          </CardTitle>
+          <CardDescription>{routeState.decoded.message}</CardDescription>
+        </CardHeader>
+        <CardContent className="panel-card__content message-actions">
+          <button
+            type="button"
+            className="action-button action-button--primary"
+            onClick={() => navigateTo("/")}
+          >
+            <RotateCcw size={16} />
+            <span>Open calculator</span>
+          </button>
+        </CardContent>
+      </Card>
+    </div>
+  </main>
+);
+
+const FieldShell = ({
+  children,
+  readonly,
+}: {
+  children: ReactNode;
+  readonly: boolean;
+}) => (
+  <div
+    className="field-group"
+    title={match(readonly)
+      .with(true, () => READONLY_MESSAGE)
+      .otherwise(() => undefined)}
+  >
+    {children}
+  </div>
+);
+
 const SummaryCard = ({
   icon,
   label,
@@ -368,3 +591,5 @@ const QuotaTooltip = ({ active, payload, label }: TooltipContentProps<ValueType,
         </div>
       );
     });
+
+export const appStore = defaultLoanStore;
