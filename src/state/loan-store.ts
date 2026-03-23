@@ -1,10 +1,17 @@
 import { bind, shareLatest } from "@react-rxjs/core";
-import { BehaviorSubject, combineLatest, map } from "rxjs";
+import {
+  BehaviorSubject,
+  combineLatest,
+  debounceTime,
+  distinctUntilChanged,
+  map,
+} from "rxjs";
 
 import {
   buildCalculation,
   type CalculationMode,
   type CalculationResult,
+  determineMode,
   type LoanFormValues,
   type PaymentFrequency,
 } from "../domain/amortization";
@@ -23,6 +30,8 @@ const initialValues: LoanFormValues = {
   paymentAmount: "",
 };
 
+const CALCULATION_DEBOUNCE_MS = 180;
+
 const loanAmountSubject = new BehaviorSubject(initialValues.loanAmount);
 const yearsSubject = new BehaviorSubject(initialValues.years);
 const paymentsPerYearSubject = new BehaviorSubject<PaymentFrequency>(
@@ -30,6 +39,9 @@ const paymentsPerYearSubject = new BehaviorSubject<PaymentFrequency>(
 );
 const earSubject = new BehaviorSubject(initialValues.ear);
 const paymentAmountSubject = new BehaviorSubject(initialValues.paymentAmount);
+
+const debouncedTextStream = (subject: BehaviorSubject<string>) =>
+  subject.pipe(debounceTime(CALCULATION_DEBOUNCE_MS), distinctUntilChanged());
 
 const values$ = combineLatest({
   loanAmount: loanAmountSubject,
@@ -39,7 +51,15 @@ const values$ = combineLatest({
   paymentAmount: paymentAmountSubject,
 }).pipe(shareLatest());
 
-const calculation$ = values$.pipe(map(buildCalculation), shareLatest());
+const calculationInputs$ = combineLatest({
+  loanAmount: debouncedTextStream(loanAmountSubject),
+  years: debouncedTextStream(yearsSubject),
+  paymentsPerYear: paymentsPerYearSubject,
+  ear: debouncedTextStream(earSubject),
+  paymentAmount: debouncedTextStream(paymentAmountSubject),
+}).pipe(shareLatest());
+
+const calculation$ = calculationInputs$.pipe(map(buildCalculation), shareLatest());
 
 const viewModel$ = combineLatest({
   values: values$,
@@ -48,7 +68,7 @@ const viewModel$ = combineLatest({
   map(
     ({ values, calculation }): DashboardViewModel => ({
       values,
-      mode: calculation.mode,
+      mode: determineMode(values.paymentAmount),
       calculation,
     }),
   ),

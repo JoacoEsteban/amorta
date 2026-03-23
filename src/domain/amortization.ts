@@ -127,7 +127,7 @@ const requiredMessages = (
     )
     .exhaustive();
 
-const determineMode = (paymentAmount: string): CalculationMode =>
+export const determineMode = (paymentAmount: string): CalculationMode =>
   match(paymentAmount.trim().length > 0)
     .with(true, () => "payment" as const)
     .otherwise(() => "ear" as const);
