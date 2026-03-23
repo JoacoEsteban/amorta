@@ -78,6 +78,13 @@ const formatShareOfTotal = (value: number, total: number): string =>
 export const App = () => {
   const { values, mode, calculation } = useDashboardViewModel();
   const isPaymentDriven = mode === "payment";
+  const displayedEarValue = match({ isPaymentDriven, calculation })
+    .with(
+      { isPaymentDriven: true, calculation: { kind: "ready" } },
+      ({ calculation: readyCalculation }) => formatPercent(readyCalculation.ear),
+    )
+    .with({ isPaymentDriven: true }, () => "")
+    .otherwise(() => values.ear);
 
   return (
     <main className="app-shell">
@@ -135,9 +142,11 @@ export const App = () => {
                 <Input
                   id="ear"
                   inputMode="decimal"
-                  value={values.ear}
+                  value={displayedEarValue}
                   onChange={(event) => setEar(event.currentTarget.value)}
-                  placeholder="0.12"
+                  placeholder={match(isPaymentDriven)
+                    .with(true, () => "Calculated automatically")
+                    .otherwise(() => "0.12")}
                   disabled={isPaymentDriven}
                 />
                 <p className="field-note">
@@ -221,11 +230,20 @@ export const App = () => {
                   .with({ kind: "ready" }, (ready) => (
                     <>
                       <div className="metrics-grid">
-                        <Metric label="Total interest" value={formatCurrency(ready.totalInterest)} />
-                        <Metric label="Total paid" value={formatCurrency(ready.totalPaid)} />
                         <Metric
-                          label="Final point"
-                          value={`Quota ${ready.paymentCount + 1} closes at 0`}
+                          label="Loan amount"
+                          value={formatCurrency(ready.loanAmount)}
+                          detail={formatShareOfTotal(ready.loanAmount, ready.totalPaid)}
+                        />
+                        <Metric
+                          label="Total interest"
+                          value={formatCurrency(ready.totalInterest)}
+                          detail={formatShareOfTotal(ready.totalInterest, ready.totalPaid)}
+                        />
+                        <Metric
+                          label="Total paid"
+                          value={formatCurrency(ready.totalPaid)}
+                          detail={`${(ready.totalPaid / ready.loanAmount).toFixed(2)}x principal repaid`}
                         />
                       </div>
 
@@ -294,10 +312,23 @@ const SummaryCard = ({
   </Card>
 );
 
-const Metric = ({ label, value }: { label: string; value: string }) => (
+const Metric = ({
+  label,
+  value,
+  detail,
+}: {
+  label: string;
+  value: string;
+  detail?: string;
+}) => (
   <div className="metric-card">
     <p className="metric-label">{label}</p>
     <p className="metric-value">{value}</p>
+    {match(detail)
+      .with(undefined, () => null)
+      .otherwise((resolvedDetail) => (
+        <p className="metric-detail">{resolvedDetail}</p>
+      ))}
   </div>
 );
 

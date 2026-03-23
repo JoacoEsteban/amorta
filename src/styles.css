@@ -271,6 +271,12 @@ ul {
   margin-top: 0.45rem;
 }
 
+.metric-detail {
+  margin-top: 0.35rem;
+  font-size: 0.88rem;
+  color: var(--stone-500);
+}
+
 .chart-frame {
   width: 100%;
   height: 26.25rem;
