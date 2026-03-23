@@ -158,7 +158,7 @@ export const decodeSharePayload = (payload: string | null): ShareDecodeResult =>
 const toUrl = (input: string | URL): URL =>
   match(input)
     .with(P.instanceOf(URL), (resolvedUrl) => resolvedUrl)
-    .otherwise((rawInput) => new URL(rawInput, "https://french-graph.local"));
+    .otherwise((rawInput) => new URL(rawInput, "https://amorta.local"));
 
 export const parseRouteState = (input: string | URL): RouteState => {
   const url = toUrl(input);

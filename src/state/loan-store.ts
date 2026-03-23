@@ -52,7 +52,7 @@ const initialValues: LoanFormValues = {
 };
 
 const CALCULATION_DEBOUNCE_MS = 180;
-const STORAGE_KEY_PREFIX = "french-graph";
+const STORAGE_KEY_PREFIX = "amorta";
 
 const storageKeys = {
   loanAmount: `${STORAGE_KEY_PREFIX}:loan-amount`,

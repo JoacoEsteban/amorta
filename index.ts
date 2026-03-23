@@ -15,4 +15,4 @@ const server = Bun.serve({
   },
 });
 
-console.log(`French amortization graph available at http://localhost:${server.port}`);
+console.log(`Amorta available at http://localhost:${server.port}`);
