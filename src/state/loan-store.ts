@@ -6,6 +6,7 @@ import {
   distinctUntilChanged,
   map,
 } from "rxjs";
+import { match } from "ts-pattern";
 
 import {
   buildCalculation,
@@ -31,14 +32,59 @@ const initialValues: LoanFormValues = {
 };
 
 const CALCULATION_DEBOUNCE_MS = 180;
+const STORAGE_KEY_PREFIX = "french-graph";
 
-const loanAmountSubject = new BehaviorSubject(initialValues.loanAmount);
-const yearsSubject = new BehaviorSubject(initialValues.years);
+const storageKeys = {
+  loanAmount: `${STORAGE_KEY_PREFIX}:loan-amount`,
+  years: `${STORAGE_KEY_PREFIX}:years`,
+  paymentsPerYear: `${STORAGE_KEY_PREFIX}:payments-per-year`,
+  ear: `${STORAGE_KEY_PREFIX}:ear`,
+  paymentAmount: `${STORAGE_KEY_PREFIX}:payment-amount`,
+} as const;
+
+const getStorage = (): Storage | null =>
+  match(typeof window)
+    .with("undefined", () => null)
+    .otherwise(() => window.localStorage);
+
+const parsePaymentFrequency = (rawValue: string | null): PaymentFrequency =>
+  match(Number(rawValue))
+    .with(1, () => 1 as const)
+    .with(3, () => 3 as const)
+    .with(6, () => 6 as const)
+    .with(12, () => 12 as const)
+    .otherwise(() => initialValues.paymentsPerYear);
+
+const readStoredValue = (key: string, fallbackValue: string): string =>
+  match(getStorage())
+    .with(null, () => fallbackValue)
+    .otherwise((storage) => storage.getItem(key) ?? fallbackValue);
+
+const loadInitialValues = (): LoanFormValues => ({
+  loanAmount: readStoredValue(storageKeys.loanAmount, initialValues.loanAmount),
+  years: readStoredValue(storageKeys.years, initialValues.years),
+  paymentsPerYear: parsePaymentFrequency(
+    readStoredValue(
+      storageKeys.paymentsPerYear,
+      String(initialValues.paymentsPerYear),
+    ),
+  ),
+  ear: readStoredValue(storageKeys.ear, initialValues.ear),
+  paymentAmount: readStoredValue(
+    storageKeys.paymentAmount,
+    initialValues.paymentAmount,
+  ),
+});
+
+const persistedValues = loadInitialValues();
+
+const loanAmountSubject = new BehaviorSubject(persistedValues.loanAmount);
+const yearsSubject = new BehaviorSubject(persistedValues.years);
 const paymentsPerYearSubject = new BehaviorSubject<PaymentFrequency>(
-  initialValues.paymentsPerYear,
+  persistedValues.paymentsPerYear,
 );
-const earSubject = new BehaviorSubject(initialValues.ear);
-const paymentAmountSubject = new BehaviorSubject(initialValues.paymentAmount);
+const earSubject = new BehaviorSubject(persistedValues.ear);
+const paymentAmountSubject = new BehaviorSubject(persistedValues.paymentAmount);
 
 const debouncedTextStream = (subject: BehaviorSubject<string>) =>
   subject.pipe(debounceTime(CALCULATION_DEBOUNCE_MS), distinctUntilChanged());
@@ -50,6 +96,23 @@ const values$ = combineLatest({
   ear: earSubject,
   paymentAmount: paymentAmountSubject,
 }).pipe(shareLatest());
+
+values$.subscribe((values) =>
+  match(getStorage())
+    .with(null, () => null)
+    .otherwise((storage) => {
+      storage.setItem(storageKeys.loanAmount, values.loanAmount);
+      storage.setItem(storageKeys.years, values.years);
+      storage.setItem(
+        storageKeys.paymentsPerYear,
+        String(values.paymentsPerYear),
+      );
+      storage.setItem(storageKeys.ear, values.ear);
+      storage.setItem(storageKeys.paymentAmount, values.paymentAmount);
+
+      return null;
+    }),
+);
 
 const calculationInputs$ = combineLatest({
   loanAmount: debouncedTextStream(loanAmountSubject),
@@ -75,9 +138,9 @@ const viewModel$ = combineLatest({
   shareLatest(),
 );
 
-const initialCalculation = buildCalculation(initialValues);
+const initialCalculation = buildCalculation(persistedValues);
 const initialViewModel: DashboardViewModel = {
-  values: initialValues,
+  values: persistedValues,
   mode: initialCalculation.mode,
   calculation: initialCalculation,
 };
