@@ -3,10 +3,30 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
-  "devDependencies": {
-    "@types/bun": "latest"
+  "scripts": {
+    "dev": "bun --hot index.ts",
+    "start": "bun index.ts",
+    "test": "bun test"
   },
-  "peerDependencies": {
-    "typescript": "^5"
-  }
+  "dependencies": {
+    "@react-rxjs/core": "latest",
+    "@react-rxjs/utils": "latest",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.542.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "recharts": "^3.2.1",
+    "rxjs": "^7.8.2",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.12",
+    "ts-pattern": "^5.8.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {}
 }
