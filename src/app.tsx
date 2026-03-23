@@ -70,6 +70,11 @@ const formatCompactCurrency = (value: number): string =>
 
 const formatPercent = (value: number): string => percentFormatter.format(value);
 
+const formatShareOfTotal = (value: number, total: number): string =>
+  match(total > 0)
+    .with(true, () => formatPercent(value / total))
+    .otherwise(() => "0%");
+
 export const App = () => {
   const { values, mode, calculation } = useDashboardViewModel();
   const isPaymentDriven = mode === "payment";
@@ -322,11 +327,11 @@ const QuotaTooltip = ({ active, payload, label }: TooltipContentProps<ValueType,
             </div>
             <div className="chart-tooltip__row">
               <span>Principal</span>
-              <strong>{formatCurrency(principal)}</strong>
+              <strong>{`${formatCurrency(principal)} (${formatShareOfTotal(principal, payment)})`}</strong>
             </div>
             <div className="chart-tooltip__row">
               <span>Interest</span>
-              <strong>{formatCurrency(interest)}</strong>
+              <strong>{`${formatCurrency(interest)} (${formatShareOfTotal(interest, payment)})`}</strong>
             </div>
           </div>
         </div>
