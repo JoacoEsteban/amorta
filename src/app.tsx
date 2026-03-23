@@ -6,11 +6,13 @@ import {
   BarChart,
   CartesianGrid,
   Legend,
+  type TooltipContentProps,
   ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
 } from "recharts";
+import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
 
 import type { PaymentFrequency } from "./domain/amortization";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./components/ui/card";
@@ -234,15 +236,7 @@ export const App = () => {
                               axisLine={false}
                             />
                             <Tooltip
-                              formatter={(value, name) => [
-                                formatCurrency(Number(value ?? 0)),
-                                match(name)
-                                  .with("principal", () => "Principal")
-                                  .with("interest", () => "Interest")
-                                  .with("remainingBalance", () => "Remaining balance")
-                                  .otherwise(() => String(name)),
-                              ]}
-                              labelFormatter={(label) => `Quota ${label}`}
+                              content={QuotaTooltip}
                               cursor={{ fill: "rgba(217, 119, 6, 0.08)" }}
                             />
                             <Legend />
@@ -301,3 +295,40 @@ const Metric = ({ label, value }: { label: string; value: string }) => (
     <p className="metric-value">{value}</p>
   </div>
 );
+
+const QuotaTooltip = ({ active, payload, label }: TooltipContentProps<ValueType, NameType>) =>
+  match(Boolean(active) && Array.isArray(payload) && payload.length > 0)
+    .with(false, () => null)
+    .otherwise(() => {
+      const row = payload?.[0]?.payload as
+        | {
+            payment?: number;
+            principal?: number;
+            interest?: number;
+          }
+        | undefined;
+
+      const payment = Number(row?.payment ?? 0);
+      const principal = Number(row?.principal ?? 0);
+      const interest = Number(row?.interest ?? 0);
+
+      return (
+        <div className="chart-tooltip">
+          <p className="chart-tooltip__title">{`Quota ${String(label)}`}</p>
+          <div className="chart-tooltip__rows">
+            <div className="chart-tooltip__row">
+              <span>Total</span>
+              <strong>{formatCurrency(payment)}</strong>
+            </div>
+            <div className="chart-tooltip__row">
+              <span>Principal</span>
+              <strong>{formatCurrency(principal)}</strong>
+            </div>
+            <div className="chart-tooltip__row">
+              <span>Interest</span>
+              <strong>{formatCurrency(interest)}</strong>
+            </div>
+          </div>
+        </div>
+      );
+    });
