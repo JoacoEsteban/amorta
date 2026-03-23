@@ -173,6 +173,10 @@ ul {
   gap: 0.5rem;
 }
 
+.field-group--readonly .ui-label {
+  color: var(--stone-600);
+}
+
 .ui-label {
   font-size: 0.74rem;
   font-weight: 600;
@@ -215,6 +219,21 @@ ul {
   border-color: var(--stone-200);
   background: rgba(245, 245, 244, 0.95);
   color: var(--stone-500);
+}
+
+.ui-input[readonly],
+.ui-select:disabled {
+  cursor: not-allowed;
+  border-color: var(--stone-200);
+  background: rgba(245, 245, 244, 0.95);
+  color: var(--stone-500);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.ui-input[readonly]:focus,
+.ui-select:disabled:focus {
+  border-color: var(--stone-200);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
 .field-note {

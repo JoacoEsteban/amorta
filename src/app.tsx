@@ -506,7 +506,9 @@ const FieldShell = ({
   readonly: boolean;
 }) => (
   <div
-    className="field-group"
+    className={match(readonly)
+      .with(true, () => "field-group field-group--readonly")
+      .otherwise(() => "field-group")}
     title={match(readonly)
       .with(true, () => READONLY_MESSAGE)
       .otherwise(() => undefined)}
