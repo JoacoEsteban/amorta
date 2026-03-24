@@ -177,9 +177,21 @@ const CalculatorPage = ({
             </p>
             <h1 className="page-title">
               {match(storeMode)
-                .with("shared-result", () => "Readonly French Mortgage Result")
-                .otherwise(() => "French Mortgage Inputs")}
+                .with("shared-result", () => "Shared French Amortization Result")
+                .otherwise(() => "French Amortization Calculator")}
             </h1>
+            <p className="page-summary">
+              {match(storeMode)
+                .with(
+                  "shared-result",
+                  () =>
+                    "Review the loan schedule, compare principal and interest for each quota, and copy the readonly result URL.",
+                )
+                .otherwise(
+                  () =>
+                    "Model a French-style loan, invert a payment into its effective annual rate, and inspect the amortization schedule visually.",
+                )}
+            </p>
           </div>
           <button
             type="button"

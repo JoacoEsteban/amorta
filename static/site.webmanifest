@@ -1,0 +1,17 @@
+{
+  "name": "Amorta",
+  "short_name": "Amorta",
+  "description": "Interactive French amortization calculator with shareable readonly result URLs and payment-to-rate inversion.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffbeb",
+  "theme_color": "#f59e0b",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

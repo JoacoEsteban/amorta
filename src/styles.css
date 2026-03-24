@@ -98,6 +98,13 @@ ul {
   color: var(--stone-950);
 }
 
+.page-summary {
+  max-width: 48rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--stone-600);
+}
+
 .app-grid {
   display: grid;
   gap: 1.5rem;

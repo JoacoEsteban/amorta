@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Amorta social preview">
+  <defs>
+    <linearGradient id="amorta-og-bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff7ed" />
+      <stop offset="100%" stop-color="#ffedd5" />
+    </linearGradient>
+    <linearGradient id="amorta-og-accent" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#amorta-og-bg)" />
+  <rect x="58" y="58" width="1084" height="514" rx="36" fill="#1c1917" />
+  <g transform="translate(108 118)">
+    <text x="0" y="0" fill="#fcd34d" font-family="Georgia, 'Times New Roman', serif" font-size="34">Amorta</text>
+    <text x="0" y="96" fill="#fafaf9" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700">
+      French amortization
+    </text>
+    <text x="0" y="172" fill="#fafaf9" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700">
+      calculator with shareable
+    </text>
+    <text x="0" y="248" fill="#fafaf9" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700">
+      loan results
+    </text>
+    <text x="0" y="330" fill="#d6d3d1" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="30">
+      Model quotas, invert payments into EAR, and inspect principal versus interest.
+    </text>
+  </g>
+  <g transform="translate(760 130)">
+    <rect x="0" y="0" width="300" height="280" rx="28" fill="#292524" stroke="#44403c" />
+    <rect x="28" y="38" width="84" height="180" rx="14" fill="#f59e0b" />
+    <rect x="122" y="88" width="84" height="130" rx="14" fill="#fbbf24" />
+    <rect x="216" y="136" width="56" height="82" rx="14" fill="#fde68a" />
+    <path d="M28 240h244" stroke="#78716c" stroke-width="10" stroke-linecap="round" />
+    <path d="M32 280L108 164l60 46 84-142" fill="none" stroke="url(#amorta-og-accent)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Amorta app icon">
+  <defs>
+    <linearGradient id="amorta-icon-gradient" x1="12%" x2="88%" y1="8%" y2="92%">
+      <stop offset="0%" stop-color="#fde68a" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="#1c1917" />
+  <path d="M108 340l70-118 54 80 93-160h35L232 366l-53-79-36 53z" fill="url(#amorta-icon-gradient)" />
+  <circle cx="360" cy="142" r="22" fill="#f59e0b" />
+</svg>

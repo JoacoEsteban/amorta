@@ -50,6 +50,24 @@ Run typechecking:
 bunx tsc --noEmit
 ```
 
+Build the static production output:
+
+```bash
+bun run build
+```
+
+Preview the built app locally:
+
+```bash
+bun run start:prod
+```
+
+Set the canonical deployment URL during build:
+
+```bash
+PUBLIC_SITE_URL=https://your-domain.example bun run build
+```
+
 ## Sharing
 
 The Share action copies a URL in the form:
@@ -75,3 +93,4 @@ Opening that URL loads a readonly result page that:
 
 - The editable calculator persists its values in localStorage under the `amorta` key prefix.
 - Shared result pages are intentionally readonly and only become editable after the user chooses `Edit this result`.
+- SEO metadata, sitemap, robots, manifest, and social preview URLs use `PUBLIC_SITE_URL` when provided at build time.
