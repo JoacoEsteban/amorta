@@ -8,11 +8,11 @@
   "rewrites": [
     {
       "source": "/result/:path*",
-      "destination": "/index.html"
+      "destination": "/result/index.html"
     },
     {
       "source": "/result",
-      "destination": "/index.html"
+      "destination": "/result/index.html"
     }
   ]
 }

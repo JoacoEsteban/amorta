@@ -60,6 +60,23 @@ describe("buildSeoMetadata", () => {
     expect(metadata.openGraphUrl).toBe(`${siteUrl}/result/abc123`);
   });
 
+  it("builds a generic result canonical url for pending prerendered shared routes", () => {
+    const metadata = buildSeoMetadata({
+      routeState: {
+        kind: "result",
+        payload: null,
+        decoded: {
+          kind: "pending",
+          message: "Loading shared result",
+        },
+      },
+      siteUrl,
+    });
+
+    expect(metadata.canonicalUrl).toBe(`${siteUrl}/result/`);
+    expect(metadata.title).toBe("Shared Result | Amorta");
+  });
+
   it("falls back to the root canonical url for invalid shared routes", () => {
     const metadata = buildSeoMetadata({
       routeState: {

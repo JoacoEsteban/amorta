@@ -1,6 +1,7 @@
 const port = Number(Bun.env.PORT ?? "4173");
 
 const indexFile = Bun.file("./dist/index.html");
+const resultIndexFile = Bun.file("./dist/result/index.html");
 
 const toDistPath = (pathname: string): string =>
   pathname.replace(/^\/+/, "").replace(/\/+$/, "");
@@ -14,6 +15,9 @@ const server = Bun.serve({
     const url = new URL(request.url);
     const distPath = toDistPath(url.pathname);
     const file = Bun.file(`./dist/${distPath}`);
+    const fallbackFile = url.pathname.startsWith("/result")
+      ? resultIndexFile
+      : indexFile;
 
     return file
       .exists()
@@ -22,7 +26,7 @@ const server = Bun.serve({
           ? new Response(file)
           : isAssetRequest(url.pathname)
             ? new Response("Not Found", { status: 404 })
-            : new Response(indexFile),
+            : new Response(fallbackFile),
       );
   },
 });

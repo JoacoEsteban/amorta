@@ -121,4 +121,17 @@ describe("route parsing", () => {
         throw new Error("Expected a valid result route from URL object");
       });
   });
+
+  test("parses result routes as pending during prerender", () => {
+    const payload = buildSharePayload(sampleState);
+    const route = parseRouteState(`https://example.com/result/${payload}`, "prerender");
+
+    match(route)
+      .with({ kind: "result", decoded: { kind: "pending" } }, ({ decoded }) => {
+        expect(decoded.message.length > 0).toBe(true);
+      })
+      .otherwise(() => {
+        throw new Error("Expected a pending prerender route");
+      });
+  });
 });

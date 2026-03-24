@@ -75,13 +75,7 @@ export const buildSeoMetadata = ({
   routeState,
   siteUrl,
 }: {
-  routeState:
-    | Extract<RouteState, { kind: "index" | "result" }>
-    | {
-        kind: "result";
-        payload: string | null;
-        decoded: Exclude<Extract<RouteState, { kind: "result" }>["decoded"], { kind: "valid" }>;
-      };
+  routeState: RouteState;
   siteUrl: string;
 }): SeoMetadata => {
   const normalizedSiteUrl = resolvePublicSiteUrl(siteUrl);
@@ -100,6 +94,14 @@ export const buildSeoMetadata = ({
       description: SHARE_DESCRIPTION,
       canonicalUrl: `${normalizedSiteUrl}/result/${payload ?? ""}`,
       openGraphUrl: `${normalizedSiteUrl}/result/${payload ?? ""}`,
+      openGraphImageUrl: `${normalizedSiteUrl}/og-image.svg`,
+      jsonLd: JSON.stringify(buildBaseJsonLd(normalizedSiteUrl)),
+    }))
+    .with({ kind: "result", decoded: { kind: "pending" } }, () => ({
+      title: "Shared Result | Amorta",
+      description: SHARE_DESCRIPTION,
+      canonicalUrl: `${normalizedSiteUrl}/result/`,
+      openGraphUrl: `${normalizedSiteUrl}/result/`,
       openGraphImageUrl: `${normalizedSiteUrl}/og-image.svg`,
       jsonLd: JSON.stringify(buildBaseJsonLd(normalizedSiteUrl)),
     }))

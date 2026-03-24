@@ -56,6 +56,11 @@ Build the static production output:
 bun run build
 ```
 
+The build statically prerenders:
+
+- `/` as the default interactive calculator view
+- `/result/` as a pending shared-result page that hydrates into the decoded payload on load
+
 Preview the built app locally:
 
 ```bash
@@ -94,3 +99,4 @@ Opening that URL loads a readonly result page that:
 - The editable calculator persists its values in localStorage under the `amorta` key prefix.
 - Shared result pages are intentionally readonly and only become editable after the user chooses `Edit this result`.
 - SEO metadata, sitemap, robots, manifest, and social preview URLs use `PUBLIC_SITE_URL` when provided at build time.
+- The production build emits real prerendered HTML, not an empty SPA shell, and hydrates into live state after load.

@@ -7,6 +7,10 @@ export type ShareableLoanState = LoanFormValues;
 
 export type ShareDecodeResult =
   | {
+      kind: "pending";
+      message: string;
+    }
+  | {
       kind: "valid";
       values: ShareableLoanState;
     }
@@ -28,6 +32,8 @@ export type RouteState =
       payload: string | null;
       decoded: ShareDecodeResult;
     };
+
+export type RouteParsePhase = "prerender" | "resolved";
 
 const BASE64URL_PAD_LENGTH = 4;
 
@@ -160,7 +166,19 @@ const toUrl = (input: string | URL): URL =>
     .with(P.instanceOf(URL), (resolvedUrl) => resolvedUrl)
     .otherwise((rawInput) => new URL(rawInput, "https://amorta.local"));
 
-export const parseRouteState = (input: string | URL): RouteState => {
+export const buildPendingResultState = (payload: string | null): RouteState => ({
+  kind: "result",
+  payload,
+  decoded: {
+    kind: "pending",
+    message: "Loading the shared result from the URL.",
+  },
+});
+
+export const parseRouteState = (
+  input: string | URL,
+  phase: RouteParsePhase = "resolved",
+): RouteState => {
   const url = toUrl(input);
   const segments = url.pathname
     .split("/")
@@ -171,11 +189,13 @@ export const parseRouteState = (input: string | URL): RouteState => {
     .with("result", () => {
       const payload = normalizePayloadSegment(segments[1] ?? null);
 
-      return {
-        kind: "result" as const,
-        payload,
-        decoded: decodeSharePayload(payload),
-      };
+      return match(phase)
+        .with("prerender", () => buildPendingResultState(payload))
+        .otherwise(() => ({
+          kind: "result" as const,
+          payload,
+          decoded: decodeSharePayload(payload),
+        }));
     })
     .otherwise(() => ({ kind: "index" as const }));
 };

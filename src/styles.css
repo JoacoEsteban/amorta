@@ -229,7 +229,9 @@ ul {
 }
 
 .ui-input[readonly],
-.ui-select:disabled {
+.ui-select:disabled,
+.field-group--readonly .ui-input,
+.field-group--readonly .ui-select {
   cursor: not-allowed;
   border-color: var(--stone-200);
   background: rgba(245, 245, 244, 0.95);
@@ -391,6 +393,81 @@ ul {
   border: 1px solid var(--stone-200);
   border-radius: 1.75rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(252, 248, 241, 0.88));
+}
+
+.chart-frame--static {
+  display: flex;
+  align-items: stretch;
+}
+
+.static-chart {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: end;
+  gap: 0.65rem;
+  width: 100%;
+  height: 100%;
+}
+
+.static-chart__quota {
+  display: grid;
+  justify-items: center;
+  align-items: end;
+  gap: 0.55rem;
+  min-width: 0;
+}
+
+.static-chart__bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 2.75rem;
+  height: 100%;
+  min-height: 12rem;
+  overflow: hidden;
+  border-radius: 1rem 1rem 0.4rem 0.4rem;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(214, 211, 209, 0.8);
+}
+
+.static-chart__segment {
+  width: 100%;
+}
+
+.static-chart__segment--interest {
+  background: #f59e0b;
+}
+
+.static-chart__segment--principal {
+  background: #b45309;
+}
+
+.static-chart__label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--stone-500);
+}
+
+.pending-state {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1.5rem;
+  border: 1px solid var(--stone-200);
+  border-radius: 1.5rem;
+  background: rgba(250, 250, 249, 0.78);
+}
+
+.pending-state__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--stone-950);
+}
+
+.pending-state__copy {
+  max-width: 34rem;
+  line-height: 1.7;
+  color: var(--stone-600);
 }
 
 .chart-tooltip {

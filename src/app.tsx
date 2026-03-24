@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Copy, Landmark, Percent, PencilLine, RotateCcw, Share2, Wallet } from "lucide-react";
+import { Landmark, Percent, PencilLine, RotateCcw, Share2, Wallet } from "lucide-react";
 import toast from "react-hot-toast";
 import { P, match } from "ts-pattern";
 import {
@@ -23,7 +23,6 @@ import { Label } from "./components/ui/label";
 import { Select } from "./components/ui/select";
 import {
   clearLoanStateFromLocalStorage,
-  defaultLoanStore,
   type LoanStore,
   saveLoanStateToLocalStorage,
 } from "./state/loan-store";
@@ -57,7 +56,7 @@ const percentFormatter = new Intl.NumberFormat("en-US", {
 });
 
 const READONLY_MESSAGE =
-  "This shared result is readonly. Use “Edit this result” to continue from these values.";
+  "This shared result can't be edited here. Use “Edit this result” to continue from these values.";
 
 const parseFrequency = (rawValue: string): PaymentFrequency =>
   match(Number(rawValue))
@@ -111,8 +110,20 @@ const navigateTo = (pathname: string): void => {
 type AppProps =
   | {
       kind: "calculator";
-      routeState: Extract<RouteState, { kind: "index" | "result" }>;
+      routeState:
+        | Extract<RouteState, { kind: "index" }>
+        | {
+            kind: "result";
+            payload: string | null;
+            decoded: Extract<
+              RouteState,
+              { kind: "result" }
+            >["decoded"] extends infer T
+              ? Extract<T, { kind: "pending" | "valid" }>
+              : never;
+          };
       store: LoanStore;
+      hydrated: boolean;
     }
   | {
       kind: "invalid-result";
@@ -123,9 +134,10 @@ type AppProps =
           RouteState,
           { kind: "result" }
         >["decoded"] extends infer T
-          ? Exclude<T, { kind: "valid" }>
+          ? Exclude<T, { kind: "valid" | "pending" }>
           : never;
       };
+      hydrated: boolean;
     };
 
 export const App = (props: AppProps) =>
@@ -133,17 +145,30 @@ export const App = (props: AppProps) =>
     .with({ kind: "invalid-result" }, ({ routeState }) => (
       <InvalidResultPage routeState={routeState} />
     ))
-    .with({ kind: "calculator" }, ({ routeState, store }) => (
-      <CalculatorPage routeState={routeState} store={store} />
+    .with({ kind: "calculator" }, ({ routeState, store, hydrated }) => (
+      <CalculatorPage routeState={routeState} store={store} hydrated={hydrated} />
     ))
     .exhaustive();
 
 const CalculatorPage = ({
   routeState,
   store,
+  hydrated,
 }: {
-  routeState: Extract<RouteState, { kind: "index" | "result" }>;
+  routeState:
+    | Extract<RouteState, { kind: "index" }>
+    | {
+        kind: "result";
+        payload: string | null;
+        decoded: Extract<
+          RouteState,
+          { kind: "result" }
+        >["decoded"] extends infer T
+          ? Extract<T, { kind: "pending" | "valid" }>
+          : never;
+      };
   store: LoanStore;
+  hydrated: boolean;
 }) => {
   const {
     values,
@@ -153,9 +178,16 @@ const CalculatorPage = ({
   } = store.useDashboardViewModel();
   const isPaymentDriven = mode === "payment";
   const isReadonly = storeMode === "shared-result";
-  const displayedEarValue = match({ isPaymentDriven, calculation })
+  const isPendingResult =
+    routeState.kind === "result" && routeState.decoded.kind === "pending";
+  const showInteractiveChart = hydrated && !isPendingResult;
+  const displayedEarValue = match({ isPaymentDriven, calculation, isPendingResult })
     .with(
-      { isPaymentDriven: true, calculation: { kind: "ready" } },
+      {
+        isPaymentDriven: true,
+        isPendingResult: false,
+        calculation: { kind: "ready" },
+      },
       ({ calculation: readyCalculation }) => formatPercent(readyCalculation.ear),
     )
     .with({ isPaymentDriven: true }, () => "")
@@ -165,27 +197,30 @@ const CalculatorPage = ({
     .with("undefined", () => "")
     .otherwise(() => buildShareUrl(store.getValues(), window.location));
 
+  const shareDisabled = !hydrated || isPendingResult;
+
   return (
     <main className="app-shell">
       <div className="app-layout">
         <div className="page-toolbar">
           <div className="page-toolbar__copy">
             <p className="page-kicker">
-              {match(storeMode)
-                .with("shared-result", () => "Shared Result")
+              {match({ storeMode, isPendingResult })
+                .with({ isPendingResult: true }, () => "Shared Result")
+                .with({ storeMode: "shared-result" }, () => "Shared Result")
                 .otherwise(() => "Live Calculator")}
             </p>
             <h1 className="page-title">
-              {match(storeMode)
-                .with("shared-result", () => "Shared French Amortization Result")
+              {match({ storeMode, isPendingResult })
+                .with({ storeMode: "shared-result" }, () => "Shared French Amortization Result")
                 .otherwise(() => "French Amortization Calculator")}
             </h1>
             <p className="page-summary">
-              {match(storeMode)
+              {match({ storeMode, isPendingResult })
                 .with(
-                  "shared-result",
+                  { storeMode: "shared-result" },
                   () =>
-                    "Review the loan schedule, compare principal and interest for each quota, and copy the readonly result URL.",
+                    "Review the loan schedule, compare principal and interest for each quota, and copy the shared result URL.",
                 )
                 .otherwise(
                   () =>
@@ -195,8 +230,15 @@ const CalculatorPage = ({
           </div>
           <button
             type="button"
-            className="action-button action-button--primary"
+            className={match(shareDisabled)
+              .with(true, () => "action-button action-button--disabled")
+              .otherwise(() => "action-button action-button--primary")}
             onClick={() => copyShareUrl(shareUrl)}
+            disabled={shareDisabled}
+            aria-hidden={shareDisabled}
+            title={match(isPendingResult)
+              .with(true, () => "The shared result must finish loading before it can be copied.")
+              .otherwise(() => undefined)}
           >
             <Share2 size={16} />
             <span>Share result</span>
@@ -207,14 +249,15 @@ const CalculatorPage = ({
           <Card className="panel-card panel-card--inputs">
             <CardHeader className="panel-card__header panel-card__header--accent">
               <CardTitle>
-                {match(storeMode)
-                  .with("shared-result", () => "Shared Inputs")
+                {match({ storeMode, isPendingResult })
+                  .with({ isPendingResult: true }, () => "Shared Inputs")
+                  .with({ storeMode: "shared-result" }, () => "Shared Inputs")
                   .otherwise(() => "French Mortgage Inputs")}
               </CardTitle>
               <CardDescription>
-                {match(storeMode)
+                {match({ storeMode, isPendingResult, hydrated })
                   .with(
-                    "shared-result",
+                    { storeMode: "shared-result" },
                     () =>
                       "These values came from a shared result and cannot be edited in place.",
                   )
@@ -274,14 +317,15 @@ const CalculatorPage = ({
                   inputMode="decimal"
                   value={displayedEarValue}
                   onChange={(event) => store.setEar(event.currentTarget.value)}
-                  placeholder={match(isPaymentDriven)
-                    .with(true, () => "Calculated automatically")
+                  placeholder={match({ isPaymentDriven, isPendingResult })
+                    .with({ isPendingResult: true }, () => "Loading shared result")
+                    .with({ isPaymentDriven: true }, () => "Calculated automatically")
                     .otherwise(() => "0.12")}
                   disabled={isReadonly || isPaymentDriven}
                   readOnly={isReadonly}
                 />
                 <p className="field-note">
-                  {match({ isReadonly, isPaymentDriven })
+                  {match({ isReadonly, isPaymentDriven, isPendingResult })
                     .with({ isReadonly: true }, () => READONLY_MESSAGE)
                     .with(
                       { isPaymentDriven: true },
@@ -306,8 +350,8 @@ const CalculatorPage = ({
                   readOnly={isReadonly}
                 />
                 <p className="field-note">
-                  {match(isReadonly)
-                    .with(true, () => READONLY_MESSAGE)
+                  {match({ isReadonly, isPendingResult })
+                    .with({ isReadonly: true }, () => READONLY_MESSAGE)
                     .otherwise(
                       () =>
                         "Fill this to switch into payment-driven mode and calculate the EAR dynamically.",
@@ -342,6 +386,26 @@ const CalculatorPage = ({
                     </button>
                   </div>
                 ))
+                .with({ kind: "result", decoded: { kind: "pending" } }, () => (
+                  <div className="result-actions">
+                    <button
+                      type="button"
+                      className="action-button action-button--disabled"
+                      disabled
+                    >
+                      <RotateCcw size={16} />
+                      <span>Start new calculation</span>
+                    </button>
+                    <button
+                      type="button"
+                      className="action-button action-button--disabled"
+                      disabled
+                    >
+                      <PencilLine size={16} />
+                      <span>Edit this result</span>
+                    </button>
+                  </div>
+                ))
                 .otherwise(() => null)}
             </CardContent>
           </Card>
@@ -351,25 +415,32 @@ const CalculatorPage = ({
               <SummaryCard
                 icon={<Wallet />}
                 label="Active payment"
-                value={match(calculation)
-                  .with({ kind: "ready" }, ({ payment }) => formatCurrency(payment))
+                value={match({ calculation, isPendingResult })
+                  .with({ isPendingResult: true }, () => "Loading shared result")
+                  .with({ calculation: { kind: "ready" } }, ({ calculation: ready }) =>
+                    formatCurrency(ready.payment),
+                  )
                   .otherwise(() => "Waiting for valid inputs")}
               />
               <SummaryCard
                 icon={<Percent />}
                 label="Active EAR"
-                value={match(calculation)
-                  .with({ kind: "ready" }, ({ ear }) => formatPercent(ear))
+                value={match({ calculation, isPendingResult })
+                  .with({ isPendingResult: true }, () => "Loading shared result")
+                  .with({ calculation: { kind: "ready" } }, ({ calculation: ready }) =>
+                    formatPercent(ready.ear),
+                  )
                   .otherwise(() => "Waiting for valid inputs")}
               />
               <SummaryCard
                 icon={<Landmark />}
                 label="Repayment horizon"
-                value={match(calculation)
+                value={match({ calculation, isPendingResult })
+                  .with({ isPendingResult: true }, () => "Loading shared result")
                   .with(
-                    { kind: "ready" },
-                    ({ paymentCount, paymentsPerYear }) =>
-                      `${paymentCount} installments at ${paymentsPerYear}/year`,
+                    { calculation: { kind: "ready" } },
+                    ({ calculation: ready }) =>
+                      `${ready.paymentCount} installments at ${ready.paymentsPerYear}/year`,
                   )
                   .otherwise(() => "Waiting for valid inputs")}
               />
@@ -379,76 +450,44 @@ const CalculatorPage = ({
               <CardHeader className="panel-card__header panel-card__header--plain">
                 <CardTitle>Amortization Graph</CardTitle>
                 <CardDescription>
-                  Principal and interest are stacked for each quota, with a final zero point appended for payoff closure.
+                  {match({ hydrated, isPendingResult })
+                    .with(
+                      { isPendingResult: true },
+                      () =>
+                        "The shared result preview is loading. The interactive chart will appear after the URL payload is resolved.",
+                    )
+                    .with(
+                      { hydrated: false },
+                      () =>
+                        "A prerendered chart preview is shown immediately. The interactive chart hydrates right after load.",
+                    )
+                    .otherwise(
+                      () =>
+                        "Principal and interest are stacked for each quota, with a final zero point appended for payoff closure.",
+                    )}
                 </CardDescription>
               </CardHeader>
               <CardContent className="panel-card__content chart-stack">
-                {match(calculation)
-                  .with({ kind: "invalid" }, ({ errors }) => (
+                {match({ calculation, showInteractiveChart, isPendingResult })
+                  .with({ isPendingResult: true }, () => <PendingChartState />)
+                  .with({ calculation: { kind: "invalid" } }, ({ calculation: invalid }) => (
                     <div className="error-box">
                       <p className="error-box__title">The schedule cannot be graphed yet.</p>
                       <ul className="error-box__list">
-                        {errors.map((error) => (
+                        {invalid.errors.map((error) => (
                           <li key={error}>{error}</li>
                         ))}
                       </ul>
                     </div>
                   ))
-                  .with({ kind: "ready" }, (ready) => (
-                    <>
-                      <div className="metrics-grid">
-                        <Metric
-                          label="Loan amount"
-                          value={formatCurrency(ready.loanAmount)}
-                          detail={formatShareOfTotal(ready.loanAmount, ready.totalPaid)}
-                        />
-                        <Metric
-                          label="Total interest"
-                          value={formatCurrency(ready.totalInterest)}
-                          detail={formatShareOfTotal(ready.totalInterest, ready.totalPaid)}
-                        />
-                        <Metric
-                          label="Total paid"
-                          value={formatCurrency(ready.totalPaid)}
-                          detail={`${(ready.totalPaid / ready.loanAmount).toFixed(2)}x principal repaid`}
-                        />
-                      </div>
-
-                      <div className="chart-frame">
-                        <ResponsiveContainer width="100%" height="100%">
-                          <BarChart data={ready.chartRows} barCategoryGap={2}>
-                            <CartesianGrid strokeDasharray="3 3" stroke="#d6d3d1" />
-                            <XAxis dataKey="quotaLabel" stroke="#57534e" tickLine={false} />
-                            <YAxis
-                              stroke="#57534e"
-                              tickFormatter={formatCompactCurrency}
-                              tickLine={false}
-                              axisLine={false}
-                            />
-                            <Tooltip
-                              content={QuotaTooltip}
-                              cursor={{ fill: "rgba(217, 119, 6, 0.08)" }}
-                            />
-                            <Legend />
-                            <Bar
-                              dataKey="principal"
-                              name="Principal"
-                              stackId="payment"
-                              fill="#b45309"
-                              radius={[10, 10, 0, 0]}
-                            />
-                            <Bar
-                              dataKey="interest"
-                              name="Interest"
-                              stackId="payment"
-                              fill="#f59e0b"
-                              radius={[10, 10, 0, 0]}
-                            />
-                          </BarChart>
-                        </ResponsiveContainer>
-                      </div>
-                    </>
-                  ))
+                  .with(
+                    { calculation: { kind: "ready" }, showInteractiveChart: false },
+                    ({ calculation: ready }) => <StaticChartPreview calculation={ready} />,
+                  )
+                  .with(
+                    { calculation: { kind: "ready" }, showInteractiveChart: true },
+                    ({ calculation: ready }) => <InteractiveChart calculation={ready} />,
+                  )
                   .exhaustive()}
               </CardContent>
             </Card>
@@ -465,7 +504,7 @@ const InvalidResultPage = ({
   routeState: {
     kind: "result";
     payload: string | null;
-    decoded: Exclude<Extract<RouteState, { kind: "result" }>["decoded"], { kind: "valid" }>;
+    decoded: Exclude<Extract<RouteState, { kind: "result" }>["decoded"], { kind: "valid" | "pending" }>;
   };
 }) => (
   <main className="app-shell">
@@ -569,6 +608,126 @@ const Metric = ({
   </div>
 );
 
+const InteractiveChart = ({
+  calculation,
+}: {
+  calculation: Extract<
+    ReturnType<LoanStore["useDashboardViewModel"]>["calculation"],
+    { kind: "ready" }
+  >;
+}) => (
+  <>
+    <MetricsRow calculation={calculation} />
+
+    <div className="chart-frame">
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart data={calculation.chartRows} barCategoryGap={2}>
+          <CartesianGrid strokeDasharray="3 3" stroke="#d6d3d1" />
+          <XAxis dataKey="quotaLabel" stroke="#57534e" tickLine={false} />
+          <YAxis
+            stroke="#57534e"
+            tickFormatter={formatCompactCurrency}
+            tickLine={false}
+            axisLine={false}
+          />
+          <Tooltip
+            content={QuotaTooltip}
+            cursor={{ fill: "rgba(217, 119, 6, 0.08)" }}
+          />
+          <Legend />
+          <Bar
+            dataKey="principal"
+            name="Principal"
+            stackId="payment"
+            fill="#b45309"
+            radius={[10, 10, 0, 0]}
+          />
+          <Bar
+            dataKey="interest"
+            name="Interest"
+            stackId="payment"
+            fill="#f59e0b"
+            radius={[10, 10, 0, 0]}
+          />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  </>
+);
+
+const StaticChartPreview = ({
+  calculation,
+}: {
+  calculation: Extract<
+    ReturnType<LoanStore["useDashboardViewModel"]>["calculation"],
+    { kind: "ready" }
+  >;
+}) => {
+  const previewRows = calculation.chartRows.slice(0, 12);
+
+  return (
+    <>
+      <MetricsRow calculation={calculation} />
+
+      <div className="chart-frame chart-frame--static" aria-label="Amortization preview">
+        <div className="static-chart" aria-hidden="true">
+          {previewRows.map((row) => (
+            <div className="static-chart__quota" key={row.quotaLabel}>
+              <div className="static-chart__bar">
+                <div
+                  className="static-chart__segment static-chart__segment--interest"
+                  style={{ height: `${Math.max(0, (row.interest / row.payment) * 100)}%` }}
+                />
+                <div
+                  className="static-chart__segment static-chart__segment--principal"
+                  style={{ height: `${Math.max(0, (row.principal / row.payment) * 100)}%` }}
+                />
+              </div>
+              <span className="static-chart__label">{row.quotaLabel}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+};
+
+const PendingChartState = () => (
+  <div className="pending-state">
+    <p className="pending-state__title">Loading shared amortization result</p>
+    <p className="pending-state__copy">
+      The shared result is loading. The schedule and chart will appear shortly.
+    </p>
+  </div>
+);
+
+const MetricsRow = ({
+  calculation,
+}: {
+  calculation: Extract<
+    ReturnType<LoanStore["useDashboardViewModel"]>["calculation"],
+    { kind: "ready" }
+  >;
+}) => (
+  <div className="metrics-grid">
+    <Metric
+      label="Loan amount"
+      value={formatCurrency(calculation.loanAmount)}
+      detail="Principal"
+    />
+    <Metric
+      label="Total interest"
+      value={formatCurrency(calculation.totalInterest)}
+      detail={`${formatShareOfTotal(calculation.totalInterest, calculation.totalPaid)} of total paid`}
+    />
+    <Metric
+      label="Total paid"
+      value={formatCurrency(calculation.totalPaid)}
+      detail={`${(calculation.totalPaid / calculation.loanAmount).toFixed(2)}x principal repaid`}
+    />
+  </div>
+);
+
 const QuotaTooltip = ({ active, payload, label }: TooltipContentProps<ValueType, NameType>) =>
   match(Boolean(active) && Array.isArray(payload) && payload.length > 0)
     .with(false, () => null)
@@ -605,5 +764,3 @@ const QuotaTooltip = ({ active, payload, label }: TooltipContentProps<ValueType,
         </div>
       );
     });
-
-export const appStore = defaultLoanStore;

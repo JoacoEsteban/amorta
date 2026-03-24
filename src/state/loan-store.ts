@@ -20,6 +20,7 @@ import {
 export type StoreMode =
   | {
       kind: "session";
+      persist: boolean;
     }
   | {
       kind: "shared-result";
@@ -43,11 +44,19 @@ export type LoanStore = {
   replaceValues: (values: LoanFormValues) => void;
 };
 
-const initialValues: LoanFormValues = {
+export const DEFAULT_LOAN_FORM_VALUES: LoanFormValues = {
   loanAmount: "250000",
   years: "30",
   paymentsPerYear: 12,
   ear: "0.12",
+  paymentAmount: "",
+};
+
+export const EMPTY_LOAN_FORM_VALUES: LoanFormValues = {
+  loanAmount: "",
+  years: "",
+  paymentsPerYear: 12,
+  ear: "",
   paymentAmount: "",
 };
 
@@ -73,28 +82,12 @@ const parsePaymentFrequency = (rawValue: string | null): PaymentFrequency =>
     .with(3, () => 3 as const)
     .with(6, () => 6 as const)
     .with(12, () => 12 as const)
-    .otherwise(() => initialValues.paymentsPerYear);
+    .otherwise(() => DEFAULT_LOAN_FORM_VALUES.paymentsPerYear);
 
 const readStoredValue = (key: string, fallbackValue: string): string =>
   match(getStorage())
     .with(null, () => fallbackValue)
     .otherwise((storage) => storage.getItem(key) ?? fallbackValue);
-
-const loadLocalStorageValues = (): LoanFormValues => ({
-  loanAmount: readStoredValue(storageKeys.loanAmount, initialValues.loanAmount),
-  years: readStoredValue(storageKeys.years, initialValues.years),
-  paymentsPerYear: parsePaymentFrequency(
-    readStoredValue(
-      storageKeys.paymentsPerYear,
-      String(initialValues.paymentsPerYear),
-    ),
-  ),
-  ear: readStoredValue(storageKeys.ear, initialValues.ear),
-  paymentAmount: readStoredValue(
-    storageKeys.paymentAmount,
-    initialValues.paymentAmount,
-  ),
-});
 
 const persistValues = (values: LoanFormValues): void => {
   match(getStorage())
@@ -112,6 +105,22 @@ const persistValues = (values: LoanFormValues): void => {
       return null;
     });
 };
+
+export const loadLoanStateFromLocalStorage = (): LoanFormValues => ({
+  loanAmount: readStoredValue(storageKeys.loanAmount, DEFAULT_LOAN_FORM_VALUES.loanAmount),
+  years: readStoredValue(storageKeys.years, DEFAULT_LOAN_FORM_VALUES.years),
+  paymentsPerYear: parsePaymentFrequency(
+    readStoredValue(
+      storageKeys.paymentsPerYear,
+      String(DEFAULT_LOAN_FORM_VALUES.paymentsPerYear),
+    ),
+  ),
+  ear: readStoredValue(storageKeys.ear, DEFAULT_LOAN_FORM_VALUES.ear),
+  paymentAmount: readStoredValue(
+    storageKeys.paymentAmount,
+    DEFAULT_LOAN_FORM_VALUES.paymentAmount,
+  ),
+});
 
 export const saveLoanStateToLocalStorage = (values: LoanFormValues): void => {
   persistValues(values);
@@ -158,12 +167,14 @@ export const createLoanStore = ({
   }).pipe(shareLatest());
 
   values$.subscribe((values) =>
-    match(mode.kind)
-      .with("session", () => {
-        persistValues(values);
+    match(mode)
+      .with({ kind: "session" }, ({ persist }) => {
+        match(persist)
+          .with(true, () => persistValues(values))
+          .otherwise(() => null);
         return null;
       })
-      .with("shared-result", () => null)
+      .with({ kind: "shared-result" }, () => null)
       .exhaustive(),
   );
 
@@ -235,8 +246,3 @@ export const createLoanStore = ({
     },
   };
 };
-
-export const defaultLoanStore = createLoanStore({
-  initialValues: loadLocalStorageValues(),
-  mode: { kind: "session" },
-});

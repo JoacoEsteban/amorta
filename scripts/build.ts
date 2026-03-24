@@ -1,92 +1,47 @@
+import { buildSeoMetadata, resolvePublicSiteUrl } from "../src/domain/seo";
+import { buildPendingResultState, type RouteState } from "../src/domain/share";
+import { renderAppToHtml } from "../src/ssr";
+
 const DIST_DIR = "./dist";
 const STATIC_DIR = "./static";
 const INDEX_PATH = `${DIST_DIR}/index.html`;
+const RESULT_INDEX_PATH = `${DIST_DIR}/result/index.html`;
 const PUBLIC_SITE_URL_PLACEHOLDER = "__PUBLIC_SITE_URL__";
-const JSON_LD_PLACEHOLDER = "__AMORTA_JSONLD__";
-const ASSET_LINKS_PLACEHOLDER = "__AMORTA_ASSET_LINKS__";
-const DEFAULT_PUBLIC_SITE_URL = "https://amorta.example";
 
-const normalizeSiteUrl = (siteUrl: string): string => siteUrl.replace(/\/+$/, "");
-
-const resolvePublicSiteUrl = (rawSiteUrl?: string): string => {
-  const candidate = rawSiteUrl?.trim() ?? "";
-
-  return candidate.length === 0
-    ? DEFAULT_PUBLIC_SITE_URL
-    : (() => {
-        try {
-          return normalizeSiteUrl(new URL(candidate).origin);
-        } catch {
-          return DEFAULT_PUBLIC_SITE_URL;
-        }
-      })();
-};
-
-const buildJsonLd = (siteUrl: string): string =>
-  JSON.stringify([
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: "Amorta",
-      url: `${siteUrl}/`,
-      description:
-        "Amorta is an interactive French amortization calculator with shareable results, payment-to-rate inversion, and a visual principal-versus-interest breakdown.",
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      name: "Amorta",
-      applicationCategory: "FinanceApplication",
-      operatingSystem: "Web",
-      url: `${siteUrl}/`,
-      description:
-        "Amorta is an interactive French amortization calculator with shareable results, payment-to-rate inversion, and a visual principal-versus-interest breakdown.",
-    },
-  ]);
-
-const buildAssetLinks = (): string =>
+const buildSeoHead = ({
+  siteUrl,
+  metadata,
+}: {
+  siteUrl: string;
+  metadata: ReturnType<typeof buildSeoMetadata>;
+}): string =>
   [
-    '<link rel="icon" href="/favicon.svg" type="image/svg+xml" />',
-    '<link rel="manifest" href="/site.webmanifest" />',
-  ].join("\n    ");
-
-const buildSeoHead = (siteUrl: string): string =>
-  [
-    '<meta name="description" content="Amorta is an interactive French amortization calculator with shareable results, payment-to-rate inversion, and a visual principal-versus-interest breakdown." />',
+    `<title>${metadata.title}</title>`,
+    `<meta name="description" content="${metadata.description}" />`,
     '<meta name="keywords" content="french amortization calculator, loan amortization, mortgage calculator, effective annual rate, payment schedule" />',
     '<meta name="robots" content="index,follow" />',
     '<meta name="theme-color" content="#f59e0b" />',
     `<meta name="amorta:site-url" content="${siteUrl}" />`,
-    `<link rel="canonical" href="${siteUrl}/" />`,
-    buildAssetLinks(),
+    `<link rel="canonical" href="${metadata.canonicalUrl}" />`,
+    '<link rel="icon" href="/favicon.svg" type="image/svg+xml" />',
+    '<link rel="manifest" href="/site.webmanifest" />',
     '<meta property="og:type" content="website" />',
     '<meta property="og:site_name" content="Amorta" />',
-    '<meta property="og:title" content="Amorta | French Amortization Calculator" />',
-    '<meta property="og:description" content="Model French-style loan amortization, inspect each quota, and share readonly results with a single URL." />',
-    `<meta property="og:url" content="${siteUrl}/" />`,
-    `<meta property="og:image" content="${siteUrl}/og-image.svg" />`,
+    `<meta property="og:title" content="${metadata.title}" />`,
+    `<meta property="og:description" content="${metadata.description}" />`,
+    `<meta property="og:url" content="${metadata.openGraphUrl}" />`,
+    `<meta property="og:image" content="${metadata.openGraphImageUrl}" />`,
     '<meta name="twitter:card" content="summary_large_image" />',
-    '<meta name="twitter:title" content="Amorta | French Amortization Calculator" />',
-    '<meta name="twitter:description" content="Interactive French amortization calculator with shareable readonly result URLs and payment-to-rate inversion." />',
-    `<meta name="twitter:image" content="${siteUrl}/og-image.svg" />`,
-    `<script id="amorta-jsonld" type="application/ld+json">${buildJsonLd(siteUrl)}</script>`,
+    `<meta name="twitter:title" content="${metadata.title}" />`,
+    `<meta name="twitter:description" content="${metadata.description}" />`,
+    `<meta name="twitter:image" content="${metadata.openGraphImageUrl}" />`,
+    '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8407180754020844" crossorigin="anonymous"></script>',
+    `<script id="amorta-jsonld" type="application/ld+json">${metadata.jsonLd}</script>`,
   ].join("\n    ");
 
 const copyStaticAssets = async (): Promise<void> => {
   await Bun.$`mkdir -p ${DIST_DIR}`;
   await Bun.$`cp -R ${STATIC_DIR}/. ${DIST_DIR}/`;
-};
-
-const patchIndexHtml = async (siteUrl: string): Promise<void> => {
-  const indexHtml = await Bun.file(INDEX_PATH).text();
-  const patchedHtml = indexHtml
-    .replace(/<title>.*?<\/title>/, "<title>Amorta | French Amortization Calculator</title>")
-    .replaceAll(PUBLIC_SITE_URL_PLACEHOLDER, siteUrl)
-    .replace(ASSET_LINKS_PLACEHOLDER, buildAssetLinks())
-    .replace(JSON_LD_PLACEHOLDER, buildJsonLd(siteUrl))
-    .replace("</head>", `    ${buildSeoHead(siteUrl)}\n  </head>`);
-
-  await Bun.write(INDEX_PATH, patchedHtml);
 };
 
 const patchStaticTextFiles = async (siteUrl: string): Promise<void> => {
@@ -105,6 +60,42 @@ const patchStaticTextFiles = async (siteUrl: string): Promise<void> => {
   );
 };
 
+const renderHtmlDocument = ({
+  shellHtml,
+  siteUrl,
+  routeState,
+}: {
+  shellHtml: string;
+  siteUrl: string;
+  routeState: RouteState;
+}): string => {
+  const metadata = buildSeoMetadata({ routeState, siteUrl });
+  const appHtml = renderAppToHtml({
+    initialRouteState: routeState,
+    siteUrl,
+  });
+
+  return shellHtml
+    .replace(/<title>.*?<\/title>/, "")
+    .replace(/__AMORTA_ASSET_LINKS__/g, "")
+    .replace(/__AMORTA_JSONLD__/g, "")
+    .replace(/<meta[^>]+name="description"[^>]*>/, "")
+    .replace(/<meta[^>]+name="keywords"[^>]*>/, "")
+    .replace(/<meta[^>]+name="robots"[^>]*>/, "")
+    .replace(/<meta[^>]+name="theme-color"[^>]*>/, "")
+    .replace(/<meta[^>]+name="amorta:site-url"[^>]*>/, "")
+    .replace(/<meta[^>]+property="og:[^"]+"[^>]*>/g, "")
+    .replace(/<meta[^>]+name="twitter:[^"]+"[^>]*>/g, "")
+    .replace(/<link rel="canonical"[^>]*>/, "")
+    .replace(/<link rel="icon"[^>]*>/, "")
+    .replace(/<link rel="manifest"[^>]*>/, "")
+    .replace(/<script[^>]+googlesyndication[^>]*><\/script>/, "")
+    .replace(/<script id="amorta-jsonld"[^>]*>[\s\S]*?<\/script>/, "")
+    .replace("</head>", `    ${buildSeoHead({ siteUrl, metadata })}\n  </head>`)
+    .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
+    .replaceAll(PUBLIC_SITE_URL_PLACEHOLDER, siteUrl);
+};
+
 await Bun.$`bun build ./index.html --outdir ${DIST_DIR} --public-path /`;
 
 const publicSiteUrl = resolvePublicSiteUrl(
@@ -112,5 +103,20 @@ const publicSiteUrl = resolvePublicSiteUrl(
 );
 
 await copyStaticAssets();
-await patchIndexHtml(publicSiteUrl);
 await patchStaticTextFiles(publicSiteUrl);
+
+const shellHtml = await Bun.file(INDEX_PATH).text();
+const indexHtml = renderHtmlDocument({
+  shellHtml,
+  siteUrl: publicSiteUrl,
+  routeState: { kind: "index" },
+});
+const resultHtml = renderHtmlDocument({
+  shellHtml,
+  siteUrl: publicSiteUrl,
+  routeState: buildPendingResultState(null),
+});
+
+await Bun.write(INDEX_PATH, indexHtml);
+await Bun.$`mkdir -p ${DIST_DIR}/result`;
+await Bun.write(RESULT_INDEX_PATH, resultHtml);
