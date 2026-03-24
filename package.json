@@ -12,6 +12,8 @@
     "prettier": "bun x prettier --write ."
   },
   "dependencies": {
+    "@lingui/core": "^5.9.3",
+    "@lingui/react": "^5.9.3",
     "@react-rxjs/core": "latest",
     "@react-rxjs/utils": "latest",
     "class-variance-authority": "^0.7.1",
@@ -28,6 +30,7 @@
     "typia": "^9.7.2"
   },
   "devDependencies": {
+    "@lingui/macro": "^5.9.3",
     "@tailwindcss/cli": "^4.2.2",
     "@types/bun": "latest",
     "@types/react": "^19.1.12",

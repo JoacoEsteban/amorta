@@ -64,14 +64,17 @@ describe('share codec', () => {
 
 describe('route parsing', () => {
   test('parses the index route', () => {
-    const route = parseRouteState('https://example.com/')
+    const route = parseRouteState('https://example.com/', 'resolved')
 
     expect(route).toEqual({ kind: 'index' })
   })
 
   test('parses a valid result route', () => {
     const payload = buildSharePayload(sampleState)
-    const route = parseRouteState(`https://example.com/result/${payload}`)
+    const route = parseRouteState(
+      `https://example.com/result/${payload}`,
+      'resolved',
+    )
 
     expect(route.kind).toBe('result')
 
@@ -86,7 +89,10 @@ describe('route parsing', () => {
 
   test('parses a valid result route with a trailing slash', () => {
     const payload = buildSharePayload(sampleState)
-    const route = parseRouteState(`https://example.com/result/${payload}/`)
+    const route = parseRouteState(
+      `https://example.com/result/${payload}/`,
+      'resolved',
+    )
 
     match(route)
       .with({ kind: 'result', decoded: { kind: 'valid' } }, ({ decoded }) => {
@@ -98,7 +104,7 @@ describe('route parsing', () => {
   })
 
   test('treats /result without a payload as missing', () => {
-    const route = parseRouteState('https://example.com/result')
+    const route = parseRouteState('https://example.com/result', 'resolved')
 
     match(route)
       .with({ kind: 'result', decoded: { kind: 'missing' } }, ({ decoded }) => {
@@ -113,6 +119,7 @@ describe('route parsing', () => {
     const payload = buildSharePayload(sampleState)
     const route = parseRouteState(
       new URL(`https://example.com/result/${payload}`),
+      'resolved',
     )
 
     match(route)

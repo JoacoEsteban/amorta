@@ -1,6 +1,6 @@
 import index from './index.html'
 import { resolvePublicSiteUrl } from './src/domain/seo'
-import { parseRouteState } from './src/domain/share'
+import { parseRouteState, type RouteState } from './src/domain/share'
 import { renderHtmlDocument } from './src/server/render-document'
 import { tailwind } from './bun-tailwind-plugin'
 
@@ -50,12 +50,15 @@ const staticAssetResponse = (path: string, contentType: string) =>
     },
   })
 
-const renderRouteResponse = (request: Request) =>
-  new Response(
+const renderRouteResponse = (request: Request) => {
+  const url = new URL(request.url)
+  const routeState: RouteState = parseRouteState(url, 'prerender')
+
+  return new Response(
     renderHtmlDocument({
       shellHtml,
       siteUrl: publicSiteUrl,
-      routeState: parseRouteState(new URL(request.url), 'prerender'),
+      routeState,
       assetLinks: devAssetLinks,
       appScript: devAppScript,
     }),
@@ -65,6 +68,7 @@ const renderRouteResponse = (request: Request) =>
       },
     },
   )
+}
 
 const server = Bun.serve({
   port,

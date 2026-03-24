@@ -39,6 +39,7 @@ import { QuotaTable } from './components/quota-table'
 import { Input } from './components/ui/input'
 import { Label } from './components/ui/label'
 import { Select } from './components/ui/select'
+import { LocaleSwitcher } from './components/locale-switcher'
 import {
   clearLoanStateFromLocalStorage,
   type LoanStore,
@@ -264,25 +265,28 @@ const CalculatorPage = ({
                 )}
             </p>
           </div>
-          <button
-            type="button"
-            className={match(shareDisabled)
-              .with(true, () => 'action-button action-button--disabled')
-              .otherwise(() => 'action-button action-button--primary')}
-            onClick={() => copyShareUrl(shareUrl)}
-            disabled={shareDisabled}
-            aria-hidden={shareDisabled}
-            title={match(isPendingResult)
-              .with(
-                true,
-                () =>
-                  'The shared result must finish loading before it can be copied.',
-              )
-              .otherwise(() => undefined)}
-          >
-            <Share2 size={16} />
-            <span>Share result</span>
-          </button>
+          <div className="page-toolbar__actions">
+            <LocaleSwitcher />
+            <button
+              type="button"
+              className={match(shareDisabled)
+                .with(true, () => 'action-button action-button--disabled')
+                .otherwise(() => 'action-button action-button--primary')}
+              onClick={() => copyShareUrl(shareUrl)}
+              disabled={shareDisabled}
+              aria-hidden={shareDisabled}
+              title={match(isPendingResult)
+                .with(
+                  true,
+                  () =>
+                    'The shared result must finish loading before it can be copied.',
+                )
+                .otherwise(() => undefined)}
+            >
+              <Share2 size={16} />
+              <span>Share result</span>
+            </button>
+          </div>
         </div>
 
         <section className="app-grid">
@@ -436,26 +440,6 @@ const CalculatorPage = ({
                         saveLoanStateToLocalStorage(values)
                         navigateTo('/')
                       }}
-                    >
-                      <PencilLine size={16} />
-                      <span>Edit this result</span>
-                    </button>
-                  </div>
-                ))
-                .with({ kind: 'result', decoded: { kind: 'pending' } }, () => (
-                  <div className="result-actions">
-                    <button
-                      type="button"
-                      className="action-button action-button--disabled"
-                      disabled
-                    >
-                      <RotateCcw size={16} />
-                      <span>Start new calculation</span>
-                    </button>
-                    <button
-                      type="button"
-                      className="action-button action-button--disabled"
-                      disabled
                     >
                       <PencilLine size={16} />
                       <span>Edit this result</span>

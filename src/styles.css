@@ -109,6 +109,42 @@ ul {
   color: var(--stone-600);
 }
 
+.page-toolbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.locale-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.625rem;
+  background: var(--surface);
+  border: 1px solid var(--stone-300);
+  border-radius: 8px;
+  color: var(--stone-700);
+}
+
+.locale-switcher__icon {
+  color: var(--stone-500);
+}
+
+.locale-switcher__select {
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.875rem;
+  color: var(--stone-700);
+  cursor: pointer;
+}
+
+.locale-switcher__select:focus {
+  outline: none;
+  color: var(--stone-950);
+}
+
 .app-grid {
   display: grid;
   gap: 1.5rem;

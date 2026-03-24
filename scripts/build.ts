@@ -56,7 +56,7 @@ const publicSiteUrl = resolvePublicSiteUrl(
 await copyStaticAssets()
 await patchStaticTextFiles(publicSiteUrl)
 
-const shellHtml = await Bun.file(INDEX_PATH).text()
+const shellHtml = await Bun.file(`${DIST_DIR}/index.html`).text()
 const indexHtml = renderHtmlDocument({
   shellHtml,
   siteUrl: publicSiteUrl,
@@ -70,6 +70,6 @@ const resultHtml = renderHtmlDocument({
   assetLinks: '',
 })
 
-await Bun.write(INDEX_PATH, indexHtml)
 await Bun.$`mkdir -p ${DIST_DIR}/result`
+await Bun.write(INDEX_PATH, indexHtml)
 await Bun.write(RESULT_INDEX_PATH, resultHtml)
