@@ -8,7 +8,11 @@
   "rewrites": [
     {
       "source": "/result/:path*",
-      "destination": "/"
+      "destination": "/index.html"
+    },
+    {
+      "source": "/result",
+      "destination": "/index.html"
     }
   ]
 }

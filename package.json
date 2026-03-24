@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "bun build ./index.html --outdir dist",
+    "build": "bun build ./index.html --outdir dist --public-path /",
     "dev": "bun --hot index.ts",
     "start:prod": "bun run preview.ts",
     "start": "bun index.ts",
