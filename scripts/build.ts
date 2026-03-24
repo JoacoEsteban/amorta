@@ -1,3 +1,4 @@
+import { tailwind } from '../bun-tailwind-plugin'
 import { resolvePublicSiteUrl } from '../src/domain/seo'
 import { buildPendingResultState, type RouteState } from '../src/domain/share'
 import { renderHtmlDocument } from '../src/server/render-document'
@@ -29,7 +30,24 @@ const patchStaticTextFiles = async (siteUrl: string): Promise<void> => {
   )
 }
 
-await Bun.$`bun build ./index.html --outdir ${DIST_DIR} --public-path /`
+const prodBuild = await Bun.build({
+  minify: true,
+  entrypoints: ['index.html'],
+  naming: '[name].[ext]',
+  outdir: DIST_DIR,
+  splitting: false,
+  target: 'browser',
+  publicPath: '/',
+  plugins: [
+    tailwind({
+      inputFile: 'src/styles.css',
+    }),
+  ],
+})
+
+if (!prodBuild.success) {
+  throw new Error('Failed to build dev browser assets')
+}
 
 const publicSiteUrl = resolvePublicSiteUrl(
   Bun.env.PUBLIC_SITE_URL ?? Bun.env.SITE_URL,

@@ -2,6 +2,7 @@ import index from './index.html'
 import { resolvePublicSiteUrl } from './src/domain/seo'
 import { parseRouteState } from './src/domain/share'
 import { renderHtmlDocument } from './src/server/render-document'
+import { tailwind } from './bun-tailwind-plugin'
 
 const port = Number(Bun.env.PORT ?? '3000')
 const DEV_ASSET_DIR = './.tmp-dev'
@@ -15,6 +16,11 @@ const devBuild = await Bun.build({
   outdir: DEV_ASSET_DIR,
   splitting: false,
   target: 'browser',
+  plugins: [
+    tailwind({
+      inputFile: 'src/styles.css',
+    }),
+  ],
 })
 
 if (!devBuild.success) {
