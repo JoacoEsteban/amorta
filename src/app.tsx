@@ -1,7 +1,14 @@
-import type { ReactNode } from "react";
-import { Landmark, Percent, PencilLine, RotateCcw, Share2, Wallet } from "lucide-react";
-import toast from "react-hot-toast";
-import { P, match } from "ts-pattern";
+import type { ReactNode } from 'react'
+import {
+  Landmark,
+  Percent,
+  PencilLine,
+  RotateCcw,
+  Share2,
+  Wallet,
+} from 'lucide-react'
+import toast from 'react-hot-toast'
+import { P, match } from 'ts-pattern'
 import {
   Bar,
   BarChart,
@@ -12,143 +19,157 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-} from "recharts";
-import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
+} from 'recharts'
+import type {
+  NameType,
+  ValueType,
+} from 'recharts/types/component/DefaultTooltipContent'
 
-import type { PaymentFrequency } from "./domain/amortization";
-import { buildShareUrl, type RouteState } from "./domain/share";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./components/ui/card";
-import { Input } from "./components/ui/input";
-import { Label } from "./components/ui/label";
-import { Select } from "./components/ui/select";
+import type { PaymentFrequency } from './domain/amortization'
+import { buildShareUrl, type RouteState } from './domain/share'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from './components/ui/card'
+import { Input } from './components/ui/input'
+import { Label } from './components/ui/label'
+import { Select } from './components/ui/select'
 import {
   clearLoanStateFromLocalStorage,
   type LoanStore,
   saveLoanStateToLocalStorage,
-} from "./state/loan-store";
+} from './state/loan-store'
 
 const paymentFrequencyOptions: Array<{
-  label: string;
-  value: PaymentFrequency;
+  label: string
+  value: PaymentFrequency
 }> = [
-  { label: "1 payment / year", value: 1 },
-  { label: "3 payments / year", value: 3 },
-  { label: "6 payments / year", value: 6 },
-  { label: "12 payments / year", value: 12 },
-];
+  { label: '1 payment / year', value: 1 },
+  { label: '3 payments / year', value: 3 },
+  { label: '6 payments / year', value: 6 },
+  { label: '12 payments / year', value: 12 },
+]
 
-const currencyFormatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
+const currencyFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
   maximumFractionDigits: 2,
-});
+})
 
-const compactCurrencyFormatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-  notation: "compact",
+const compactCurrencyFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  notation: 'compact',
   maximumFractionDigits: 1,
-});
+})
 
-const percentFormatter = new Intl.NumberFormat("en-US", {
-  style: "percent",
+const percentFormatter = new Intl.NumberFormat('en-US', {
+  style: 'percent',
   maximumFractionDigits: 3,
-});
+})
 
 const READONLY_MESSAGE =
-  "This shared result can't be edited here. Use “Edit this result” to continue from these values.";
+  "This shared result can't be edited here. Use “Edit this result” to continue from these values."
 
 const parseFrequency = (rawValue: string): PaymentFrequency =>
   match(Number(rawValue))
     .with(1, () => 1 as const)
     .with(3, () => 3 as const)
     .with(6, () => 6 as const)
-    .otherwise(() => 12 as const);
+    .otherwise(() => 12 as const)
 
-const formatCurrency = (value: number): string => currencyFormatter.format(value);
+const formatCurrency = (value: number): string =>
+  currencyFormatter.format(value)
 
 const formatCompactCurrency = (value: number): string =>
-  compactCurrencyFormatter.format(value);
+  compactCurrencyFormatter.format(value)
 
-const formatPercent = (value: number): string => percentFormatter.format(value);
+const formatPercent = (value: number): string => percentFormatter.format(value)
 
 const formatShareOfTotal = (value: number, total: number): string =>
   match(total > 0)
     .with(true, () => formatPercent(value / total))
-    .otherwise(() => "0%");
+    .otherwise(() => '0%')
 
 const copyShareUrl = (shareUrl: string): void => {
   const clipboard = match(typeof navigator)
-    .with("undefined", () => null)
-    .otherwise(() => navigator.clipboard);
+    .with('undefined', () => null)
+    .otherwise(() => navigator.clipboard)
 
   match(clipboard)
     .with(null, () => {
-      toast.error("Clipboard access is not available here.");
+      toast.error('Clipboard access is not available here.')
     })
     .otherwise((resolvedClipboard) => {
       resolvedClipboard
         .writeText(shareUrl)
         .then(() => {
-          toast.success("Share URL copied to the clipboard.");
+          toast.success('Share URL copied to the clipboard.')
         })
         .catch(() => {
-          toast.error("The share URL could not be copied.");
-        });
-    });
-};
+          toast.error('The share URL could not be copied.')
+        })
+    })
+}
 
 const navigateTo = (pathname: string): void => {
   match(typeof window)
-    .with("undefined", () => null)
+    .with('undefined', () => null)
     .otherwise(() => {
-      window.location.assign(pathname);
-      return null;
-    });
-};
+      window.location.assign(pathname)
+      return null
+    })
+}
 
 type AppProps =
   | {
-      kind: "calculator";
+      kind: 'calculator'
       routeState:
-        | Extract<RouteState, { kind: "index" }>
+        | Extract<RouteState, { kind: 'index' }>
         | {
-            kind: "result";
-            payload: string | null;
+            kind: 'result'
+            payload: string | null
             decoded: Extract<
               RouteState,
-              { kind: "result" }
-            >["decoded"] extends infer T
-              ? Extract<T, { kind: "pending" | "valid" }>
-              : never;
-          };
-      store: LoanStore;
-      hydrated: boolean;
+              { kind: 'result' }
+            >['decoded'] extends infer T
+              ? Extract<T, { kind: 'pending' | 'valid' }>
+              : never
+          }
+      store: LoanStore
+      hydrated: boolean
     }
   | {
-      kind: "invalid-result";
+      kind: 'invalid-result'
       routeState: {
-        kind: "result";
-        payload: string | null;
+        kind: 'result'
+        payload: string | null
         decoded: Extract<
           RouteState,
-          { kind: "result" }
-        >["decoded"] extends infer T
-          ? Exclude<T, { kind: "valid" | "pending" }>
-          : never;
-      };
-      hydrated: boolean;
-    };
+          { kind: 'result' }
+        >['decoded'] extends infer T
+          ? Exclude<T, { kind: 'valid' | 'pending' }>
+          : never
+      }
+      hydrated: boolean
+    }
 
 export const App = (props: AppProps) =>
   match(props)
-    .with({ kind: "invalid-result" }, ({ routeState }) => (
+    .with({ kind: 'invalid-result' }, ({ routeState }) => (
       <InvalidResultPage routeState={routeState} />
     ))
-    .with({ kind: "calculator" }, ({ routeState, store, hydrated }) => (
-      <CalculatorPage routeState={routeState} store={store} hydrated={hydrated} />
+    .with({ kind: 'calculator' }, ({ routeState, store, hydrated }) => (
+      <CalculatorPage
+        routeState={routeState}
+        store={store}
+        hydrated={hydrated}
+      />
     ))
-    .exhaustive();
+    .exhaustive()
 
 const CalculatorPage = ({
   routeState,
@@ -156,48 +177,48 @@ const CalculatorPage = ({
   hydrated,
 }: {
   routeState:
-    | Extract<RouteState, { kind: "index" }>
+    | Extract<RouteState, { kind: 'index' }>
     | {
-        kind: "result";
-        payload: string | null;
+        kind: 'result'
+        payload: string | null
         decoded: Extract<
           RouteState,
-          { kind: "result" }
-        >["decoded"] extends infer T
-          ? Extract<T, { kind: "pending" | "valid" }>
-          : never;
-      };
-  store: LoanStore;
-  hydrated: boolean;
+          { kind: 'result' }
+        >['decoded'] extends infer T
+          ? Extract<T, { kind: 'pending' | 'valid' }>
+          : never
+      }
+  store: LoanStore
+  hydrated: boolean
 }) => {
-  const {
-    values,
-    mode,
-    calculation,
-    storeMode,
-  } = store.useDashboardViewModel();
-  const isPaymentDriven = mode === "payment";
-  const isReadonly = storeMode === "shared-result";
+  const { values, mode, calculation, storeMode } = store.useDashboardViewModel()
+  const isPaymentDriven = mode === 'payment'
+  const isReadonly = storeMode === 'shared-result'
   const isPendingResult =
-    routeState.kind === "result" && routeState.decoded.kind === "pending";
-  const showInteractiveChart = hydrated && !isPendingResult;
-  const displayedEarValue = match({ isPaymentDriven, calculation, isPendingResult })
+    routeState.kind === 'result' && routeState.decoded.kind === 'pending'
+  const showInteractiveChart = hydrated && !isPendingResult
+  const displayedEarValue = match({
+    isPaymentDriven,
+    calculation,
+    isPendingResult,
+  })
     .with(
       {
         isPaymentDriven: true,
         isPendingResult: false,
-        calculation: { kind: "ready" },
+        calculation: { kind: 'ready' },
       },
-      ({ calculation: readyCalculation }) => formatPercent(readyCalculation.ear),
+      ({ calculation: readyCalculation }) =>
+        formatPercent(readyCalculation.ear),
     )
-    .with({ isPaymentDriven: true }, () => "")
-    .otherwise(() => values.ear);
+    .with({ isPaymentDriven: true }, () => '')
+    .otherwise(() => values.ear)
 
   const shareUrl = match(typeof window)
-    .with("undefined", () => "")
-    .otherwise(() => buildShareUrl(store.getValues(), window.location));
+    .with('undefined', () => '')
+    .otherwise(() => buildShareUrl(store.getValues(), window.location))
 
-  const shareDisabled = !hydrated || isPendingResult;
+  const shareDisabled = !hydrated || isPendingResult
 
   return (
     <main className="app-shell">
@@ -206,38 +227,45 @@ const CalculatorPage = ({
           <div className="page-toolbar__copy">
             <p className="page-kicker">
               {match({ storeMode, isPendingResult })
-                .with({ isPendingResult: true }, () => "Shared Result")
-                .with({ storeMode: "shared-result" }, () => "Shared Result")
-                .otherwise(() => "Live Calculator")}
+                .with({ isPendingResult: true }, () => 'Shared Result')
+                .with({ storeMode: 'shared-result' }, () => 'Shared Result')
+                .otherwise(() => 'Live Calculator')}
             </p>
             <h1 className="page-title">
               {match({ storeMode, isPendingResult })
-                .with({ storeMode: "shared-result" }, () => "Shared French Amortization Result")
-                .otherwise(() => "French Amortization Calculator")}
+                .with(
+                  { storeMode: 'shared-result' },
+                  () => 'Shared French Amortization Result',
+                )
+                .otherwise(() => 'French Amortization Calculator')}
             </h1>
             <p className="page-summary">
               {match({ storeMode, isPendingResult })
                 .with(
-                  { storeMode: "shared-result" },
+                  { storeMode: 'shared-result' },
                   () =>
-                    "Review the loan schedule, compare principal and interest for each quota, and copy the shared result URL.",
+                    'Review the loan schedule, compare principal and interest for each quota, and copy the shared result URL.',
                 )
                 .otherwise(
                   () =>
-                    "Model a French-style loan, invert a payment into its effective annual rate, and inspect the amortization schedule visually.",
+                    'Model a French-style loan, invert a payment into its effective annual rate, and inspect the amortization schedule visually.',
                 )}
             </p>
           </div>
           <button
             type="button"
             className={match(shareDisabled)
-              .with(true, () => "action-button action-button--disabled")
-              .otherwise(() => "action-button action-button--primary")}
+              .with(true, () => 'action-button action-button--disabled')
+              .otherwise(() => 'action-button action-button--primary')}
             onClick={() => copyShareUrl(shareUrl)}
             disabled={shareDisabled}
             aria-hidden={shareDisabled}
             title={match(isPendingResult)
-              .with(true, () => "The shared result must finish loading before it can be copied.")
+              .with(
+                true,
+                () =>
+                  'The shared result must finish loading before it can be copied.',
+              )
               .otherwise(() => undefined)}
           >
             <Share2 size={16} />
@@ -250,20 +278,20 @@ const CalculatorPage = ({
             <CardHeader className="panel-card__header panel-card__header--accent">
               <CardTitle>
                 {match({ storeMode, isPendingResult })
-                  .with({ isPendingResult: true }, () => "Shared Inputs")
-                  .with({ storeMode: "shared-result" }, () => "Shared Inputs")
-                  .otherwise(() => "French Mortgage Inputs")}
+                  .with({ isPendingResult: true }, () => 'Shared Inputs')
+                  .with({ storeMode: 'shared-result' }, () => 'Shared Inputs')
+                  .otherwise(() => 'French Mortgage Inputs')}
               </CardTitle>
               <CardDescription>
                 {match({ storeMode, isPendingResult, hydrated })
                   .with(
-                    { storeMode: "shared-result" },
+                    { storeMode: 'shared-result' },
                     () =>
-                      "These values came from a shared result and cannot be edited in place.",
+                      'These values came from a shared result and cannot be edited in place.',
                   )
                   .otherwise(
                     () =>
-                      "Change any value and the amortization schedule recomputes immediately.",
+                      'Change any value and the amortization schedule recomputes immediately.',
                   )}
               </CardDescription>
             </CardHeader>
@@ -274,7 +302,9 @@ const CalculatorPage = ({
                   id="loan-amount"
                   inputMode="decimal"
                   value={values.loanAmount}
-                  onChange={(event) => store.setLoanAmount(event.currentTarget.value)}
+                  onChange={(event) =>
+                    store.setLoanAmount(event.currentTarget.value)
+                  }
                   placeholder="250000"
                   readOnly={isReadonly}
                 />
@@ -286,7 +316,9 @@ const CalculatorPage = ({
                   id="years"
                   inputMode="decimal"
                   value={values.years}
-                  onChange={(event) => store.setYears(event.currentTarget.value)}
+                  onChange={(event) =>
+                    store.setYears(event.currentTarget.value)
+                  }
                   placeholder="30"
                   readOnly={isReadonly}
                 />
@@ -298,7 +330,9 @@ const CalculatorPage = ({
                   id="payments-per-year"
                   value={String(values.paymentsPerYear)}
                   onChange={(event) =>
-                    store.setPaymentsPerYear(parseFrequency(event.currentTarget.value))
+                    store.setPaymentsPerYear(
+                      parseFrequency(event.currentTarget.value),
+                    )
                   }
                   disabled={isReadonly}
                 >
@@ -318,9 +352,15 @@ const CalculatorPage = ({
                   value={displayedEarValue}
                   onChange={(event) => store.setEar(event.currentTarget.value)}
                   placeholder={match({ isPaymentDriven, isPendingResult })
-                    .with({ isPendingResult: true }, () => "Loading shared result")
-                    .with({ isPaymentDriven: true }, () => "Calculated automatically")
-                    .otherwise(() => "0.12")}
+                    .with(
+                      { isPendingResult: true },
+                      () => 'Loading shared result',
+                    )
+                    .with(
+                      { isPaymentDriven: true },
+                      () => 'Calculated automatically',
+                    )
+                    .otherwise(() => '0.12')}
                   disabled={isReadonly || isPaymentDriven}
                   readOnly={isReadonly}
                 />
@@ -330,22 +370,26 @@ const CalculatorPage = ({
                     .with(
                       { isPaymentDriven: true },
                       () =>
-                        "Disabled while a payment amount is provided. The app derives EAR from that payment.",
+                        'Disabled while a payment amount is provided. The app derives EAR from that payment.',
                     )
                     .otherwise(
                       () =>
-                        "Use decimal format. Example: 0.12 means a 12% effective annual rate.",
+                        'Use decimal format. Example: 0.12 means a 12% effective annual rate.',
                     )}
                 </p>
               </FieldShell>
 
               <FieldShell readonly={isReadonly}>
-                <Label htmlFor="payment-amount">Payment amount (optional override)</Label>
+                <Label htmlFor="payment-amount">
+                  Payment amount (optional override)
+                </Label>
                 <Input
                   id="payment-amount"
                   inputMode="decimal"
                   value={values.paymentAmount}
-                  onChange={(event) => store.setPaymentAmount(event.currentTarget.value)}
+                  onChange={(event) =>
+                    store.setPaymentAmount(event.currentTarget.value)
+                  }
                   placeholder="Leave blank to derive payment"
                   readOnly={isReadonly}
                 />
@@ -354,20 +398,20 @@ const CalculatorPage = ({
                     .with({ isReadonly: true }, () => READONLY_MESSAGE)
                     .otherwise(
                       () =>
-                        "Fill this to switch into payment-driven mode and calculate the EAR dynamically.",
+                        'Fill this to switch into payment-driven mode and calculate the EAR dynamically.',
                     )}
                 </p>
               </FieldShell>
 
               {match(routeState)
-                .with({ kind: "result", decoded: { kind: "valid" } }, () => (
+                .with({ kind: 'result', decoded: { kind: 'valid' } }, () => (
                   <div className="result-actions">
                     <button
                       type="button"
                       className="action-button action-button--secondary"
                       onClick={() => {
-                        clearLoanStateFromLocalStorage();
-                        navigateTo("/");
+                        clearLoanStateFromLocalStorage()
+                        navigateTo('/')
                       }}
                     >
                       <RotateCcw size={16} />
@@ -377,8 +421,8 @@ const CalculatorPage = ({
                       type="button"
                       className="action-button action-button--primary"
                       onClick={() => {
-                        saveLoanStateToLocalStorage(values);
-                        navigateTo("/");
+                        saveLoanStateToLocalStorage(values)
+                        navigateTo('/')
                       }}
                     >
                       <PencilLine size={16} />
@@ -386,7 +430,7 @@ const CalculatorPage = ({
                     </button>
                   </div>
                 ))
-                .with({ kind: "result", decoded: { kind: "pending" } }, () => (
+                .with({ kind: 'result', decoded: { kind: 'pending' } }, () => (
                   <div className="result-actions">
                     <button
                       type="button"
@@ -416,37 +460,48 @@ const CalculatorPage = ({
                 icon={<Wallet />}
                 label="Active payment"
                 value={match({ calculation, isPendingResult })
-                  .with({ isPendingResult: true }, () => "Loading shared result")
-                  .with({ calculation: { kind: "ready" } }, ({ calculation: ready }) =>
-                    formatCurrency(ready.payment),
+                  .with(
+                    { isPendingResult: true },
+                    () => 'Loading shared result',
                   )
-                  .otherwise(() => "Waiting for valid inputs")}
+                  .with(
+                    { calculation: { kind: 'ready' } },
+                    ({ calculation: ready }) => formatCurrency(ready.payment),
+                  )
+                  .otherwise(() => 'Waiting for valid inputs')}
               />
               <SummaryCard
                 icon={<Percent />}
                 label="Active EAR"
                 value={match({ calculation, isPendingResult })
-                  .with({ isPendingResult: true }, () => "Loading shared result")
-                  .with({ calculation: { kind: "ready" } }, ({ calculation: ready }) =>
-                    formatPercent(ready.ear),
+                  .with(
+                    { isPendingResult: true },
+                    () => 'Loading shared result',
                   )
-                  .otherwise(() => "Waiting for valid inputs")}
+                  .with(
+                    { calculation: { kind: 'ready' } },
+                    ({ calculation: ready }) => formatPercent(ready.ear),
+                  )
+                  .otherwise(() => 'Waiting for valid inputs')}
               />
               <SummaryCard
                 icon={<Landmark />}
                 label="Repayment horizon"
                 value={match({ calculation, isPendingResult })
-                  .with({ isPendingResult: true }, () => "Loading shared result")
                   .with(
-                    { calculation: { kind: "ready" } },
+                    { isPendingResult: true },
+                    () => 'Loading shared result',
+                  )
+                  .with(
+                    { calculation: { kind: 'ready' } },
                     ({ calculation: ready }) =>
                       `${ready.paymentCount} installments at ${ready.paymentsPerYear}/year`,
                   )
-                  .otherwise(() => "Waiting for valid inputs")}
+                  .otherwise(() => 'Waiting for valid inputs')}
               />
             </div>
 
-            <Card className="panel-card panel-card--chart">
+            <Card className="panel-card panel-card--chart flex-1">
               <CardHeader className="panel-card__header panel-card__header--plain">
                 <CardTitle>Amortization Graph</CardTitle>
                 <CardDescription>
@@ -454,39 +509,54 @@ const CalculatorPage = ({
                     .with(
                       { isPendingResult: true },
                       () =>
-                        "The shared result preview is loading. The interactive chart will appear after the URL payload is resolved.",
+                        'The shared result preview is loading. The interactive chart will appear after the URL payload is resolved.',
                     )
                     .with(
                       { hydrated: false },
                       () =>
-                        "A prerendered chart preview is shown immediately. The interactive chart hydrates right after load.",
+                        'A prerendered chart preview is shown immediately. The interactive chart hydrates right after load.',
                     )
                     .otherwise(
                       () =>
-                        "Principal and interest are stacked for each quota, with a final zero point appended for payoff closure.",
+                        'Principal and interest are stacked for each quota, with a final zero point appended for payoff closure.',
                     )}
                 </CardDescription>
               </CardHeader>
               <CardContent className="panel-card__content chart-stack">
                 {match({ calculation, showInteractiveChart, isPendingResult })
                   .with({ isPendingResult: true }, () => <PendingChartState />)
-                  .with({ calculation: { kind: "invalid" } }, ({ calculation: invalid }) => (
-                    <div className="error-box">
-                      <p className="error-box__title">The schedule cannot be graphed yet.</p>
-                      <ul className="error-box__list">
-                        {invalid.errors.map((error) => (
-                          <li key={error}>{error}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))
                   .with(
-                    { calculation: { kind: "ready" }, showInteractiveChart: false },
-                    ({ calculation: ready }) => <StaticChartPreview calculation={ready} />,
+                    { calculation: { kind: 'invalid' } },
+                    ({ calculation: invalid }) => (
+                      <div className="error-box">
+                        <p className="error-box__title">
+                          The schedule cannot be graphed yet.
+                        </p>
+                        <ul className="error-box__list">
+                          {invalid.errors.map((error) => (
+                            <li key={error}>{error}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ),
                   )
                   .with(
-                    { calculation: { kind: "ready" }, showInteractiveChart: true },
-                    ({ calculation: ready }) => <InteractiveChart calculation={ready} />,
+                    {
+                      calculation: { kind: 'ready' },
+                      showInteractiveChart: false,
+                    },
+                    ({ calculation: ready }) => (
+                      <StaticChartPreview calculation={ready} />
+                    ),
+                  )
+                  .with(
+                    {
+                      calculation: { kind: 'ready' },
+                      showInteractiveChart: true,
+                    },
+                    ({ calculation: ready }) => (
+                      <InteractiveChart calculation={ready} />
+                    ),
                   )
                   .exhaustive()}
               </CardContent>
@@ -495,17 +565,20 @@ const CalculatorPage = ({
         </section>
       </div>
     </main>
-  );
-};
+  )
+}
 
 const InvalidResultPage = ({
   routeState,
 }: {
   routeState: {
-    kind: "result";
-    payload: string | null;
-    decoded: Exclude<Extract<RouteState, { kind: "result" }>["decoded"], { kind: "valid" | "pending" }>;
-  };
+    kind: 'result'
+    payload: string | null
+    decoded: Exclude<
+      Extract<RouteState, { kind: 'result' }>['decoded'],
+      { kind: 'valid' | 'pending' }
+    >
+  }
 }) => (
   <main className="app-shell">
     <div className="app-layout">
@@ -529,8 +602,8 @@ const InvalidResultPage = ({
         <CardHeader className="panel-card__header panel-card__header--plain">
           <CardTitle>
             {match(routeState.decoded.kind)
-              .with("missing", () => "No shared result found")
-              .otherwise(() => "This shared result is invalid")}
+              .with('missing', () => 'No shared result found')
+              .otherwise(() => 'This shared result is invalid')}
           </CardTitle>
           <CardDescription>{routeState.decoded.message}</CardDescription>
         </CardHeader>
@@ -538,7 +611,7 @@ const InvalidResultPage = ({
           <button
             type="button"
             className="action-button action-button--primary"
-            onClick={() => navigateTo("/")}
+            onClick={() => navigateTo('/')}
           >
             <RotateCcw size={16} />
             <span>Open calculator</span>
@@ -547,35 +620,35 @@ const InvalidResultPage = ({
       </Card>
     </div>
   </main>
-);
+)
 
 const FieldShell = ({
   children,
   readonly,
 }: {
-  children: ReactNode;
-  readonly: boolean;
+  children: ReactNode
+  readonly: boolean
 }) => (
   <div
     className={match(readonly)
-      .with(true, () => "field-group field-group--readonly")
-      .otherwise(() => "field-group")}
+      .with(true, () => 'field-group field-group--readonly')
+      .otherwise(() => 'field-group')}
     title={match(readonly)
       .with(true, () => READONLY_MESSAGE)
       .otherwise(() => undefined)}
   >
     {children}
   </div>
-);
+)
 
 const SummaryCard = ({
   icon,
   label,
   value,
 }: {
-  icon: ReactNode;
-  label: string;
-  value: string;
+  icon: ReactNode
+  label: string
+  value: string
 }) => (
   <Card className="summary-card">
     <CardContent className="summary-card__content">
@@ -586,16 +659,16 @@ const SummaryCard = ({
       </div>
     </CardContent>
   </Card>
-);
+)
 
 const Metric = ({
   label,
   value,
   detail,
 }: {
-  label: string;
-  value: string;
-  detail?: string;
+  label: string
+  value: string
+  detail?: string
 }) => (
   <div className="metric-card">
     <p className="metric-label">{label}</p>
@@ -606,15 +679,15 @@ const Metric = ({
         <p className="metric-detail">{resolvedDetail}</p>
       ))}
   </div>
-);
+)
 
 const InteractiveChart = ({
   calculation,
 }: {
   calculation: Extract<
-    ReturnType<LoanStore["useDashboardViewModel"]>["calculation"],
-    { kind: "ready" }
-  >;
+    ReturnType<LoanStore['useDashboardViewModel']>['calculation'],
+    { kind: 'ready' }
+  >
 }) => (
   <>
     <MetricsRow calculation={calculation} />
@@ -632,7 +705,7 @@ const InteractiveChart = ({
           />
           <Tooltip
             content={QuotaTooltip}
-            cursor={{ fill: "rgba(217, 119, 6, 0.08)" }}
+            cursor={{ fill: 'rgba(217, 119, 6, 0.08)' }}
           />
           <Legend />
           <Bar
@@ -653,34 +726,41 @@ const InteractiveChart = ({
       </ResponsiveContainer>
     </div>
   </>
-);
+)
 
 const StaticChartPreview = ({
   calculation,
 }: {
   calculation: Extract<
-    ReturnType<LoanStore["useDashboardViewModel"]>["calculation"],
-    { kind: "ready" }
-  >;
+    ReturnType<LoanStore['useDashboardViewModel']>['calculation'],
+    { kind: 'ready' }
+  >
 }) => {
-  const previewRows = calculation.chartRows.slice(0, 12);
+  const previewRows = calculation.chartRows.slice(0, 12)
 
   return (
     <>
       <MetricsRow calculation={calculation} />
 
-      <div className="chart-frame chart-frame--static" aria-label="Amortization preview">
+      <div
+        className="chart-frame chart-frame--static"
+        aria-label="Amortization preview"
+      >
         <div className="static-chart" aria-hidden="true">
           {previewRows.map((row) => (
             <div className="static-chart__quota" key={row.quotaLabel}>
               <div className="static-chart__bar">
                 <div
                   className="static-chart__segment static-chart__segment--interest"
-                  style={{ height: `${Math.max(0, (row.interest / row.payment) * 100)}%` }}
+                  style={{
+                    height: `${Math.max(0, (row.interest / row.payment) * 100)}%`,
+                  }}
                 />
                 <div
                   className="static-chart__segment static-chart__segment--principal"
-                  style={{ height: `${Math.max(0, (row.principal / row.payment) * 100)}%` }}
+                  style={{
+                    height: `${Math.max(0, (row.principal / row.payment) * 100)}%`,
+                  }}
                 />
               </div>
               <span className="static-chart__label">{row.quotaLabel}</span>
@@ -689,8 +769,8 @@ const StaticChartPreview = ({
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
 const PendingChartState = () => (
   <div className="pending-state">
@@ -699,15 +779,15 @@ const PendingChartState = () => (
       The shared result is loading. The schedule and chart will appear shortly.
     </p>
   </div>
-);
+)
 
 const MetricsRow = ({
   calculation,
 }: {
   calculation: Extract<
-    ReturnType<LoanStore["useDashboardViewModel"]>["calculation"],
-    { kind: "ready" }
-  >;
+    ReturnType<LoanStore['useDashboardViewModel']>['calculation'],
+    { kind: 'ready' }
+  >
 }) => (
   <div className="metrics-grid">
     <Metric
@@ -726,23 +806,27 @@ const MetricsRow = ({
       detail={`${(calculation.totalPaid / calculation.loanAmount).toFixed(2)}x principal repaid`}
     />
   </div>
-);
+)
 
-const QuotaTooltip = ({ active, payload, label }: TooltipContentProps<ValueType, NameType>) =>
+const QuotaTooltip = ({
+  active,
+  payload,
+  label,
+}: TooltipContentProps<ValueType, NameType>) =>
   match(Boolean(active) && Array.isArray(payload) && payload.length > 0)
     .with(false, () => null)
     .otherwise(() => {
       const row = payload?.[0]?.payload as
         | {
-            payment?: number;
-            principal?: number;
-            interest?: number;
+            payment?: number
+            principal?: number
+            interest?: number
           }
-        | undefined;
+        | undefined
 
-      const payment = Number(row?.payment ?? 0);
-      const principal = Number(row?.principal ?? 0);
-      const interest = Number(row?.interest ?? 0);
+      const payment = Number(row?.payment ?? 0)
+      const principal = Number(row?.principal ?? 0)
+      const interest = Number(row?.interest ?? 0)
 
       return (
         <div className="chart-tooltip">
@@ -762,5 +846,5 @@ const QuotaTooltip = ({ active, payload, label }: TooltipContentProps<ValueType,
             </div>
           </div>
         </div>
-      );
-    });
+      )
+    })

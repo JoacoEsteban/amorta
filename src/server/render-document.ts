@@ -1,13 +1,13 @@
-import { buildSeoMetadata } from "../domain/seo";
-import type { RouteState } from "../domain/share";
-import { renderAppToHtml } from "../ssr";
+import { buildSeoMetadata } from '../domain/seo'
+import type { RouteState } from '../domain/share'
+import { renderAppToHtml } from '../ssr'
 
 const buildSeoHead = ({
   siteUrl,
   metadata,
 }: {
-  siteUrl: string;
-  metadata: ReturnType<typeof buildSeoMetadata>;
+  siteUrl: string
+  metadata: ReturnType<typeof buildSeoMetadata>
 }): string =>
   [
     `<title>${metadata.title}</title>`,
@@ -31,45 +31,45 @@ const buildSeoHead = ({
     `<meta name="twitter:image" content="${metadata.openGraphImageUrl}" />`,
     '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8407180754020844" crossorigin="anonymous"></script>',
     `<script id="amorta-jsonld" type="application/ld+json">${metadata.jsonLd}</script>`,
-  ].join("\n    ");
+  ].join('\n    ')
 
 export const renderHtmlDocument = ({
   shellHtml,
   siteUrl,
   routeState,
-  assetLinks = "",
-  appScript = "",
+  assetLinks = '',
+  appScript = '',
 }: {
-  shellHtml: string;
-  siteUrl: string;
-  routeState: RouteState;
-  assetLinks?: string;
-  appScript?: string;
+  shellHtml: string
+  siteUrl: string
+  routeState: RouteState
+  assetLinks?: string
+  appScript?: string
 }): string => {
-  const metadata = buildSeoMetadata({ routeState, siteUrl });
+  const metadata = buildSeoMetadata({ routeState, siteUrl })
   const appHtml = renderAppToHtml({
     initialRouteState: routeState,
     siteUrl,
-  });
+  })
 
   return shellHtml
-    .replace(/<title>.*?<\/title>/, "")
+    .replace(/<title>.*?<\/title>/, '')
     .replace(/__AMORTA_ASSET_LINKS__/g, assetLinks)
-    .replace(/__AMORTA_JSONLD__/g, "")
-    .replace(/<meta[^>]+name="description"[^>]*>/, "")
-    .replace(/<meta[^>]+name="keywords"[^>]*>/, "")
-    .replace(/<meta[^>]+name="robots"[^>]*>/, "")
-    .replace(/<meta[^>]+name="theme-color"[^>]*>/, "")
-    .replace(/<meta[^>]+name="amorta:site-url"[^>]*>/, "")
-    .replace(/<meta[^>]+property="og:[^"]+"[^>]*>/g, "")
-    .replace(/<meta[^>]+name="twitter:[^"]+"[^>]*>/g, "")
-    .replace(/<link rel="canonical"[^>]*>/, "")
-    .replace(/<link rel="icon"[^>]*>/, "")
-    .replace(/<link rel="manifest"[^>]*>/, "")
-    .replace(/<script[^>]+googlesyndication[^>]*><\/script>/, "")
-    .replace(/<script id="amorta-jsonld"[^>]*>[\s\S]*?<\/script>/, "")
-    .replace("</head>", `    ${buildSeoHead({ siteUrl, metadata })}\n  </head>`)
+    .replace(/__AMORTA_JSONLD__/g, '')
+    .replace(/<meta[^>]+name="description"[^>]*>/, '')
+    .replace(/<meta[^>]+name="keywords"[^>]*>/, '')
+    .replace(/<meta[^>]+name="robots"[^>]*>/, '')
+    .replace(/<meta[^>]+name="theme-color"[^>]*>/, '')
+    .replace(/<meta[^>]+name="amorta:site-url"[^>]*>/, '')
+    .replace(/<meta[^>]+property="og:[^"]+"[^>]*>/g, '')
+    .replace(/<meta[^>]+name="twitter:[^"]+"[^>]*>/g, '')
+    .replace(/<link rel="canonical"[^>]*>/, '')
+    .replace(/<link rel="icon"[^>]*>/, '')
+    .replace(/<link rel="manifest"[^>]*>/, '')
+    .replace(/<script[^>]+googlesyndication[^>]*><\/script>/, '')
+    .replace(/<script id="amorta-jsonld"[^>]*>[\s\S]*?<\/script>/, '')
+    .replace('</head>', `    ${buildSeoHead({ siteUrl, metadata })}\n  </head>`)
     .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
     .replace('<script type="module" src="/src/main.tsx"></script>', appScript)
-    .replaceAll("__PUBLIC_SITE_URL__", siteUrl);
-};
+    .replaceAll('__PUBLIC_SITE_URL__', siteUrl)
+}

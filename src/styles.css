@@ -1,6 +1,6 @@
 :root {
   color: #1c1917;
-  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-family: 'Avenir Next', 'Segoe UI', sans-serif;
   background: #efe7dc;
   --stone-950: #1c1917;
   --stone-700: #44403c;
@@ -28,8 +28,12 @@ body,
 body {
   margin: 0;
   color: var(--stone-950);
-  background:
-    radial-gradient(circle at top left, rgba(249, 230, 191, 0.95), rgba(244, 236, 224, 0.82) 38%, rgba(232, 219, 198, 0.9) 100%);
+  background: radial-gradient(
+    circle at top left,
+    rgba(249, 230, 191, 0.95),
+    rgba(244, 236, 224, 0.82) 38%,
+    rgba(232, 219, 198, 0.9) 100%
+  );
 }
 
 * {
@@ -92,7 +96,7 @@ ul {
 }
 
 .page-title {
-  font-family: "Iowan Old Style", "Palatino Linotype", serif;
+  font-family: 'Iowan Old Style', 'Palatino Linotype', serif;
   font-size: 2rem;
   line-height: 1.1;
   color: var(--stone-950);
@@ -149,7 +153,11 @@ ul {
 }
 
 .panel-card__header--accent {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(251, 240, 214, 0.88));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.92),
+    rgba(251, 240, 214, 0.88)
+  );
 }
 
 .panel-card__header--plain {
@@ -157,7 +165,7 @@ ul {
 }
 
 .ui-card-title {
-  font-family: "Iowan Old Style", "Palatino Linotype", serif;
+  font-family: 'Iowan Old Style', 'Palatino Linotype', serif;
   font-size: 1.6rem;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -301,7 +309,11 @@ ul {
 
 .summary-card {
   border: 1px solid var(--stone-200);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(255, 247, 231, 0.88));
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.86),
+    rgba(255, 247, 231, 0.88)
+  );
 }
 
 .summary-card__content {
@@ -392,7 +404,11 @@ ul {
   padding: 1rem;
   border: 1px solid var(--stone-200);
   border-radius: 1.75rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(252, 248, 241, 0.88));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(252, 248, 241, 0.88)
+  );
 }
 
 .chart-frame--static {

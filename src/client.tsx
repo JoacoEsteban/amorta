@@ -1,15 +1,18 @@
-import { hydrateRoot } from "react-dom/client";
+import { hydrateRoot } from 'react-dom/client'
 
-import { AppRoot } from "./root";
-import type { RouteState } from "./domain/share";
+import { AppRoot } from './root'
+import type { RouteState } from './domain/share'
 
 export const hydrateApp = ({
   container,
   initialRouteState,
   siteUrl,
 }: {
-  container: HTMLElement;
-  initialRouteState: RouteState;
-  siteUrl: string;
+  container: HTMLElement
+  initialRouteState: RouteState
+  siteUrl: string
 }) =>
-  hydrateRoot(container, <AppRoot initialRouteState={initialRouteState} siteUrl={siteUrl} />);
+  hydrateRoot(
+    container,
+    <AppRoot initialRouteState={initialRouteState} siteUrl={siteUrl} />,
+  )

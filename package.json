@@ -8,7 +8,8 @@
     "dev": "bun --hot index.ts",
     "start:prod": "bun run preview.ts",
     "start": "bun index.ts",
-    "test": "bun test"
+    "test": "bun test",
+    "prettier": "bun x prettier --write ."
   },
   "dependencies": {
     "@react-rxjs/core": "latest",
