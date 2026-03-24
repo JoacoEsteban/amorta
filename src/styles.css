@@ -549,3 +549,94 @@ ul {
     grid-template-columns: 23.75rem minmax(0, 1fr);
   }
 }
+
+.quota-table-container {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.year-section {
+  border: 1px solid var(--stone-200);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+}
+
+.year-section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 140ms ease;
+}
+
+.year-section__header:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.year-section__title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--stone-950);
+}
+
+.year-section__chevron {
+  color: var(--stone-500);
+  transition: transform 200ms ease;
+}
+
+.year-section__chevron--open {
+  transform: rotate(180deg);
+}
+
+.year-section__content {
+  border-top: 1px solid var(--stone-200);
+  padding: 0.75rem;
+  overflow-x: auto;
+}
+
+.quota-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.quota-table__header {
+  padding: 0.6rem 0.75rem;
+  text-align: right;
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--stone-500);
+  border-bottom: 1px solid var(--stone-200);
+}
+
+.quota-table__header:first-child {
+  text-align: center;
+  width: 3.5rem;
+}
+
+.quota-row {
+  transition: background-color 120ms ease;
+}
+
+.quota-row:hover {
+  background: rgba(254, 243, 199, 0.4);
+}
+
+.quota-row__cell {
+  padding: 0.55rem 0.75rem;
+  text-align: right;
+  color: var(--stone-700);
+}
+
+.quota-row__cell--quota {
+  text-align: center;
+  font-weight: 600;
+  color: var(--stone-600);
+}

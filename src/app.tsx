@@ -6,6 +6,7 @@ import {
   RotateCcw,
   Share2,
   Wallet,
+  ChevronsUpDown,
 } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { P, match } from 'ts-pattern'
@@ -34,6 +35,7 @@ import {
   CardHeader,
   CardTitle,
 } from './components/ui/card'
+import { QuotaTable } from './components/quota-table'
 import { Input } from './components/ui/input'
 import { Label } from './components/ui/label'
 import { Select } from './components/ui/select'
@@ -42,6 +44,8 @@ import {
   type LoanStore,
   saveLoanStateToLocalStorage,
 } from './state/loan-store'
+import type { UIStore } from './state/ui-store'
+import { cn } from './lib/utils'
 
 const paymentFrequencyOptions: Array<{
   label: string
@@ -127,6 +131,7 @@ const navigateTo = (pathname: string): void => {
 type AppProps =
   | {
       kind: 'calculator'
+      uiStore: UIStore
       routeState:
         | Extract<RouteState, { kind: 'index' }>
         | {
@@ -162,19 +167,24 @@ export const App = (props: AppProps) =>
     .with({ kind: 'invalid-result' }, ({ routeState }) => (
       <InvalidResultPage routeState={routeState} />
     ))
-    .with({ kind: 'calculator' }, ({ routeState, store, hydrated }) => (
-      <CalculatorPage
-        routeState={routeState}
-        store={store}
-        hydrated={hydrated}
-      />
-    ))
+    .with(
+      { kind: 'calculator' },
+      ({ routeState, store, hydrated, uiStore }) => (
+        <CalculatorPage
+          routeState={routeState}
+          store={store}
+          hydrated={hydrated}
+          uiStore={uiStore}
+        />
+      ),
+    )
     .exhaustive()
 
 const CalculatorPage = ({
   routeState,
   store,
   hydrated,
+  uiStore,
 }: {
   routeState:
     | Extract<RouteState, { kind: 'index' }>
@@ -190,8 +200,10 @@ const CalculatorPage = ({
       }
   store: LoanStore
   hydrated: boolean
+  uiStore: UIStore
 }) => {
   const { values, mode, calculation, storeMode } = store.useDashboardViewModel()
+  const { tableExpanded } = uiStore.useUIViewModel()
   const isPaymentDriven = mode === 'payment'
   const isReadonly = storeMode === 'shared-result'
   const isPendingResult =
@@ -561,6 +573,46 @@ const CalculatorPage = ({
                   .exhaustive()}
               </CardContent>
             </Card>
+
+            {match({ calculation, isPendingResult })
+              .with(
+                { calculation: { kind: 'ready' } },
+                ({ calculation: ready }) => (
+                  <Card className="panel-card panel-card--chart">
+                    <CardHeader
+                      className={cn(
+                        'panel-card__header panel-card__header--plain flex max-md:flex-col gap-3 justify-between',
+                      )}
+                    >
+                      <div>
+                        <CardTitle>Amortization Schedule</CardTitle>
+                        <CardDescription>
+                          Expand each year to view the detailed payment
+                          breakdown.
+                        </CardDescription>
+                      </div>
+
+                      <button
+                        type="button"
+                        className="action-button action-button--primary h-fit"
+                        onClick={() => uiStore.toggleTableExpanded()}
+                      >
+                        <ChevronsUpDown size={16} />
+                        <span>
+                          {tableExpanded ? 'Collapse all' : 'Expand all'}
+                        </span>
+                      </button>
+                    </CardHeader>
+                    <CardContent className="panel-card__content">
+                      <QuotaTable
+                        calculation={ready}
+                        expanded={tableExpanded}
+                      />
+                    </CardContent>
+                  </Card>
+                ),
+              )
+              .otherwise(() => null)}
           </div>
         </section>
       </div>

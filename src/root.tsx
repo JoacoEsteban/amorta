@@ -12,6 +12,7 @@ import {
   loadLoanStateFromLocalStorage,
   type LoanStore,
 } from './state/loan-store'
+import { createUIStore } from './state/ui-store'
 
 type InvalidRouteState = {
   kind: 'result'
@@ -42,6 +43,7 @@ export const AppRoot = ({ initialRouteState, siteUrl }: AppRootProps) => {
       mode: { kind: 'shared-result' },
     }),
   )
+  const [uiStore] = useState(() => createUIStore())
 
   useEffect(() => {
     const resolvedRouteState = parseRouteState(
@@ -82,6 +84,7 @@ export const AppRoot = ({ initialRouteState, siteUrl }: AppRootProps) => {
         routeState={resolvedRouteState}
         store={sessionStore}
         hydrated={hydrated}
+        uiStore={uiStore}
       />
     ))
     .with(
@@ -92,6 +95,7 @@ export const AppRoot = ({ initialRouteState, siteUrl }: AppRootProps) => {
           routeState={resolvedRouteState}
           store={sharedStore}
           hydrated={hydrated}
+          uiStore={uiStore}
         />
       ),
     )
@@ -103,6 +107,7 @@ export const AppRoot = ({ initialRouteState, siteUrl }: AppRootProps) => {
           routeState={resolvedRouteState}
           store={sharedStore}
           hydrated={hydrated}
+          uiStore={uiStore}
         />
       ),
     )
