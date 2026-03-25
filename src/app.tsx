@@ -46,6 +46,11 @@ import {
   saveLoanStateToLocalStorage,
 } from './state/loan-store'
 import type { UIStore } from './state/ui-store'
+import {
+  localeFromPath,
+  buildLocalePath,
+} from './i18n/lingui.config'
+import { locale$ } from './i18n/locale-state'
 import { i18n } from './i18n/index.js'
 import { cn } from './lib/utils'
 
@@ -122,7 +127,9 @@ const navigateTo = (pathname: string): void => {
   match(typeof window)
     .with('undefined', () => null)
     .otherwise(() => {
-      window.location.assign(pathname)
+      const currentLocale = locale$.getValue()
+      const fullPath = buildLocalePath(currentLocale, pathname)
+      window.location.assign(fullPath)
       return null
     })
 }

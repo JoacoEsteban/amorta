@@ -1,6 +1,10 @@
 import { P, match } from 'ts-pattern'
 
 import type { LoanFormValues } from './amortization'
+import {
+  type SupportedLocale,
+  stripLocaleFromPath,
+} from '../i18n/lingui.config'
 import { validateShareableLoanState } from '../typia/generated/shareable-loan-state'
 
 export type ShareableLoanState = LoanFormValues
@@ -26,11 +30,13 @@ export type ShareDecodeResult =
 export type RouteState =
   | {
       kind: 'index'
+      locale: SupportedLocale | null
     }
   | {
       kind: 'result'
       payload: string | null
       decoded: ShareDecodeResult
+      locale: SupportedLocale | null
     }
 
 export type RouteParsePhase = 'prerender' | 'resolved'
@@ -159,6 +165,7 @@ const toUrl = (input: string | URL): URL =>
 
 export const buildPendingResultState = (
   payload: string | null,
+  locale: SupportedLocale | null,
 ): RouteState => ({
   kind: 'result',
   payload,
@@ -166,6 +173,7 @@ export const buildPendingResultState = (
     kind: 'pending',
     message: 'Loading the shared result from the URL.',
   },
+  locale,
 })
 
 export const parseRouteState = (
@@ -173,7 +181,8 @@ export const parseRouteState = (
   phase: RouteParsePhase = 'resolved',
 ): RouteState => {
   const url = toUrl(input)
-  const segments = url.pathname
+  const { locale, strippedPathname } = stripLocaleFromPath(url.pathname)
+  const segments = strippedPathname
     .split('/')
     .map((segment) => segment.trim())
     .filter((segment) => segment.length > 0)
@@ -183,12 +192,13 @@ export const parseRouteState = (
       const payload = normalizePayloadSegment(segments[1] ?? null)
 
       return match(phase)
-        .with('prerender', () => buildPendingResultState(payload))
+        .with('prerender', () => buildPendingResultState(payload, locale))
         .otherwise(() => ({
           kind: 'result' as const,
           payload,
           decoded: decodeSharePayload(payload),
+          locale,
         }))
     })
-    .otherwise(() => ({ kind: 'index' as const }))
+    .otherwise(() => ({ kind: 'index' as const, locale }))
 }

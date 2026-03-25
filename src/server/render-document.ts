@@ -13,18 +13,24 @@ const buildGaScript = (measurementId: string): string =>
         `</script>`,
       ].join('')
 
+import { i18n } from '@lingui/core'
 import { buildSeoMetadata } from '../domain/seo'
+import { SUPPORTED_LOCALES, type SupportedLocale } from '../i18n/lingui.config'
 import type { RouteState } from '../domain/share'
 import { renderAppToHtml } from '../ssr'
 
 const buildSeoHead = ({
   siteUrl,
   metadata,
+  locale,
 }: {
   siteUrl: string
   metadata: ReturnType<typeof buildSeoMetadata>
-}): string =>
-  [
+  locale: SupportedLocale | null
+}): string => {
+  i18n.activate(locale ?? SUPPORTED_LOCALES[0])
+
+  return [
     `<title>${metadata.title}</title>`,
     `<meta name="description" content="${metadata.description}" />`,
     '<meta name="keywords" content="french amortization calculator, loan amortization, mortgage calculator, effective annual rate, payment schedule" />',
@@ -32,6 +38,7 @@ const buildSeoHead = ({
     '<meta name="theme-color" content="#f59e0b" />',
     `<meta name="amorta:site-url" content="${siteUrl}" />`,
     `<link rel="canonical" href="${metadata.canonicalUrl}" />`,
+    metadata.hreflangLinks,
     '<link rel="icon" href="/favicon.svg" type="image/svg+xml" />',
     '<link rel="manifest" href="/site.webmanifest" />',
     '<meta property="og:type" content="website" />',
@@ -48,21 +55,24 @@ const buildSeoHead = ({
     buildGaScript(gaMeasurementId),
     `<script id="amorta-jsonld" type="application/ld+json">${metadata.jsonLd}</script>`,
   ].join('\n    ')
+}
 
 export const renderHtmlDocument = ({
   shellHtml,
   siteUrl,
   routeState,
+  locale,
   assetLinks = '',
   appScript = '',
 }: {
   shellHtml: string
   siteUrl: string
   routeState: RouteState
+  locale: SupportedLocale | null
   assetLinks?: string
   appScript?: string
 }): string => {
-  const metadata = buildSeoMetadata({ routeState, siteUrl })
+  const metadata = buildSeoMetadata({ routeState, siteUrl, locale })
   const appHtml = renderAppToHtml({
     initialRouteState: routeState,
     siteUrl,
@@ -80,12 +90,14 @@ export const renderHtmlDocument = ({
     .replace(/<meta[^>]+property="og:[^"]+"[^>]*>/g, '')
     .replace(/<meta[^>]+name="twitter:[^"]+"[^>]*>/g, '')
     .replace(/<link rel="canonical"[^>]*>/, '')
+    .replace(/<link rel="alternate"[^>]*hreflang[^>]*>/g, '')
     .replace(/<link rel="icon"[^>]*>/, '')
     .replace(/<link rel="manifest"[^>]*>/, '')
     .replace('__AMORTA_GA_SCRIPT__', buildGaScript(gaMeasurementId))
     .replace(/<script[^>]+googlesyndication[^>]*><\/script>/, '')
     .replace(/<script id="amorta-jsonld"[^>]*>[\s\S]*?<\/script>/, '')
-    .replace('</head>', `    ${buildSeoHead({ siteUrl, metadata })}\n  </head>`)
+    .replace('</head>', `    ${buildSeoHead({ siteUrl, metadata, locale })}\n  </head>`)
+    .replace('<html lang="en">', `<html lang="${metadata.htmlLang}">`)
     .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
     .replace('<script type="module" src="/src/main.tsx"></script>', appScript)
     .replaceAll('__PUBLIC_SITE_URL__', siteUrl)

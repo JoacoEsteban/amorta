@@ -66,7 +66,8 @@ describe('route parsing', () => {
   test('parses the index route', () => {
     const route = parseRouteState('https://example.com/', 'resolved')
 
-    expect(route).toEqual({ kind: 'index' })
+    expect(route.kind).toBe('index')
+    expect(route.locale).toBeNull()
   })
 
   test('parses a valid result route', () => {
@@ -145,5 +146,45 @@ describe('route parsing', () => {
       .otherwise(() => {
         throw new Error('Expected a pending prerender route')
       })
+  })
+
+  test('parses locale-prefixed index route', () => {
+    const route = parseRouteState('https://example.com/es-ES', 'resolved')
+
+    expect(route.kind).toBe('index')
+    expect(route.locale).toBe('es-ES')
+  })
+
+  test('parses locale-prefixed result route', () => {
+    const payload = buildSharePayload(sampleState)
+    const route = parseRouteState(
+      `https://example.com/es-ES/result/${payload}`,
+      'resolved',
+    )
+
+    expect(route.kind).toBe('result')
+    expect(route.locale).toBe('es-ES')
+
+    match(route)
+      .with({ kind: 'result', decoded: { kind: 'valid' } }, ({ decoded }) => {
+        expect(decoded.values).toEqual(sampleState)
+      })
+      .otherwise(() => {
+        throw new Error('Expected a valid result route with locale prefix')
+      })
+  })
+
+  test('parses language-only locale prefix', () => {
+    const route = parseRouteState('https://example.com/es', 'resolved')
+
+    expect(route.kind).toBe('index')
+    expect(route.locale).toBe('es-ES')
+  })
+
+  test('treats unknown locale prefix as regular path, does not strip it', () => {
+    const route = parseRouteState('https://example.com/fr', 'resolved')
+
+    expect(route.kind).toBe('index')
+    expect(route.locale).toBeNull()
   })
 })

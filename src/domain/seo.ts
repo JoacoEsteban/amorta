@@ -1,25 +1,22 @@
 import { match } from 'ts-pattern'
 
+import { i18n } from '../i18n/index.js'
+import {
+  SUPPORTED_LOCALES,
+  type SupportedLocale,
+  buildLocalePath,
+} from '../i18n/lingui.config'
 import type { RouteState } from './share'
 
 export const DEFAULT_PUBLIC_SITE_URL = 'https://amorta.example'
 
-const SEO_DESCRIPTION =
-  'Amorta is an interactive French amortization calculator with shareable results, payment-to-rate inversion, and a visual principal-versus-interest breakdown.'
-
-const SHARE_DESCRIPTION =
-  'Review a readonly French amortization result, inspect the quota breakdown, and continue the calculation in Amorta.'
-
-const INVALID_DESCRIPTION =
-  'The requested Amorta shared result is unavailable. Return to the calculator to create or inspect a valid amortization schedule.'
-
-const buildBaseJsonLd = (siteUrl: string) => [
+const buildBaseJsonLd = (siteUrl: string, path: string) => [
   {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Amorta',
     url: `${siteUrl}/`,
-    description: SEO_DESCRIPTION,
+    description: i18n._('seoDescription'),
   },
   {
     '@context': 'https://schema.org',
@@ -28,7 +25,7 @@ const buildBaseJsonLd = (siteUrl: string) => [
     applicationCategory: 'FinanceApplication',
     operatingSystem: 'Web',
     url: `${siteUrl}/`,
-    description: SEO_DESCRIPTION,
+    description: i18n._('seoDescription'),
   },
 ]
 
@@ -39,6 +36,8 @@ export type SeoMetadata = {
   openGraphUrl: string
   openGraphImageUrl: string
   jsonLd: string
+  hreflangLinks: string
+  htmlLang: string
 }
 
 const normalizeSiteUrl = (siteUrl: string): string =>
@@ -72,46 +71,135 @@ export const readPublicSiteUrl = (): string =>
       ?.getAttribute('content'),
   )
 
+const localeToHreflang = (locale: SupportedLocale): string => {
+  const parts = locale.split('-')
+  return (parts[0] ?? locale).toLowerCase()
+}
+
+const buildHreflangLinks = (
+  routePath: string,
+  siteUrl: string,
+  currentLocale: SupportedLocale | null,
+): string => {
+  const seen = new Set<string>()
+  const links: string[] = []
+
+  SUPPORTED_LOCALES.forEach((locale) => {
+    const hreflang = localeToHreflang(locale)
+    if (seen.has(hreflang)) return
+    seen.add(hreflang)
+    const href = `${siteUrl}${buildLocalePath(locale, routePath)}`
+    links.push(
+      `<link rel="alternate" hreflang="${hreflang}" href="${href}" />`,
+    )
+  })
+
+  const defaultHreflang = 'x-default'
+  const defaultLocale = SUPPORTED_LOCALES[0]
+  const defaultLocaleHreflang = localeToHreflang(defaultLocale)
+  const isDefaultLocale = currentLocale === defaultLocale
+
+  links.push(
+    `<link rel="alternate" hreflang="${defaultHreflang}" href="${siteUrl}${buildLocalePath(defaultLocale, routePath)}" />`,
+  )
+
+  if (isDefaultLocale) {
+    links.push(
+      `<link rel="alternate" hreflang="${defaultLocaleHreflang}" href="${siteUrl}${routePath}" />`,
+    )
+  }
+
+  return links.join('\n    ')
+}
+
+const resolveLocale = (
+  locale: SupportedLocale | null,
+): SupportedLocale =>
+  locale ?? SUPPORTED_LOCALES[0]
+
+const resolveCanonicalPath = (
+  routeState: RouteState,
+  siteUrl: string,
+): string => {
+  const normalizedSiteUrl = resolvePublicSiteUrl(siteUrl)
+  const locale = resolveLocale(routeState.locale)
+
+  return match(routeState)
+    .with({ kind: 'index' }, () =>
+      locale === SUPPORTED_LOCALES[0]
+        ? `${normalizedSiteUrl}/`
+        : `${normalizedSiteUrl}${buildLocalePath(locale, '/')}`,
+    )
+    .with({ kind: 'result', decoded: { kind: 'valid' } }, ({ payload }) =>
+      locale === SUPPORTED_LOCALES[0]
+        ? `${normalizedSiteUrl}/result/${payload ?? ''}`
+        : `${normalizedSiteUrl}${buildLocalePath(locale, `/result/${payload ?? ''}`)}`,
+    )
+    .with({ kind: 'result', decoded: { kind: 'pending' } }, () =>
+      locale === SUPPORTED_LOCALES[0]
+        ? `${normalizedSiteUrl}/result/`
+        : `${normalizedSiteUrl}${buildLocalePath(locale, '/result/')}`,
+    )
+    .otherwise(() =>
+      locale === SUPPORTED_LOCALES[0]
+        ? `${normalizedSiteUrl}/`
+        : `${normalizedSiteUrl}${buildLocalePath(locale, '/')}`,
+    )
+}
+
+const resolveSeoTitle = (routeState: RouteState): string =>
+  match(routeState)
+    .with({ kind: 'index' }, () => i18n._('seoTitleIndex'))
+    .with({ kind: 'result', decoded: { kind: 'valid' } }, () =>
+      i18n._('seoTitleResult'),
+    )
+    .with({ kind: 'result', decoded: { kind: 'pending' } }, () =>
+      i18n._('seoTitleResult'),
+    )
+    .otherwise(() => i18n._('seoTitleUnavailable'))
+
+const resolveSeoDescription = (routeState: RouteState): string =>
+  match(routeState)
+    .with({ kind: 'index' }, () => i18n._('seoDescription'))
+    .with({ kind: 'result', decoded: { kind: 'valid' } }, () =>
+      i18n._('seoDescriptionShare'),
+    )
+    .with({ kind: 'result', decoded: { kind: 'pending' } }, () =>
+      i18n._('seoDescriptionShare'),
+    )
+    .otherwise(() => i18n._('seoDescriptionUnavailable'))
+
+const resolveRoutePath = (routeState: RouteState): string =>
+  match(routeState)
+    .with({ kind: 'index' }, () => '/')
+    .with({ kind: 'result', decoded: { kind: 'valid' } }, ({ payload }) =>
+      `/result/${payload ?? ''}`,
+    )
+    .with({ kind: 'result', decoded: { kind: 'pending' } }, () => '/result/')
+    .otherwise(() => '/')
+
 export const buildSeoMetadata = ({
   routeState,
   siteUrl,
+  locale,
 }: {
   routeState: RouteState
   siteUrl: string
+  locale?: SupportedLocale | null
 }): SeoMetadata => {
   const normalizedSiteUrl = resolvePublicSiteUrl(siteUrl)
+  const resolvedLocale = resolveLocale(locale ?? routeState.locale)
+  const canonicalPath = resolveCanonicalPath(routeState, siteUrl)
+  const routePath = resolveRoutePath(routeState)
 
-  return match(routeState)
-    .with({ kind: 'index' }, () => ({
-      title: 'Amorta | French Amortization Calculator',
-      description: SEO_DESCRIPTION,
-      canonicalUrl: `${normalizedSiteUrl}/`,
-      openGraphUrl: `${normalizedSiteUrl}/`,
-      openGraphImageUrl: `${normalizedSiteUrl}/og-image.svg`,
-      jsonLd: JSON.stringify(buildBaseJsonLd(normalizedSiteUrl)),
-    }))
-    .with({ kind: 'result', decoded: { kind: 'valid' } }, ({ payload }) => ({
-      title: 'Shared Result | Amorta',
-      description: SHARE_DESCRIPTION,
-      canonicalUrl: `${normalizedSiteUrl}/result/${payload ?? ''}`,
-      openGraphUrl: `${normalizedSiteUrl}/result/${payload ?? ''}`,
-      openGraphImageUrl: `${normalizedSiteUrl}/og-image.svg`,
-      jsonLd: JSON.stringify(buildBaseJsonLd(normalizedSiteUrl)),
-    }))
-    .with({ kind: 'result', decoded: { kind: 'pending' } }, () => ({
-      title: 'Shared Result | Amorta',
-      description: SHARE_DESCRIPTION,
-      canonicalUrl: `${normalizedSiteUrl}/result/`,
-      openGraphUrl: `${normalizedSiteUrl}/result/`,
-      openGraphImageUrl: `${normalizedSiteUrl}/og-image.svg`,
-      jsonLd: JSON.stringify(buildBaseJsonLd(normalizedSiteUrl)),
-    }))
-    .otherwise(() => ({
-      title: 'Shared Result Unavailable | Amorta',
-      description: INVALID_DESCRIPTION,
-      canonicalUrl: `${normalizedSiteUrl}/`,
-      openGraphUrl: `${normalizedSiteUrl}/`,
-      openGraphImageUrl: `${normalizedSiteUrl}/og-image.svg`,
-      jsonLd: JSON.stringify(buildBaseJsonLd(normalizedSiteUrl)),
-    }))
+  return {
+    title: resolveSeoTitle(routeState),
+    description: resolveSeoDescription(routeState),
+    canonicalUrl: canonicalPath,
+    openGraphUrl: canonicalPath,
+    openGraphImageUrl: `${normalizedSiteUrl}/og-image.svg`,
+    jsonLd: JSON.stringify(buildBaseJsonLd(normalizedSiteUrl, routePath)),
+    hreflangLinks: buildHreflangLinks(routePath, normalizedSiteUrl, resolvedLocale),
+    htmlLang: resolvedLocale.toLowerCase(),
+  }
 }
