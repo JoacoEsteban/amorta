@@ -280,7 +280,7 @@ const CalculatorPage = ({
         </div>
 
         <section className="app-grid">
-          <Card className="panel-card panel-card--inputs">
+          <Card className="panel-card panel-card--inputs h-fit xl:sticky top-6">
             <CardHeader className="panel-card__header panel-card__header--accent">
               <CardTitle>
                 {match({ storeMode, isPendingResult })
@@ -404,7 +404,7 @@ const CalculatorPage = ({
 
               {match(routeState)
                 .with({ kind: 'result', decoded: { kind: 'valid' } }, () => (
-                  <div className="result-actions">
+                  <div className="flex flex-col gap-3">
                     <button
                       type="button"
                       className="action-button action-button--secondary"
