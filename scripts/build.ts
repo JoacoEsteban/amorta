@@ -1,12 +1,17 @@
 import { tailwind } from '../bun-tailwind-plugin'
 import { resolvePublicSiteUrl } from '../src/domain/seo'
-import { buildPendingResultState, type RouteState } from '../src/domain/share'
+import {
+  buildPendingResultState,
+  type RouteState,
+} from '../src/domain/share'
 import { renderHtmlDocument } from '../src/server/render-document'
+import {
+  SUPPORTED_LOCALES,
+  type SupportedLocale,
+} from '../src/i18n/lingui.config'
 
 const DIST_DIR = './dist'
 const STATIC_DIR = './static'
-const INDEX_PATH = `${DIST_DIR}/index.html`
-const RESULT_INDEX_PATH = `${DIST_DIR}/result/index.html`
 const PUBLIC_SITE_URL_PLACEHOLDER = '__PUBLIC_SITE_URL__'
 
 const copyStaticAssets = async (): Promise<void> => {
@@ -46,7 +51,7 @@ const prodBuild = await Bun.build({
 })
 
 if (!prodBuild.success) {
-  throw new Error('Failed to build dev browser assets')
+  throw new Error('Failed to build browser assets')
 }
 
 const publicSiteUrl = resolvePublicSiteUrl(
@@ -57,19 +62,42 @@ await copyStaticAssets()
 await patchStaticTextFiles(publicSiteUrl)
 
 const shellHtml = await Bun.file(`${DIST_DIR}/index.html`).text()
-const indexHtml = renderHtmlDocument({
-  shellHtml,
-  siteUrl: publicSiteUrl,
-  routeState: { kind: 'index' },
-  assetLinks: '',
-})
-const resultHtml = renderHtmlDocument({
-  shellHtml,
-  siteUrl: publicSiteUrl,
-  routeState: buildPendingResultState(null),
-  assetLinks: '',
-})
 
-await Bun.$`mkdir -p ${DIST_DIR}/result`
-await Bun.write(INDEX_PATH, indexHtml)
-await Bun.write(RESULT_INDEX_PATH, resultHtml)
+const writeLocale = async (
+  locale: SupportedLocale,
+): Promise<void> => {
+  const dir = `${DIST_DIR}/${locale}`
+  await Bun.$`mkdir -p ${dir}`
+
+  const indexHtml = renderHtmlDocument({
+    shellHtml,
+    siteUrl: publicSiteUrl,
+    routeState: { kind: 'index', locale },
+    locale,
+    assetLinks: '',
+  })
+
+  const resultHtml = renderHtmlDocument({
+    shellHtml,
+    siteUrl: publicSiteUrl,
+    routeState: buildPendingResultState(null, locale),
+    locale,
+    assetLinks: '',
+  })
+
+  await Bun.$`mkdir -p ${dir}/result`
+  await Bun.write(`${dir}/index.html`, indexHtml)
+  await Bun.write(`${dir}/result/index.html`, resultHtml, { createPath: true })
+}
+
+const defaultLocale = SUPPORTED_LOCALES[0]
+
+for (const locale of SUPPORTED_LOCALES) {
+  await writeLocale(locale)
+  console.log(`Wrote dist/${locale}/`)
+}
+
+await Bun.$`mkdir ${DIST_DIR}/result`
+await Bun.$`cp ${DIST_DIR}/${defaultLocale}/index.html ${DIST_DIR}/index.html`
+await Bun.$`cp ${DIST_DIR}/${defaultLocale}/result/index.html ${DIST_DIR}/result/index.html`
+console.log(`Wrote dist/index.html and dist/result/index.html`)
