@@ -1,11 +1,13 @@
 import { i18n } from '@lingui/core'
 import { enUSMessages } from './locales/en-US/messages.js'
+import { enGBMessages } from './locales/en-GB/messages.js'
 import { esESMessages } from './locales/es-ES/messages.js'
 import { esARMessages } from './locales/es-AR/messages.js'
 import { DEFAULT_LOCALE } from './lingui.config'
 
 i18n.load({
   'en-US': enUSMessages,
+  'en-GB': enGBMessages,
   'es-ES': esESMessages,
   'es-AR': esARMessages,
 })
