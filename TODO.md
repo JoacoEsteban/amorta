@@ -8,7 +8,7 @@
   - `<html lang="...">` and `<link rel="alternate" hreflang="...">` auto-generated per page
   - SEO title/description pulled from i18n keys (`seoTitleIndex`, `seoDescription`, etc.)
   - Locale resolved from URL path on both server and client; falls back to stored/browser/default
-  - LocaleSwitcher navigates to locale-prefixed URL; internal links preserve current locale
+  - LocaleSwitcher sets locale and reloads (server re-renders with correct locale from URL prefix)
 
 - [ ] **Informational landing content**
   - Add a brief explanatory section on the index page (e.g. "How French amortization works", key terminology)
