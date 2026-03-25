@@ -39,6 +39,15 @@ export type RouteState =
       decoded: ShareDecodeResult
       locale: SupportedLocale | null
     }
+  | {
+      kind: 'blog-index'
+      locale: SupportedLocale | null
+    }
+  | {
+      kind: 'blog-article'
+      slug: string
+      locale: SupportedLocale | null
+    }
 
 export type RouteParsePhase = 'prerender' | 'resolved'
 
@@ -202,6 +211,17 @@ export const parseRouteState = (
           kind: 'result' as const,
           payload,
           decoded: decodeSharePayload(payload),
+          locale,
+        }))
+    })
+    .with('blog', () => {
+      const slug = segments[1] ?? null
+
+      return match(slug)
+        .with(null, () => ({ kind: 'blog-index' as const, locale }))
+        .otherwise((resolvedSlug) => ({
+          kind: 'blog-article' as const,
+          slug: resolvedSlug,
           locale,
         }))
     })

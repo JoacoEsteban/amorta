@@ -97,14 +97,16 @@ const staticRoutes: RouteTable = {
     staticAssetResponse(devStyleOutput.path, 'text/css; charset=utf-8'),
   '/favicon.svg': () =>
     staticAssetResponse('./static/favicon.svg', 'image/svg+xml'),
-  '/icon.svg': () =>
-    staticAssetResponse('./static/icon.svg', 'image/svg+xml'),
+  '/icon.svg': () => staticAssetResponse('./static/icon.svg', 'image/svg+xml'),
   '/og-image.svg': () =>
     staticAssetResponse('./static/og-image.svg', 'image/svg+xml'),
   '/robots.txt': () =>
     staticAssetResponse('./static/robots.txt', 'text/plain; charset=utf-8'),
   '/sitemap.xml': () =>
-    staticAssetResponse('./static/sitemap.xml', 'application/xml; charset=utf-8'),
+    staticAssetResponse(
+      './static/sitemap.xml',
+      'application/xml; charset=utf-8',
+    ),
   '/site.webmanifest': () =>
     staticAssetResponse(
       './static/site.webmanifest',
@@ -122,6 +124,9 @@ const buildRouteTable = (): RouteTable => {
     routes[`/${locale}/result/`] = (req) => renderRouteResponse(req, locale)
     routes[`/${locale}/result/:payload`] = (req) =>
       renderRouteResponse(req, locale)
+    routes[`/${locale}/blog`] = (req) => renderRouteResponse(req, locale)
+    routes[`/${locale}/blog/`] = (req) => renderRouteResponse(req, locale)
+    routes[`/${locale}/blog/:slug`] = (req) => renderRouteResponse(req, locale)
   })
 
   routes['/'] = (req) => renderRouteResponse(req, null)

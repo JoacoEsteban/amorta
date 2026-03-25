@@ -118,6 +118,12 @@ export const AppRoot = ({ initialRouteState, siteUrl }: AppRootProps) => {
         />
       ),
     )
+    .with({ kind: 'blog-index' }, (resolvedRouteState) => (
+      <App kind="blog-index" routeState={resolvedRouteState} />
+    ))
+    .with({ kind: 'blog-article' }, (resolvedRouteState) => (
+      <App kind="blog-article" routeState={resolvedRouteState} />
+    ))
     .otherwise((invalidRouteState) => (
       <App
         kind="invalid-result"

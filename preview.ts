@@ -34,7 +34,9 @@ const serveLocaleRoute = (
       .with(null, () =>
         match(isAssetRequest(strippedPathname))
           .with(true, () => new Response('Not Found', { status: 404 }))
-          .otherwise(() => new Response(Bun.file(`${localeDistPrefix}/index.html`))),
+          .otherwise(
+            () => new Response(Bun.file(`${localeDistPrefix}/index.html`)),
+          ),
       )
       .otherwise((resolvedResponse) => resolvedResponse),
   )
@@ -46,7 +48,10 @@ const serveDefaultRoute = (pathname: string): Promise<Response> => {
   return serveFile(`./dist/${distPath}`).then((response) =>
     match(response)
       .with(null, () =>
-        match([isAssetRequest(pathname), pathname.startsWith('/result')] as const)
+        match([
+          isAssetRequest(pathname),
+          pathname.startsWith('/result'),
+        ] as const)
           .with([true, P._], () => new Response('Not Found', { status: 404 }))
           .with([false, true], () => new Response(resultIndexFile))
           .with([false, false], () => new Response(indexFile))

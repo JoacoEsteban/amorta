@@ -1,14 +1,12 @@
 import { tailwind } from '../bun-tailwind-plugin'
 import { resolvePublicSiteUrl } from '../src/domain/seo'
-import {
-  buildPendingResultState,
-  type RouteState,
-} from '../src/domain/share'
+import { buildPendingResultState, type RouteState } from '../src/domain/share'
 import { renderHtmlDocument } from '../src/server/render-document'
 import {
   SUPPORTED_LOCALES,
   type SupportedLocale,
 } from '../src/i18n/lingui.config'
+import { ARTICLES } from '../src/domain/blog'
 
 const DIST_DIR = './dist'
 const STATIC_DIR = './static'
@@ -63,9 +61,7 @@ await patchStaticTextFiles(publicSiteUrl)
 
 const shellHtml = await Bun.file(`${DIST_DIR}/index.html`).text()
 
-const writeLocale = async (
-  locale: SupportedLocale,
-): Promise<void> => {
+const writeLocale = async (locale: SupportedLocale): Promise<void> => {
   const dir = `${DIST_DIR}/${locale}`
   await Bun.$`mkdir -p ${dir}`
 
@@ -85,9 +81,34 @@ const writeLocale = async (
     assetLinks: '',
   })
 
+  const blogIndexHtml = renderHtmlDocument({
+    shellHtml,
+    siteUrl: publicSiteUrl,
+    routeState: { kind: 'blog-index', locale },
+    locale,
+    assetLinks: '',
+  })
+
   await Bun.$`mkdir -p ${dir}/result`
   await Bun.write(`${dir}/index.html`, indexHtml)
   await Bun.write(`${dir}/result/index.html`, resultHtml, { createPath: true })
+
+  await Bun.$`mkdir -p ${dir}/blog`
+  await Bun.write(`${dir}/blog/index.html`, blogIndexHtml, { createPath: true })
+
+  for (const article of ARTICLES) {
+    await Bun.$`mkdir -p ${dir}/blog/${article.slug}`
+    const articleHtml = renderHtmlDocument({
+      shellHtml,
+      siteUrl: publicSiteUrl,
+      routeState: { kind: 'blog-article', slug: article.slug, locale },
+      locale,
+      assetLinks: '',
+    })
+    await Bun.write(`${dir}/blog/${article.slug}/index.html`, articleHtml, {
+      createPath: true,
+    })
+  }
 }
 
 const defaultLocale = SUPPORTED_LOCALES[0]
@@ -100,4 +121,6 @@ for (const locale of SUPPORTED_LOCALES) {
 await Bun.$`mkdir -p ${DIST_DIR}/result`
 await Bun.$`cp ${DIST_DIR}/${defaultLocale}/index.html ${DIST_DIR}/index.html`
 await Bun.$`cp ${DIST_DIR}/${defaultLocale}/result/index.html ${DIST_DIR}/result/index.html`
+await Bun.$`mkdir -p ${DIST_DIR}/blog`
+await Bun.$`cp -r ${DIST_DIR}/${defaultLocale}/blog/. ${DIST_DIR}/blog/`
 console.log(`Wrote dist/index.html and dist/result/index.html`)
