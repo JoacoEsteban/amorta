@@ -117,7 +117,9 @@ const buildRouteTable = (): RouteTable => {
 
   SUPPORTED_LOCALES.forEach((locale) => {
     routes[`/${locale}`] = (req) => renderRouteResponse(req, locale)
+    routes[`/${locale}/`] = (req) => renderRouteResponse(req, locale)
     routes[`/${locale}/result`] = (req) => renderRouteResponse(req, locale)
+    routes[`/${locale}/result/`] = (req) => renderRouteResponse(req, locale)
     routes[`/${locale}/result/:payload`] = (req) =>
       renderRouteResponse(req, locale)
   })

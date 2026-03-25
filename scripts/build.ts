@@ -97,7 +97,7 @@ for (const locale of SUPPORTED_LOCALES) {
   console.log(`Wrote dist/${locale}/`)
 }
 
-await Bun.$`mkdir ${DIST_DIR}/result`
+await Bun.$`mkdir -p ${DIST_DIR}/result`
 await Bun.$`cp ${DIST_DIR}/${defaultLocale}/index.html ${DIST_DIR}/index.html`
 await Bun.$`cp ${DIST_DIR}/${defaultLocale}/result/index.html ${DIST_DIR}/result/index.html`
 console.log(`Wrote dist/index.html and dist/result/index.html`)

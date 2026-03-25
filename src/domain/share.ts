@@ -3,6 +3,7 @@ import { P, match } from 'ts-pattern'
 import type { LoanFormValues } from './amortization'
 import {
   type SupportedLocale,
+  buildLocalePath,
   stripLocaleFromPath,
 } from '../i18n/lingui.config'
 import { validateShareableLoanState } from '../typia/generated/shareable-loan-state'
@@ -96,10 +97,14 @@ export const buildSharePayload = (values: ShareableLoanState): string =>
 export const buildShareUrl = (
   values: ShareableLoanState,
   location: Pick<Location, 'origin'>,
+  locale: SupportedLocale,
 ): string => {
-  const shareUrl = new URL('/result/', location.origin)
+  const shareUrl = new URL(buildLocalePath(locale, '/result'), location.origin)
 
-  shareUrl.pathname = `/result/${encodeURIComponent(buildSharePayload(values))}`
+  shareUrl.pathname = buildLocalePath(
+    locale,
+    `/result/${encodeURIComponent(buildSharePayload(values))}`,
+  )
 
   return shareUrl.toString()
 }

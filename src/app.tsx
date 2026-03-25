@@ -234,7 +234,9 @@ const CalculatorPage = ({
 
   const shareUrl = match(typeof window)
     .with('undefined', () => '')
-    .otherwise(() => buildShareUrl(store.getValues(), window.location))
+    .otherwise(() =>
+      buildShareUrl(store.getValues(), window.location, locale$.getValue()),
+    )
 
   const shareDisabled = !hydrated || isPendingResult
 
