@@ -117,4 +117,5 @@ export const enUSMessages = {
   frequencyThreePayments: '3 payments / year',
   frequencySixPayments: '6 payments / year',
   frequencyTwelvePayments: '12 payments / year',
+  madeBy: 'Made by',
 }

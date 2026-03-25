@@ -574,6 +574,19 @@ const CalculatorPage = ({
               .otherwise(() => null)}
           </div>
         </section>
+
+        <footer className="app-footer">
+          <span>
+            {i18n._('madeBy')}{' '}
+            <a
+              href="https://joaco.io"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              joaco.io
+            </a>
+          </span>
+        </footer>
       </div>
     </main>
   )

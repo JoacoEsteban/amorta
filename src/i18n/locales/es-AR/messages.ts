@@ -120,4 +120,5 @@ export const esARMessages = {
   frequencyThreePayments: '3 pagos / año',
   frequencySixPayments: '6 pagos / año',
   frequencyTwelvePayments: '12 pagos / año',
+  madeBy: 'Hecho por',
 }
