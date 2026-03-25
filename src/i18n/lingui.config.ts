@@ -23,9 +23,7 @@ const LANGUAGE_TO_LOCALE: Map<string, SupportedLocale> = (() => {
   return map
 })()
 
-export const localeFromPath = (
-  pathSegment: string,
-): SupportedLocale | null => {
+export const localeFromPath = (pathSegment: string): SupportedLocale | null => {
   const candidate = pathSegment.trim()
   if (SUPPORTED_LOCALES.includes(candidate as SupportedLocale)) {
     return candidate as SupportedLocale

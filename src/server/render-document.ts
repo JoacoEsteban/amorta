@@ -25,7 +25,8 @@ const buildSeoHead = ({
 }: {
   siteUrl: string
   metadata: ReturnType<typeof buildSeoMetadata>
-}): string => [
+}): string =>
+  [
     `<title>${metadata.title}</title>`,
     `<meta name="description" content="${metadata.description}" />`,
     '<meta name="keywords" content="french amortization calculator, loan amortization, mortgage calculator, effective annual rate, payment schedule" />',

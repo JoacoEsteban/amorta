@@ -58,12 +58,14 @@ export const initLocale = (): string => {
     const exact = SUPPORTED_LOCALES.includes(browser as SupportedLocale)
       ? (browser as SupportedLocale)
       : null
-    const resolved = exact ?? (() => {
-      const lang = browser.split('-')[0]
-      return SUPPORTED_LOCALES.includes(lang as SupportedLocale)
-        ? (lang as SupportedLocale)
-        : null
-    })()
+    const resolved =
+      exact ??
+      (() => {
+        const lang = browser.split('-')[0]
+        return SUPPORTED_LOCALES.includes(lang as SupportedLocale)
+          ? (lang as SupportedLocale)
+          : null
+      })()
     if (resolved) {
       i18n.activate(resolved)
       locale$.next(resolved)
