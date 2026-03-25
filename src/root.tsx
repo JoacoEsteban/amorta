@@ -1,5 +1,6 @@
 import { StrictMode, useEffect, useState } from 'react'
 import { Toaster } from 'react-hot-toast'
+import { bind } from '@react-rxjs/core'
 import { match } from 'ts-pattern'
 
 import { App } from './app'
@@ -13,6 +14,9 @@ import {
   type LoanStore,
 } from './state/loan-store'
 import { createUIStore } from './state/ui-store'
+import { locale$ } from './i18n/locale-state'
+
+const [useLocale] = bind(locale$, locale$.getValue())
 
 type InvalidRouteState = {
   kind: 'result'
@@ -29,8 +33,11 @@ type AppRootProps = {
 }
 
 export const AppRoot = ({ initialRouteState, siteUrl }: AppRootProps) => {
+  useLocale()
+
   const [routeState, setRouteState] = useState<RouteState>(initialRouteState)
   const [hydrated, setHydrated] = useState(false)
+
   const [sessionStore, setSessionStore] = useState<LoanStore>(() =>
     createLoanStore({
       initialValues: DEFAULT_LOAN_FORM_VALUES,
