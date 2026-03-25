@@ -919,6 +919,18 @@ ul {
   background: rgba(255, 255, 255, 0.5);
 }
 
+.accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
 .accordion-trigger__text {
   font-size: 0.95rem;
   font-weight: 600;
@@ -940,6 +952,7 @@ ul {
 }
 
 .accordion-content--open {
+  padding: 0 1.5rem 1rem;
   animation: expand 200ms ease;
 }
 
