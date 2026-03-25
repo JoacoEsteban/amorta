@@ -1,5 +1,11 @@
 # TODO
 
+## Fixes
+
+- [x] share result does not include the locale if present
+- [x] dev does not serve /{locale}
+- [x] prod runner renders /{locale} in english
+
 ## SEO & Localization
 
 - [x] **Locale-prefixed routes for SEO**
