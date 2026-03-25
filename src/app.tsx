@@ -46,16 +46,17 @@ import {
   saveLoanStateToLocalStorage,
 } from './state/loan-store'
 import type { UIStore } from './state/ui-store'
+import { i18n } from './i18n/index.js'
 import { cn } from './lib/utils'
 
 const paymentFrequencyOptions: Array<{
   label: string
   value: PaymentFrequency
 }> = [
-  { label: '1 payment / year', value: 1 },
-  { label: '3 payments / year', value: 3 },
-  { label: '6 payments / year', value: 6 },
-  { label: '12 payments / year', value: 12 },
+  { label: i18n._('frequencyOnePayment'), value: 1 },
+  { label: i18n._('frequencyThreePayments'), value: 3 },
+  { label: i18n._('frequencySixPayments'), value: 6 },
+  { label: i18n._('frequencyTwelvePayments'), value: 12 },
 ]
 
 const currencyFormatter = new Intl.NumberFormat('en-US', {
@@ -75,9 +76,6 @@ const percentFormatter = new Intl.NumberFormat('en-US', {
   style: 'percent',
   maximumFractionDigits: 3,
 })
-
-const READONLY_MESSAGE =
-  "This shared result can't be edited here. Use “Edit this result” to continue from these values."
 
 const parseFrequency = (rawValue: string): PaymentFrequency =>
   match(Number(rawValue))
@@ -106,16 +104,16 @@ const copyShareUrl = (shareUrl: string): void => {
 
   match(clipboard)
     .with(null, () => {
-      toast.error('Clipboard access is not available here.')
+      toast.error(i18n._('clipboardUnavailable'))
     })
     .otherwise((resolvedClipboard) => {
       resolvedClipboard
         .writeText(shareUrl)
         .then(() => {
-          toast.success('Share URL copied to the clipboard.')
+          toast.success(i18n._('shareUrlCopied'))
         })
         .catch(() => {
-          toast.error('The share URL could not be copied.')
+          toast.error(i18n._('shareUrlCopyFailed'))
         })
     })
 }
@@ -240,29 +238,25 @@ const CalculatorPage = ({
           <div className="page-toolbar__copy">
             <p className="page-kicker">
               {match({ storeMode, isPendingResult })
-                .with({ isPendingResult: true }, () => 'Shared Result')
-                .with({ storeMode: 'shared-result' }, () => 'Shared Result')
-                .otherwise(() => 'Live Calculator')}
+                .with({ isPendingResult: true }, () => i18n._('sharedResult'))
+                .with({ storeMode: 'shared-result' }, () =>
+                  i18n._('sharedResult'),
+                )
+                .otherwise(() => i18n._('liveCalculator'))}
             </p>
             <h1 className="page-title">
               {match({ storeMode, isPendingResult })
-                .with(
-                  { storeMode: 'shared-result' },
-                  () => 'Shared French Amortization Result',
+                .with({ storeMode: 'shared-result' }, () =>
+                  i18n._('sharedFrenchAmortizationResult'),
                 )
-                .otherwise(() => 'French Amortization Calculator')}
+                .otherwise(() => i18n._('frenchAmortizationCalculator'))}
             </h1>
             <p className="page-summary">
               {match({ storeMode, isPendingResult })
-                .with(
-                  { storeMode: 'shared-result' },
-                  () =>
-                    'Review the loan schedule, compare principal and interest for each quota, and copy the shared result URL.',
+                .with({ storeMode: 'shared-result' }, () =>
+                  i18n._('reviewSharedResultSummary'),
                 )
-                .otherwise(
-                  () =>
-                    'Model a French-style loan, invert a payment into its effective annual rate, and inspect the amortization schedule visually.',
-                )}
+                .otherwise(() => i18n._('modelFrenchLoanSummary'))}
             </p>
           </div>
           <div className="page-toolbar__actions">
@@ -276,15 +270,11 @@ const CalculatorPage = ({
               disabled={shareDisabled}
               aria-hidden={shareDisabled}
               title={match(isPendingResult)
-                .with(
-                  true,
-                  () =>
-                    'The shared result must finish loading before it can be copied.',
-                )
+                .with(true, () => i18n._('loadingSharedResultTooltip'))
                 .otherwise(() => undefined)}
             >
               <Share2 size={16} />
-              <span>Share result</span>
+              <span>{i18n._('shareResult')}</span>
             </button>
           </div>
         </div>
@@ -294,26 +284,23 @@ const CalculatorPage = ({
             <CardHeader className="panel-card__header panel-card__header--accent">
               <CardTitle>
                 {match({ storeMode, isPendingResult })
-                  .with({ isPendingResult: true }, () => 'Shared Inputs')
-                  .with({ storeMode: 'shared-result' }, () => 'Shared Inputs')
-                  .otherwise(() => 'French Mortgage Inputs')}
+                  .with({ isPendingResult: true }, () => i18n._('sharedInputs'))
+                  .with({ storeMode: 'shared-result' }, () =>
+                    i18n._('sharedInputs'),
+                  )
+                  .otherwise(() => i18n._('frenchMortgageInputs'))}
               </CardTitle>
               <CardDescription>
                 {match({ storeMode, isPendingResult, hydrated })
-                  .with(
-                    { storeMode: 'shared-result' },
-                    () =>
-                      'These values came from a shared result and cannot be edited in place.',
+                  .with({ storeMode: 'shared-result' }, () =>
+                    i18n._('sharedInputsDescription'),
                   )
-                  .otherwise(
-                    () =>
-                      'Change any value and the amortization schedule recomputes immediately.',
-                  )}
+                  .otherwise(() => i18n._('changeValueDescription'))}
               </CardDescription>
             </CardHeader>
             <CardContent className="panel-card__content form-stack">
               <FieldShell readonly={isReadonly}>
-                <Label htmlFor="loan-amount">Loan amount</Label>
+                <Label htmlFor="loan-amount">{i18n._('loanAmount')}</Label>
                 <Input
                   id="loan-amount"
                   inputMode="decimal"
@@ -321,13 +308,13 @@ const CalculatorPage = ({
                   onChange={(event) =>
                     store.setLoanAmount(event.currentTarget.value)
                   }
-                  placeholder="250000"
+                  placeholder={i18n._('placeholderLoanAmount')}
                   readOnly={isReadonly}
                 />
               </FieldShell>
 
               <FieldShell readonly={isReadonly}>
-                <Label htmlFor="years">Time in years</Label>
+                <Label htmlFor="years">{i18n._('timeInYears')}</Label>
                 <Input
                   id="years"
                   inputMode="decimal"
@@ -335,13 +322,15 @@ const CalculatorPage = ({
                   onChange={(event) =>
                     store.setYears(event.currentTarget.value)
                   }
-                  placeholder="30"
+                  placeholder={i18n._('placeholderYears')}
                   readOnly={isReadonly}
                 />
               </FieldShell>
 
               <FieldShell readonly={isReadonly}>
-                <Label htmlFor="payments-per-year">Payments per year</Label>
+                <Label htmlFor="payments-per-year">
+                  {i18n._('paymentsPerYear')}
+                </Label>
                 <Select
                   id="payments-per-year"
                   value={String(values.paymentsPerYear)}
@@ -361,43 +350,38 @@ const CalculatorPage = ({
               </FieldShell>
 
               <FieldShell readonly={isReadonly}>
-                <Label htmlFor="ear">Effective annual rate</Label>
+                <Label htmlFor="ear">{i18n._('effectiveAnnualRate')}</Label>
                 <Input
                   id="ear"
                   inputMode="decimal"
                   value={displayedEarValue}
                   onChange={(event) => store.setEar(event.currentTarget.value)}
                   placeholder={match({ isPaymentDriven, isPendingResult })
-                    .with(
-                      { isPendingResult: true },
-                      () => 'Loading shared result',
+                    .with({ isPendingResult: true }, () =>
+                      i18n._('loadingSharedResult'),
                     )
-                    .with(
-                      { isPaymentDriven: true },
-                      () => 'Calculated automatically',
+                    .with({ isPaymentDriven: true }, () =>
+                      i18n._('calculatedAutomatically'),
                     )
-                    .otherwise(() => '0.12')}
+                    .otherwise(() => i18n._('placeholderEar'))}
                   disabled={isReadonly || isPaymentDriven}
                   readOnly={isReadonly}
                 />
                 <p className="field-note">
                   {match({ isReadonly, isPaymentDriven, isPendingResult })
-                    .with({ isReadonly: true }, () => READONLY_MESSAGE)
-                    .with(
-                      { isPaymentDriven: true },
-                      () =>
-                        'Disabled while a payment amount is provided. The app derives EAR from that payment.',
+                    .with({ isReadonly: true }, () =>
+                      i18n._('fieldNoteReadonly'),
                     )
-                    .otherwise(
-                      () =>
-                        'Use decimal format. Example: 0.12 means a 12% effective annual rate.',
-                    )}
+                    .with({ isPaymentDriven: true }, () =>
+                      i18n._('fieldNoteEarDisabled'),
+                    )
+                    .otherwise(() => i18n._('fieldNoteEarFormat'))}
                 </p>
               </FieldShell>
 
               <FieldShell readonly={isReadonly}>
                 <Label htmlFor="payment-amount">
-                  Payment amount (optional override)
+                  {i18n._('paymentAmountOptionalOverride')}
                 </Label>
                 <Input
                   id="payment-amount"
@@ -406,16 +390,15 @@ const CalculatorPage = ({
                   onChange={(event) =>
                     store.setPaymentAmount(event.currentTarget.value)
                   }
-                  placeholder="Leave blank to derive payment"
+                  placeholder={i18n._('placeholderPaymentAmount')}
                   readOnly={isReadonly}
                 />
                 <p className="field-note">
                   {match({ isReadonly, isPendingResult })
-                    .with({ isReadonly: true }, () => READONLY_MESSAGE)
-                    .otherwise(
-                      () =>
-                        'Fill this to switch into payment-driven mode and calculate the EAR dynamically.',
-                    )}
+                    .with({ isReadonly: true }, () =>
+                      i18n._('fieldNoteReadonly'),
+                    )
+                    .otherwise(() => i18n._('fieldNotePaymentOverride'))}
                 </p>
               </FieldShell>
 
@@ -431,7 +414,7 @@ const CalculatorPage = ({
                       }}
                     >
                       <RotateCcw size={16} />
-                      <span>Start new calculation</span>
+                      <span>{i18n._('startNewCalculation')}</span>
                     </button>
                     <button
                       type="button"
@@ -442,7 +425,7 @@ const CalculatorPage = ({
                       }}
                     >
                       <PencilLine size={16} />
-                      <span>Edit this result</span>
+                      <span>{i18n._('editThisResult')}</span>
                     </button>
                   </div>
                 ))
@@ -454,68 +437,59 @@ const CalculatorPage = ({
             <div className="summary-grid">
               <SummaryCard
                 icon={<Wallet />}
-                label="Active payment"
+                label={i18n._('activePayment')}
                 value={match({ calculation, isPendingResult })
-                  .with(
-                    { isPendingResult: true },
-                    () => 'Loading shared result',
+                  .with({ isPendingResult: true }, () =>
+                    i18n._('loadingSharedResult'),
                   )
                   .with(
                     { calculation: { kind: 'ready' } },
                     ({ calculation: ready }) => formatCurrency(ready.payment),
                   )
-                  .otherwise(() => 'Waiting for valid inputs')}
+                  .otherwise(() => i18n._('waitingForValidInputs'))}
               />
               <SummaryCard
                 icon={<Percent />}
-                label="Active EAR"
+                label={i18n._('activeEAR')}
                 value={match({ calculation, isPendingResult })
-                  .with(
-                    { isPendingResult: true },
-                    () => 'Loading shared result',
+                  .with({ isPendingResult: true }, () =>
+                    i18n._('loadingSharedResult'),
                   )
                   .with(
                     { calculation: { kind: 'ready' } },
                     ({ calculation: ready }) => formatPercent(ready.ear),
                   )
-                  .otherwise(() => 'Waiting for valid inputs')}
+                  .otherwise(() => i18n._('waitingForValidInputs'))}
               />
               <SummaryCard
                 icon={<Landmark />}
-                label="Repayment horizon"
+                label={i18n._('repaymentHorizon')}
                 value={match({ calculation, isPendingResult })
-                  .with(
-                    { isPendingResult: true },
-                    () => 'Loading shared result',
+                  .with({ isPendingResult: true }, () =>
+                    i18n._('loadingSharedResult'),
                   )
                   .with(
                     { calculation: { kind: 'ready' } },
                     ({ calculation: ready }) =>
-                      `${ready.paymentCount} installments at ${ready.paymentsPerYear}/year`,
+                      i18n._('installmentsAtRate', {
+                        count: ready.paymentCount,
+                        rate: ready.paymentsPerYear,
+                      }),
                   )
-                  .otherwise(() => 'Waiting for valid inputs')}
+                  .otherwise(() => i18n._('waitingForValidInputs'))}
               />
             </div>
 
             <Card className="panel-card panel-card--chart flex-1">
               <CardHeader className="panel-card__header panel-card__header--plain">
-                <CardTitle>Amortization Graph</CardTitle>
+                <CardTitle>{i18n._('amortizationGraph')}</CardTitle>
                 <CardDescription>
                   {match({ hydrated, isPendingResult })
-                    .with(
-                      { isPendingResult: true },
-                      () =>
-                        'The shared result preview is loading. The interactive chart will appear after the URL payload is resolved.',
+                    .with({ isPendingResult: true }, () =>
+                      i18n._('chartPendingSharedResult'),
                     )
-                    .with(
-                      { hydrated: false },
-                      () =>
-                        'A prerendered chart preview is shown immediately. The interactive chart hydrates right after load.',
-                    )
-                    .otherwise(
-                      () =>
-                        'Principal and interest are stacked for each quota, with a final zero point appended for payoff closure.',
-                    )}
+                    .with({ hydrated: false }, () => i18n._('chartPrerendered'))
+                    .otherwise(() => i18n._('chartInteractive'))}
                 </CardDescription>
               </CardHeader>
               <CardContent className="panel-card__content chart-stack">
@@ -526,7 +500,7 @@ const CalculatorPage = ({
                     ({ calculation: invalid }) => (
                       <div className="error-box">
                         <p className="error-box__title">
-                          The schedule cannot be graphed yet.
+                          {i18n._('chartCannotGraph')}
                         </p>
                         <ul className="error-box__list">
                           {invalid.errors.map((error) => (
@@ -569,10 +543,9 @@ const CalculatorPage = ({
                       )}
                     >
                       <div>
-                        <CardTitle>Amortization Schedule</CardTitle>
+                        <CardTitle>{i18n._('amortizationSchedule')}</CardTitle>
                         <CardDescription>
-                          Expand each year to view the detailed payment
-                          breakdown.
+                          {i18n._('scheduleExpandDescription')}
                         </CardDescription>
                       </div>
 
@@ -583,7 +556,9 @@ const CalculatorPage = ({
                       >
                         <ChevronsUpDown size={16} />
                         <span>
-                          {tableExpanded ? 'Collapse all' : 'Expand all'}
+                          {tableExpanded
+                            ? i18n._('collapseAll')
+                            : i18n._('expandAll')}
                         </span>
                       </button>
                     </CardHeader>
@@ -620,17 +595,17 @@ const InvalidResultPage = ({
     <div className="app-layout">
       <div className="page-toolbar">
         <div className="page-toolbar__copy">
-          <p className="page-kicker">Shared Result</p>
-          <h1 className="page-title">Shared result unavailable</h1>
+          <p className="page-kicker">{i18n._('sharedResult')}</p>
+          <h1 className="page-title">{i18n._('sharedResultUnavailable')}</h1>
         </div>
         <button
           type="button"
           className="action-button action-button--disabled"
           disabled
-          title="A valid shared result is required before it can be shared again."
+          title={i18n._('validResultRequired')}
         >
           <Share2 size={16} />
-          <span>Share result</span>
+          <span>{i18n._('shareResult')}</span>
         </button>
       </div>
 
@@ -638,8 +613,8 @@ const InvalidResultPage = ({
         <CardHeader className="panel-card__header panel-card__header--plain">
           <CardTitle>
             {match(routeState.decoded.kind)
-              .with('missing', () => 'No shared result found')
-              .otherwise(() => 'This shared result is invalid')}
+              .with('missing', () => i18n._('noSharedResultFound'))
+              .otherwise(() => i18n._('thisSharedResultIsInvalid'))}
           </CardTitle>
           <CardDescription>{routeState.decoded.message}</CardDescription>
         </CardHeader>
@@ -650,7 +625,7 @@ const InvalidResultPage = ({
             onClick={() => navigateTo('/')}
           >
             <RotateCcw size={16} />
-            <span>Open calculator</span>
+            <span>{i18n._('openCalculator')}</span>
           </button>
         </CardContent>
       </Card>
@@ -670,7 +645,7 @@ const FieldShell = ({
       .with(true, () => 'field-group field-group--readonly')
       .otherwise(() => 'field-group')}
     title={match(readonly)
-      .with(true, () => READONLY_MESSAGE)
+      .with(true, () => i18n._('fieldNoteReadonly'))
       .otherwise(() => undefined)}
   >
     {children}
@@ -810,9 +785,11 @@ const StaticChartPreview = ({
 
 const PendingChartState = () => (
   <div className="pending-state">
-    <p className="pending-state__title">Loading shared amortization result</p>
+    <p className="pending-state__title">
+      {i18n._('loadingSharedAmortization')}
+    </p>
     <p className="pending-state__copy">
-      The shared result is loading. The schedule and chart will appear shortly.
+      {i18n._('loadingSharedAmortizationSubtitle')}
     </p>
   </div>
 )
@@ -827,19 +804,26 @@ const MetricsRow = ({
 }) => (
   <div className="metrics-grid">
     <Metric
-      label="Loan amount"
+      label={i18n._('loanAmountMetric')}
       value={formatCurrency(calculation.loanAmount)}
-      detail="Principal"
+      detail={i18n._('principal')}
     />
     <Metric
-      label="Total interest"
+      label={i18n._('totalInterestMetric')}
       value={formatCurrency(calculation.totalInterest)}
-      detail={`${formatShareOfTotal(calculation.totalInterest, calculation.totalPaid)} of total paid`}
+      detail={i18n._('ofTotalPaid', {
+        percent: formatShareOfTotal(
+          calculation.totalInterest,
+          calculation.totalPaid,
+        ),
+      })}
     />
     <Metric
-      label="Total paid"
+      label={i18n._('totalPaidMetric')}
       value={formatCurrency(calculation.totalPaid)}
-      detail={`${(calculation.totalPaid / calculation.loanAmount).toFixed(2)}x principal repaid`}
+      detail={i18n._('principalRepaid', {
+        multiplier: (calculation.totalPaid / calculation.loanAmount).toFixed(2),
+      })}
     />
   </div>
 )
@@ -866,18 +850,20 @@ const QuotaTooltip = ({
 
       return (
         <div className="chart-tooltip">
-          <p className="chart-tooltip__title">{`Quota ${String(label)}`}</p>
+          <p className="chart-tooltip__title">
+            {i18n._('quotaTooltip', { quota: String(label) })}
+          </p>
           <div className="chart-tooltip__rows">
             <div className="chart-tooltip__row">
-              <span>Total</span>
+              <span>{i18n._('tooltipTotal')}</span>
               <strong>{formatCurrency(payment)}</strong>
             </div>
             <div className="chart-tooltip__row">
-              <span>Principal</span>
+              <span>{i18n._('tooltipPrincipal')}</span>
               <strong>{`${formatCurrency(principal)} (${formatShareOfTotal(principal, payment)})`}</strong>
             </div>
             <div className="chart-tooltip__row">
-              <span>Interest</span>
+              <span>{i18n._('tooltipInterest')}</span>
               <strong>{`${formatCurrency(interest)} (${formatShareOfTotal(interest, payment)})`}</strong>
             </div>
           </div>

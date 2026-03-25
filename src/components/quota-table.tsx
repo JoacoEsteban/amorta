@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 import { match } from 'ts-pattern'
 
+import { i18n } from '../i18n/index.js'
 import type { CalculationResult } from '../domain/amortization'
 
 const currencyFormatter = new Intl.NumberFormat('en-US', {
@@ -51,7 +52,7 @@ const groupByYear = (
 const YearMarker = ({ year }: { year: number }) => (
   <div className="year-marker">
     <span className="year-marker__line" />
-    <span className="year-marker__label">Year {year}</span>
+    <span className="year-marker__label">{i18n._('yearMarker', { year })}</span>
     <span className="year-marker__line" />
   </div>
 )
@@ -102,8 +103,7 @@ const CollapsibleYearSection = ({
         aria-expanded={isOpen}
       >
         <span className="year-section__title">
-          Year {year} ({quotas.length}{' '}
-          {quotas.length === 1 ? 'payment' : 'payments'})
+          {i18n._('yearSectionPayments', { year, count: quotas.length })}
         </span>
         <ChevronDown
           size={18}
@@ -121,11 +121,21 @@ const CollapsibleYearSection = ({
             <table className="quota-table">
               <thead>
                 <tr>
-                  <th className="quota-table__header">#</th>
-                  <th className="quota-table__header">Payment</th>
-                  <th className="quota-table__header">Principal</th>
-                  <th className="quota-table__header">Interest</th>
-                  <th className="quota-table__header">Balance</th>
+                  <th className="quota-table__header">
+                    {i18n._('tableHeaderQuota')}
+                  </th>
+                  <th className="quota-table__header">
+                    {i18n._('tableHeaderPayment')}
+                  </th>
+                  <th className="quota-table__header">
+                    {i18n._('tableHeaderPrincipal')}
+                  </th>
+                  <th className="quota-table__header">
+                    {i18n._('tableHeaderInterest')}
+                  </th>
+                  <th className="quota-table__header">
+                    {i18n._('tableHeaderBalance')}
+                  </th>
                 </tr>
               </thead>
               <tbody>
