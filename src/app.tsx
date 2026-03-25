@@ -754,7 +754,7 @@ const StaticChartPreview = ({
       <MetricsRow calculation={calculation} />
 
       <div
-        className="chart-frame chart-frame--static"
+        className="chart-frame chart-frame--static flex-1"
         aria-label="Amortization preview"
       >
         <div className="static-chart" aria-hidden="true">
