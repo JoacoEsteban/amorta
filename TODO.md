@@ -2,11 +2,13 @@
 
 ## SEO & Localization
 
-- [ ] **Locale-prefixed routes for SEO**
-  - Implement subpath routing (`/es`, `/es-ar`, `/en-gb`) so each locale gets its own crawlable URL
-  - Set `<html lang="...">` and `<link rel="alternate" hreflang="...">` accordingly
-  - Translate page metadata (title, description) per locale
-  - Avoid locale-switching state that is client-only — content must be in the HTML at request time
+- [x] **Locale-prefixed routes for SEO**
+  - Implemented: `/en-US`, `/en-GB`, `/es-ES`, `/es-AR` with index and result routes
+  - `SUPPORTED_LOCALES` is the single source of truth — adding a locale requires only a new messages file
+  - `<html lang="...">` and `<link rel="alternate" hreflang="...">` auto-generated per page
+  - SEO title/description pulled from i18n keys (`seoTitleIndex`, `seoDescription`, etc.)
+  - Locale resolved from URL path on both server and client; falls back to stored/browser/default
+  - LocaleSwitcher navigates to locale-prefixed URL; internal links preserve current locale
 
 - [ ] **Informational landing content**
   - Add a brief explanatory section on the index page (e.g. "How French amortization works", key terminology)
