@@ -22,15 +22,10 @@ import { renderAppToHtml } from '../ssr'
 const buildSeoHead = ({
   siteUrl,
   metadata,
-  locale,
 }: {
   siteUrl: string
   metadata: ReturnType<typeof buildSeoMetadata>
-  locale: SupportedLocale | null
-}): string => {
-  i18n.activate(locale ?? SUPPORTED_LOCALES[0])
-
-  return [
+}): string => [
     `<title>${metadata.title}</title>`,
     `<meta name="description" content="${metadata.description}" />`,
     '<meta name="keywords" content="french amortization calculator, loan amortization, mortgage calculator, effective annual rate, payment schedule" />',
@@ -55,7 +50,6 @@ const buildSeoHead = ({
     buildGaScript(gaMeasurementId),
     `<script id="amorta-jsonld" type="application/ld+json">${metadata.jsonLd}</script>`,
   ].join('\n    ')
-}
 
 export const renderHtmlDocument = ({
   shellHtml,
@@ -72,6 +66,8 @@ export const renderHtmlDocument = ({
   assetLinks?: string
   appScript?: string
 }): string => {
+  const resolvedLocale = locale ?? SUPPORTED_LOCALES[0]
+  i18n.activate(resolvedLocale)
   const metadata = buildSeoMetadata({ routeState, siteUrl, locale })
   const appHtml = renderAppToHtml({
     initialRouteState: routeState,
@@ -96,7 +92,7 @@ export const renderHtmlDocument = ({
     .replace('__AMORTA_GA_SCRIPT__', buildGaScript(gaMeasurementId))
     .replace(/<script[^>]+googlesyndication[^>]*><\/script>/, '')
     .replace(/<script id="amorta-jsonld"[^>]*>[\s\S]*?<\/script>/, '')
-    .replace('</head>', `    ${buildSeoHead({ siteUrl, metadata, locale })}\n  </head>`)
+    .replace('</head>', `    ${buildSeoHead({ siteUrl, metadata })}\n  </head>`)
     .replace('<html lang="en">', `<html lang="${metadata.htmlLang}">`)
     .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
     .replace('<script type="module" src="/src/main.tsx"></script>', appScript)
