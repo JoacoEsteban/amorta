@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type { ReactNode } from 'react'
 import {
   Landmark,
@@ -7,6 +8,7 @@ import {
   Share2,
   Wallet,
   ChevronsUpDown,
+  Download,
 } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { P, match } from 'ts-pattern'
@@ -36,6 +38,9 @@ import {
   CardTitle,
 } from './components/ui/card'
 import { QuotaTable } from './components/quota-table'
+import { ExportModal } from './components/export-modal'
+import { EducationalSection } from './components/educational-section'
+import { BlogIndexPage, ArticlePage } from './pages/blog'
 import { Input } from './components/ui/input'
 import { Label } from './components/ui/label'
 import { Select } from './components/ui/select'
@@ -46,10 +51,7 @@ import {
   saveLoanStateToLocalStorage,
 } from './state/loan-store'
 import type { UIStore } from './state/ui-store'
-import {
-  localeFromPath,
-  buildLocalePath,
-} from './i18n/lingui.config'
+import { localeFromPath, buildLocalePath } from './i18n/lingui.config'
 import { locale$ } from './i18n/locale-state'
 import { i18n } from './i18n/index.js'
 import { cn } from './lib/utils'
@@ -167,6 +169,14 @@ type AppProps =
       }
       hydrated: boolean
     }
+  | {
+      kind: 'blog-index'
+      routeState: Extract<RouteState, { kind: 'blog-index' }>
+    }
+  | {
+      kind: 'blog-article'
+      routeState: Extract<RouteState, { kind: 'blog-article' }>
+    }
 
 export const App = (props: AppProps) =>
   match(props)
@@ -184,6 +194,12 @@ export const App = (props: AppProps) =>
         />
       ),
     )
+    .with({ kind: 'blog-index' }, ({ routeState }) => (
+      <BlogIndexPage routeState={routeState} />
+    ))
+    .with({ kind: 'blog-article' }, ({ routeState }) => (
+      <ArticlePage routeState={routeState} />
+    ))
     .exhaustive()
 
 const CalculatorPage = ({
@@ -210,6 +226,7 @@ const CalculatorPage = ({
 }) => {
   const { values, mode, calculation, storeMode } = store.useDashboardViewModel()
   const { tableExpanded } = uiStore.useUIViewModel()
+  const [exportOpen, setExportOpen] = useState(false)
   const isPaymentDriven = mode === 'payment'
   const isReadonly = storeMode === 'shared-result'
   const isPendingResult =
@@ -570,6 +587,14 @@ const CalculatorPage = ({
                             : i18n._('expandAll')}
                         </span>
                       </button>
+                      <button
+                        type="button"
+                        className="action-button action-button--secondary h-fit"
+                        onClick={() => setExportOpen(true)}
+                      >
+                        <Download size={16} />
+                        <span>{i18n._('exportSchedule')}</span>
+                      </button>
                     </CardHeader>
                     <CardContent className="panel-card__content">
                       <QuotaTable
@@ -584,6 +609,21 @@ const CalculatorPage = ({
           </div>
         </section>
 
+        <EducationalSection />
+
+        {match({ calculation, isPendingResult })
+          .with(
+            { calculation: { kind: 'ready' } },
+            ({ calculation: ready }) => (
+              <ExportModal
+                open={exportOpen}
+                onOpenChange={setExportOpen}
+                calculation={ready}
+              />
+            ),
+          )
+          .otherwise(() => null)}
+
         <footer className="app-footer">
           <span>
             {i18n._('madeBy')}{' '}
@@ -595,6 +635,10 @@ const CalculatorPage = ({
               joaco.io
             </a>
           </span>
+          <span className="app-footer__sep">·</span>
+          <a href={buildLocalePath(locale$.getValue(), '/blog/')}>
+            {i18n._('articles')}
+          </a>
         </footer>
       </div>
     </main>

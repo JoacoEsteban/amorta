@@ -54,9 +54,13 @@ describe('share codec', () => {
   })
 
   test('builds a result URL', () => {
-    const shareUrl = buildShareUrl(sampleState, {
-      origin: 'https://example.com',
-    }, 'en-US')
+    const shareUrl = buildShareUrl(
+      sampleState,
+      {
+        origin: 'https://example.com',
+      },
+      'en-US',
+    )
 
     expect(shareUrl.startsWith('https://example.com/en-US/result/')).toBe(true)
   })
