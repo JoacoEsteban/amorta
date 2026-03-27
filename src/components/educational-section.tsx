@@ -7,30 +7,31 @@ import {
 import { Card, CardHeader, CardTitle, CardDescription } from './ui/card'
 import { i18n } from '../i18n/index.js'
 
-const contentBlocks = [
-  {
-    key: 'what',
-    trigger: i18n._('eduWhatTrigger'),
-    body: i18n._('eduWhatBody'),
-  },
-  {
-    key: 'how',
-    trigger: i18n._('eduHowTrigger'),
-    body: i18n._('eduHowBody'),
-  },
-  {
-    key: 'terms',
-    trigger: i18n._('eduTermsTrigger'),
-    body: i18n._('eduTermsBody'),
-  },
-  {
-    key: 'when',
-    trigger: i18n._('eduWhenTrigger'),
-    body: i18n._('eduWhenBody'),
-  },
-]
+export const EducationalSection = () => {
+  const contentBlocks = [
+    {
+      key: 'what',
+      trigger: i18n._('eduWhatTrigger'),
+      body: i18n._('eduWhatBody'),
+    },
+    {
+      key: 'how',
+      trigger: i18n._('eduHowTrigger'),
+      body: i18n._('eduHowBody'),
+    },
+    {
+      key: 'terms',
+      trigger: i18n._('eduTermsTrigger'),
+      body: i18n._('eduTermsBody'),
+    },
+    {
+      key: 'when',
+      trigger: i18n._('eduWhenTrigger'),
+      body: i18n._('eduWhenBody'),
+    },
+  ]
 
-export const EducationalSection = () => (
+  return (
   <Card className="panel-card edu-card">
     <CardHeader className="panel-card__header panel-card__header--plain">
       <CardTitle>{i18n._('aboutFrenchAmortization')}</CardTitle>
@@ -52,4 +53,5 @@ export const EducationalSection = () => (
       ))}
     </Accordion>
   </Card>
-)
+  )
+}
