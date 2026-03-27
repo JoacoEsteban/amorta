@@ -2,7 +2,7 @@ import { match, P } from 'ts-pattern'
 
 import { stripLocaleFromPath } from './src/i18n/lingui.config'
 
-const port = Number(Bun.env.PORT ?? '4173')
+const port = Number(Bun.env.PORT ?? '3000')
 
 const indexFile = Bun.file('./dist/index.html')
 const resultIndexFile = Bun.file('./dist/result/index.html')
