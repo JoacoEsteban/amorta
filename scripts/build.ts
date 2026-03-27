@@ -33,6 +33,7 @@ const patchStaticTextFiles = async (siteUrl: string): Promise<void> => {
   )
 }
 
+await Bun.$`rm -rf ${DIST_DIR}/`
 const prodBuild = await Bun.build({
   minify: true,
   entrypoints: ['index.html'],
