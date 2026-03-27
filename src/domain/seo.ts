@@ -28,6 +28,37 @@ const buildBaseJsonLd = (siteUrl: string, path: string) => [
     url: `${siteUrl}/`,
     description: i18n._('seoDescription'),
   },
+  path === '/'
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `${siteUrl}/`,
+          },
+        ],
+      }
+    : {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `${siteUrl}/`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Calculator',
+            item: `${siteUrl}/`,
+          },
+        ],
+      },
 ]
 
 export type SeoMetadata = {
