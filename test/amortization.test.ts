@@ -77,9 +77,7 @@ describe('amortization math', () => {
       .with({ kind: 'ready' }, (ready) => {
         const finalRow = ready.chartRows.at(-1)
 
-        expect(ready.chartRows).toHaveLength(2)
-        expect(finalRow?.principal).toBe(0)
-        expect(finalRow?.interest).toBe(0)
+        expect(ready.chartRows).toHaveLength(1)
         expect(finalRow?.remainingBalance).toBe(0)
       })
       .otherwise(() => {

@@ -301,20 +301,10 @@ const buildSchedule = (
     totalInterest += interest
   }
 
-  const chartRows = [
-    ...schedule.map((row) => ({
-      ...row,
-      quotaLabel: String(row.quota),
-    })),
-    {
-      quota: paymentCount + 1,
-      payment: 0,
-      principal: 0,
-      interest: 0,
-      remainingBalance: 0,
-      quotaLabel: String(paymentCount + 1),
-    },
-  ]
+  const chartRows = schedule.map((row) => ({
+    ...row,
+    quotaLabel: String(row.quota),
+  }))
 
   return {
     schedule,
