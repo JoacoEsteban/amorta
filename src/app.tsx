@@ -565,7 +565,7 @@ const CalculatorPage = ({
                   <Card className="panel-card panel-card--chart">
                     <CardHeader
                       className={cn(
-                        'panel-card__header panel-card__header--plain flex max-md:flex-col gap-3 justify-between',
+                        'panel-card__header panel-card__header--plain flex max-lg:flex-col gap-3 justify-between',
                       )}
                     >
                       <div>
@@ -575,26 +575,28 @@ const CalculatorPage = ({
                         </CardDescription>
                       </div>
 
-                      <button
-                        type="button"
-                        className="action-button action-button--primary h-fit"
-                        onClick={() => uiStore.toggleTableExpanded()}
-                      >
-                        <ChevronsUpDown size={16} />
-                        <span>
-                          {tableExpanded
-                            ? i18n._('collapseAll')
-                            : i18n._('expandAll')}
-                        </span>
-                      </button>
-                      <button
-                        type="button"
-                        className="action-button action-button--secondary h-fit"
-                        onClick={() => setExportOpen(true)}
-                      >
-                        <Download size={16} />
-                        <span>{i18n._('exportSchedule')}</span>
-                      </button>
+                      <div className="flex max-sm:flex-col justify-end gap-3">
+                        <button
+                          type="button"
+                          className="action-button action-button--primary h-fit"
+                          onClick={() => uiStore.toggleTableExpanded()}
+                        >
+                          <ChevronsUpDown size={16} />
+                          <span>
+                            {tableExpanded
+                              ? i18n._('collapseAll')
+                              : i18n._('expandAll')}
+                          </span>
+                        </button>
+                        <button
+                          type="button"
+                          className="action-button action-button--secondary h-fit"
+                          onClick={() => setExportOpen(true)}
+                        >
+                          <Download size={16} />
+                          <span>{i18n._('exportSchedule')}</span>
+                        </button>
+                      </div>
                     </CardHeader>
                     <CardContent className="panel-card__content">
                       <QuotaTable
