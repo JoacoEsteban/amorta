@@ -32,26 +32,26 @@ export const EducationalSection = () => {
   ]
 
   return (
-  <Card className="panel-card edu-card">
-    <CardHeader className="panel-card__header panel-card__header--plain">
-      <CardTitle>{i18n._('aboutFrenchAmortization')}</CardTitle>
-      <CardDescription>
-        {i18n._('aboutFrenchAmortizationDescription')}
-      </CardDescription>
-    </CardHeader>
-    <Accordion type="multiple">
-      {contentBlocks.map(({ key, trigger, body }) => (
-        <AccordionItem key={key} value={key}>
-          <AccordionTrigger>{trigger}</AccordionTrigger>
-          <AccordionContent>
-            <div
-              className="edu-accordion__body"
-              dangerouslySetInnerHTML={{ __html: body }}
-            />
-          </AccordionContent>
-        </AccordionItem>
-      ))}
-    </Accordion>
-  </Card>
+    <Card className="panel-card edu-card">
+      <CardHeader className="panel-card__header panel-card__header--plain">
+        <CardTitle>{i18n._('aboutFrenchAmortization')}</CardTitle>
+        <CardDescription>
+          {i18n._('aboutFrenchAmortizationDescription')}
+        </CardDescription>
+      </CardHeader>
+      <Accordion type="multiple">
+        {contentBlocks.map(({ key, trigger, body }) => (
+          <AccordionItem key={key} value={key}>
+            <AccordionTrigger>{trigger}</AccordionTrigger>
+            <AccordionContent>
+              <div
+                className="edu-accordion__body"
+                dangerouslySetInnerHTML={{ __html: body }}
+              />
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </Card>
   )
 }
