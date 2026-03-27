@@ -13,6 +13,14 @@
     {
       "source": "/result",
       "destination": "/result/index.html"
+    },
+    {
+      "source": "/:locale/result/:path*",
+      "destination": "/result/index.html"
+    },
+    {
+      "source": "/:locale/result",
+      "destination": "/result/index.html"
     }
   ]
 }
