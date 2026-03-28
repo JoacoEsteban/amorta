@@ -8,6 +8,28 @@ import {
 } from '../src/i18n/lingui.config'
 import { ARTICLES } from '../src/domain/blog'
 
+const generateSitemap = (siteUrl: string, locale: SupportedLocale): string => {
+  const localePrefix = locale === SUPPORTED_LOCALES[0] ? '' : `/${locale}`
+  const today = new Date().toISOString().split('T')[0]
+
+  const staticUrls = [
+    { path: '/', changefreq: 'weekly', priority: '1.0' },
+    { path: '/blog/', changefreq: 'weekly', priority: '0.8' },
+    ...ARTICLES.map((a) => ({ path: `/blog/${a.slug}/`, changefreq: 'monthly', priority: '0.6' })),
+  ]
+
+  const urls = staticUrls.map((u) => {
+    const loc = `${siteUrl}${localePrefix}${u.path}`
+    const hreflangLinks = SUPPORTED_LOCALES.map((loc) => {
+      const prefix = loc === SUPPORTED_LOCALES[0] ? '' : `/${loc}`
+      return `<xhtml:link rel="alternate" hreflang="${loc}" href="${siteUrl}${prefix}${u.path}"/>`
+    }).join('') + `<xhtml:link rel="alternate" hreflang="x-default" href="${siteUrl}${u.path}"/>`
+    return `<url><loc>${loc}</loc><lastmod>${today}</lastmod><changefreq>${u.changefreq}</changefreq><priority>${u.priority}</priority>${hreflangLinks}</url>`
+  }).join('')
+
+  return `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${urls}</urlset>`
+}
+
 const DIST_DIR = './dist'
 const STATIC_DIR = './static'
 const PUBLIC_SITE_URL_PLACEHOLDER = '__PUBLIC_SITE_URL__'
@@ -18,7 +40,7 @@ const copyStaticAssets = async (): Promise<void> => {
 }
 
 const patchStaticTextFiles = async (siteUrl: string): Promise<void> => {
-  const textFiles = ['robots.txt', 'sitemap.xml', 'site.webmanifest']
+  const textFiles = ['robots.txt', 'site.webmanifest']
 
   await Promise.all(
     textFiles.map(async (fileName) => {
@@ -31,6 +53,16 @@ const patchStaticTextFiles = async (siteUrl: string): Promise<void> => {
       )
     }),
   )
+}
+
+const writeSitemaps = async (siteUrl: string): Promise<void> => {
+  for (const locale of SUPPORTED_LOCALES) {
+    const localeDir = `${DIST_DIR}/${locale}`
+    const sitemap = generateSitemap(siteUrl, locale)
+    await Bun.write(`${localeDir}/sitemap.xml`, sitemap)
+  }
+  const defaultLocale = SUPPORTED_LOCALES[0]
+  await Bun.$`cp ${DIST_DIR}/${defaultLocale}/sitemap.xml ${DIST_DIR}/sitemap.xml`
 }
 
 await Bun.$`rm -rf ${DIST_DIR}/`
@@ -59,6 +91,7 @@ const publicSiteUrl = resolvePublicSiteUrl(
 
 await copyStaticAssets()
 await patchStaticTextFiles(publicSiteUrl)
+await writeSitemaps(publicSiteUrl)
 
 const shellHtml = await Bun.file(`${DIST_DIR}/index.html`).text()
 
