@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "build": "bun run scripts/build.ts",
-    "dev": "bun --hot scripts/dev.ts",
     "start:prod": "bun run scripts/preview.ts",
     "start": "bun index.ts",
     "test": "bun test",

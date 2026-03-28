@@ -11,16 +11,20 @@
       "destination": "/result/index.html"
     },
     {
-      "source": "/result",
-      "destination": "/result/index.html"
-    },
-    {
       "source": "/:locale/result/:path*",
-      "destination": "/result/index.html"
+      "destination": "/:locale/result/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "permanent": true
     },
     {
-      "source": "/:locale/result",
-      "destination": "/result/index.html"
+      "source": "/en-US/:path*",
+      "destination": "/:path*",
+      "permanent": true
     }
   ]
 }
