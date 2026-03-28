@@ -1,28 +1,54 @@
 import { match, P } from 'ts-pattern'
 
-import { stripLocaleFromPath } from './src/i18n/lingui.config'
+import { stripLocaleFromPath } from '../src/i18n/lingui.config'
 
 const port = Number(Bun.env.PORT ?? '3000')
 
 const indexFile = Bun.file('./dist/index.html')
 const resultIndexFile = Bun.file('./dist/result/index.html')
 
-const isAssetRequest = (pathname: string): boolean =>
-  /\.[a-z0-9]+$/i.test(pathname)
+if (import.meta.main) {
+  exec()
+}
 
-const serveFile = (path: string) =>
-  Bun.file(path)
+export async function exec() {
+  const server = Bun.serve({
+    port,
+    fetch: (request): Promise<Response> => {
+      const url = new URL(request.url)
+      const { locale, strippedPathname } = stripLocaleFromPath(url.pathname)
+
+      return match(locale)
+        .with(null, () => serveDefaultRoute(url.pathname))
+        .otherwise((resolvedLocale) =>
+          serveLocaleRoute(`./dist/${resolvedLocale}`, strippedPathname),
+        )
+    },
+  })
+
+  console.log(
+    `Amorta production preview available at http://localhost:${server.port}`,
+  )
+}
+
+function isAssetRequest(pathname: string) {
+  return /\.[a-z0-9]+$/i.test(pathname)
+}
+
+async function serveFile(path: string) {
+  return Bun.file(path)
     .exists()
     .then((exists) =>
       match(exists)
         .with(true, () => new Response(Bun.file(path)))
         .otherwise(() => null),
     )
+}
 
-const serveLocaleRoute = (
+async function serveLocaleRoute(
   localeDistPrefix: string,
   strippedPathname: string,
-): Promise<Response> => {
+): Promise<Response> {
   const distPath = strippedPathname.replace(/^\/+/, '').replace(/\/+$/, '')
 
   const findFile = match(distPath)
@@ -42,7 +68,7 @@ const serveLocaleRoute = (
   )
 }
 
-const serveDefaultRoute = (pathname: string): Promise<Response> => {
+async function serveDefaultRoute(pathname: string): Promise<Response> {
   const distPath = pathname.replace(/^\/+/, '').replace(/\/+$/, '')
 
   return serveFile(`./dist/${distPath}`).then((response) =>
@@ -60,21 +86,3 @@ const serveDefaultRoute = (pathname: string): Promise<Response> => {
       .otherwise((resolvedResponse) => resolvedResponse),
   )
 }
-
-const server = Bun.serve({
-  port,
-  fetch: (request): Promise<Response> => {
-    const url = new URL(request.url)
-    const { locale, strippedPathname } = stripLocaleFromPath(url.pathname)
-
-    return match(locale)
-      .with(null, () => serveDefaultRoute(url.pathname))
-      .otherwise((resolvedLocale) =>
-        serveLocaleRoute(`./dist/${resolvedLocale}`, strippedPathname),
-      )
-  },
-})
-
-console.log(
-  `Amorta production preview available at http://localhost:${server.port}`,
-)
