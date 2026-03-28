@@ -7,6 +7,7 @@ import {
   type SupportedLocale,
 } from '../src/i18n/lingui.config'
 import { ARTICLES } from '../src/domain/blog'
+import { exec as ci } from './ci'
 
 const DIST_DIR = './dist'
 const STATIC_DIR = './static'
@@ -16,10 +17,12 @@ const PUBLIC_SITE_URL = resolvePublicSiteUrl(
 )
 
 if (import.meta.main) {
-  exec()
+  await exec()
 }
 
 export async function exec() {
+  await ci()
+
   await Bun.$`rm -rf ${DIST_DIR}/`
   const prodBuild = await Bun.build({
     minify: true,
@@ -46,7 +49,7 @@ export async function exec() {
 
   const shellHtml = await Bun.file(`${DIST_DIR}/index.html`).text()
 
-  const defaultLocale = SUPPORTED_LOCALES[0]
+  const defaultLocale = SUPPORTED_LOCALES[2]
 
   for (const locale of SUPPORTED_LOCALES) {
     await writeLocale(shellHtml, locale)

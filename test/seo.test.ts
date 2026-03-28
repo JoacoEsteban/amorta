@@ -29,11 +29,11 @@ describe('buildSeoMetadata', () => {
 
   it('builds root metadata for the calculator page', () => {
     const metadata = buildSeoMetadata({
-      routeState: { kind: 'index' },
+      routeState: { kind: 'index', locale: 'es-AR' },
       siteUrl,
     })
 
-    expect(metadata.title).toBe('Amorta | French Amortization Calculator')
+    expect(metadata.title).toBe('Amorta | Calculadora de Amortización Francesa')
     expect(metadata.canonicalUrl).toBe(`${siteUrl}/`)
   })
 
