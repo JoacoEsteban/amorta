@@ -8,6 +8,8 @@ import {
 } from '../src/i18n/lingui.config'
 import { ARTICLES } from '../src/domain/blog'
 import { exec as ci } from './ci'
+import { match } from 'ts-pattern'
+import path from 'path'
 
 const DIST_DIR = './dist'
 const STATIC_DIR = './static'
@@ -43,29 +45,26 @@ export async function exec() {
     throw new Error('Failed to build browser assets')
   }
 
+  const defaultLocale = SUPPORTED_LOCALES[0]
+
   await copyStaticAssets()
   await patchStaticTextFiles(PUBLIC_SITE_URL)
-  await writeSitemaps(PUBLIC_SITE_URL)
+  await writeSitemaps(PUBLIC_SITE_URL, defaultLocale)
 
   const shellHtml = await Bun.file(`${DIST_DIR}/index.html`).text()
 
-  const defaultLocale = SUPPORTED_LOCALES[2]
-
   for (const locale of SUPPORTED_LOCALES) {
-    await writeLocale(shellHtml, locale)
+    await writeLocale(shellHtml, locale, defaultLocale)
     console.log(`Wrote dist/${locale}/`)
   }
-
-  await Bun.$`mkdir -p ${DIST_DIR}/result`
-  await Bun.$`cp ${DIST_DIR}/${defaultLocale}/index.html ${DIST_DIR}/index.html`
-  await Bun.$`cp ${DIST_DIR}/${defaultLocale}/result/index.html ${DIST_DIR}/result/index.html`
-  await Bun.$`mkdir -p ${DIST_DIR}/blog`
-  await Bun.$`cp -r ${DIST_DIR}/${defaultLocale}/blog/. ${DIST_DIR}/blog/`
-  console.log(`Wrote dist/index.html and dist/result/index.html`)
 }
 
-function generateSitemap(siteUrl: string, locale: SupportedLocale): string {
-  const localePrefix = locale === SUPPORTED_LOCALES[0] ? '' : `/${locale}`
+function generateSitemap(
+  siteUrl: string,
+  locale: SupportedLocale,
+  defaultLocale: SupportedLocale,
+): string {
+  const localePrefix = locale === defaultLocale ? '' : `/${locale}`
   const today = new Date().toISOString().split('T')[0]
 
   const staticUrls = [
@@ -83,7 +82,7 @@ function generateSitemap(siteUrl: string, locale: SupportedLocale): string {
       const loc = `${siteUrl}${localePrefix}${u.path}`
       const hreflangLinks =
         SUPPORTED_LOCALES.map((loc) => {
-          const prefix = loc === SUPPORTED_LOCALES[0] ? '' : `/${loc}`
+          const prefix = loc === defaultLocale ? '' : `/${loc}`
           return `<xhtml:link rel="alternate" hreflang="${loc}" href="${siteUrl}${prefix}${u.path}"/>`
         }).join('') +
         `<xhtml:link rel="alternate" hreflang="x-default" href="${siteUrl}${u.path}"/>`
@@ -115,21 +114,48 @@ async function patchStaticTextFiles(siteUrl: string): Promise<void> {
   )
 }
 
-async function writeSitemaps(siteUrl: string): Promise<void> {
-  for (const locale of SUPPORTED_LOCALES) {
-    const localeDir = `${DIST_DIR}/${locale}`
-    const sitemap = generateSitemap(siteUrl, locale)
-    await Bun.write(`${localeDir}/sitemap.xml`, sitemap)
-  }
-  const defaultLocale = SUPPORTED_LOCALES[0]
-  await Bun.$`cp ${DIST_DIR}/${defaultLocale}/sitemap.xml ${DIST_DIR}/sitemap.xml`
+async function writeSitemaps(
+  siteUrl: string,
+  defaultLocale: SupportedLocale,
+): Promise<void> {
+  const sitemapWrites = SUPPORTED_LOCALES.map(async (locale) => {
+    const sitemapPath = match(locale)
+      .with(defaultLocale, () => `${DIST_DIR}/sitemap-root.xml`)
+      .otherwise(() => `${DIST_DIR}/${locale}/sitemap.xml`)
+
+    const sitemap = generateSitemap(siteUrl, locale, defaultLocale)
+    await Bun.write(sitemapPath, sitemap)
+
+    return sitemapPath
+  })
+
+  const sitemaps = await Promise.all(sitemapWrites)
+
+  const sitemapIndex = `<sitemapindex>
+      ${sitemaps
+        .map((sitemap) => {
+          const loc = new URL(siteUrl)
+          loc.pathname = sitemap.replace(DIST_DIR, '')
+
+          return `<sitemap>
+            <loc>${loc.href}</loc>
+          </sitemap>`
+        })
+        .join('')}
+  </sitemapindex>`
+
+  await Bun.write(`${DIST_DIR}/sitemap.xml`, sitemapIndex)
 }
 
 async function writeLocale(
   shellHtml: string,
   locale: SupportedLocale,
+  defaultLocale: SupportedLocale,
 ): Promise<void> {
-  const dir = `${DIST_DIR}/${locale}`
+  const dir = match(locale)
+    .with(defaultLocale, () => `${DIST_DIR}`)
+    .otherwise(() => `${DIST_DIR}/${locale}`)
+
   await Bun.$`mkdir -p ${dir}`
 
   const indexHtml = renderHtmlDocument({
