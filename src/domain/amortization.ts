@@ -401,7 +401,7 @@ export const buildCalculation = (values: LoanFormValues): CalculationResult => {
                   .otherwise(() => ({
                     kind: 'invalid' as const,
                     mode,
-                    errors: ['Effective annual rate is required'],
+                    errors: ['Effective annual rate is required'], // TODO translate
                   })),
               )
               .with('payment', () =>
@@ -452,7 +452,7 @@ export const buildCalculation = (values: LoanFormValues): CalculationResult => {
                   .otherwise(() => ({
                     kind: 'invalid' as const,
                     mode,
-                    errors: ['Payment amount is required'],
+                    errors: ['Payment amount is required'], // TODO translate
                   })),
               )
               .exhaustive()
@@ -461,7 +461,7 @@ export const buildCalculation = (values: LoanFormValues): CalculationResult => {
         .otherwise(() => ({
           kind: 'invalid' as const,
           mode,
-          errors: ['The loan inputs are incomplete'],
+          errors: ['The loan inputs are incomplete'], // TODO translate
         })),
     )
 }

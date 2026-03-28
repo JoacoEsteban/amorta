@@ -1,3 +1,5 @@
+import { assert } from '../lib/assert'
+
 export const SUPPORTED_LOCALES = ['en-US', 'en-GB', 'es-ES', 'es-AR'] as const
 export type SupportedLocale = (typeof SUPPORTED_LOCALES)[number]
 
@@ -17,22 +19,25 @@ const LANGUAGE_TO_LOCALE: Map<string, SupportedLocale> = (() => {
   const map = new Map<string, SupportedLocale>()
   SUPPORTED_LOCALES.forEach((locale) => {
     const lang = locale.split('-')[0]
+    assert(lang)
     map.set(locale, locale)
     if (!map.has(lang)) map.set(lang, locale)
   })
   return map
 })()
 
-export const localeFromPath = (pathSegment: string): SupportedLocale | null => {
-  const candidate = pathSegment.trim()
+export const resolveLocaleFromMaybeLanguage = (
+  maybeLanguageOrLocale: string,
+): SupportedLocale | null => {
+  if (!maybeLanguageOrLocale) return null
+
+  const candidate = maybeLanguageOrLocale.trim()
   if (SUPPORTED_LOCALES.includes(candidate as SupportedLocale)) {
     return candidate as SupportedLocale
   }
   const langFallback = LANGUAGE_TO_LOCALE.get(candidate)
   return langFallback ?? null
 }
-
-export const localeToPath = (locale: SupportedLocale): string => locale
 
 export const stripLocaleFromPath = (
   pathname: string,
@@ -43,7 +48,7 @@ export const stripLocaleFromPath = (
     .filter((s) => s.length > 0)
 
   const first = segments[0]
-  const locale = first ? localeFromPath(first) : null
+  const locale = first ? resolveLocaleFromMaybeLanguage(first) : null
   const strippedSegments = locale ? segments.slice(1) : segments
 
   return {

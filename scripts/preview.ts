@@ -1,11 +1,9 @@
 import { match, P } from 'ts-pattern'
-
-import { stripLocaleFromPath } from '../src/i18n/lingui.config'
+import path from 'path'
+import { identity } from 'rxjs'
+import { DEFAULT_LOCALE } from '../src/i18n/lingui.config'
 
 const port = Number(Bun.env.PORT ?? '3000')
-
-const indexFile = Bun.file('./dist/index.html')
-const resultIndexFile = Bun.file('./dist/result/index.html')
 
 if (import.meta.main) {
   exec()
@@ -14,25 +12,49 @@ if (import.meta.main) {
 export async function exec() {
   const server = Bun.serve({
     port,
-    fetch: (request): Promise<Response> => {
+    fetch: async (request): Promise<Response> => {
       const url = new URL(request.url)
-      const { locale, strippedPathname } = stripLocaleFromPath(url.pathname)
-
-      return match(locale)
-        .with(null, () => serveDefaultRoute(url.pathname))
-        .otherwise((resolvedLocale) =>
-          serveLocaleRoute(`./dist/${resolvedLocale}`, strippedPathname),
+      const matchedPath = match(url.pathname)
+        .with(
+          P.string.startsWith(`/${DEFAULT_LOCALE}/`),
+          (path) =>
+            ({
+              location: path.replace(`/${DEFAULT_LOCALE}/`, '/'),
+              redirect: true,
+            }) as const,
         )
+        .with(P.string.regex(/result\/\w+$/), (resultPath) =>
+          resultPath.replace(/result\/\w+$/, '/result/index.html'),
+        )
+        .otherwise(identity)
+
+      return match(matchedPath)
+        .with(
+          {
+            redirect: true,
+          },
+          ({ location }) => {
+            const response = new Response('', { status: 301 })
+            response.headers.set('Location', location)
+
+            return response
+          },
+        )
+        .otherwise(async (matchedPath) => {
+          const filePath = match(path.join('./dist', matchedPath))
+            .with(P.string.regex(/\.\w+$/), identity)
+            .otherwise((file) => path.join(file, 'index.html'))
+
+          const fileResponse = await serveFile(filePath)
+
+          return fileResponse ?? new Response('Not Found', { status: 404 })
+        })
     },
   })
 
   console.log(
     `Amorta production preview available at http://localhost:${server.port}`,
   )
-}
-
-function isAssetRequest(pathname: string) {
-  return /\.[a-z0-9]+$/i.test(pathname)
 }
 
 async function serveFile(path: string) {
@@ -43,46 +65,4 @@ async function serveFile(path: string) {
         .with(true, () => new Response(Bun.file(path)))
         .otherwise(() => null),
     )
-}
-
-async function serveLocaleRoute(
-  localeDistPrefix: string,
-  strippedPathname: string,
-): Promise<Response> {
-  const distPath = strippedPathname.replace(/^\/+/, '').replace(/\/+$/, '')
-
-  const findFile = match(distPath)
-    .with('', () => serveFile(`${localeDistPrefix}/index.html`))
-    .otherwise((path) => serveFile(`${localeDistPrefix}/${path}`))
-
-  return findFile.then((response) =>
-    match(response)
-      .with(null, () =>
-        match(isAssetRequest(strippedPathname))
-          .with(true, () => new Response('Not Found', { status: 404 }))
-          .otherwise(
-            () => new Response(Bun.file(`${localeDistPrefix}/index.html`)),
-          ),
-      )
-      .otherwise((resolvedResponse) => resolvedResponse),
-  )
-}
-
-async function serveDefaultRoute(pathname: string): Promise<Response> {
-  const distPath = pathname.replace(/^\/+/, '').replace(/\/+$/, '')
-
-  return serveFile(`./dist/${distPath}`).then((response) =>
-    match(response)
-      .with(null, () =>
-        match([
-          isAssetRequest(pathname),
-          pathname.startsWith('/result'),
-        ] as const)
-          .with([true, P._], () => new Response('Not Found', { status: 404 }))
-          .with([false, true], () => new Response(resultIndexFile))
-          .with([false, false], () => new Response(indexFile))
-          .exhaustive(),
-      )
-      .otherwise((resolvedResponse) => resolvedResponse),
-  )
 }

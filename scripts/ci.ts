@@ -3,5 +3,8 @@ if (import.meta.main) {
 }
 
 export async function exec() {
-  // await Bun.$`tsc`
+  console.log('Running tsc')
+  await Bun.$`tsc`
+  console.log('Running tests')
+  await Bun.$`bun run test`
 }

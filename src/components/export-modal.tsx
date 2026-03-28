@@ -14,8 +14,7 @@ import {
   DialogFooter,
   DialogClose,
 } from './ui/dialog'
-import { i18n } from '../i18n/index.js'
-import { locale$ } from '../i18n/locale-state'
+import { useLocale, useTranslator } from '../state/locale.js'
 
 type ExportModalProps = {
   open: boolean
@@ -56,10 +55,11 @@ export const ExportModal = ({
   calculation,
 }: ExportModalProps) => {
   const [downloading, setDownloading] = useState<'csv' | 'json' | null>(null)
+  const { _ } = useTranslator()
+  const locale = useLocale()
 
   const handleDownloadCsv = (): void => {
     setDownloading('csv')
-    const locale = locale$.getValue()
     const content = buildCsvContent(toExportable(calculation), locale)
     const filename = `amortization-schedule-${calculation.loanAmount}-${calculation.years}yr.csv`
     triggerDownload(content, filename)
@@ -78,9 +78,9 @@ export const ExportModal = ({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>{i18n._('exportSchedule')}</DialogTitle>
+          <DialogTitle>{_('exportSchedule')}</DialogTitle>
           <DialogDescription>
-            {i18n._('exportScheduleDescription')}
+            {_('exportScheduleDescription')}
           </DialogDescription>
         </DialogHeader>
 
@@ -95,11 +95,9 @@ export const ExportModal = ({
               <FileSpreadsheet size={22} />
             </div>
             <div className="export-option__copy">
-              <span className="export-option__label">
-                {i18n._('downloadCsv')}
-              </span>
+              <span className="export-option__label">{_('downloadCsv')}</span>
               <span className="export-option__detail">
-                {i18n._('downloadCsvDetail')}
+                {_('downloadCsvDetail')}
               </span>
             </div>
             <div className="export-option__action">
@@ -123,11 +121,9 @@ export const ExportModal = ({
               <FileJson size={22} />
             </div>
             <div className="export-option__copy">
-              <span className="export-option__label">
-                {i18n._('downloadJson')}
-              </span>
+              <span className="export-option__label">{_('downloadJson')}</span>
               <span className="export-option__detail">
-                {i18n._('downloadJsonDetail')}
+                {_('downloadJsonDetail')}
               </span>
             </div>
             <div className="export-option__action">
@@ -147,7 +143,7 @@ export const ExportModal = ({
             className="export-close"
             onClick={() => onOpenChange(false)}
           >
-            {i18n._('cancel')}
+            {_('cancel')}
           </DialogClose>
         </DialogFooter>
       </DialogContent>

@@ -1,3 +1,4 @@
+import { DEFAULT_LOCALE } from '../i18n/lingui.config'
 import type { AmortizationRow } from './amortization'
 
 export type ExportableCalculation = {
@@ -20,7 +21,7 @@ const getLocaleTag = (locale: string): string => {
     'es-ES': 'es-ES',
     'es-AR': 'es-AR',
   }
-  return localeTagMap[locale] ?? 'en-US'
+  return localeTagMap[locale] ?? DEFAULT_LOCALE
 }
 
 const buildCurrencyFormatter = (locale: string, currency: string) =>

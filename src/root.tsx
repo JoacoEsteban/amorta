@@ -14,9 +14,11 @@ import {
   type LoanStore,
 } from './state/loan-store'
 import { createUIStore } from './state/ui-store'
-import { locale$ } from './i18n/locale-state'
-
-const [useLocale] = bind(locale$, locale$.getValue())
+import { ProvideLocale, useLocale } from './state/locale'
+import { resolveLocale } from './i18n/locale-resolution'
+import { createLocaleStore } from './state/locale-store'
+import { DEFAULT_LOCALE } from './i18n/lingui.config'
+import { assert } from './lib/assert'
 
 type InvalidRouteState = {
   kind: 'result'
@@ -33,8 +35,6 @@ type AppRootProps = {
 }
 
 export const AppRoot = ({ initialRouteState, siteUrl }: AppRootProps) => {
-  useLocale()
-
   const [routeState, setRouteState] = useState<RouteState>(initialRouteState)
   const [hydrated, setHydrated] = useState(false)
 
@@ -51,12 +51,20 @@ export const AppRoot = ({ initialRouteState, siteUrl }: AppRootProps) => {
     }),
   )
   const [uiStore] = useState(() => createUIStore())
+  const [localeStore] = useState(() =>
+    createLocaleStore(routeState.locale ?? DEFAULT_LOCALE),
+  )
 
   useEffect(() => {
     const resolvedRouteState = parseRouteState(
       new URL(window.location.href),
       'resolved',
     )
+
+    const { locale, location } = resolveLocale()
+    assert(locale)
+
+    localeStore.setLocale(locale)
 
     setHydrated(true)
 
@@ -125,20 +133,22 @@ export const AppRoot = ({ initialRouteState, siteUrl }: AppRootProps) => {
 
   return (
     <StrictMode>
-      <>
-        <SeoHead routeState={routeState} siteUrl={siteUrl} />
-        {appNode}
-        <Toaster
-          position="top-center"
-          toastOptions={{
-            style: {
-              borderRadius: '16px',
-              background: 'rgba(28, 25, 23, 0.95)',
-              color: '#f5f5f4',
-            },
-          }}
-        />
-      </>
+      <ProvideLocale store={localeStore}>
+        <>
+          <SeoHead routeState={routeState} siteUrl={siteUrl} />
+          {appNode}
+          <Toaster
+            position="top-center"
+            toastOptions={{
+              style: {
+                borderRadius: '16px',
+                background: 'rgba(28, 25, 23, 0.95)',
+                color: '#f5f5f4',
+              },
+            }}
+          />
+        </>
+      </ProvideLocale>
     </StrictMode>
   )
 }
@@ -150,8 +160,9 @@ const SeoHead = ({
   routeState: RouteState
   siteUrl: string
 }) => {
+  const locale = useLocale()
   useEffect(() => {
-    const metadata = buildSeoMetadata({ routeState, siteUrl })
+    const metadata = buildSeoMetadata({ routeState, siteUrl, locale })
 
     document.title = metadata.title
     upsertMetaTag('name', 'description', metadata.description)
@@ -164,7 +175,7 @@ const SeoHead = ({
     upsertMetaTag('name', 'twitter:image', metadata.openGraphImageUrl)
     upsertLinkTag('canonical', metadata.canonicalUrl)
     upsertJsonLd(metadata.jsonLd)
-  }, [routeState, siteUrl])
+  }, [routeState, siteUrl, locale])
 
   return null
 }

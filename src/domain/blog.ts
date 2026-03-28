@@ -1,5 +1,3 @@
-import { i18n } from '../i18n/index.js'
-
 export type Article = {
   slug: string
   titleKey: string
@@ -20,9 +18,3 @@ export const ARTICLES: Article[] = [
 
 export const getArticleBySlug = (slug: string): Article | undefined =>
   ARTICLES.find((a) => a.slug === slug)
-
-export const getArticleTitle = (article: Article): string =>
-  i18n._(article.titleKey)
-
-export const getArticleDescription = (article: Article): string =>
-  i18n._(article.descriptionKey)

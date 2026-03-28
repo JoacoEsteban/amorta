@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 import { match } from 'ts-pattern'
 
-import { i18n } from '../i18n/index.js'
 import type { CalculationResult } from '../domain/amortization'
+import { useTranslator } from '../state/locale.js'
 
 const currencyFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -49,13 +49,16 @@ const groupByYear = (
     .sort((a, b) => a.year - b.year)
 }
 
-const YearMarker = ({ year }: { year: number }) => (
-  <div className="year-marker">
-    <span className="year-marker__line" />
-    <span className="year-marker__label">{i18n._('yearMarker', { year })}</span>
-    <span className="year-marker__line" />
-  </div>
-)
+const YearMarker = ({ year }: { year: number }) => {
+  const { _ } = useTranslator()
+  return (
+    <div className="year-marker">
+      <span className="year-marker__line" />
+      <span className="year-marker__label">{_('yearMarker', { year })}</span>
+      <span className="year-marker__line" />
+    </div>
+  )
+}
 
 const QuotaRow = ({
   quota,
@@ -90,8 +93,8 @@ const CollapsibleYearSection = ({
   quotas: YearGroup['quotas']
   forceOpen: boolean
 }) => {
+  const { _ } = useTranslator()
   const [isOpen, setIsOpen] = useState(forceOpen)
-
   useEffect(() => setIsOpen(forceOpen), [forceOpen])
 
   return (
@@ -103,7 +106,7 @@ const CollapsibleYearSection = ({
         aria-expanded={isOpen}
       >
         <span className="year-section__title">
-          {i18n._('yearSectionPayments', { year, count: quotas.length })}
+          {_('yearSectionPayments', { year, count: quotas.length })}
         </span>
         <ChevronDown
           size={18}
@@ -122,19 +125,19 @@ const CollapsibleYearSection = ({
               <thead>
                 <tr>
                   <th className="quota-table__header">
-                    {i18n._('tableHeaderQuota')}
+                    {_('tableHeaderQuota')}
                   </th>
                   <th className="quota-table__header">
-                    {i18n._('tableHeaderPayment')}
+                    {_('tableHeaderPayment')}
                   </th>
                   <th className="quota-table__header">
-                    {i18n._('tableHeaderPrincipal')}
+                    {_('tableHeaderPrincipal')}
                   </th>
                   <th className="quota-table__header">
-                    {i18n._('tableHeaderInterest')}
+                    {_('tableHeaderInterest')}
                   </th>
                   <th className="quota-table__header">
-                    {i18n._('tableHeaderBalance')}
+                    {_('tableHeaderBalance')}
                   </th>
                 </tr>
               </thead>

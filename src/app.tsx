@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
 import {
   Landmark,
@@ -51,20 +51,14 @@ import {
   saveLoanStateToLocalStorage,
 } from './state/loan-store'
 import type { UIStore } from './state/ui-store'
-import { localeFromPath, buildLocalePath } from './i18n/lingui.config'
-import { locale$ } from './i18n/locale-state'
-import { i18n } from './i18n/index.js'
+import { buildLocalePath, type SupportedLocale } from './i18n/lingui.config'
 import { cn } from './lib/utils'
-
-const paymentFrequencyOptions: Array<{
-  label: string
-  value: PaymentFrequency
-}> = [
-  { label: i18n._('frequencyOnePayment'), value: 1 },
-  { label: i18n._('frequencyThreePayments'), value: 3 },
-  { label: i18n._('frequencySixPayments'), value: 6 },
-  { label: i18n._('frequencyTwelvePayments'), value: 12 },
-]
+import {
+  useLocale,
+  useTranslator,
+  type Translate,
+  type Translator,
+} from './state/locale.js'
 
 const currencyFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -104,37 +98,40 @@ const formatShareOfTotal = (value: number, total: number): string =>
     .with(true, () => formatPercent(value / total))
     .otherwise(() => '0%')
 
-const copyShareUrl = (shareUrl: string): void => {
-  const clipboard = match(typeof navigator)
-    .with('undefined', () => null)
-    .otherwise(() => navigator.clipboard)
+const copyShareUrl =
+  (_: Translate) =>
+  (shareUrl: string): void => {
+    const clipboard = match(typeof navigator)
+      .with('undefined', () => null)
+      .otherwise(() => navigator.clipboard)
 
-  match(clipboard)
-    .with(null, () => {
-      toast.error(i18n._('clipboardUnavailable'))
-    })
-    .otherwise((resolvedClipboard) => {
-      resolvedClipboard
-        .writeText(shareUrl)
-        .then(() => {
-          toast.success(i18n._('shareUrlCopied'))
-        })
-        .catch(() => {
-          toast.error(i18n._('shareUrlCopyFailed'))
-        })
-    })
-}
+    match(clipboard)
+      .with(null, () => {
+        toast.error(_('clipboardUnavailable'))
+      })
+      .otherwise((resolvedClipboard) => {
+        resolvedClipboard
+          .writeText(shareUrl)
+          .then(() => {
+            toast.success(_('shareUrlCopied'))
+          })
+          .catch(() => {
+            toast.error(_('shareUrlCopyFailed'))
+          })
+      })
+  }
 
-const navigateTo = (pathname: string): void => {
-  match(typeof window)
-    .with('undefined', () => null)
-    .otherwise(() => {
-      const currentLocale = locale$.getValue()
-      const fullPath = buildLocalePath(currentLocale, pathname)
-      window.location.assign(fullPath)
-      return null
-    })
-}
+const makeLocaleNavigator =
+  (locale: SupportedLocale) =>
+  (pathname: string): void => {
+    match(typeof window)
+      .with('undefined', () => null)
+      .otherwise(() => {
+        const fullPath = buildLocalePath(locale, pathname)
+        window.location.assign(fullPath)
+        return null
+      })
+  }
 
 type AppProps =
   | {
@@ -249,13 +246,30 @@ const CalculatorPage = ({
     .with({ isPaymentDriven: true }, () => '')
     .otherwise(() => values.ear)
 
-  const shareUrl = match(typeof window)
-    .with('undefined', () => '')
-    .otherwise(() =>
-      buildShareUrl(store.getValues(), window.location, locale$.getValue()),
-    )
+  const { _ } = useTranslator()
+
+  const locale = useLocale()
+  const navigateTo = useMemo(() => makeLocaleNavigator(locale), [locale])
+
+  const shareUrl = useMemo(
+    () =>
+      match(typeof window)
+        .with('undefined', () => '')
+        .otherwise(() => buildShareUrl(values, window.location, locale)),
+    [locale, values],
+  )
 
   const shareDisabled = !hydrated || isPendingResult
+
+  const paymentFrequencyOptions: Array<{
+    label: string
+    value: PaymentFrequency
+  }> = [
+    { label: _('frequencyOnePayment'), value: 1 },
+    { label: _('frequencyThreePayments'), value: 3 },
+    { label: _('frequencySixPayments'), value: 6 },
+    { label: _('frequencyTwelvePayments'), value: 12 },
+  ]
 
   return (
     <main className="app-shell">
@@ -264,25 +278,23 @@ const CalculatorPage = ({
           <div className="page-toolbar__copy">
             <p className="page-kicker">
               {match({ storeMode, isPendingResult })
-                .with({ isPendingResult: true }, () => i18n._('sharedResult'))
-                .with({ storeMode: 'shared-result' }, () =>
-                  i18n._('sharedResult'),
-                )
-                .otherwise(() => i18n._('liveCalculator'))}
+                .with({ isPendingResult: true }, () => _('sharedResult'))
+                .with({ storeMode: 'shared-result' }, () => _('sharedResult'))
+                .otherwise(() => _('liveCalculator'))}
             </p>
             <h1 className="page-title">
               {match({ storeMode, isPendingResult })
                 .with({ storeMode: 'shared-result' }, () =>
-                  i18n._('sharedFrenchAmortizationResult'),
+                  _('sharedFrenchAmortizationResult'),
                 )
-                .otherwise(() => i18n._('frenchAmortizationCalculator'))}
+                .otherwise(() => _('frenchAmortizationCalculator'))}
             </h1>
             <p className="page-summary">
               {match({ storeMode, isPendingResult })
                 .with({ storeMode: 'shared-result' }, () =>
-                  i18n._('reviewSharedResultSummary'),
+                  _('reviewSharedResultSummary'),
                 )
-                .otherwise(() => i18n._('modelFrenchLoanSummary'))}
+                .otherwise(() => _('modelFrenchLoanSummary'))}
             </p>
           </div>
           <div className="page-toolbar__actions">
@@ -292,15 +304,15 @@ const CalculatorPage = ({
               className={match(shareDisabled)
                 .with(true, () => 'action-button action-button--disabled')
                 .otherwise(() => 'action-button action-button--primary')}
-              onClick={() => copyShareUrl(shareUrl)}
+              onClick={() => copyShareUrl(_)(shareUrl)}
               disabled={shareDisabled}
               aria-hidden={shareDisabled}
               title={match(isPendingResult)
-                .with(true, () => i18n._('loadingSharedResultTooltip'))
+                .with(true, () => _('loadingSharedResultTooltip'))
                 .otherwise(() => undefined)}
             >
               <Share2 size={16} />
-              <span>{i18n._('shareResult')}</span>
+              <span>{_('shareResult')}</span>
             </button>
           </div>
         </div>
@@ -310,23 +322,21 @@ const CalculatorPage = ({
             <CardHeader className="panel-card__header panel-card__header--accent">
               <CardTitle>
                 {match({ storeMode, isPendingResult })
-                  .with({ isPendingResult: true }, () => i18n._('sharedInputs'))
-                  .with({ storeMode: 'shared-result' }, () =>
-                    i18n._('sharedInputs'),
-                  )
-                  .otherwise(() => i18n._('frenchMortgageInputs'))}
+                  .with({ isPendingResult: true }, () => _('sharedInputs'))
+                  .with({ storeMode: 'shared-result' }, () => _('sharedInputs'))
+                  .otherwise(() => _('frenchMortgageInputs'))}
               </CardTitle>
               <CardDescription>
                 {match({ storeMode, isPendingResult, hydrated })
                   .with({ storeMode: 'shared-result' }, () =>
-                    i18n._('sharedInputsDescription'),
+                    _('sharedInputsDescription'),
                   )
-                  .otherwise(() => i18n._('changeValueDescription'))}
+                  .otherwise(() => _('changeValueDescription'))}
               </CardDescription>
             </CardHeader>
             <CardContent className="panel-card__content form-stack">
               <FieldShell readonly={isReadonly}>
-                <Label htmlFor="loan-amount">{i18n._('loanAmount')}</Label>
+                <Label htmlFor="loan-amount">{_('loanAmount')}</Label>
                 <Input
                   id="loan-amount"
                   inputMode="decimal"
@@ -334,13 +344,13 @@ const CalculatorPage = ({
                   onChange={(event) =>
                     store.setLoanAmount(event.currentTarget.value)
                   }
-                  placeholder={i18n._('placeholderLoanAmount')}
+                  placeholder={_('placeholderLoanAmount')}
                   readOnly={isReadonly}
                 />
               </FieldShell>
 
               <FieldShell readonly={isReadonly}>
-                <Label htmlFor="years">{i18n._('timeInYears')}</Label>
+                <Label htmlFor="years">{_('timeInYears')}</Label>
                 <Input
                   id="years"
                   inputMode="decimal"
@@ -348,14 +358,14 @@ const CalculatorPage = ({
                   onChange={(event) =>
                     store.setYears(event.currentTarget.value)
                   }
-                  placeholder={i18n._('placeholderYears')}
+                  placeholder={_('placeholderYears')}
                   readOnly={isReadonly}
                 />
               </FieldShell>
 
               <FieldShell readonly={isReadonly}>
                 <Label htmlFor="payments-per-year">
-                  {i18n._('paymentsPerYear')}
+                  {_('paymentsPerYear')}
                 </Label>
                 <Select
                   id="payments-per-year"
@@ -376,7 +386,7 @@ const CalculatorPage = ({
               </FieldShell>
 
               <FieldShell readonly={isReadonly}>
-                <Label htmlFor="ear">{i18n._('effectiveAnnualRate')}</Label>
+                <Label htmlFor="ear">{_('effectiveAnnualRate')}</Label>
                 <Input
                   id="ear"
                   inputMode="decimal"
@@ -384,30 +394,28 @@ const CalculatorPage = ({
                   onChange={(event) => store.setEar(event.currentTarget.value)}
                   placeholder={match({ isPaymentDriven, isPendingResult })
                     .with({ isPendingResult: true }, () =>
-                      i18n._('loadingSharedResult'),
+                      _('loadingSharedResult'),
                     )
                     .with({ isPaymentDriven: true }, () =>
-                      i18n._('calculatedAutomatically'),
+                      _('calculatedAutomatically'),
                     )
-                    .otherwise(() => i18n._('placeholderEar'))}
+                    .otherwise(() => _('placeholderEar'))}
                   disabled={isReadonly || isPaymentDriven}
                   readOnly={isReadonly}
                 />
                 <p className="field-note">
                   {match({ isReadonly, isPaymentDriven, isPendingResult })
-                    .with({ isReadonly: true }, () =>
-                      i18n._('fieldNoteReadonly'),
-                    )
+                    .with({ isReadonly: true }, () => _('fieldNoteReadonly'))
                     .with({ isPaymentDriven: true }, () =>
-                      i18n._('fieldNoteEarDisabled'),
+                      _('fieldNoteEarDisabled'),
                     )
-                    .otherwise(() => i18n._('fieldNoteEarFormat'))}
+                    .otherwise(() => _('fieldNoteEarFormat'))}
                 </p>
               </FieldShell>
 
               <FieldShell readonly={isReadonly}>
                 <Label htmlFor="payment-amount">
-                  {i18n._('paymentAmountOptionalOverride')}
+                  {_('paymentAmountOptionalOverride')}
                 </Label>
                 <Input
                   id="payment-amount"
@@ -416,15 +424,13 @@ const CalculatorPage = ({
                   onChange={(event) =>
                     store.setPaymentAmount(event.currentTarget.value)
                   }
-                  placeholder={i18n._('placeholderPaymentAmount')}
+                  placeholder={_('placeholderPaymentAmount')}
                   readOnly={isReadonly}
                 />
                 <p className="field-note">
                   {match({ isReadonly, isPendingResult })
-                    .with({ isReadonly: true }, () =>
-                      i18n._('fieldNoteReadonly'),
-                    )
-                    .otherwise(() => i18n._('fieldNotePaymentOverride'))}
+                    .with({ isReadonly: true }, () => _('fieldNoteReadonly'))
+                    .otherwise(() => _('fieldNotePaymentOverride'))}
                 </p>
               </FieldShell>
 
@@ -440,7 +446,7 @@ const CalculatorPage = ({
                       }}
                     >
                       <RotateCcw size={16} />
-                      <span>{i18n._('startNewCalculation')}</span>
+                      <span>{_('startNewCalculation')}</span>
                     </button>
                     <button
                       type="button"
@@ -451,7 +457,7 @@ const CalculatorPage = ({
                       }}
                     >
                       <PencilLine size={16} />
-                      <span>{i18n._('editThisResult')}</span>
+                      <span>{_('editThisResult')}</span>
                     </button>
                   </div>
                 ))
@@ -463,59 +469,59 @@ const CalculatorPage = ({
             <div className="summary-grid">
               <SummaryCard
                 icon={<Wallet />}
-                label={i18n._('activePayment')}
+                label={_('activePayment')}
                 value={match({ calculation, isPendingResult })
                   .with({ isPendingResult: true }, () =>
-                    i18n._('loadingSharedResult'),
+                    _('loadingSharedResult'),
                   )
                   .with(
                     { calculation: { kind: 'ready' } },
                     ({ calculation: ready }) => formatCurrency(ready.payment),
                   )
-                  .otherwise(() => i18n._('waitingForValidInputs'))}
+                  .otherwise(() => _('waitingForValidInputs'))}
               />
               <SummaryCard
                 icon={<Percent />}
-                label={i18n._('activeEAR')}
+                label={_('activeEAR')}
                 value={match({ calculation, isPendingResult })
                   .with({ isPendingResult: true }, () =>
-                    i18n._('loadingSharedResult'),
+                    _('loadingSharedResult'),
                   )
                   .with(
                     { calculation: { kind: 'ready' } },
                     ({ calculation: ready }) => formatPercent(ready.ear),
                   )
-                  .otherwise(() => i18n._('waitingForValidInputs'))}
+                  .otherwise(() => _('waitingForValidInputs'))}
               />
               <SummaryCard
                 icon={<Landmark />}
-                label={i18n._('repaymentHorizon')}
+                label={_('repaymentHorizon')}
                 value={match({ calculation, isPendingResult })
                   .with({ isPendingResult: true }, () =>
-                    i18n._('loadingSharedResult'),
+                    _('loadingSharedResult'),
                   )
                   .with(
                     { calculation: { kind: 'ready' } },
                     ({ calculation: ready }) =>
-                      i18n._('installmentsAtRate', {
+                      _('installmentsAtRate', {
                         count: ready.paymentCount,
                         rate: ready.paymentsPerYear,
                       }),
                   )
-                  .otherwise(() => i18n._('waitingForValidInputs'))}
+                  .otherwise(() => _('waitingForValidInputs'))}
               />
             </div>
 
             <Card className="panel-card panel-card--chart flex-1">
               <CardHeader className="panel-card__header panel-card__header--plain">
-                <CardTitle>{i18n._('amortizationGraph')}</CardTitle>
+                <CardTitle>{_('amortizationGraph')}</CardTitle>
                 <CardDescription>
                   {match({ hydrated, isPendingResult })
                     .with({ isPendingResult: true }, () =>
-                      i18n._('chartPendingSharedResult'),
+                      _('chartPendingSharedResult'),
                     )
-                    .with({ hydrated: false }, () => i18n._('chartPrerendered'))
-                    .otherwise(() => i18n._('chartInteractive'))}
+                    .with({ hydrated: false }, () => _('chartPrerendered'))
+                    .otherwise(() => _('chartInteractive'))}
                 </CardDescription>
               </CardHeader>
               <CardContent className="panel-card__content chart-stack">
@@ -526,7 +532,7 @@ const CalculatorPage = ({
                     ({ calculation: invalid }) => (
                       <div className="error-box">
                         <p className="error-box__title">
-                          {i18n._('chartCannotGraph')}
+                          {_('chartCannotGraph')}
                         </p>
                         <ul className="error-box__list">
                           {invalid.errors.map((error) => (
@@ -569,9 +575,9 @@ const CalculatorPage = ({
                       )}
                     >
                       <div>
-                        <CardTitle>{i18n._('amortizationSchedule')}</CardTitle>
+                        <CardTitle>{_('amortizationSchedule')}</CardTitle>
                         <CardDescription>
-                          {i18n._('scheduleExpandDescription')}
+                          {_('scheduleExpandDescription')}
                         </CardDescription>
                       </div>
 
@@ -583,9 +589,7 @@ const CalculatorPage = ({
                         >
                           <ChevronsUpDown size={16} />
                           <span>
-                            {tableExpanded
-                              ? i18n._('collapseAll')
-                              : i18n._('expandAll')}
+                            {tableExpanded ? _('collapseAll') : _('expandAll')}
                           </span>
                         </button>
                         <button
@@ -594,7 +598,7 @@ const CalculatorPage = ({
                           onClick={() => setExportOpen(true)}
                         >
                           <Download size={16} />
-                          <span>{i18n._('exportSchedule')}</span>
+                          <span>{_('exportSchedule')}</span>
                         </button>
                       </div>
                     </CardHeader>
@@ -626,24 +630,27 @@ const CalculatorPage = ({
           )
           .otherwise(() => null)}
 
-        <footer className="app-footer">
-          <span>
-            {i18n._('madeBy')}{' '}
-            <a
-              href="https://joaco.io"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              joaco.io
-            </a>
-          </span>
-          <span className="app-footer__sep">·</span>
-          <a href={buildLocalePath(locale$.getValue(), '/blog/')}>
-            {i18n._('articles')}
-          </a>
-        </footer>
+        <Footer />
       </div>
     </main>
+  )
+}
+
+const Footer = () => {
+  const locale = useLocale()
+  const { _ } = useTranslator()
+
+  return (
+    <footer className="app-footer">
+      <span>
+        {_('madeBy')}{' '}
+        <a href="https://joaco.io" target="_blank" rel="noopener noreferrer">
+          joaco.io
+        </a>
+      </span>
+      <span className="app-footer__sep">·</span>
+      <a href={buildLocalePath(locale, '/blog/')}>{_('articles')}</a>
+    </footer>
   )
 }
 
@@ -658,48 +665,54 @@ const InvalidResultPage = ({
       { kind: 'valid' | 'pending' }
     >
   }
-}) => (
-  <main className="app-shell">
-    <div className="app-layout">
-      <div className="page-toolbar">
-        <div className="page-toolbar__copy">
-          <p className="page-kicker">{i18n._('sharedResult')}</p>
-          <h1 className="page-title">{i18n._('sharedResultUnavailable')}</h1>
-        </div>
-        <button
-          type="button"
-          className="action-button action-button--disabled"
-          disabled
-          title={i18n._('validResultRequired')}
-        >
-          <Share2 size={16} />
-          <span>{i18n._('shareResult')}</span>
-        </button>
-      </div>
+}) => {
+  const { _ } = useTranslator()
+  const locale = useLocale()
+  const navigateTo = useMemo(() => makeLocaleNavigator(locale), [locale])
 
-      <Card className="panel-card panel-card--message">
-        <CardHeader className="panel-card__header panel-card__header--plain">
-          <CardTitle>
-            {match(routeState.decoded.kind)
-              .with('missing', () => i18n._('noSharedResultFound'))
-              .otherwise(() => i18n._('thisSharedResultIsInvalid'))}
-          </CardTitle>
-          <CardDescription>{routeState.decoded.message}</CardDescription>
-        </CardHeader>
-        <CardContent className="panel-card__content message-actions">
+  return (
+    <main className="app-shell">
+      <div className="app-layout">
+        <div className="page-toolbar">
+          <div className="page-toolbar__copy">
+            <p className="page-kicker">{_('sharedResult')}</p>
+            <h1 className="page-title">{_('sharedResultUnavailable')}</h1>
+          </div>
           <button
             type="button"
-            className="action-button action-button--primary"
-            onClick={() => navigateTo('/')}
+            className="action-button action-button--disabled"
+            disabled
+            title={_('validResultRequired')}
           >
-            <RotateCcw size={16} />
-            <span>{i18n._('openCalculator')}</span>
+            <Share2 size={16} />
+            <span>{_('shareResult')}</span>
           </button>
-        </CardContent>
-      </Card>
-    </div>
-  </main>
-)
+        </div>
+
+        <Card className="panel-card panel-card--message">
+          <CardHeader className="panel-card__header panel-card__header--plain">
+            <CardTitle>
+              {match(routeState.decoded.kind)
+                .with('missing', () => _('noSharedResultFound'))
+                .otherwise(() => _('thisSharedResultIsInvalid'))}
+            </CardTitle>
+            <CardDescription>{routeState.decoded.message}</CardDescription>
+          </CardHeader>
+          <CardContent className="panel-card__content message-actions">
+            <button
+              type="button"
+              className="action-button action-button--primary"
+              onClick={() => navigateTo('/')}
+            >
+              <RotateCcw size={16} />
+              <span>{_('openCalculator')}</span>
+            </button>
+          </CardContent>
+        </Card>
+      </div>
+    </main>
+  )
+}
 
 const FieldShell = ({
   children,
@@ -707,18 +720,21 @@ const FieldShell = ({
 }: {
   children: ReactNode
   readonly: boolean
-}) => (
-  <div
-    className={match(readonly)
-      .with(true, () => 'field-group field-group--readonly')
-      .otherwise(() => 'field-group')}
-    title={match(readonly)
-      .with(true, () => i18n._('fieldNoteReadonly'))
-      .otherwise(() => undefined)}
-  >
-    {children}
-  </div>
-)
+}) => {
+  const { _ } = useTranslator()
+  return (
+    <div
+      className={match(readonly)
+        .with(true, () => 'field-group field-group--readonly')
+        .otherwise(() => 'field-group')}
+      title={match(readonly)
+        .with(true, () => _('fieldNoteReadonly'))
+        .otherwise(() => undefined)}
+    >
+      {children}
+    </div>
+  )
+}
 
 const SummaryCard = ({
   icon,
@@ -851,16 +867,17 @@ const StaticChartPreview = ({
   )
 }
 
-const PendingChartState = () => (
-  <div className="pending-state">
-    <p className="pending-state__title">
-      {i18n._('loadingSharedAmortization')}
-    </p>
-    <p className="pending-state__copy">
-      {i18n._('loadingSharedAmortizationSubtitle')}
-    </p>
-  </div>
-)
+const PendingChartState = () => {
+  const { _ } = useTranslator()
+  return (
+    <div className="pending-state">
+      <p className="pending-state__title">{_('loadingSharedAmortization')}</p>
+      <p className="pending-state__copy">
+        {_('loadingSharedAmortizationSubtitle')}
+      </p>
+    </div>
+  )
+}
 
 const MetricsRow = ({
   calculation,
@@ -869,39 +886,46 @@ const MetricsRow = ({
     ReturnType<LoanStore['useDashboardViewModel']>['calculation'],
     { kind: 'ready' }
   >
-}) => (
-  <div className="metrics-grid">
-    <Metric
-      label={i18n._('loanAmountMetric')}
-      value={formatCurrency(calculation.loanAmount)}
-      detail={i18n._('principal')}
-    />
-    <Metric
-      label={i18n._('totalInterestMetric')}
-      value={formatCurrency(calculation.totalInterest)}
-      detail={i18n._('ofTotalPaid', {
-        percent: formatShareOfTotal(
-          calculation.totalInterest,
-          calculation.totalPaid,
-        ),
-      })}
-    />
-    <Metric
-      label={i18n._('totalPaidMetric')}
-      value={formatCurrency(calculation.totalPaid)}
-      detail={i18n._('principalRepaid', {
-        multiplier: (calculation.totalPaid / calculation.loanAmount).toFixed(2),
-      })}
-    />
-  </div>
-)
+}) => {
+  const { _ } = useTranslator()
+  return (
+    <div className="metrics-grid">
+      <Metric
+        label={_('loanAmountMetric')}
+        value={formatCurrency(calculation.loanAmount)}
+        detail={_('principal')}
+      />
+      <Metric
+        label={_('totalInterestMetric')}
+        value={formatCurrency(calculation.totalInterest)}
+        detail={_('ofTotalPaid', {
+          percent: formatShareOfTotal(
+            calculation.totalInterest,
+            calculation.totalPaid,
+          ),
+        })}
+      />
+      <Metric
+        label={_('totalPaidMetric')}
+        value={formatCurrency(calculation.totalPaid)}
+        detail={_('principalRepaid', {
+          multiplier: (calculation.totalPaid / calculation.loanAmount).toFixed(
+            2,
+          ),
+        })}
+      />
+    </div>
+  )
+}
 
 const QuotaTooltip = ({
   active,
   payload,
   label,
-}: TooltipContentProps<ValueType, NameType>) =>
-  match(Boolean(active) && Array.isArray(payload) && payload.length > 0)
+}: TooltipContentProps<ValueType, NameType>) => {
+  const { _ } = useTranslator()
+
+  return match(Boolean(active) && Array.isArray(payload) && payload.length > 0)
     .with(false, () => null)
     .otherwise(() => {
       const row = payload?.[0]?.payload as
@@ -919,22 +943,23 @@ const QuotaTooltip = ({
       return (
         <div className="chart-tooltip">
           <p className="chart-tooltip__title">
-            {i18n._('quotaTooltip', { quota: String(label) })}
+            {_('quotaTooltip', { quota: String(label) })}
           </p>
           <div className="chart-tooltip__rows">
             <div className="chart-tooltip__row">
-              <span>{i18n._('tooltipTotal')}</span>
+              <span>{_('tooltipTotal')}</span>
               <strong>{formatCurrency(payment)}</strong>
             </div>
             <div className="chart-tooltip__row">
-              <span>{i18n._('tooltipPrincipal')}</span>
+              <span>{_('tooltipPrincipal')}</span>
               <strong>{`${formatCurrency(principal)} (${formatShareOfTotal(principal, payment)})`}</strong>
             </div>
             <div className="chart-tooltip__row">
-              <span>{i18n._('tooltipInterest')}</span>
+              <span>{_('tooltipInterest')}</span>
               <strong>{`${formatCurrency(interest)} (${formatShareOfTotal(interest, payment)})`}</strong>
             </div>
           </div>
         </div>
       )
     })
+}

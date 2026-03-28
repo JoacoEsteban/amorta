@@ -3,8 +3,7 @@ import { match } from 'ts-pattern'
 
 import { ARTICLES, getArticleBySlug } from '../domain/blog'
 import { buildLocalePath } from '../i18n/lingui.config'
-import { locale$ } from '../i18n/locale-state'
-import { i18n } from '../i18n/index.js'
+import { useLocale, useTranslator } from '../state/locale.js'
 
 type BlogIndexPageProps = {
   routeState: Extract<
@@ -14,7 +13,8 @@ type BlogIndexPageProps = {
 }
 
 export const BlogIndexPage = ({ routeState }: BlogIndexPageProps) => {
-  const currentLocale = routeState.locale ?? locale$.getValue()
+  const { _ } = useTranslator()
+  const currentLocale = useLocale()
 
   const goBack = (): void => {
     window.location.assign(buildLocalePath(currentLocale, '/'))
@@ -25,9 +25,9 @@ export const BlogIndexPage = ({ routeState }: BlogIndexPageProps) => {
       <div className="app-layout">
         <div className="page-toolbar">
           <div className="page-toolbar__copy">
-            <p className="page-kicker">{i18n._('blog')}</p>
-            <h1 className="page-title">{i18n._('blogIndexTitle')}</h1>
-            <p className="page-summary">{i18n._('blogIndexDescription')}</p>
+            <p className="page-kicker">{_('blog')}</p>
+            <h1 className="page-title">{_('blogIndexTitle')}</h1>
+            <p className="page-summary">{_('blogIndexDescription')}</p>
           </div>
         </div>
 
@@ -39,11 +39,11 @@ export const BlogIndexPage = ({ routeState }: BlogIndexPageProps) => {
               className="blog-card"
             >
               <div className="blog-card__meta">
-                <time>{i18n._(article.dateKey)}</time>
+                <time>{_(article.dateKey)}</time>
               </div>
-              <h2 className="blog-card__title">{i18n._(article.titleKey)}</h2>
+              <h2 className="blog-card__title">{_(article.titleKey)}</h2>
               <p className="blog-card__description">
-                {i18n._(article.descriptionKey)}
+                {_(article.descriptionKey)}
               </p>
             </a>
           ))}
@@ -55,12 +55,12 @@ export const BlogIndexPage = ({ routeState }: BlogIndexPageProps) => {
           onClick={goBack}
         >
           <ArrowLeft size={16} />
-          <span>{i18n._('backToCalculator')}</span>
+          <span>{_('backToCalculator')}</span>
         </button>
 
         <footer className="app-footer">
           <span>
-            {i18n._('madeBy')}{' '}
+            {_('madeBy')}{' '}
             <a
               href="https://joaco.io"
               target="_blank"
@@ -83,7 +83,8 @@ type ArticlePageProps = {
 }
 
 export const ArticlePage = ({ routeState }: ArticlePageProps) => {
-  const currentLocale = routeState.locale ?? locale$.getValue()
+  const { _ } = useTranslator()
+  const currentLocale = useLocale()
   const article = getArticleBySlug(routeState.slug)
 
   const goBack = (): void => {
@@ -96,8 +97,8 @@ export const ArticlePage = ({ routeState }: ArticlePageProps) => {
         <div className="app-layout">
           <div className="page-toolbar">
             <div className="page-toolbar__copy">
-              <p className="page-kicker">{i18n._('blog')}</p>
-              <h1 className="page-title">{i18n._('articleNotFound')}</h1>
+              <p className="page-kicker">{_('blog')}</p>
+              <h1 className="page-title">{_('articleNotFound')}</h1>
             </div>
           </div>
           <button
@@ -106,7 +107,7 @@ export const ArticlePage = ({ routeState }: ArticlePageProps) => {
             onClick={goBack}
           >
             <ArrowLeft size={16} />
-            <span>{i18n._('backToBlog')}</span>
+            <span>{_('backToBlog')}</span>
           </button>
         </div>
       </main>
@@ -121,30 +122,28 @@ export const ArticlePage = ({ routeState }: ArticlePageProps) => {
               onClick={goBack}
             >
               <ArrowLeft size={16} />
-              <span>{i18n._('backToBlog')}</span>
+              <span>{_('backToBlog')}</span>
             </button>
           </div>
 
           <article className="article-body">
             <header className="article-header">
-              <p className="page-kicker">{i18n._('blog')}</p>
-              <h1 className="article-title">
-                {i18n._(resolvedArticle.titleKey)}
-              </h1>
+              <p className="page-kicker">{_('blog')}</p>
+              <h1 className="article-title">{_(resolvedArticle.titleKey)}</h1>
               <p className="article-meta">
-                <time>{i18n._(resolvedArticle.dateKey)}</time>
+                <time>{_(resolvedArticle.dateKey)}</time>
               </p>
             </header>
             <div
               className="article-content"
               dangerouslySetInnerHTML={{
-                __html: i18n._(resolvedArticle.bodyKey),
+                __html: _(resolvedArticle.bodyKey),
               }}
             />
           </article>
 
           <div className="article-cta">
-            <p>{i18n._('articleCtaText')}</p>
+            <p>{_('articleCtaText')}</p>
             <button
               type="button"
               className="action-button action-button--primary"
@@ -152,13 +151,13 @@ export const ArticlePage = ({ routeState }: ArticlePageProps) => {
                 window.location.assign(buildLocalePath(currentLocale, '/'))
               }}
             >
-              <span>{i18n._('openCalculator')}</span>
+              <span>{_('openCalculator')}</span>
             </button>
           </div>
 
           <footer className="app-footer">
             <span>
-              {i18n._('madeBy')}{' '}
+              {_('madeBy')}{' '}
               <a
                 href="https://joaco.io"
                 target="_blank"

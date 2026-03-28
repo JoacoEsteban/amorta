@@ -1,6 +1,5 @@
 import { P, match } from 'ts-pattern'
 
-import { initLocale } from './i18n/locale-state'
 import { hydrateApp } from './client'
 import { readPublicSiteUrl } from './domain/seo'
 import { parseRouteState } from './domain/share'
@@ -13,8 +12,6 @@ match(container)
     throw new Error('Root container not found')
   })
   .otherwise((resolvedContainer) => {
-    initLocale()
-
     return hydrateApp({
       container: resolvedContainer,
       initialRouteState: parseRouteState(

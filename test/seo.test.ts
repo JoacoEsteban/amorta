@@ -30,16 +30,19 @@ describe('buildSeoMetadata', () => {
   it('builds root metadata for the calculator page', () => {
     const metadata = buildSeoMetadata({
       routeState: { kind: 'index', locale: 'es-AR' },
+      locale: 'es-AR',
       siteUrl,
     })
 
     expect(metadata.title).toBe('Amorta | Calculadora de Amortización Francesa')
-    expect(metadata.canonicalUrl).toBe(`${siteUrl}/`)
+    expect(metadata.canonicalUrl).toBe(`${siteUrl}/es-AR/`)
   })
 
   it('builds a result canonical url for valid shared routes', () => {
     const metadata = buildSeoMetadata({
+      locale: 'en-US',
       routeState: {
+        locale: null,
         kind: 'result',
         payload: 'abc123',
         decoded: {
@@ -62,8 +65,10 @@ describe('buildSeoMetadata', () => {
 
   it('builds a generic result canonical url for pending prerendered shared routes', () => {
     const metadata = buildSeoMetadata({
+      locale: 'en-US',
       routeState: {
         kind: 'result',
+        locale: null,
         payload: null,
         decoded: {
           kind: 'pending',
@@ -79,9 +84,11 @@ describe('buildSeoMetadata', () => {
 
   it('falls back to the root canonical url for invalid shared routes', () => {
     const metadata = buildSeoMetadata({
+      locale: 'en-US',
       routeState: {
         kind: 'result',
         payload: 'broken',
+        locale: null,
         decoded: {
           kind: 'invalid',
           message: 'Invalid payload',

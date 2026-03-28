@@ -13,9 +13,8 @@ const buildGaScript = (measurementId: string): string =>
         `</script>`,
       ].join('')
 
-import { i18n } from '@lingui/core'
 import { buildSeoMetadata } from '../domain/seo'
-import { SUPPORTED_LOCALES, type SupportedLocale } from '../i18n/lingui.config'
+import { DEFAULT_LOCALE, type SupportedLocale } from '../i18n/lingui.config'
 import type { RouteState } from '../domain/share'
 import { renderAppToHtml } from '../ssr'
 
@@ -67,13 +66,17 @@ export const renderHtmlDocument = ({
   assetLinks?: string
   appScript?: string
 }): string => {
-  const resolvedLocale = locale ?? SUPPORTED_LOCALES[0]
-  i18n.activate(resolvedLocale)
-  const metadata = buildSeoMetadata({ routeState, siteUrl, locale })
+  const metadata = buildSeoMetadata({
+    routeState,
+    siteUrl,
+    locale: locale ?? DEFAULT_LOCALE,
+  })
   const appHtml = renderAppToHtml({
     initialRouteState: routeState,
     siteUrl,
   })
+
+  // if (routeState.kind === 'blog-index') console.log(appHtml)
 
   return shellHtml
     .replace(/<title>.*?<\/title>/, '')

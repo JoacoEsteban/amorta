@@ -1,48 +1,47 @@
-import { useEffect, useState } from 'react'
+import path from 'path'
 import { Globe } from 'lucide-react'
 
 import {
   SUPPORTED_LOCALES,
   LOCALE_LABELS,
-  localeFromPath,
-  buildLocalePath,
+  resolveLocaleFromMaybeLanguage,
   type SupportedLocale,
 } from '../i18n/lingui.config'
-import { locale$, setLocale } from '../i18n/locale-state'
+import { useLocaleStore } from '../state/locale'
+import type { LocaleStore } from '../state/locale-store'
 
-const LocaleSwitcher = () => {
-  const [locale, setLocaleState] = useState(locale$.getValue())
-
-  useEffect(() => {
-    const sub = locale$.subscribe(setLocaleState)
-    return () => sub.unsubscribe()
-  }, [])
-
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLocale = event.currentTarget.value as SupportedLocale
-    const pathname = window.location.pathname
+class Controller {
+  static switch(newLocale: SupportedLocale, store: LocaleStore) {
+    const { pathname } = window.location
     const segments = pathname
       .split('/')
       .map((s) => s.trim())
       .filter((s) => s.length > 0)
-    const first = segments[0]
-    const currentLocale = first ? localeFromPath(first) : null
-    const strippedPath =
-      '/' + (currentLocale ? segments.slice(1) : segments).join('/') || '/'
 
-    if (currentLocale !== null) {
-      window.location.assign(buildLocalePath(newLocale, strippedPath))
-    } else {
-      setLocale(newLocale)
+    const [first, ...rest] = segments
+    const currentLocale = resolveLocaleFromMaybeLanguage(first ?? '')
+
+    if (!currentLocale) {
+      store.persistLocale(newLocale)
+      return
     }
+
+    window.location.assign(path.join('/', newLocale, ...rest))
   }
+}
+
+const LocaleSwitcher = () => {
+  const store = useLocaleStore()
+  const { locale } = store.useLocale()
 
   return (
     <div className="locale-switcher">
       <Globe size={16} className="locale-switcher__icon" />
       <select
         value={locale}
-        onChange={handleChange}
+        onChange={(e) =>
+          Controller.switch(e.target.value as SupportedLocale, store)
+        }
         className="locale-switcher__select"
         aria-label="Select language"
       >

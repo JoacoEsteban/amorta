@@ -1,23 +1,24 @@
 import { match } from 'ts-pattern'
 
-import { i18n } from '../i18n/index.js'
 import {
+  DEFAULT_LOCALE,
   SUPPORTED_LOCALES,
   type SupportedLocale,
   buildLocalePath,
 } from '../i18n/lingui.config'
 import { getArticleBySlug, type Article } from './blog'
 import type { RouteState } from './share'
+import { mapTranslator, type Translate } from '../state/locale.js'
 
 export const DEFAULT_PUBLIC_SITE_URL = 'https://amorta.example'
 
-const buildBaseJsonLd = (siteUrl: string, path: string) => [
+const buildBaseJsonLd = (_: Translate) => (siteUrl: string, path: string) => [
   {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Amorta',
     url: `${siteUrl}/`,
-    description: i18n._('seoDescription'),
+    description: _('seoDescription'),
   },
   {
     '@context': 'https://schema.org',
@@ -26,7 +27,7 @@ const buildBaseJsonLd = (siteUrl: string, path: string) => [
     applicationCategory: 'FinanceApplication',
     operatingSystem: 'Web',
     url: `${siteUrl}/`,
-    description: i18n._('seoDescription'),
+    description: _('seoDescription'),
   },
   path === '/'
     ? {
@@ -142,84 +143,85 @@ const buildHreflangLinks = (
   return links.join('\n    ')
 }
 
-const resolveLocale = (locale: SupportedLocale | null): SupportedLocale =>
-  locale ?? SUPPORTED_LOCALES[0]
-
 const resolveCanonicalPath = (
   routeState: RouteState,
   siteUrl: string,
 ): string => {
   const normalizedSiteUrl = resolvePublicSiteUrl(siteUrl)
-  const locale = resolveLocale(routeState.locale)
+  const locale = routeState.locale
 
   return match(routeState)
     .with({ kind: 'index' }, () =>
-      locale === SUPPORTED_LOCALES[0]
+      locale === null
         ? `${normalizedSiteUrl}/`
         : `${normalizedSiteUrl}${buildLocalePath(locale, '/')}`,
     )
     .with({ kind: 'result', decoded: { kind: 'valid' } }, ({ payload }) =>
-      locale === SUPPORTED_LOCALES[0]
+      locale === null
         ? `${normalizedSiteUrl}/result/${payload ?? ''}`
         : `${normalizedSiteUrl}${buildLocalePath(locale, `/result/${payload ?? ''}`)}`,
     )
     .with({ kind: 'result', decoded: { kind: 'pending' } }, () =>
-      locale === SUPPORTED_LOCALES[0]
+      locale === null
         ? `${normalizedSiteUrl}/result/`
         : `${normalizedSiteUrl}${buildLocalePath(locale, '/result/')}`,
     )
     .with({ kind: 'blog-index' }, () =>
-      locale === SUPPORTED_LOCALES[0]
+      locale === null
         ? `${normalizedSiteUrl}/blog/`
         : `${normalizedSiteUrl}${buildLocalePath(locale, '/blog/')}`,
     )
     .with({ kind: 'blog-article' }, ({ slug }) =>
-      locale === SUPPORTED_LOCALES[0]
+      locale === null
         ? `${normalizedSiteUrl}/blog/${slug}`
         : `${normalizedSiteUrl}${buildLocalePath(locale, `/blog/${slug}`)}`,
     )
     .otherwise(() =>
-      locale === SUPPORTED_LOCALES[0]
+      locale === null
         ? `${normalizedSiteUrl}/`
         : `${normalizedSiteUrl}${buildLocalePath(locale, '/')}`,
     )
 }
 
-const resolveSeoTitle = (routeState: RouteState): string =>
-  match(routeState)
-    .with({ kind: 'index' }, () => i18n._('seoTitleIndex'))
-    .with({ kind: 'result', decoded: { kind: 'valid' } }, () =>
-      i18n._('seoTitleResult'),
-    )
-    .with({ kind: 'result', decoded: { kind: 'pending' } }, () =>
-      i18n._('seoTitleResult'),
-    )
-    .with({ kind: 'blog-index' }, () => i18n._('seoTitleBlogIndex'))
-    .with({ kind: 'blog-article' }, ({ slug }) => {
-      const article = getArticleBySlug(slug)
-      return match(article)
-        .with(undefined, () => i18n._('seoTitleUnavailable'))
-        .otherwise((resolved) => `${i18n._(resolved.titleKey)} | Amorta`)
-    })
-    .otherwise(() => i18n._('seoTitleUnavailable'))
+const resolveSeoTitle =
+  (_: Translate) =>
+  (routeState: RouteState): string =>
+    match(routeState)
+      .with({ kind: 'index' }, () => _('seoTitleIndex'))
+      .with({ kind: 'result', decoded: { kind: 'valid' } }, () =>
+        _('seoTitleResult'),
+      )
+      .with({ kind: 'result', decoded: { kind: 'pending' } }, () =>
+        _('seoTitleResult'),
+      )
+      .with({ kind: 'blog-index' }, () => _('seoTitleBlogIndex'))
+      .with({ kind: 'blog-article' }, ({ slug }) => {
+        const article = getArticleBySlug(slug)
+        return match(article)
+          .with(undefined, () => _('seoTitleUnavailable'))
+          .otherwise((resolved) => `${_(resolved.titleKey)} | Amorta`)
+      })
+      .otherwise(() => _('seoTitleUnavailable'))
 
-const resolveSeoDescription = (routeState: RouteState): string =>
-  match(routeState)
-    .with({ kind: 'index' }, () => i18n._('seoDescription'))
-    .with({ kind: 'result', decoded: { kind: 'valid' } }, () =>
-      i18n._('seoDescriptionShare'),
-    )
-    .with({ kind: 'result', decoded: { kind: 'pending' } }, () =>
-      i18n._('seoDescriptionShare'),
-    )
-    .with({ kind: 'blog-index' }, () => i18n._('seoDescriptionBlogIndex'))
-    .with({ kind: 'blog-article' }, ({ slug }) => {
-      const article = getArticleBySlug(slug)
-      return match(article)
-        .with(undefined, () => i18n._('seoDescriptionUnavailable'))
-        .otherwise((resolved) => i18n._(resolved.descriptionKey))
-    })
-    .otherwise(() => i18n._('seoDescriptionUnavailable'))
+const resolveSeoDescription =
+  (_: Translate) =>
+  (routeState: RouteState): string =>
+    match(routeState)
+      .with({ kind: 'index' }, () => _('seoDescription'))
+      .with({ kind: 'result', decoded: { kind: 'valid' } }, () =>
+        _('seoDescriptionShare'),
+      )
+      .with({ kind: 'result', decoded: { kind: 'pending' } }, () =>
+        _('seoDescriptionShare'),
+      )
+      .with({ kind: 'blog-index' }, () => _('seoDescriptionBlogIndex'))
+      .with({ kind: 'blog-article' }, ({ slug }) => {
+        const article = getArticleBySlug(slug)
+        return match(article)
+          .with(undefined, () => _('seoDescriptionUnavailable'))
+          .otherwise((resolved) => _(resolved.descriptionKey))
+      })
+      .otherwise(() => _('seoDescriptionUnavailable'))
 
 const resolveRoutePath = (routeState: RouteState): string =>
   match(routeState)
@@ -240,25 +242,21 @@ export const buildSeoMetadata = ({
 }: {
   routeState: RouteState
   siteUrl: string
-  locale?: SupportedLocale | null
+  locale: SupportedLocale
 }): SeoMetadata => {
   const normalizedSiteUrl = resolvePublicSiteUrl(siteUrl)
-  const resolvedLocale = resolveLocale(locale ?? routeState.locale)
   const canonicalPath = resolveCanonicalPath(routeState, siteUrl)
   const routePath = resolveRoutePath(routeState)
+  const { _ } = mapTranslator(locale)
 
   return {
-    title: resolveSeoTitle(routeState),
-    description: resolveSeoDescription(routeState),
+    title: resolveSeoTitle(_)(routeState),
+    description: resolveSeoDescription(_)(routeState),
     canonicalUrl: canonicalPath,
     openGraphUrl: canonicalPath,
     openGraphImageUrl: `${normalizedSiteUrl}/og-image.svg`,
-    jsonLd: JSON.stringify(buildBaseJsonLd(normalizedSiteUrl, routePath)),
-    hreflangLinks: buildHreflangLinks(
-      routePath,
-      normalizedSiteUrl,
-      resolvedLocale,
-    ),
-    htmlLang: resolvedLocale.toLowerCase(),
+    jsonLd: JSON.stringify(buildBaseJsonLd(_)(normalizedSiteUrl, routePath)),
+    hreflangLinks: buildHreflangLinks(routePath, normalizedSiteUrl, locale),
+    htmlLang: locale.toLowerCase(),
   }
 }
