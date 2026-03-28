@@ -1,7 +1,7 @@
 import { StrictMode, useEffect, useState } from 'react'
 import { Toaster } from 'react-hot-toast'
 import { bind } from '@react-rxjs/core'
-import { match } from 'ts-pattern'
+import { match, P } from 'ts-pattern'
 
 import { App } from './app'
 import { buildSeoMetadata } from './domain/seo'
@@ -95,19 +95,10 @@ export const AppRoot = ({ initialRouteState, siteUrl }: AppRootProps) => {
       />
     ))
     .with(
-      { kind: 'result', decoded: { kind: 'pending' } },
-      (resolvedRouteState) => (
-        <App
-          kind="calculator"
-          routeState={resolvedRouteState}
-          store={sharedStore}
-          hydrated={hydrated}
-          uiStore={uiStore}
-        />
+      P.union(
+        { kind: 'result', decoded: { kind: 'pending' } },
+        { kind: 'result', decoded: { kind: 'valid' } },
       ),
-    )
-    .with(
-      { kind: 'result', decoded: { kind: 'valid' } },
       (resolvedRouteState) => (
         <App
           kind="calculator"
