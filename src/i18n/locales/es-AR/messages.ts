@@ -136,13 +136,13 @@ export const esARMessages = {
     'Conceptos clave y terminología para entender cómo funciona la amortización francesa.',
   eduWhatTrigger: '¿Qué es la amortización francesa?',
   eduWhatBody:
-    '<p>La amortización francesa — también conocida como <strong>amortización de pago constante</strong> — es el método más común para devolver préstamos e hipotecones en Europa y América Latina. A diferencia de la estructura de pago decreciente común en EE.UU., donde cada pago tiene el mismo monto total pero la proporción entre intereses y capital cambia con el tiempo, la amortización francesa mantiene <strong>cada pago igual</strong> desde el primer mes hasta el último.</p><p>Como cada pago es fijo, el prestatario siempre sabe exactamente qué presupuestar. La desventaja es que los pagos iniciales van casi en su totalidad hacia los intereses, y el capital se reduce muy lentamente al principio.</p>',
+    '<p>La amortización francesa — también conocida como <strong>amortización de pago constante</strong> — es el método más común para devolver préstamos e hipotecas en Europa y América Latina. A diferencia de la estructura de pago decreciente común en EE.UU., donde cada pago tiene el mismo monto total pero la proporción entre intereses y capital cambia con el tiempo, la amortización francesa mantiene <strong>cada pago igual</strong> desde el primer mes hasta el último.</p><p>Como cada pago es fijo, el prestatario siempre sabe exactamente qué presupuestar. La desventaja es que los pagos iniciales van casi en su totalidad hacia los intereses, y el capital se reduce muy lentamente al principio.</p>',
   eduHowTrigger: '¿Cómo funciona la matemática?',
   eduHowBody:
     '<p>Cada pago se determina mediante tres números: el <strong>monto del préstamo</strong>, la <strong>tasa anual efectiva (TAE)</strong> y el <strong>número de pagos</strong>. La TAE se convierte en una tasa periódica (para pagos mensuales, la raíz 12 de 1 + TAE), y luego se aplica la fórmula estándar de anualidad:</p><p><strong>Pago = Préstamo × r / (1 − (1 + r)<sup>−n</sup>)</strong></p><p>donde <strong>r</strong> es la tasa periódica y <strong>n</strong> es el número total de pagos. Con cada pago, una parte paga intereses (saldo × tasa periódica) y el resto reduce el capital. A medida que el saldo disminuye, la porción de intereses de cada pago también disminuye — lo que significa que más del pago fijo se destina a capital con el tiempo.</p>',
   eduTermsTrigger: 'Terminología clave',
   eduTermsBody:
-    '<p><strong>Cuota:</strong> Un solo pago. Un hipotecón a 30 años con pagos mensuales tiene 360 cuotas.</p><p><strong>Tasa Anual Efectiva (TAE):</strong> El costo real anual de pedir prestado, considerando la capitalización dentro del año. Diferente de la TIN nominal — la TAE es lo que realmente pagás.</p><p><strong>Capital:</strong> La parte de un pago que reduce el saldo pendiente del préstamo.</p><p><strong>Interés:</strong> La parte de un pago que va al prestamista como costo del préstamo.</p><p><strong>Tasa periódica:</strong> La TAE expresada por período de pago. Para pagos mensuales, es (1 + TAE)<sup>1/12</sup> − 1.</p>',
+    '<p><strong>Cuota:</strong> Un solo pago. Una hipoteca a 30 años con pagos mensuales tiene 360 cuotas.</p><p><strong>Tasa Anual Efectiva (TAE):</strong> El costo real anual de pedir prestado, considerando la capitalización dentro del año. Diferente de la TIN nominal — la TAE es lo que realmente pagás.</p><p><strong>Capital:</strong> La parte de un pago que reduce el saldo pendiente del préstamo.</p><p><strong>Interés:</strong> La parte de un pago que va al prestamista como costo del préstamo.</p><p><strong>Tasa periódica:</strong> La TAE expresada por período de pago. Para pagos mensuales, es (1 + TAE)<sup>1/12</sup> − 1.</p>',
   eduWhenTrigger: '¿Cuándo es útil esta calculadora?',
   eduWhenBody:
     '<p>Usá esta calculadora siempre que necesites modelar un préstamo que siga las convenciones europeas o latinoamericanas. Maneja ambas direcciones:</p><ul><li><strong>Modo estándar:</strong> Ingresá el monto del préstamo, plazo y TAE para calcular la cuota mensual.</li><li><strong>Inversión de pago:</strong> Ingresá un monto de cuota objetivo para resolver la TAE implícita — útil para comparar ofertas con diferentes estructuras de pago.</li></ul><p>El calendario de amortización muestra cada cuota en detalle, facilitando entender exactamente cuánto de cada pago va hacia intereses versus capital en cualquier punto de la vida del préstamo.</p>',
@@ -150,14 +150,14 @@ export const esARMessages = {
   articles: 'Artículos',
   blogIndexTitle: 'Artículos',
   blogIndexDescription:
-    'Explicaciones approfondidas sobre amortización francesa, convenciones de tasas y matemáticas financieras.',
+    'Explicaciones detalladas sobre amortización francesa, convenciones de tasas y matemáticas financieras.',
   backToCalculator: 'Volver a la calculadora',
   backToBlog: 'Volver a los artículos',
   articleNotFound: 'Artículo no encontrado',
   articleCtaText: '¿Listo para hacer tu propio cálculo?',
   seoTitleBlogIndex: 'Artículos | Amorta',
   seoDescriptionBlogIndex:
-    'Leé artículos approfondidos sobre amortización francesa, tasas anuales efectivas y la matemática detrás de los préstamos de pago constante.',
+    'Leé artículos detallados sobre amortización francesa, tasas anuales efectivas y la matemática detrás de los préstamos de pago constante.',
   articleMathTitle: 'La Matemática Detrás de la Amortización Francesa',
   articleMathDescription:
     'Un análisis profundo de la fórmula de anualidades, la conversión de tasas periódicas y cómo cada pago se divide entre intereses y capital a lo largo de la vida de un préstamo francés.',
