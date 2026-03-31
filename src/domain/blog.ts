@@ -28,6 +28,13 @@ export const ARTICLES: Article[] = [
     dateKey: 'articleUnderstandingAmortizationScheduleDate',
     bodyKey: 'articleUnderstandingAmortizationScheduleBody',
   },
+  {
+    slug: 'extra-payments',
+    titleKey: 'articleExtraPaymentsTitle',
+    descriptionKey: 'articleExtraPaymentsDescription',
+    dateKey: 'articleExtraPaymentsDate',
+    bodyKey: 'articleExtraPaymentsBody',
+  },
 ]
 
 export const getArticleBySlug = (slug: string): Article | undefined =>

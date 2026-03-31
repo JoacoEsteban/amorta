@@ -195,4 +195,30 @@ export const esARMessages = {
     <p>Cuando ejecutás un cálculo en Amorta, la tabla muestra exactamente estas columnas para cada intervalo de pago. Podés ver los intereses acumulados al final de la tabla, lo que te ayuda a entender el costo real del préstamo durante su plazo completo.</p>
     <p>Prestá atención a la columna de intereses en las primeras filas para ver cuánto de tu pago se "desperdicia" en intereses versus la construcción de patrimonio. Esta perspectiva ayuda al evaluar si hacer pagos extra o al comparar ofertas de préstamos.</p>
   `,
+  articleExtraPaymentsTitle: 'El Poder de los Pagos Extra',
+  articleExtraPaymentsDescription:
+    'Aprendé cómo hacer pagos adicionales hacia el capital puede reducir dramáticamente los intereses totales y acortar el plazo de tu préstamo.',
+  articleExtraPaymentsDate: 'Marzo 2026',
+  articleExtraPaymentsBody: `
+    <p>Una de las formas más efectivas de ahorrar dinero en un préstamo es hacer pagos adicionales hacia el capital. Incluso cantidades pequeñas pueden tener un impacto desproporcionado a lo largo del tiempo, quitando años a tu préstamo y miles de pesos en intereses totales pagados.</p>
+    <h2>Cómo funcionan los pagos extra</h2>
+    <p>En la amortización francesa, cada pago se divide entre intereses y capital. Los intereses se calculan sobre el saldo restante, así que cuando reducís el capital más rápido, menos intereses se acumulan en períodos posteriores.</p>
+    <p>Cuando hacés un pago extra, todo el monto va directamente a reducir el capital &mdash; evitando el cálculo normal de intereses para esa porción. Esto significa que no solo ahorrás los intereses de ese pago, sino todos los intereses futuros que se habrían acumulado sobre esa cantidad.</p>
+    <p>Cuanto antes hagas pagos extra en el plazo del préstamo, más poderosos se vuelven. Esto es porque los intereses se calculan sobre el saldo restante, que es más alto al inicio del préstamo.</p>
+    <h2>Un ejemplo concreto</h2>
+    <p>Consideremos una hipoteca de 300.000 &euro; al 6% TAE durante 30 años. El pago mensual es aproximadamente 1.798 &euro;. Sin pagos extra, pagarías 347.200 &euro; en intereses totales durante la vida del préstamo.</p>
+    <p>Ahora supongamos que pagás 200 &euro; extra por mes. Después de 30 años, habrías pagado solo 240.600 &euro; en intereses &mdash; un ahorro de más de 106.000 &euro;. Y habrías terminado de pagar el préstamo unos 7 años antes.</p>
+    <p>Hacé el mismo pago extra de 200 &euro;, pero esperá hasta el año 15 para comenzar. Los ahorros se reducen a aproximadamente 28.000 &euro; y solo reducís 3 años del plazo. El momento importa enormemente.</p>
+    <h2>Tipos de pagos extra</h2>
+    <p>Hay dos enfoques principales para los pagos extra:</p>
+    <ul>
+      <li><strong>Pagos extra recurrentes</strong>: Agregar una cantidad fija a cada pago mensual. Por ejemplo, pagar 1.998 &euro; en lugar de 1.798 &euro; cada mes.</li>
+      <li><strong>Pagos extra únicos</strong>: Hacer pagos ocasionales más grandes cuando tenés fondos extra, como devoluciones de impuestos, bonos o herencias.</li>
+    </ul>
+    <p>Ambos enfoques son efectivos. Los pagos extra recurrentes proporcionan progreso constante y son más fáciles de presupuestar. Los pagos únicos pueden hacer un gran impacto rápidamente cuando hay montos más grandes disponibles.</p>
+    <h2>Verificá las penalizaciones por prepago</h2>
+    <p>Antes de comprometerte a hacer pagos extra, verificá tu contrato de préstamo por penalizaciones por prepago. Algunos préstamos cobran una tarifa si pagás el préstamo antes de tiempo, lo cual puede compensar los ahorros de intereses. Esto es más común en hipotecas de tasa fija en algunos países, aunque muchos préstamos modernos han eliminado tales penalizaciones.</p>
+    <h2>Calculá tus propios números</h2>
+    <p>Usá Amorta para modelar cómo los pagos extra afectarían tu préstamo específico. La tabla de amortización facilita ver cómo los pagos extra cambian el saldo a lo largo del tiempo y cuánto interés ahorrás. Incluso un pago extra pequeño puede hacer una diferencia significativa cuando te mantenés constante a lo largo del tiempo.</p>
+  `,
 }
