@@ -40,6 +40,14 @@ export const ARTICLES: Article[] = [
     bodyKey: 'articleMathBody',
     date: new Date('2026-03-25'),
   },
+  {
+    slug: 'biweekly-vs-monthly-payments',
+    titleKey: 'articleBiweeklyVsMonthlyPaymentsTitle',
+    descriptionKey: 'articleBiweeklyVsMonthlyPaymentsDescription',
+    dateKey: 'articleBiweeklyVsMonthlyPaymentsDate',
+    bodyKey: 'articleBiweeklyVsMonthlyPaymentsBody',
+    date: new Date('2026-03-31'),
+  },
 ].sort((a, b) => b.date.getTime() - a.date.getTime())
 
 export const getArticleBySlug = (slug: string): Article | undefined =>

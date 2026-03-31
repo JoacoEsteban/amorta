@@ -216,4 +216,29 @@ export const enUSMessages = {
     <h2>Run your own numbers</h2>
     <p>Use Amorta to model how extra payments would affect your specific loan. The schedule table makes it easy to see how extra payments change the balance over time and how much interest you save. Even a small extra payment can make a meaningful difference when you stick with it over time.</p>
   `,
+  articleBiweeklyVsMonthlyPaymentsTitle: 'Biweekly vs Monthly Payments: Does It Really Matter?',
+  articleBiweeklyVsMonthlyPaymentsDescription:
+    'Explore whether switching from monthly to biweekly payments actually saves money, and understand the mechanics behind more frequent payment schedules.',
+  articleBiweeklyVsMonthlyPaymentsDate: 'March 31, 2026',
+  articleBiweeklyVsMonthlyPaymentsBody: `
+    <p>Some lenders offer biweekly payment plans as a way to pay off your mortgage faster. The idea sounds appealing: instead of making 12 payments per year, you make 26 &mdash; effectively one extra monthly payment per year without feeling it. But does this actually work, and is it worth the switch?</p>
+    <h2>How biweekly payments work</h2>
+    <p>With a monthly payment schedule, you pay your mortgage 12 times per year. With biweekly, you pay half your monthly payment every two weeks. Since there are 52 weeks in a year, this results in 26 payments &mdash; or 13 full monthly equivalents per year.</p>
+    <p>That extra payment goes entirely to principal, bypassing interest. Over a 30-year mortgage, this can shave 4 to 5 years off the loan term and save tens of thousands in interest.</p>
+    <h2>The math behind it</h2>
+    <p>Consider a $300,000 mortgage at 6% EAR over 30 years. The monthly payment is approximately $1,798.</p>
+    <p>With monthly payments, you make 360 payments totaling $647,200 &mdash; $347,200 of which is interest.</p>
+    <p>With biweekly payments of $899 (half the monthly amount), you make 26 payments per year. The extra $1,798 per year reduces the principal faster. You end up paying off the loan in about 26 years instead of 30, saving roughly $45,000 in total interest.</p>
+    <h2>Watch out for fees</h2>
+    <p>Some lenders charge setup fees or transaction fees for biweekly payment programs, especially third-party services that manage the schedule. These fees can easily outweigh the interest savings. Before signing up, calculate whether the upfront cost is worth the benefit.</p>
+    <p>Also verify that extra payments are applied directly to principal, not held as prepaid escrow. Some lenders may not process them correctly.</p>
+    <h2>The equivalent strategy</h2>
+    <p>Here is the key insight: a biweekly payment is mathematically equivalent to making one extra monthly payment per year. If you can budget for it, simply adding 1/12 of your monthly payment to each monthly payment achieves the same result &mdash; without any lender involvement or fees.</p>
+    <p>For example, add $150 to your $1,798 monthly payment ($1,948 total) and you get the same benefit as a biweekly schedule. This approach is more flexible because you control the extra amount and can adjust it as needed.</p>
+    <h2>When biweekly makes sense</h2>
+    <p>Biweekly payments can be a good fit if you get paid biweekly and want your mortgage payment to align with your income cycle. This synchronization can make budgeting easier and ensure the payment is made on time.</p>
+    <p>They also help if you struggle to save enough for a lump-sum extra payment. Spreading the extra across smaller, more frequent payments feels less painful for some borrowers.</p>
+    <h2>Run the numbers yourself</h2>
+    <p>Use Amorta to compare monthly versus biweekly schedules side by side. The difference in total interest paid and loan term makes the tradeoffs clear, so you can decide whether a biweekly plan or a simple monthly extra payment works better for your situation.</p>
+  `,
 }
