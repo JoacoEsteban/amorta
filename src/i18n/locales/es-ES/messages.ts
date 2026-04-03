@@ -170,7 +170,8 @@ export const esESMessages = {
   articleAprVsEarDate: '31 de Marzo de 2026',
   articleAprVsEarBody:
     '<p>Al comparar préstamos, encontrarás dos números diferentes que describen el costo anual de endeudamiento: <strong>TIN</strong> (Tipo de Interés Nominal) y <strong>TAE</strong> (Tasa Anual Efectiva). Suenan similar pero pueden diferir sustancialmente. Entender esta diferencia puede ahorrarte miles de euros durante la vida de un préstamo.</p><h2>¿Qué es el TIN?</h2><p>El <strong>TIN</strong> es una declaración regulatoria diseñada para facilitar la comparación de préstamos. Expresa el costo del endeudamiento como una tasa anual, pero parte del tipo de interés <em>nominal</em> (declarado), no de la tasa efectiva real.</p><p>El tipo nominal se divide simplemente por el número de períodos de capitalización al año. Para un préstamo con un tipo anual nominal del 12% y capitalización mensual:</p><pre><code>tasa periódica = 0.12 / 12 = 0.01 (1% mensual)</code></pre><p>Pero esto ignora el hecho de que el interés del mes 2 se calcula sobre un saldo que ya incluye el interés del mes 1. Después de 12 meses de interés compuesto al 1% mensual, el costo anual real es superior al 12%.</p><h2>¿Qué es la TAE?</h2><p>La <strong>TAE</strong> (a veces llamada <strong>TAE</strong>) tiene en cuenta el efecto de la capitalización dentro del año. Responde a la pregunta: <em>¿cuál es el costo anual real, incluyendo la capitalización?</em></p><pre><code>TAE = (1 + tipo nominal / períodos)<sup>períodos</sup> &minus; 1</code></pre><p>Para el tipo nominal del 12% con capitalización mensual:</p><pre><code>TAE = (1 + 0.12 / 12)<sup>12</sup> &minus; 1 = 0.1268 (12.68%)</code></pre><p>Esta diferencia del 0,68% puede parecer pequeña, pero se capitaliza a lo largo de una hipoteca a 30 años en intereses adicionales significativos.</p><h2>¿Qué tasa deberías usar?</h2><p>Para la fórmula de anualidades que subyace a la amortización francesa, <strong>la TAE es la tasa correcta</strong>. La fórmula asume tasas periódicas efectivas, y usar el TIN dividido por períodos introduce un error sistemático en el pago calculado.</p><p>Al comparar ofertas de préstamos, siempre pedí la TAE y usala en tus cálculos.</p>',
-  articleUnderstandingAmortizationScheduleTitle: 'Entendiendo Tu Tabla de Amortización',
+  articleUnderstandingAmortizationScheduleTitle:
+    'Entendiendo Tu Tabla de Amortización',
   articleUnderstandingAmortizationScheduleDescription:
     'Aprende a leer una tabla de amortización, qué significa cada columna y cómo identificar patrones en el reembolso de tu préstamo a lo largo del tiempo.',
   articleUnderstandingAmortizationScheduleDate: '31 de Marzo de 2026',
@@ -221,7 +222,8 @@ export const esESMessages = {
     <h2>Calcula tus propios números</h2>
     <p>Usa Amorta para modelar cómo los pagos extra afectarían tu préstamo específico. La tabla de amortización facilita ver cómo los pagos extra cambian el saldo a lo largo del tiempo y cuánto interés ahorras. Incluso un pago extra pequeño puede hacer una diferencia significativa cuando te mantienes constante a lo largo del tiempo.</p>
   `,
-  articleBiweeklyVsMonthlyPaymentsTitle: 'Pagos Quincenales vs Mensuales: ¿Realmente Importa?',
+  articleBiweeklyVsMonthlyPaymentsTitle:
+    'Pagos Quincenales vs Mensuales: ¿Realmente Importa?',
   articleBiweeklyVsMonthlyPaymentsDescription:
     'Explora si cambiar de pagos mensuales a quincenales realmente ahorra dinero, y comprende la mecánica detrás de los calendarios de pago más frecuentes.',
   articleBiweeklyVsMonthlyPaymentsDate: '31 de Marzo de 2026',
@@ -231,70 +233,102 @@ export const esESMessages = {
   footerTerms: 'Términos y Condiciones',
   privacyPolicyTitle: 'Política de Privacidad',
   privacyIntroductionTitle: 'Introducción',
-  privacyIntroductionText: 'Esta Política de Privacidad describe cómo Amorta ("nosotros", "nos" o "nuestro") recopila, utiliza y protege tu información cuando usas nuestro sitio web. Estamos comprometidos con proteger tu privacidad y garantizar transparencia sobre nuestras prácticas de datos.',
+  privacyIntroductionText:
+    'Esta Política de Privacidad describe cómo Amorta ("nosotros", "nos" o "nuestro") recopila, utiliza y protege tu información cuando usas nuestro sitio web. Estamos comprometidos con proteger tu privacidad y garantizar transparencia sobre nuestras prácticas de datos.',
   privacyDataCollectionTitle: 'Datos que Recopilamos',
   privacyDataCollectionText: 'Recopilamos los siguientes tipos de información:',
-  privacyDataCollectionPersonal: 'Información Personal: No recopilamos información personal a menos que nos contactes voluntariamente por correo electrónico.',
-  privacyDataCollectionNonPersonal: 'Información No Personal: Recopilamos automáticamente el tipo de navegador, dirección IP, información del dispositivo y patrones de uso a través de cookies y herramientas de análisis.',
+  privacyDataCollectionPersonal:
+    'Información Personal: No recopilamos información personal a menos que nos contactes voluntariamente por correo electrónico.',
+  privacyDataCollectionNonPersonal:
+    'Información No Personal: Recopilamos automáticamente el tipo de navegador, dirección IP, información del dispositivo y patrones de uso a través de cookies y herramientas de análisis.',
   privacyDataUsageTitle: 'Cómo Usamos tus Datos',
-  privacyDataUsageText: 'Utilizamos la información recopilada para los siguientes fines:',
-  privacyDataUsageAnalytics: 'Análisis: Para entender cómo los visitantes usan nuestro sitio y mejorar la experiencia del usuario',
-  privacyDataUsageCommunication: 'Comunicación: Para responder a consultas enviadas por correo electrónico',
-  privacyDataUsageImprovement: 'Mejora del Sitio: Para identificar y corregir problemas técnicos y mejorar la funcionalidad',
+  privacyDataUsageText:
+    'Utilizamos la información recopilada para los siguientes fines:',
+  privacyDataUsageAnalytics:
+    'Análisis: Para entender cómo los visitantes usan nuestro sitio y mejorar la experiencia del usuario',
+  privacyDataUsageCommunication:
+    'Comunicación: Para responder a consultas enviadas por correo electrónico',
+  privacyDataUsageImprovement:
+    'Mejora del Sitio: Para identificar y corregir problemas técnicos y mejorar la funcionalidad',
   privacyCookiesTitle: 'Cookies',
-  privacyCookiesText: 'Utilizamos cookies y tecnologías de seguimiento similares para mejorar tu experiencia de navegación. Las cookies son pequeños archivos de texto almacenados en tu dispositivo que nos ayudan a comprender el comportamiento y las preferencias de los usuarios.',
-  privacyCookiesPurpose: 'Nuestras cookies se utilizan para: recordar tus preferencias, analizar el tráfico del sitio y mostrar anuncios personalizados a través de servicios de terceros.',
+  privacyCookiesText:
+    'Utilizamos cookies y tecnologías de seguimiento similares para mejorar tu experiencia de navegación. Las cookies son pequeños archivos de texto almacenados en tu dispositivo que nos ayudan a comprender el comportamiento y las preferencias de los usuarios.',
+  privacyCookiesPurpose:
+    'Nuestras cookies se utilizan para: recordar tus preferencias, analizar el tráfico del sitio y mostrar anuncios personalizados a través de servicios de terceros.',
   privacyThirdPartyTitle: 'Servicios de Terceros',
-  privacyThirdPartyText: 'Utilizamos servicios de terceros para mejorar la funcionalidad y monetización de nuestro sitio web.',
-  privacyThirdPartyAdsense: 'Google AdSense: Mostramos anuncios servidos por Google AdSense. Google puede utilizar cookies y web beacons para recopilar datos sobre tus visitas a este y otros sitios web.',
-  privacyThirdPartyCookies: 'Estos terceros pueden utilizar cookies para mostrar anuncios basados en tus visitas anteriores a este sitio web y otros sitios en Internet. Puedes optar por no recibir publicidad personalizada visitando la Configuración de Anuncios de Google.',
+  privacyThirdPartyText:
+    'Utilizamos servicios de terceros para mejorar la funcionalidad y monetización de nuestro sitio web.',
+  privacyThirdPartyAdsense:
+    'Google AdSense: Mostramos anuncios servidos por Google AdSense. Google puede utilizar cookies y web beacons para recopilar datos sobre tus visitas a este y otros sitios web.',
+  privacyThirdPartyCookies:
+    'Estos terceros pueden utilizar cookies para mostrar anuncios basados en tus visitas anteriores a este sitio web y otros sitios en Internet. Puedes optar por no recibir publicidad personalizada visitando la Configuración de Anuncios de Google.',
   privacyUserRightsTitle: 'Tus Derechos',
-  privacyUserRightsText: 'Tienes derecho a controlar tus datos. Puedes desactivar las cookies a través de la configuración de tu navegador en cualquier momento. Ten en cuenta que desactivar las cookies puede afectar la funcionalidad de ciertas características de nuestro sitio web.',
+  privacyUserRightsText:
+    'Tienes derecho a controlar tus datos. Puedes desactivar las cookies a través de la configuración de tu navegador en cualquier momento. Ten en cuenta que desactivar las cookies puede afectar la funcionalidad de ciertas características de nuestro sitio web.',
   privacyContactTitle: 'Contáctanos',
-  privacyContactText: 'Si tienes alguna pregunta o inquietud sobre esta Política de Privacidad o nuestras prácticas de datos, por favor contáctanos en:',
+  privacyContactText:
+    'Si tienes alguna pregunta o inquietud sobre esta Política de Privacidad o nuestras prácticas de datos, por favor contáctanos en:',
   contactEmail: 'support@joaco.io',
   aboutTitle: 'Acerca de Amorta',
   aboutIdentityTitle: 'Quiénes Somos',
-  aboutIdentityText: 'Amorta es un proyecto independiente creado y mantenido por joaco.io. Soy un desarrollador apasionado por hacer que las herramientas financieras sean accesibles y fáciles de entender para todos.',
+  aboutIdentityText:
+    'Amorta es un proyecto independiente creado y mantenido por joaco.io. Soy un desarrollador apasionado por hacer que las herramientas financieras sean accesibles y fáciles de entender para todos.',
   aboutPurposeTitle: 'Lo que Ofrecemos',
-  aboutPurposeText: 'Amorta proporciona una calculadora de amortización francesa gratuita e interactiva que ayuda a los usuarios a entender los calendarios de pago de préstamos, visualizar desgloses de capital e intereses, y comparar diferentes escenarios de préstamos. Nuestras herramientas están diseñadas para empoderar a los usuarios con cálculos financieros claros y precisos.',
+  aboutPurposeText:
+    'Amorta proporciona una calculadora de amortización francesa gratuita e interactiva que ayuda a los usuarios a entender los calendarios de pago de préstamos, visualizar desgloses de capital e intereses, y comparar diferentes escenarios de préstamos. Nuestras herramientas están diseñadas para empoderar a los usuarios con cálculos financieros claros y precisos.',
   aboutAudienceTitle: 'Para Quién es Nuestro Contenido',
-  aboutAudienceText: 'Nuestro contenido está diseñado para cualquier persona interesada en entender la amortización de préstamos, incluyendo: compradores de vivienda comparando opciones de hipotecas, estudiantes de finanzas aprendiendo sobre métodos de amortización, profesionales inmobiliarios que necesitan cálculos rápidos, y cualquiera que esté planeando una compra importante que requiera un préstamo.',
+  aboutAudienceText:
+    'Nuestro contenido está diseñado para cualquier persona interesada en entender la amortización de préstamos, incluyendo: compradores de vivienda comparando opciones de hipotecas, estudiantes de finanzas aprendiendo sobre métodos de amortización, profesionales inmobiliarios que necesitan cálculos rápidos, y cualquiera que esté planeando una compra importante que requiera un préstamo.',
   aboutCredibilityTitle: 'Nuestra Experiencia',
-  aboutCredibilityText: 'Aunque no somos una institución financiera, nuestra calculadora se basa en matemáticas financieras establecidas y está probada exhaustivamente contra estándares de la industria. Estamos comprometidos con la precisión y transparencia en todos nuestros cálculos y explicaciones.',
+  aboutCredibilityText:
+    'Aunque no somos una institución financiera, nuestra calculadora se basa en matemáticas financieras establecidas y está probada exhaustivamente contra estándares de la industria. Estamos comprometidos con la precisión y transparencia en todos nuestros cálculos y explicaciones.',
   aboutTransparencyTitle: 'Intención Editorial',
-  aboutTransparencyText: 'Amorta es una herramienta informativa y educativa. No proporcionamos asesoramiento financiero. Nuestro objetivo es ayudar a los usuarios a entender la mecánica de la amortización francesa y tomar decisiones informadas. Siempre consulta con un asesor financiero calificado para decisiones financieras personales.',
+  aboutTransparencyText:
+    'Amorta es una herramienta informativa y educativa. No proporcionamos asesoramiento financiero. Nuestro objetivo es ayudar a los usuarios a entender la mecánica de la amortización francesa y tomar decisiones informadas. Siempre consulta con un asesor financiero calificado para decisiones financieras personales.',
   contactTitle: 'Contáctanos',
   contactMethodsTitle: 'Cómo Contactarnos',
-  contactMethodsText: 'Agradecemos tus comentarios, preguntas y sugerencias. La mejor manera de contactarnos es por correo electrónico:',
+  contactMethodsText:
+    'Agradecemos tus comentarios, preguntas y sugerencias. La mejor manera de contactarnos es por correo electrónico:',
   contactResponseTitle: 'Tiempo de Respuesta',
-  contactResponseText: 'Nuestro objetivo es responder a todas las consultas dentro de 2-3 días hábiles. Para problemas técnicos o reportes de errores, por favor incluye detalles sobre tu navegador y dispositivo para ayudarnos a asistirte más efectivamente.',
+  contactResponseText:
+    'Nuestro objetivo es responder a todas las consultas dentro de 2-3 días hábiles. Para problemas técnicos o reportes de errores, por favor incluye detalles sobre tu navegador y dispositivo para ayudarnos a asistirte más efectivamente.',
   termsTitle: 'Términos y Condiciones',
   termsAcceptanceTitle: 'Aceptación de los Términos',
-  termsAcceptanceText: 'Al acceder y usar Amorta, aceptas y te comprometes a cumplir con estos Términos y Condiciones. Si no estás de acuerdo con alguna parte de estos términos, por favor no uses nuestro sitio web.',
+  termsAcceptanceText:
+    'Al acceder y usar Amorta, aceptas y te comprometes a cumplir con estos Términos y Condiciones. Si no estás de acuerdo con alguna parte de estos términos, por favor no uses nuestro sitio web.',
   termsContentUseTitle: 'Uso del Contenido',
-  termsContentUseText: 'Todo el contenido de Amorta se proporciona únicamente con fines informativos y educativos. Puedes usar la calculadora y leer nuestros artículos para uso personal, no comercial. No puedes reproducir, distribuir, modificar o crear trabajos derivados de nuestro contenido sin permiso escrito explícito.',
+  termsContentUseText:
+    'Todo el contenido de Amorta se proporciona únicamente con fines informativos y educativos. Puedes usar la calculadora y leer nuestros artículos para uso personal, no comercial. No puedes reproducir, distribuir, modificar o crear trabajos derivados de nuestro contenido sin permiso escrito explícito.',
   termsIntellectualPropertyTitle: 'Propiedad Intelectual',
-  termsIntellectualPropertyText: 'Todo el contenido, código, elementos de diseño y funcionalidad de este sitio web son propiedad de Amorta y sus creadores. Esto incluye, entre otros, texto, gráficos, logotipos, iconos, imágenes, clips de audio, descargas digitales y software.',
+  termsIntellectualPropertyText:
+    'Todo el contenido, código, elementos de diseño y funcionalidad de este sitio web son propiedad de Amorta y sus creadores. Esto incluye, entre otros, texto, gráficos, logotipos, iconos, imágenes, clips de audio, descargas digitales y software.',
   termsLiabilityTitle: 'Limitación de Responsabilidad',
-  termsLiabilityText: 'Amorta proporciona sus herramientas y contenido "tal cual" sin garantías de ningún tipo. Aunque nos esforzamos por la precisión, no garantizamos que los resultados de nuestra calculadora estén libres de errores o sean adecuados para tu situación específica. No somos responsables de ninguna decisión financiera tomada basándose en información de este sitio web.',
+  termsLiabilityText:
+    'Amorta proporciona sus herramientas y contenido "tal cual" sin garantías de ningún tipo. Aunque nos esforzamos por la precisión, no garantizamos que los resultados de nuestra calculadora estén libres de errores o sean adecuados para tu situación específica. No somos responsables de ninguna decisión financiera tomada basándose en información de este sitio web.',
   termsExternalLinksTitle: 'Enlaces Externos',
-  termsExternalLinksText: 'Nuestro sitio web puede contener enlaces a sitios web de terceros. No tenemos control sobre y no asumimos ninguna responsabilidad por el contenido, políticas de privacidad o prácticas de ningún sitio de terceros.',
+  termsExternalLinksText:
+    'Nuestro sitio web puede contener enlaces a sitios web de terceros. No tenemos control sobre y no asumimos ninguna responsabilidad por el contenido, políticas de privacidad o prácticas de ningún sitio de terceros.',
   termsModificationsTitle: 'Modificaciones a los Términos',
-  termsModificationsText: 'Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento. Los cambios serán efectivos inmediatamente después de publicarse en esta página. Tu uso continuado del sitio web después de cualquier cambio constituye aceptación de los nuevos términos.',
+  termsModificationsText:
+    'Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento. Los cambios serán efectivos inmediatamente después de publicarse en esta página. Tu uso continuado del sitio web después de cualquier cambio constituye aceptación de los nuevos términos.',
   seoTitlePrivacyPolicy: 'Política de Privacidad | Amorta',
   seoTitleAbout: 'Acerca de | Amorta',
   seoTitleContact: 'Contacto | Amorta',
   seoTitleTerms: 'Términos y Condiciones | Amorta',
-  seoDescriptionPrivacyPolicy: 'Lee nuestra Política de Privacidad para entender cómo Amorta recopila, utiliza y protege tu información. Infórmate sobre cookies, servicios de terceros incluyendo Google AdSense, y tus derechos de privacidad.',
-  seoDescriptionAbout: 'Conoce Amorta, una calculadora gratuita de amortización francesa. Descubre quiénes somos, lo que ofrecemos y nuestro compromiso con la educación financiera precisa.',
-  seoDescriptionContact: 'Ponte en contacto con el equipo de Amorta. Contáctanos por correo electrónico para preguntas, comentarios o soporte sobre nuestra calculadora de amortización francesa.',
-  seoDescriptionTerms: 'Lee nuestros Términos y Condiciones para entender las reglas y regulaciones para usar la calculadora de amortización francesa y el contenido educativo de Amorta.',
+  seoDescriptionPrivacyPolicy:
+    'Lee nuestra Política de Privacidad para entender cómo Amorta recopila, utiliza y protege tu información. Infórmate sobre cookies, servicios de terceros incluyendo Google AdSense, y tus derechos de privacidad.',
+  seoDescriptionAbout:
+    'Conoce Amorta, una calculadora gratuita de amortización francesa. Descubre quiénes somos, lo que ofrecemos y nuestro compromiso con la educación financiera precisa.',
+  seoDescriptionContact:
+    'Ponte en contacto con el equipo de Amorta. Contáctanos por correo electrónico para preguntas, comentarios o soporte sobre nuestra calculadora de amortización francesa.',
+  seoDescriptionTerms:
+    'Lee nuestros Términos y Condiciones para entender las reglas y regulaciones para usar la calculadora de amortización francesa y el contenido educativo de Amorta.',
   aboutLink: 'Acerca de',
   contactLink: 'Contacto',
   privacyPolicyLink: 'Privacidad',
   termsLink: 'Términos',
-  articleLoanTermComparisonTitle: 'Préstamos a 15 vs 30 Años: Cómo Elegir Correctamente',
+  articleLoanTermComparisonTitle:
+    'Préstamos a 15 vs 30 Años: Cómo Elegir Correctamente',
   articleLoanTermComparisonDescription:
     'Compara las ventajas y desventajas entre plazos cortos y largos, entiende el impacto en las cuotas mensuales y los intereses totales, y descubre qué opción se adapta a tu situación financiera.',
   articleLoanTermComparisonDate: '3 de Abril de 2026',
@@ -329,7 +363,8 @@ export const esESMessages = {
     <p>Usa Amorta para modelar ambos escenarios con los parámetros reales de tu préstamo. Compara no solo la cuota y los intereses totales, sino también examina cuán rápido acumulas patrimonio en cada escenario. El calendario de amortización revela exactamente cuándo ocurre el punto de cruce — cuando los pagos de principal superan los pagos de intereses — que sucede mucho antes con un préstamo a 15 años.</p>
     <p>No existe una elección universalmente correcta. El plazo adecuado depende de tu estabilidad de ingresos, otros objetivos financieros, tolerancia al riesgo y disciplina con los fondos discrecionales. Lo que importa es tomar la decisión conscientemente en lugar de optar por defecto a la opción de 30 años simplemente porque la cuota mensual es más baja.</p>
   `,
-  articleLoanTermComparisonSeoTitle: 'Préstamos a 15 vs 30 Años: Cómo Elegir Correctamente | Amorta',
+  articleLoanTermComparisonSeoTitle:
+    'Préstamos a 15 vs 30 Años: Cómo Elegir Correctamente | Amorta',
   articleLoanTermComparisonSeoDescription:
     'Compara préstamos a 15 y 30 años. Entiende el equilibrio entre cuotas mensuales e intereses totales para elegir la hipoteca adecuada para tu situación financiera.',
   articleBiweeklyVsMonthlyPaymentsBody: `

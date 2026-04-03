@@ -5,6 +5,7 @@ This spec defines how agents create and localize blog posts for Amorta.
 ## Overview
 
 Blog posts are i18n-based content stored in locale message files. Each post has:
+
 - A **slug** (URL identifier)
 - **Metadata keys** for title, description, date
 - **HTML body content**
@@ -13,6 +14,7 @@ Blog posts are i18n-based content stored in locale message files. Each post has:
 ## Prerequisites
 
 Before creating a new blog post, agents MUST read existing articles to:
+
 1. Avoid duplicate topics
 2. Match the existing writing style and tone
 3. Follow naming conventions
@@ -27,20 +29,20 @@ Before creating a new blog post, agents MUST read existing articles to:
 
 ```ts
 type Article = {
-  slug: string           // URL-friendly identifier (e.g., "my-new-post")
-  titleKey: string       // i18n key for title
+  slug: string // URL-friendly identifier (e.g., "my-new-post")
+  titleKey: string // i18n key for title
   descriptionKey: string // i18n key for meta description
-  dateKey: string        // i18n key for display date
-  bodyKey: string        // i18n key for HTML body content
-  seoTitleKey: string    // i18n key for SEO title
+  dateKey: string // i18n key for display date
+  bodyKey: string // i18n key for HTML body content
+  seoTitleKey: string // i18n key for SEO title
   seoDescriptionKey: string // i18n key for SEO meta description
 }
 ```
 
 ## Supported Locales
 
-| Locale | Path |
-|--------|------|
+| Locale  | Path                                 |
+| ------- | ------------------------------------ |
 | `en-US` | `src/i18n/locales/en-US/messages.ts` |
 | `en-GB` | `src/i18n/locales/en-GB/messages.ts` |
 | `es-ES` | `src/i18n/locales/es-ES/messages.ts` |
@@ -90,6 +92,7 @@ articleMyNewPostSeoDescription: 'Full meta description for search engines, ideal
 For each additional locale (`es-ES`, `en-GB`, `es-AR`), add the corresponding translations:
 
 **es-ES example:**
+
 ```ts
 articleMyNewPostTitle: 'Título de Mi Nuevo Post',
 articleMyNewPostDescription: 'Una breve descripción para la tarjeta del artículo.',
@@ -106,6 +109,7 @@ articleMyNewPostSeoDescription: 'Descripción meta completa para motores de bús
 ### Step 4: Verify Completeness
 
 Before considering the task complete, verify:
+
 - [ ] Article entry exists in `src/domain/blog.ts`
 - [ ] All 6 keys per locale are present (title, description, date, body, seoTitle, seoDescription)
 - [ ] All 4 locales have the same keys
@@ -114,16 +118,17 @@ Before considering the task complete, verify:
 
 ## Key Naming Conventions
 
-| Content | Key Pattern |
-|---------|-------------|
-| Title | `article{SlugPascalCase}Title` |
-| Description | `article{SlugPascalCase}Description` |
-| Date | `article{SlugPascalCase}Date` |
-| Body | `article{SlugPascalCase}Body` |
-| SEO Title | `article{SlugPascalCase}SeoTitle` |
+| Content         | Key Pattern                             |
+| --------------- | --------------------------------------- |
+| Title           | `article{SlugPascalCase}Title`          |
+| Description     | `article{SlugPascalCase}Description`    |
+| Date            | `article{SlugPascalCase}Date`           |
+| Body            | `article{SlugPascalCase}Body`           |
+| SEO Title       | `article{SlugPascalCase}SeoTitle`       |
 | SEO Description | `article{SlugPascalCase}SeoDescription` |
 
 Example for slug `french-vs-american`:
+
 - `articleFrenchVsAmericanTitle`
 - `articleFrenchVsAmericanDescription`
 - etc.

@@ -671,8 +671,6 @@ const CalculatorPage = ({
   )
 }
 
-
-
 const InvalidResultPage = ({
   routeState,
 }: {

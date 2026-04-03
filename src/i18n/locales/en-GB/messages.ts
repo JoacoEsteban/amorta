@@ -165,7 +165,8 @@ export const enGBMessages = {
   articleAprVsEarDate: '31 March 2026',
   articleAprVsEarBody:
     '<p>When comparing loans, you will encounter two different numbers that both describe the yearly cost of borrowing: <strong>APR</strong> (Annual Percentage Rate) and <strong>EAR</strong> (Effective Annual Rate). They sound similar but can differ substantially. Understanding this difference can save you thousands of pounds over the life of a loan.</p><h2>What is APR?</h2><p>The <strong>APR</strong> is a regulatory disclosure designed to make loan comparison easier. It expresses the cost of borrowing as a yearly rate, but it starts from the <em>nominal</em> (stated) interest rate, not the actual effective rate.</p><p>The nominal rate is simply divided by the number of compounding periods per year. For a loan with a 12% nominal annual rate and monthly compounding:</p><pre><code>periodic rate = 0.12 / 12 = 0.01 (1% per month)</code></pre><p>But this ignores the fact that interest in month 2 is calculated on a balance that already includes month 1 interest. After 12 months of 1% monthly compounding, the true annual cost is higher than 12%.</p><h2>What is EAR?</h2><p>The <strong>EAR</strong> (sometimes called the <strong>APY</strong>, or Annual Percentage Yield) accounts for the compounding effect within the year. It answers the question: <em>what is the actual yearly cost, including compounding?</em></p><pre><code>EAR = (1 + nominal rate / periods)<sup>periods</sup> &minus; 1</code></pre><p>For the 12% nominal rate with monthly compounding:</p><pre><code>EAR = (1 + 0.12 / 12)<sup>12</sup> &minus; 1 = 0.1268 (12.68%)</code></pre><p>This 0.68% difference may seem small, but it compounds over a 30-year mortgage into meaningful extra interest paid.</p><h2>Which rate should you use?</h2><p>For the annuity formula that underlies French amortisation, <strong>EAR is the correct rate</strong>. The formula assumes effective periodic rates, and using the nominal APR divided by periods introduces a systematic error in the calculated payment.</p><p>When comparing loan offers, always ask for the EAR and use it in your calculations.</p>',
-  articleUnderstandingAmortizationScheduleTitle: 'Understanding Your Amortisation Schedule',
+  articleUnderstandingAmortizationScheduleTitle:
+    'Understanding Your Amortisation Schedule',
   articleUnderstandingAmortizationScheduleDescription:
     'Learn how to read an amortisation schedule, what each column means, and how to identify patterns in your loan repayment over time.',
   articleUnderstandingAmortizationScheduleDate: '31 March 2026',
@@ -216,7 +217,8 @@ export const enGBMessages = {
     <h2>Run your own numbers</h2>
     <p>Use Amorta to model how extra payments would affect your specific loan. The schedule table makes it easy to see how extra payments change the balance over time and how much interest you save. Even a small extra payment can make a meaningful difference when you stick with it over time.</p>
   `,
-  articleBiweeklyVsMonthlyPaymentsTitle: 'Biweekly vs Monthly Payments: Does It Really Matter?',
+  articleBiweeklyVsMonthlyPaymentsTitle:
+    'Biweekly vs Monthly Payments: Does It Really Matter?',
   articleBiweeklyVsMonthlyPaymentsDescription:
     'Explore whether switching from monthly to biweekly payments actually saves money, and understand the mechanics behind more frequent payment schedules.',
   articleBiweeklyVsMonthlyPaymentsDate: '31 March 2026',
@@ -226,70 +228,102 @@ export const enGBMessages = {
   footerTerms: 'Terms & Conditions',
   privacyPolicyTitle: 'Privacy Policy',
   privacyIntroductionTitle: 'Introduction',
-  privacyIntroductionText: 'This Privacy Policy describes how Amorta ("we", "us", or "our") collects, uses, and protects your information when you use our website. We are committed to protecting your privacy and ensuring transparency about our data practices.',
+  privacyIntroductionText:
+    'This Privacy Policy describes how Amorta ("we", "us", or "our") collects, uses, and protects your information when you use our website. We are committed to protecting your privacy and ensuring transparency about our data practices.',
   privacyDataCollectionTitle: 'Data We Collect',
   privacyDataCollectionText: 'We collect the following types of information:',
-  privacyDataCollectionPersonal: 'Personal Information: We do not collect personal information unless you voluntarily contact us via email.',
-  privacyDataCollectionNonPersonal: 'Non-Personal Information: We automatically collect browser type, IP address, device information, and usage patterns through cookies and analytics tools.',
+  privacyDataCollectionPersonal:
+    'Personal Information: We do not collect personal information unless you voluntarily contact us via email.',
+  privacyDataCollectionNonPersonal:
+    'Non-Personal Information: We automatically collect browser type, IP address, device information, and usage patterns through cookies and analytics tools.',
   privacyDataUsageTitle: 'How We Use Your Data',
-  privacyDataUsageText: 'We use the collected information for the following purposes:',
-  privacyDataUsageAnalytics: 'Analytics: To understand how visitors use our site and improve user experience',
-  privacyDataUsageCommunication: 'Communication: To respond to inquiries sent via email',
-  privacyDataUsageImprovement: 'Site Improvement: To identify and fix technical issues and enhance functionality',
+  privacyDataUsageText:
+    'We use the collected information for the following purposes:',
+  privacyDataUsageAnalytics:
+    'Analytics: To understand how visitors use our site and improve user experience',
+  privacyDataUsageCommunication:
+    'Communication: To respond to inquiries sent via email',
+  privacyDataUsageImprovement:
+    'Site Improvement: To identify and fix technical issues and enhance functionality',
   privacyCookiesTitle: 'Cookies',
-  privacyCookiesText: 'We use cookies and similar tracking technologies to enhance your browsing experience. Cookies are small text files stored on your device that help us understand user behaviour and preferences.',
-  privacyCookiesPurpose: 'Our cookies are used for: remembering your preferences, analysing site traffic, and serving personalised advertisements through third-party services.',
+  privacyCookiesText:
+    'We use cookies and similar tracking technologies to enhance your browsing experience. Cookies are small text files stored on your device that help us understand user behaviour and preferences.',
+  privacyCookiesPurpose:
+    'Our cookies are used for: remembering your preferences, analysing site traffic, and serving personalised advertisements through third-party services.',
   privacyThirdPartyTitle: 'Third-Party Services',
-  privacyThirdPartyText: 'We use third-party services to enhance our website functionality and monetisation.',
-  privacyThirdPartyAdsense: 'Google AdSense: We display advertisements served by Google AdSense. Google may use cookies and web beacons to collect data about your visits to this and other websites.',
-  privacyThirdPartyCookies: 'These third parties may use cookies to serve ads based on your prior visits to this website and other sites on the Internet. You can opt out of personalised advertising by visiting Google\'s Ads Settings.',
+  privacyThirdPartyText:
+    'We use third-party services to enhance our website functionality and monetisation.',
+  privacyThirdPartyAdsense:
+    'Google AdSense: We display advertisements served by Google AdSense. Google may use cookies and web beacons to collect data about your visits to this and other websites.',
+  privacyThirdPartyCookies:
+    "These third parties may use cookies to serve ads based on your prior visits to this website and other sites on the Internet. You can opt out of personalised advertising by visiting Google's Ads Settings.",
   privacyUserRightsTitle: 'Your Rights',
-  privacyUserRightsText: 'You have the right to control your data. You can disable cookies through your browser settings at any time. Please note that disabling cookies may affect the functionality of certain features on our website.',
+  privacyUserRightsText:
+    'You have the right to control your data. You can disable cookies through your browser settings at any time. Please note that disabling cookies may affect the functionality of certain features on our website.',
   privacyContactTitle: 'Contact Us',
-  privacyContactText: 'If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:',
+  privacyContactText:
+    'If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:',
   contactEmail: 'support@joaco.io',
   aboutTitle: 'About Amorta',
   aboutIdentityTitle: 'Who We Are',
-  aboutIdentityText: 'Amorta is an independent project created and maintained by joaco.io. I am a solo developer passionate about making financial tools accessible and easy to understand for everyone.',
+  aboutIdentityText:
+    'Amorta is an independent project created and maintained by joaco.io. I am a solo developer passionate about making financial tools accessible and easy to understand for everyone.',
   aboutPurposeTitle: 'What We Provide',
-  aboutPurposeText: 'Amorta provides a free, interactive French amortisation calculator that helps users understand loan repayment schedules, visualise principal and interest breakdowns, and compare different loan scenarios. Our tools are designed to empower users with clear, accurate financial calculations.',
+  aboutPurposeText:
+    'Amorta provides a free, interactive French amortisation calculator that helps users understand loan repayment schedules, visualise principal and interest breakdowns, and compare different loan scenarios. Our tools are designed to empower users with clear, accurate financial calculations.',
   aboutAudienceTitle: 'Who Our Content Is For',
-  aboutAudienceText: 'Our content is designed for anyone interested in understanding loan amortisation, including: home buyers comparing mortgage options, financial students learning about amortisation methods, real estate professionals needing quick calculations, and anyone planning a major purchase requiring a loan.',
+  aboutAudienceText:
+    'Our content is designed for anyone interested in understanding loan amortisation, including: home buyers comparing mortgage options, financial students learning about amortisation methods, real estate professionals needing quick calculations, and anyone planning a major purchase requiring a loan.',
   aboutCredibilityTitle: 'Our Expertise',
-  aboutCredibilityText: 'Whilst we are not a financial institution, our calculator is built on established financial mathematics and thoroughly tested against industry standards. We are committed to accuracy and transparency in all our calculations and explanations.',
+  aboutCredibilityText:
+    'Whilst we are not a financial institution, our calculator is built on established financial mathematics and thoroughly tested against industry standards. We are committed to accuracy and transparency in all our calculations and explanations.',
   aboutTransparencyTitle: 'Editorial Intent',
-  aboutTransparencyText: 'Amorta is an informational and educational tool. We do not provide financial advice. Our goal is to help users understand the mechanics of French amortisation and make informed decisions. Always consult with a qualified financial advisor for personal financial decisions.',
+  aboutTransparencyText:
+    'Amorta is an informational and educational tool. We do not provide financial advice. Our goal is to help users understand the mechanics of French amortisation and make informed decisions. Always consult with a qualified financial advisor for personal financial decisions.',
   contactTitle: 'Contact Us',
   contactMethodsTitle: 'How to Reach Us',
-  contactMethodsText: 'We welcome your feedback, questions, and suggestions. The best way to reach us is via email:',
+  contactMethodsText:
+    'We welcome your feedback, questions, and suggestions. The best way to reach us is via email:',
   contactResponseTitle: 'Response Time',
-  contactResponseText: 'We aim to respond to all enquiries within 2-3 business days. For technical issues or bug reports, please include details about your browser and device to help us assist you more effectively.',
+  contactResponseText:
+    'We aim to respond to all enquiries within 2-3 business days. For technical issues or bug reports, please include details about your browser and device to help us assist you more effectively.',
   termsTitle: 'Terms & Conditions',
   termsAcceptanceTitle: 'Acceptance of Terms',
-  termsAcceptanceText: 'By accessing and using Amorta, you accept and agree to be bound by these Terms & Conditions. If you do not agree with any part of these terms, please do not use our website.',
+  termsAcceptanceText:
+    'By accessing and using Amorta, you accept and agree to be bound by these Terms & Conditions. If you do not agree with any part of these terms, please do not use our website.',
   termsContentUseTitle: 'Use of Content',
-  termsContentUseText: 'All content on Amorta is provided for informational and educational purposes only. You may use the calculator and read our articles for personal, non-commercial use. You may not reproduce, distribute, modify, or create derivative works from our content without explicit written permission.',
+  termsContentUseText:
+    'All content on Amorta is provided for informational and educational purposes only. You may use the calculator and read our articles for personal, non-commercial use. You may not reproduce, distribute, modify, or create derivative works from our content without explicit written permission.',
   termsIntellectualPropertyTitle: 'Intellectual Property',
-  termsIntellectualPropertyText: 'All content, code, design elements, and functionality on this website are the property of Amorta and its creators. This includes but is not limited to text, graphics, logos, icons, images, audio clips, digital downloads, and software.',
+  termsIntellectualPropertyText:
+    'All content, code, design elements, and functionality on this website are the property of Amorta and its creators. This includes but is not limited to text, graphics, logos, icons, images, audio clips, digital downloads, and software.',
   termsLiabilityTitle: 'Limitation of Liability',
-  termsLiabilityText: 'Amorta provides its tools and content "as is" without warranties of any kind. Whilst we strive for accuracy, we do not guarantee that our calculator results are error-free or suitable for your specific situation. We are not liable for any financial decisions made based on information from this website.',
+  termsLiabilityText:
+    'Amorta provides its tools and content "as is" without warranties of any kind. Whilst we strive for accuracy, we do not guarantee that our calculator results are error-free or suitable for your specific situation. We are not liable for any financial decisions made based on information from this website.',
   termsExternalLinksTitle: 'External Links',
-  termsExternalLinksText: 'Our website may contain links to third-party websites. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites.',
+  termsExternalLinksText:
+    'Our website may contain links to third-party websites. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites.',
   termsModificationsTitle: 'Modifications to Terms',
-  termsModificationsText: 'We reserve the right to modify these Terms & Conditions at any time. Changes will be effective immediately upon posting to this page. Your continued use of the website after any changes constitutes acceptance of the new terms.',
+  termsModificationsText:
+    'We reserve the right to modify these Terms & Conditions at any time. Changes will be effective immediately upon posting to this page. Your continued use of the website after any changes constitutes acceptance of the new terms.',
   seoTitlePrivacyPolicy: 'Privacy Policy | Amorta',
   seoTitleAbout: 'About | Amorta',
   seoTitleContact: 'Contact | Amorta',
   seoTitleTerms: 'Terms & Conditions | Amorta',
-  seoDescriptionPrivacyPolicy: 'Read our Privacy Policy to understand how Amorta collects, uses, and protects your information. Learn about cookies, third-party services including Google AdSense, and your privacy rights.',
-  seoDescriptionAbout: 'Learn about Amorta, a free French amortisation calculator. Discover who we are, what we provide, and our commitment to accurate financial education.',
-  seoDescriptionContact: 'Get in touch with the Amorta team. Contact us via email for questions, feedback, or support regarding our French amortisation calculator.',
-  seoDescriptionTerms: 'Read our Terms & Conditions to understand the rules and regulations for using Amorta\'s French amortisation calculator and educational content.',
+  seoDescriptionPrivacyPolicy:
+    'Read our Privacy Policy to understand how Amorta collects, uses, and protects your information. Learn about cookies, third-party services including Google AdSense, and your privacy rights.',
+  seoDescriptionAbout:
+    'Learn about Amorta, a free French amortisation calculator. Discover who we are, what we provide, and our commitment to accurate financial education.',
+  seoDescriptionContact:
+    'Get in touch with the Amorta team. Contact us via email for questions, feedback, or support regarding our French amortisation calculator.',
+  seoDescriptionTerms:
+    "Read our Terms & Conditions to understand the rules and regulations for using Amorta's French amortisation calculator and educational content.",
   aboutLink: 'About',
   contactLink: 'Contact',
   privacyPolicyLink: 'Privacy',
   termsLink: 'Terms',
-  articleLoanTermComparisonTitle: '15-Year vs 30-Year Loans: Making the Right Choice',
+  articleLoanTermComparisonTitle:
+    '15-Year vs 30-Year Loans: Making the Right Choice',
   articleLoanTermComparisonDescription:
     'Compare the tradeoffs between shorter and longer loan terms, understand the impact on monthly payments and total interest, and learn which option fits your financial situation.',
   articleLoanTermComparisonDate: '3 April 2026',
@@ -324,7 +358,8 @@ export const enGBMessages = {
     <p>Use Amorta to model both scenarios with your actual loan parameters. Compare not just the payment and total interest, but also examine how quickly you build equity in each scenario. The amortisation schedule reveals exactly when the crossover point occurs — when principal payments exceed interest payments — which happens much sooner with a 15-year loan.</p>
     <p>There is no universally correct choice. The right term depends on your income stability, other financial goals, risk tolerance, and discipline with discretionary funds. What matters is making the decision consciously rather than defaulting to the 30-year option simply because the monthly payment is lower.</p>
   `,
-  articleLoanTermComparisonSeoTitle: '15-Year vs 30-Year Loans: Making the Right Choice | Amorta',
+  articleLoanTermComparisonSeoTitle:
+    '15-Year vs 30-Year Loans: Making the Right Choice | Amorta',
   articleLoanTermComparisonSeoDescription:
     'Compare 15-year and 30-year loan terms. Understand the tradeoffs between monthly payments and total interest to choose the right mortgage for your financial situation.',
   articleBiweeklyVsMonthlyPaymentsBody: `
