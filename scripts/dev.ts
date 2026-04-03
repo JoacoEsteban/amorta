@@ -6,6 +6,6 @@ if (import.meta.main) {
 }
 
 export async function exec() {
-  await build()
+  await build('dev')
   await preview()
 }

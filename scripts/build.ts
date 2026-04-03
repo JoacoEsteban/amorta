@@ -22,8 +22,8 @@ if (import.meta.main) {
   await exec()
 }
 
-export async function exec() {
-  await ci()
+export async function exec(target: 'dev' | 'prod' = 'prod') {
+  await ci(target)
 
   await Bun.$`rm -rf ${DIST_DIR}/`
   const prodBuild = await Bun.build({
