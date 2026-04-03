@@ -1,5 +1,5 @@
 import { ArrowLeft, Mail, Shield, FileText, Info } from 'lucide-react'
-import { match } from 'ts-pattern'
+import { match, P } from 'ts-pattern'
 
 import { buildLocalePath } from '../i18n/lingui.config'
 import { useLocale, useTranslator } from '../state/locale.js'
@@ -93,22 +93,21 @@ export const AboutPage = (_props: AboutPageProps) => {
     >
       <LegalSection title={_('aboutIdentityTitle')}>
         <p>
-          {_('aboutIdentityText')
-            .split('joaco.io')
-            .map((part, index, arr) => (
+          {match(_('aboutIdentityText').split('joaco.io'))
+            .with([P.string, P.string], ([before, after]) => (
               <>
-                {part}
-                {index < arr.length - 1 && (
-                  <a
-                    href="https://joaco.io"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    joaco.io
-                  </a>
-                )}
+                {before}
+                <a
+                  href="https://joaco.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  joaco.io
+                </a>
+                {after}
               </>
-            ))}
+            ))
+            .run()}
         </p>
       </LegalSection>
 
