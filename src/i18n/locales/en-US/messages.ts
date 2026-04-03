@@ -289,6 +289,44 @@ export const enUSMessages = {
   contactLink: 'Contact',
   privacyPolicyLink: 'Privacy',
   termsLink: 'Terms',
+  articleLoanTermComparisonTitle: '15-Year vs 30-Year Loans: Making the Right Choice',
+  articleLoanTermComparisonDescription:
+    'Compare the tradeoffs between shorter and longer loan terms, understand the impact on monthly payments and total interest, and learn which option fits your financial situation.',
+  articleLoanTermComparisonDate: 'April 3, 2026',
+  articleLoanTermComparisonBody: `
+    <p>When financing a major purchase like a home, one of the most consequential decisions you will make is the length of your loan term. The two most common options are 15-year and 30-year terms. Each has distinct advantages and tradeoffs that can affect your financial life for decades. Understanding these differences helps you choose the path that aligns with your goals.</p>
+    <h2>The fundamental tradeoff</h2>
+    <p>Shorter loan terms mean higher monthly payments but significantly less total interest paid. Longer terms spread the same principal over more payments, reducing the monthly burden but increasing the total cost of borrowing. This is not just arithmetic — it affects your monthly cash flow, your ability to save for other goals, and your overall financial flexibility.</p>
+    <p>Consider a $300,000 mortgage at 6% EAR. With a 30-year term, your monthly payment is approximately $1,798, and you will pay about $347,000 in total interest over the life of the loan. With a 15-year term, the monthly payment jumps to roughly $2,532, but your total interest paid drops to around $155,700. You save over $191,000 in interest, but your monthly obligation is $734 higher.</p>
+    <h2>When a 15-year loan makes sense</h2>
+    <p>A 15-year loan is ideal when you have stable, predictable income and your monthly budget can comfortably accommodate the higher payment without sacrificing emergency savings or retirement contributions. The benefits extend beyond interest savings:</p>
+    <ul>
+      <li><strong>Equity builds faster:</strong> With higher principal payments from the start, you own more of your home sooner. This matters if you need to sell or borrow against the property.</li>
+      <li><strong>Psychological relief:</strong> Many borrowers experience significant stress reduction knowing their largest debt will be eliminated in half the time.</li>
+      <li><strong>Retirement timing:</strong> If you plan to retire within 20 years, a 15-year loan ensures you enter retirement without mortgage payments.</li>
+    </ul>
+    <p>The key requirement is genuine affordability. If the higher payment forces you to carry credit card debt, skip retirement contributions, or live without an adequate emergency fund, the 15-year term becomes counterproductive.</p>
+    <h2>When a 30-year loan is the better choice</h2>
+    <p>A 30-year loan provides lower monthly payments, which creates financial breathing room. This flexibility is valuable in several situations:</p>
+    <ul>
+      <li><strong>Income variability:</strong> If your income fluctuates seasonally or you work in a volatile industry, lower mandatory payments reduce risk.</li>
+      <li><strong>Early career stages:</strong> Young professionals with strong income growth potential may prefer lower payments now, planning to make extra payments as earnings increase.</li>
+      <li><strong>Investment opportunities:</strong> The monthly savings can be directed toward tax-advantaged retirement accounts or other investments that may yield returns exceeding the mortgage rate.</li>
+    </ul>
+    <p>The 30-year term also functions as insurance against financial setbacks. If you lose your job or face unexpected expenses, lower mandatory payments are easier to manage than the rigid schedule of a 15-year loan.</p>
+    <h2>The hidden cost of flexibility</h2>
+    <p>The primary risk of a 30-year loan is behavioral. Many borrowers intend to make extra payments but fail to follow through consistently. Life intervenes, and the extra money gets spent elsewhere. Over 30 years, this inaction costs tens of thousands in unnecessary interest.</p>
+    <p>If you choose a 30-year loan, consider automating extra principal payments. Set up automatic transfers for the amount you would have paid on a 15-year schedule. This removes the willpower requirement and captures most of the interest savings while preserving the flexibility to reduce or pause extra payments during hard times.</p>
+    <h2>Interest rate differences</h2>
+    <p>Lenders typically offer lower rates for 15-year loans because they carry less risk. The shorter term means less time for economic conditions to change, and the higher monthly payments indicate stronger borrower financial position. A 0.25% to 0.75% rate difference is common.</p>
+    <p>This rate advantage compounds the savings from the shorter term. Using our earlier example, if the 15-year rate is 5.5% instead of 6%, the monthly payment drops to about $2,452 and total interest falls to roughly $141,400 — an additional $14,300 saved compared to the same term at 6%.</p>
+    <h2>Running your own numbers</h2>
+    <p>Use Amorta to model both scenarios with your actual loan parameters. Compare not just the payment and total interest, but also examine how quickly you build equity in each scenario. The amortization schedule reveals exactly when the crossover point occurs — when principal payments exceed interest payments — which happens much sooner with a 15-year loan.</p>
+    <p>There is no universally correct choice. The right term depends on your income stability, other financial goals, risk tolerance, and discipline with discretionary funds. What matters is making the decision consciously rather than defaulting to the 30-year option simply because the monthly payment is lower.</p>
+  `,
+  articleLoanTermComparisonSeoTitle: '15-Year vs 30-Year Loans: Making the Right Choice | Amorta',
+  articleLoanTermComparisonSeoDescription:
+    'Compare 15-year and 30-year loan terms. Understand the tradeoffs between monthly payments and total interest to choose the right mortgage for your financial situation.',
   articleBiweeklyVsMonthlyPaymentsBody: `
     <p>Some lenders offer biweekly payment plans as a way to pay off your mortgage faster. The idea sounds appealing: instead of making 12 payments per year, you make 26 &mdash; effectively one extra monthly payment per year without feeling it. But does this actually work, and is it worth the switch?</p>
     <h2>How biweekly payments work</h2>

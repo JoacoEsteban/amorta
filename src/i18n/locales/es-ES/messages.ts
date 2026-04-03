@@ -294,6 +294,44 @@ export const esESMessages = {
   contactLink: 'Contacto',
   privacyPolicyLink: 'Privacidad',
   termsLink: 'Términos',
+  articleLoanTermComparisonTitle: 'Préstamos a 15 vs 30 Años: Cómo Elegir Correctamente',
+  articleLoanTermComparisonDescription:
+    'Compara las ventajas y desventajas entre plazos cortos y largos, entiende el impacto en las cuotas mensuales y los intereses totales, y descubre qué opción se adapta a tu situación financiera.',
+  articleLoanTermComparisonDate: '3 de Abril de 2026',
+  articleLoanTermComparisonBody: `
+    <p>Al financiar una compra importante como una vivienda, una de las decisiones más trascendentales que tomarás es la duración del plazo de tu préstamo. Las dos opciones más comunes son los plazos de 15 y 30 años. Cada una tiene ventajas y desventajas distintas que pueden afectar tu vida financiera durante décadas. Entender estas diferencias te ayuda a elegir el camino que se alinea con tus objetivos.</p>
+    <h2>El equilibrio fundamental</h2>
+    <p>Los plazos más cortos significan cuotas mensuales más altas pero significativamente menos intereses totales pagados. Los plazos más largos distribuyen el mismo principal en más pagos, reduciendo la carga mensual pero aumentando el coste total del préstamo. Esto no es solo aritmética — afecta tu flujo de caja mensual, tu capacidad de ahorrar para otros objetivos y tu flexibilidad financiera general.</p>
+    <p>Consideremos una hipoteca de 300.000 &euro; al 6% TAE. Con un plazo de 30 años, tu cuota mensual es de aproximadamente 1.798 &euro;, y pagarás unos 347.000 &euro; en intereses totales durante la vida del préstamo. Con un plazo de 15 años, la cuota mensual sube a unos 2.532 &euro;, pero tus intereses totales bajan a unos 155.700 &euro;. Ahorras más de 191.000 &euro; en intereses, pero tu obligación mensual es 734 &euro; mayor.</p>
+    <h2>Cuando tiene sentido un préstamo a 15 años</h2>
+    <p>Un préstamo a 15 años es ideal cuando tienes ingresos estables y predecibles y tu presupuesto mensual puede acomodar cómodamente la cuota más alta sin sacrificar el ahorro de emergencia o las aportaciones a la jubilación. Los beneficios van más allá del ahorro en intereses:</p>
+    <ul>
+      <li><strong>El patrimonio crece más rápido:</strong> Con pagos de principal más altos desde el principio, eres dueño de más de tu vivienda antes. Esto importa si necesitas vender o pedir prestado contra la propiedad.</li>
+      <li><strong>Alivio psicológico:</strong> Muchos prestatarios experimentan una reducción significativa del estrés sabiendo que su deuda más grande se eliminará en la mitad de tiempo.</li>
+      <li><strong>Calendario de jubilación:</strong> Si planeas jubilarte en menos de 20 años, un préstamo a 15 años garantiza que entres en la jubilación sin pagos de hipoteca.</li>
+    </ul>
+    <p>El requisito clave es la asequibilidad genuina. Si la cuota más alta te obliga a mantener deuda de tarjeta de crédito, omitir aportaciones a la jubilación o vivir sin un fondo de emergencia adecuado, el plazo de 15 años se vuelve contraproducente.</p>
+    <h2>Cuando un préstamo a 30 años es la mejor opción</h2>
+    <p>Un préstamo a 30 años proporciona cuotas mensuales más bajas, lo que crea margen de maniobra financiero. Esta flexibilidad es valiosa en varias situaciones:</p>
+    <ul>
+      <li><strong>Variabilidad de ingresos:</strong> Si tus ingresos fluctúan estacionalmente o trabajas en una industria volátil, los pagos obligatorios más bajos reducen el riesgo.</li>
+      <li><strong>Etapas iniciales de carrera:</strong> Los jóvenes profesionales con fuerte potencial de crecimiento de ingresos pueden preferir pagos más bajos ahora, planeando hacer pagos extra a medida que aumenten los ingresos.</li>
+      <li><strong>Oportunidades de inversión:</strong> El ahorro mensual puede dirigirse a cuentas de jubilación con ventajas fiscales u otras inversiones que pueden generar rendimientos superiores al tipo del préstamo.</li>
+    </ul>
+    <p>El plazo de 30 años también funciona como seguro contra contratiempos financieros. Si pierdes tu empleo o enfrentas gastos inesperados, los pagos obligatorios más bajos son más fáciles de gestionar que el calendario rígido de un préstamo a 15 años.</p>
+    <h2>El coste oculto de la flexibilidad</h2>
+    <p>El riesgo principal de un préstamo a 30 años es conductual. Muchos prestatarios pretenden hacer pagos extra pero no logran seguir adelante consistentemente. La vida interviene, y el dinero extra se gasta en otras cosas. A lo largo de 30 años, esta inacción cuesta decenas de miles en intereses innecesarios.</p>
+    <p>Si eliges un préstamo a 30 años, considera automatizar los pagos extra de principal. Configura transferencias automáticas por la cantidad que habrías pagado en un calendario a 15 años. Esto elimina el requisito de fuerza de voluntad y captura la mayor parte del ahorro en intereses mientras preserva la flexibilidad de reducir o pausar los pagos extra en tiempos difíciles.</p>
+    <h2>Diferencias en los tipos de interés</h2>
+    <p>Los prestamistas típicamente ofrecen tipos más bajos para préstamos a 15 años porque conllevan menos riesgo. El plazo más corto significa menos tiempo para que las condiciones económicas cambien, y las cuotas mensuales más altas indican una posición financiera del prestatario más sólida. Una diferencia de tipo del 0,25% al 0,75% es común.</p>
+    <p>Esta ventaja de tipo potencia los ahorros del plazo más corto. Usando nuestro ejemplo anterior, si el tipo a 15 años es del 5,5% en lugar del 6%, la cuota mensual baja a unos 2.452 &euro; y los intereses totales caen a unos 141.400 &euro; — un ahorro adicional de 14.300 &euro; comparado con el mismo plazo al 6%.</p>
+    <h2>Calcula tus propios números</h2>
+    <p>Usa Amorta para modelar ambos escenarios con los parámetros reales de tu préstamo. Compara no solo la cuota y los intereses totales, sino también examina cuán rápido acumulas patrimonio en cada escenario. El calendario de amortización revela exactamente cuándo ocurre el punto de cruce — cuando los pagos de principal superan los pagos de intereses — que sucede mucho antes con un préstamo a 15 años.</p>
+    <p>No existe una elección universalmente correcta. El plazo adecuado depende de tu estabilidad de ingresos, otros objetivos financieros, tolerancia al riesgo y disciplina con los fondos discrecionales. Lo que importa es tomar la decisión conscientemente en lugar de optar por defecto a la opción de 30 años simplemente porque la cuota mensual es más baja.</p>
+  `,
+  articleLoanTermComparisonSeoTitle: 'Préstamos a 15 vs 30 Años: Cómo Elegir Correctamente | Amorta',
+  articleLoanTermComparisonSeoDescription:
+    'Compara préstamos a 15 y 30 años. Entiende el equilibrio entre cuotas mensuales e intereses totales para elegir la hipoteca adecuada para tu situación financiera.',
   articleBiweeklyVsMonthlyPaymentsBody: `
     <p>Algunos prestamistas ofrecen planes de pago quincenal como una forma de pagar tu hipoteca más rápido. La idea suena atractiva: en lugar de hacer 12 pagos al año, haces 26 &mdash; efectivamente un pago mensual extra por año sin notarlo. Pero ¿realmente funciona y vale la pena el cambio?</p>
     <h2>Cómo funcionan los pagos quincenales</h2>
