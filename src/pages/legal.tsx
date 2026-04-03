@@ -64,10 +64,7 @@ export const PrivacyPolicyPage = (_props: PrivacyPolicyPageProps) => {
 
       <LegalSection title={_('privacyContactTitle')}>
         <p>{_('privacyContactText')}</p>
-        <a
-          href={`mailto:${_('contactEmail')}`}
-          className="legal-contact-link"
-        >
+        <a href={`mailto:${_('contactEmail')}`} className="legal-contact-link">
           <Mail size={16} />
           {_('contactEmail')}
         </a>
@@ -95,7 +92,24 @@ export const AboutPage = (_props: AboutPageProps) => {
       goBack={goBack}
     >
       <LegalSection title={_('aboutIdentityTitle')}>
-        <p>{_('aboutIdentityText')}</p>
+        <p>
+          {_('aboutIdentityText')
+            .split('joaco.io')
+            .map((part, index, arr) => (
+              <>
+                {part}
+                {index < arr.length - 1 && (
+                  <a
+                    href="https://joaco.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    joaco.io
+                  </a>
+                )}
+              </>
+            ))}
+        </p>
       </LegalSection>
 
       <LegalSection title={_('aboutPurposeTitle')}>
@@ -253,5 +267,3 @@ const LegalSection = ({
     {children}
   </section>
 )
-
-
