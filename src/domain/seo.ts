@@ -176,6 +176,26 @@ const resolveCanonicalPath = (
         ? `${normalizedSiteUrl}/blog/${slug}`
         : `${normalizedSiteUrl}${buildLocalePath(locale, `/blog/${slug}`)}`,
     )
+    .with({ kind: 'privacy-policy' }, () =>
+      locale === null
+        ? `${normalizedSiteUrl}/privacy-policy/`
+        : `${normalizedSiteUrl}${buildLocalePath(locale, '/privacy-policy/')}`,
+    )
+    .with({ kind: 'about' }, () =>
+      locale === null
+        ? `${normalizedSiteUrl}/about/`
+        : `${normalizedSiteUrl}${buildLocalePath(locale, '/about/')}`,
+    )
+    .with({ kind: 'contact' }, () =>
+      locale === null
+        ? `${normalizedSiteUrl}/contact/`
+        : `${normalizedSiteUrl}${buildLocalePath(locale, '/contact/')}`,
+    )
+    .with({ kind: 'terms' }, () =>
+      locale === null
+        ? `${normalizedSiteUrl}/terms/`
+        : `${normalizedSiteUrl}${buildLocalePath(locale, '/terms/')}`,
+    )
     .otherwise(() =>
       locale === null
         ? `${normalizedSiteUrl}/`
@@ -201,6 +221,10 @@ const resolveSeoTitle =
           .with(undefined, () => _('seoTitleUnavailable'))
           .otherwise((resolved) => `${_(resolved.titleKey)} | Amorta`)
       })
+      .with({ kind: 'privacy-policy' }, () => _('seoTitlePrivacyPolicy'))
+      .with({ kind: 'about' }, () => _('seoTitleAbout'))
+      .with({ kind: 'contact' }, () => _('seoTitleContact'))
+      .with({ kind: 'terms' }, () => _('seoTitleTerms'))
       .otherwise(() => _('seoTitleUnavailable'))
 
 const resolveSeoDescription =
@@ -221,6 +245,10 @@ const resolveSeoDescription =
           .with(undefined, () => _('seoDescriptionUnavailable'))
           .otherwise((resolved) => _(resolved.descriptionKey))
       })
+      .with({ kind: 'privacy-policy' }, () => _('seoDescriptionPrivacyPolicy'))
+      .with({ kind: 'about' }, () => _('seoDescriptionAbout'))
+      .with({ kind: 'contact' }, () => _('seoDescriptionContact'))
+      .with({ kind: 'terms' }, () => _('seoDescriptionTerms'))
       .otherwise(() => _('seoDescriptionUnavailable'))
 
 const resolveRoutePath = (routeState: RouteState): string =>
@@ -233,6 +261,10 @@ const resolveRoutePath = (routeState: RouteState): string =>
     .with({ kind: 'result', decoded: { kind: 'pending' } }, () => '/result/')
     .with({ kind: 'blog-index' }, () => '/blog/')
     .with({ kind: 'blog-article' }, ({ slug }) => `/blog/${slug}`)
+    .with({ kind: 'privacy-policy' }, () => '/privacy-policy/')
+    .with({ kind: 'about' }, () => '/about/')
+    .with({ kind: 'contact' }, () => '/contact/')
+    .with({ kind: 'terms' }, () => '/terms/')
     .otherwise(() => '/')
 
 export const buildSeoMetadata = ({

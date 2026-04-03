@@ -48,6 +48,22 @@ export type RouteState =
       slug: string
       locale: SupportedLocale | null
     }
+  | {
+      kind: 'privacy-policy'
+      locale: SupportedLocale | null
+    }
+  | {
+      kind: 'about'
+      locale: SupportedLocale | null
+    }
+  | {
+      kind: 'contact'
+      locale: SupportedLocale | null
+    }
+  | {
+      kind: 'terms'
+      locale: SupportedLocale | null
+    }
 
 export type RouteParsePhase = 'prerender' | 'resolved'
 
@@ -225,5 +241,9 @@ export const parseRouteState = (
           locale,
         }))
     })
+    .with('privacy-policy', () => ({ kind: 'privacy-policy' as const, locale }))
+    .with('about', () => ({ kind: 'about' as const, locale }))
+    .with('contact', () => ({ kind: 'contact' as const, locale }))
+    .with('terms', () => ({ kind: 'terms' as const, locale }))
     .otherwise(() => ({ kind: 'index' as const, locale }))
 }

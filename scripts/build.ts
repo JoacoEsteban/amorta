@@ -70,6 +70,10 @@ function generateSitemap(
   const staticUrls = [
     { path: '/', changefreq: 'weekly', priority: '1.0' },
     { path: '/blog/', changefreq: 'weekly', priority: '0.8' },
+    { path: '/privacy-policy/', changefreq: 'monthly', priority: '0.3' },
+    { path: '/about/', changefreq: 'monthly', priority: '0.3' },
+    { path: '/contact/', changefreq: 'monthly', priority: '0.3' },
+    { path: '/terms/', changefreq: 'monthly', priority: '0.3' },
     ...ARTICLES.map((a) => ({
       path: `/blog/${a.slug}/`,
       changefreq: 'monthly',
@@ -204,6 +208,34 @@ async function writeLocale(
       assetLinks: '',
     })
     await Bun.write(`${dir}/blog/${article.slug}/index.html`, articleHtml, {
+      createPath: true,
+    })
+  }
+
+  // Generate legal pages
+  const legalPages: Array<
+    | { kind: 'privacy-policy' }
+    | { kind: 'about' }
+    | { kind: 'contact' }
+    | { kind: 'terms' }
+  > = [
+    { kind: 'privacy-policy' },
+    { kind: 'about' },
+    { kind: 'contact' },
+    { kind: 'terms' },
+  ]
+
+  for (const page of legalPages) {
+    const pagePath = page.kind
+    await Bun.$`mkdir -p ${dir}/${pagePath}`
+    const pageHtml = renderHtmlDocument({
+      shellHtml,
+      siteUrl: PUBLIC_SITE_URL,
+      routeState: { ...page, locale },
+      locale,
+      assetLinks: '',
+    })
+    await Bun.write(`${dir}/${pagePath}/index.html`, pageHtml, {
       createPath: true,
     })
   }

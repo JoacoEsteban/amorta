@@ -4,6 +4,7 @@ import { match } from 'ts-pattern'
 import { ARTICLES, getArticleBySlug } from '../domain/blog'
 import { buildLocalePath } from '../i18n/lingui.config'
 import { useLocale, useTranslator } from '../state/locale.js'
+import { Footer } from '../components/footer'
 
 type BlogIndexPageProps = {
   routeState: Extract<
@@ -58,18 +59,7 @@ export const BlogIndexPage = ({ routeState }: BlogIndexPageProps) => {
           <span>{_('backToCalculator')}</span>
         </button>
 
-        <footer className="app-footer">
-          <span>
-            {_('madeBy')}{' '}
-            <a
-              href="https://joaco.io"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              joaco.io
-            </a>
-          </span>
-        </footer>
+        <Footer />
       </div>
     </main>
   )
@@ -155,18 +145,7 @@ export const ArticlePage = ({ routeState }: ArticlePageProps) => {
             </button>
           </div>
 
-          <footer className="app-footer">
-            <span>
-              {_('madeBy')}{' '}
-              <a
-                href="https://joaco.io"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                joaco.io
-              </a>
-            </span>
-          </footer>
+          <Footer />
         </div>
       </main>
     ))

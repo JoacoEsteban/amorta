@@ -123,6 +123,18 @@ export const AppRoot = ({ initialRouteState, siteUrl }: AppRootProps) => {
     .with({ kind: 'blog-article' }, (resolvedRouteState) => (
       <App kind="blog-article" routeState={resolvedRouteState} />
     ))
+    .with({ kind: 'privacy-policy' }, (resolvedRouteState) => (
+      <App kind="privacy-policy" routeState={resolvedRouteState} />
+    ))
+    .with({ kind: 'about' }, (resolvedRouteState) => (
+      <App kind="about" routeState={resolvedRouteState} />
+    ))
+    .with({ kind: 'contact' }, (resolvedRouteState) => (
+      <App kind="contact" routeState={resolvedRouteState} />
+    ))
+    .with({ kind: 'terms' }, (resolvedRouteState) => (
+      <App kind="terms" routeState={resolvedRouteState} />
+    ))
     .otherwise((invalidRouteState) => (
       <App
         kind="invalid-result"

@@ -41,10 +41,17 @@ import { QuotaTable } from './components/quota-table'
 import { ExportModal } from './components/export-modal'
 import { EducationalSection } from './components/educational-section'
 import { BlogIndexPage, ArticlePage } from './pages/blog'
+import {
+  PrivacyPolicyPage,
+  AboutPage,
+  ContactPage,
+  TermsPage,
+} from './pages/legal'
 import { Input } from './components/ui/input'
 import { Label } from './components/ui/label'
 import { Select } from './components/ui/select'
 import { LocaleSwitcher } from './components/locale-switcher'
+import { Footer } from './components/footer'
 import {
   clearLoanStateFromLocalStorage,
   type LoanStore,
@@ -174,6 +181,22 @@ type AppProps =
       kind: 'blog-article'
       routeState: Extract<RouteState, { kind: 'blog-article' }>
     }
+  | {
+      kind: 'privacy-policy'
+      routeState: Extract<RouteState, { kind: 'privacy-policy' }>
+    }
+  | {
+      kind: 'about'
+      routeState: Extract<RouteState, { kind: 'about' }>
+    }
+  | {
+      kind: 'contact'
+      routeState: Extract<RouteState, { kind: 'contact' }>
+    }
+  | {
+      kind: 'terms'
+      routeState: Extract<RouteState, { kind: 'terms' }>
+    }
 
 export const App = (props: AppProps) =>
   match(props)
@@ -196,6 +219,18 @@ export const App = (props: AppProps) =>
     ))
     .with({ kind: 'blog-article' }, ({ routeState }) => (
       <ArticlePage routeState={routeState} />
+    ))
+    .with({ kind: 'privacy-policy' }, ({ routeState }) => (
+      <PrivacyPolicyPage routeState={routeState} />
+    ))
+    .with({ kind: 'about' }, ({ routeState }) => (
+      <AboutPage routeState={routeState} />
+    ))
+    .with({ kind: 'contact' }, ({ routeState }) => (
+      <ContactPage routeState={routeState} />
+    ))
+    .with({ kind: 'terms' }, ({ routeState }) => (
+      <TermsPage routeState={routeState} />
     ))
     .exhaustive()
 
@@ -636,23 +671,7 @@ const CalculatorPage = ({
   )
 }
 
-const Footer = () => {
-  const locale = useLocale()
-  const { _ } = useTranslator()
 
-  return (
-    <footer className="app-footer">
-      <span>
-        {_('madeBy')}{' '}
-        <a href="https://joaco.io" target="_blank" rel="noopener noreferrer">
-          joaco.io
-        </a>
-      </span>
-      <span className="app-footer__sep">·</span>
-      <a href={buildLocalePath(locale, '/blog/')}>{_('articles')}</a>
-    </footer>
-  )
-}
 
 const InvalidResultPage = ({
   routeState,
