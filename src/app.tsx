@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
 import {
   Landmark,
@@ -10,7 +10,6 @@ import {
   ChevronsUpDown,
   Download,
 } from 'lucide-react'
-import toast from 'react-hot-toast'
 import { P, match } from 'ts-pattern'
 import {
   Bar,
@@ -29,7 +28,7 @@ import type {
 } from 'recharts/types/component/DefaultTooltipContent'
 
 import type { PaymentFrequency } from './domain/amortization'
-import { buildShareUrl, type RouteState } from './domain/share'
+import type { RouteState } from './domain/share'
 import {
   Card,
   CardContent,
@@ -40,6 +39,7 @@ import {
 import { QuotaTable } from './components/quota-table'
 import { ExportModal } from './components/export-modal'
 import { EducationalSection } from './components/educational-section'
+import { ShareButton } from './components/share-button'
 import { BlogIndexPage, ArticlePage } from './pages/blog'
 import {
   PrivacyPolicyPage,
@@ -104,29 +104,6 @@ const formatShareOfTotal = (value: number, total: number): string =>
   match(total > 0)
     .with(true, () => formatPercent(value / total))
     .otherwise(() => '0%')
-
-const copyShareUrl =
-  (_: Translate) =>
-  (shareUrl: string): void => {
-    const clipboard = match(typeof navigator)
-      .with('undefined', () => null)
-      .otherwise(() => navigator.clipboard)
-
-    match(clipboard)
-      .with(null, () => {
-        toast.error(_('clipboardUnavailable'))
-      })
-      .otherwise((resolvedClipboard) => {
-        resolvedClipboard
-          .writeText(shareUrl)
-          .then(() => {
-            toast.success(_('shareUrlCopied'))
-          })
-          .catch(() => {
-            toast.error(_('shareUrlCopyFailed'))
-          })
-      })
-  }
 
 const makeLocaleNavigator =
   (locale: SupportedLocale) =>
@@ -286,14 +263,6 @@ const CalculatorPage = ({
   const locale = useLocale()
   const navigateTo = useMemo(() => makeLocaleNavigator(locale), [locale])
 
-  const shareUrl = useMemo(
-    () =>
-      match(typeof window)
-        .with('undefined', () => '')
-        .otherwise(() => buildShareUrl(values, window.location, locale)),
-    [locale, values],
-  )
-
   const shareDisabled = !hydrated || isPendingResult
 
   const paymentFrequencyOptions: Array<{
@@ -334,21 +303,13 @@ const CalculatorPage = ({
           </div>
           <div className="page-toolbar__actions max-md:flex-col">
             <LocaleSwitcher />
-            <button
-              type="button"
-              className={match(shareDisabled)
-                .with(true, () => 'action-button action-button--disabled')
-                .otherwise(() => 'action-button action-button--primary')}
-              onClick={() => copyShareUrl(_)(shareUrl)}
+            <ShareButton
+              values={values}
               disabled={shareDisabled}
-              aria-hidden={shareDisabled}
               title={match(isPendingResult)
                 .with(true, () => _('loadingSharedResultTooltip'))
                 .otherwise(() => undefined)}
-            >
-              <Share2 size={16} />
-              <span>{_('shareResult')}</span>
-            </button>
+            />
           </div>
         </div>
 
