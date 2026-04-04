@@ -50,7 +50,6 @@ import {
 import { Input } from './components/ui/input'
 import { Label } from './components/ui/label'
 import { Select } from './components/ui/select'
-import { LocaleSwitcher } from './components/locale-switcher'
 import { Footer } from './components/footer'
 import {
   clearLoanStateFromLocalStorage,
@@ -301,8 +300,7 @@ const CalculatorPage = ({
                 .otherwise(() => _('modelFrenchLoanSummary'))}
             </p>
           </div>
-          <div className="page-toolbar__actions max-md:flex-col">
-            <LocaleSwitcher />
+          <div className="page-toolbar__actions">
             <ShareButton
               values={values}
               disabled={shareDisabled}

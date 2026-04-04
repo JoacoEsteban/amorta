@@ -1,5 +1,6 @@
 import { buildLocalePath } from '../i18n/lingui.config'
 import { useLocale, useTranslator } from '../state/locale.js'
+import { LocaleSwitcher } from './locale-switcher.js'
 
 export const Footer = () => {
   const { _ } = useTranslator()
@@ -36,6 +37,8 @@ export const Footer = () => {
         </a>
         <span className="app-footer__sep">·</span>
         <a href={buildLocalePath(currentLocale, '/terms/')}>{_('termsLink')}</a>
+        <span className="app-footer__sep">·</span>
+        <LocaleSwitcher />
       </div>
     </footer>
   )
