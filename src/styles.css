@@ -1293,30 +1293,15 @@ ul {
 .app-footer__main {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
-}
-
-.app-footer__legal {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-left: 1rem;
-  padding-left: 1rem;
-  border-left: 1px solid var(--stone-300);
 }
 
 @media (max-width: 768px) {
   .app-footer {
     flex-direction: column;
     gap: 0.75rem;
-  }
-
-  .app-footer__legal {
-    margin-left: 0;
-    padding-left: 0;
-    border-left: none;
-    flex-wrap: wrap;
-    justify-content: center;
   }
 
   .legal-header {

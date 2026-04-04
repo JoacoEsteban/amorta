@@ -15,16 +15,26 @@ export const Footer = () => {
           </a>
         </span>
         <span className="app-footer__sep">·</span>
+        <a
+          href="https://github.com/joacoesteban/amorta"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+        <span className="app-footer__sep">·</span>
         <a href={buildLocalePath(currentLocale, '/blog/')}>{_('articles')}</a>
-      </div>
-      <div className="app-footer__legal">
+        <span className="app-footer__sep">·</span>
         <a href={buildLocalePath(currentLocale, '/about/')}>{_('aboutLink')}</a>
+        <span className="app-footer__sep">·</span>
         <a href={buildLocalePath(currentLocale, '/contact/')}>
           {_('contactLink')}
         </a>
+        <span className="app-footer__sep">·</span>
         <a href={buildLocalePath(currentLocale, '/privacy-policy/')}>
           {_('privacyPolicyLink')}
         </a>
+        <span className="app-footer__sep">·</span>
         <a href={buildLocalePath(currentLocale, '/terms/')}>{_('termsLink')}</a>
       </div>
     </footer>
