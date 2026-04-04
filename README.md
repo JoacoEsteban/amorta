@@ -1,6 +1,8 @@
 # Amorta
 
-Interactive French amortization calculator with shareable readonly result URLs and payment-to-rate inversion.
+[amorta.loan](https://amorta.loan) · Interactive French amortization calculator with shareable readonly result URLs and payment-to-rate inversion.
+
+![Amorta screenshot](assets/amorta-screenshot.png)
 
 ## What It Does
 
@@ -73,7 +75,7 @@ Set the canonical deployment URL during build:
 PUBLIC_SITE_URL=https://your-domain.example bun run build
 ```
 
-## Sharing
+## Live Demo
 
 The Share action copies a URL in the form:
 
