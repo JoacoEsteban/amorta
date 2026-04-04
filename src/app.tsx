@@ -332,7 +332,7 @@ const CalculatorPage = ({
                 .otherwise(() => _('modelFrenchLoanSummary'))}
             </p>
           </div>
-          <div className="page-toolbar__actions">
+          <div className="page-toolbar__actions max-md:flex-col">
             <LocaleSwitcher />
             <button
               type="button"
