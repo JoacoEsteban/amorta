@@ -25,10 +25,11 @@ if (import.meta.main) {
 
 export async function exec(target: 'dev' | 'prod' = 'prod') {
   await ci(target)
+  const minify = target !== 'dev'
 
   await Bun.$`rm -rf ${DIST_DIR}/`
   const prodBuild = await Bun.build({
-    minify: true,
+    minify,
     entrypoints: ['index.html'],
     naming: '[name].[ext]',
     outdir: DIST_DIR,
@@ -38,6 +39,7 @@ export async function exec(target: 'dev' | 'prod' = 'prod') {
     plugins: [
       tailwind({
         inputFile: 'src/styles.css',
+        minify,
       }),
     ],
   })

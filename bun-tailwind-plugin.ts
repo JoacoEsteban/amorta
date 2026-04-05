@@ -3,6 +3,7 @@ import { resolve } from 'path'
 
 export type TailwindPluginConfig = {
   inputFile: string
+  minify?: boolean
 }
 
 /**
@@ -45,7 +46,7 @@ const TailwindPlugin = (config: TailwindPluginConfig): BunPlugin => {
 
         const [original, twOutput] = await Promise.all([
           Bun.file(args.path).text(),
-          Bun.$`tailwindcss -i node_modules/tailwindcss/index.css --minify`.text(),
+          Bun.$`tailwindcss -i node_modules/tailwindcss/index.css ${config.minify ? ' --minify' : ''}`.text(),
         ])
 
         const augmented = `${twOutput}\n${original}`
