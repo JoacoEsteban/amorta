@@ -10,6 +10,7 @@ import { ARTICLES } from '../src/domain/blog'
 import { exec as ci } from './ci'
 import { match } from 'ts-pattern'
 import path from 'path'
+import '../src/main'
 
 const DIST_DIR = './dist'
 const STATIC_DIR = './static'
