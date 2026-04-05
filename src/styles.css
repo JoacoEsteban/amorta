@@ -702,12 +702,6 @@ ul {
   color: var(--stone-400);
 }
 
-.app-footer > * {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
 .dialog-overlay {
   position: fixed;
   inset: 0;
@@ -1295,7 +1289,6 @@ ul {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
 }
 
 @media (max-width: 768px) {
