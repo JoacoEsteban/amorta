@@ -33,7 +33,7 @@ export async function exec(target: 'dev' | 'prod' = 'prod') {
     entrypoints: ['index.html'],
     naming: '[name].[ext]',
     outdir: DIST_DIR,
-    splitting: false,
+    splitting: true,
     target: 'browser',
     publicPath: '/',
     plugins: [
@@ -166,7 +166,7 @@ async function writeLocale(
 
   await Bun.$`mkdir -p ${dir}`
 
-  const indexHtml = renderHtmlDocument({
+  const indexHtml = await renderHtmlDocument({
     shellHtml,
     siteUrl: PUBLIC_SITE_URL,
     routeState: { kind: 'index', locale },
@@ -174,7 +174,7 @@ async function writeLocale(
     assetLinks: '',
   })
 
-  const resultHtml = renderHtmlDocument({
+  const resultHtml = await renderHtmlDocument({
     shellHtml,
     siteUrl: PUBLIC_SITE_URL,
     routeState: buildPendingResultState(null, locale),
@@ -182,7 +182,7 @@ async function writeLocale(
     assetLinks: '',
   })
 
-  const blogIndexHtml = renderHtmlDocument({
+  const blogIndexHtml = await renderHtmlDocument({
     shellHtml,
     siteUrl: PUBLIC_SITE_URL,
     routeState: { kind: 'blog-index', locale },
@@ -203,7 +203,7 @@ async function writeLocale(
 
   for (const article of ARTICLES) {
     await Bun.$`mkdir -p ${dir}/blog/${article.slug}`
-    const articleHtml = renderHtmlDocument({
+    const articleHtml = await renderHtmlDocument({
       shellHtml,
       siteUrl: PUBLIC_SITE_URL,
       routeState: { kind: 'blog-article', slug: article.slug, locale },
@@ -231,7 +231,7 @@ async function writeLocale(
   for (const page of legalPages) {
     const pagePath = page.kind
     await Bun.$`mkdir -p ${dir}/${pagePath}`
-    const pageHtml = renderHtmlDocument({
+    const pageHtml = await renderHtmlDocument({
       shellHtml,
       siteUrl: PUBLIC_SITE_URL,
       routeState: { ...page, locale },

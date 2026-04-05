@@ -19,6 +19,7 @@ import { resolveLocale } from './i18n/locale-resolution'
 import { createLocaleStore } from './state/locale-store'
 import { DEFAULT_LOCALE } from './i18n/lingui.config'
 import { assert } from './lib/assert'
+import type { ComponentMap } from './component-map'
 
 type InvalidRouteState = {
   kind: 'result'
@@ -32,9 +33,14 @@ type InvalidRouteState = {
 type AppRootProps = {
   initialRouteState: RouteState
   siteUrl: string
+  componentMap: Partial<ComponentMap>
 }
 
-export const AppRoot = ({ initialRouteState, siteUrl }: AppRootProps) => {
+export const AppRoot = ({
+  initialRouteState,
+  siteUrl,
+  componentMap,
+}: AppRootProps) => {
   const [routeState, setRouteState] = useState<RouteState>(initialRouteState)
   const [hydrated, setHydrated] = useState(false)
 
@@ -93,50 +99,74 @@ export const AppRoot = ({ initialRouteState, siteUrl }: AppRootProps) => {
   }, [])
 
   const appNode = match(routeState)
-    .with({ kind: 'index' }, (resolvedRouteState) => (
-      <App
-        kind="calculator"
-        routeState={resolvedRouteState}
-        store={sessionStore}
-        hydrated={hydrated}
-        uiStore={uiStore}
-      />
-    ))
     .with(
       P.union(
+        { kind: 'index' },
         { kind: 'result', decoded: { kind: 'pending' } },
         { kind: 'result', decoded: { kind: 'valid' } },
       ),
-      (resolvedRouteState) => (
-        <App
-          kind="calculator"
-          routeState={resolvedRouteState}
-          store={sharedStore}
-          hydrated={hydrated}
-          uiStore={uiStore}
-        />
-      ),
+      (resolvedRouteState) => {
+        const store = match(resolvedRouteState.kind)
+          .with('index', () => sessionStore)
+          .otherwise(() => sharedStore)
+
+        return (
+          <App
+            componentMap={componentMap}
+            kind="calculator"
+            routeState={resolvedRouteState}
+            store={store}
+            hydrated={hydrated}
+            uiStore={uiStore}
+          />
+        )
+      },
     )
     .with({ kind: 'blog-index' }, (resolvedRouteState) => (
-      <App kind="blog-index" routeState={resolvedRouteState} />
+      <App
+        componentMap={componentMap}
+        kind="blog-index"
+        routeState={resolvedRouteState}
+      />
     ))
     .with({ kind: 'blog-article' }, (resolvedRouteState) => (
-      <App kind="blog-article" routeState={resolvedRouteState} />
+      <App
+        componentMap={componentMap}
+        kind="blog-article"
+        routeState={resolvedRouteState}
+      />
     ))
     .with({ kind: 'privacy-policy' }, (resolvedRouteState) => (
-      <App kind="privacy-policy" routeState={resolvedRouteState} />
+      <App
+        componentMap={componentMap}
+        kind="privacy-policy"
+        routeState={resolvedRouteState}
+      />
     ))
     .with({ kind: 'about' }, (resolvedRouteState) => (
-      <App kind="about" routeState={resolvedRouteState} />
+      <App
+        componentMap={componentMap}
+        kind="about"
+        routeState={resolvedRouteState}
+      />
     ))
     .with({ kind: 'contact' }, (resolvedRouteState) => (
-      <App kind="contact" routeState={resolvedRouteState} />
+      <App
+        componentMap={componentMap}
+        kind="contact"
+        routeState={resolvedRouteState}
+      />
     ))
     .with({ kind: 'terms' }, (resolvedRouteState) => (
-      <App kind="terms" routeState={resolvedRouteState} />
+      <App
+        componentMap={componentMap}
+        kind="terms"
+        routeState={resolvedRouteState}
+      />
     ))
     .otherwise((invalidRouteState) => (
       <App
+        componentMap={componentMap}
         kind="invalid-result"
         routeState={invalidRouteState as InvalidRouteState}
         hydrated={hydrated}

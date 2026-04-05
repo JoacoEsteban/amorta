@@ -1,16 +1,10 @@
 import { match } from 'ts-pattern'
+import React, { Suspense, type JSX } from 'react'
 import type { RouteState } from './domain/share'
-import { BlogIndexPage, ArticlePage } from './pages/blog'
-import {
-  PrivacyPolicyPage,
-  AboutPage,
-  ContactPage,
-  TermsPage,
-} from './pages/legal'
-import { CalculatorPage } from './pages/calculator'
-import { InvalidResultPage } from './pages/invalid-result'
 import { type LoanStore } from './state/loan-store'
 import type { UIStore } from './state/ui-store'
+import type { ComponentMap } from './component-map'
+import { assert } from './lib/assert'
 
 type AppProps =
   | {
@@ -70,38 +64,105 @@ type AppProps =
       routeState: Extract<RouteState, { kind: 'terms' }>
     }
 
-export const App = (props: AppProps) =>
+function AssertComponent<T extends React.ElementType>({
+  component: Component,
+  props,
+}: {
+  component: T | undefined
+  props: React.ComponentProps<T>
+}) {
+  assert(Component)
+  return <Component {...props} />
+}
+
+export const App = (
+  props: AppProps & { componentMap: Partial<ComponentMap> },
+) =>
   match(props)
-    .with({ kind: 'invalid-result' }, ({ routeState }) => (
-      <InvalidResultPage routeState={routeState} />
-    ))
     .with(
-      { kind: 'calculator' },
-      ({ routeState, store, hydrated, uiStore }) => (
-        <CalculatorPage
-          routeState={routeState}
-          store={store}
-          hydrated={hydrated}
-          uiStore={uiStore}
+      { kind: 'invalid-result' },
+      ({ routeState, componentMap: { InvalidResultPage } }) => (
+        <AssertComponent
+          component={InvalidResultPage}
+          props={{
+            routeState,
+          }}
         />
       ),
     )
-    .with({ kind: 'blog-index' }, ({ routeState }) => (
-      <BlogIndexPage routeState={routeState} />
+    .with(
+      { kind: 'calculator' },
+      ({
+        routeState,
+        store,
+        hydrated,
+        uiStore,
+        componentMap: { CalculatorPage },
+      }) => (
+        <AssertComponent
+          component={CalculatorPage}
+          props={{ routeState, store, hydrated, uiStore }}
+        />
+      ),
+    )
+    .with(
+      { kind: 'blog-index' },
+      ({ routeState, componentMap: { BlogIndexPage } }) => (
+        <AssertComponent
+          component={BlogIndexPage}
+          props={{
+            routeState,
+          }}
+        />
+      ),
+    )
+    .with(
+      { kind: 'blog-article' },
+      ({ routeState, componentMap: { ArticlePage } }) => (
+        <AssertComponent
+          component={ArticlePage}
+          props={{
+            routeState,
+          }}
+        />
+      ),
+    )
+    .with(
+      { kind: 'privacy-policy' },
+      ({ routeState, componentMap: { PrivacyPolicyPage } }) => (
+        <AssertComponent
+          component={PrivacyPolicyPage}
+          props={{
+            routeState,
+          }}
+        />
+      ),
+    )
+    .with({ kind: 'about' }, ({ routeState, componentMap: { AboutPage } }) => (
+      <AssertComponent
+        component={AboutPage}
+        props={{
+          routeState,
+        }}
+      />
     ))
-    .with({ kind: 'blog-article' }, ({ routeState }) => (
-      <ArticlePage routeState={routeState} />
-    ))
-    .with({ kind: 'privacy-policy' }, ({ routeState }) => (
-      <PrivacyPolicyPage routeState={routeState} />
-    ))
-    .with({ kind: 'about' }, ({ routeState }) => (
-      <AboutPage routeState={routeState} />
-    ))
-    .with({ kind: 'contact' }, ({ routeState }) => (
-      <ContactPage routeState={routeState} />
-    ))
-    .with({ kind: 'terms' }, ({ routeState }) => (
-      <TermsPage routeState={routeState} />
+    .with(
+      { kind: 'contact' },
+      ({ routeState, componentMap: { ContactPage } }) => (
+        <AssertComponent
+          component={ContactPage}
+          props={{
+            routeState,
+          }}
+        />
+      ),
+    )
+    .with({ kind: 'terms' }, ({ routeState, componentMap: { TermsPage } }) => (
+      <AssertComponent
+        component={TermsPage}
+        props={{
+          routeState,
+        }}
+      />
     ))
     .exhaustive()

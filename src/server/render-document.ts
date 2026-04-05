@@ -51,7 +51,7 @@ const buildSeoHead = ({
     `<script id="amorta-jsonld" type="application/ld+json">${metadata.jsonLd}</script>`,
   ].join('\n    ')
 
-export const renderHtmlDocument = ({
+export const renderHtmlDocument = async ({
   shellHtml,
   siteUrl,
   routeState,
@@ -65,13 +65,13 @@ export const renderHtmlDocument = ({
   locale: SupportedLocale | null
   assetLinks?: string
   appScript?: string
-}): string => {
+}): Promise<string> => {
   const metadata = buildSeoMetadata({
     routeState,
     siteUrl,
     locale: locale ?? DEFAULT_LOCALE,
   })
-  const appHtml = renderAppToHtml({
+  const appHtml = await renderAppToHtml({
     initialRouteState: routeState,
     siteUrl,
   })

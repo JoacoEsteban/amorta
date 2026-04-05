@@ -2,9 +2,9 @@ import { hydrateRoot } from 'react-dom/client'
 
 import { AppRoot } from './root'
 import type { RouteState } from './domain/share'
-import { concur, sleep } from './lib/utils'
+import { getPartialComponentMapForRoute } from './component-map'
 
-export const hydrateApp = ({
+export const hydrateApp = async ({
   container,
   initialRouteState,
   siteUrl,
@@ -12,10 +12,17 @@ export const hydrateApp = ({
   container: HTMLElement
   initialRouteState: RouteState
   siteUrl: string
-}) =>
-  concur(() =>
-    hydrateRoot(
-      container,
-      <AppRoot initialRouteState={initialRouteState} siteUrl={siteUrl} />,
-    ),
+}): Promise<void> => {
+  const componentMap = await getPartialComponentMapForRoute({
+    initialRouteState,
+  })
+
+  hydrateRoot(
+    container,
+    <AppRoot
+      initialRouteState={initialRouteState}
+      siteUrl={siteUrl}
+      componentMap={componentMap}
+    />,
   )
+}
