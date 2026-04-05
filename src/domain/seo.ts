@@ -1,7 +1,6 @@
 import { match } from 'ts-pattern'
 
 import {
-  DEFAULT_LOCALE,
   SUPPORTED_LOCALES,
   type SupportedLocale,
   buildLocalePath,
@@ -10,7 +9,7 @@ import { getArticleBySlug, type Article } from './blog'
 import type { RouteState } from './share'
 import { mapTranslator, type Translate } from '../state/locale.js'
 
-export const DEFAULT_PUBLIC_SITE_URL = 'https://amorta.example'
+export const DEFAULT_PUBLIC_SITE_URL = 'https://amorta.loan'
 
 const buildBaseJsonLd = (_: Translate) => (siteUrl: string, path: string) => [
   {
