@@ -46,7 +46,7 @@ export type LoanStore = {
 
 export const DEFAULT_LOAN_FORM_VALUES: LoanFormValues = {
   loanAmount: '250000',
-  years: '30',
+  years: '10',
   paymentsPerYear: 12,
   ear: '0.12',
   paymentAmount: '',
