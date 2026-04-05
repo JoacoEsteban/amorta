@@ -18,6 +18,7 @@ import { P, match } from 'ts-pattern'
 
 import type { LoanStore } from '../state/loan-store'
 import { useTranslator } from '../state/locale.js'
+import { Spinner } from './spinner.js'
 
 const currencyFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -209,42 +210,20 @@ const StaticChartPreview = ({
     ReturnType<LoanStore['useDashboardViewModel']>['calculation'],
     { kind: 'ready' }
   >
-}) => {
-  const previewRows = calculation.chartRows.slice(0, 12)
+}) => (
+  <>
+    <MetricsRow calculation={calculation} />
 
-  return (
-    <>
-      <MetricsRow calculation={calculation} />
-
-      <div
-        className="chart-frame chart-frame--static flex-1"
-        aria-label="Amortization preview"
-      >
-        <div className="static-chart" aria-hidden="true">
-          {previewRows.map((row) => (
-            <div className="static-chart__quota" key={row.quotaLabel}>
-              <div className="static-chart__bar">
-                <div
-                  className="static-chart__segment static-chart__segment--interest"
-                  style={{
-                    height: `${Math.max(0, (row.interest / row.payment) * 100)}%`,
-                  }}
-                />
-                <div
-                  className="static-chart__segment static-chart__segment--principal"
-                  style={{
-                    height: `${Math.max(0, (row.principal / row.payment) * 100)}%`,
-                  }}
-                />
-              </div>
-              <span className="static-chart__label">{row.quotaLabel}</span>
-            </div>
-          ))}
-        </div>
+    <div
+      className="chart-frame chart-frame--static"
+      aria-label="Loading amortization chart"
+    >
+      <div className="static-chart-spinner">
+        <Spinner />
       </div>
-    </>
-  )
-}
+    </div>
+  </>
+)
 
 const PendingChartState = () => {
   const { _ } = useTranslator()
