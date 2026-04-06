@@ -10,6 +10,7 @@ import articleLoanTermComparisonBody from './content/articles/article-loan-term-
 import articleBiweeklyVsMonthlyPaymentsBody from './content/articles/article-biweekly-vs-monthly-payments-body.html.txt' with { type: 'text' }
 import articleCalculatingRemainingLoanBalanceBody from './content/articles/article-calculating-remaining-loan-balance-body.html.txt' with { type: 'text' }
 import articleFactorsAffectingMortgageRatesBody from './content/articles/article-factors-affecting-mortgage-rates-body.html.txt' with { type: 'text' }
+import articleNegativeAmortizationBody from './content/articles/article-negative-amortization-body.html.txt' with { type: 'text' }
 
 export const enUSMessages = {
   sharedResult: 'Shared Result',
@@ -319,4 +320,13 @@ export const enUSMessages = {
     'Factors That Affect Your Mortgage Interest Rate | Amorta',
   articleFactorsAffectingMortgageRatesSeoDescription:
     'Discover what factors affect your mortgage interest rate. Learn how credit scores, loan-to-value ratios, debt-to-income ratios, and market conditions influence your rate.',
+  articleNegativeAmortizationTitle: 'What Is Negative Amortization?',
+  articleNegativeAmortizationDescription:
+    'Learn what negative amortization means, why a loan balance can grow after a payment, and which contract features usually create that outcome.',
+  articleNegativeAmortizationDate: 'April 6, 2026',
+  articleNegativeAmortizationBody,
+  articleNegativeAmortizationSeoTitle:
+    'What Is Negative Amortization? | Amorta',
+  articleNegativeAmortizationSeoDescription:
+    'Negative amortization adds unpaid interest to your loan balance. Learn how it works, why it creates payment shock, and how to spot it early.',
 }

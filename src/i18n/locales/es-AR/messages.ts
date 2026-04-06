@@ -10,6 +10,7 @@ import articleLoanTermComparisonBody from './content/articles/article-loan-term-
 import articleBiweeklyVsMonthlyPaymentsBody from './content/articles/article-biweekly-vs-monthly-payments-body.html.txt' with { type: 'text' }
 import articleCalculatingRemainingLoanBalanceBody from './content/articles/article-calculating-remaining-loan-balance-body.html.txt' with { type: 'text' }
 import articleFactorsAffectingMortgageRatesBody from './content/articles/article-factors-affecting-mortgage-rates-body.html.txt' with { type: 'text' }
+import articleNegativeAmortizationBody from './content/articles/article-negative-amortization-body.html.txt' with { type: 'text' }
 
 export const esARMessages = {
   sharedResult: 'Resultado Compartido',
@@ -324,4 +325,13 @@ export const esARMessages = {
     'Factores que Afectan la Tasa de Interés de tu Hipoteca | Amorta',
   articleFactorsAffectingMortgageRatesSeoDescription:
     'Descubrí qué factores afectan la tasa de interés de tu hipoteca. Aprendé cómo los historiales crediticios, las relaciones préstamo-valor y las condiciones del mercado influyen en tu tasa.',
+  articleNegativeAmortizationTitle: '¿Qué es la Amortización Negativa?',
+  articleNegativeAmortizationDescription:
+    'Aprendé qué significa la amortización negativa, por qué un saldo puede crecer después de pagar, y qué cláusulas suelen producir ese resultado.',
+  articleNegativeAmortizationDate: '6 de Abril de 2026',
+  articleNegativeAmortizationBody,
+  articleNegativeAmortizationSeoTitle:
+    '¿Qué es la Amortización Negativa? | Amorta',
+  articleNegativeAmortizationSeoDescription:
+    'La amortización negativa agrega intereses impagos al saldo del préstamo. Aprendé cómo funciona, por qué genera saltos de cuota y cómo detectarla.',
 }

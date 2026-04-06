@@ -1,0 +1,56 @@
+<p>Negative amortization happens when a loan payment is too small to cover all of the interest that accrued during the period. Instead of the balance going down, the unpaid interest is added back to the principal. In practical terms, you make a payment, but the amount you owe still grows.</p>
+<p>This topic matters because many borrowers assume that every scheduled payment automatically reduces debt. That is true for a standard French amortization schedule, where each payment fully covers interest and repays at least some principal. It is not true when the payment is capped, artificially low, or based on a teaser rate rather than the rate actually accruing on the loan.</p>
+<p>If you already know how a normal schedule works, Amorta's article on <a href="understanding-amortization-schedule">understanding your amortization schedule</a> is a useful reference point. Negative amortization is easiest to understand as a departure from that standard pattern.</p>
+
+<h2>How negative amortization works</h2>
+<p>Every amortizing loan has an interest charge for each period. That charge is roughly the current balance multiplied by the periodic interest rate. In a standard repayment schedule, the payment is larger than the interest charge, so the remaining portion reduces principal.</p>
+<p>With negative amortization, the payment falls short. Suppose your balance is $200,000 and the monthly interest charge is $1,000. If the required payment for that month is only $750, the unpaid $250 does not disappear. It is capitalized, meaning it is added to the balance. Your new balance becomes $200,250 before the next month's interest accrues.</p>
+<p>That creates a compounding effect. Once unpaid interest is added to principal, future interest is calculated on a larger balance. The loan begins to grow unless later payments are large enough to reverse the trend.</p>
+
+<h2>Why it is different from ordinary amortization</h2>
+<p>In ordinary French amortization, the payment is designed from the start so that the loan reaches a zero balance at the end of the term. Early payments are interest-heavy, but they still reduce principal a little. Over time, the interest portion shrinks and the principal portion grows.</p>
+<p>Negative amortization breaks that promise. The schedule no longer follows a smooth decline toward zero. Instead, the balance may rise for months or even years before it starts falling, if it starts falling at all. That means the borrower can be current on every required payment and still owe more than at the beginning.</p>
+<p>This is also different from simply having a slow payoff. A 30-year loan repays principal slowly, but it still repays principal. Negative amortization means principal is moving in the wrong direction.</p>
+
+<h2>Common situations that create it</h2>
+<p>The classic example is an adjustable-rate mortgage with a payment option feature. A lender may offer several payment choices, including a minimum payment that is lower than the fully amortizing amount. If the borrower chooses the minimum payment while the actual interest rate is higher, the difference is added to the balance.</p>
+<p>It can also appear in student loans, income-based repayment plans, or temporary hardship arrangements when payments are reduced below accruing interest. The legal details differ across products, but the mechanics are the same: unpaid interest is carried forward into the loan.</p>
+<p>Rate shocks can trigger it too. A payment that was sufficient when the loan rate was 3% may become insufficient after an adjustment to 6% or 7%, especially if the scheduled payment does not reset immediately.</p>
+
+<h2>A simple numerical example</h2>
+<p>Assume a loan starts at $180,000 with a monthly rate of 0.6%. The interest for the first month is $1,080. If the borrower pays only $800, then $280 of interest remains unpaid.</p>
+<p>At the end of month one, the balance becomes $180,280. In month two, interest is charged on that higher balance, so the interest is slightly higher than before. If the borrower again pays only $800, even more unpaid interest is added.</p>
+<p>After several periods, the increase becomes visible. Even though payments were made every month, the debt got larger. That is the core warning sign of negative amortization.</p>
+<p>You can compare that pattern with Amorta's article on <a href="calculating-remaining-loan-balance">calculating the remaining loan balance</a>. In a normal schedule, the remaining balance is the present value of future payments and trends downward. Under negative amortization, the balance path initially points upward instead.</p>
+
+<h2>What recast and payment reset mean</h2>
+<p>Many negatively amortizing loans do not allow the balance to grow forever. Contracts often include a recast trigger or payment reset. Once the balance reaches a cap, such as 110% or 125% of the original loan amount, the payment is recalculated to fully amortize the larger balance over the remaining term.</p>
+<p>This can create payment shock. A borrower may become used to paying a low amount and then suddenly face a much larger required payment. The increase is not arbitrary. The loan now has a higher balance, less time left, and possibly a higher interest rate, so the fully amortizing payment can jump sharply.</p>
+<p>That is one reason negative amortization is risky even when it seems manageable at first. The low payment buys temporary cash-flow relief at the cost of a harder repayment problem later.</p>
+
+<h2>Main risks for borrowers</h2>
+<ul>
+  <li><strong>Growing debt:</strong> You may owe more after months of payments than you owed at origination.</li>
+  <li><strong>Higher total interest:</strong> Capitalized interest causes future interest charges to be calculated on a larger base.</li>
+  <li><strong>Payment shock later:</strong> Once the loan recasts, the required payment may increase substantially.</li>
+  <li><strong>Equity erosion:</strong> If the loan is tied to a property, a rising balance can reduce or eliminate your equity cushion.</li>
+  <li><strong>Refinancing difficulty:</strong> A higher balance can worsen your loan-to-value ratio and limit refinancing options.</li>
+</ul>
+<p>These risks compound each other. A borrower with reduced equity may have fewer exit options exactly when the payment reset arrives.</p>
+
+<h2>How to spot negative amortization early</h2>
+<p>The clearest signal is in the balance column of your loan statement or amortization schedule. If the balance increases after a payment, negative amortization is happening. Another sign is a statement line showing unpaid interest being added to principal.</p>
+<p>You should also compare the required payment with the current interest charge. If the monthly interest is $950 and the required payment is $900, the math cannot produce principal reduction. The loan must either stay level through special treatment or, more commonly, grow.</p>
+<p>Reading the loan documents matters as well. Look for terms such as <em>capitalized interest</em>, <em>deferred interest</em>, <em>minimum payment</em>, <em>payment cap</em>, and <em>recast</em>. Those phrases often indicate that the balance may increase under some scenarios.</p>
+
+<h2>How it relates to extra payments</h2>
+<p>Extra payments work in the opposite direction. In a standard schedule, extra amounts go to principal and reduce future interest. The article on <a href="extra-payments">the power of extra payments</a> shows why that accelerates payoff.</p>
+<p>With negative amortization, the first priority is often just getting back to a fully covering payment. Once the required payment exceeds accrued interest again, additional principal payments become useful for reversing prior balance growth. Until then, extra funds may be doing the job that the scheduled payment should have done in the first place.</p>
+
+<h2>When negative amortization might be used intentionally</h2>
+<p>There are cases where borrowers knowingly accept it for short-term cash-flow management. For example, a borrower with highly variable income may prefer temporary payment flexibility and expect to make larger payments later. Businesses and investors sometimes make similar trade-offs when preserving liquidity is more important than reducing balance immediately.</p>
+<p>But the key word is <strong>knowingly</strong>. Negative amortization is not harmless just because it is contractual. It only makes sense when the borrower understands the growth in balance, the reset rules, and the conditions required to exit that phase safely.</p>
+
+<h2>Conclusion</h2>
+<p>Negative amortization means your payment is not keeping up with interest, so the unpaid amount is added to the loan balance. That single mechanism explains why the debt can rise even while you keep paying on time. Compared with a normal French amortization schedule, it reverses the expected direction of principal reduction and can lead to higher interest costs, payment shock, and weaker refinancing options.</p>
+<p>Before accepting any loan with flexible or capped payments, check whether the required payment fully covers current interest and whether the contract allows capitalization. If you can identify those mechanics early, you can judge whether the short-term flexibility is worth the long-term cost.</p>

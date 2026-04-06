@@ -1,0 +1,55 @@
+<p>La amortización negativa ocurre cuando la cuota de un préstamo no alcanza para cubrir todos los intereses generados durante el periodo. En vez de bajar, el saldo pendiente sube porque los intereses no pagados se suman al capital. En la práctica, hacés un pago, pero la deuda igual crece.</p>
+<p>Este tema importa porque muchos prestatarios asumen que cualquier cuota programada reduce automáticamente la deuda. Eso es cierto en un calendario estándar de amortización francesa, donde cada pago cubre por completo los intereses y amortiza al menos una parte del capital. Deja de ser cierto cuando la cuota está limitada, es artificialmente baja o se calcula con una tasa promocional distinta de la que realmente se está aplicando.</p>
+<p>Si ya conocés cómo funciona un calendario normal, el artículo de Amorta sobre <a href="understanding-amortization-schedule">entender tu tabla de amortización</a> sirve como buen punto de referencia. La amortización negativa se entiende mejor como una desviación de ese patrón estándar.</p>
+
+<h2>Cómo funciona la amortización negativa</h2>
+<p>Todo préstamo amortizable genera un cargo por intereses en cada periodo. Ese cargo es, aproximadamente, el saldo actual multiplicado por la tasa periódica. En un calendario de pago estándar, la cuota es mayor que el interés del periodo, así que el importe restante reduce capital.</p>
+<p>Con amortización negativa, la cuota se queda corta. Supongamos que tu saldo es de 200.000 € y que el interés del mes es de 1.000 €. Si la cuota exigida ese mes es solo de 750 €, esos 250 € no desaparecen. Se capitalizan, es decir, se agregan al saldo. Tu nueva deuda pasa a ser 200.250 € antes de que se acumulen los intereses del mes siguiente.</p>
+<p>Eso crea un efecto compuesto. Una vez que los intereses impagos se agregan al principal, los intereses futuros se calculan sobre un saldo mayor. El préstamo empieza a crecer salvo que pagos posteriores sean lo bastante altos como para revertir la tendencia.</p>
+
+<h2>Por qué es distinta de la amortización ordinaria</h2>
+<p>En una amortización francesa ordinaria, la cuota se diseña desde el principio para que el préstamo llegue a saldo cero al final del plazo. Las primeras cuotas están cargadas de intereses, pero aun así reducen algo de principal. Con el tiempo, la parte de intereses baja y la parte de capital sube.</p>
+<p>La amortización negativa rompe esa lógica. El calendario deja de seguir una bajada continua hacia cero. En su lugar, el saldo puede subir durante meses o incluso años antes de empezar a bajar, si es que baja. Eso significa que el prestatario puede estar al día con todos los pagos exigidos y, aun así, deber más que al principio.</p>
+
+<h2>Situaciones habituales que la generan</h2>
+<p>El ejemplo clásico es una hipoteca de tasa variable con opción de elegir cuota. El prestamista puede ofrecer varias alternativas, incluida una cuota mínima inferior a la cuota plenamente amortizable. Si el prestatario elige esa cuota mínima mientras la tasa real es más alta, la diferencia se suma al saldo.</p>
+<p>También puede aparecer en préstamos estudiantiles, planes de pago ligados a ingresos o acuerdos temporales por dificultad económica cuando las cuotas se reducen por debajo de los intereses devengados. Los detalles legales cambian según el producto, pero la mecánica es la misma: los intereses no pagados se arrastran dentro del préstamo.</p>
+<p>Las subas de tasa también pueden dispararla. Una cuota que alcanzaba cuando el préstamo estaba al 3% puede dejar de alcanzar si la tasa se ajusta al 6% o al 7%, sobre todo si la cuota programada no se recalcula enseguida.</p>
+
+<h2>Un ejemplo numérico simple</h2>
+<p>Supongamos un préstamo inicial de 180.000 € con una tasa mensual del 0,6%. El interés del primer mes es de 1.080 €. Si el prestatario paga solo 800 €, quedan 280 € de intereses sin cubrir.</p>
+<p>Al final del primer mes, el saldo pasa a ser 180.280 €. En el segundo mes, los intereses se calculan sobre ese saldo mayor, así que serán un poco más altos que antes. Si el prestatario vuelve a pagar solo 800 €, se agregarán todavía más intereses impagos.</p>
+<p>Después de varios periodos, el aumento se vuelve evidente. Aunque se hicieron pagos todos los meses, la deuda creció.</p>
+<p>Podés comparar ese comportamiento con el artículo de Amorta sobre <a href="calculating-remaining-loan-balance">cómo calcular el saldo pendiente del préstamo</a>. En un calendario normal, el saldo pendiente es el valor actual de los pagos futuros y tiende a bajar. Con amortización negativa, la trayectoria del saldo apunta primero hacia arriba.</p>
+
+<h2>Qué significan el recálculo y el reajuste de cuota</h2>
+<p>Muchos préstamos con amortización negativa no permiten que el saldo crezca para siempre. Los contratos suelen incluir un disparador de recálculo o reajuste de cuota. Cuando el saldo llega a un límite, como el 110% o el 125% del importe original, la cuota se recalcula para amortizar por completo ese saldo más alto dentro del plazo restante.</p>
+<p>Eso puede provocar un salto fuerte en la cuota. El prestatario puede acostumbrarse a pagar un importe bajo y encontrarse de repente con una exigencia mucho mayor. El aumento no es arbitrario. El préstamo ahora tiene un saldo más alto, menos tiempo por delante y quizá una tasa más elevada, así que la cuota plenamente amortizable puede subir con fuerza.</p>
+<p>Esa es una de las razones por las que la amortización negativa es riesgosa incluso cuando parece manejable al principio. La cuota baja compra alivio temporal de caja a costa de un problema de repago más duro después.</p>
+
+<h2>Riesgos principales para el prestatario</h2>
+<ul>
+  <li><strong>Deuda creciente:</strong> podés deber más después de varios meses de pagos que al momento de contratar el préstamo.</li>
+  <li><strong>Más intereses totales:</strong> los intereses capitalizados hacen que los intereses futuros se calculen sobre una base mayor.</li>
+  <li><strong>Golpe de cuota posterior:</strong> cuando el préstamo se reajusta, la cuota exigida puede aumentar de forma importante.</li>
+  <li><strong>Pérdida de patrimonio:</strong> si el préstamo está ligado a una propiedad, un saldo creciente puede reducir o eliminar tu colchón de equity.</li>
+  <li><strong>Más dificultad para refinanciar:</strong> un saldo más alto puede empeorar la relación préstamo-valor y limitar las opciones de refinanciación.</li>
+</ul>
+<p>Estos riesgos se potencian entre sí. Un prestatario con menos patrimonio puede tener menos salidas justo cuando llega el reajuste de cuota.</p>
+
+<h2>Cómo detectarla temprano</h2>
+<p>La señal más clara está en la columna de saldo de tu resumen o de tu tabla de amortización. Si el saldo aumenta después de una cuota, hay amortización negativa. Otra pista es una línea en el resumen que indique que los intereses impagos se agregan al principal.</p>
+<p>También conviene comparar la cuota exigida con el interés actual del periodo. Si el interés mensual es de 950 € y la cuota obligatoria es de 900 €, la matemática no puede producir reducción de principal. El préstamo tiene que mantenerse plano mediante algún tratamiento especial o, más habitualmente, crecer.</p>
+<p>Leer la documentación del préstamo también importa. Buscá términos como <em>intereses capitalizados</em>, <em>intereses diferidos</em>, <em>cuota mínima</em>, <em>límite de cuota</em> y <em>reajuste</em>. Esas expresiones suelen indicar que el saldo puede subir en ciertos escenarios.</p>
+
+<h2>Relación con los pagos extra</h2>
+<p>Los pagos extra van en la dirección opuesta. En un calendario normal, los importes adicionales van a capital y reducen intereses futuros. El artículo sobre <a href="extra-payments">el poder de los pagos extra</a> muestra por qué eso acelera la cancelación.</p>
+<p>Con amortización negativa, la primera prioridad suele ser volver a una cuota que cubra plenamente los intereses. Una vez que la cuota exigida supera otra vez el interés devengado, los pagos adicionales a capital sirven para revertir el crecimiento previo del saldo. Hasta entonces, los fondos extra pueden estar haciendo el trabajo que la cuota programada debería haber hecho desde el inicio.</p>
+
+<h2>Cuándo puede usarse de forma deliberada</h2>
+<p>Hay casos en los que el prestatario la acepta conscientemente para manejar la liquidez de corto plazo. Por ejemplo, alguien con ingresos muy variables puede preferir flexibilidad temporal y esperar hacer pagos mayores más adelante. Empresas e inversores a veces toman decisiones parecidas cuando preservar liquidez importa más que reducir saldo de inmediato.</p>
+<p>Pero la palabra clave es <strong>conscientemente</strong>. La amortización negativa no es inocua solo porque figure en el contrato. Solo tiene sentido cuando el prestatario entiende el crecimiento del saldo, las reglas de reajuste y las condiciones necesarias para salir de esa fase con seguridad.</p>
+
+<h2>Conclusión</h2>
+<p>La amortización negativa significa que tu cuota no está alcanzando para cubrir los intereses, de modo que la parte impaga se agrega al saldo del préstamo. Ese único mecanismo explica por qué la deuda puede crecer incluso cuando pagás puntualmente. Frente a un calendario normal de amortización francesa, invierte la dirección esperada de la reducción de principal y puede traducirse en más intereses, golpes de cuota y peores opciones de refinanciación.</p>
+<p>Antes de aceptar cualquier préstamo con cuotas flexibles o limitadas, comprobá si la cuota exigida cubre por completo los intereses actuales y si el contrato permite capitalización. Si identificás esas mecánicas con anticipación, vas a poder evaluar si la flexibilidad de corto plazo compensa el costo de largo plazo.</p>

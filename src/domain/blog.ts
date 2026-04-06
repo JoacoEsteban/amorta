@@ -9,6 +9,14 @@ export type Article = {
 
 export const ARTICLES: Article[] = [
   {
+    slug: 'negative-amortization',
+    titleKey: 'articleNegativeAmortizationTitle',
+    descriptionKey: 'articleNegativeAmortizationDescription',
+    dateKey: 'articleNegativeAmortizationDate',
+    bodyKey: 'articleNegativeAmortizationBody',
+    date: new Date('2026-04-06'),
+  },
+  {
     slug: 'factors-affecting-mortgage-rates',
     titleKey: 'articleFactorsAffectingMortgageRatesTitle',
     descriptionKey: 'articleFactorsAffectingMortgageRatesDescription',

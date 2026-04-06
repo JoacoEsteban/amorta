@@ -10,6 +10,7 @@ import articleLoanTermComparisonBody from './content/articles/article-loan-term-
 import articleBiweeklyVsMonthlyPaymentsBody from './content/articles/article-biweekly-vs-monthly-payments-body.html.txt' with { type: 'text' }
 import articleCalculatingRemainingLoanBalanceBody from './content/articles/article-calculating-remaining-loan-balance-body.html.txt' with { type: 'text' }
 import articleFactorsAffectingMortgageRatesBody from './content/articles/article-factors-affecting-mortgage-rates-body.html.txt' with { type: 'text' }
+import articleNegativeAmortizationBody from './content/articles/article-negative-amortization-body.html.txt' with { type: 'text' }
 
 export const frFRMessages = {
   sharedResult: 'Résultat partagé',
@@ -322,4 +323,13 @@ export const frFRMessages = {
     "Les facteurs qui affectent votre taux d'intérêt hypothécaire | Amorta",
   articleFactorsAffectingMortgageRatesSeoDescription:
     "Découvrez quels facteurs affectent votre taux d'intérêt hypothécaire. Apprenez comment les scores de crédit, les ratios prêt-valeur, les ratios dette-revenu, et les conditions du marché influencent votre taux.",
+  articleNegativeAmortizationTitle: "Qu'est-ce que l'Amortissement Négatif ?",
+  articleNegativeAmortizationDescription:
+    "Découvrez ce qu'est l'amortissement négatif, pourquoi un solde peut augmenter après un paiement, et quelles clauses contractuelles le provoquent le plus souvent.",
+  articleNegativeAmortizationDate: '6 avril 2026',
+  articleNegativeAmortizationBody,
+  articleNegativeAmortizationSeoTitle:
+    "Qu'est-ce que l'Amortissement Négatif ? | Amorta",
+  articleNegativeAmortizationSeoDescription:
+    "L'amortissement négatif ajoute les intérêts impayés au solde du prêt. Découvrez son fonctionnement, le risque de choc de paiement, et comment l'identifier tôt.",
 }

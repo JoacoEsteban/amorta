@@ -1,0 +1,55 @@
+<p>L'amortissement négatif se produit lorsqu'une échéance de prêt est trop faible pour couvrir l'ensemble des intérêts accumulés pendant la période. Au lieu de diminuer, le solde restant augmente parce que les intérêts non payés sont ajoutés au capital. En pratique, vous payez, mais la dette continue quand même de progresser.</p>
+<p>Le sujet est important parce que beaucoup d'emprunteurs supposent que toute échéance prévue réduit automatiquement la dette. C'est vrai dans un tableau d'amortissement français standard, où chaque paiement couvre intégralement les intérêts et rembourse au moins une partie du capital. Cela cesse d'être vrai lorsque l'échéance est plafonnée, artificiellement basse, ou calculée à partir d'un taux promotionnel différent du taux réellement appliqué au prêt.</p>
+<p>Si vous connaissez déjà le fonctionnement d'un tableau classique, l'article d'Amorta sur <a href="understanding-amortization-schedule">la lecture d'un tableau d'amortissement</a> constitue un bon point de comparaison. L'amortissement négatif se comprend plus facilement comme un écart par rapport à ce schéma normal.</p>
+
+<h2>Comment fonctionne l'amortissement négatif</h2>
+<p>Tout prêt amortissable génère une charge d'intérêts à chaque période. Cette charge correspond approximativement au solde courant multiplié par le taux périodique. Dans un calendrier de remboursement standard, l'échéance est supérieure aux intérêts dus, de sorte que la partie restante rembourse du capital.</p>
+<p>Avec un amortissement négatif, l'échéance est insuffisante. Imaginons un solde de 200&nbsp;000&nbsp;€ et des intérêts mensuels de 1&nbsp;000&nbsp;€. Si le paiement exigé ce mois-là n'est que de 750&nbsp;€, les 250&nbsp;€ manquants ne disparaissent pas. Ils sont capitalisés, c'est-à-dire ajoutés au solde. La dette passe alors à 200&nbsp;250&nbsp;€ avant que les intérêts du mois suivant ne commencent à courir.</p>
+<p>Cela crée un effet cumulatif. Une fois les intérêts impayés intégrés au principal, les intérêts futurs sont calculés sur un solde plus élevé. Le prêt commence donc à grossir, sauf si des paiements ultérieurs deviennent assez importants pour inverser la trajectoire.</p>
+
+<h2>Pourquoi c'est différent d'un amortissement ordinaire</h2>
+<p>Dans un amortissement français ordinaire, l'échéance est déterminée dès le départ pour que le prêt atteigne un solde nul à la fin de la durée prévue. Les premières échéances sont dominées par les intérêts, mais elles remboursent tout de même un peu de capital. Avec le temps, la part d'intérêts diminue et la part de capital augmente.</p>
+<p>L'amortissement négatif casse cette logique. Le tableau ne suit plus une baisse régulière vers zéro. Le solde peut au contraire monter pendant plusieurs mois, voire plusieurs années, avant de redescendre, s'il redescend un jour. L'emprunteur peut donc être à jour dans tous ses paiements obligatoires et devoir malgré tout davantage qu'au départ.</p>
+
+<h2>Situations courantes où il apparaît</h2>
+<p>L'exemple classique est celui d'un prêt hypothécaire à taux variable avec option de paiement. Le prêteur peut proposer plusieurs montants possibles, dont un paiement minimum inférieur au paiement pleinement amortissant. Si l'emprunteur choisit ce minimum alors que le taux réellement appliqué est plus élevé, l'écart est ajouté au solde.</p>
+<p>On peut aussi retrouver ce mécanisme dans certains prêts étudiants, dispositifs de remboursement liés au revenu, ou aménagements temporaires pour difficultés financières lorsque les paiements sont ramenés sous le niveau des intérêts courus. Les cadres juridiques varient selon les produits, mais la mécanique reste identique : les intérêts non réglés sont reportés dans le prêt.</p>
+<p>Une hausse de taux peut également le déclencher. Un paiement suffisant lorsque le prêt portait un taux de 3&nbsp;% peut devenir insuffisant après un ajustement à 6&nbsp;% ou 7&nbsp;%, surtout si l'échéance n'est pas recalculée immédiatement.</p>
+
+<h2>Un exemple chiffré simple</h2>
+<p>Supposons un prêt de départ de 180&nbsp;000&nbsp;€ avec un taux mensuel de 0,6&nbsp;%. Les intérêts du premier mois sont de 1&nbsp;080&nbsp;€. Si l'emprunteur ne paie que 800&nbsp;€, il reste 280&nbsp;€ d'intérêts non couverts.</p>
+<p>À la fin du premier mois, le solde devient 180&nbsp;280&nbsp;€. Le deuxième mois, les intérêts sont calculés sur ce nouveau solde plus élevé et deviennent donc légèrement supérieurs. Si l'emprunteur paie à nouveau seulement 800&nbsp;€, davantage d'intérêts impayés sont ajoutés.</p>
+<p>Au bout de plusieurs périodes, l'augmentation devient visible. Des paiements ont bien été effectués tous les mois, mais la dette a grandi.</p>
+<p>Vous pouvez comparer cette dynamique avec l'article d'Amorta sur <a href="calculating-remaining-loan-balance">le calcul du solde restant dû</a>. Dans un tableau normal, le solde restant représente la valeur actuelle des paiements futurs et suit une tendance baissière. En amortissement négatif, la trajectoire du solde commence au contraire par monter.</p>
+
+<h2>Ce que signifient refonte et réajustement d'échéance</h2>
+<p>De nombreux prêts en amortissement négatif n'autorisent pas une croissance illimitée du solde. Les contrats prévoient souvent un seuil de refonte ou un réajustement de paiement. Lorsque le solde atteint un plafond, par exemple 110&nbsp;% ou 125&nbsp;% du montant initial, l'échéance est recalculée pour amortir complètement ce solde plus élevé sur la durée restante.</p>
+<p>Cela peut provoquer un choc de paiement. L'emprunteur peut s'habituer à une faible mensualité et devoir soudain faire face à une échéance bien plus importante. Cette hausse n'a rien d'arbitraire. Le prêt porte désormais sur un solde plus élevé, il reste moins de temps pour rembourser, et le taux peut lui aussi être plus fort ; le paiement pleinement amortissant peut donc augmenter brutalement.</p>
+<p>C'est l'une des raisons pour lesquelles l'amortissement négatif est risqué même lorsqu'il paraît supportable au début. La petite échéance offre un soulagement temporaire de trésorerie au prix d'un problème de remboursement plus difficile ensuite.</p>
+
+<h2>Principaux risques pour l'emprunteur</h2>
+<ul>
+  <li><strong>Dette en hausse :</strong> vous pouvez devoir davantage après plusieurs mois de paiement qu'au jour de la souscription.</li>
+  <li><strong>Coût total plus élevé :</strong> la capitalisation des intérêts augmente l'assiette sur laquelle les intérêts futurs sont calculés.</li>
+  <li><strong>Choc d'échéance :</strong> lorsque le prêt est réajusté, le paiement exigé peut augmenter fortement.</li>
+  <li><strong>Érosion de l'apport net :</strong> si le prêt finance un bien immobilier, un solde croissant peut réduire ou faire disparaître votre marge de sécurité.</li>
+  <li><strong>Refinancement plus difficile :</strong> un solde plus élevé peut dégrader le ratio prêt-valeur et limiter les options de refinancement.</li>
+</ul>
+<p>Ces risques se renforcent mutuellement. Un emprunteur dont la valeur nette s'est réduite peut disposer de moins d'issues précisément au moment où l'échéance augmente.</p>
+
+<h2>Comment le repérer tôt</h2>
+<p>Le signal le plus clair apparaît dans la colonne de solde de votre relevé ou de votre tableau d'amortissement. Si le solde augmente après un paiement, l'amortissement négatif est en cours. Un autre indice est la présence d'une ligne mentionnant que des intérêts impayés sont ajoutés au principal.</p>
+<p>Il faut aussi comparer l'échéance exigée avec les intérêts courants de la période. Si les intérêts mensuels sont de 950&nbsp;€ et que le paiement obligatoire n'est que de 900&nbsp;€, les mathématiques ne permettent pas une baisse du principal. Le prêt doit soit rester artificiellement stable par un traitement particulier, soit, dans la plupart des cas, grossir.</p>
+<p>La lecture du contrat compte également. Recherchez des expressions comme <em>intérêts capitalisés</em>, <em>intérêts différés</em>, <em>paiement minimum</em>, <em>plafond d'échéance</em> et <em>recast</em>. Ces termes signalent souvent que le solde peut augmenter dans certaines situations.</p>
+
+<h2>Lien avec les paiements supplémentaires</h2>
+<p>Les paiements supplémentaires agissent dans le sens inverse. Dans un calendrier normal, ils s'appliquent au principal et réduisent les intérêts futurs. L'article sur <a href="extra-payments">la puissance des paiements supplémentaires</a> montre pourquoi cela accélère le remboursement.</p>
+<p>En amortissement négatif, la première priorité consiste souvent simplement à revenir à une échéance qui couvre totalement les intérêts courus. Une fois cette étape franchie, les paiements additionnels sur le principal permettent de corriger la hausse antérieure du solde. Tant que ce n'est pas le cas, les fonds supplémentaires servent parfois seulement à faire ce que l'échéance normale aurait dû accomplir dès le départ.</p>
+
+<h2>Quand il peut être accepté volontairement</h2>
+<p>Il existe des situations où des emprunteurs l'acceptent délibérément pour gérer leur trésorerie à court terme. Une personne dont les revenus sont très irréguliers peut préférer une flexibilité temporaire et prévoir des paiements plus élevés plus tard. Des entreprises ou des investisseurs peuvent faire un choix comparable lorsque la préservation de liquidités prime sur la réduction immédiate du solde.</p>
+<p>Mais le mot clé est <strong>délibérément</strong>. L'amortissement négatif n'est pas inoffensif sous prétexte qu'il est prévu par le contrat. Il n'a de sens que si l'emprunteur comprend la progression du solde, les règles de réajustement et les conditions nécessaires pour sortir de cette phase sans déséquilibre.</p>
+
+<h2>Conclusion</h2>
+<p>L'amortissement négatif signifie que votre échéance ne suffit pas à couvrir les intérêts, de sorte que la partie impayée est ajoutée au solde du prêt. Ce mécanisme unique explique pourquoi la dette peut augmenter alors même que vous payez à temps. Par rapport à un tableau d'amortissement français normal, il inverse le sens attendu de la réduction du capital et peut conduire à plus d'intérêts, à un choc de paiement et à des options de refinancement plus faibles.</p>
+<p>Avant d'accepter un prêt à paiements flexibles ou plafonnés, vérifiez si l'échéance exigée couvre entièrement les intérêts courants et si le contrat autorise la capitalisation. En identifiant ces mécanismes dès le départ, vous pourrez juger si la souplesse de court terme vaut réellement son coût de long terme.</p>
