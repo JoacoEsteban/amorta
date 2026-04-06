@@ -17,6 +17,7 @@ Produce high-quality, original, and useful articles that meet AdSense content qu
 
 - Target: **800–1500+ words per article**
 - Avoid thin content (<500 words)
+- In this repository, treat the enforced range in `test/blog-word-count.test.ts` as the real implementation constraint. Today that means every localized article body must stay between **800 and 1500 words**.
 
 ### 2.3 Originality
 
@@ -96,6 +97,7 @@ Produce high-quality, original, and useful articles that meet AdSense content qu
 - Link to **relevant articles within the site**
 - Use contextual anchor text
 - Minimum: 2–5 internal links per post (where applicable)
+- For this codebase, use links that remain valid under locale-prefixed blog routes
 
 ---
 
@@ -150,6 +152,7 @@ Each article must:
 - Contain no broken links
 - Have proper formatting and structure
 - Provide clear user value
+- Pass the repository verification commands required by the implementation spec
 
 ---
 

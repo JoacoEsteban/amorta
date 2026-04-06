@@ -2,6 +2,8 @@
 
 This spec defines how agents create and localize blog posts for Amorta.
 
+The repository contains automated checks for blog completeness. Treat this document as both a content guide and an implementation checklist.
+
 ## Overview
 
 Blog posts are i18n-based content stored in locale message files. Each post has:
@@ -35,10 +37,11 @@ type Article = {
   descriptionKey: string // i18n key for meta description
   dateKey: string // i18n key for display date
   bodyKey: string // i18n key for HTML body content
-  seoTitleKey: string // i18n key for SEO title
-  seoDescriptionKey: string // i18n key for SEO meta description
+  date: Date // publication date used for sorting
 }
 ```
+
+`seoTitleKey` and `seoDescriptionKey` are still required in each locale `messages.ts`, but they are not stored on the `Article` object in `src/domain/blog.ts`.
 
 ## Supported Locales
 
@@ -48,6 +51,7 @@ type Article = {
 | `en-GB` | `src/i18n/locales/en-GB/messages.ts` | `src/i18n/locales/en-GB/content/articles/` |
 | `es-ES` | `src/i18n/locales/es-ES/messages.ts` | `src/i18n/locales/es-ES/content/articles/` |
 | `es-AR` | `src/i18n/locales/es-AR/messages.ts` | `src/i18n/locales/es-AR/content/articles/` |
+| `fr-FR` | `src/i18n/locales/fr-FR/messages.ts` | `src/i18n/locales/fr-FR/content/articles/` |
 
 ## Creating a New Blog Post
 
@@ -64,11 +68,15 @@ export const ARTICLES: Article[] = [
     descriptionKey: 'articleMyNewPostDescription',
     dateKey: 'articleMyNewPostDate',
     bodyKey: 'articleMyNewPostBody',
-    seoTitleKey: 'articleMyNewPostSeoTitle',
-    seoDescriptionKey: 'articleMyNewPostSeoDescription',
+    date: new Date('2026-04-06'),
   },
 ]
 ```
+
+Important:
+
+- Keep the `date` field and the localized `article*Date` message values aligned.
+- New articles should be inserted so the final `ARTICLES` ordering still sorts newest to oldest after the existing `.sort(...)` call.
 
 ### Step 2: Create Body Content Files
 
@@ -100,7 +108,7 @@ import articleMyNewPostBody from './content/articles/article-my-new-post-body.ht
 ```ts
 articleMyNewPostTitle: 'My New Post Title',
 articleMyNewPostDescription: 'A brief description for the article card and meta tags.',
-articleMyNewPostDate: 'March 2026',
+articleMyNewPostDate: 'April 6, 2026',
 articleMyNewPostBody,
 articleMyNewPostSeoTitle: 'My New Post | Amorta',
 articleMyNewPostSeoDescription: 'Full meta description for search engines, ideally 150-160 characters.',
@@ -108,7 +116,7 @@ articleMyNewPostSeoDescription: 'Full meta description for search engines, ideal
 
 ### Step 4: Localize to Other Locales
 
-For each additional locale (`es-ES`, `en-GB`, `es-AR`):
+For each additional locale (`es-ES`, `en-GB`, `es-AR`, `fr-FR`):
 
 1. Create the body HTML file with translated content
 2. Add the import statement to `messages.ts`
@@ -133,7 +141,7 @@ import articleMyNewPostBody from './content/articles/article-my-new-post-body.ht
 // Add keys to messages object
 articleMyNewPostTitle: 'Título de Mi Nuevo Post',
 articleMyNewPostDescription: 'Una breve descripción para la tarjeta del artículo.',
-articleMyNewPostDate: 'Marzo 2026',
+articleMyNewPostDate: '6 de Abril de 2026',
 articleMyNewPostBody,
 articleMyNewPostSeoTitle: 'Mi Nuevo Post | Amorta',
 articleMyNewPostSeoDescription: 'Descripción meta completa para motores de búsqueda.',
@@ -144,10 +152,13 @@ articleMyNewPostSeoDescription: 'Descripción meta completa para motores de bús
 Before considering the task complete, verify:
 
 - [ ] Article entry exists in `src/domain/blog.ts`
-- [ ] Body HTML files exist for all 4 locales
-- [ ] Import statements added to all 4 `messages.ts` files
+- [ ] Body HTML files exist for all 5 locales
+- [ ] Import statements added to all 5 `messages.ts` files
 - [ ] All 6 metadata keys per locale are present (title, description, date, body, seoTitle, seoDescription)
 - [ ] Body content is valid HTML
+- [ ] Each locale stays within the enforced blog word-count range from `test/blog-word-count.test.ts` (currently 800-1500 words)
+- [ ] `bun test` passes
+- [ ] `bun run scripts/build.ts` passes
 - [ ] `jj status` shows clean or expected changes
 
 ## File Structure
@@ -195,10 +206,18 @@ Example for slug `french-vs-american`:
   - `en-GB`: `£200,000`, "behaviour", "maths"
   - `es-ES`: `200.000 €`, "comprende"
   - `es-AR`: `200.000 €`, "comprendé"
+  - `fr-FR`: `200 000 €`, "comprenez"
+- Internal article links should use locale-safe relative paths such as `../extra-payments` or `../understanding-amortization-schedule`
+- Keep link targets inside the existing blog route structure so they work under locale-prefixed URLs
 
 ### Metadata Keys
 
-- **Date format**: "{Month} {Year}" (e.g., "March 2026", "Marzo 2026")
+- **Date format**: Match the locale conventions already used in `messages.ts`, using a full publication date.
+  - `en-US`: `April 6, 2026`
+  - `en-GB`: `6 April 2026`
+  - `es-ES`: `6 de Abril de 2026`
+  - `es-AR`: `6 de Abril de 2026`
+  - `fr-FR`: `6 avril 2026`
 - **Description**: 1-2 sentences, used in article cards and meta tags
 - **SEO title**: "{Article Title} | Amorta" format
 - **SEO description**: 150-160 characters for search result snippets
