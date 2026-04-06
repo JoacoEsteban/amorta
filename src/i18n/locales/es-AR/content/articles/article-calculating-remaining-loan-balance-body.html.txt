@@ -1,0 +1,76 @@
+<p>Saber el saldo pendiente de tu préstamo en cualquier momento del período de amortización es esencial para la planificación financiera. Ya sea que estés considerando refinanciar, vender un activo o simplemente hacer seguimiento de tu progreso, comprender cómo calcular esta cifra te da claridad y control sobre tu deuda.</p>
+
+<h2>Por qué importa el saldo pendiente</h2>
+<p>El saldo pendiente representa la porción del préstamo original que aún debés. A diferencia del capital original, que permanece constante en el papel, el saldo cambia con cada pago que realizás. Cada pago reduce este saldo, pero no por el monto completo del pago &mdash; los intereses se llevan una porción primero.</p>
+<p>Este saldo es crítico para varias decisiones. Al refinanciar, los prestamistas necesitan saber cuánto debés actualmente para estructurar el nuevo préstamo. Al vender una propiedad con hipoteca, los ingresos de la venta deben cubrir el saldo pendiente para liquidar la deuda. Incluso para el seguimiento personal, conocer tu saldo te ayuda a entender cuánto progreso hiciste hacia la libertad financiera.</p>
+
+<h2>La base matemática</h2>
+<p>En la amortización francesa, el saldo pendiente en cualquier momento puede calcularse directamente sin sumar todos los pagos anteriores. Esto es posible porque el préstamo sigue una estructura matemática predecible basada en la fórmula de anualidades.</p>
+<p>El saldo pendiente después de <em>k</em> pagos equivale al valor actual de los pagos restantes. Si tenés <em>n</em> pagos totales y hiciste <em>k</em> pagos, quedan <em>(n &minus; k)</em> pagos pendientes. El saldo es lo que valen esos pagos futuros hoy.</p>
+
+<h3>La fórmula</h3>
+<p>El saldo pendiente <em>B<sub>k</sub></em> después de <em>k</em> pagos es:</p>
+<p><em>B<sub>k</sub> = P &times; [(1 &minus; (1 + i)<sup>&minus;(n &minus; k)</sup>) / i]</em></p>
+<p>Donde:</p>
+<ul>
+  <li><em>P</em> es el importe del pago periódico</li>
+  <li><em>i</em> es la tasa de interés periódica</li>
+  <li><em>n</em> es el número total de pagos</li>
+  <li><em>k</em> es el número de pagos ya realizados</li>
+</ul>
+<p>Esta fórmula desconta los pagos restantes a su valor actual, dándote el saldo exacto.</p>
+
+<h2>Un ejemplo práctico</h2>
+<p>Considerá un préstamo de 200.000 € a una tasa anual efectiva del 6% con pagos mensuales a lo largo de 30 años. La cuota mensual es aproximadamente 1.199,10 €, y hay 360 pagos en total.</p>
+<p>Después de 5 años (60 pagos), querés saber tu saldo pendiente. Usando la fórmula con <em>n &minus; k = 300</em> pagos restantes:</p>
+<p><em>B<sub>60</sub> = 1.199,10 &times; [(1 &minus; (1 + 0,004867)<sup>&minus;300</sup>) / 0,004867]</em></p>
+<p>La tasa periódica <em>i</em> es aproximadamente 0,004867 (la tasa anual del 6% convertida a mensual). El cálculo arroja un saldo pendiente de aproximadamente 186.000 €.</p>
+<p>Esto significa que después de 5 años de pagos que suman cerca de 71.946 €, redujiste el capital solo en unos 14.000 €. El resto se fue en intereses. Esta es la naturaleza de la amortización: los pagos iniciales son principalmente intereses.</p>
+
+<h3>Después de 10 años</h3>
+<p>Usando la misma fórmula con 240 pagos restantes:</p>
+<p><em>B<sub>120</sub> = 1.199,10 &times; [(1 &minus; (1 + 0,004867)<sup>&minus;240</sup>) / 0,004867]</em></p>
+<p>El saldo pendiente es aproximadamente 167.200 €. Después de una década de pagos que superan los 143.892 €, amortizaste solo 32.800 € de capital. El patrón se hace claro: la reducción de capital se acelera con el tiempo, pero lentamente.</p>
+
+<h2>Método de cálculo alternativo</h2>
+<p>Si no tenés la fórmula a mano, podés calcular el saldo pendiente determinando a qué habría crecido el préstamo original, menos a qué habrían crecido tus pagos. Esto se denomina método prospectivo frente al método retrospectivo.</p>
+<h3>Método retrospectivo</h3>
+<p>La vista retrospectiva calcula:</p>
+<p><em>B<sub>k</sub> = L &times; (1 + i)<sup>k</sup> &minus; P &times; [((1 + i)<sup>k</sup> &minus; 1) / i]</em></p>
+<p>Aquí, <em>L &times; (1 + i)<sup>k</sup></em> es a qué habría crecido el préstamo original con interés compuesto, y el segundo término es a qué habrían crecido tus pagos si se invirtieran a la misma tasa. La diferencia es tu deuda restante.</p>
+<p>Usando el mismo ejemplo después de 60 pagos:</p>
+<p><em>B<sub>60</sub> = 200.000 &times; (1,004867)<sup>60</sup> &minus; 1.199,10 &times; [((1,004867)<sup>60</sup> &minus; 1) / 0,004867]</em></p>
+<p>Esto también arroja aproximadamente 186.000 €, confirmando que ambos métodos producen resultados idénticos.</p>
+
+<h2>Uso de tu tabla de amortización</h2>
+<p>Si tenés una tabla de amortización completa, encontrar tu saldo pendiente es sencillo. Simplemente localizá la fila correspondiente a tu número de pago actual y leé la columna de saldo.</p>
+<p>La mayoría de las tablas muestran cada pago desglosado en capital e intereses, con un saldo acumulado. El saldo después de tu pago más reciente es exactamente lo que debés actualmente.</p>
+<p>Para préstamos con pagos extra, tu saldo real será menor que el que muestra la tabla. Podés ajustar esto restando el total de todos los pagos extra al capital que hayas realizado del saldo programado.</p>
+
+<h2>Impacto de la frecuencia de pagos</h2>
+<p>El cálculo cambia ligeramente según la frecuencia de tus pagos. Para pagos mensuales, usá la tasa periódica mensual. Para pagos quincenales, usá una tasa periódica quincenal y ajustá el número total de pagos en consecuencia.</p>
+<p>Con 26 pagos quincenales por año en lugar de 12 pagos mensuales, un préstamo a 30 años tiene 780 pagos en lugar de 360. La tasa periódica es menor (tasa anual dividida por 26), pero el importe del pago es aproximadamente la mitad del mensual. El cálculo del saldo usa la misma fórmula con estos valores ajustados.</p>
+
+<h2>Cuándo es útil el cálculo del saldo</h2>
+<h3>Decisiones de refinanciación</h3>
+<p>Al considerar refinanciar, necesitás tu saldo actual para determinar el importe del nuevo préstamo. También necesitás calcular cuántos intereses quedan en tu préstamo actual para comparar contra el costo total de un nuevo préstamo, incluyendo comisiones y puntos.</p>
+<h3>Venta de un activo</h3>
+<p>Si vendés una casa o coche con un préstamo pendiente, el comprador o agente de cierre necesita saber el importe exacto de liquidación. Este es típicamente el saldo pendiente más cualquier interés devengado desde el último pago.</p>
+<h3>Planificación de pagos extra</h3>
+<p>Conocer tu saldo te ayuda a calcular el impacto de los pagos extra. Un pago extra de 10.000 € al principio del préstamo ahorra más intereses que la misma cantidad más tarde, porque elimina más intereses futuros.</p>
+
+<h2>Verificación con Amorta</h2>
+<p>Usá Amorta para generar tu tabla de amortización completa y verificar tus cálculos de saldo. La tabla del calendario muestra el saldo pendiente exacto después de cada pago, dándote un punto de referencia para cualquier momento de tu préstamo.</p>
+<p>También podés experimentar con escenarios: ver cómo los pagos extra reducen tu saldo más rápido, o comparar saldos en diferentes momentos para préstamos con diferentes plazos o tasas. El gráfico visual facilita ver cómo tu saldo desciende con el tiempo y cómo diferentes factores afectan esa curva.</p>
+
+<h2>Errores comunes</h2>
+<p>Al calcular saldos pendientes, evitá estos errores frecuentes:</p>
+<ul>
+  <li><strong>Usar la tasa periódica incorrecta</strong>: Convertí siempre las tasas anuales a la tasa periódica correcta para tu frecuencia de pago. Una tasa anual del 6% no es un 0,5% mensual para cálculos de TAE.</li>
+  <li><strong>Ignorar el momento del pago</strong>: El saldo justo después de un pago difiere del saldo justo antes del siguiente pago debido a los intereses devengados.</li>
+  <li><strong>Olvidar comisiones</strong>: Los importes de liquidación anticipada pueden incluir penalizaciones por prepago o comisiones administrativas no reflejadas en el saldo matemático.</li>
+  <li><strong>Errores de redondeo</strong>: Usar importes de pago redondeados en cálculos puede producir saldos ligeramente incorrectos. Usá valores exactos cuando sea posible.</li>
+</ul>
+
+<h2>Conclusión</h2>
+<p>Calcular el saldo pendiente de tu préstamo es una habilidad fundamental para gestionar deudas. Ya sea que uses la fórmula prospectiva, el método retrospectivo o una tabla de amortización completa, comprender dónde te encontrás financieramente te empodera para tomar mejores decisiones sobre refinanciación, venta o aceleración del pago. Las matemáticas de la amortización francesa hacen este cálculo preciso y predecible, eliminando la incertidumbre de tu planificación financiera.</p>

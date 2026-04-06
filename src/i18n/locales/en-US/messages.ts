@@ -8,6 +8,7 @@ import articleUnderstandingAmortizationScheduleBody from './content/articles/art
 import articleExtraPaymentsBody from './content/articles/article-extra-payments-body.html.txt' with { type: 'text' }
 import articleLoanTermComparisonBody from './content/articles/article-loan-term-comparison-body.html.txt' with { type: 'text' }
 import articleBiweeklyVsMonthlyPaymentsBody from './content/articles/article-biweekly-vs-monthly-payments-body.html.txt' with { type: 'text' }
+import articleCalculatingRemainingLoanBalanceBody from './content/articles/article-calculating-remaining-loan-balance-body.html.txt' with { type: 'text' }
 
 export const enUSMessages = {
   sharedResult: 'Shared Result',
@@ -297,4 +298,13 @@ export const enUSMessages = {
   articleLoanTermComparisonSeoDescription:
     'Compare 15-year and 30-year loan terms. Understand the tradeoffs between monthly payments and total interest to choose the right mortgage for your financial situation.',
   articleBiweeklyVsMonthlyPaymentsBody,
+  articleCalculatingRemainingLoanBalanceTitle: 'How to Calculate Your Remaining Loan Balance at Any Point',
+  articleCalculatingRemainingLoanBalanceDescription:
+    'Learn the mathematical formulas and methods to calculate your exact loan balance at any point during repayment, including practical examples and common pitfalls to avoid.',
+  articleCalculatingRemainingLoanBalanceDate: 'April 6, 2026',
+  articleCalculatingRemainingLoanBalanceBody,
+  articleCalculatingRemainingLoanBalanceSeoTitle:
+    'How to Calculate Your Remaining Loan Balance at Any Point | Amorta',
+  articleCalculatingRemainingLoanBalanceSeoDescription:
+    'Learn the mathematical formulas to calculate your exact loan balance at any point. Understand prospective and retrospective methods with practical examples.',
 }

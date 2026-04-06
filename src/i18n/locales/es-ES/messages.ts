@@ -8,6 +8,7 @@ import articleUnderstandingAmortizationScheduleBody from './content/articles/art
 import articleExtraPaymentsBody from './content/articles/article-extra-payments-body.html.txt' with { type: 'text' }
 import articleLoanTermComparisonBody from './content/articles/article-loan-term-comparison-body.html.txt' with { type: 'text' }
 import articleBiweeklyVsMonthlyPaymentsBody from './content/articles/article-biweekly-vs-monthly-payments-body.html.txt' with { type: 'text' }
+import articleCalculatingRemainingLoanBalanceBody from './content/articles/article-calculating-remaining-loan-balance-body.html.txt' with { type: 'text' }
 
 export const esESMessages = {
   sharedResult: 'Resultado Compartido',
@@ -302,4 +303,14 @@ export const esESMessages = {
   articleLoanTermComparisonSeoDescription:
     'Compara préstamos a 15 y 30 años. Entiende el equilibrio entre cuotas mensuales e intereses totales para elegir la hipoteca adecuada para tu situación financiera.',
   articleBiweeklyVsMonthlyPaymentsBody,
+  articleCalculatingRemainingLoanBalanceTitle:
+    'Cómo Calcular el Saldo Pendiente de tu Préstamo en Cualquier Momento',
+  articleCalculatingRemainingLoanBalanceDescription:
+    'Aprende las fórmulas matemáticas y métodos para calcular tu saldo exacto en cualquier punto del préstamo, incluyendo ejemplos prácticos y errores comunes a evitar.',
+  articleCalculatingRemainingLoanBalanceDate: '6 de Abril de 2026',
+  articleCalculatingRemainingLoanBalanceBody,
+  articleCalculatingRemainingLoanBalanceSeoTitle:
+    'Cómo Calcular el Saldo Pendiente de tu Préstamo | Amorta',
+  articleCalculatingRemainingLoanBalanceSeoDescription:
+    'Aprende las fórmulas matemáticas para calcular tu saldo exacto en cualquier momento. Comprende los métodos prospectivo y retrospectivo con ejemplos prácticos.',
 }

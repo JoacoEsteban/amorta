@@ -1,0 +1,76 @@
+<p>Knowing your remaining loan balance at any point during the repayment period is essential for financial planning. Whether you are considering refinancing, selling an asset, or simply tracking your progress, understanding how to calculate this figure gives you clarity and control over your debt.</p>
+
+<h2>Why the remaining balance matters</h2>
+<p>The remaining balance represents the portion of the original loan that you still owe. Unlike the original principal, which stays constant on paper, the balance changes with every payment you make. Each payment reduces this balance, but not by the full payment amount &mdash; interest takes a portion first.</p>
+<p>This balance is critical for several decisions. When refinancing, lenders need to know how much you currently owe to structure the new loan. When selling a property with a mortgage, the sale proceeds must cover the remaining balance to clear the debt. Even for personal tracking, knowing your balance helps you understand how much progress you have made toward financial freedom.</p>
+
+<h2>The mathematical foundation</h2>
+<p>In French amortization, the remaining balance at any point can be calculated directly without summing up every previous payment. This is possible because the loan follows a predictable mathematical structure based on the annuity formula.</p>
+<p>The remaining balance after <em>k</em> payments equals the present value of the remaining payments. If you have <em>n</em> total payments and you have made <em>k</em> payments, there are <em>(n &minus; k)</em> payments remaining. The balance is what those future payments are worth today.</p>
+
+<h3>The formula</h3>
+<p>The remaining balance <em>B<sub>k</sub></em> after <em>k</em> payments is:</p>
+<p><em>B<sub>k</sub> = P &times; [(1 &minus; (1 + i)<sup>&minus;(n &minus; k)</sup>) / i]</em></p>
+<p>Where:</p>
+<ul>
+  <li><em>P</em> is the periodic payment amount</li>
+  <li><em>i</em> is the periodic interest rate</li>
+  <li><em>n</em> is the total number of payments</li>
+  <li><em>k</em> is the number of payments already made</li>
+</ul>
+<p>This formula discounts the remaining payments back to their present value, giving you the exact balance.</p>
+
+<h2>A practical example</h2>
+<p>Consider a $250,000 loan at 6% effective annual rate with monthly payments over 30 years. The monthly payment is approximately $1,498.88, and there are 360 payments total.</p>
+<p>After 5 years (60 payments), you want to know your remaining balance. Using the formula with <em>n &minus; k = 300</em> remaining payments:</p>
+<p><em>B<sub>60</sub> = 1,498.88 &times; [(1 &minus; (1 + 0.004867)<sup>&minus;300</sup>) / 0.004867]</em></p>
+<p>The periodic rate <em>i</em> is approximately 0.004867 (the 6% annual rate converted to monthly). The calculation yields a remaining balance of roughly $232,500.</p>
+<p>This means that after 5 years of payments totaling nearly $90,000, you have reduced the principal by only about $17,500. The rest went to interest. This is the nature of amortization: early payments are mostly interest.</p>
+
+<h3>After 10 years</h3>
+<p>Using the same formula with 240 payments remaining:</p>
+<p><em>B<sub>120</sub> = 1,498.88 &times; [(1 &minus; (1 + 0.004867)<sup>&minus;240</sup>) / 0.004867]</em></p>
+<p>The remaining balance is approximately $209,000. After a decade of payments exceeding $180,000, you have paid down only $41,000 of principal. The pattern becomes clear: principal reduction accelerates over time, but slowly.</p>
+
+<h2>Alternative calculation method</h2>
+<p>If you do not have the formula handy, you can calculate the remaining balance by determining what the original loan would have grown to, minus what your payments would have grown to. This is called the prospective method versus the retrospective method.</p>
+<h3>Retrospective method</h3>
+<p>The retrospective view calculates:</p>
+<p><em>B<sub>k</sub> = L &times; (1 + i)<sup>k</sup> &minus; P &times; [((1 + i)<sup>k</sup> &minus; 1) / i]</em></p>
+<p>Here, <em>L &times; (1 + i)<sup>k</sup></em> is what the original loan would have grown to with compound interest, and the second term is what your payments would have grown to if invested at the same rate. The difference is your remaining debt.</p>
+<p>Using the same example after 60 payments:</p>
+<p><em>B<sub>60</sub> = 250,000 &times; (1.004867)<sup>60</sup> &minus; 1,498.88 &times; [((1.004867)<sup>60</sup> &minus; 1) / 0.004867]</em></p>
+<p>This also yields approximately $232,500, confirming both methods produce identical results.</p>
+
+<h2>Using your amortization schedule</h2>
+<p>If you have a complete amortization schedule, finding your remaining balance is straightforward. Simply locate the row corresponding to your current payment number and read the balance column.</p>
+<p>Most schedules show each payment broken down into principal and interest, with a running balance. The balance after your most recent payment is exactly what you currently owe.</p>
+<p>For loans with extra payments, your actual balance will be lower than the schedule shows. You can adjust by subtracting the total of all extra principal payments you have made from the scheduled balance.</p>
+
+<h2>Impact of payment frequency</h2>
+<p>The calculation changes slightly based on how often you make payments. For monthly payments, use the monthly periodic rate. For biweekly payments, use a biweekly periodic rate and adjust the total number of payments accordingly.</p>
+<p>With 26 biweekly payments per year instead of 12 monthly payments, a 30-year loan has 780 payments instead of 360. The periodic rate is lower (annual rate divided by 26), but the payment amount is roughly half the monthly amount. The balance calculation uses the same formula with these adjusted values.</p>
+
+<h2>When the balance calculation is useful</h2>
+<h3>Refinancing decisions</h3>
+<p>When considering refinancing, you need your current balance to determine the new loan amount. You also need to calculate how much interest remains on your current loan to compare against the total cost of a new loan, including fees and points.</p>
+<h3>Selling an asset</h3>
+<p>If you sell a house or car with an outstanding loan, the buyer or closing agent needs to know the exact payoff amount. This is typically the remaining balance plus any accrued interest since the last payment.</p>
+<h3>Extra payment planning</h3>
+<p>Knowing your balance helps you calculate the impact of extra payments. A $10,000 extra payment early in the loan saves more interest than the same amount later, because it eliminates more future interest accrual.</p>
+
+<h2>Verification with Amorta</h2>
+<p>Use Amorta to generate your full amortization schedule and verify your balance calculations. The schedule table shows the exact remaining balance after every payment, giving you a reference point for any point in your loan term.</p>
+<p>You can also experiment with scenarios: see how extra payments reduce your balance faster, or compare balances at different points in time for loans with different terms or rates. The visual graph makes it easy to see how your balance declines over time and how different factors affect that curve.</p>
+
+<h2>Common pitfalls</h2>
+<p>When calculating remaining balances, watch for these common errors:</p>
+<ul>
+  <li><strong>Using the wrong periodic rate</strong>: Always convert annual rates to the correct periodic rate for your payment frequency. A 6% annual rate is not 0.5% monthly for EAR calculations.</li>
+  <li><strong>Ignoring payment timing</strong>: The balance just after a payment differs from the balance just before the next payment due to accrued interest.</li>
+  <li><strong>Forgetting fees</strong>: Early payoff amounts may include prepayment penalties or administrative fees not reflected in the mathematical balance.</li>
+  <li><strong>Rounding errors</strong>: Using rounded payment amounts in calculations can produce slightly incorrect balances. Use exact values when possible.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>Calculating your remaining loan balance is a fundamental skill for managing debt. Whether you use the prospective formula, the retrospective method, or a full amortization schedule, understanding where you stand financially empowers better decisions about refinancing, selling, or accelerating payoff. The mathematics of French amortization make this calculation precise and predictable, removing uncertainty from your financial planning.</p>

@@ -9,6 +9,14 @@ export type Article = {
 
 export const ARTICLES: Article[] = [
   {
+    slug: 'calculating-remaining-loan-balance',
+    titleKey: 'articleCalculatingRemainingLoanBalanceTitle',
+    descriptionKey: 'articleCalculatingRemainingLoanBalanceDescription',
+    dateKey: 'articleCalculatingRemainingLoanBalanceDate',
+    bodyKey: 'articleCalculatingRemainingLoanBalanceBody',
+    date: new Date('2026-04-06'),
+  },
+  {
     slug: 'loan-term-comparison',
     titleKey: 'articleLoanTermComparisonTitle',
     descriptionKey: 'articleLoanTermComparisonDescription',
