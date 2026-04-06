@@ -1,5 +1,5 @@
 if (import.meta.main) await exec()
 
 export async function exec() {
-  await Bun.$`/opt/homebrew/bin/opencode run "new blog: @specs/blog-posts.md. this is an unassisted task. commit your changes when you finish"`
+  await Bun.$`pi "new blog: ./specs/new-blog-post-spec.md. This is an unassisted task. Commit and push your changes when you finish"`
 }
