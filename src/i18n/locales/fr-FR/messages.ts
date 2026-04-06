@@ -58,9 +58,9 @@ export const frFRMessages = {
   installmentsAtRate: '{count} échéances à {rate}/an',
   amortizationGraph: "Graphique d'amortissement",
   chartPendingSharedResult:
-    "L'aperçu du résultat partagé est en cours de chargement. Le graphique interactif apparaîtra après la résolution du payload URL.",
+    "L'aperçu du résultat partagé est en cours de chargement. Le graphique interactif apparaîtra une fois les données de l'URL résolues.",
   chartPrerendered:
-    "Un aperçu du graphique pré-rendu est affiché immédiatement. Le graphique interactif s'hydrate juste après le chargement.",
+    'Un aperçu du graphique prérendu est affiché immédiatement. Le graphique interactif devient disponible juste après le chargement.',
   chartInteractive:
     'Le capital et les intérêts sont empilés pour chaque quota, avec un point zéro final ajouté pour la clôture.',
   chartCannotGraph: 'Le tableau ne peut pas encore être affiché.',
@@ -138,7 +138,8 @@ export const frFRMessages = {
   downloadCsvDetail:
     'Nombres localisés, toutes les lignes avec en-têtes de colonnes',
   downloadJson: 'Données JSON',
-  downloadJsonDetail: 'Payload structuré complet avec données et résultats',
+  downloadJsonDetail:
+    'Structure complète des données avec entrées et résultats',
   cancel: 'Annuler',
   aboutFrenchAmortization: "À propos de l'amortissement français",
   aboutFrenchAmortizationDescription:
@@ -283,9 +284,9 @@ export const frFRMessages = {
   seoDescriptionAbout:
     "Découvrez Amorta, un calculateur d'amortissement français gratuit. Apprenez qui nous sommes, ce que nous fournissons, et notre engagement envers une éducation financière précise.",
   seoDescriptionContact:
-    "Contactez l'équipe Amorta. Écrivez-nous par email pour des questions, commentaires ou support concernant notre calculateur d'amortissement français.",
+    "Contactez l'équipe Amorta. Écrivez-nous par email pour toute question, remarque ou demande d'aide concernant notre calculateur d'amortissement français.",
   seoDescriptionTerms:
-    "Lisez nos Conditions générales pour comprendre les règles et régulations pour utiliser le calculateur d'amortissement français et le contenu éducatif d'Amorta.",
+    "Lisez nos Conditions générales pour comprendre les règles applicables à l'utilisation du calculateur d'amortissement français et du contenu éducatif d'Amorta.",
   aboutLink: 'À propos',
   contactLink: 'Contact',
   privacyPolicyLink: 'Confidentialité',

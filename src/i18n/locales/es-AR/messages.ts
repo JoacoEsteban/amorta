@@ -32,7 +32,7 @@ export const esARMessages = {
   timeInYears: 'Plazo en años',
   paymentsPerYear: 'Pagos por año',
   effectiveAnnualRate: 'Tasa anual efectiva',
-  paymentAmountOptionalOverride: 'Monto del pago (anulación opcional)',
+  paymentAmountOptionalOverride: 'Monto de la cuota (opcional)',
   placeholderLoanAmount: '250000',
   placeholderYears: '30',
   placeholderEar: '0.12',
@@ -43,7 +43,7 @@ export const esARMessages = {
   fieldNoteReadonly:
     'Este resultado compartido no puede editarse acá. Usá "Editar este resultado" para continuar con estos valores.',
   fieldNoteEarDisabled:
-    'Deshabilitado mientras se proporciona un monto de pago. La app deriva la TAE de ese pago.',
+    'Se desactiva cuando indicás un monto de pago. La aplicación calcula la TAE a partir de ese valor.',
   fieldNoteEarFormat:
     'Usá formato decimal. Ejemplo: 0.12 significa una tasa anual efectiva del 12%.',
   fieldNotePaymentOverride:
@@ -61,7 +61,7 @@ export const esARMessages = {
   chartPendingSharedResult:
     'La vista previa del resultado compartido se está cargando. El gráfico interactivo aparecerá después de resolver la carga útil.',
   chartPrerendered:
-    'Se muestra una vista previa del gráfico pre-renderizado. El gráfico interactivo se hidrata justo después de cargar.',
+    'Se muestra una vista previa del gráfico prerenderizado. El gráfico interactivo se activa apenas termina de cargar.',
   chartInteractive:
     'El capital y los intereses están apilados para cada cuota, con un punto cero final para el cierre del préstamo.',
   chartCannotGraph: 'El calendario aún no puede graficarse.',
@@ -102,7 +102,7 @@ export const esARMessages = {
   mustBeValidNumber: '{label} debe ser un número válido',
   mustBeGreaterThanZero: '{label} debe ser mayor que 0',
   mustBeZeroOrGreater: '{label} debe ser 0 o mayor',
-  isRequired: '{label} es requerido',
+  isRequired: '{label} es obligatorio',
   timeInYearsMustBeWhole:
     'El tiempo en años debe producir un número entero de pagos para la frecuencia seleccionada',
   paymentAmountMustBeAtLeast:
@@ -110,7 +110,7 @@ export const esARMessages = {
   cannotSolveEAR:
     'No se puede resolver una tasa anual efectiva para este monto de pago',
   earIsRequired: 'La tasa anual efectiva es requerida',
-  paymentIsRequired: 'El monto del pago es requerido',
+  paymentIsRequired: 'El monto del pago es obligatorio',
   loanInputsIncomplete: 'Las entradas del préstamo están incompletas',
   noSharedResultProvided:
     'No se proporcionó un resultado compartido en la URL.',
@@ -124,7 +124,7 @@ export const esARMessages = {
   seoTitleResult: 'Resultado Compartido | Amorta',
   seoTitleUnavailable: 'Resultado Compartido No Disponible | Amorta',
   seoDescription:
-    'Amorta es una calculadora interactiva de amortización francesa con resultados compartibles, inversión de pago a tasa, y una visualización del desglose capital versus intereses.',
+    'Amorta es una calculadora interactiva de amortización francesa con resultados compartibles, cálculo de la tasa a partir del pago y una visualización del desglose entre capital e intereses.',
   seoDescriptionShare:
     'Revisá un resultado de amortización francesa de solo lectura, inspeccioná el desglose de cuotas, y continuá el cálculo en Amorta.',
   seoDescriptionUnavailable:
@@ -286,7 +286,7 @@ export const esARMessages = {
   seoDescriptionAbout:
     'Conocé Amorta, una calculadora gratuita de amortización francesa. Descubrí quiénes somos, lo que ofrecemos y nuestro compromiso con la educación financiera precisa.',
   seoDescriptionContact:
-    'Ponete en contacto con el equipo de Amorta. Contactanos por correo electrónico para preguntas, comentarios o soporte sobre nuestra calculadora de amortización francesa.',
+    'Ponete en contacto con el equipo de Amorta. Escribinos por correo electrónico si tenés preguntas, comentarios o necesitás ayuda con nuestra calculadora de amortización francesa.',
   seoDescriptionTerms:
     'Leé nuestros Términos y Condiciones para entender las reglas y regulaciones para usar la calculadora de amortización francesa y el contenido educativo de Amorta.',
   aboutLink: 'Acerca de',

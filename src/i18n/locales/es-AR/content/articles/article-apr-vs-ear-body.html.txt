@@ -5,7 +5,7 @@
 <pre><code>tasa periódica = 0.12 / 12 = 0.01 (1% mensual)</code></pre>
 <p>Pero esto ignora el hecho de que el interés del mes 2 se calcula sobre un saldo que ya incluye el interés del mes 1. Después de 12 meses de interés compuesto al 1% mensual, el costo anual real es superior al 12%.</p>
 <h2>¿Qué es la TAE?</h2>
-<p>La <strong>TAE</strong> (también llamada <strong>TAE</strong>) tiene en cuenta el efecto de la capitalización dentro del año. Responde a la pregunta: <em>¿cuál es el costo anual real, incluyendo la capitalización?</em></p>
+<p>La <strong>TAE</strong> tiene en cuenta el efecto de la capitalización dentro del año. Responde a la pregunta: <em>¿cuál es el costo anual real, incluyendo la capitalización?</em></p>
 <pre><code>TAE = (1 + tipo nominal / períodos)<sup>períodos</sup> &minus; 1</code></pre>
 <p>Para el tipo nominal del 12% con capitalización mensual:</p>
 <pre><code>TAE = (1 + 0.12 / 12)<sup>12</sup> &minus; 1 = 0.1268 (12.68%)</code></pre>

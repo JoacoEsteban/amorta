@@ -32,7 +32,7 @@ export const esESMessages = {
   timeInYears: 'Plazo en años',
   paymentsPerYear: 'Pagos por año',
   effectiveAnnualRate: 'Tasa anual efectiva',
-  paymentAmountOptionalOverride: 'Monto del pago (anulación opcional)',
+  paymentAmountOptionalOverride: 'Importe del pago (opcional)',
   placeholderLoanAmount: '250000',
   placeholderYears: '30',
   placeholderEar: '0.12',
@@ -43,7 +43,7 @@ export const esESMessages = {
   fieldNoteReadonly:
     'Este resultado compartido no puede editarse aquí. Usa "Editar este resultado" para continuar con estos valores.',
   fieldNoteEarDisabled:
-    'Deshabilitado mientras se proporciona un monto de pago. La app deriva la TAE de ese pago.',
+    'Se desactiva al indicar un importe de pago. La aplicación calcula la TAE a partir de ese pago.',
   fieldNoteEarFormat:
     'Usa formato decimal. Ejemplo: 0.12 significa una tasa anual efectiva del 12%.',
   fieldNotePaymentOverride:
@@ -61,7 +61,7 @@ export const esESMessages = {
   chartPendingSharedResult:
     'La vista previa del resultado compartido se está cargando. El gráfico interactivo aparecerá después de resolver la carga útil.',
   chartPrerendered:
-    'Se muestra una vista previa del gráfico pre-renderizado. El gráfico interactivo se hidrata justo después de cargar.',
+    'Se muestra una vista previa del gráfico prerrenderizado. El gráfico interactivo se activa justo después de cargar.',
   chartInteractive:
     'El capital y los intereses están apilados para cada cuota, con un punto cero final para el cierre del préstamo.',
   chartCannotGraph: 'El calendario aún no puede graficarse.',
@@ -102,7 +102,7 @@ export const esESMessages = {
   mustBeValidNumber: '{label} debe ser un número válido',
   mustBeGreaterThanZero: '{label} debe ser mayor que 0',
   mustBeZeroOrGreater: '{label} debe ser 0 o mayor',
-  isRequired: '{label} es requerido',
+  isRequired: '{label} es obligatorio',
   timeInYearsMustBeWhole:
     'El tiempo en años debe producir un número entero de pagos para la frecuencia seleccionada',
   paymentAmountMustBeAtLeast:
@@ -110,7 +110,7 @@ export const esESMessages = {
   cannotSolveEAR:
     'No se puede resolver una tasa anual efectiva para este monto de pago',
   earIsRequired: 'La tasa anual efectiva es requerida',
-  paymentIsRequired: 'El monto del pago es requerido',
+  paymentIsRequired: 'El importe del pago es obligatorio',
   loanInputsIncomplete: 'Las entradas del préstamo están incompletas',
   noSharedResultProvided:
     'No se proporcionó un resultado compartido en la URL.',
@@ -124,7 +124,7 @@ export const esESMessages = {
   seoTitleResult: 'Resultado Compartido | Amorta',
   seoTitleUnavailable: 'Resultado Compartido No Disponible | Amorta',
   seoDescription:
-    'Amorta es una calculadora interactiva de amortización francesa con resultados compartibles, inversión de pago a tasa, y una visualización del desglose capital versus intereses.',
+    'Amorta es una calculadora interactiva de amortización francesa con resultados compartibles, cálculo de tasa a partir del pago y una visualización del desglose entre capital e intereses.',
   seoDescriptionShare:
     'Revisa un resultado de amortización francesa de solo lectura, inspecciona el desglose de cuotas, y continúa el cálculo en Amorta.',
   seoDescriptionUnavailable:
@@ -166,7 +166,7 @@ export const esESMessages = {
   articleCtaText: '¿Listo para hacer tu propio cálculo?',
   seoTitleBlogIndex: 'Artículos | Amorta',
   seoDescriptionBlogIndex:
-    'Lee artículos approfondidos sobre amortización francesa, tasas anuales efectivas y la matemática detrás de los préstamos de pago constante.',
+    'Lee artículos en profundidad sobre amortización francesa, tasas anuales efectivas y las matemáticas detrás de los préstamos de pago constante.',
   articleMathTitle: 'La Matemática Detrás de la Amortización Francesa',
   articleMathDescription:
     'Un análisis profundo de la fórmula de anualidades, la conversión de tasas periódicas y cómo cada pago se divide entre intereses y capital a lo largo de la vida de un préstamo francés.',

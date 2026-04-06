@@ -4,7 +4,7 @@
     <p>Ce paiement supplémentaire va entièrement au capital, contournant les intérêts. Sur une hypothèque de 30 ans, cela peut réduire de 4 à 5 ans la durée du prêt et faire économiser des dizaines de milliers d'intérêts.</p>
     <h3>Visualiser le calendrier</h3>
     <p>Imaginez une année civile. Avec des paiements mensuels, vous payez le 1er de chaque mois, 12 fois au total. Avec des paiements bihebdomadaires alignés sur un calendrier typique de paie le vendredi, vos paiements tombent les 1er, 15, 29, 12, 26, 9, 23, et ainsi de suite. Certains mois vous faites deux paiements, d'autres trois. Sur 12 mois, ce modèle produit 26 demi-paiements.</p>
-    <p>La beauté de cette approche est psychologique. Vous n'écrivez jamais un chèque plus gros, pourtant vous accélérez automatiquement votre remboursement. Le paiement supplémentaire se produit « invisblement » car il est réparti tout au long de l'année en petites incréments.</p>
+    <p>La beauté de cette approche est psychologique. Vous n'écrivez jamais un chèque plus gros, pourtant vous accélérez automatiquement votre remboursement. Le paiement supplémentaire se produit « invisiblement » car il est réparti tout au long de l'année en petits incréments.</p>
     <h2>Les mathématiques derrière</h2>
     <p>Considérez une hypothèque de 300 000 € à 6 % TAE sur 30 ans. Le paiement mensuel est d'environ 1 798 €.</p>
     <p>Avec des paiements mensuels, vous faites 360 paiements totalisant 647 200 € — dont 347 200 € d'intérêts.</p>
@@ -41,7 +41,7 @@
       <li><strong>Maintenance annuelle :</strong> 50-100 € de frais de programme annuel</li>
     </ul>
     <p>Sur 26 paiements par an, des frais de transaction de 3 € ajoutent 78 € annuellement. Sur 26 ans, c'est 2 028 € de frais uniquement. Assurez-vous que vos économies d'intérêts dépassent ces coûts.</p>
-    <p>Vérifiez également que les paiements supplémentaires sont appliqués directement au capital, pas conservés comme escrow prépayé. Certains prêteurs peuvent ne pas les traiter correctement.</p>
+    <p>Vérifiez également que les paiements supplémentaires sont appliqués directement au capital et non conservés comme provision prépayée. Certains prêteurs peuvent ne pas les traiter correctement.</p>
     <h2>La stratégie équivalente</h2>
     <p>Voici l'idée clé : un paiement bihebdomadaire est mathématiquement équivalent à effectuer un paiement mensuel supplémentaire par an. Si vous pouvez le budgéter, ajouter simplement 1/12 de votre paiement mensuel à chaque paiement mensuel atteint le même résultat — sans implication du prêteur ni frais.</p>
     <h3>Mise en œuvre étape par étape</h3>
