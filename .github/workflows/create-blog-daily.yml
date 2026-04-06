@@ -1,0 +1,36 @@
+name: Create Daily Blog Post
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # 8am UTC = 5am UTC-3 (America/Argentina)
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  create-blog:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install pi
+        run: bun install -g @mariozechner/pi-coding-agent
+
+      - name: Create blog post
+        run: bun run scripts/create-blog.ts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run tests
+        run: bun test
