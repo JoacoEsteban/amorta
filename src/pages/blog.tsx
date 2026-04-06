@@ -52,7 +52,7 @@ export const BlogIndexPage = ({ routeState }: BlogIndexPageProps) => {
 
         <button
           type="button"
-          className="action-button action-button--secondary"
+          className="action-button action-button--secondary blog-index__back-button"
           onClick={goBack}
         >
           <ArrowLeft size={16} />

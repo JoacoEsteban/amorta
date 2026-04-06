@@ -584,6 +584,10 @@ ul {
   .message-actions {
     flex-direction: row;
   }
+
+  .blog-index__back-button {
+    align-self: flex-end;
+  }
 }
 
 @media (min-width: 1100px) {
