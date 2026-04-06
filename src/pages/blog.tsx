@@ -1,10 +1,11 @@
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Calculator } from 'lucide-react'
 import { match } from 'ts-pattern'
 
 import { ARTICLES, getArticleBySlug, getRelatedArticles } from '../domain/blog'
 import { buildLocalePath } from '../i18n/lingui.config'
 import { useLocale, useTranslator } from '../state/locale.js'
 import { Footer } from '../components/footer'
+import { cn } from '../lib/utils.js'
 
 type BlogIndexPageProps = {
   routeState: Extract<
@@ -82,6 +83,55 @@ export const ArticlePage = ({ routeState }: ArticlePageProps) => {
     window.location.assign(buildLocalePath(currentLocale, '/blog'))
   }
 
+  const articleCta = (
+    <div className="article-cta xl:sticky">
+      <div className="article-cta__visual" aria-hidden="true">
+        <div className="article-cta__visual-orb article-cta__visual-orb--amber" />
+        <div className="article-cta__visual-orb article-cta__visual-orb--rose" />
+        <div className="article-cta__device">
+          <div className="article-cta__device-screen">
+            <span className="article-cta__device-label">EAR</span>
+            <strong>12.4%</strong>
+            <span className="article-cta__device-subvalue">€248,560</span>
+          </div>
+          <div className="article-cta__device-grid">
+            <span />
+            <span />
+            <span />
+            <span />
+            <span className="article-cta__device-key--accent" />
+            <span />
+          </div>
+        </div>
+        <div className="article-cta__chart">
+          <span style={{ height: '32%' }} />
+          <span style={{ height: '52%' }} />
+          <span style={{ height: '74%' }} />
+          <span style={{ height: '94%' }} />
+        </div>
+      </div>
+
+      <div className="article-cta__copy">
+        <div className="article-cta__eyebrow">
+          <Calculator size={14} />
+          <span>{_('liveCalculator')}</span>
+        </div>
+        <p className="article-cta__title">{_('articleCtaText')}</p>
+        <button
+          type="button"
+          className="action-button action-button--primary article-cta__button"
+          onClick={() => {
+            window.location.assign(buildLocalePath(currentLocale, '/'))
+          }}
+        >
+          <Calculator size={16} />
+          <span>{_('openCalculator')}</span>
+          <ArrowRight size={16} />
+        </button>
+      </div>
+    </div>
+  )
+
   return match(article)
     .with(undefined, () => (
       <main className="app-shell">
@@ -137,56 +187,67 @@ export const ArticlePage = ({ routeState }: ArticlePageProps) => {
             .when(
               (count) => count > 0,
               () => (
-                <section className="related-articles">
-                  <div className="related-articles__header">
-                    <p className="page-kicker">{_('articles')}</p>
-                    <h2 className="related-articles__title">
-                      {_('relatedArticlesTitle')}
-                    </h2>
-                    <p className="related-articles__description">
-                      {_('relatedArticlesDescription')}
-                    </p>
-                  </div>
+                <div className="mt-12">
+                  <section className="related-articles">
+                    <div className="related-articles__header">
+                      <p className="page-kicker">{_('articles')}</p>
+                      <h2 className="related-articles__title">
+                        {_('relatedArticlesTitle')}
+                      </h2>
+                      <p className="related-articles__description">
+                        {_('relatedArticlesDescription')}
+                      </p>
+                    </div>
 
-                  <div className="blog-index">
-                    {relatedArticles.map((relatedArticle) => (
-                      <a
-                        key={relatedArticle.slug}
-                        href={buildLocalePath(
-                          currentLocale,
-                          `/blog/${relatedArticle.slug}`,
-                        )}
-                        className="blog-card"
-                      >
-                        <div className="blog-card__meta">
-                          <time>{_(relatedArticle.dateKey)}</time>
-                        </div>
-                        <h3 className="blog-card__title">
-                          {_(relatedArticle.titleKey)}
-                        </h3>
-                        <p className="blog-card__description">
-                          {_(relatedArticle.descriptionKey)}
-                        </p>
-                      </a>
-                    ))}
-                  </div>
-                </section>
+                    <div className="blog-index flex max-lg:flex-col lg:grid lg:grid-cols-3 lg:items-start">
+                      {relatedArticles.map((relatedArticle, i) => (
+                        <a
+                          key={relatedArticle.slug}
+                          href={buildLocalePath(
+                            currentLocale,
+                            `/blog/${relatedArticle.slug}`,
+                          )}
+                          className={cn(
+                            'blog-card',
+                            match(i)
+                              .with(0, () => 'col-span-2 _zoom-110')
+                              .otherwise(() => null),
+                          )}
+                        >
+                          <div className="blog-card__meta">
+                            <time>{_(relatedArticle.dateKey)}</time>
+                          </div>
+                          <h3
+                            className={cn(
+                              'blog-card__title',
+                              match(i)
+                                .with(0, () => 'lg:zoom-175')
+                                .otherwise(() => null),
+                            )}
+                          >
+                            {_(relatedArticle.titleKey)}
+                          </h3>
+                          <p
+                            className={cn(
+                              'blog-card__description',
+                              match(i)
+                                .with(0, () => 'lg:zoom-125')
+                                .otherwise(() => null),
+                            )}
+                          >
+                            {_(relatedArticle.descriptionKey)}
+                          </p>
+                        </a>
+                      ))}
+                      <div className="col-span-2">{articleCta}</div>
+                    </div>
+                  </section>
+                </div>
               ),
             )
-            .otherwise(() => null)}
-
-          <div className="article-cta">
-            <p>{_('articleCtaText')}</p>
-            <button
-              type="button"
-              className="action-button action-button--primary"
-              onClick={() => {
-                window.location.assign(buildLocalePath(currentLocale, '/'))
-              }}
-            >
-              <span>{_('openCalculator')}</span>
-            </button>
-          </div>
+            .otherwise(() => (
+              <div className="mt-12 max-w-xl">{articleCta}</div>
+            ))}
 
           <Footer />
         </div>
