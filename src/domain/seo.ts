@@ -8,6 +8,7 @@ import {
 import { getArticleBySlug, type Article } from './blog'
 import type { RouteState } from './share'
 import { mapTranslator, type Translate } from '../state/locale.js'
+import { DEFAULT_LOCALE } from '../i18n/lingui.config'
 
 export const DEFAULT_PUBLIC_SITE_URL = 'https://amorta.loan'
 
@@ -147,7 +148,7 @@ const resolveCanonicalPath = (
   siteUrl: string,
 ): string => {
   const normalizedSiteUrl = resolvePublicSiteUrl(siteUrl)
-  const locale = routeState.locale
+  const locale = routeState.locale === DEFAULT_LOCALE ? null : routeState.locale
 
   return match(routeState)
     .with({ kind: 'index' }, () =>
