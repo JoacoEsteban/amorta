@@ -1,3 +1,14 @@
+import eduWhatBody from './content/articles/edu-what-body.html.txt' with { type: 'text' }
+import eduHowBody from './content/articles/edu-how-body.html.txt' with { type: 'text' }
+import eduTermsBody from './content/articles/edu-terms-body.html.txt' with { type: 'text' }
+import eduWhenBody from './content/articles/edu-when-body.html.txt' with { type: 'text' }
+import articleMathBody from './content/articles/article-math-body.html.txt' with { type: 'text' }
+import articleAprVsEarBody from './content/articles/article-apr-vs-ear-body.html.txt' with { type: 'text' }
+import articleUnderstandingAmortizationScheduleBody from './content/articles/article-understanding-amortization-schedule-body.html.txt' with { type: 'text' }
+import articleExtraPaymentsBody from './content/articles/article-extra-payments-body.html.txt' with { type: 'text' }
+import articleLoanTermComparisonBody from './content/articles/article-loan-term-comparison-body.html.txt' with { type: 'text' }
+import articleBiweeklyVsMonthlyPaymentsBody from './content/articles/article-biweekly-vs-monthly-payments-body.html.txt' with { type: 'text' }
+
 export const esESMessages = {
   sharedResult: 'Resultado Compartido',
   liveCalculator: 'Calculadora en Vivo',
@@ -135,17 +146,13 @@ export const esESMessages = {
   aboutFrenchAmortizationDescription:
     'Conceptos clave y terminología para entender cómo funciona la amortización francesa.',
   eduWhatTrigger: '¿Qué es la amortización francesa?',
-  eduWhatBody:
-    '<p>La amortización francesa — también conocida como <strong>amortización de pago constante</strong> — es el método más común para devolver préstamos e hipotecas en Europa y América Latina. A diferencia de la estructura de pago decreciente común en EE.UU., donde cada pago tiene el mismo monto total pero la proporción entre intereses y capital cambia con el tiempo, la amortización francesa mantiene <strong>cada pago igual</strong> desde el primer mes hasta el último.</p><p>Como cada pago es fijo, el prestatario siempre sabe exactamente qué presupuestar. La desventaja es que los pagos iniciales van casi en su totalidad hacia los intereses, y el capital se reduce muy lentamente al principio.</p>',
+  eduWhatBody,
   eduHowTrigger: '¿Cómo funciona la matemática?',
-  eduHowBody:
-    '<p>Cada pago se determina mediante tres números: el <strong>monto del préstamo</strong>, la <strong>tasa anual efectiva (TAE)</strong> y el <strong>número de pagos</strong>. La TAE se convierte en una tasa periódica (para pagos mensuales, la raíz 12 de 1 + TAE), y luego se aplica la fórmula estándar de anualidad:</p><p><strong>Pago = Préstamo × r / (1 − (1 + r)<sup>−n</sup>)</strong></p><p>donde <strong>r</strong> es la tasa periódica y <strong>n</strong> es el número total de pagos. Con cada pago, una parte paga intereses (saldo × tasa periódica) y el resto reduce el capital. A medida que el saldo disminuye, la porción de intereses de cada pago también disminuye — lo que significa que más del pago fijo se destina a capital con el tiempo.</p>',
+  eduHowBody,
   eduTermsTrigger: 'Terminología clave',
-  eduTermsBody:
-    '<p><strong>Cuota:</strong> Un solo pago. Una hipoteca a 30 años con pagos mensuales tiene 360 cuotas.</p><p><strong>Tasa Anual Efectiva (TAE):</strong> El costo real anual de pedir prestado, considerando la capitalización dentro del año. Diferente de la TIN nominal — la TAE es lo que realmente pagas.</p><p><strong>Capital:</strong> La parte de un pago que reduce el saldo pendiente del préstamo.</p><p><strong>Interés:</strong> La parte de un pago que va al prestamista como costo del préstamo.</p><p><strong>Tasa periódica:</strong> La TAE expresada por período de pago. Para pagos mensuales, es (1 + TAE)<sup>1/12</sup> − 1.</p>',
+  eduTermsBody,
   eduWhenTrigger: '¿Cuándo es útil esta calculadora?',
-  eduWhenBody:
-    '<p>Usá esta calculadora siempre que necesites modelar un préstamo que siga las convenciones europeas o latinoamericanas. Maneja ambas direcciones:</p><ul><li><strong>Modo estándar:</strong> Ingresá el monto del préstamo, plazo y TAE para calcular la cuota mensual.</li><li><strong>Inversión de pago:</strong> Ingresá un monto de cuota objetivo para resolver la TAE implícita — útil para comparar ofertas con diferentes estructuras de pago.</li></ul><p>El calendario de amortización muestra cada cuota en detalle, facilitando entender exactamente cuánto de cada pago va hacia intereses versus capital en cualquier punto de la vida del préstamo.</p>',
+  eduWhenBody,
   blog: 'Blog',
   articles: 'Artículos',
   blogIndexTitle: 'Artículos',
@@ -162,66 +169,23 @@ export const esESMessages = {
   articleMathDescription:
     'Un análisis profundo de la fórmula de anualidades, la conversión de tasas periódicas y cómo cada pago se divide entre intereses y capital a lo largo de la vida de un préstamo francés.',
   articleMathDate: '25 de Marzo de 2026',
-  articleMathBody:
-    '<p>La amortización francesa se rige por una fórmula elegante. Dado un monto de préstamo <strong>L</strong>, una tasa anual efectiva <strong>TAE</strong> y un número de pagos <strong>n</strong>, el pago fijo <strong>P</strong> es:</p><pre><code>P = L &times; r / (1 &minus; (1 + r)<sup>&minus;n</sup>)</code></pre><p>donde <strong>r</strong> es la <em>tasa periódica</em>: la TAE expresada por intervalo de pago. Para pagos mensuales sobre un préstamo con 12 pagos por año:</p><pre><code>r = (1 + TAE)<sup>1/12</sup> &minus; 1</code></pre><p>Esta conversión de tasa anual a periódica es lo que hace que la TAE sea la tasa correcta para usar en la fórmula &mdash; no la TIN nominal, ni una tasa simple dividida por el número de pagos.</p><h2>Cómo se divide cada pago</h2><p>Una vez que se conoce <strong>P</strong>, el calendario de amortización surge naturalmente. Para la cuota <strong>q</strong> (donde q = 1 para el primer pago):</p><pre><code>intereses_q = saldo_q-1 &times; r\ncapital_q = P &minus; intereses_q\nsaldo_q = saldo_q-1 &minus; capital_q</code></pre><p>Porque el saldo disminuye con cada pago, la porción de intereses <strong>intereses_q</strong> se reduce con el tiempo, mientras que la porción de capital <strong>capital_q</strong> crece. El pago <strong>P</strong> se mantiene constante.</p><p>Esta es la característica definitoria de la amortización francesa: pagos totales constantes, intereses decrecientes y reducción acelerada del capital.</p><h2>Resolviendo la TAE a partir de un pago</h2><p>La fórmula anterior funciona hacia adelante desde (L, TAE, n) para encontrar P. La calculadora también opera en sentido inverso: si conocés L, P y n, puede resolver la TAE implícita.</p><p>Esto requiere un resolutor numérico (búsqueda binaria en este caso), ya que la TAE aparece en ambos lados de la ecuación a través de la tasa periódica.</p><h2>¿Por qué TAE y no TIN?</h2><p>El <strong>TIN</strong> (Tipo de Interés Nominal) es una tasa nominal &mdash; no tiene en cuenta la capitalización dentro del año. Si un préstamo dice "12% TIN" con pagos mensuales, la tasa real que pagás es superior al 12%.</p><p>La <strong>TAE</strong> (Tasa Anual Equivalente) sí tiene en cuenta la capitalización. La relación entre TIN y TAE para <strong>m</strong> pagos por año es:</p><pre><code>TAE = (1 + TIN/m)<sup>m</sup> &minus; 1</code></pre><p>Para 12 pagos por año al 12% TIN: TAE = (1 + 0,12/12)<sup>12</sup> &minus; 1 &asymp; 12,68%. Esto es lo que usa la calculadora.</p><h2>Ajuste del último pago</h2><p>Debido a errores de redondeo, el último pago de un calendario francés generalmente se ajusta ligeramente para asegurar que el saldo llegue a exactamente cero. La calculadora maneja esto verificando si el último pago produciría un saldo negativo y ajustándolo al saldo restante más los intereses devengados.</p>',
+  articleMathBody,
   articleAprVsEarTitle: 'TIN vs TAE: Por Qué Importa la Diferencia',
   articleAprVsEarDescription:
     'Comprende la diferencia entre el Tipo de Interés Nominal y la Tasa Anual Efectiva, y aprende por qué la TAE es la tasa correcta para usar en cálculos financieros.',
   articleAprVsEarDate: '31 de Marzo de 2026',
-  articleAprVsEarBody:
-    '<p>Al comparar préstamos, encontrarás dos números diferentes que describen el costo anual de endeudamiento: <strong>TIN</strong> (Tipo de Interés Nominal) y <strong>TAE</strong> (Tasa Anual Efectiva). Suenan similar pero pueden diferir sustancialmente. Entender esta diferencia puede ahorrarte miles de euros durante la vida de un préstamo.</p><h2>¿Qué es el TIN?</h2><p>El <strong>TIN</strong> es una declaración regulatoria diseñada para facilitar la comparación de préstamos. Expresa el costo del endeudamiento como una tasa anual, pero parte del tipo de interés <em>nominal</em> (declarado), no de la tasa efectiva real.</p><p>El tipo nominal se divide simplemente por el número de períodos de capitalización al año. Para un préstamo con un tipo anual nominal del 12% y capitalización mensual:</p><pre><code>tasa periódica = 0.12 / 12 = 0.01 (1% mensual)</code></pre><p>Pero esto ignora el hecho de que el interés del mes 2 se calcula sobre un saldo que ya incluye el interés del mes 1. Después de 12 meses de interés compuesto al 1% mensual, el costo anual real es superior al 12%.</p><h2>¿Qué es la TAE?</h2><p>La <strong>TAE</strong> (a veces llamada <strong>TAE</strong>) tiene en cuenta el efecto de la capitalización dentro del año. Responde a la pregunta: <em>¿cuál es el costo anual real, incluyendo la capitalización?</em></p><pre><code>TAE = (1 + tipo nominal / períodos)<sup>períodos</sup> &minus; 1</code></pre><p>Para el tipo nominal del 12% con capitalización mensual:</p><pre><code>TAE = (1 + 0.12 / 12)<sup>12</sup> &minus; 1 = 0.1268 (12.68%)</code></pre><p>Esta diferencia del 0,68% puede parecer pequeña, pero se capitaliza a lo largo de una hipoteca a 30 años en intereses adicionales significativos.</p><h2>¿Qué tasa deberías usar?</h2><p>Para la fórmula de anualidades que subyace a la amortización francesa, <strong>la TAE es la tasa correcta</strong>. La fórmula asume tasas periódicas efectivas, y usar el TIN dividido por períodos introduce un error sistemático en el pago calculado.</p><p>Al comparar ofertas de préstamos, siempre pedí la TAE y usala en tus cálculos.</p>',
+  articleAprVsEarBody,
   articleUnderstandingAmortizationScheduleTitle:
     'Entendiendo Tu Tabla de Amortización',
   articleUnderstandingAmortizationScheduleDescription:
     'Aprende a leer una tabla de amortización, qué significa cada columna y cómo identificar patrones en el reembolso de tu préstamo a lo largo del tiempo.',
   articleUnderstandingAmortizationScheduleDate: '31 de Marzo de 2026',
-  articleUnderstandingAmortizationScheduleBody: `
-    <p>Una tabla de amortización es un cuadro que muestra cada pago a lo largo de la vida de un préstamo. Desglosa cada pago en cuánto se destina a intereses, cuánto reduce el capital y cuál es el saldo restante después de cada pago. Entender esta tabla te ayuda a seguir tu progreso real en el pago de la deuda.</p>
-    <h2>Las columnas explicadas</h2>
-    <p>Cada fila de la tabla representa un pago. Para un préstamo mensual, cada fila corresponde a un mes. Las columnas clave son:</p>
-    <ul>
-      <li><strong>Número de pago</strong>: La secuencia (1, 2, 3&hellip; n)</li>
-      <li><strong>Monto del pago</strong>: El pago mensual fijo (constante en la amortización francesa)</li>
-      <li><strong>Porción de intereses</strong>: La parte del pago que se destina a intereses del período</li>
-      <li><strong>Porción de capital</strong>: La parte que reduce el saldo pendiente</li>
-      <li><strong>Saldo restante</strong>: El monto adeudado después de aplicar el pago</li>
-    </ul>
-    <h2>Cómo cambian los intereses y el capital</h2>
-    <p>En la amortización francesa, el pago es fijo, pero su composición cambia drásticamente con el tiempo. Los pagos tempranos son mayormente intereses; los pagos tardíos son mayormente capital. Esto sucede porque los intereses se calculan sobre el saldo restante, que es más alto al inicio.</p>
-    <p>Consideremos los primeros meses de una hipoteca de 200.000 &euro; al 6% TAE durante 30 años (360 pagos mensuales). La tasa periódica es aproximadamente 0,00487 mensual. En el mes 1, los intereses sobre un saldo de 200.000 &euro; son aproximadamente 974 &euro;. Los 373 &euro; restantes del pago reducen el capital. En el mes 180 (año 15), el saldo es mucho menor, por lo que la porción de intereses disminuye y la porción de capital crece correspondientemente.</p>
-    <h2>El punto de cruce</h2>
-    <p>Hay un punto en cada tabla de amortización donde las porciones de intereses y capital son iguales. Para una hipoteca a 30 años al 6%, esto sucede alrededor del año 12 o 13. Antes de este <strong>punto de cruce</strong>, estás pagando más en intereses que reduciendo capital. Después de él, la reducción del capital se acelera.</p>
-    <p>Esto tiene implicaciones prácticas para los pagos extra. Hacer pagos extra antes del punto de cruce tiene un impacto mucho mayor en el total de intereses pagados que los mismos pagos extra realizados más tarde, porque los pagos extra tempranos evitan todos los intereses futuros sobre ese monto.</p>
-    <h2>Leyendo tu propia tabla</h2>
-    <p>Cuando ejecutás un cálculo en Amorta, la tabla muestra exactamente estas columnas para cada intervalo de pago. Podés ver los intereses acumulados al final de la tabla, lo que te ayuda a entender el costo real del préstamo durante su plazo completo.</p>
-    <p>Prestá atención a la columna de intereses en las primeras filas para ver cuánto de tu pago se "desperdicia" en intereses versus la construcción de patrimonio. Esta perspectiva ayuda al evaluar si hacer pagos extra o al comparar ofertas de préstamos.</p>
-  `,
+  articleUnderstandingAmortizationScheduleBody,
   articleExtraPaymentsTitle: 'El Poder de los Pagos Extra',
   articleExtraPaymentsDescription:
     'Aprende cómo hacer pagos adicionales hacia el capital puede reducir dramáticamente los intereses totales y acortar el plazo de tu préstamo.',
   articleExtraPaymentsDate: '31 de Marzo de 2026',
-  articleExtraPaymentsBody: `
-    <p>Una de las formas más efectivas de ahorrar dinero en un préstamo es hacer pagos adicionales hacia el capital. Incluso cantidades pequeñas pueden tener un impacto desproporcionado a lo largo del tiempo, quitando años a tu préstamo y miles de euros en intereses totales pagados.</p>
-    <h2>Cómo funcionan los pagos extra</h2>
-    <p>En la amortización francesa, cada pago se divide entre intereses y capital. Los intereses se calculan sobre el saldo restante, así que cuando reduces el capital más rápido, menos intereses se acumulan en períodos posteriores.</p>
-    <p>Cuando haces un pago extra, todo el monto va directamente a reducir el capital &mdash; evitando el cálculo normal de intereses para esa porción. Esto significa que no solo ahorras los intereses de ese pago, sino todos los intereses futuros que se habrían acumulado sobre esa cantidad.</p>
-    <p>Cuanto antes hagas pagos extra en el plazo del préstamo, más poderosos se vuelven. Esto es porque los intereses se calculan sobre el saldo restante, que es más alto al inicio del préstamo.</p>
-    <h2>Un ejemplo concreto</h2>
-    <p>Consideremos una hipoteca de 300.000 &euro; al 6% TAE durante 30 años. El pago mensual es aproximadamente 1.798 &euro;. Sin pagos extra, pagarías 347.200 &euro; en intereses totales durante la vida del préstamo.</p>
-    <p>Ahora supongamos que pagas 200 &euro; extra por mes. Después de 30 años, habrías pagado solo 240.600 &euro; en intereses &mdash; un ahorro de más de 106.000 &euro;. Y habrías terminado de pagar el préstamo unos 7 años antes.</p>
-    <p>Haz el mismo pago extra de 200 &euro;, pero espera hasta el año 15 para comenzar. Los ahorros se reducen a aproximadamente 28.000 &euro; y solo reduces 3 años del plazo. El momento importa enormemente.</p>
-    <h2>Tipos de pagos extra</h2>
-    <p>Hay dos enfoques principales para los pagos extra:</p>
-    <ul>
-      <li><strong>Pagos extra recurrentes</strong>: Agregar una cantidad fija a cada pago mensual. Por ejemplo, pagar 1.998 &euro; en lugar de 1.798 &euro; cada mes.</li>
-      <li><strong>Pagos extra únicos</strong>: Hacer pagos ocasionales más grandes cuando tienes fondos extra, como devoluciones de impuestos, bonos o herencias.</li>
-    </ul>
-    <p>Ambos enfoques son efectivos. Los pagos extra recurrentes proporcionan progreso constante y son más fáciles de presupuestar. Los pagos únicos pueden hacer un gran impacto rápidamente cuando hay montos más grandes disponibles.</p>
-    <h2>Verifica las penalizaciones por prepago</h2>
-    <p>Antes de comprometerte a hacer pagos extra, verifica tu contrato de préstamo por penalizaciones por prepago. Algunos préstamos cobran una tarifa si pagas el préstamo antes de tiempo, lo cual puede抵消 los ahorros de intereses. Esto es más común en hipotecas de tasa fija en algunos países, aunque muchos préstamos modernos han eliminado tales penalizaciones.</p>
-    <h2>Calcula tus propios números</h2>
-    <p>Usa Amorta para modelar cómo los pagos extra afectarían tu préstamo específico. La tabla de amortización facilita ver cómo los pagos extra cambian el saldo a lo largo del tiempo y cuánto interés ahorras. Incluso un pago extra pequeño puede hacer una diferencia significativa cuando te mantienes constante a lo largo del tiempo.</p>
-  `,
+  articleExtraPaymentsBody,
   articleBiweeklyVsMonthlyPaymentsTitle:
     'Pagos Quincenales vs Mensuales: ¿Realmente Importa?',
   articleBiweeklyVsMonthlyPaymentsDescription:
@@ -332,60 +296,10 @@ export const esESMessages = {
   articleLoanTermComparisonDescription:
     'Compara las ventajas y desventajas entre plazos cortos y largos, entiende el impacto en las cuotas mensuales y los intereses totales, y descubre qué opción se adapta a tu situación financiera.',
   articleLoanTermComparisonDate: '3 de Abril de 2026',
-  articleLoanTermComparisonBody: `
-    <p>Al financiar una compra importante como una vivienda, una de las decisiones más trascendentales que tomarás es la duración del plazo de tu préstamo. Las dos opciones más comunes son los plazos de 15 y 30 años. Cada una tiene ventajas y desventajas distintas que pueden afectar tu vida financiera durante décadas. Entender estas diferencias te ayuda a elegir el camino que se alinea con tus objetivos.</p>
-    <h2>El equilibrio fundamental</h2>
-    <p>Los plazos más cortos significan cuotas mensuales más altas pero significativamente menos intereses totales pagados. Los plazos más largos distribuyen el mismo principal en más pagos, reduciendo la carga mensual pero aumentando el coste total del préstamo. Esto no es solo aritmética — afecta tu flujo de caja mensual, tu capacidad de ahorrar para otros objetivos y tu flexibilidad financiera general.</p>
-    <p>Consideremos una hipoteca de 300.000 &euro; al 6% TAE. Con un plazo de 30 años, tu cuota mensual es de aproximadamente 1.798 &euro;, y pagarás unos 347.000 &euro; en intereses totales durante la vida del préstamo. Con un plazo de 15 años, la cuota mensual sube a unos 2.532 &euro;, pero tus intereses totales bajan a unos 155.700 &euro;. Ahorras más de 191.000 &euro; en intereses, pero tu obligación mensual es 734 &euro; mayor.</p>
-    <h2>Cuando tiene sentido un préstamo a 15 años</h2>
-    <p>Un préstamo a 15 años es ideal cuando tienes ingresos estables y predecibles y tu presupuesto mensual puede acomodar cómodamente la cuota más alta sin sacrificar el ahorro de emergencia o las aportaciones a la jubilación. Los beneficios van más allá del ahorro en intereses:</p>
-    <ul>
-      <li><strong>El patrimonio crece más rápido:</strong> Con pagos de principal más altos desde el principio, eres dueño de más de tu vivienda antes. Esto importa si necesitas vender o pedir prestado contra la propiedad.</li>
-      <li><strong>Alivio psicológico:</strong> Muchos prestatarios experimentan una reducción significativa del estrés sabiendo que su deuda más grande se eliminará en la mitad de tiempo.</li>
-      <li><strong>Calendario de jubilación:</strong> Si planeas jubilarte en menos de 20 años, un préstamo a 15 años garantiza que entres en la jubilación sin pagos de hipoteca.</li>
-    </ul>
-    <p>El requisito clave es la asequibilidad genuina. Si la cuota más alta te obliga a mantener deuda de tarjeta de crédito, omitir aportaciones a la jubilación o vivir sin un fondo de emergencia adecuado, el plazo de 15 años se vuelve contraproducente.</p>
-    <h2>Cuando un préstamo a 30 años es la mejor opción</h2>
-    <p>Un préstamo a 30 años proporciona cuotas mensuales más bajas, lo que crea margen de maniobra financiero. Esta flexibilidad es valiosa en varias situaciones:</p>
-    <ul>
-      <li><strong>Variabilidad de ingresos:</strong> Si tus ingresos fluctúan estacionalmente o trabajas en una industria volátil, los pagos obligatorios más bajos reducen el riesgo.</li>
-      <li><strong>Etapas iniciales de carrera:</strong> Los jóvenes profesionales con fuerte potencial de crecimiento de ingresos pueden preferir pagos más bajos ahora, planeando hacer pagos extra a medida que aumenten los ingresos.</li>
-      <li><strong>Oportunidades de inversión:</strong> El ahorro mensual puede dirigirse a cuentas de jubilación con ventajas fiscales u otras inversiones que pueden generar rendimientos superiores al tipo del préstamo.</li>
-    </ul>
-    <p>El plazo de 30 años también funciona como seguro contra contratiempos financieros. Si pierdes tu empleo o enfrentas gastos inesperados, los pagos obligatorios más bajos son más fáciles de gestionar que el calendario rígido de un préstamo a 15 años.</p>
-    <h2>El coste oculto de la flexibilidad</h2>
-    <p>El riesgo principal de un préstamo a 30 años es conductual. Muchos prestatarios pretenden hacer pagos extra pero no logran seguir adelante consistentemente. La vida interviene, y el dinero extra se gasta en otras cosas. A lo largo de 30 años, esta inacción cuesta decenas de miles en intereses innecesarios.</p>
-    <p>Si eliges un préstamo a 30 años, considera automatizar los pagos extra de principal. Configura transferencias automáticas por la cantidad que habrías pagado en un calendario a 15 años. Esto elimina el requisito de fuerza de voluntad y captura la mayor parte del ahorro en intereses mientras preserva la flexibilidad de reducir o pausar los pagos extra en tiempos difíciles.</p>
-    <h2>Diferencias en los tipos de interés</h2>
-    <p>Los prestamistas típicamente ofrecen tipos más bajos para préstamos a 15 años porque conllevan menos riesgo. El plazo más corto significa menos tiempo para que las condiciones económicas cambien, y las cuotas mensuales más altas indican una posición financiera del prestatario más sólida. Una diferencia de tipo del 0,25% al 0,75% es común.</p>
-    <p>Esta ventaja de tipo potencia los ahorros del plazo más corto. Usando nuestro ejemplo anterior, si el tipo a 15 años es del 5,5% en lugar del 6%, la cuota mensual baja a unos 2.452 &euro; y los intereses totales caen a unos 141.400 &euro; — un ahorro adicional de 14.300 &euro; comparado con el mismo plazo al 6%.</p>
-    <h2>Calcula tus propios números</h2>
-    <p>Usa Amorta para modelar ambos escenarios con los parámetros reales de tu préstamo. Compara no solo la cuota y los intereses totales, sino también examina cuán rápido acumulas patrimonio en cada escenario. El calendario de amortización revela exactamente cuándo ocurre el punto de cruce — cuando los pagos de principal superan los pagos de intereses — que sucede mucho antes con un préstamo a 15 años.</p>
-    <p>No existe una elección universalmente correcta. El plazo adecuado depende de tu estabilidad de ingresos, otros objetivos financieros, tolerancia al riesgo y disciplina con los fondos discrecionales. Lo que importa es tomar la decisión conscientemente en lugar de optar por defecto a la opción de 30 años simplemente porque la cuota mensual es más baja.</p>
-  `,
+  articleLoanTermComparisonBody,
   articleLoanTermComparisonSeoTitle:
     'Préstamos a 15 vs 30 Años: Cómo Elegir Correctamente | Amorta',
   articleLoanTermComparisonSeoDescription:
     'Compara préstamos a 15 y 30 años. Entiende el equilibrio entre cuotas mensuales e intereses totales para elegir la hipoteca adecuada para tu situación financiera.',
-  articleBiweeklyVsMonthlyPaymentsBody: `
-    <p>Algunos prestamistas ofrecen planes de pago quincenal como una forma de pagar tu hipoteca más rápido. La idea suena atractiva: en lugar de hacer 12 pagos al año, haces 26 &mdash; efectivamente un pago mensual extra por año sin notarlo. Pero ¿realmente funciona y vale la pena el cambio?</p>
-    <h2>Cómo funcionan los pagos quincenales</h2>
-    <p>Con un calendario de pago mensual, pagas tu hipoteca 12 veces al año. Con quincenal, pagas la mitad de tu pago mensual cada dos semanas. Como hay 52 semanas en un año, esto resulta en 26 pagos &mdash; o 13 equivalentes mensuales completos por año.</p>
-    <p>Ese pago extra va directamente al capital, evitando los intereses. A lo largo de una hipoteca a 30 años, esto puede reducir de 4 a 5 años del plazo del préstamo y ahorrar decenas de miles en intereses.</p>
-    <h2>La matemática detrás</h2>
-    <p>Consideremos una hipoteca de 300.000 &euro; al 6% TAE durante 30 años. El pago mensual es aproximadamente 1.798 &euro;.</p>
-    <p>Con pagos mensuales, haces 360 pagos totalizando 647.200 &euro; &mdash; de los cuales 347.200 &euro; son intereses.</p>
-    <p>Con pagos quincenales de 899 &euro; (la mitad del monto mensual), haces 26 pagos por año. El extra de 1.798 &euro; por año reduce el capital más rápido. Terminas pagando el préstamo en unos 26 años en lugar de 30, ahorrando aproximadamente 45.000 &euro; en intereses totales.</p>
-    <h2>Cuidado con las comisiones</h2>
-    <p>Algunos prestamistas cobran comisiones de configuración o transacción por programas de pago quincenal, especialmente servicios de terceros que gestionan el calendario. Estas comisiones pueden superar fácilmente los ahorros de intereses. Antes de inscribirte, calcula si el costo inicial vale el beneficio.</p>
-    <p>También verifica que los pagos extra se apliquen directamente al capital, no se retengan como prepago de seguro. Algunos prestamistas pueden no procesarlos correctamente.</p>
-    <h2>La estrategia equivalente</h2>
-    <p>Aquí está la idea clave: un pago quincenal es matemáticamente equivalente a hacer un pago mensual extra por año. Si puedes presupuestarlo, simplemente agregar 1/12 de tu pago mensual a cada pago mensual logra el mismo resultado &mdash; sin ninguna participación del prestamista ni comisiones.</p>
-    <p>Por ejemplo, agrega 150 &euro; a tu pago mensual de 1.798 &euro; (1.948 &euro; total) y obtienes el mismo beneficio que un calendario quincenal. Este enfoque es más flexible porque tú controlas el monto extra y puedes ajustarlo según sea necesario.</p>
-    <h2>Cuando tiene sentido lo quincenal</h2>
-    <p>Los pagos quincenales pueden ser convenientes si te pagan quincenalmente y quieres que tu pago de hipoteca se alinee con tu ciclo de ingresos. Esta sincronización puede facilitar la elaboración del presupuesto y garantizar que el pago se realice a tiempo.</p>
-    <p>También ayudan si te cuesta ahorrar lo suficiente para un pago extra de suma global. Distribuir el extra en pagos más pequeños y frecuentes se siente menos doloroso para algunos borrowers.</p>
-    <h2>Calcula tus propios números</h2>
-    <p>Usa Amorta para comparar mensualmente versus quincenalmente lado a lado. La diferencia en intereses totales pagados y el plazo del préstamo hace claros los compromisos, para que puedas decidir si un plan quincenal o un simple pago mensual extra funciona mejor para tu situación.</p>
-  `,
+  articleBiweeklyVsMonthlyPaymentsBody,
 }

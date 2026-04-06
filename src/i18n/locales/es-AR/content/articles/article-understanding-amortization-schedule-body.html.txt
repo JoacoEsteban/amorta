@@ -1,0 +1,19 @@
+<p>Una tabla de amortización es un cuadro que muestra cada pago a lo largo de la vida de un préstamo. Desglosa cada pago en cuánto se destina a intereses, cuánto reduce el capital y cuál es el saldo restante después de cada pago. Entender esta tabla te ayuda a seguir tu progreso real en el pago de la deuda.</p>
+    <h2>Las columnas explicadas</h2>
+    <p>Cada fila de la tabla representa un pago. Para un préstamo mensual, cada fila corresponde a un mes. Las columnas clave son:</p>
+    <ul>
+      <li><strong>Número de pago</strong>: La secuencia (1, 2, 3&hellip; n)</li>
+      <li><strong>Monto del pago</strong>: El pago mensual fijo (constante en la amortización francesa)</li>
+      <li><strong>Porción de intereses</strong>: La parte del pago que se destina a intereses del período</li>
+      <li><strong>Porción de capital</strong>: La parte que reduce el saldo pendiente</li>
+      <li><strong>Saldo restante</strong>: El monto adeudado después de aplicar el pago</li>
+    </ul>
+    <h2>Cómo cambian los intereses y el capital</h2>
+    <p>En la amortización francesa, el pago es fijo, pero su composición cambia drásticamente con el tiempo. Los pagos tempranos son mayormente intereses; los pagos tardíos son mayormente capital. Esto sucede porque los intereses se calculan sobre el saldo restante, que es más alto al inicio.</p>
+    <p>Consideremos los primeros meses de una hipoteca de 200.000 &euro; al 6% TAE durante 30 años (360 pagos mensuales). La tasa periódica es aproximadamente 0,00487 mensual. En el mes 1, los intereses sobre un saldo de 200.000 &euro; son aproximadamente 974 &euro;. Los 373 &euro; restantes del pago reducen el capital. En el mes 180 (año 15), el saldo es mucho menor, por lo que la porción de intereses disminuye y la porción de capital crece correspondientemente.</p>
+    <h2>El punto de cruce</h2>
+    <p>Hay un punto en cada tabla de amortización donde las porciones de intereses y capital son iguales. Para una hipoteca a 30 años al 6%, esto sucede alrededor del año 12 o 13. Antes de este <strong>punto de cruce</strong>, estás pagando más en intereses que reduciendo capital. Después de él, la reducción del capital se acelera.</p>
+    <p>Esto tiene implicaciones prácticas para los pagos extra. Hacer pagos extra antes del punto de cruce tiene un impacto mucho mayor en el total de intereses pagados que los mismos pagos extra realizados más tarde, porque los pagos extra tempranos evitan todos los intereses futuros sobre ese monto.</p>
+    <h2>Leyendo tu propia tabla</h2>
+    <p>Cuando ejecutás un cálculo en Amorta, la tabla muestra exactamente estas columnas para cada intervalo de pago. Podés ver los intereses acumulados al final de la tabla, lo que te ayuda a entender el costo real del préstamo durante su plazo completo.</p>
+    <p>Prestá atención a la columna de intereses en las primeras filas para ver cuánto de tu pago se "desperdicia" en intereses versus la construcción de patrimonio. Esta perspectiva ayuda al evaluar si hacer pagos extra o al comparar ofertas de préstamos.</p>

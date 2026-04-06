@@ -1,0 +1,20 @@
+<p>One of the most effective ways to save money on a loan is to make extra payments towards the principal. Even small additional amounts can have an outsized impact over time, shaving years off your loan and thousands off the total interest paid.</p>
+    <h2>How extra payments work</h2>
+    <p>In French amortisation, every payment is split between interest and principal. The interest is calculated on the remaining balance, so when you reduce the principal faster, less interest accrues in subsequent periods.</p>
+    <p>When you make an extra payment, the entire amount goes directly to reducing the principal &mdash; bypassing the normal interest calculation for that portion. This means you save not just the interest on that payment, but all future interest that would have accrued on that amount.</p>
+    <p>The earlier you make extra payments in the loan term, the more powerful they become. This is because interest is calculated on the remaining balance, which is highest at the start of the loan.</p>
+    <h2>A concrete example</h2>
+    <p>Consider a &pound;300,000 mortgage at 6% EAR over 30 years. The monthly payment is approximately &pound;1,798. Without extra payments, you would pay &pound;347,200 in total interest over the life of the loan.</p>
+    <p>Now suppose you pay an extra &pound;200 per month. After 30 years, you would have paid only &pound;240,600 in interest &mdash; a saving of over &pound;106,000. And you would have paid off the loan about 7 years early.</p>
+    <p>Make the same &pound;200 extra payment, but wait until year 15 to start. The savings drop to about &pound;28,000 and you only shave 3 years off the term. The timing matters enormously.</p>
+    <h2>Types of extra payments</h2>
+    <p>There are two main approaches to extra payments:</p>
+    <ul>
+      <li><strong>Recurring extra payments</strong>: Adding a fixed amount to each monthly payment. For example, paying &pound;1,998 instead of &pound;1,798 every month.</li>
+      <li><strong>Lump-sum extra payments</strong>: Making occasional larger payments when you have extra funds, such as from tax refunds, bonuses, or inheritance.</li>
+    </ul>
+    <p>Both approaches are effective. Recurring extra payments provide consistent progress and are easier to budget for. Lump-sum payments can make a big dent quickly when larger amounts are available.</p>
+    <h2>Check for prepayment penalties</h2>
+    <p>Before committing to extra payments, check your loan agreement for prepayment penalties. Some loans charge a fee if you pay off the loan early, which can offset the interest savings. This is more common in fixed-rate mortgages in some countries, though many modern loans have eliminated such penalties.</p>
+    <h2>Run your own numbers</h2>
+    <p>Use Amorta to model how extra payments would affect your specific loan. The schedule table makes it easy to see how extra payments change the balance over time and how much interest you save. Even a small extra payment can make a meaningful difference when you stick with it over time.</p>

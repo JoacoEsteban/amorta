@@ -1,0 +1,19 @@
+<p>Algunos prestamistas ofrecen planes de pago quincenal como una forma de pagar tu hipoteca más rápido. La idea suena atractiva: en lugar de hacer 12 pagos al año, haces 26 &mdash; efectivamente un pago mensual extra por año sin notarlo. Pero ¿realmente funciona y vale la pena el cambio?</p>
+    <h2>Cómo funcionan los pagos quincenales</h2>
+    <p>Con un calendario de pago mensual, pagas tu hipoteca 12 veces al año. Con quincenal, pagas la mitad de tu pago mensual cada dos semanas. Como hay 52 semanas en un año, esto resulta en 26 pagos &mdash; o 13 equivalentes mensuales completos por año.</p>
+    <p>Ese pago extra va directamente al capital, evitando los intereses. A lo largo de una hipoteca a 30 años, esto puede reducir de 4 a 5 años del plazo del préstamo y ahorrar decenas de miles en intereses.</p>
+    <h2>La matemática detrás</h2>
+    <p>Consideremos una hipoteca de 300.000 &euro; al 6% TAE durante 30 años. El pago mensual es aproximadamente 1.798 &euro;.</p>
+    <p>Con pagos mensuales, haces 360 pagos totalizando 647.200 &euro; &mdash; de los cuales 347.200 &euro; son intereses.</p>
+    <p>Con pagos quincenales de 899 &euro; (la mitad del monto mensual), haces 26 pagos por año. El extra de 1.798 &euro; por año reduce el capital más rápido. Terminas pagando el préstamo en unos 26 años en lugar de 30, ahorrando aproximadamente 45.000 &euro; en intereses totales.</p>
+    <h2>Cuidado con las comisiones</h2>
+    <p>Algunos prestamistas cobran comisiones de configuración o transacción por programas de pago quincenal, especialmente servicios de terceros que gestionan el calendario. Estas comisiones pueden superar fácilmente los ahorros de intereses. Antes de inscribirte, calcula si el costo inicial vale el beneficio.</p>
+    <p>También verifica que los pagos extra se apliquen directamente al capital, no se retengan como prepago de seguro. Algunos prestamistas pueden no procesarlos correctamente.</p>
+    <h2>La estrategia equivalente</h2>
+    <p>Aquí está la idea clave: un pago quincenal es matemáticamente equivalente a hacer un pago mensual extra por año. Si puedes presupuestarlo, simplemente agregar 1/12 de tu pago mensual a cada pago mensual logra el mismo resultado &mdash; sin ninguna participación del prestamista ni comisiones.</p>
+    <p>Por ejemplo, agrega 150 &euro; a tu pago mensual de 1.798 &euro; (1.948 &euro; total) y obtienes el mismo beneficio que un calendario quincenal. Este enfoque es más flexible porque tú controlas el monto extra y puedes ajustarlo según sea necesario.</p>
+    <h2>Cuando tiene sentido lo quincenal</h2>
+    <p>Los pagos quincenales pueden ser convenientes si te pagan quincenalmente y quieres que tu pago de hipoteca se alinee con tu ciclo de ingresos. Esta sincronización puede facilitar la elaboración del presupuesto y garantizar que el pago se realice a tiempo.</p>
+    <p>También ayudan si te cuesta ahorrar lo suficiente para un pago extra de suma global. Distribuir el extra en pagos más pequeños y frecuentes se siente menos doloroso para algunos borrowers.</p>
+    <h2>Calcula tus propios números</h2>
+    <p>Usa Amorta para comparar mensualmente versus quincenalmente lado a lado. La diferencia en intereses totales pagados y el plazo del préstamo hace claros los compromisos, para que puedas decidir si un plan quincenal o un simple pago mensual extra funciona mejor para tu situación.</p>
