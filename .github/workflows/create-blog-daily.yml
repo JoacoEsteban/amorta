@@ -2,14 +2,14 @@ name: Create Daily Blog Post
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # 8am UTC = 5am UTC-3 (America/Argentina)
-  workflow_dispatch:  # Allow manual trigger
+    - cron: '0 8 * * *' # 8am UTC = 5am UTC-3 (America/Argentina)
+  workflow_dispatch: # Allow manual trigger
 
 jobs:
   create-blog:
     runs-on: ubuntu-latest
     environment: production
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

@@ -45,7 +45,7 @@ const buildTestCases = (): TestCase[] => {
 
       if (!body) {
         throw new Error(
-          `Missing body content for article "${article.slug}" in locale "${locale}" (key: ${article.bodyKey})`
+          `Missing body content for article "${article.slug}" in locale "${locale}" (key: ${article.bodyKey})`,
         )
       }
 
@@ -64,13 +64,13 @@ describe('blog article word count', () => {
     'article "%s" (%s) has at least 800 words',
     ({ slug, locale, wordCount }) => {
       expect(wordCount).toBeGreaterThanOrEqual(MIN_WORD_COUNT)
-    }
+    },
   )
 
   test.each(testCases)(
     'article "%s" (%s) has at most 1500 words',
     ({ slug, locale, wordCount }) => {
       expect(wordCount).toBeLessThanOrEqual(MAX_WORD_COUNT)
-    }
+    },
   )
 })
