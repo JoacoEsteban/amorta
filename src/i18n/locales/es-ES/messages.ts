@@ -314,12 +314,14 @@ export const esESMessages = {
     'Cómo Calcular el Saldo Pendiente de tu Préstamo | Amorta',
   articleCalculatingRemainingLoanBalanceSeoDescription:
     'Aprende las fórmulas matemáticas para calcular tu saldo exacto en cualquier momento. Comprende los métodos prospectivo y retrospectivo con ejemplos prácticos.',
-  articleFactorsAffectingMortgageRatesTitle: 'Factores que Afectan el Tipo de Interés de tu Hipoteca',
+  articleFactorsAffectingMortgageRatesTitle:
+    'Factores que Afectan el Tipo de Interés de tu Hipoteca',
   articleFactorsAffectingMortgageRatesDescription:
     'Conoce los factores clave que los prestamistas consideran al establecer tasas hipotecarias, desde el historial crediticio hasta las condiciones del mercado, y cómo puedes mejorar tu tasa.',
   articleFactorsAffectingMortgageRatesDate: '6 de Abril de 2026',
   articleFactorsAffectingMortgageRatesBody,
-  articleFactorsAffectingMortgageRatesSeoTitle: 'Factores que Afectan el Tipo de Interés de tu Hipoteca | Amorta',
+  articleFactorsAffectingMortgageRatesSeoTitle:
+    'Factores que Afectan el Tipo de Interés de tu Hipoteca | Amorta',
   articleFactorsAffectingMortgageRatesSeoDescription:
     'Descubre qué factores afectan el tipo de interés de tu hipoteca. Aprende cómo los historiales crediticios, las relaciones préstamo-valor y las condiciones del mercado influyen en tu tasa.',
 }

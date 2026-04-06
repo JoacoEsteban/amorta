@@ -299,7 +299,8 @@ export const enUSMessages = {
   articleLoanTermComparisonSeoDescription:
     'Compare 15-year and 30-year loan terms. Understand the tradeoffs between monthly payments and total interest to choose the right mortgage for your financial situation.',
   articleBiweeklyVsMonthlyPaymentsBody,
-  articleCalculatingRemainingLoanBalanceTitle: 'How to Calculate Your Remaining Loan Balance at Any Point',
+  articleCalculatingRemainingLoanBalanceTitle:
+    'How to Calculate Your Remaining Loan Balance at Any Point',
   articleCalculatingRemainingLoanBalanceDescription:
     'Learn the mathematical formulas and methods to calculate your exact loan balance at any point during repayment, including practical examples and common pitfalls to avoid.',
   articleCalculatingRemainingLoanBalanceDate: 'April 6, 2026',
@@ -308,12 +309,14 @@ export const enUSMessages = {
     'How to Calculate Your Remaining Loan Balance at Any Point | Amorta',
   articleCalculatingRemainingLoanBalanceSeoDescription:
     'Learn the mathematical formulas to calculate your exact loan balance at any point. Understand prospective and retrospective methods with practical examples.',
-  articleFactorsAffectingMortgageRatesTitle: 'Factors That Affect Your Mortgage Interest Rate',
+  articleFactorsAffectingMortgageRatesTitle:
+    'Factors That Affect Your Mortgage Interest Rate',
   articleFactorsAffectingMortgageRatesDescription:
     'Learn the key factors lenders consider when setting mortgage rates, from credit scores to market conditions, and how you can improve your rate.',
   articleFactorsAffectingMortgageRatesDate: 'April 6, 2026',
   articleFactorsAffectingMortgageRatesBody,
-  articleFactorsAffectingMortgageRatesSeoTitle: 'Factors That Affect Your Mortgage Interest Rate | Amorta',
+  articleFactorsAffectingMortgageRatesSeoTitle:
+    'Factors That Affect Your Mortgage Interest Rate | Amorta',
   articleFactorsAffectingMortgageRatesSeoDescription:
     'Discover what factors affect your mortgage interest rate. Learn how credit scores, loan-to-value ratios, debt-to-income ratios, and market conditions influence your rate.',
 }
