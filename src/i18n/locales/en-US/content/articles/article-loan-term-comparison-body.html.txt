@@ -2,7 +2,11 @@
     <h2>The fundamental tradeoff</h2>
     <p>Shorter loan terms mean higher monthly payments but significantly less total interest paid. Longer terms spread the same principal over more payments, reducing the monthly burden but increasing the total cost of borrowing. This is not just arithmetic &mdash; it affects your monthly cash flow, your ability to save for other goals, and your overall financial flexibility.</p>
     <p>Consider a $300,000 mortgage at 6% EAR. With a 30-year term, your monthly payment is approximately $1,798, and you will pay about $347,000 in total interest over the life of the loan. With a 15-year term, the monthly payment jumps to roughly $2,532, but your total interest paid drops to around $155,700. You save over $191,000 in interest, but your monthly obligation is $734 higher.</p>
-    <h2>When a 15-year loan makes sense</h2>
+    <h2>20-year and other intermediate terms</h2>
+<p>Not all loans fit neatly into 15-year or 30-year boxes. Many lenders offer 20-year terms, and some provide even more flexibility with 10-year or 25-year options. These intermediate terms can offer a useful middle ground for borrowers who want to balance monthly affordability with total interest savings.</p>
+<p>A 20-year term on a $300,000 mortgage at 6% EAR produces a monthly payment of approximately $2,149 &mdash; about $383 more than the 30-year option but $383 less than the 15-year. Total interest paid would be around $215,700, saving you roughly $131,000 compared to the 30-year term while maintaining more breathing room than the 15-year requires.</p>
+<p>These intermediate terms work well for borrowers in their late 30s or early 40s who want their mortgage paid off by retirement but cannot comfortably handle the 15-year payment. They also suit those who expect their income to remain relatively stable without significant growth potential.</p>
+<h2>When a 15-year loan makes sense</h2>
     <p>A 15-year loan is ideal when you have stable, predictable income and your monthly budget can comfortably accommodate the higher payment without sacrificing emergency savings or retirement contributions. The benefits extend beyond interest savings:</p>
     <ul>
       <li><strong>Equity builds faster:</strong> With higher principal payments from the start, you own more of your home sooner. This matters if you need to sell or borrow against the property.</li>
@@ -27,3 +31,13 @@
     <h2>Running your own numbers</h2>
     <p>Use Amorta to model both scenarios with your actual loan parameters. Compare not just the payment and total interest, but also examine how quickly you build equity in each scenario. The amortization schedule reveals exactly when the crossover point occurs &mdash; when principal payments exceed interest payments &mdash; which happens much sooner with a 15-year loan.</p>
     <p>There is no universally correct choice. The right term depends on your income stability, other financial goals, risk tolerance, and discipline with discretionary funds. What matters is making the decision consciously rather than defaulting to the 30-year option simply because the monthly payment is lower.</p>
+<h3>What to compare</h3>
+<p>When running calculations in Amorta, focus on these key comparisons across different loan terms:</p>
+<ul>
+<li><strong>Monthly cash flow impact:</strong> How much breathing room remains after your mortgage payment?</li>
+<li><strong>Total interest paid:</strong> The lifetime cost difference between terms can be staggering.</li>
+<li><strong>Equity at key milestones:</strong> Check your balance after 5, 10, and 15 years to see how quickly you build ownership.</li>
+<li><strong>Crossover point timing:</strong> When does principal exceed interest in your payments? This happens earlier with shorter terms.</li>
+<li><strong>Flexibility value:</strong> Quantify what the lower monthly payment enables &mdash; higher retirement contributions, faster debt repayment, or investment opportunities.</li>
+</ul>
+<p>Consider running scenarios with different interest rates, as shorter terms typically qualify for lower rates. Even a 0.25% rate reduction can shift the math significantly over a 15 or 20 year period. The goal is finding the term that maximizes your financial security while minimizing total borrowing costs.</p>

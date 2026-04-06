@@ -1,19 +1,46 @@
-<p>Una tabla de amortización es un cuadro que muestra cada pago a lo largo de la vida de un préstamo. Desglosa cada pago en cuánto se destina a intereses, cuánto reduce el capital y cuál es el saldo restante después de cada pago. Entender esta tabla te ayuda a seguir tu progreso real en el pago de la deuda.</p>
+<p>Una tabla de amortizaci&oacute;n es un cuadro que muestra cada pago a lo largo de la vida de un pr&eacute;stamo. Desglosa cada pago en cu&aacute;nto se destina a intereses, cu&aacute;nto reduce el capital y cu&aacute;l es el saldo restante despu&eacute;s de cada pago. Entender esta tabla te ayuda a seguir tu progreso real en el pago de la deuda y tomar decisiones financieras informadas durante toda la vida de tu pr&eacute;stamo.</p>
     <h2>Las columnas explicadas</h2>
-    <p>Cada fila de la tabla representa un pago. Para un préstamo mensual, cada fila corresponde a un mes. Las columnas clave son:</p>
+    <p>Cada fila de la tabla representa un pago. Para un pr&eacute;stamo mensual, cada fila corresponde a un mes. Comprender lo que representa cada columna te ayuda a interpretar el progreso de tu pr&eacute;stamo:</p>
     <ul>
-      <li><strong>Número de pago</strong>: La secuencia (1, 2, 3&hellip; n)</li>
-      <li><strong>Monto del pago</strong>: El pago mensual fijo (constante en la amortización francesa)</li>
-      <li><strong>Porción de intereses</strong>: La parte del pago que se destina a intereses del período</li>
-      <li><strong>Porción de capital</strong>: La parte que reduce el saldo pendiente</li>
-      <li><strong>Saldo restante</strong>: El monto adeudado después de aplicar el pago</li>
+      <li><strong>N&uacute;mero de pago</strong>: La secuencia (1, 2, 3&hellip; n). Esto rastrea d&oacute;nde te encontr&aacute;s en el plazo del pr&eacute;stamo y te ayuda a identificar pagos espec&iacute;ficos al revisar tu historial.</li>
+      <li><strong>Monto del pago</strong>: El pago mensual fijo (constante en la amortizaci&oacute;n francesa). Esta es la cantidad total que pag&aacute;s cada per&iacute;odo, que permanece sin cambios incluso cuando la divisi&oacute;n interna entre intereses y capital var&iacute;a.</li>
+      <li><strong>Porci&oacute;n de intereses</strong>: La parte del pago que se destina a intereses del per&iacute;odo. Se calcula multiplicando el saldo restante por la tasa de inter&eacute;s peri&oacute;dica. Comienza alto y disminuye con el tiempo.</li>
+      <li><strong>Porci&oacute;n de capital</strong>: La parte que reduce el saldo pendiente. Esto comienza peque&ntilde;o y crece a medida que la porci&oacute;n de intereses disminuye, acelerando la construcci&oacute;n de tu patrimonio con el tiempo.</li>
+      <li><strong>Saldo restante</strong>: El monto adeudado despu&eacute;s de aplicar el pago. Ver disminuir esta columna muestra tu progreso hacia el pago total y te ayuda a comprender cu&aacute;nto deb&eacute;s en cualquier momento.</li>
     </ul>
-    <h2>Cómo cambian los intereses y el capital</h2>
-    <p>En la amortización francesa, el pago es fijo, pero su composición cambia drásticamente con el tiempo. Los pagos tempranos son mayormente intereses; los pagos tardíos son mayormente capital. Esto sucede porque los intereses se calculan sobre el saldo restante, que es más alto al inicio.</p>
-    <p>Consideremos los primeros meses de una hipoteca de 200.000 &euro; al 6% TAE durante 30 años (360 pagos mensuales). La tasa periódica es aproximadamente 0,00487 mensual. En el mes 1, los intereses sobre un saldo de 200.000 &euro; son aproximadamente 974 &euro;. Los 373 &euro; restantes del pago reducen el capital. En el mes 180 (año 15), el saldo es mucho menor, por lo que la porción de intereses disminuye y la porción de capital crece correspondientemente.</p>
+    <p>Algunas tablas tambi&eacute;n incluyen un total acumulado de intereses pagados, que puede ser revelador. Ver que has pagado 50.000 &euro; en intereses durante cinco a&ntilde;os mientras solo reduc&iacute;s el capital en 25.000 &euro; ilustra por qu&eacute; los pagos extra tempranos son tan poderosos.</p>
+    <h2>C&oacute;mo cambian los intereses y el capital</h2>
+    <p>En la amortizaci&oacute;n francesa, el pago es fijo, pero su composici&oacute;n cambia dr&aacute;sticamente con el tiempo. Los pagos tempranos son mayormente intereses; los pagos tard&iacute;os son mayormente capital. Esto sucede porque los intereses se calculan sobre el saldo restante, que es m&aacute;s alto al inicio.</p>
+    <p>Consider&aacute; los primeros meses de una hipoteca de 200.000 &euro; al 6% TAE durante 30 a&ntilde;os (360 pagos mensuales). La tasa peri&oacute;dica es aproximadamente 0,00487 mensual. En el mes 1, los intereses sobre un saldo de 200.000 &euro; son aproximadamente 974 &euro;. Los 373 &euro; restantes del pago reducen el capital. En el mes 180 (a&ntilde;o 15), el saldo es mucho menor, por lo que la porci&oacute;n de intereses disminuye a unos 570 &euro; mientras que la porci&oacute;n de capital crece a 777 &euro;.</p>
+    <p>Esta composici&oacute;n cambiante significa que el mismo pago mensual de 1.347 &euro; construye patrimonio lentamente al principio pero se acelera significativamente en a&ntilde;os posteriores. Comprender este patr&oacute;n te ayuda a evaluar estrategias como la refinanciaci&oacute;n o hacer pagos extra.</p>
     <h2>El punto de cruce</h2>
-    <p>Hay un punto en cada tabla de amortización donde las porciones de intereses y capital son iguales. Para una hipoteca a 30 años al 6%, esto sucede alrededor del año 12 o 13. Antes de este <strong>punto de cruce</strong>, estás pagando más en intereses que reduciendo capital. Después de él, la reducción del capital se acelera.</p>
-    <p>Esto tiene implicaciones prácticas para los pagos extra. Hacer pagos extra antes del punto de cruce tiene un impacto mucho mayor en el total de intereses pagados que los mismos pagos extra realizados más tarde, porque los pagos extra tempranos evitan todos los intereses futuros sobre ese monto.</p>
+    <p>Hay un punto en cada tabla de amortizaci&oacute;n donde las porciones de intereses y capital son iguales. Para una hipoteca a 30 a&ntilde;os al 6%, esto sucede alrededor del a&ntilde;o 12 o 13. Antes de este <strong>punto de cruce</strong>, est&aacute;s pagando m&aacute;s en intereses que reduciendo capital. Despu&eacute;s de &eacute;l, la reducci&oacute;n del capital se acelera.</p>
+    <p>Esto tiene implicaciones pr&aacute;cticas para los pagos extra. Hacer pagos extra antes del punto de cruce tiene un impacto mucho mayor en el total de intereses pagados que los mismos pagos extra realizados m&aacute;s tarde, porque los pagos extra tempranos evitan todos los intereses futuros sobre ese monto. Un pago extra de 1.000 &euro; en el a&ntilde;o 2 podr&iacute;a ahorrarte 3.000 &euro; en intereses totales, mientras que el mismo pago en el a&ntilde;o 20 podr&iacute;a ahorrar solo 500 &euro;.</p>
+    <h2>C&oacute;mo usar tu tabla</h2>
+    <p>M&aacute;s all&aacute; de simplemente rastrear pagos, tu tabla de amortizaci&oacute;n es una herramienta valiosa para la planificaci&oacute;n financiera:</p>
+    <h3>Planificaci&oacute;n de deducciones fiscales</h3>
+    <p>Si detall&aacute;s las deducciones y pod&eacute;s deducir los intereses de la hipoteca, tu tabla muestra exactamente cu&aacute;nto inter&eacute;s pagar&aacute;s cada a&ntilde;o. Esto te ayuda a estimar tu deducci&oacute;n fiscal y planificar en consecuencia. En los primeros a&ntilde;os de una hipoteca, cuando los pagos de intereses son m&aacute;s altos, esta deducci&oacute;n puede ser sustancial.</p>
+    <h3>Decisiones de momento para refinanciaci&oacute;n</h3>
+    <p>Tu tabla te ayuda a evaluar si tiene sentido la refinanciaci&oacute;n. Si ya pasaste el punto de cruce y est&aacute;s construyendo patrimonio r&aacute;pidamente, refinanciar a un nuevo pr&eacute;stamo a 30 a&ntilde;os reinicia el reloj y te vuelve a poner en pagos con muchos intereses. Us&aacute; tu tabla para calcular el punto de equilibrio entre los costos de refinanciaci&oacute;n y los ahorros de intereses.</p>
+    <h3>Seguimiento de progreso hacia metas</h3>
+    <p>Tu tabla te permite establecer hitos claros, como cuando tu saldo bajar&aacute; de 200.000 &euro; a 100.000 &euro;, o cu&aacute;ndo habr&aacute;s pagado la mitad de tu pr&eacute;stamo. Estos hitos pueden servir como motivaci&oacute;n y ayudarte a evaluar si est&aacute;s en camino para pagar antes de una fecha objetivo.</p>
+    <h2>Errores que deb&eacute;s evitar</h2>
+    <p>Muchos prestatarios malinterpretan su tabla de amortizaci&oacute;n, lo que lleva a errores costosos:</p>
+    <ul>
+      <li><strong>Ignorar los primeros a&ntilde;os</strong>: Los primeros cinco a&ntilde;os de una hipoteca a 30 a&ntilde;os son donde los pagos extra tienen m&aacute;s impacto. Esperar hasta el a&ntilde;o 10 para comenzar a hacer pagos extra deja ahorros significativos sobre la mesa.</li>
+      <li><strong>Refinanciar sin considerar el reinicio</strong>: La refinanciaci&oacute;n reinicia tu tabla de amortizaci&oacute;n. Incluso a una tasa m&aacute;s baja, comenzar de nuevo con un plazo de 30 a&ntilde;os significa volver a pagos con muchos intereses.</li>
+      <li><strong>No verificar la aplicaci&oacute;n del pago extra</strong>: Cuando hac&eacute;s pagos extra, asegurate de que tu prestamista los aplique al capital inmediatamente en lugar de retenerlos para pagos futuros o aplicarlos a una cuenta de garant&iacute;a.</li>
+      <li><strong>Confundir la tasa nominal con la efectiva</strong>: Algunos prestatarios usan incorrectamente la tasa nominal anual en lugar de la TAE, lo que lleva a c&aacute;lculos incorrectos de su progreso real.</li>
+    </ul>
     <h2>Leyendo tu propia tabla</h2>
-    <p>Cuando ejecutás un cálculo en Amorta, la tabla muestra exactamente estas columnas para cada intervalo de pago. Podés ver los intereses acumulados al final de la tabla, lo que te ayuda a entender el costo real del préstamo durante su plazo completo.</p>
-    <p>Prestá atención a la columna de intereses en las primeras filas para ver cuánto de tu pago se "desperdicia" en intereses versus la construcción de patrimonio. Esta perspectiva ayuda al evaluar si hacer pagos extra o al comparar ofertas de préstamos.</p>
+    <p>Cuando ejecut&aacute;s un c&aacute;lculo en Amorta, la tabla muestra exactamente estas columnas para cada intervalo de pago. Pod&eacute;s ver los intereses acumulados al final de la tabla, lo que te ayuda a entender el costo real del pr&eacute;stamo durante su plazo completo.</p>
+    <p>Prest&aacute; atenci&oacute;n a la columna de intereses en las primeras filas para ver cu&aacute;nto de tu pago se "desperdicia" en intereses versus la construcci&oacute;n de patrimonio. Esta perspectiva ayuda al evaluar si hacer pagos extra o al comparar ofertas de pr&eacute;stamos. Mir&aacute; la columna de saldo restante para rastrear tu progreso y establecer hitos para tu viaje de pago.</p>
+    <p>Revisar regularmente tu tabla te mantiene comprometido con el progreso de pago de tu deuda y te ayuda a identificar oportunidades para ahorrar dinero a trav&eacute;s de pagos extra estrat&eacute;gicos o decisiones de refinanciaci&oacute;n.</p>
+    <h2>Comprensi&oacute;n de se&ntilde;ales visuales</h2>
+    <p>Al leer tu tabla, busc&aacute; estos patrones importantes:</p>
+    <ul>
+      <li><strong>Curva descendente</strong>: La columna de saldo restante debe mostrar una curva que desciende cada vez m&aacute;s r&aacute;pido, no una l&iacute;nea recta.</li>
+      <li><strong>Intereses decrecientes</strong>: La porci&oacute;n de intereses debe disminuir visiblemente cada mes, mientras que la porci&oacute;n de capital aumenta.</li>
+      <li><strong>Punto medio</strong>: Alrededor del pago 180 en un pr&eacute;stamo a 30 a&ntilde;os, deber&iacute;as ver que las porciones de intereses y capital se han igualado y comenzado a cruzarse.</li>
+    </ul>
+    <p>Estas se&ntilde;ales visuales confirman que tu pr&eacute;stamo se est&aacute; amortizando correctamente y te permiten detectar r&aacute;pidamente cualquier error en los c&aacute;lculos de tu prestamista.</p>

@@ -1,1 +1,39 @@
-<p>When comparing loans, you will encounter two different numbers that both describe the yearly cost of borrowing: <strong>APR</strong> (Annual Percentage Rate) and <strong>EAR</strong> (Effective Annual Rate). They sound similar but can differ substantially. Understanding this difference can save you thousands of dollars over the life of a loan.</p><h2>What is APR?</h2><p>The <strong>APR</strong> is a regulatory disclosure designed to make loan comparison easier. It expresses the cost of borrowing as a yearly rate, but it starts from the <em>nominal</em> (stated) interest rate, not the actual effective rate.</p><p>The nominal rate is simply divided by the number of compounding periods per year. For a loan with a 12% nominal annual rate and monthly compounding:</p><pre><code>periodic rate = 0.12 / 12 = 0.01 (1% per month)</code></pre><p>But this ignores the fact that interest in month 2 is calculated on a balance that already includes month 1 interest. After 12 months of 1% monthly compounding, the true annual cost is higher than 12%.</p><h2>What is EAR?</h2><p>The <strong>EAR</strong> (sometimes called the <strong>APY</strong>, or Annual Percentage Yield) accounts for the compounding effect within the year. It answers the question: <em>what is the actual yearly cost, including compounding?</em></p><pre><code>EAR = (1 + nominal rate / periods)<sup>periods</sup> &minus; 1</code></pre><p>For the 12% nominal rate with monthly compounding:</p><pre><code>EAR = (1 + 0.12 / 12)<sup>12</sup> &minus; 1 = 0.1268 (12.68%)</code></pre><p>This 0.68% difference may seem small, but it compounds over a 30-year mortgage into meaningful extra interest paid.</p><h2>Which rate should you use?</h2><p>For the annuity formula that underlies French amortization, <strong>EAR is the correct rate</strong>. The formula assumes effective periodic rates, and using the nominal APR divided by periods introduces a systematic error in the calculated payment.</p><p>When comparing loan offers, always ask for the EAR and use it in your calculations.</p>
+<p>When comparing loans, you will encounter two different numbers that both describe the yearly cost of borrowing: <strong>APR</strong> (Annual Percentage Rate) and <strong>EAR</strong> (Effective Annual Rate). They sound similar but can differ substantially. Understanding this difference can save you thousands of dollars over the life of a loan.</p>
+<h2>What is APR?</h2>
+<p>The <strong>APR</strong> is a regulatory disclosure designed to make loan comparison easier. It expresses the cost of borrowing as a yearly rate, but it starts from the <em>nominal</em> (stated) interest rate, not the actual effective rate.</p>
+<p>The nominal rate is simply divided by the number of compounding periods per year. For a loan with a 12% nominal annual rate and monthly compounding:</p>
+<pre><code>periodic rate = 0.12 / 12 = 0.01 (1% per month)</code></pre>
+<p>But this ignores the fact that interest in month 2 is calculated on a balance that already includes month 1 interest. After 12 months of 1% monthly compounding, the true annual cost is higher than 12%.</p>
+<h2>What is EAR?</h2>
+<p>The <strong>EAR</strong> (sometimes called the <strong>APY</strong>, or Annual Percentage Yield) accounts for the compounding effect within the year. It answers the question: <em>what is the actual yearly cost, including compounding?</em></p>
+<pre><code>EAR = (1 + nominal rate / periods)<sup>periods</sup> &minus; 1</code></pre>
+<p>For the 12% nominal rate with monthly compounding:</p>
+<pre><code>EAR = (1 + 0.12 / 12)<sup>12</sup> &minus; 1 = 0.1268 (12.68%)</code></pre>
+<p>This 0.68% difference may seem small, but it compounds over a 30-year mortgage into meaningful extra interest paid.</p>
+<h2>Common misconceptions</h2>
+<p>Many borrowers assume APR and EAR are interchangeable or that the difference is negligible. This confusion is understandable since both rates measure the cost of borrowing, but treating them as equivalent can lead to poor financial decisions.</p>
+<p>One common mistake is assuming that a 6% APR loan costs the same as a 6% EAR loan. In reality, the 6% APR loan with monthly compounding has an EAR of approximately 6.17%, making it more expensive than the loan quoted at 6% EAR directly.</p>
+<p>Another misconception is that APR is always lower than EAR. While this is true for standard loans with more than one compounding period per year, it can create a false sense of savings when comparing offers. Some borrowers also mistakenly believe that the advertised rate is the only number that matters, ignoring how compounding frequency affects the total cost of borrowing over time.</p>
+<p>A particularly dangerous assumption is that the difference between APR and EAR remains constant across all loan types. In reality, the gap varies significantly based on the compounding schedule, loan term, and payment frequency. Credit cards, for example, often compound daily, creating a larger gap between APR and EAR than you would see with a standard monthly mortgage.</p>
+<h2>APR vs EAR across compounding frequencies</h2>
+<p>The gap between APR and EAR widens as compounding becomes more frequent. Here is how a 12% APR translates to EAR under different compounding scenarios:</p>
+<ul>
+<li><strong>Annual compounding (1&times;/year):</strong> APR = 12.00%, EAR = 12.00%</li>
+<li><strong>Semi-annual compounding (2&times;/year):</strong> APR = 12.00%, EAR = 12.36%</li>
+<li><strong>Quarterly compounding (4&times;/year):</strong> APR = 12.00%, EAR = 12.55%</li>
+<li><strong>Monthly compounding (12&times;/year):</strong> APR = 12.00%, EAR = 12.68%</li>
+<li><strong>Daily compounding (365&times;/year):</strong> APR = 12.00%, EAR = 12.75%</li>
+</ul>
+<p>As you can see, the difference is modest at annual compounding but grows significantly with more frequent periods. For most mortgages and auto loans with monthly compounding, expect the EAR to be 0.5% to 1% higher than the advertised APR. Credit cards and some personal loans with daily compounding can have an even larger gap between the two rates.</p>
+<h2>Which rate should you use?</h2>
+<p>For the annuity formula that underlies French amortization, <strong>EAR is the correct rate</strong>. The formula assumes effective periodic rates, and using the nominal APR divided by periods introduces a systematic error in the calculated payment.</p>
+<p>When comparing loan offers, always ask for the EAR and use it in your calculations. Financial institutions are required to disclose both rates in many jurisdictions, but they often emphasize the lower APR in their marketing materials.</p>
+<h3>Real-world example</h3>
+<p>Imagine you are choosing between two $300,000 mortgage offers for a 30-year term:</p>
+<ul>
+<li><strong>Loan A:</strong> 6.0% APR, monthly compounding (EAR &asymp; 6.17%)</li>
+<li><strong>Loan B:</strong> 6.1% EAR directly quoted</li>
+</ul>
+<p>At first glance, Loan A appears cheaper by 0.1 percentage points. But converting both to the same basis reveals the truth. Using the EAR in your payment calculations, Loan B actually has lower monthly payments and costs approximately $12,000 less in total interest over the life of the loan.</p>
+<p>This counterintuitive result happens because the 6.0% APR with monthly compounding actually equals 6.17% EAR, which is higher than Loan B's 6.1% EAR. This is why banks sometimes advertise APR rather than EAR &mdash; the lower number looks more attractive even though it does not reflect the true cost. Always do the math yourself using the EAR to make accurate comparisons and avoid overpaying on your loan.</p>
+<p>When using Amorta to calculate your loan payments and amortization schedule, always input the EAR rather than the APR. This ensures your payment calculations are accurate and your schedule reflects the true cost of borrowing.</p>

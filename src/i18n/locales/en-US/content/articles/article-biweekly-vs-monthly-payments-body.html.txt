@@ -2,16 +2,60 @@
     <h2>How biweekly payments work</h2>
     <p>With a monthly payment schedule, you pay your mortgage 12 times per year. With biweekly, you pay half your monthly payment every two weeks. Since there are 52 weeks in a year, this results in 26 payments &mdash; or 13 full monthly equivalents per year.</p>
     <p>That extra payment goes entirely to principal, bypassing interest. Over a 30-year mortgage, this can shave 4 to 5 years off the loan term and save tens of thousands in interest.</p>
+    <h3>Visualizing the calendar</h3>
+    <p>Picture a calendar year. With monthly payments, you pay on the 1st of each month, 12 times total. With biweekly payments aligned to a typical Friday payday schedule, your payments fall on the 1st, 15th, 29th, 12th, 26th, 9th, 23rd, and so on. Some months you make two payments, others three. Over 12 months, this pattern produces 26 half-payments.</p>
+    <p>The beauty of this approach is psychological. You never write a larger check, yet you automatically accelerate your payoff. The extra payment happens "invisibly" because it is spread across the year in small increments.</p>
     <h2>The math behind it</h2>
     <p>Consider a $300,000 mortgage at 6% EAR over 30 years. The monthly payment is approximately $1,798.</p>
     <p>With monthly payments, you make 360 payments totaling $647,200 &mdash; $347,200 of which is interest.</p>
     <p>With biweekly payments of $899 (half the monthly amount), you make 26 payments per year. The extra $1,798 per year reduces the principal faster. You end up paying off the loan in about 26 years instead of 30, saving roughly $45,000 in total interest.</p>
+    <h2>Comparing the options</h2>
+    <p>Here is how the three main approaches stack up for our $300,000 example:</p>
+    <ul>
+      <li><strong>Standard monthly:</strong> $1,798/month, 30 years, $347,200 total interest</li>
+      <li><strong>Biweekly:</strong> $899 every two weeks, ~26 years, ~$302,000 total interest</li>
+      <li><strong>Monthly with 1/12 extra:</strong> $1,948/month, ~26 years, ~$302,000 total interest</li>
+    </ul>
+    <p>The biweekly and monthly-plus-extra strategies produce nearly identical results. The difference lies in implementation, not outcome.</p>
+    <h2>Is it right for you?</h2>
+    <p>Biweekly payments make the most sense if:</p>
+    <ul>
+      <li>You receive paychecks biweekly and want payments to align with income</li>
+      <li>You struggle to save for lump-sum extra payments</li>
+      <li>Your lender offers a fee-free biweekly program</li>
+      <li>You prefer automated, smaller payments over manual larger ones</li>
+    </ul>
+    <p>They make less sense if:</p>
+    <ul>
+      <li>Your lender charges significant fees for the program</li>
+      <li>You are paid monthly or semi-monthly, creating cash flow mismatches</li>
+      <li>You prefer the flexibility to vary extra payments based on circumstances</li>
+      <li>You have higher-interest debt that should be prioritized</li>
+    </ul>
     <h2>Watch out for fees</h2>
     <p>Some lenders charge setup fees or transaction fees for biweekly payment programs, especially third-party services that manage the schedule. These fees can easily outweigh the interest savings. Before signing up, calculate whether the upfront cost is worth the benefit.</p>
+    <p>Typical fees to watch for include:</p>
+    <ul>
+      <li><strong>Setup fees:</strong> $100-$300 to initiate the program</li>
+      <li><strong>Transaction fees:</strong> $2-$5 per payment processing charge</li>
+      <li><strong>Annual maintenance:</strong> $50-$100 yearly program fee</li>
+    </ul>
+    <p>On 26 payments per year, a $3 transaction fee adds $78 annually. Over 26 years, that is $2,028 in fees alone. Ensure your interest savings exceed these costs.</p>
     <p>Also verify that extra payments are applied directly to principal, not held as prepaid escrow. Some lenders may not process them correctly.</p>
     <h2>The equivalent strategy</h2>
     <p>Here is the key insight: a biweekly payment is mathematically equivalent to making one extra monthly payment per year. If you can budget for it, simply adding 1/12 of your monthly payment to each monthly payment achieves the same result &mdash; without any lender involvement or fees.</p>
+    <h3>Step-by-step implementation</h3>
+    <p>To replicate biweekly benefits with monthly payments:</p>
+    <ol>
+      <li>Calculate 1/12 of your monthly payment (divide by 12)</li>
+      <li>Add this amount to your automatic monthly payment</li>
+      <li>Specify that the extra goes to principal reduction</li>
+      <li>Monitor your statements to ensure proper application</li>
+    </ol>
     <p>For example, add $150 to your $1,798 monthly payment ($1,948 total) and you get the same benefit as a biweekly schedule. This approach is more flexible because you control the extra amount and can adjust it as needed.</p>
+    <h2>Psychological benefits</h2>
+    <p>Beyond the mathematics, biweekly payments offer behavioral advantages. The smaller, more frequent payments feel less daunting than a large monthly outflow. For many borrowers, $899 every two weeks feels more manageable than $1,798 once a month, even though the annual total is higher.</p>
+    <p>This "painless" approach to extra payments can be the difference between following through and abandoning the strategy. If biweekly payments help you consistently pay extra when you otherwise would not, they deliver real value beyond the raw numbers.</p>
     <h2>When biweekly makes sense</h2>
     <p>Biweekly payments can be a good fit if you get paid biweekly and want your mortgage payment to align with your income cycle. This synchronization can make budgeting easier and ensure the payment is made on time.</p>
     <p>They also help if you struggle to save enough for a lump-sum extra payment. Spreading the extra across smaller, more frequent payments feels less painful for some borrowers.</p>

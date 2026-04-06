@@ -7,6 +7,10 @@
     <p>Consider a $300,000 mortgage at 6% EAR over 30 years. The monthly payment is approximately $1,798. Without extra payments, you would pay $347,200 in total interest over the life of the loan.</p>
     <p>Now suppose you pay an extra $200 per month. After 30 years, you would have paid only $240,600 in interest &mdash; a savings of over $106,000. And you would have paid off the loan about 7 years early.</p>
     <p>Make the same $200 extra payment, but wait until year 15 to start. The savings drop to about $28,000 and you only shave 3 years off the term. The timing matters enormously.</p>
+    <h3>How loan size affects savings</h3>
+    <p>The impact of extra payments scales with your loan amount. On a $200,000 mortgage at the same rate, an extra $150 monthly saves about $71,000 and cuts 6 years off the term. On a $400,000 mortgage, an extra $250 monthly saves roughly $132,000 and removes 7 years. The pattern is consistent: earlier and consistent extra payments yield dramatic results.</p>
+    <h3>Month-by-month impact</h3>
+    <p>Here is what happens in the first few months with that extra $200 on a $300,000 loan. Month 1: your extra payment reduces principal by $200, saving you $12 in interest for month 2. Month 2: you save interest on the original $200 plus the $12 that was not charged, compounding the benefit. By month 12, that single $200 extra payment has saved you over $140 in accumulated interest, and the savings continue to grow throughout the loan term.</p>
     <h2>Types of extra payments</h2>
     <p>There are two main approaches to extra payments:</p>
     <ul>
@@ -14,7 +18,25 @@
       <li><strong>Lump-sum extra payments</strong>: Making occasional larger payments when you have extra funds, such as from tax refunds, bonuses, or inheritance.</li>
     </ul>
     <p>Both approaches are effective. Recurring extra payments provide consistent progress and are easier to budget for. Lump-sum payments can make a big dent quickly when larger amounts are available.</p>
+    <h2>When NOT to make extra payments</h2>
+    <p>Despite the mathematical appeal, there are situations where extra mortgage payments should not be your priority:</p>
+    <h3>High-interest debt takes priority</h3>
+    <p>If you carry credit card debt at 18% or higher, paying that off first is mathematically superior to prepaying a 6% mortgage. The difference in interest rates means eliminating high-interest debt saves you more money. Focus on credit cards, personal loans, and other high-rate obligations before considering mortgage prepayment.</p>
+    <h3>Emergency fund comes first</h3>
+    <p>You should have 3 to 6 months of essential expenses saved before making extra loan payments. Without this safety net, a job loss or medical emergency could force you to borrow at high rates, negating any benefit from extra mortgage payments. Your emergency fund provides the stability that makes aggressive debt payoff sustainable.</p>
+    <h3>Investment opportunity cost</h3>
+    <p>If your mortgage rate is 5% but you could invest in a tax-advantaged retirement account expecting 7% returns, the investment wins mathematically. This is especially true if your employer matches retirement contributions &mdash; that match represents an immediate 50% to 100% return that far exceeds mortgage interest savings. Maximize matched contributions before prepaying low-rate mortgages.</p>
+    <h2>Strategies for different budgets</h2>
+    <p>Not everyone can afford large extra payments. Here are approaches scaled to different financial situations:</p>
+    <h3>Small budget: round up payments</h3>
+    <p>Simply round your payment up to the nearest $50 or $100. On a $1,798 payment, rounding to $1,850 adds just $52 monthly but saves thousands over the loan term. This small behavioral change is nearly painless but compounds significantly.</p>
+    <h3>Medium budget: fixed extra amount</h3>
+    <p>Set a specific extra amount you can sustain, such as $100 or $200 monthly. Automate this payment so it happens without requiring ongoing decisions. Consistency matters more than the specific amount.</p>
+    <h3>Large budget: annual lump sums</h3>
+    <p>If your income includes bonuses or you receive tax refunds, commit a portion to annual lump-sum principal payments. A $2,000 annual extra payment on a $300,000 mortgage saves over $50,000 in interest and cuts 4 years off the term.</p>
     <h2>Check for prepayment penalties</h2>
     <p>Before committing to extra payments, check your loan agreement for prepayment penalties. Some loans charge a fee if you pay off the loan early, which can offset the interest savings. This is more common in fixed-rate mortgages in some countries, though many modern loans have eliminated such penalties.</p>
+    <p>Look for language about "prepayment penalties," "early termination fees," or "yield spread premiums." If your loan has these, calculate whether the penalty exceeds your projected savings before proceeding.</p>
     <h2>Run your own numbers</h2>
     <p>Use Amorta to model how extra payments would affect your specific loan. The schedule table makes it easy to see how extra payments change the balance over time and how much interest you save. Even a small extra payment can make a meaningful difference when you stick with it over time.</p>
+    <p>Experiment with different scenarios: try monthly extra payments versus annual lump sums, compare starting now versus waiting a few years, and see how different amounts affect your payoff date. The visual schedule helps you understand exactly where your money goes.</p>

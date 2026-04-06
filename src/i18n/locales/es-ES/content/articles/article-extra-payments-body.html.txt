@@ -7,6 +7,10 @@
     <p>Consideremos una hipoteca de 300.000 &euro; al 6% TAE durante 30 años. El pago mensual es aproximadamente 1.798 &euro;. Sin pagos extra, pagarías 347.200 &euro; en intereses totales durante la vida del préstamo.</p>
     <p>Ahora supongamos que pagas 200 &euro; extra por mes. Después de 30 años, habrías pagado solo 240.600 &euro; en intereses &mdash; un ahorro de más de 106.000 &euro;. Y habrías terminado de pagar el préstamo unos 7 años antes.</p>
     <p>Haz el mismo pago extra de 200 &euro;, pero espera hasta el año 15 para comenzar. Los ahorros se reducen a aproximadamente 28.000 &euro; y solo reduces 3 años del plazo. El momento importa enormemente.</p>
+    <h3>Cómo afecta el tamaño del préstamo a los ahorros</h3>
+    <p>El impacto de los pagos extra escala con el monto de tu préstamo. En una hipoteca de 200.000 &euro; a la misma tasa, un extra de 150 &euro; mensual ahorra aproximadamente 71.000 &euro; y reduce 6 años el plazo. En una hipoteca de 400.000 &euro;, un extra de 250 &euro; mensual ahorra aproximadamente 132.000 &euro; y elimina 7 años. El patrón es consistente: los pagos extra tempranos y constantes producen resultados dramáticos.</p>
+    <h3>Impacto mes a mes</h3>
+    <p>Esto es lo que sucede en los primeros meses con esos 200 &euro; extra en un préstamo de 300.000 &euro;. Mes 1: tu pago extra reduce el capital en 200 &euro;, ahorrándote 12 &euro; en intereses para el mes 2. Mes 2: ahorras intereses sobre los 200 &euro; originales más los 12 &euro; que no se cobraron, compounding el beneficio. Al mes 12, ese único pago extra de 200 &euro; te ha ahorrado más de 140 &euro; en intereses acumulados, y los ahorros continúan creciendo a lo largo del plazo.</p>
     <h2>Tipos de pagos extra</h2>
     <p>Hay dos enfoques principales para los pagos extra:</p>
     <ul>
@@ -14,7 +18,25 @@
       <li><strong>Pagos extra únicos</strong>: Hacer pagos ocasionales más grandes cuando tienes fondos extra, como devoluciones de impuestos, bonos o herencias.</li>
     </ul>
     <p>Ambos enfoques son efectivos. Los pagos extra recurrentes proporcionan progreso constante y son más fáciles de presupuestar. Los pagos únicos pueden hacer un gran impacto rápidamente cuando hay montos más grandes disponibles.</p>
+    <h2>Cuándo NO hacer pagos extra</h2>
+    <p>A pesar del atractivo matemático, hay situaciones donde los pagos extra a la hipoteca no deberían ser tu prioridad:</p>
+    <h3>La deuda de alto interés tiene prioridad</h3>
+    <p>Si tienes deuda de tarjeta de crédito al 18% o más, pagar eso primero es matemáticamente superior a prepagar una hipoteca al 6%. La diferencia en tasas de interés significa que eliminar la deuda de alta tasa te ahorra más dinero. Concéntrate en tarjetas de crédito, préstamos personales y otras obligaciones de tasa alta antes de considerar el prepago de la hipoteca.</p>
+    <h3>El fondo de emergencia viene primero</h3>
+    <p>Deberías tener ahorrados de 3 a 6 meses de gastos esenciales antes de hacer pagos extra al préstamo. Sin esta red de seguridad, una pérdida de empleo o emergencia médica podría forzarte a pedir prestado a tasas altas, anulando cualquier beneficio de los pagos extra a la hipoteca. Tu fondo de emergencia proporciona la estabilidad que hace sostenible el pago agresivo de deudas.</p>
+    <h3>Costo de oportunidad de la inversión</h3>
+    <p>Si la tasa de tu hipoteca es del 5% pero podrías invertir en una cuenta de jubilación con ventajas fiscales esperando un 7% de retorno, la inversión gana matemáticamente. Esto es especialmente cierto si tu empleador hace matching de las contribuciones a la jubilación &mdash; ese matching representa un retorno inmediato del 50% al 100% que supera con creces el ahorro de intereses de la hipoteca. Maximiza las contribuciones con matching antes de prepagar hipotecas de baja tasa.</p>
+    <h2>Estrategias para diferentes presupuestos</h2>
+    <p>No todo el mundo puede permitirse pagos extra grandes. Aquí hay enfoques adaptados a diferentes situaciones financieras:</p>
+    <h3>Presupuesto pequeño: redondear pagos</h3>
+    <p>Simplemente redondea tu pago al siguiente múltiplo de 50 &euro; o 100 &euro;. En un pago de 1.798 &euro;, redondear a 1.850 &euro; añade solo 52 &euro; mensuales pero ahorra miles a lo largo del plazo. Este pequeño cambio de comportamiento es casi indoloro pero se acumula significativamente.</p>
+    <h3>Presupuesto medio: cantidad fija extra</h3>
+    <p>Establece una cantidad extra específica que puedas mantener, como 100 &euro; o 200 &euro; mensuales. Automatiza este pago para que ocurra sin requerir decisiones continuas. La consistencia importa más que la cantidad específica.</p>
+    <h3>Presupuesto grande: pagos anuales únicos</h3>
+    <p>Si tu ingreso incluye bonos o recibes devoluciones de impuestos, compromete una porción a pagos anuales únicos al capital. Un pago extra anual de 2.000 &euro; en una hipoteca de 300.000 &euro; ahorra más de 50.000 &euro; en intereses y reduce 4 años el plazo.</p>
     <h2>Verifica las penalizaciones por prepago</h2>
-    <p>Antes de comprometerte a hacer pagos extra, verifica tu contrato de préstamo por penalizaciones por prepago. Algunos préstamos cobran una tarifa si pagas el préstamo antes de tiempo, lo cual puede抵消 los ahorros de intereses. Esto es más común en hipotecas de tasa fija en algunos países, aunque muchos préstamos modernos han eliminado tales penalizaciones.</p>
+    <p>Antes de comprometerte a hacer pagos extra, verifica tu contrato de préstamo por penalizaciones por prepago. Algunos préstamos cobran una tarifa si pagas el préstamo antes de tiempo, lo cual puede compensar los ahorros de intereses. Esto es más común en hipotecas de tasa fija en algunos países, aunque muchos préstamos modernos han eliminado tales penalizaciones.</p>
+    <p>Busca lenguaje sobre "penalizaciones por prepago," "comisiones por cancelación anticipada," o "primas de spread." Si tu préstamo tiene estas, calcula si la penalización excede tus ahorros proyectados antes de proceder.</p>
     <h2>Calcula tus propios números</h2>
     <p>Usa Amorta para modelar cómo los pagos extra afectarían tu préstamo específico. La tabla de amortización facilita ver cómo los pagos extra cambian el saldo a lo largo del tiempo y cuánto interés ahorras. Incluso un pago extra pequeño puede hacer una diferencia significativa cuando te mantienes constante a lo largo del tiempo.</p>
+    <p>Experimenta con diferentes escenarios: prueba pagos extra mensuales versus pagos únicos anuales, compara comenzar ahora versus esperar unos años, y ve cómo diferentes cantidades afectan tu fecha de pago final. El calendario visual te ayuda a entender exactamente a dónde va tu dinero.</p>

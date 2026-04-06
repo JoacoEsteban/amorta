@@ -2,18 +2,62 @@
     <h2>Cómo funcionan los pagos quincenales</h2>
     <p>Con un calendario de pago mensual, pagás tu hipoteca 12 veces al año. Con quincenal, pagás la mitad de tu pago mensual cada dos semanas. Como hay 52 semanas en un año, esto resulta en 26 pagos &mdash; o 13 equivalentes mensuales completos por año.</p>
     <p>Ese pago extra va directamente al capital, evitando los intereses. A lo largo de una hipoteca a 30 años, esto puede reducir de 4 a 5 años del plazo del préstamo y ahorrar decenas de miles en intereses.</p>
+    <h3>Visualizando el calendario</h3>
+    <p>Imaginate un año en el calendario. Con pagos mensuales, pagás el día 1 de cada mes, 12 veces en total. Con pagos quincenales alineados a una nómina típica de viernes, tus pagos caen el 1, 15, 29, 12, 26, 9, 23, y así sucesivamente. Algunos meses hacés dos pagos, otros tres. A lo largo de 12 meses, este patrón produce 26 medios pagos.</p>
+    <p>La belleza de este enfoque es psicológica. Nunca emitís un cheque más grande, pero acelerás automáticamente tu liquidación. El pago extra ocurre "invisiblemente" porque se distribuye a lo largo del año en pequeños incrementos.</p>
     <h2>La matemática detrás</h2>
-    <p>Consideremos una hipoteca de 300.000 &euro; al 6% TAE durante 30 años. El pago mensual es aproximadamente 1.798 &euro;.</p>
-    <p>Con pagos mensuales, hacés 360 pagos totalizando 647.200 &euro; &mdash; de los cuales 347.200 &euro; son intereses.</p>
-    <p>Con pagos quincenales de 899 &euro; (la mitad del monto mensual), hacés 26 pagos por año. El extra de 1.798 &euro; por año reduce el capital más rápido. Terminás pagando el préstamo en unos 26 años en lugar de 30, ahorrando aproximadamente 45.000 &euro; en intereses totales.</p>
+    <p>Consideremos una hipoteca de 300.000 € al 6% TAE durante 30 años. El pago mensual es aproximadamente 1.798 €.</p>
+    <p>Con pagos mensuales, hacés 360 pagos totalizando 647.200 € &mdash; de los cuales 347.200 € son intereses.</p>
+    <p>Con pagos quincenales de 899 € (la mitad del monto mensual), hacés 26 pagos por año. El extra de 1.798 € por año reduce el capital más rápido. Terminás pagando el préstamo en unos 26 años en lugar de 30, ahorrando aproximadamente 45.000 € en intereses totales.</p>
+    <h2>Comparando las opciones</h2>
+    <p>Así se comparan los tres enfoques principales para nuestro ejemplo de 300.000 €:</p>
+    <ul>
+      <li><strong>Mensual estándar:</strong> 1.798 €/mes, 30 años, 347.200 € en intereses totales</li>
+      <li><strong>Quincenal:</strong> 899 € cada dos semanas, ~26 años, ~302.000 € en intereses totales</li>
+      <li><strong>Mensual con 1/12 extra:</strong> 1.948 €/mes, ~26 años, ~302.000 € en intereses totales</li>
+    </ul>
+    <p>Las estrategias quincenal y mensual-con-extra producen resultados casi idénticos. La diferencia está en la implementación, no en el resultado.</p>
+    <h2>¿Es adecuado para vos?</h2>
+    <p>Los pagos quincenales tienen más sentido si:</p>
+    <ul>
+      <li>Recibís nóminas quincenales y querés que los pagos se alineen con tus ingresos</li>
+      <li>Te cuesta ahorrar para pagos extra de suma global</li>
+      <li>Tu prestamista ofrece un programa quincenal sin comisiones</li>
+      <li>Preferís pagos automáticos más pequeños en lugar de manuales más grandes</li>
+    </ul>
+    <p>Tienen menos sentido si:</p>
+    <ul>
+      <li>Tu prestamista cobra comisiones significativas por el programa</li>
+      <li>Te pagan mensual o quincenalmente, creando desajustes de flujo de caja</li>
+      <li>Preferís la flexibilidad de variar los pagos extra según las circunstancias</li>
+      <li>Tenés deuda con intereses más altos que deberías priorizar</li>
+    </ul>
     <h2>Cuidado con las comisiones</h2>
     <p>Algunos prestamistas cobran comisiones de configuración o transacción por programas de pago quincenal, especialmente servicios de terceros que gestionan el calendario. Estas comisiones pueden superar fácilmente los ahorros de intereses. Antes de inscribirte, calculá si el costo inicial vale el beneficio.</p>
+    <p>Las comisiones típicas a vigilar incluyen:</p>
+    <ul>
+      <li><strong>Comisiones de configuración:</strong> 100-300 € para iniciar el programa</li>
+      <li><strong>Comisiones de transacción:</strong> 2-5 € por cargo de procesamiento de pago</li>
+      <li><strong>Mantenimiento anual:</strong> 50-100 € de cuota de programa anual</li>
+    </ul>
+    <p>En 26 pagos al año, una comisión de 3 € añade 78 € anuales. A lo largo de 26 años, eso son 2.028 € solo en comisiones. Asegurate de que tus ahorros en intereses superen estos costos.</p>
     <p>También verificá que los pagos extra se apliquen directamente al capital, no se retengan como prepago de seguro. Algunos prestamistas pueden no procesarlos correctamente.</p>
     <h2>La estrategia equivalente</h2>
     <p>Acá está la idea clave: un pago quincenal es matemáticamente equivalente a hacer un pago mensual extra por año. Si podés presupuestarlo, simplemente agregar 1/12 de tu pago mensual a cada pago mensual logra el mismo resultado &mdash; sin ninguna participación del prestamista ni comisiones.</p>
-    <p>Por ejemplo, agregá 150 &euro; a tu pago mensual de 1.798 &euro; (1.948 &euro; total) y obtenés el mismo beneficio que un calendario quincenal. Este enfoque es más flexible porque vos controlás el monto extra y podés ajustarlo según sea necesario.</p>
+    <h3>Implementación paso a paso</h3>
+    <p>Para replicar los beneficios quincenales con pagos mensuales:</p>
+    <ol>
+      <li>Calculá 1/12 de tu pago mensual (dividí entre 12)</li>
+      <li>Agregá esta cantidad a tu pago mensual automático</li>
+      <li>Especificá que el extra va a reducción de capital</li>
+      <li>Revisá tus estados de cuenta para asegurar la aplicación correcta</li>
+    </ol>
+    <p>Por ejemplo, agregá 150 € a tu pago mensual de 1.798 € (1.948 € total) y obtenés el mismo beneficio que un calendario quincenal. Este enfoque es más flexible porque vos controlás el monto extra y podés ajustarlo según sea necesario.</p>
+    <h2>Beneficios psicológicos</h2>
+    <p>Más allá de las matemáticas, los pagos quincenales ofrecen ventajas conductuales. Los pagos más pequeños y frecuentes se sienten menos abrumadores que un gran desembolso mensual. Para muchos prestatarios, 899 € cada dos semanas se siente más manejable que 1.798 € una vez al mes, aunque el total anual sea mayor.</p>
+    <p>Este enfoque "sin dolor" para pagos extra puede ser la diferencia entre seguir adelante y abandonar la estrategia. Si los pagos quincenales te ayudan a pagar extra consistentemente cuando de otro modo no lo harías, entregan valor real más allá de los números brutos.</p>
     <h2>Cuando tiene sentido lo quincenal</h2>
     <p>Los pagos quincenales pueden ser convenientes si te pagan quincenalmente y querés que tu pago de hipoteca se alinee con tu ciclo de ingresos. Esta sincronización puede facilitar la elaboración del presupuesto y garantizar que el pago se realice a tiempo.</p>
-    <p>También ayudan si te cuesta ahorrar lo suficiente para un pago extra de suma global. Distribuir el extra en pagos más pequeños y frecuentes se siente menos doloroso para algunos borrowers.</p>
+    <p>También ayudan si te cuesta ahorrar lo suficiente para un pago extra de suma global. Distribuir el extra en pagos más pequeños y frecuentes se siente menos doloroso para algunos prestatarios.</p>
     <h2>Calculá tus propios números</h2>
     <p>Usá Amorta para comparar mensualmente versus quincenalmente lado a lado. La diferencia en intereses totales pagados y el plazo del préstamo hace claros los compromisos, para que puedas decidir si un plan quincenal o un simple pago mensual extra funciona mejor para tu situación.</p>

@@ -2,7 +2,11 @@
     <h2>El equilibrio fundamental</h2>
     <p>Los plazos más cortos significan cuotas mensuales más altas pero significativamente menos intereses totales pagados. Los plazos más largos distribuyen el mismo principal en más pagos, reduciendo la carga mensual pero aumentando el coste total del préstamo. Esto no es solo aritmética — afecta tu flujo de caja mensual, tu capacidad de ahorrar para otros objetivos y tu flexibilidad financiera general.</p>
     <p>Consideremos una hipoteca de 300.000 &euro; al 6% TAE. Con un plazo de 30 años, tu cuota mensual es de aproximadamente 1.798 &euro;, y pagarás unos 347.000 &euro; en intereses totales durante la vida del préstamo. Con un plazo de 15 años, la cuota mensual sube a unos 2.532 &euro;, pero tus intereses totales bajan a unos 155.700 &euro;. Ahorras más de 191.000 &euro; en intereses, pero tu obligación mensual es 734 &euro; mayor.</p>
-    <h2>Cuando tiene sentido un préstamo a 15 años</h2>
+    <h2>Plazos intermedios de 20 años y otros</h2>
+<p>No todos los préstamos encajan perfectamente en cajas de 15 o 30 años. Muchos prestamistas ofrecen plazos de 20 años, y algunos proporcionan aún más flexibilidad con opciones de 10 o 25 años. Estos plazos intermedios pueden ofrecer un terreno intermedio útil para prestatarios que quieren equilibrar la asequibilidad mensual con el ahorro total en intereses.</p>
+<p>Un plazo de 20 años en una hipoteca de 300.000 &euro; al 6% TAE produce una cuota mensual de aproximadamente 2.149 &euro; &mdash; unos 383 &euro; más que la opción a 30 años pero 383 &euro; menos que la de 15 años. Los intereses totales pagados serían de unos 215.700 &euro;, ahorrándote aproximadamente 131.000 &euro; comparado con el plazo a 30 años manteniendo más margen de maniobra del que requiere el plazo a 15 años.</p>
+<p>Estos plazos intermedios funcionan bien para prestatarios en sus finales de los 30 o principios de los 40 que quieren tener su hipoteca pagada para la jubilación pero no pueden manejar cómodamente la cuota a 15 años. También se adaptan a aquellos que esperan que sus ingresos permanezcan relativamente estables sin potencial significativo de crecimiento.</p>
+<h2>Cuando tiene sentido un préstamo a 15 años</h2>
     <p>Un préstamo a 15 años es ideal cuando tienes ingresos estables y predecibles y tu presupuesto mensual puede acomodar cómodamente la cuota más alta sin sacrificar el ahorro de emergencia o las aportaciones a la jubilación. Los beneficios van más allá del ahorro en intereses:</p>
     <ul>
       <li><strong>El patrimonio crece más rápido:</strong> Con pagos de principal más altos desde el principio, eres dueño de más de tu vivienda antes. Esto importa si necesitas vender o pedir prestado contra la propiedad.</li>
@@ -27,3 +31,13 @@
     <h2>Calcula tus propios números</h2>
     <p>Usa Amorta para modelar ambos escenarios con los parámetros reales de tu préstamo. Compara no solo la cuota y los intereses totales, sino también examina cuán rápido acumulas patrimonio en cada escenario. El calendario de amortización revela exactamente cuándo ocurre el punto de cruce — cuando los pagos de principal superan los pagos de intereses — que sucede mucho antes con un préstamo a 15 años.</p>
     <p>No existe una elección universalmente correcta. El plazo adecuado depende de tu estabilidad de ingresos, otros objetivos financieros, tolerancia al riesgo y disciplina con los fondos discrecionales. Lo que importa es tomar la decisión conscientemente en lugar de optar por defecto a la opción de 30 años simplemente porque la cuota mensual es más baja.</p>
+<h3>Qué comparar</h3>
+<p>Cuando ejecutes cálculos en Amorta, enfócate en estas comparaciones clave entre diferentes plazos de préstamo:</p>
+<ul>
+<li><strong>Impacto en el flujo de caja mensual:</strong> ¿Cuánto margen de maniobra queda después de tu pago de hipoteca?</li>
+<li><strong>Intereses totales pagados:</strong> La diferencia de costo durante la vida del préstamo puede ser asombrosa.</li>
+<li><strong>Patrimonio en hitos clave:</strong> Verifica tu saldo después de 5, 10 y 15 años para ver qué tan rápido construyes propiedad.</li>
+<li><strong>Momento del punto de cruce:</strong> ¿Cuándo supera el capital a los intereses en tus pagos? Esto sucede antes con plazos más cortos.</li>
+<li><strong>Valor de la flexibilidad:</strong> Cuantifica lo que permite el pago mensual más bajo &mdash; mayores contribuciones a la jubilación, liquidación más rápida de deudas u oportunidades de inversión.</li>
+</ul>
+<p>Considera ejecutar escenarios con diferentes tipos de interés, ya que los plazos más cortos típicamente califican para tipos más bajos. Incluso una reducción de tipo del 0,25% puede cambiar significativamente los cálculos a lo largo de un período de 15 o 20 años. El objetivo es encontrar el plazo que maximice tu seguridad financiera minimizando los costos totales de endeudamiento.</p>
