@@ -44,16 +44,12 @@ const TailwindPlugin = (config: TailwindPluginConfig): BunPlugin => {
           )
         }
 
-        const [original, twOutput] = await Promise.all([
-          Bun.file(args.path).text(),
-          Bun.$`tailwindcss -i node_modules/tailwindcss/index.css ${config.minify ? ' --minify' : ''}`.text(),
-        ])
-
-        const augmented = `${twOutput}\n${original}`
+        const twOutput =
+          await Bun.$`tailwindcss -i ${args.path} ${config.minify ? '--minify' : ''}`.text()
 
         ran = true
         return {
-          contents: augmented,
+          contents: twOutput,
           loader: 'css',
         }
       })
