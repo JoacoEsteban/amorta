@@ -33,7 +33,7 @@ export const BlogIndexPage = ({ routeState }: BlogIndexPageProps) => {
           </div>
         </div>
 
-        <div className="blog-index">
+        <div className="blog-index grid">
           {ARTICLES.map((article) => (
             <a
               key={article.slug}
