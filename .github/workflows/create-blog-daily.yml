@@ -27,7 +27,6 @@ jobs:
       - name: Create blog post
         run: bun run scripts/create-blog.ts
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
 
       - name: Install dependencies
@@ -35,3 +34,6 @@ jobs:
 
       - name: Run tests
         run: bun test
+
+      - name: Push changes
+        run: git push
