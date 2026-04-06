@@ -164,6 +164,9 @@ export const esARMessages = {
   backToCalculator: 'Volver a la calculadora',
   backToBlog: 'Volver a los artículos',
   articleNotFound: 'Artículo no encontrado',
+  relatedArticlesTitle: 'Artículos Relacionados',
+  relatedArticlesDescription:
+    'Seguí con temas cercanos para comparar mecánicas de amortización, conceptos de tasas y decisiones prácticas sobre préstamos.',
   articleCtaText: '¿Listo para hacer tu propio cálculo?',
   seoTitleBlogIndex: 'Artículos | Amorta',
   seoDescriptionBlogIndex:

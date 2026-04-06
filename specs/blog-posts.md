@@ -77,6 +77,8 @@ Important:
 
 - Keep the `date` field and the localized `article*Date` message values aligned.
 - New articles should be inserted so the final `ARTICLES` ordering still sorts newest to oldest after the existing `.sort(...)` call.
+- If the article should participate in the related-articles widget, add its curated relationships in `RELATED_ARTICLE_SLUGS`.
+- Do not rely on fallback recommendations. The related-articles widget should only render when curated related slugs exist for the current article.
 
 ### Step 2: Create Body Content Files
 
@@ -157,6 +159,8 @@ Before considering the task complete, verify:
 - [ ] All 6 metadata keys per locale are present (title, description, date, body, seoTitle, seoDescription)
 - [ ] Body content is valid HTML
 - [ ] Each locale stays within the enforced blog word-count range from `test/blog-word-count.test.ts` (currently 800-1500 words)
+- [ ] Any relative links inside article bodies resolve correctly from `/blog/{slug}`
+- [ ] If related articles were curated for the post, the `RELATED_ARTICLE_SLUGS` entry only references valid article slugs
 - [ ] `bun test` passes
 - [ ] `bun run scripts/build.ts` passes
 - [ ] `jj status` shows clean or expected changes
@@ -207,7 +211,7 @@ Example for slug `french-vs-american`:
   - `es-ES`: `200.000 €`, "comprende"
   - `es-AR`: `200.000 €`, "comprendé"
   - `fr-FR`: `200 000 €`, "comprenez"
-- Internal article links should use locale-safe relative paths such as `../extra-payments` or `../understanding-amortization-schedule`
+- Internal article links should use locale-safe sibling paths such as `extra-payments` or `understanding-amortization-schedule`
 - Keep link targets inside the existing blog route structure so they work under locale-prefixed URLs
 
 ### Metadata Keys

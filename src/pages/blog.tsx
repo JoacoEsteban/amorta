@@ -1,7 +1,7 @@
 import { ArrowLeft } from 'lucide-react'
 import { match } from 'ts-pattern'
 
-import { ARTICLES, getArticleBySlug } from '../domain/blog'
+import { ARTICLES, getArticleBySlug, getRelatedArticles } from '../domain/blog'
 import { buildLocalePath } from '../i18n/lingui.config'
 import { useLocale, useTranslator } from '../state/locale.js'
 import { Footer } from '../components/footer'
@@ -76,6 +76,7 @@ export const ArticlePage = ({ routeState }: ArticlePageProps) => {
   const { _ } = useTranslator()
   const currentLocale = useLocale()
   const article = getArticleBySlug(routeState.slug)
+  const relatedArticles = getRelatedArticles(routeState.slug)
 
   const goBack = (): void => {
     window.location.assign(buildLocalePath(currentLocale, '/blog'))
@@ -131,6 +132,48 @@ export const ArticlePage = ({ routeState }: ArticlePageProps) => {
               }}
             />
           </article>
+
+          {match(relatedArticles.length)
+            .when(
+              (count) => count > 0,
+              () => (
+                <section className="related-articles">
+                  <div className="related-articles__header">
+                    <p className="page-kicker">{_('articles')}</p>
+                    <h2 className="related-articles__title">
+                      {_('relatedArticlesTitle')}
+                    </h2>
+                    <p className="related-articles__description">
+                      {_('relatedArticlesDescription')}
+                    </p>
+                  </div>
+
+                  <div className="blog-index">
+                    {relatedArticles.map((relatedArticle) => (
+                      <a
+                        key={relatedArticle.slug}
+                        href={buildLocalePath(
+                          currentLocale,
+                          `/blog/${relatedArticle.slug}`,
+                        )}
+                        className="blog-card"
+                      >
+                        <div className="blog-card__meta">
+                          <time>{_(relatedArticle.dateKey)}</time>
+                        </div>
+                        <h3 className="blog-card__title">
+                          {_(relatedArticle.titleKey)}
+                        </h3>
+                        <p className="blog-card__description">
+                          {_(relatedArticle.descriptionKey)}
+                        </p>
+                      </a>
+                    ))}
+                  </div>
+                </section>
+              ),
+            )
+            .otherwise(() => null)}
 
           <div className="article-cta">
             <p>{_('articleCtaText')}</p>

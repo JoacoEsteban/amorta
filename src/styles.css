@@ -1164,6 +1164,32 @@ ul {
   font-size: 0.9rem;
 }
 
+.related-articles {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+.related-articles__header {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.related-articles__title {
+  font-family: 'Iowan Old Style', 'Palatino Linotype', serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--stone-950);
+}
+
+.related-articles__description {
+  max-width: 42rem;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--stone-600);
+}
+
 .article-cta {
   display: flex;
   align-items: center;

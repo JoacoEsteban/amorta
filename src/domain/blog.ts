@@ -1,3 +1,5 @@
+import { match } from 'ts-pattern'
+
 export type Article = {
   slug: string
   titleKey: string
@@ -84,3 +86,59 @@ export const ARTICLES: Article[] = [
 
 export const getArticleBySlug = (slug: string): Article | undefined =>
   ARTICLES.find((a) => a.slug === slug)
+
+export const RELATED_ARTICLE_SLUGS: Record<string, readonly string[]> = {
+  'negative-amortization': [
+    'understanding-amortization-schedule',
+    'calculating-remaining-loan-balance',
+    'extra-payments',
+  ],
+  'factors-affecting-mortgage-rates': [
+    'loan-term-comparison',
+    'apr-vs-ear',
+    'biweekly-vs-monthly-payments',
+  ],
+  'calculating-remaining-loan-balance': [
+    'understanding-amortization-schedule',
+    'extra-payments',
+    'negative-amortization',
+  ],
+  'loan-term-comparison': [
+    'extra-payments',
+    'factors-affecting-mortgage-rates',
+    'biweekly-vs-monthly-payments',
+  ],
+  'extra-payments': [
+    'understanding-amortization-schedule',
+    'calculating-remaining-loan-balance',
+    'loan-term-comparison',
+  ],
+  'understanding-amortization-schedule': [
+    'calculating-remaining-loan-balance',
+    'extra-payments',
+    'math-behind-french-amortization',
+  ],
+  'apr-vs-ear': [
+    'math-behind-french-amortization',
+    'factors-affecting-mortgage-rates',
+    'biweekly-vs-monthly-payments',
+  ],
+  'math-behind-french-amortization': [
+    'apr-vs-ear',
+    'understanding-amortization-schedule',
+    'calculating-remaining-loan-balance',
+  ],
+  'biweekly-vs-monthly-payments': [
+    'extra-payments',
+    'loan-term-comparison',
+    'apr-vs-ear',
+  ],
+}
+
+export const getRelatedArticles = (slug: string): Article[] => {
+  const curatedArticles = (RELATED_ARTICLE_SLUGS[slug] ?? [])
+    .map(getArticleBySlug)
+    .filter((article): article is Article => Boolean(article))
+
+  return curatedArticles
+}

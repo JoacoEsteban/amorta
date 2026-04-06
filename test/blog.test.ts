@@ -1,6 +1,12 @@
 import { describe, expect, test } from 'bun:test'
 
-import { ARTICLES, getArticleBySlug, type Article } from '../src/domain/blog'
+import {
+  ARTICLES,
+  RELATED_ARTICLE_SLUGS,
+  getArticleBySlug,
+  getRelatedArticles,
+  type Article,
+} from '../src/domain/blog'
 
 describe('blog articles', () => {
   test('articles are sorted from newest to oldest', () => {
@@ -48,5 +54,20 @@ describe('blog articles', () => {
     const dates = ARTICLES.map((a) => a.date.getTime())
     const sortedDates = [...dates].sort((a, b) => b - a)
     expect(dates).toEqual(sortedDates)
+  })
+
+  test('related article slugs point to existing articles and exclude self-links', () => {
+    ARTICLES.forEach((article) => {
+      const relatedSlugs = RELATED_ARTICLE_SLUGS[article.slug] ?? []
+
+      relatedSlugs.forEach((relatedSlug) => {
+        expect(relatedSlug).not.toBe(article.slug)
+        expect(getArticleBySlug(relatedSlug)).toBeDefined()
+      })
+    })
+  })
+
+  test('getRelatedArticles returns an empty array when no curated relations exist', () => {
+    expect(getRelatedArticles('non-existent-slug')).toEqual([])
   })
 })

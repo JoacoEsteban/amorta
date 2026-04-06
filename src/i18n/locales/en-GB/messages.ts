@@ -159,6 +159,9 @@ export const enGBMessages = {
   backToCalculator: 'Back to calculator',
   backToBlog: 'Back to articles',
   articleNotFound: 'Article not found',
+  relatedArticlesTitle: 'Related Articles',
+  relatedArticlesDescription:
+    'Continue with nearby topics to compare repayment mechanics, rate concepts, and practical loan trade-offs.',
   articleCtaText: 'Ready to run your own calculation?',
   seoTitleBlogIndex: 'Articles | Amorta',
   seoDescriptionBlogIndex:

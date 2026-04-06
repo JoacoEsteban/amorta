@@ -161,6 +161,9 @@ export const frFRMessages = {
   backToCalculator: 'Retour au calculateur',
   backToBlog: 'Retour aux articles',
   articleNotFound: 'Article non trouvé',
+  relatedArticlesTitle: 'Articles Connexes',
+  relatedArticlesDescription:
+    "Poursuivez avec des sujets proches pour comparer les mécanismes de remboursement, les notions de taux, et les arbitrages pratiques autour d'un prêt.",
   articleCtaText: 'Prêt à faire votre propre calcul ?',
   seoTitleBlogIndex: 'Articles | Amorta',
   seoDescriptionBlogIndex:

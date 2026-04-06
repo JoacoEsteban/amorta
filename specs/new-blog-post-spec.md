@@ -7,6 +7,7 @@ This task is not complete until the article is implemented in the real app struc
 
 - Register the article in `src/domain/blog.ts`
 - Add localized body files and metadata for every supported locale, including `fr-FR`
+- Add a curated `RELATED_ARTICLE_SLUGS` entry if the post should appear in the related-articles widget
 - Keep the article within the repository-enforced word-count limits
 - Run the required verification commands from the blog spec before finishing
 
