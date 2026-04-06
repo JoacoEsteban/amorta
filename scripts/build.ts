@@ -62,7 +62,15 @@ export async function exec(target: 'dev' | 'prod' = 'prod') {
   }
 }
 
-function generateSitemap(
+const normalizeSitemapPath = (pathname: string): string =>
+  match(pathname)
+    .with('/', () => '/')
+    .otherwise((value) => value.replace(/\/+$/, ''))
+
+const buildSitemapUrl = (siteUrl: string, pathname: string): string =>
+  `${siteUrl}${normalizeSitemapPath(pathname)}`
+
+export function generateSitemap(
   siteUrl: string,
   locale: SupportedLocale,
   defaultLocale: SupportedLocale,
@@ -86,13 +94,13 @@ function generateSitemap(
 
   const urls = staticUrls
     .map((u) => {
-      const loc = `${siteUrl}${localePrefix}${u.path}`
+      const loc = buildSitemapUrl(siteUrl, `${localePrefix}${u.path}`)
       const hreflangLinks =
         SUPPORTED_LOCALES.map((loc) => {
           const prefix = loc === defaultLocale ? '' : `/${loc}`
-          return `<xhtml:link rel="alternate" hreflang="${loc}" href="${siteUrl}${prefix}${u.path}"/>`
+          return `<xhtml:link rel="alternate" hreflang="${loc}" href="${buildSitemapUrl(siteUrl, `${prefix}${u.path}`)}"/>`
         }).join('') +
-        `<xhtml:link rel="alternate" hreflang="x-default" href="${siteUrl}${u.path}"/>`
+        `<xhtml:link rel="alternate" hreflang="x-default" href="${buildSitemapUrl(siteUrl, u.path)}"/>`
       return `<url><loc>${loc}</loc><lastmod>${today}</lastmod><changefreq>${u.changefreq}</changefreq><priority>${u.priority}</priority>${hreflangLinks}</url>`
     })
     .join('')

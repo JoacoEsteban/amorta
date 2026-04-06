@@ -30,17 +30,17 @@ export const Footer = () => {
           >
             GitHub
           </a>
-          <a href={buildLocalePath(currentLocale, '/blog/')}>{_('articles')}</a>
-          <a href={buildLocalePath(currentLocale, '/about/')}>
+          <a href={buildLocalePath(currentLocale, '/blog')}>{_('articles')}</a>
+          <a href={buildLocalePath(currentLocale, '/about')}>
             {_('aboutLink')}
           </a>
-          <a href={buildLocalePath(currentLocale, '/contact/')}>
+          <a href={buildLocalePath(currentLocale, '/contact')}>
             {_('contactLink')}
           </a>
-          <a href={buildLocalePath(currentLocale, '/privacy-policy/')}>
+          <a href={buildLocalePath(currentLocale, '/privacy-policy')}>
             {_('privacyPolicyLink')}
           </a>
-          <a href={buildLocalePath(currentLocale, '/terms/')}>
+          <a href={buildLocalePath(currentLocale, '/terms')}>
             {_('termsLink')}
           </a>
           <LocaleSwitcher />

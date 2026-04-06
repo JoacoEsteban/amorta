@@ -17,6 +17,12 @@ describe('resolvePublicSiteUrl', () => {
     )
   })
 
+  it('removes trailing slashes from a bare site url', () => {
+    expect(resolvePublicSiteUrl('https://amorta.example///')).toBe(
+      'https://amorta.example',
+    )
+  })
+
   it('ignores unresolved placeholders', () => {
     expect(resolvePublicSiteUrl('__PUBLIC_SITE_URL__')).toBe(
       DEFAULT_PUBLIC_SITE_URL,
@@ -35,7 +41,14 @@ describe('buildSeoMetadata', () => {
     })
 
     expect(metadata.title).toBe('Amorta | Calculadora de Amortización Francesa')
-    expect(metadata.canonicalUrl).toBe(`${siteUrl}/es-AR/`)
+    expect(metadata.canonicalUrl).toBe(`${siteUrl}/es-AR`)
+    expect(metadata.openGraphUrl).toBe(`${siteUrl}/es-AR`)
+    expect(metadata.hreflangLinks).toContain(
+      `<link rel="alternate" hreflang="es" href="${siteUrl}/es-ES" />`,
+    )
+    expect(metadata.hreflangLinks).toContain(
+      `<link rel="alternate" hreflang="x-default" href="${siteUrl}/en-US" />`,
+    )
   })
 
   it('builds a result canonical url for valid shared routes', () => {
@@ -78,7 +91,11 @@ describe('buildSeoMetadata', () => {
       siteUrl,
     })
 
-    expect(metadata.canonicalUrl).toBe(`${siteUrl}/result/`)
+    expect(metadata.canonicalUrl).toBe(`${siteUrl}/result`)
+    expect(metadata.openGraphUrl).toBe(`${siteUrl}/result`)
+    expect(metadata.hreflangLinks).toContain(
+      `<link rel="alternate" hreflang="en" href="${siteUrl}/en-US/result" />`,
+    )
     expect(metadata.title).toBe('Shared Result | Amorta')
   })
 
@@ -98,6 +115,34 @@ describe('buildSeoMetadata', () => {
     })
 
     expect(metadata.canonicalUrl).toBe(`${siteUrl}/`)
+    expect(metadata.openGraphUrl).toBe(`${siteUrl}/`)
     expect(metadata.title).toBe('Shared Result Unavailable | Amorta')
+  })
+
+  it('keeps the true root url slash for the default locale home page', () => {
+    const metadata = buildSeoMetadata({
+      locale: 'en-US',
+      routeState: { kind: 'index', locale: null },
+      siteUrl,
+    })
+
+    expect(metadata.canonicalUrl).toBe(`${siteUrl}/`)
+    expect(metadata.openGraphUrl).toBe(`${siteUrl}/`)
+    expect(metadata.hreflangLinks).toContain(
+      `<link rel="alternate" hreflang="en" href="${siteUrl}/" />`,
+    )
+  })
+
+  it('normalizes canonicals when the configured site url contains trailing slashes', () => {
+    const metadata = buildSeoMetadata({
+      locale: 'en-US',
+      routeState: { kind: 'about', locale: null },
+      siteUrl: 'https://amorta.example///',
+    })
+
+    expect(metadata.canonicalUrl).toBe('https://amorta.example/about')
+    expect(metadata.openGraphImageUrl).toBe(
+      'https://amorta.example/og-image.svg',
+    )
   })
 })

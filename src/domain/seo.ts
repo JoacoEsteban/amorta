@@ -109,6 +109,14 @@ const localeToHreflang = (locale: SupportedLocale): string => {
   return (parts[0] ?? locale).toLowerCase()
 }
 
+const normalizePublicPath = (pathname: string): string =>
+  match(pathname)
+    .with('/', () => '/')
+    .otherwise((value) => value.replace(/\/+$/, ''))
+
+const buildPublicUrl = (siteUrl: string, pathname: string): string =>
+  `${siteUrl}${normalizePublicPath(pathname)}`
+
 const buildHreflangLinks = (
   routePath: string,
   siteUrl: string,
@@ -121,7 +129,7 @@ const buildHreflangLinks = (
     const hreflang = localeToHreflang(locale)
     if (seen.has(hreflang)) return
     seen.add(hreflang)
-    const href = `${siteUrl}${buildLocalePath(locale, routePath)}`
+    const href = buildPublicUrl(siteUrl, buildLocalePath(locale, routePath))
     links.push(`<link rel="alternate" hreflang="${hreflang}" href="${href}" />`)
   })
 
@@ -131,12 +139,12 @@ const buildHreflangLinks = (
   const isDefaultLocale = currentLocale === defaultLocale
 
   links.push(
-    `<link rel="alternate" hreflang="${defaultHreflang}" href="${siteUrl}${buildLocalePath(defaultLocale, routePath)}" />`,
+    `<link rel="alternate" hreflang="${defaultHreflang}" href="${buildPublicUrl(siteUrl, buildLocalePath(defaultLocale, routePath))}" />`,
   )
 
   if (isDefaultLocale) {
     links.push(
-      `<link rel="alternate" hreflang="${defaultLocaleHreflang}" href="${siteUrl}${routePath}" />`,
+      `<link rel="alternate" hreflang="${defaultLocaleHreflang}" href="${buildPublicUrl(siteUrl, routePath)}" />`,
     )
   }
 
@@ -149,58 +157,43 @@ const resolveCanonicalPath = (
 ): string => {
   const normalizedSiteUrl = resolvePublicSiteUrl(siteUrl)
   const locale = routeState.locale === DEFAULT_LOCALE ? null : routeState.locale
+  const localizedPath = (pathname: string): string =>
+    match(locale)
+      .with(null, () => pathname)
+      .otherwise((resolvedLocale) => buildLocalePath(resolvedLocale, pathname))
 
   return match(routeState)
     .with({ kind: 'index' }, () =>
-      locale === null
-        ? `${normalizedSiteUrl}/`
-        : `${normalizedSiteUrl}${buildLocalePath(locale, '/')}`,
+      buildPublicUrl(normalizedSiteUrl, localizedPath('/')),
     )
     .with({ kind: 'result', decoded: { kind: 'valid' } }, ({ payload }) =>
-      locale === null
-        ? `${normalizedSiteUrl}/result/${payload ?? ''}`
-        : `${normalizedSiteUrl}${buildLocalePath(locale, `/result/${payload ?? ''}`)}`,
+      buildPublicUrl(
+        normalizedSiteUrl,
+        localizedPath(`/result/${payload ?? ''}`),
+      ),
     )
     .with({ kind: 'result', decoded: { kind: 'pending' } }, () =>
-      locale === null
-        ? `${normalizedSiteUrl}/result/`
-        : `${normalizedSiteUrl}${buildLocalePath(locale, '/result/')}`,
+      buildPublicUrl(normalizedSiteUrl, localizedPath('/result/')),
     )
     .with({ kind: 'blog-index' }, () =>
-      locale === null
-        ? `${normalizedSiteUrl}/blog/`
-        : `${normalizedSiteUrl}${buildLocalePath(locale, '/blog/')}`,
+      buildPublicUrl(normalizedSiteUrl, localizedPath('/blog/')),
     )
     .with({ kind: 'blog-article' }, ({ slug }) =>
-      locale === null
-        ? `${normalizedSiteUrl}/blog/${slug}`
-        : `${normalizedSiteUrl}${buildLocalePath(locale, `/blog/${slug}`)}`,
+      buildPublicUrl(normalizedSiteUrl, localizedPath(`/blog/${slug}`)),
     )
     .with({ kind: 'privacy-policy' }, () =>
-      locale === null
-        ? `${normalizedSiteUrl}/privacy-policy/`
-        : `${normalizedSiteUrl}${buildLocalePath(locale, '/privacy-policy/')}`,
+      buildPublicUrl(normalizedSiteUrl, localizedPath('/privacy-policy/')),
     )
     .with({ kind: 'about' }, () =>
-      locale === null
-        ? `${normalizedSiteUrl}/about/`
-        : `${normalizedSiteUrl}${buildLocalePath(locale, '/about/')}`,
+      buildPublicUrl(normalizedSiteUrl, localizedPath('/about/')),
     )
     .with({ kind: 'contact' }, () =>
-      locale === null
-        ? `${normalizedSiteUrl}/contact/`
-        : `${normalizedSiteUrl}${buildLocalePath(locale, '/contact/')}`,
+      buildPublicUrl(normalizedSiteUrl, localizedPath('/contact/')),
     )
     .with({ kind: 'terms' }, () =>
-      locale === null
-        ? `${normalizedSiteUrl}/terms/`
-        : `${normalizedSiteUrl}${buildLocalePath(locale, '/terms/')}`,
+      buildPublicUrl(normalizedSiteUrl, localizedPath('/terms/')),
     )
-    .otherwise(() =>
-      locale === null
-        ? `${normalizedSiteUrl}/`
-        : `${normalizedSiteUrl}${buildLocalePath(locale, '/')}`,
-    )
+    .otherwise(() => buildPublicUrl(normalizedSiteUrl, localizedPath('/')))
 }
 
 const resolveSeoTitle =
