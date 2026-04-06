@@ -1,0 +1,39 @@
+<p>Lorsque vous comparez des prêts, vous rencontrerez deux nombres différents qui décrivent tous deux le coût annuel de l'emprunt : le <strong>TAEG</strong> (Taux Annuel Effectif Global) et le <strong>TAE</strong> (Taux Annuel Effectif). Ils sonnent similaires mais peuvent différer substantiellement. Comprendre cette différence peut vous faire économiser des milliers d'euros sur la durée de vie d'un prêt.</p>
+<h2>Qu'est-ce que le TAEG ?</h2>
+<p>Le <strong>TAEG</strong> est une divulgation réglementaire conçue pour faciliter la comparaison des prêts. Il exprime le coût de l'emprunt comme un taux annuel, mais il part du taux d'intérêt <em>nominal</em> (indiqué), pas du taux effectif réel.</p>
+<p>Le taux nominal est simplement divisé par le nombre de périodes de capitalisation par an. Pour un prêt avec un taux annuel nominal de 12 % et une capitalisation mensuelle :</p>
+<pre><code>taux périodique = 0,12 / 12 = 0,01 (1 % par mois)</code></pre>
+<p>Mais cela ignore le fait que les intérêts du mois 2 sont calculés sur un solde qui inclut déjà les intérêts du mois 1. Après 12 mois de capitalisation mensuelle à 1 %, le coût annuel réel est supérieur à 12 %.</p>
+<h2>Qu'est-ce que le TAE ?</h2>
+<p>Le <strong>TAE</strong> (parfois appelé <strong>Taux de Rendement Annuel</strong>) prend en compte l'effet de capitalisation au cours de l'année. Il répond à la question : <em>quel est le coût annuel réel, capitalisation comprise ?</em></p>
+<pre><code>TAE = (1 + taux nominal / périodes)<sup>périodes</sup> &minus; 1</code></pre>
+<p>Pour le taux nominal de 12 % avec capitalisation mensuelle :</p>
+<pre><code>TAE = (1 + 0,12 / 12)<sup>12</sup> &minus; 1 = 0,1268 (12,68 %)</code></pre>
+<p>Cette différence de 0,68 % peut sembler faible, mais elle se capitalise sur une hypothèque de 30 ans en intérêts supplémentaires significatifs.</p>
+<h2>Idées reçues courantes</h2>
+<p>De nombreux emprunteurs supposent que le TAEG et le TAE sont interchangeables ou que la différence est négligeable. Cette confusion est compréhensible puisque les deux taux mesurent le coût de l'emprunt, mais les traiter comme équivalents peut conduire à de mauvaises décisions financières.</p>
+<p>Une erreur courante est de supposer qu'un prêt à 6 % TAEG coûte le même qu'un prêt à 6 % TAE. En réalité, le prêt à 6 % TAEG avec capitalisation mensuelle a un TAE d'environ 6,17 %, ce qui le rend plus cher que le prêt indiqué directement à 6 % TAE.</p>
+<p>Une autre idée fausse est que le TAEG est toujours inférieur au TAE. Bien que cela soit vrai pour les prêts standard avec plus d'une période de capitalisation par an, cela peut créer un faux sentiment d'économies lors de la comparaison des offres. Certains emprunteurs croient également à tort que le taux annoncé est le seul chiffre qui compte, ignorant comment la fréquence de capitalisation affecte le coût total de l'emprunt au fil du temps.</p>
+<p>Une hypothèse particulièrement dangereuse est que la différence entre TAEG et TAE reste constante pour tous les types de prêts. En réalité, l'écart varie significativement en fonction du calendrier de capitalisation, de la durée du prêt et de la fréquence des paiements. Les cartes de crédit, par exemple, capitalisent souvent quotidiennement, créant un écart plus grand entre TAEG et TAE que vous ne verriez avec une hypothèque mensuelle standard.</p>
+<h2>TAEG vs TAE selon les fréquences de capitalisation</h2>
+<p>L'écart entre TAEG et TAE s'élargit à mesure que la capitalisation devient plus fréquente. Voici comment un TAEG de 12 % se traduit en TAE selon différents scénarios de capitalisation :</p>
+<ul>
+<li><strong>Capitalisation annuelle (1&times;/an) :</strong> TAEG = 12,00 %, TAE = 12,00 %</li>
+<li><strong>Capitalisation semestrielle (2&times;/an) :</strong> TAEG = 12,00 %, TAE = 12,36 %</li>
+<li><strong>Capitalisation trimestrielle (4&times;/an) :</strong> TAEG = 12,00 %, TAE = 12,55 %</li>
+<li><strong>Capitalisation mensuelle (12&times;/an) :</strong> TAEG = 12,00 %, TAE = 12,68 %</li>
+<li><strong>Capitalisation quotidienne (365&times;/an) :</strong> TAEG = 12,00 %, TAE = 12,75 %</li>
+</ul>
+<p>Comme vous pouvez le voir, la différence est modeste à la capitalisation annuelle mais croît significativement avec des périodes plus fréquentes. Pour la plupart des hypothèques et prêts auto avec capitalisation mensuelle, attendez-vous à ce que le TAE soit de 0,5 % à 1 % supérieur au TAEG annoncé. Les cartes de crédit et certains prêts personnels avec capitalisation quotidienne peuvent avoir un écart encore plus grand entre les deux taux.</p>
+<h2>Quel taux devriez-vous utiliser ?</h2>
+<p>Pour la formule d'annuité qui sous-tend l'amortissement français, <strong>le TAE est le taux correct</strong>. La formule suppose des taux périodiques effectifs, et utiliser le TAEG nominal divisé par les périodes introduit une erreur systématique dans le paiement calculé.</p>
+<p>Lors de la comparaison des offres de prêts, demandez toujours le TAE et utilisez-le dans vos calculs. Les institutions financières sont tenues de divulguer les deux taux dans de nombreuses juridictions, mais elles mettent souvent en avant le TAEG plus bas dans leurs matériaux marketing.</p>
+<h3>Exemple concret</h3>
+<p>Imaginez que vous choisissez entre deux offres de prêt hypothécaire de 300 000 € sur 30 ans :</p>
+<ul>
+<li><strong>Prêt A :</strong> 6,0 % TAEG, capitalisation mensuelle (TAE &asymp; 6,17 %)</li>
+<li><strong>Prêt B :</strong> 6,1 % TAE indiqué directement</li>
+</ul>
+<p>À première vue, le Prêt A semble moins cher de 0,1 point de pourcentage. Mais en convertissant les deux sur la même base, la vérité apparaît. En utilisant le TAE dans vos calculs de paiement, le Prêt B a en fait des paiements mensuels plus faibles et coûte environ 12 000 € de moins en intérêts totaux sur la durée de vie du prêt.</p>
+<p>Ce résultat contre-intuitif se produit parce que le TAEG de 6,0 % avec capitalisation mensuelle équivaut en fait à 6,17 % TAE, ce qui est supérieur au TAE de 6,1 % du Prêt B. C'est pourquoi les banques annoncent parfois le TAEG plutôt que le TAE — le nombre plus bas semble plus attractif même s'il ne reflète pas le coût réel. Faites toujours les calculs vous-même en utilisant le TAE pour faire des comparaisons précises et éviter de payer trop cher sur votre prêt.</p>
+<p>Lors de l'utilisation d'Amorta pour calculer vos paiements de prêt et votre tableau d'amortissement, saisissez toujours le TAE plutôt que le TAEG. Cela garantit que vos calculs de paiement sont précis et que votre tableau reflète le véritable coût de l'emprunt.</p>

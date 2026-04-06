@@ -5,6 +5,7 @@ import { enUSMessages } from '../src/i18n/locales/en-US/messages.js'
 import { enGBMessages } from '../src/i18n/locales/en-GB/messages.js'
 import { esESMessages } from '../src/i18n/locales/es-ES/messages.js'
 import { esARMessages } from '../src/i18n/locales/es-AR/messages.js'
+import { frFRMessages } from '../src/i18n/locales/fr-FR/messages.js'
 import type { SupportedLocale } from '../src/i18n/lingui.config'
 
 const MIN_WORD_COUNT = 800
@@ -15,9 +16,10 @@ const messagesByLocale: Record<SupportedLocale, Record<string, string>> = {
   'en-GB': enGBMessages,
   'es-ES': esESMessages,
   'es-AR': esARMessages,
+  'fr-FR': frFRMessages,
 }
 
-const locales: SupportedLocale[] = ['en-US', 'en-GB', 'es-ES', 'es-AR']
+const locales: SupportedLocale[] = ['en-US', 'en-GB', 'es-ES', 'es-AR', 'fr-FR']
 
 const stripHtmlAndCountWords = (html: string): number => {
   const $ = cheerio.load(html)

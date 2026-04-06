@@ -186,7 +186,7 @@ describe('route parsing', () => {
   })
 
   test('treats unknown locale prefix as regular path, does not strip it', () => {
-    const route = parseRouteState('https://example.com/fr', 'resolved')
+    const route = parseRouteState('https://example.com/it', 'resolved')
 
     expect(route.kind).toBe('index')
     expect(route.locale).toBeNull()

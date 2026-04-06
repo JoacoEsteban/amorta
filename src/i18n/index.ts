@@ -3,6 +3,7 @@ import { enUSMessages } from './locales/en-US/messages.js'
 import { enGBMessages } from './locales/en-GB/messages.js'
 import { esESMessages } from './locales/es-ES/messages.js'
 import { esARMessages } from './locales/es-AR/messages.js'
+import { frFRMessages } from './locales/fr-FR/messages.js'
 import { type SupportedLocale } from './lingui.config'
 
 const messages = {
@@ -10,6 +11,7 @@ const messages = {
   'en-GB': enGBMessages,
   'es-ES': esESMessages,
   'es-AR': esARMessages,
+  'fr-FR': frFRMessages,
 }
 
 export function buildTranslator(locale: SupportedLocale) {

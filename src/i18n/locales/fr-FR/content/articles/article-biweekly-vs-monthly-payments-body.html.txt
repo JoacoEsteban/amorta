@@ -1,0 +1,63 @@
+<p>Certains prêteurs offrent des plans de paiement bihebdomadaires comme moyen de rembourser votre hypothèque plus rapidement. L'idée semble séduisante : au lieu de faire 12 paiements par an, vous en faites 26 — effectivement un paiement mensuel supplémentaire par an sans le sentir. Mais cela fonctionne-t-il vraiment, et vaut-il la peine de changer ?</p>
+    <h2>Comment fonctionnent les paiements bihebdomadaires</h2>
+    <p>Avec un calendrier de paiement mensuel, vous payez votre hypothèque 12 fois par an. En bihebdomadaire, vous payez la moitié de votre paiement mensuel toutes les deux semaines. Comme il y a 52 semaines dans une année, cela donne 26 paiements — ou 13 équivalents mensuels complets par an.</p>
+    <p>Ce paiement supplémentaire va entièrement au capital, contournant les intérêts. Sur une hypothèque de 30 ans, cela peut réduire de 4 à 5 ans la durée du prêt et faire économiser des dizaines de milliers d'intérêts.</p>
+    <h3>Visualiser le calendrier</h3>
+    <p>Imaginez une année civile. Avec des paiements mensuels, vous payez le 1er de chaque mois, 12 fois au total. Avec des paiements bihebdomadaires alignés sur un calendrier typique de paie le vendredi, vos paiements tombent les 1er, 15, 29, 12, 26, 9, 23, et ainsi de suite. Certains mois vous faites deux paiements, d'autres trois. Sur 12 mois, ce modèle produit 26 demi-paiements.</p>
+    <p>La beauté de cette approche est psychologique. Vous n'écrivez jamais un chèque plus gros, pourtant vous accélérez automatiquement votre remboursement. Le paiement supplémentaire se produit « invisblement » car il est réparti tout au long de l'année en petites incréments.</p>
+    <h2>Les mathématiques derrière</h2>
+    <p>Considérez une hypothèque de 300 000 € à 6 % TAE sur 30 ans. Le paiement mensuel est d'environ 1 798 €.</p>
+    <p>Avec des paiements mensuels, vous faites 360 paiements totalisant 647 200 € — dont 347 200 € d'intérêts.</p>
+    <p>Avec des paiements bihebdomadaires de 899 € (la moitié du montant mensuel), vous faites 26 paiements par an. Les 1 798 € supplémentaires par an réduisent le capital plus rapidement. Vous finissez par rembourser le prêt en environ 26 ans au lieu de 30, économisant environ 45 000 € d'intérêts totaux.</p>
+    <h2>Comparer les options</h2>
+    <p>Voici comment les trois approches principales se comparent pour notre exemple de 300 000 € :</p>
+    <ul>
+      <li><strong>Mensuel standard :</strong> 1 798 €/mois, 30 ans, 347 200 € d'intérêts totaux</li>
+      <li><strong>Bihebdomadaire :</strong> 899 € toutes les deux semaines, ~26 ans, ~302 000 € d'intérêts totaux</li>
+      <li><strong>Mensuel avec 1/12 supplémentaire :</strong> 1 948 €/mois, ~26 ans, ~302 000 € d'intérêts totaux</li>
+    </ul>
+    <p>Les stratégies bihebdomadaire et mensuel-plus-supplémentaire produisent des résultats presque identiques. La différence réside dans la mise en œuvre, pas dans le résultat.</p>
+    <h2>Est-ce fait pour vous ?</h2>
+    <p>Les paiements bihebdomadaires ont le plus de sens si :</p>
+    <ul>
+      <li>Vous recevez des chèques de paie bihebdomadaires et voulez que les paiements s'alignent sur le revenu</li>
+      <li>Vous avez du mal à épargner pour des paiements forfaitaires supplémentaires</li>
+      <li>Votre prêteur propose un programme bihebdomadaire sans frais</li>
+      <li>Vous préférez des paiements automatisés et plus petits plutôt que manuels et plus gros</li>
+    </ul>
+    <p>Ils ont moins de sens si :</p>
+    <ul>
+      <li>Votre prêteur facture des frais importants pour le programme</li>
+      <li>Vous êtes payé mensuellement ou bimensuellement, créant des décalages de trésorerie</li>
+      <li>Vous préférez la flexibilité de faire varier les paiements supplémentaires selon les circonstances</li>
+      <li>Vous avez des dettes à taux plus élevé qui devraient être prioritaires</li>
+    </ul>
+    <h2>Méfiez-vous des frais</h2>
+    <p>Certains prêteurs facturent des frais de configuration ou de transaction pour les programmes de paiement bihebdomadaire, particulièrement les services tiers qui gèrent l'échéancier. Ces frais peuvent facilement dépasser les économies d'intérêts. Avant de vous inscrire, calculez si le coût initial vaut le bénéfice.</p>
+    <p>Les frais typiques à surveiller incluent :</p>
+    <ul>
+      <li><strong>Frais de configuration :</strong> 100-300 € pour initier le programme</li>
+      <li><strong>Frais de transaction :</strong> 2-5 € de frais de traitement par paiement</li>
+      <li><strong>Maintenance annuelle :</strong> 50-100 € de frais de programme annuel</li>
+    </ul>
+    <p>Sur 26 paiements par an, des frais de transaction de 3 € ajoutent 78 € annuellement. Sur 26 ans, c'est 2 028 € de frais uniquement. Assurez-vous que vos économies d'intérêts dépassent ces coûts.</p>
+    <p>Vérifiez également que les paiements supplémentaires sont appliqués directement au capital, pas conservés comme escrow prépayé. Certains prêteurs peuvent ne pas les traiter correctement.</p>
+    <h2>La stratégie équivalente</h2>
+    <p>Voici l'idée clé : un paiement bihebdomadaire est mathématiquement équivalent à effectuer un paiement mensuel supplémentaire par an. Si vous pouvez le budgéter, ajouter simplement 1/12 de votre paiement mensuel à chaque paiement mensuel atteint le même résultat — sans implication du prêteur ni frais.</p>
+    <h3>Mise en œuvre étape par étape</h3>
+    <p>Pour reproduire les bénéfices bihebdomadaires avec des paiements mensuels :</p>
+    <ol>
+      <li>Calculez 1/12 de votre paiement mensuel (divisez par 12)</li>
+      <li>Ajoutez ce montant à votre paiement mensuel automatique</li>
+      <li>Précisez que l'excédent va à la réduction du capital</li>
+      <li>Surveillez vos relevés pour assurer une bonne application</li>
+    </ol>
+    <p>Par exemple, ajoutez 150 € à votre paiement mensuel de 1 798 € (1 948 € au total) et vous obtenez le même bénéfice qu'un échéancier bihebdomadaire. Cette approche est plus flexible car vous contrôlez le montant supplémentaire et pouvez l'ajuster selon les besoins.</p>
+    <h2>Avantages psychologiques</h2>
+    <p>Au-delà des mathématiques, les paiements bihebdomadaires offrent des avantages comportementaux. Les paiements plus petits et plus fréquents semblent moins intimidants qu'une grande sortie mensuelle. Pour de nombreux emprunteurs, 899 € toutes les deux semaines semble plus gérable que 1 798 € une fois par mois, même si le total annuel est plus élevé.</p>
+    <p>Cette approche « indolore » des paiements supplémentaires peut faire la différence entre suivre et abandonner la stratégie. Si les paiements bihebdomadaires vous aident à payer régulièrement un supplément alors que vous ne le feriez pas autrement, ils apportent une valeur réelle au-delà des chiffres bruts.</p>
+    <h2>Quand le bihebdomadaire a du sens</h2>
+    <p>Les paiements bihebdomadaires peuvent être un bon choix si vous êtes payé bihebdomadairement et voulez que votre paiement hypothécaire s'aligne sur votre cycle de revenu. Cette synchronisation peut faciliter la budgétisation et garantir que le paiement est effectué à temps.</p>
+    <p>Ils aident également si vous avez du mal à épargner suffisamment pour un paiement forfaitaire supplémentaire. Répartir le supplément sur des paiements plus petits et plus fréquents semble moins douloureux pour certains emprunteurs.</p>
+    <h2>Faites les calculs vous-même</h2>
+    <p>Utilisez Amorta pour comparer les échéanciers mensuels et bihebdomadaires côte à côte. La différence dans les intérêts totaux payés et la durée du prêt clarifie les compromis, pour que vous puissiez décider si un plan bihebdomadaire ou un simple paiement mensuel supplémentaire fonctionne mieux pour votre situation.</p>

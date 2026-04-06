@@ -20,6 +20,7 @@ const getLocaleTag = (locale: string): string => {
     'en-GB': 'en-GB',
     'es-ES': 'es-ES',
     'es-AR': 'es-AR',
+    'fr-FR': 'fr-FR',
   }
   return localeTagMap[locale] ?? DEFAULT_LOCALE
 }

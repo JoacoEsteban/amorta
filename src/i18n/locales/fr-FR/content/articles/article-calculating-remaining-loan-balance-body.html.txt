@@ -1,0 +1,76 @@
+<p>Connaître votre solde de prêt restant à n'importe quel moment pendant la période de remboursement est essentiel pour la planification financière. Que vous envisagiez le refinancement, la vente d'un actif, ou simplement le suivi de votre progression, comprendre comment calculer ce chiffre vous donne clarté et contrôle sur votre dette.</p>
+
+<h2>Pourquoi le solde restant est important</h2>
+<p>Le solde restant représente la portion du prêt original que vous devez encore. Contrairement au capital original, qui reste constant sur le papier, le solde change à chaque paiement que vous faites. Chaque paiement réduit ce solde, mais pas du montant total du paiement — les intérêts prennent d'abord une portion.</p>
+<p>Ce solde est critique pour plusieurs décisions. Lors du refinancement, les prêteurs doivent savoir combien vous devez actuellement pour structurer le nouveau prêt. Lors de la vente d'une propriété avec une hypothèque, les produits de la vente doivent couvrir le solde restant pour libérer la dette. Même pour le suivi personnel, connaître votre solde vous aide à comprendre combien de progrès vous avez faits vers la liberté financière.</p>
+
+<h2>Le fondement mathématique</h2>
+<p>Dans l'amortissement français, le solde restant à n'importe quel moment peut être calculé directement sans additionner tous les paiements précédents. C'est possible parce que le prêt suit une structure mathématique prévisible basée sur la formule d'annuité.</p>
+<p>Le solde restant après <em>k</em> paiements égale la valeur actuelle des paiements restants. Si vous avez <em>n</em> paiements totaux et que vous avez fait <em>k</em> paiements, il reste <em>(n &minus; k)</em> paiements. Le solde est ce que ces paiements futurs valent aujourd'hui.</p>
+
+<h3>La formule</h3>
+<p>Le solde restant <em>B<sub>k</sub></em> après <em>k</em> paiements est :</p>
+<p><em>B<sub>k</sub> = P &times; [(1 &minus; (1 + i)<sup>&minus;(n &minus; k)</sup>) / i]</em></p>
+<p>Où :</p>
+<ul>
+  <li><em>P</em> est le montant du paiement périodique</li>
+  <li><em>i</em> est le taux d'intérêt périodique</li>
+  <li><em>n</em> est le nombre total de paiements</li>
+  <li><em>k</em> est le nombre de paiements déjà effectués</li>
+</ul>
+<p>Cette formule actualise les paiements restants à leur valeur actuelle, vous donnant le solde exact.</p>
+
+<h2>Un exemple pratique</h2>
+<p>Considérez un prêt de 250 000 € à 6 % de taux annuel effectif avec des paiements mensuels sur 30 ans. Le paiement mensuel est d'environ 1 498,88 €, et il y a 360 paiements au total.</p>
+<p>Après 5 ans (60 paiements), vous voulez connaître votre solde restant. En utilisant la formule avec <em>n &minus; k = 300</em> paiements restants :</p>
+<p><em>B<sub>60</sub> = 1 498,88 &times; [(1 &minus; (1 + 0,004867)<sup>&minus;300</sup>) / 0,004867]</em></p>
+<p>Le taux périodique <em>i</em> est d'environ 0,004867 (le taux annuel de 6 % converti en mensuel). Le calcul donne un solde restant d'environ 232 500 €.</p>
+<p>Cela signifie qu'après 5 ans de paiements totalisant près de 90 000 €, vous n'avez réduit le capital que d'environ 17 500 €. Le reste est allé aux intérêts. C'est la nature de l'amortissement : les premiers paiements sont principalement des intérêts.</p>
+
+<h3>Après 10 ans</h3>
+<p>En utilisant la même formule avec 240 paiements restants :</p>
+<p><em>B<sub>120</sub> = 1 498,88 &times; [(1 &minus; (1 + 0,004867)<sup>&minus;240</sup>) / 0,004867]</em></p>
+<p>Le solde restant est d'environ 209 000 €. Après une décennie de paiements dépassant 180 000 €, vous n'avez remboursé que 41 000 € de capital. Le modèle devient clair : la réduction du principal s'accélère au fil du temps, mais lentement.</p>
+
+<h2>Méthode de calcul alternative</h2>
+<p>Si vous n'avez pas la formule sous la main, vous pouvez calculer le solde restant en déterminant ce à quoi le prêt original aurait grandi, moins ce à quoi vos paiements auraient grandi. C'est ce qu'on appelle la méthode prospective par opposition à la méthode rétrospective.</p>
+<h3>Méthode rétrospective</h3>
+<p>La vue rétrospective calcule :</p>
+<p><em>B<sub>k</sub> = L &times; (1 + i)<sup>k</sup> &minus; P &times; [((1 + i)<sup>k</sup> &minus; 1) / i]</em></p>
+<p>Ici, <em>L &times; (1 + i)<sup>k</sup></em> est ce à quoi le prêt original aurait grandi avec les intérêts composés, et le second terme est ce à quoi vos paiements auraient grandi s'ils étaient investis au même taux. La différence est votre dette restante.</p>
+<p>En utilisant le même exemple après 60 paiements :</p>
+<p><em>B<sub>60</sub> = 250 000 &times; (1,004867)<sup>60</sup> &minus; 1 498,88 &times; [((1,004867)<sup>60</sup> &minus; 1) / 0,004867]</em></p>
+<p>Cela donne également environ 232 500 €, confirmant que les deux méthodes produisent des résultats identiques.</p>
+
+<h2>Utilisation de votre tableau d'amortissement</h2>
+<p>Si vous avez un tableau d'amortissement complet, trouver votre solde restant est simple. Localisez simplement la ligne correspondant à votre numéro de paiement actuel et lisez la colonne du solde.</p>
+<p>La plupart des tableaux montrent chaque paiement décomposé en capital et intérêts, avec un solde courant. Le solde après votre paiement le plus récent est exactement ce que vous devez actuellement.</p>
+<p>Pour les prêts avec des paiements supplémentaires, votre solde réel sera inférieur à ce que le tableau montre. Vous pouvez ajuster en soustrayant le total de tous les paiements de capital supplémentaires que vous avez faits du solde prévu.</p>
+
+<h2>Impact de la fréquence de paiement</h2>
+<p>Le calcul change légèrement en fonction de la fréquence à laquelle vous faites des paiements. Pour les paiements mensuels, utilisez le taux périodique mensuel. Pour les paiements bihebdomadaires, utilisez un taux périodique bihebdomadaire et ajustez le nombre total de paiements en conséquence.</p>
+<p>Avec 26 paiements bihebdomadaires par an au lieu de 12 paiements mensuels, un prêt de 30 ans a 780 paiements au lieu de 360. Le taux périodique est plus faible (taux annuel divisé par 26), mais le montant du paiement est d'environ la moitié du montant mensuel. Le calcul du solde utilise la même formule avec ces valeurs ajustées.</p>
+
+<h2>Quand le calcul du solde est utile</h2>
+<h3>Décisions de refinancement</h3>
+<p>Lorsque vous envisagez le refinancement, vous avez besoin de votre solde actuel pour déterminer le montant du nouveau prêt. Vous devez également calculer combien d'intérêts restent sur votre prêt actuel pour comparer contre le coût total d'un nouveau prêt, y compris les frais et points.</p>
+<h3>Vente d'un actif</h3>
+<p>Si vous vendez une maison ou une voiture avec un prêt en cours, l'acheteur ou l'agent de clôture a besoin de connaître le montant exact de remboursement. C'est généralement le solde restant plus les intérêts accumulés depuis le dernier paiement.</p>
+<h3>Planification des paiements supplémentaires</h3>
+<p>Connaître votre solde vous aide à calculer l'impact des paiements supplémentaires. Un paiement supplémentaire de 10 000 € tôt dans le prêt fait économiser plus d'intérêts que le même montant plus tard, car il élimine plus d'intérêts futurs.</p>
+
+<h2>Vérification avec Amorta</h2>
+<p>Utilisez Amorta pour générer votre tableau d'amortissement complet et vérifier vos calculs de solde. Le tableau de l'échelonnier montre le solde restant exact après chaque paiement, vous donnant un point de référence pour n'importe quel moment de la durée de votre prêt.</p>
+<p>Vous pouvez également expérimenter avec des scénarios : voyez comment les paiements supplémentaires réduisent votre solde plus rapidement, ou comparez les soldes à différents moments pour des prêts avec différentes durées ou taux. Le graphique visuel facilite la visualisation de la façon dont votre solde diminue au fil du temps et comment différents facteurs affectent cette courbe.</p>
+
+<h2>Pièges courants</h2>
+<p>Lors du calcul des soldes restants, méfiez-vous de ces erreurs courantes :</p>
+<ul>
+  <li><strong>Utiliser le mauvais taux périodique</strong> : Convertissez toujours les taux annuels au taux périodique correct pour votre fréquence de paiement. Un taux annuel de 6 % n'est pas de 0,5 % mensuel pour les calculs de TAE.</li>
+  <li><strong>Ignorer le calendrier de paiement</strong> : Le solde juste après un paiement diffère du solde juste avant le prochain paiement en raison des intérêts accumulés.</li>
+  <li><strong>Oublier les frais</strong> : Les montants de remboursement anticipé peuvent inclure des pénalités de remboursement anticipé ou des frais administratifs non reflétés dans le solde mathématique.</li>
+  <li><strong>Erreurs d'arrondi</strong> : L'utilisation de montants de paiement arrondis dans les calculs peut produire des soldes légèrement incorrects. Utilisez des valeurs exactes quand possible.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>Calculer votre solde de prêt restant est une compétence fondamentale pour gérer la dette. Que vous utilisiez la formule prospective, la méthode rétrospective, ou un tableau d'amortissement complet, comprendre où vous en êtes financièrement permet de meilleures décisions concernant le refinancement, la vente, ou l'accélération du remboursement. Les mathématiques de l'amortissement français rendent ce calcul précis et prévisible, éliminant l'incertitude de votre planification financière.</p>
