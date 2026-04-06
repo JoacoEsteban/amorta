@@ -1115,7 +1115,16 @@ ul {
 .article-content ul,
 .article-content ol {
   margin: 1rem 0 1.25rem;
-  padding-left: 1.5rem;
+  padding-left: 1.75rem;
+  list-style-position: outside;
+}
+
+.article-content ul {
+  list-style-type: disc;
+}
+
+.article-content ol {
+  list-style-type: decimal;
 }
 
 .article-content li {
