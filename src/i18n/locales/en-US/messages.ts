@@ -9,6 +9,7 @@ import articleExtraPaymentsBody from './content/articles/article-extra-payments-
 import articleLoanTermComparisonBody from './content/articles/article-loan-term-comparison-body.html.txt' with { type: 'text' }
 import articleBiweeklyVsMonthlyPaymentsBody from './content/articles/article-biweekly-vs-monthly-payments-body.html.txt' with { type: 'text' }
 import articleCalculatingRemainingLoanBalanceBody from './content/articles/article-calculating-remaining-loan-balance-body.html.txt' with { type: 'text' }
+import articleFactorsAffectingMortgageRatesBody from './content/articles/article-factors-affecting-mortgage-rates-body.html.txt' with { type: 'text' }
 
 export const enUSMessages = {
   sharedResult: 'Shared Result',
@@ -307,4 +308,12 @@ export const enUSMessages = {
     'How to Calculate Your Remaining Loan Balance at Any Point | Amorta',
   articleCalculatingRemainingLoanBalanceSeoDescription:
     'Learn the mathematical formulas to calculate your exact loan balance at any point. Understand prospective and retrospective methods with practical examples.',
+  articleFactorsAffectingMortgageRatesTitle: 'Factors That Affect Your Mortgage Interest Rate',
+  articleFactorsAffectingMortgageRatesDescription:
+    'Learn the key factors lenders consider when setting mortgage rates, from credit scores to market conditions, and how you can improve your rate.',
+  articleFactorsAffectingMortgageRatesDate: 'April 6, 2026',
+  articleFactorsAffectingMortgageRatesBody,
+  articleFactorsAffectingMortgageRatesSeoTitle: 'Factors That Affect Your Mortgage Interest Rate | Amorta',
+  articleFactorsAffectingMortgageRatesSeoDescription:
+    'Discover what factors affect your mortgage interest rate. Learn how credit scores, loan-to-value ratios, debt-to-income ratios, and market conditions influence your rate.',
 }

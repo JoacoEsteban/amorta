@@ -9,6 +9,14 @@ export type Article = {
 
 export const ARTICLES: Article[] = [
   {
+    slug: 'factors-affecting-mortgage-rates',
+    titleKey: 'articleFactorsAffectingMortgageRatesTitle',
+    descriptionKey: 'articleFactorsAffectingMortgageRatesDescription',
+    dateKey: 'articleFactorsAffectingMortgageRatesDate',
+    bodyKey: 'articleFactorsAffectingMortgageRatesBody',
+    date: new Date('2026-04-06'),
+  },
+  {
     slug: 'calculating-remaining-loan-balance',
     titleKey: 'articleCalculatingRemainingLoanBalanceTitle',
     descriptionKey: 'articleCalculatingRemainingLoanBalanceDescription',

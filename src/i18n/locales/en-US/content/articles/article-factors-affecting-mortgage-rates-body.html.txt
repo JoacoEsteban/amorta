@@ -1,0 +1,39 @@
+<p>When you apply for a mortgage, the interest rate you are offered depends on far more than just your credit score. Lenders evaluate a complex set of factors to determine the risk and pricing of your loan. Understanding these factors can help you secure a better rate and save thousands over the life of your loan.</p>
+<h2>The role of credit history</h2>
+<p>Your credit history remains one of the most significant factors in determining your mortgage rate. Lenders use this record to assess how reliably you have managed debt in the past. A history of on-time payments, low credit utilization, and diverse credit accounts signals lower risk to lenders.</p>
+<p>Credit scores typically range from 300 to 850. Borrowers with scores above 740 generally qualify for the best rates, while those below 620 may face significantly higher rates or difficulty obtaining approval. Even a small improvement in your credit score can translate to meaningful savings. For example, on a $300,000 loan, the difference between a 680 and 740 credit score could save you over $30,000 in interest over 30 years.</p>
+<h2>Loan-to-value ratio and down payment</h2>
+<p>The loan-to-value ratio (LTV) compares your loan amount to the property's appraised value. A lower LTV means you have more equity in the property from the start, which reduces the lender's risk. You achieve a lower LTV by making a larger down payment.</p>
+<p>Most lenders offer their best rates to borrowers who put down at least 20 percent. With less than 20 percent down, you typically pay private mortgage insurance (PMI), which increases your monthly payment without reducing your principal. Some government-backed loans allow down payments as low as 3.5 percent, but these come with higher rates and additional fees.</p>
+<h2>Debt-to-income ratio</h2>
+<p>Your debt-to-income ratio (DTI) measures your monthly debt obligations against your gross monthly income. Lenders calculate this by dividing your total monthly debt payments by your income. A lower DTI indicates you have more disposable income to handle mortgage payments.</p>
+<p>Most conventional lenders prefer a DTI of 36 percent or lower, though some programs allow up to 43 percent or higher with compensating factors. If your DTI exceeds these thresholds, you may face higher rates or need to reduce existing debt before qualifying.</p>
+<h2>Loan term and type</h2>
+<p>The length of your loan affects your interest rate. Shorter-term loans, such as 15-year mortgages, typically offer lower rates than 30-year loans because the lender's money is at risk for less time. However, the monthly payments are higher due to the compressed repayment schedule.</p>
+<p>The type of loan also matters. Fixed-rate mortgages provide stability but often start with slightly higher rates than adjustable-rate mortgages (ARMs). ARMs offer lower initial rates that adjust periodically based on market indices, introducing uncertainty after the fixed period ends.</p>
+<h2>Property type and location</h2>
+<p>Lenders consider the property itself when setting rates. Primary residences qualify for the best rates because borrowers are less likely to default on their home. Investment properties and second homes carry higher rates due to increased risk.</p>
+<p>Location also plays a role. Properties in areas with stable or appreciating real estate markets may receive better rates than those in declining markets. Additionally, some lenders charge more for condominiums compared to single-family homes, particularly if the condo association has financial or occupancy issues.</p>
+<h2>Market conditions and economic factors</h2>
+<p>Beyond your personal financial situation, broader economic forces influence mortgage rates. The Federal Reserve's monetary policy, inflation expectations, and the yield on 10-year Treasury bonds all affect the cost of borrowing.</p>
+<p>When the economy is strong and inflation is rising, rates tend to increase. During economic uncertainty, rates often fall as investors seek the safety of bonds. While you cannot control these macroeconomic factors, timing your application during favorable conditions can lead to significant savings.</p>
+<h2>Points and lender credits</h2>
+<p>You can actively influence your rate through discount points and lender credits. Discount points are upfront fees you pay to reduce your interest rate, with one point typically costing 1 percent of the loan amount and reducing the rate by approximately 0.25 percent.</p>
+<p>Lender credits work in reverse: the lender covers some of your closing costs in exchange for a higher interest rate. This trade-off makes sense if you need to minimize upfront costs and plan to sell or refinance within a few years. If you plan to keep the loan long-term, paying points usually yields better returns.</p>
+<h2>Employment and income stability</h2>
+<p>Lenders prefer borrowers with steady employment and consistent income. A two-year history in the same line of work demonstrates stability. Self-employed borrowers face additional scrutiny and may need to provide more documentation, potentially affecting their rate.</p>
+<p>Income sources also matter. Regular salary and wages are viewed favorably. Income from bonuses, commissions, or part-time work may require a longer history to count toward your qualification, and some lenders adjust rates upward for borrowers with variable income.</p>
+<h2>How to improve your rate</h2>
+<p>While some factors are beyond your control, you can take steps to secure a better rate:</p>
+<ul>
+<li>Improve your credit score by paying down debt and correcting errors on your credit report</li>
+<li>Save for a larger down payment to reduce your LTV ratio</li>
+<li>Pay off existing debts to lower your DTI</li>
+<li>Compare offers from multiple lenders, as rates can vary significantly</li>
+<li>Consider paying discount points if you plan to keep the loan long-term</li>
+<li>Choose a shorter loan term if you can afford higher monthly payments</li>
+</ul>
+<h2>Understanding rate quotes</h2>
+<p>When comparing mortgage offers, look beyond the interest rate to the annual percentage rate (APR), which includes fees and points. A loan with a lower rate but high fees may cost more than a loan with a slightly higher rate and lower fees.</p>
+<p>Remember that the rate you see advertised is typically the best available rate for ideal borrowers. Your actual rate depends on how lenders evaluate your specific financial profile against the factors outlined above.</p>
+<p>Use Amorta to model different scenarios and see how changes in rate affect your monthly payment and total interest. Understanding these factors empowers you to present your strongest financial profile when applying for a mortgage.</p>

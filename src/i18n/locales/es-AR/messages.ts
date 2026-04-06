@@ -9,6 +9,7 @@ import articleExtraPaymentsBody from './content/articles/article-extra-payments-
 import articleLoanTermComparisonBody from './content/articles/article-loan-term-comparison-body.html.txt' with { type: 'text' }
 import articleBiweeklyVsMonthlyPaymentsBody from './content/articles/article-biweekly-vs-monthly-payments-body.html.txt' with { type: 'text' }
 import articleCalculatingRemainingLoanBalanceBody from './content/articles/article-calculating-remaining-loan-balance-body.html.txt' with { type: 'text' }
+import articleFactorsAffectingMortgageRatesBody from './content/articles/article-factors-affecting-mortgage-rates-body.html.txt' with { type: 'text' }
 
 export const esARMessages = {
   sharedResult: 'Resultado Compartido',
@@ -313,4 +314,12 @@ export const esARMessages = {
     'Cómo Calcular el Saldo Pendiente de tu Préstamo | Amorta',
   articleCalculatingRemainingLoanBalanceSeoDescription:
     'Aprendé las fórmulas matemáticas para calcular tu saldo exacto en cualquier momento. Comprendé los métodos prospectivo y retrospectivo con ejemplos prácticos.',
+  articleFactorsAffectingMortgageRatesTitle: 'Factores que Afectan la Tasa de Interés de tu Hipoteca',
+  articleFactorsAffectingMortgageRatesDescription:
+    'Conocé los factores clave que los prestamistas consideran al establecer tasas hipotecarias, desde el historial crediticio hasta las condiciones del mercado, y cómo podés mejorar tu tasa.',
+  articleFactorsAffectingMortgageRatesDate: '6 de Abril de 2026',
+  articleFactorsAffectingMortgageRatesBody,
+  articleFactorsAffectingMortgageRatesSeoTitle: 'Factores que Afectan la Tasa de Interés de tu Hipoteca | Amorta',
+  articleFactorsAffectingMortgageRatesSeoDescription:
+    'Descubrí qué factores afectan la tasa de interés de tu hipoteca. Aprendé cómo los historiales crediticios, las relaciones préstamo-valor y las condiciones del mercado influyen en tu tasa.',
 }
