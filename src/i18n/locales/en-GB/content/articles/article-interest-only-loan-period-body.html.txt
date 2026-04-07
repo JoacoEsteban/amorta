@@ -1,0 +1,52 @@
+<p>An interest-only loan period is a stretch of time at the beginning of a loan when the required payment covers interest but does not repay capital. Your balance stays broadly unchanged instead of declining with each instalment. That structure can lower the payment temporarily, but it also delays amortisation and changes how the rest of the loan behaves.</p>
+<p>This matters because many borrowers see a low initial payment and assume the loan is simply cheaper or easier. In reality, the payment is low because capital repayment has been postponed. Once the interest-only window ends, the loan usually converts into a fully amortising schedule, and the required payment can rise sharply.</p>
+<p>If you want a baseline for how a normal repayment pattern works, Amorta's guide to <a href="understanding-amortization-schedule">understanding your amortisation schedule</a> is the right starting point. An interest-only period makes the most sense when you compare it with a standard French amortisation loan, where every scheduled payment includes both interest and capital from the start.</p>
+
+<h2>What an interest-only period actually means</h2>
+<p>Under a fully amortising loan, each payment is designed so the balance reaches zero by the end of the term. Early payments are interest-heavy, but they still reduce the balance a little. During an interest-only period, that capital reduction does not happen. The lender charges interest for the period, and your required payment is set at roughly that amount.</p>
+<p>Suppose you borrow £300,000 and the monthly interest due is £1,500. During the interest-only phase, the required payment may also be about £1,500. You are up to date on the loan, but the balance is still about £300,000 after the payment. In other words, the loan is being serviced, not amortised.</p>
+<p>This is different from <a href="negative-amortization">negative amortisation</a>. With negative amortisation, the payment is too small even to cover all accrued interest, so unpaid interest is added back to capital and the balance grows. In an interest-only period, the payment typically covers the interest due, so the balance stays flat rather than increasing.</p>
+
+<h2>How the payment is calculated during this phase</h2>
+<p>The core idea is simple: periodic payment equals current balance multiplied by the periodic interest rate. If the monthly rate is 0.5% and the balance is £300,000, the interest for that month is £1,500. A required payment of £1,500 covers the period's interest charge and leaves capital unchanged.</p>
+<p>Because no capital is being repaid, the calculation is much simpler than a full amortisation formula. There is no need to spread repayment across the remaining term yet. The lender is collecting the cost of carrying the debt for that period, but not reducing the debt itself.</p>
+<p>That simplicity is also why interest-only payments look attractive in advertisements. They are lower than fully amortising payments on the same balance and rate. The tradeoff is that the missing capital repayment does not vanish. It gets postponed to later payments.</p>
+
+<h2>What happens when the interest-only period ends</h2>
+<p>Once the introductory phase expires, the loan usually has to repay the same balance over a shorter remaining term. That means the payment must be recalculated on two facts at once: the capital is still mostly intact, and there is less time left to eliminate it. The result is often payment shock.</p>
+<p>Imagine a 30-year loan with a 5-year interest-only period. After 60 payments, the balance may still be close to the original £300,000. But now that balance has to be amortised over the remaining 25 years instead of 30. Even if the interest rate stays exactly the same, the required payment will jump because capital repayment finally begins.</p>
+<p>If the rate is variable, the jump can be larger. A higher rate and a shorter remaining term both push the new payment upward. That is why borrowers should evaluate the post-conversion payment before focusing on the temporary payment relief.</p>
+
+<h2>A simple numerical example</h2>
+<p>Assume you take a £250,000 loan at a 6% effective annual rate with monthly payments. During a 3-year interest-only period, the monthly payment is set to cover only interest. If the monthly interest charge is roughly £1,214, that becomes the required payment. After 36 payments, you have paid a substantial amount in interest, but the balance is still near £250,000.</p>
+<p>Now suppose the loan converts to a fully amortising structure for the remaining 27 years. The payment is no longer based only on the month's interest. It must cover interest plus enough capital to reduce the balance to zero by the end of the remaining term. The monthly amount could rise by several hundred pounds even though the original balance never increased.</p>
+<p>This is the key economic reality: the interest-only phase buys lower payments now by concentrating capital repayment into the future. It helps with short-term cash flow, but not with long-term borrowing cost.</p>
+
+<h2>Why lenders and borrowers use this structure</h2>
+<p>Lenders and borrowers use interest-only periods when payment flexibility matters more than early balance reduction. A borrower with irregular income, expected bonuses, or a temporary transition period may prefer lower required payments at the start. Property investors sometimes use the structure to preserve liquidity while the asset begins producing income.</p>
+<p>There are also cases where the loan is expected to be sold, remortgaged, or repaid before the interest-only window ends. In those situations, the borrower may care mainly about carrying cost during a short horizon rather than about steady amortisation.</p>
+<p>Still, that logic depends on a plan actually working. If a remortgage does not happen, a property does not sell, or income does not increase as expected, the borrower remains exposed to the higher later payment.</p>
+
+<h2>Main risks to understand before accepting one</h2>
+<ul>
+  <li><strong>Payment shock:</strong> The later payment can rise sharply when capital amortisation begins.</li>
+  <li><strong>Slower equity growth:</strong> Because the balance stays high, you build ownership more slowly.</li>
+  <li><strong>Higher total interest:</strong> Interest accrues on a large balance for longer, so lifetime borrowing cost often increases.</li>
+  <li><strong>Refinancing risk:</strong> If you planned to remortgage before conversion, market conditions or credit changes may block that option.</li>
+  <li><strong>Budget illusion:</strong> A low early payment can make a loan look more affordable than it really is over the full term.</li>
+</ul>
+<p>These risks are easier to evaluate when you compare the loan not only on the initial payment, but on its entire path from origination to payoff. Amorta's article on <a href="comparing-loan-offers">comparing loan offers effectively</a> is useful here because a lower first payment alone is never enough to judge total cost.</p>
+
+<h2>How to evaluate whether it fits your situation</h2>
+<p>Start by asking what problem the interest-only period is solving. If the answer is temporary cash-flow management during a known short phase, the structure may be understandable. If the answer is simply that the fully amortising payment feels too high, that is a warning sign. A loan does not become cheaper just because early capital repayment is delayed.</p>
+<p>Next, calculate the fully amortising payment that will apply after conversion and decide whether it still fits your budget under conservative assumptions. Do not rely on an optimistic future salary, a perfect remortgage market, or continuously rising property values.</p>
+<p>You should also compare the same loan with and without the interest-only feature. Often the clearest way to see the tradeoff is to place the two schedules side by side. The article on <a href="loan-term-comparison">loan term comparison</a> shows the same general principle: when repayment is stretched out, lower periodic payments usually come with higher total interest.</p>
+
+<h2>What to inspect in the loan documents</h2>
+<p>Check how long the interest-only period lasts, whether the rate is fixed or variable during and after that phase, and exactly how the later payment is recalculated. Look for caps, reset rules, early repayment restrictions, and any assumptions the lender uses in illustrations.</p>
+<p>It is also worth checking whether voluntary capital payments are allowed during the interest-only window. If they are, the loan may offer useful flexibility: you can pay the lower required amount in tight months and reduce principal in stronger months. That makes the structure very different from a contract that locks you into a rigid path.</p>
+<p>If extra capital is allowed, Amorta's guide to <a href="extra-payments">the power of extra payments</a> explains why even occasional reductions can soften future interest cost and reduce the later payment burden.</p>
+
+<h2>Conclusion</h2>
+<p>An interest-only loan period means your required payment covers interest without reducing capital. That lowers the initial payment, but it postpones amortisation rather than eliminating it. Once the interest-only phase ends, the remaining balance must usually be repaid over a shorter horizon, which often produces a noticeably higher payment.</p>
+<p>The structure is not automatically good or bad. It is a cash-flow tool with specific tradeoffs: lower required payments now, slower balance reduction, and often higher total interest later. If you understand those mechanics, review the conversion terms carefully, and test the post-conversion payment against your real budget, you can judge whether the flexibility is genuinely useful or simply disguising a loan that is harder to carry over time.</p>

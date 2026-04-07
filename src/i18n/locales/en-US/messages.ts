@@ -12,6 +12,7 @@ import articleCalculatingRemainingLoanBalanceBody from './content/articles/artic
 import articleFactorsAffectingMortgageRatesBody from './content/articles/article-factors-affecting-mortgage-rates-body.html.txt' with { type: 'text' }
 import articleNegativeAmortizationBody from './content/articles/article-negative-amortization-body.html.txt' with { type: 'text' }
 import articleComparingLoanOffersBody from './content/articles/article-comparing-loan-offers-body.html.txt' with { type: 'text' }
+import articleInterestOnlyLoanPeriodBody from './content/articles/article-interest-only-loan-period-body.html.txt' with { type: 'text' }
 
 export const enUSMessages = {
   sharedResult: 'Shared Result',
@@ -342,4 +343,13 @@ export const enUSMessages = {
     'How to Compare Loan Offers Effectively | Amorta',
   articleComparingLoanOffersSeoDescription:
     'Compare loan offers like a pro. Learn to evaluate total cost, fees, prepayment penalties, and terms to find the best deal for your situation.',
+  articleInterestOnlyLoanPeriodTitle: 'What Is an Interest-Only Loan Period?',
+  articleInterestOnlyLoanPeriodDescription:
+    'Learn how an interest-only loan period works, why payments start lower, and what changes when the loan begins amortizing principal.',
+  articleInterestOnlyLoanPeriodDate: 'April 7, 2026',
+  articleInterestOnlyLoanPeriodBody,
+  articleInterestOnlyLoanPeriodSeoTitle:
+    'What Is an Interest-Only Loan Period? | Amorta',
+  articleInterestOnlyLoanPeriodSeoDescription:
+    'Learn what an interest-only loan period is, how it changes monthly payments, and why later payment resets can increase total borrowing cost.',
 }

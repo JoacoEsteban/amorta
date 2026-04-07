@@ -1,0 +1,48 @@
+<p>Un periodo de solo intereses es una etapa inicial del préstamo en la que la cuota exigida cubre los intereses, pero no amortiza capital. El saldo permanece prácticamente igual en lugar de bajar con cada cuota. Esa estructura puede reducir el pago durante un tiempo, pero también retrasa la amortización y cambia el comportamiento del resto del préstamo.</p>
+<p>Esto importa porque muchos prestatarios ven una cuota inicial baja y asumen que el préstamo es simplemente más barato o más fácil de soportar. En realidad, la cuota es baja porque la devolución del capital se ha pospuesto. Cuando termina la ventana de solo intereses, el préstamo suele convertirse en un calendario totalmente amortizable y la cuota exigida puede subir de forma brusca.</p>
+<p>Si quiere una referencia de cómo funciona un esquema normal, la guía de Amorta sobre <a href="understanding-amortization-schedule">cómo entender su cuadro de amortización</a> es un buen punto de partida. Un periodo de solo intereses se entiende mejor al compararlo con un préstamo de amortización francesa estándar, en el que cada cuota incluye intereses y capital desde el principio.</p>
+
+<h2>Qué significa realmente un periodo de solo intereses</h2>
+<p>En un préstamo totalmente amortizable, cada cuota está diseñada para que el saldo llegue a cero al final del plazo. Las primeras cuotas tienen mucho interés, pero aun así reducen un poco el saldo. Durante un periodo de solo intereses, esa reducción del capital no se produce. La entidad cobra los intereses del periodo y fija la cuota obligatoria aproximadamente en esa cantidad.</p>
+<p>Suponga que pide 300.000 € y que los intereses mensuales son 1.500 €. Durante la fase de solo intereses, la cuota exigida también puede rondar los 1.500 €. Usted está al día con el préstamo, pero el saldo sigue siendo de unos 300.000 € después del pago. En otras palabras, la deuda se atiende, pero no se amortiza.</p>
+<p>Esto es distinto de la <a href="negative-amortization">amortización negativa</a>. En la amortización negativa, la cuota es tan baja que ni siquiera cubre todos los intereses devengados, de modo que los intereses impagados se añaden al capital y el saldo crece. En un periodo de solo intereses, la cuota normalmente cubre los intereses del periodo, así que el saldo se mantiene estable en lugar de aumentar.</p>
+
+<h2>Cómo se calcula la cuota durante esta fase</h2>
+<p>La idea central es sencilla: la cuota periódica equivale al saldo actual multiplicado por el tipo de interés del periodo. Si el tipo mensual es del 0,5 % y el saldo es de 300.000 €, el interés del mes es de 1.500 €. Una cuota obligatoria de 1.500 € cubre ese cargo por intereses y deja el capital sin cambios.</p>
+<p>Como no se está devolviendo capital, el cálculo es mucho más simple que la fórmula completa de amortización. Todavía no hace falta repartir la devolución del principal entre los años restantes. La entidad cobra el coste de mantener la deuda durante ese periodo, pero no reduce la deuda en sí.</p>
+
+<h2>Qué ocurre cuando termina el periodo de solo intereses</h2>
+<p>Cuando termina la fase inicial, el préstamo suele tener que devolver el mismo saldo en un plazo restante más corto. Eso significa que la nueva cuota debe recalcularse teniendo en cuenta dos hechos a la vez: el capital sigue casi intacto y queda menos tiempo para llevarlo a cero. El resultado habitual es un salto de cuota.</p>
+<p>Imagine un préstamo a 30 años con 5 años iniciales de solo intereses. Después de 60 cuotas, el saldo puede seguir muy cerca de los 300.000 € originales. Pero ahora ese saldo debe amortizarse en los 25 años restantes, no en 30. Aunque el tipo de interés siga siendo exactamente el mismo, la cuota exigida subirá porque por fin empieza la amortización del capital.</p>
+<p>Si el tipo es variable, el aumento puede ser aún mayor. Un tipo más alto y un plazo restante más corto empujan la nueva cuota al alza. Por eso conviene evaluar la cuota posterior a la conversión antes de fijarse solo en el alivio temporal de la cuota inicial.</p>
+
+<h2>Un ejemplo numérico sencillo</h2>
+<p>Suponga que contrata un préstamo de 250.000 € con una tasa anual efectiva del 6 % y pagos mensuales. Durante un periodo de 3 años de solo intereses, la cuota mensual se fija para cubrir únicamente los intereses. Si el cargo mensual por intereses es de aproximadamente 1.214 €, esa será la cuota obligatoria. Tras 36 pagos, habrá abonado una cantidad importante en intereses, pero el saldo seguirá cerca de 250.000 €.</p>
+<p>Ahora suponga que el préstamo pasa a una estructura totalmente amortizable para los 27 años restantes. La cuota ya no se basa solo en el interés del mes. Debe cubrir intereses y además suficiente capital para que el saldo llegue a cero al final del plazo restante. El importe mensual podría subir varios cientos de euros aunque el saldo original nunca haya aumentado.</p>
+<p>Esa es la realidad económica clave: la fase de solo intereses compra cuotas más bajas hoy a cambio de concentrar la devolución del capital en el futuro. Ayuda con el flujo de caja a corto plazo, pero no reduce el coste total de endeudarse.</p>
+
+<h2>Por qué entidades y prestatarios usan esta estructura</h2>
+<p>Las entidades y los prestatarios usan periodos de solo intereses cuando la flexibilidad de pago importa más que reducir el saldo desde el principio. Un prestatario con ingresos irregulares, primas esperadas o una transición temporal puede preferir cuotas obligatorias más bajas al comienzo. Los inversores inmobiliarios a veces usan esta estructura para conservar liquidez mientras el activo empieza a generar ingresos.</p>
+<p>Aun así, esa lógica depende de que el plan salga bien. Si no llega la refinanciación, la propiedad no se vende o los ingresos no aumentan como se esperaba, el prestatario sigue expuesto a la cuota más alta posterior.</p>
+
+<h2>Riesgos principales que conviene entender</h2>
+<ul>
+  <li><strong>Salto de cuota:</strong> La cuota posterior puede subir mucho cuando empieza la amortización del capital.</li>
+  <li><strong>Generación más lenta de patrimonio:</strong> Como el saldo sigue alto, la propiedad o el activo acumula valor neto más despacio.</li>
+  <li><strong>Más intereses totales:</strong> Los intereses se calculan sobre un saldo elevado durante más tiempo, por lo que el coste total suele aumentar.</li>
+  <li><strong>Riesgo de refinanciación:</strong> Si confiaba en refinanciar antes de la conversión, el mercado o su perfil crediticio podrían impedirlo.</li>
+  <li><strong>Ilusión de asequibilidad:</strong> Una cuota inicial baja puede hacer que el préstamo parezca más asumible de lo que realmente es.</li>
+</ul>
+<p>Estos riesgos se entienden mejor si compara el préstamo no solo por la primera cuota, sino por todo su recorrido desde la firma hasta la cancelación. El artículo de Amorta sobre <a href="comparing-loan-offers">cómo comparar ofertas de préstamo</a> resulta útil aquí, porque una cuota inicial más baja por sí sola nunca basta para juzgar el coste total.</p>
+
+<h2>Cómo evaluar si encaja con su situación</h2>
+<p>Empiece por preguntarse qué problema resuelve el periodo de solo intereses. Si la respuesta es una necesidad temporal de gestionar el flujo de caja durante una etapa conocida, la estructura puede tener sentido. Si la respuesta es simplemente que la cuota totalmente amortizable le parece demasiado alta, eso es una señal de alerta. Un préstamo no se vuelve más barato solo porque se retrase la devolución del capital.</p>
+<p>También conviene comparar el mismo préstamo con y sin la característica de solo intereses. A menudo la forma más clara de ver la compensación es poner ambos calendarios uno al lado del otro. El artículo sobre <a href="loan-term-comparison">comparación de plazos del préstamo</a> muestra el mismo principio general: cuando la devolución se alarga, unas cuotas periódicas más bajas suelen implicar más intereses totales.</p>
+
+<h2>Qué debe revisar en la documentación</h2>
+<p>Compruebe cuánto dura el periodo de solo intereses, si el tipo es fijo o variable durante esa fase y después de ella, y cómo se recalcula exactamente la cuota posterior. Busque límites, reglas de revisión, restricciones al reembolso anticipado y cualquier hipótesis que la entidad utilice en sus ejemplos.</p>
+<p>Si se permiten aportaciones extra al capital, la guía de Amorta sobre <a href="extra-payments">el poder de los pagos extra</a> explica por qué incluso reducciones ocasionales pueden suavizar el coste futuro de intereses y aliviar la carga de las cuotas posteriores.</p>
+
+<h2>Conclusión</h2>
+<p>Un periodo de solo intereses significa que la cuota obligatoria cubre intereses sin reducir capital. Eso baja la cuota inicial, pero pospone la amortización en lugar de eliminarla. Cuando termina esa fase, el saldo pendiente suele tener que devolverse en un horizonte más corto, lo que a menudo produce una cuota sensiblemente mayor.</p>
+<p>La estructura no es buena ni mala por sí misma. Es una herramienta de flujo de caja con compensaciones concretas: pagos obligatorios más bajos ahora, reducción más lenta del saldo y, a menudo, más intereses totales después. Si entiende bien estos mecanismos, revisa con detalle las condiciones de conversión y pone a prueba la cuota futura frente a su presupuesto real, podrá valorar si la flexibilidad le resulta verdaderamente útil o si solo está ocultando un préstamo más difícil de sostener con el tiempo.</p>

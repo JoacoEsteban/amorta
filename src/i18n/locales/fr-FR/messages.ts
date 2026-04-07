@@ -12,6 +12,7 @@ import articleCalculatingRemainingLoanBalanceBody from './content/articles/artic
 import articleFactorsAffectingMortgageRatesBody from './content/articles/article-factors-affecting-mortgage-rates-body.html.txt' with { type: 'text' }
 import articleNegativeAmortizationBody from './content/articles/article-negative-amortization-body.html.txt' with { type: 'text' }
 import articleComparingLoanOffersBody from './content/articles/article-comparing-loan-offers-body.html.txt' with { type: 'text' }
+import articleInterestOnlyLoanPeriodBody from './content/articles/article-interest-only-loan-period-body.html.txt' with { type: 'text' }
 
 export const frFRMessages = {
   sharedResult: 'Résultat partagé',
@@ -346,4 +347,14 @@ export const frFRMessages = {
     'Comment Comparer les Offres de Prêt | Amorta',
   articleComparingLoanOffersSeoDescription:
     'Comparez les offres de prêt comme un professionnel. Apprenez à évaluer le coût total, les frais, les indemnités de remboursement anticipé et les durées pour trouver la meilleure offre pour votre situation.',
+  articleInterestOnlyLoanPeriodTitle:
+    "Qu'est-ce qu'une Période d'Intérêts Seuls sur un Prêt ?",
+  articleInterestOnlyLoanPeriodDescription:
+    "Découvrez comment fonctionne une période d'intérêts seuls, pourquoi la mensualité initiale baisse, et ce qui change lorsque le prêt commence à amortir le capital.",
+  articleInterestOnlyLoanPeriodDate: '7 avril 2026',
+  articleInterestOnlyLoanPeriodBody,
+  articleInterestOnlyLoanPeriodSeoTitle:
+    "Qu'est-ce qu'une Période d'Intérêts Seuls sur un Prêt ? | Amorta",
+  articleInterestOnlyLoanPeriodSeoDescription:
+    "Découvrez ce qu'est une période d'intérêts seuls, son effet sur la mensualité, et pourquoi l'échéance future peut augmenter le coût total du prêt.",
 }

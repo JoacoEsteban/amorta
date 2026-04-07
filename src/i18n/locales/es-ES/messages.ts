@@ -12,6 +12,7 @@ import articleCalculatingRemainingLoanBalanceBody from './content/articles/artic
 import articleFactorsAffectingMortgageRatesBody from './content/articles/article-factors-affecting-mortgage-rates-body.html.txt' with { type: 'text' }
 import articleNegativeAmortizationBody from './content/articles/article-negative-amortization-body.html.txt' with { type: 'text' }
 import articleComparingLoanOffersBody from './content/articles/article-comparing-loan-offers-body.html.txt' with { type: 'text' }
+import articleInterestOnlyLoanPeriodBody from './content/articles/article-interest-only-loan-period-body.html.txt' with { type: 'text' }
 
 export const esESMessages = {
   sharedResult: 'Resultado Compartido',
@@ -348,4 +349,14 @@ export const esESMessages = {
     'Cómo Comparar Ofertas de Préstamos | Amorta',
   articleComparingLoanOffersSeoDescription:
     'Compara ofertas de préstamos como un profesional. Aprende a evaluar el coste total, comisiones, comisiones por amortización anticipada y plazos para encontrar la mejor opción.',
+  articleInterestOnlyLoanPeriodTitle:
+    'Qué es un Periodo de Solo Intereses en un Préstamo',
+  articleInterestOnlyLoanPeriodDescription:
+    'Aprende cómo funciona un periodo de solo intereses, por qué la cuota inicial es más baja y qué cambia cuando el préstamo empieza a amortizar capital.',
+  articleInterestOnlyLoanPeriodDate: '7 de Abril de 2026',
+  articleInterestOnlyLoanPeriodBody,
+  articleInterestOnlyLoanPeriodSeoTitle:
+    'Qué es un Periodo de Solo Intereses en un Préstamo | Amorta',
+  articleInterestOnlyLoanPeriodSeoDescription:
+    'Aprende qué es un periodo de solo intereses, cómo modifica la cuota mensual y por qué la cuota posterior puede elevar el coste total del préstamo.',
 }
