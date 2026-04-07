@@ -1,3 +1,5 @@
+import { match } from 'ts-pattern'
+
 import { assert } from '../lib/assert'
 
 export const SUPPORTED_LOCALES = [
@@ -69,5 +71,8 @@ export const buildLocalePath = (
   pathname: string,
 ): string => {
   const cleanPath = pathname.startsWith('/') ? pathname : '/' + pathname
-  return `/${locale}${cleanPath}`
+
+  return match(locale)
+    .with(DEFAULT_LOCALE, () => cleanPath)
+    .otherwise((resolvedLocale) => `/${resolvedLocale}${cleanPath}`)
 }

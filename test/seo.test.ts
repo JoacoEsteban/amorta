@@ -47,7 +47,7 @@ describe('buildSeoMetadata', () => {
       `<link rel="alternate" hreflang="es" href="${siteUrl}/es-ES" />`,
     )
     expect(metadata.hreflangLinks).toContain(
-      `<link rel="alternate" hreflang="x-default" href="${siteUrl}/en-US" />`,
+      `<link rel="alternate" hreflang="x-default" href="${siteUrl}/" />`,
     )
   })
 
@@ -94,7 +94,7 @@ describe('buildSeoMetadata', () => {
     expect(metadata.canonicalUrl).toBe(`${siteUrl}/result`)
     expect(metadata.openGraphUrl).toBe(`${siteUrl}/result`)
     expect(metadata.hreflangLinks).toContain(
-      `<link rel="alternate" hreflang="en" href="${siteUrl}/en-US/result" />`,
+      `<link rel="alternate" hreflang="en" href="${siteUrl}/result" />`,
     )
     expect(metadata.title).toBe('Shared Result | Amorta')
   })

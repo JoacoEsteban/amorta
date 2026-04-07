@@ -53,7 +53,7 @@ describe('share codec', () => {
     expect(decoded.kind).toBe('invalid')
   })
 
-  test('builds a result URL', () => {
+  test('builds a result URL without the default locale prefix', () => {
     const shareUrl = buildShareUrl(
       sampleState,
       {
@@ -62,7 +62,8 @@ describe('share codec', () => {
       'en-US',
     )
 
-    expect(shareUrl.startsWith('https://example.com/en-US/result/')).toBe(true)
+    expect(shareUrl.startsWith('https://example.com/result/')).toBe(true)
+    expect(shareUrl.includes('/en-US/result/')).toBe(false)
   })
 })
 
