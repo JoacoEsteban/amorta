@@ -196,6 +196,42 @@ const resolveCanonicalPath = (
     .otherwise(() => buildPublicUrl(normalizedSiteUrl, localizedPath('/')))
 }
 
+const buildArticleSeoKey = (key: string, suffix: 'Title' | 'Description') =>
+  match(key.endsWith(suffix))
+    .with(true, () => key.replace(new RegExp(`${suffix}$`), `Seo${suffix}`))
+    .otherwise(() => key)
+
+const resolveTranslatedSeoKey =
+  (_: Translate) =>
+  ({ fallbackKey, seoKey }: { fallbackKey: string; seoKey: string }) => {
+    const resolvedSeoValue = _(seoKey)
+
+    return match(resolvedSeoValue)
+      .with(seoKey, () => _(fallbackKey))
+      .otherwise((value) => value)
+  }
+
+const resolveArticleSeoTitle =
+  (_: Translate) =>
+  (article: Article): string => {
+    const resolvedSeoValue = resolveTranslatedSeoKey(_)({
+      fallbackKey: article.titleKey,
+      seoKey: buildArticleSeoKey(article.titleKey, 'Title'),
+    })
+
+    return match(resolvedSeoValue)
+      .with(_(article.titleKey), (title) => `${title} | Amorta`)
+      .otherwise((value) => value)
+  }
+
+const resolveArticleSeoDescription =
+  (_: Translate) =>
+  (article: Article): string =>
+    resolveTranslatedSeoKey(_)({
+      fallbackKey: article.descriptionKey,
+      seoKey: buildArticleSeoKey(article.descriptionKey, 'Description'),
+    })
+
 const resolveSeoTitle =
   (_: Translate) =>
   (routeState: RouteState): string =>
@@ -212,7 +248,7 @@ const resolveSeoTitle =
         const article = getArticleBySlug(slug)
         return match(article)
           .with(undefined, () => _('seoTitleUnavailable'))
-          .otherwise((resolved) => `${_(resolved.titleKey)} | Amorta`)
+          .otherwise((resolved) => resolveArticleSeoTitle(_)(resolved))
       })
       .with({ kind: 'privacy-policy' }, () => _('seoTitlePrivacyPolicy'))
       .with({ kind: 'about' }, () => _('seoTitleAbout'))
@@ -236,7 +272,7 @@ const resolveSeoDescription =
         const article = getArticleBySlug(slug)
         return match(article)
           .with(undefined, () => _('seoDescriptionUnavailable'))
-          .otherwise((resolved) => _(resolved.descriptionKey))
+          .otherwise((resolved) => resolveArticleSeoDescription(_)(resolved))
       })
       .with({ kind: 'privacy-policy' }, () => _('seoDescriptionPrivacyPolicy'))
       .with({ kind: 'about' }, () => _('seoDescriptionAbout'))

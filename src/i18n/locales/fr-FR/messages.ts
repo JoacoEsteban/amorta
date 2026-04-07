@@ -345,5 +345,5 @@ export const frFRMessages = {
   articleComparingLoanOffersSeoTitle:
     'Comment Comparer les Offres de Prêt | Amorta',
   articleComparingLoanOffersSeoDescription:
-    "Comparez les offres de prêt comme un professionnel. Apprenez à évaluer le coût total, les frais, les indemnités de remboursement anticipé et les durées pour trouver la meilleure offre pour votre situation.",
+    'Comparez les offres de prêt comme un professionnel. Apprenez à évaluer le coût total, les frais, les indemnités de remboursement anticipé et les durées pour trouver la meilleure offre pour votre situation.',
 }

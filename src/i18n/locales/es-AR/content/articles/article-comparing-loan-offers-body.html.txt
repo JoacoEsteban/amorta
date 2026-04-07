@@ -5,7 +5,7 @@
 
 <p>Para calcular el costo total, multiplicá tu cuota mensual por el número de pagos y sumá las comisiones iniciales. Por ejemplo, un préstamo de 200.000 € con una cuota de 1.200 € durante 30 años (360 pagos) cuesta 432.000 € antes de comisiones. Si ese mismo préstamo cobra 4.000 € en comisiones de apertura, tu costo total es de 436.000 €.</p>
 
-<p>Siempre solicitá la cifra de costo total a cada entidad. Este número único corta a través del marketing y revela lo que realmente pagás.</p>
+<p>Siempre solicitá la cifra de costo total a cada entidad. Ese dato te ayuda a ir más allá de los mensajes comerciales y ver cuánto vas a pagar en realidad.</p>
 
 <h2>Comprendé el tipo de tasa</h2>
 <p>Los préstamos vienen con tasas de interés fijas o variables. Una tasa fija permanece constante durante todo el plazo del préstamo, dándote cuotas predecibles. Una tasa variable fluctúa con las condiciones del mercado, lo que significa que tus cuotas pueden aumentar o disminuir con el tiempo.</p>
@@ -41,10 +41,10 @@
 
 <p>Preguntale siempre directamente a las entidades sobre comisiones por cancelación anticipada y solicitá confirmación por escrito de que no se aplican.</p>
 
-<h2>Verificá si hay pagos balloon</h2>
-<p>Algunos préstamos estructuran los pagos para que pagues solo intereses o capital parcial durante la mayor parte del plazo, con un gran pago final llamado pago balloon al finalizar. Estos préstamos tienen cuotas mensuales más bajas pero requieren que dispongas de una suma considerable para completar la devolución.</p>
+<h2>Verificá si hay un pago final elevado</h2>
+<p>Algunos préstamos se estructuran de modo que durante la mayor parte del plazo pagás solo intereses o una parte reducida del capital, y dejan un pago final muy alto al vencimiento. Estos préstamos tienen cuotas mensuales más bajas, pero exigen contar con una suma importante para terminar de cancelar la deuda.</p>
 
-<p>Los pagos balloon crean riesgo significativo. Si no podés refinanciar o pagar el monto balloon cuando se venza, podés enfrentarte a un incumplimiento. Al comparar ofertas, asegurate de entender si se requiere un pago balloon y cuánto será.</p>
+<p>Un pago final elevado agrega un riesgo importante. Si no podés refinanciar o pagar ese monto cuando venza, podés terminar en incumplimiento. Al comparar ofertas, asegurate de entender si existe ese pago final y de cuánto sería.</p>
 
 <h2>Usá la tasa anual equivalente (TAE)</h2>
 <p>La Tasa Anual Equivalente (TAE) intenta expresar el costo total del préstamo como una tasa única, incluyendo intereses y la mayoría de comisiones. Aunque no es perfecta, la TAE proporciona una forma estandarizada de comparar préstamos con diferentes estructuras de tasas y comisiones.</p>
@@ -59,7 +59,7 @@
 <ul>
   <li><strong>Periodos de gracia</strong>: La posibilidad de omitir pagos ocasionalmente sin penalización, aunque los intereses siguen devengándose.</li>
   <li><strong>Opciones de frecuencia de pago</strong>: Opciones para pagar semanalmente, quincenalmente o mensualmente. Los pagos más frecuentes pueden reducir los intereses totales ligeramente.</li>
-  <li><strong>Cuotas de cancelación anticipada</strong>: La posibilidad de ajustar el monto de tus pagos dentro de ciertos límites.</li>
+  <li><strong>Opciones para modificar la cuota</strong>: La posibilidad de ajustar el monto de tus pagos dentro de ciertos límites.</li>
 </ul>
 
 <p>Estas características tienen valor, especialmente si tus ingresos fluctúan. Al comparar ofertas, considerá si las características de flexibilidad justifican una tasa ligeramente superior.</p>

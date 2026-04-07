@@ -145,4 +145,40 @@ describe('buildSeoMetadata', () => {
       'https://amorta.example/og-image.svg',
     )
   })
+
+  it('uses article-specific seo copy when it exists', () => {
+    const metadata = buildSeoMetadata({
+      locale: 'en-US',
+      routeState: {
+        kind: 'blog-article',
+        slug: 'comparing-loan-offers',
+        locale: null,
+      },
+      siteUrl,
+    })
+
+    expect(metadata.title).toBe(
+      'How to Compare Loan Offers Effectively | Amorta',
+    )
+    expect(metadata.description).toBe(
+      'Compare loan offers like a pro. Learn to evaluate total cost, fees, prepayment penalties, and terms to find the best deal for your situation.',
+    )
+  })
+
+  it('falls back to the regular article copy when seo-specific keys do not exist', () => {
+    const metadata = buildSeoMetadata({
+      locale: 'en-US',
+      routeState: {
+        kind: 'blog-article',
+        slug: 'math-behind-french-amortization',
+        locale: null,
+      },
+      siteUrl,
+    })
+
+    expect(metadata.title).toBe('The Math Behind French Amortization | Amorta')
+    expect(metadata.description).toBe(
+      'A deep dive into the annuity formula, periodic rate conversion, and how each payment splits between interest and principal over the life of a French loan.',
+    )
+  })
 })

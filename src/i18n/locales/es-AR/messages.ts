@@ -342,7 +342,7 @@ export const esARMessages = {
     'Cómo Comparar Ofertas de Préstamos de Forma Efectiva',
   articleComparingLoanOffersDescription:
     'Aprendé un enfoque sistemático para comparar ofertas de préstamos más allá de las tasas de interés, incluyendo comisiones, plazos, comisiones por cancelación anticipada y costo total.',
-  articleComparingLoanOffersDate: '6 de Abril de 2026',
+  articleComparingLoanOffersDate: '7 de Abril de 2026',
   articleComparingLoanOffersBody,
   articleComparingLoanOffersSeoTitle:
     'Cómo Comparar Ofertas de Préstamos | Amorta',

@@ -5,7 +5,7 @@
 
 <p>Pour calculer le coût total, multipliez votre mensualité par le nombre d'échéances, puis ajoutez les frais initiaux. Par exemple, un prêt de 200 000 € avec une mensualité de 1 200 € sur 30 ans (360 échéances) coûte 432 000 € avant frais. Si ce même prêt facture 4 000 € de frais de dossier, votre coût total est de 436 000 €.</p>
 
-<p>Demandez toujours le chiffre du coût total à chaque établissement. Ce nombre unique traverse le marketing et révèle ce que vous payez réellement.</p>
+<p>Demandez toujours le montant du coût total à chaque établissement. Cet indicateur vous aide à dépasser les arguments commerciaux et à voir ce que vous paierez réellement.</p>
 
 <h2>Comprenez le type de taux</h2>
 <p>Les prêts sont proposés avec des taux d'intérêt fixes ou variables. Un taux fixe reste constant pendant toute la durée du prêt, vous donnant des mensualités prévisibles. Un taux variable fluctue avec les conditions du marché, ce qui signifie que vos mensualités peuvent augmenter ou diminuer au fil du temps.</p>
@@ -19,8 +19,8 @@
 
 <ul>
   <li><strong>Frais de dossier</strong> : Des frais pour traiter le prêt, généralement de 0,5 % à 1 % du montant. Sur un prêt de 200 000 €, cela représente entre 1 000 € et 2 000 €.</li>
-  <li><strong>Frais de tenue de compte</strong> : Des frais fixes facturés lors de la demande, généralement entre 100 € et 500 €.</li>
-  <li><strong>Frais de crédit</strong> : Le coût de la consultation de votre dossier de crédit, généralement 25 € à 50 €.</li>
+  <li><strong>Frais de demande</strong> : Des frais fixes facturés lors du dépôt du dossier, généralement entre 100 € et 500 €.</li>
+  <li><strong>Frais de vérification du crédit</strong> : Le coût de la consultation de votre dossier de crédit, généralement 25 € à 50 €.</li>
   <li><strong>Frais d'expertise</strong> : Pour les prêts immobiliers, le coût de l'évaluation du bien, généralement 300 € à 500 €.</li>
   <li><strong>Notaire et frais d'enregistrement</strong> : Les coûts d'acte notarié et d'inscription au registre foncier.</li>
 </ul>
@@ -41,10 +41,10 @@
 
 <p>Demandez toujours directement aux établissements des informations sur les indemnités de remboursement anticipé et demandez une confirmation écrite qu'aucune ne s'applique.</p>
 
-<h2>Vérifiez s'il y a des paiements balloon</h2>
-<p>Certains prêts structurent les paiements de sorte que vous ne payez que les intérêts ou une partie du capital pendant la majeure partie de la durée, avec un grand paiement final appelé paiement balloon à la fin. Ces prêts ont des mensualités plus basses mais nécessitent que vous disposiez d'une somme substantielle pour terminer le remboursement.</p>
+<h2>Vérifiez s'il existe un paiement final important</h2>
+<p>Certains prêts sont structurés de sorte que vous ne payez que les intérêts ou une faible part du capital pendant l'essentiel de la durée, puis un paiement final très élevé à l'échéance. Ces prêts affichent des mensualités plus basses, mais exigent que vous disposiez d'une somme importante pour solder la dette.</p>
 
-<p>Les paiements balloon créent un risque significatif. Si vous ne pouvez pas renégocier ou payer le montant balloon à l'échéance, vous pouvez faire face à un défaut de paiement. Lors de la comparaison des offres, assurez-vous de comprendre si un paiement balloon est requis et de quel montant il sera.</p>
+<p>Un paiement final important crée un risque réel. Si vous ne pouvez pas renégocier le prêt ou régler ce montant à l'échéance, vous pouvez vous retrouver en défaut de paiement. Lors de la comparaison des offres, assurez-vous de comprendre si un tel paiement existe et quel en serait le montant.</p>
 
 <h2>Utilisez le taux annuel effectif global (TAEG)</h2>
 <p>Le Taux Annuel Effectif Global (TAEG) tente d'exprimer le coût total de l'emprunt comme un taux unique, incluant les intérêts et la plupart des frais. Bien que non parfait, le TAEG fournit un moyen standardisé de comparer des prêts avec différentes structures de taux et de frais.</p>
@@ -59,7 +59,7 @@
 <ul>
   <li><strong>Modulation d'échéances</strong> : La possibilité de reporter des paiements occasionnellement sans pénalité, bien que les intérêts continuent de courir.</li>
   <li><strong>Options de fréquence de paiement</strong> : Des options pour payer hebdomadairement, quinzainement ou mensuellement. Des paiements plus fréquents peuvent réduire légèrement les intérêts totaux.</li>
-  <li><strong>Remboursements anticipés partiels</strong> : La possibilité d'ajuster le montant de vos paiements dans certaines limites.</li>
+  <li><strong>Options de modulation des mensualités</strong> : La possibilité d'ajuster le montant de vos paiements dans certaines limites.</li>
 </ul>
 
 <p>Ces fonctionnalités ont de la valeur, surtout si vos revenus fluctuent. Lors de la comparaison des offres, considérez si les fonctionnalités de flexibilité justifient un taux légèrement supérieur.</p>

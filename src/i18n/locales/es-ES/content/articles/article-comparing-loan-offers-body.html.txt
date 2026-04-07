@@ -5,7 +5,7 @@
 
 <p>Para calcular el coste total, multiplique su cuota mensual por el número de pagos y sume las comisiones iniciales. Por ejemplo, un préstamo de 200.000 € con una cuota de 1.200 € durante 30 años (360 pagos) cuesta 432.000 € antes de comisiones. Si ese mismo préstamo cobra 4.000 € en comisiones de apertura, su coste total es de 436.000 €.</p>
 
-<p>Siempre solicite la cifra de coste total a cada entidad. Este número único corta a través del marketing y revela lo que realmente paga.</p>
+<p>Siempre solicite la cifra de coste total a cada entidad. Este dato le ayuda a ir más allá de los mensajes comerciales y ver lo que realmente pagará.</p>
 
 <h2>Comprenda el tipo de interés</h2>
 <p>Los préstamos vienen con tipos de interés fijos o variables. Un tipo fijo permanece constante durante todo el plazo del préstamo, dándole cuotas predecibles. Un tipo variable fluctúa con las condiciones del mercado, lo que significa que sus cuotas pueden aumentar o disminuir con el tiempo.</p>
@@ -41,10 +41,10 @@
 
 <p>Pregunte siempre directamente a las entidades sobre comisiones por amortización anticipada y solicite confirmación por escrito de que no se aplican.</p>
 
-<h2>Verifique si hay pagos balloon</h2>
-<p>Algunos préstamos estructuran los pagos para que pague solo intereses o capital parcial durante la mayor parte del plazo, con un gran pago final llamado pago balloon al finalizar. Estos préstamos tienen cuotas mensuales más bajas pero requieren que disponga de una suma considerable para completar la devolución.</p>
+<h2>Verifique si hay un pago final elevado</h2>
+<p>Algunos préstamos se estructuran de modo que durante la mayor parte del plazo solo paga intereses o una parte reducida del capital, y dejan un pago final muy alto al vencimiento. Estos préstamos tienen cuotas mensuales más bajas, pero exigen disponer de una suma importante para terminar de devolver la deuda.</p>
 
-<p>Los pagos balloon crean riesgo significativo. Si no puede refinanciar o pagar la cantidad balloon cuando se venza, puede enfrentarse a un impago. Al comparar ofertas, asegúrese de entender si se requiere un pago balloon y cuánto será.</p>
+<p>Un pago final elevado añade un riesgo importante. Si no puede refinanciar o abonar ese importe cuando venza, puede acabar en impago. Al comparar ofertas, asegúrese de entender si existe este pago final y cuál sería su cuantía.</p>
 
 <h2>Utilice el tipo de interés nominal (TIN) y la tasa anual equivalente (TAE)</h2>
 <p>La Tasa Anual Equivalente (TAE) intenta expresar el coste total del préstamo como un tipo único, incluyendo intereses y la mayoría de comisiones. Aunque no es perfecta, la TAE proporciona una forma estandarizada de comparar préstamos con diferentes estructuras de tipos y comisiones.</p>
@@ -59,7 +59,7 @@
 <ul>
   <li><strong>Periodos de carencia</strong>: La posibilidad de omitir pagos ocasionalmente sin penalización, aunque los intereses siguen devengándose.</li>
   <li><strong>Opciones de frecuencia de pago</strong>: Opciones para pagar semanalmente, quincenalmente o mensualmente. Los pagos más frecuentes pueden reducir los intereses totales ligeramente.</li>
-  <li><strong>Cuotas de amortización anticipada</strong>: La posibilidad de ajustar el importe de sus pagos dentro de ciertos límites.</li>
+  <li><strong>Opciones para modificar la cuota</strong>: La posibilidad de ajustar el importe de sus pagos dentro de ciertos límites.</li>
 </ul>
 
 <p>Estas características tienen valor, especialmente si sus ingresos fluctúan. Al comparar ofertas, considere si las características de flexibilidad justifican un tipo ligeramente superior.</p>
