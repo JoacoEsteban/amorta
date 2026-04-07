@@ -11,6 +11,7 @@ import articleBiweeklyVsMonthlyPaymentsBody from './content/articles/article-biw
 import articleCalculatingRemainingLoanBalanceBody from './content/articles/article-calculating-remaining-loan-balance-body.html.txt' with { type: 'text' }
 import articleFactorsAffectingMortgageRatesBody from './content/articles/article-factors-affecting-mortgage-rates-body.html.txt' with { type: 'text' }
 import articleNegativeAmortizationBody from './content/articles/article-negative-amortization-body.html.txt' with { type: 'text' }
+import articleComparingLoanOffersBody from './content/articles/article-comparing-loan-offers-body.html.txt' with { type: 'text' }
 
 export const frFRMessages = {
   sharedResult: 'Résultat partagé',
@@ -335,4 +336,14 @@ export const frFRMessages = {
     "Qu'est-ce que l'Amortissement Négatif ? | Amorta",
   articleNegativeAmortizationSeoDescription:
     "L'amortissement négatif ajoute les intérêts impayés au solde du prêt. Découvrez son fonctionnement, le risque de choc de paiement, et comment l'identifier tôt.",
+  articleComparingLoanOffersTitle:
+    'Comment Comparer les Offres de Prêt Efficacement',
+  articleComparingLoanOffersDescription:
+    "Apprenez une approche systématique pour comparer les offres de prêt au-delà des taux d'intérêt, incluant les frais, les durées, les indemnités de remboursement anticipé et le coût total.",
+  articleComparingLoanOffersDate: '7 avril 2026',
+  articleComparingLoanOffersBody,
+  articleComparingLoanOffersSeoTitle:
+    'Comment Comparer les Offres de Prêt | Amorta',
+  articleComparingLoanOffersSeoDescription:
+    "Comparez les offres de prêt comme un professionnel. Apprenez à évaluer le coût total, les frais, les indemnités de remboursement anticipé et les durées pour trouver la meilleure offre pour votre situation.",
 }

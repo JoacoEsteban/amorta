@@ -11,6 +11,7 @@ import articleBiweeklyVsMonthlyPaymentsBody from './content/articles/article-biw
 import articleCalculatingRemainingLoanBalanceBody from './content/articles/article-calculating-remaining-loan-balance-body.html.txt' with { type: 'text' }
 import articleFactorsAffectingMortgageRatesBody from './content/articles/article-factors-affecting-mortgage-rates-body.html.txt' with { type: 'text' }
 import articleNegativeAmortizationBody from './content/articles/article-negative-amortization-body.html.txt' with { type: 'text' }
+import articleComparingLoanOffersBody from './content/articles/article-comparing-loan-offers-body.html.txt' with { type: 'text' }
 
 export const enGBMessages = {
   sharedResult: 'Shared Result',
@@ -332,4 +333,13 @@ export const enGBMessages = {
     'What Is Negative Amortisation? | Amorta',
   articleNegativeAmortizationSeoDescription:
     'Negative amortisation adds unpaid interest to your loan balance. Learn how it works, why it creates payment shock, and how to spot it early.',
+  articleComparingLoanOffersTitle: 'How to Compare Loan Offers Effectively',
+  articleComparingLoanOffersDescription:
+    'Learn a systematic approach to compare loan offers beyond interest rates, including fees, terms, early repayment charges, and total cost of borrowing.',
+  articleComparingLoanOffersDate: '7 April 2026',
+  articleComparingLoanOffersBody,
+  articleComparingLoanOffersSeoTitle:
+    'How to Compare Loan Offers Effectively | Amorta',
+  articleComparingLoanOffersSeoDescription:
+    'Compare loan offers like a pro. Learn to evaluate total cost, fees, early repayment charges, and terms to find the best deal for your situation.',
 }

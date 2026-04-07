@@ -11,6 +11,7 @@ import articleBiweeklyVsMonthlyPaymentsBody from './content/articles/article-biw
 import articleCalculatingRemainingLoanBalanceBody from './content/articles/article-calculating-remaining-loan-balance-body.html.txt' with { type: 'text' }
 import articleFactorsAffectingMortgageRatesBody from './content/articles/article-factors-affecting-mortgage-rates-body.html.txt' with { type: 'text' }
 import articleNegativeAmortizationBody from './content/articles/article-negative-amortization-body.html.txt' with { type: 'text' }
+import articleComparingLoanOffersBody from './content/articles/article-comparing-loan-offers-body.html.txt' with { type: 'text' }
 
 export const esARMessages = {
   sharedResult: 'Resultado Compartido',
@@ -337,4 +338,14 @@ export const esARMessages = {
     '¿Qué es la Amortización Negativa? | Amorta',
   articleNegativeAmortizationSeoDescription:
     'La amortización negativa agrega intereses impagos al saldo del préstamo. Aprendé cómo funciona, por qué genera saltos de cuota y cómo detectarla.',
+  articleComparingLoanOffersTitle:
+    'Cómo Comparar Ofertas de Préstamos de Forma Efectiva',
+  articleComparingLoanOffersDescription:
+    'Aprendé un enfoque sistemático para comparar ofertas de préstamos más allá de las tasas de interés, incluyendo comisiones, plazos, comisiones por cancelación anticipada y costo total.',
+  articleComparingLoanOffersDate: '6 de Abril de 2026',
+  articleComparingLoanOffersBody,
+  articleComparingLoanOffersSeoTitle:
+    'Cómo Comparar Ofertas de Préstamos | Amorta',
+  articleComparingLoanOffersSeoDescription:
+    'Compará ofertas de préstamos como un profesional. Aprendé a evaluar el costo total, comisiones, comisiones por cancelación anticipada y plazos para encontrar la mejor opción.',
 }
