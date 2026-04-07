@@ -62,13 +62,15 @@ export async function exec(target: 'dev' | 'prod' = 'prod') {
   }
 }
 
-const normalizeSitemapPath = (pathname: string): string =>
-  match(pathname)
+function normalizeSitemapPath(pathname: string): string {
+  return match(pathname)
     .with('/', () => '/')
     .otherwise((value) => value.replace(/\/+$/, ''))
+}
 
-const buildSitemapUrl = (siteUrl: string, pathname: string): string =>
-  `${siteUrl}${normalizeSitemapPath(pathname)}`
+function buildSitemapUrl(siteUrl: string, pathname: string): string {
+  return `${siteUrl}${normalizeSitemapPath(pathname)}`
+}
 
 export function generateSitemap(
   siteUrl: string,
