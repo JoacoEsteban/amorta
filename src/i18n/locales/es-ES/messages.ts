@@ -13,6 +13,7 @@ import articleFactorsAffectingMortgageRatesBody from './content/articles/article
 import articleNegativeAmortizationBody from './content/articles/article-negative-amortization-body.html.txt' with { type: 'text' }
 import articleComparingLoanOffersBody from './content/articles/article-comparing-loan-offers-body.html.txt' with { type: 'text' }
 import articleInterestOnlyLoanPeriodBody from './content/articles/article-interest-only-loan-period-body.html.txt' with { type: 'text' }
+import articleBalloonPaymentLoanBody from './content/articles/article-balloon-payment-loan-body.html.txt' with { type: 'text' }
 
 export const esESMessages = {
   sharedResult: 'Resultado Compartido',
@@ -359,4 +360,13 @@ export const esESMessages = {
     'Qué es un Periodo de Solo Intereses en un Préstamo | Amorta',
   articleInterestOnlyLoanPeriodSeoDescription:
     'Aprende qué es un periodo de solo intereses, cómo modifica la cuota mensual y por qué la cuota posterior puede elevar el coste total del préstamo.',
+  articleBalloonPaymentLoanTitle: 'Qué es un Préstamo con Pago Globo',
+  articleBalloonPaymentLoanDescription:
+    'Aprende cómo funciona un préstamo con pago globo, por qué mantiene cuotas más bajas y qué riesgos aparecen cuando vence un saldo final elevado.',
+  articleBalloonPaymentLoanDate: '8 de Abril de 2026',
+  articleBalloonPaymentLoanBody,
+  articleBalloonPaymentLoanSeoTitle:
+    'Qué es un Préstamo con Pago Globo | Amorta',
+  articleBalloonPaymentLoanSeoDescription:
+    'Aprende cómo funciona un préstamo con pago globo, por qué deja un saldo final alto, y qué riesgos de liquidez y refinanciación debes revisar.',
 }

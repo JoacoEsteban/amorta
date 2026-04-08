@@ -13,6 +13,7 @@ import articleFactorsAffectingMortgageRatesBody from './content/articles/article
 import articleNegativeAmortizationBody from './content/articles/article-negative-amortization-body.html.txt' with { type: 'text' }
 import articleComparingLoanOffersBody from './content/articles/article-comparing-loan-offers-body.html.txt' with { type: 'text' }
 import articleInterestOnlyLoanPeriodBody from './content/articles/article-interest-only-loan-period-body.html.txt' with { type: 'text' }
+import articleBalloonPaymentLoanBody from './content/articles/article-balloon-payment-loan-body.html.txt' with { type: 'text' }
 
 export const enGBMessages = {
   sharedResult: 'Shared Result',
@@ -352,4 +353,13 @@ export const enGBMessages = {
     'What Is an Interest-Only Loan Period? | Amorta',
   articleInterestOnlyLoanPeriodSeoDescription:
     'Learn what an interest-only loan period is, how it changes monthly payments, and why later payment resets can increase total borrowing cost.',
+  articleBalloonPaymentLoanTitle: 'What Is a Balloon Payment Loan?',
+  articleBalloonPaymentLoanDescription:
+    'Learn how a balloon payment loan works, why scheduled payments stay lower, and what risks arise when a large balance falls due at maturity.',
+  articleBalloonPaymentLoanDate: '8 April 2026',
+  articleBalloonPaymentLoanBody,
+  articleBalloonPaymentLoanSeoTitle:
+    'What Is a Balloon Payment Loan? | Amorta',
+  articleBalloonPaymentLoanSeoDescription:
+    'Learn how a balloon payment loan works, why it leaves a large final balance, and what refinancing and liquidity risks matter before signing.',
 }

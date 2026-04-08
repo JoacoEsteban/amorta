@@ -1,0 +1,45 @@
+<p>A balloon payment loan is a loan that asks for relatively small scheduled payments during most of the term and then requires one large final payment to clear the remaining balance. Instead of reaching zero through equal amortising instalments, the balance is only reduced partially before the maturity date. The unpaid remainder is the balloon payment.</p>
+<p>This structure matters because the early payment can make a loan look affordable even when the contract still leaves a large amount due later. Borrowers sometimes focus on the monthly figure and overlook the maturity risk built into the final settlement. A balloon loan is easiest to understand when you compare it with a fully amortising schedule, where every required payment is designed to take the balance all the way to zero by the end of the term.</p>
+<p>If you want a refresher on how ordinary repayment works first, Amorta's guide to <a href="understanding-amortization-schedule">understanding your amortisation schedule</a> gives the baseline. A balloon payment loan changes that baseline by separating the payment stream into regular instalments and a large closing obligation at maturity.</p>
+
+<h2>What makes a loan a balloon loan</h2>
+<p>The defining feature is not simply a big last payment. Many normal loans have a slightly different final instalment because of rounding. A balloon loan is different because the final payment is intentionally large relative to the periodic payments that come before it. The contract expects a substantial amount of capital to remain until the end.</p>
+<p>In a fully amortising French loan, each payment includes enough capital and interest to retire the debt over the stated term. In a balloon structure, the regular payments may cover interest and some capital, but they are not set high enough to finish the job. The maturity date arrives with a meaningful balance still outstanding.</p>
+<p>That is why the loan's true repayment horizon is shorter than the balance's payoff horizon. The note may say seven years, for example, but the regular payment may be calculated as if the debt were repaid over twenty or thirty years. The mismatch creates the balloon.</p>
+
+<h2>How the payment structure works</h2>
+<p>Most balloon loans are built by calculating the periodic payment on a longer amortisation period than the actual contract term. Imagine a lender using a 30-year amortisation formula to compute monthly payments, but requiring full payoff after 7 years. The borrower gets the lower payment associated with a long schedule, yet only 84 monthly payments occur before maturity.</p>
+<p>Because those 84 payments were never large enough to amortise the whole balance, a sizeable amount remains due at the end. That amount can be read directly from the amortisation schedule as the remaining balance after the last scheduled instalment before maturity. Amorta's article on <a href="calculating-remaining-loan-balance">calculating the remaining loan balance</a> explains why that balance is the present value of the payments that would have come later under the longer schedule.</p>
+
+<h2>A simple numerical example</h2>
+<p>Assume you borrow £250,000 at a 6% effective annual rate. The lender quotes monthly payments based on a 30-year amortisation, but the note matures after 5 years. The monthly payment may look similar to an ordinary long-term mortgage, which can make the loan appear manageable at first glance.</p>
+<p>After 60 monthly payments, however, the balance is still far from zero. Depending on the exact periodic conversion and payment amount, the remaining principal could still be well above £230,000. The contract then requires a single balloon payment for that amount, possibly plus any final accrued interest and charges. The lower scheduled payment did not erase the debt. It mostly postponed repayment to the maturity date.</p>
+
+<h2>Why balloon loans produce lower scheduled payments</h2>
+<p>The smaller payment comes from slow capital repayment, not from cheaper interest. When a loan is amortised over a long horizon, each instalment can be smaller because principal is spread across more periods. If the contract ends before those periods actually occur, capital reduction remains incomplete.</p>
+<p>That is similar in spirit to an <a href="interest-only-loan-period">interest-only loan period</a>, where required payments are reduced by postponing capital amortisation. The difference is that a balloon loan usually includes at least some capital repayment during the term, whereas a pure interest-only phase may leave the balance almost unchanged. In both cases, lower required payments are purchased by shifting repayment pressure into the future.</p>
+
+<h2>Main risks to understand before signing</h2>
+<ul>
+  <li><strong>Refinancing risk:</strong> You may need a new loan to pay the balloon, but future rates, credit conditions, or property values may be worse.</li>
+  <li><strong>Liquidity risk:</strong> If the plan was to pay from savings or a sale, the needed cash may not be available when maturity arrives.</li>
+  <li><strong>Payment shock at maturity:</strong> Even if monthly payments were comfortable, the final obligation can be far larger than expected emotionally and financially.</li>
+  <li><strong>Higher effective cost under stress:</strong> An emergency refinance or extension often comes with new fees, a higher rate, or both.</li>
+  <li><strong>Equity uncertainty:</strong> When the balance stays high, a fall in asset value can make selling or refinancing harder.</li>
+</ul>
+<p>These risks are why balloon structures deserve the same careful review as teaser rates or capped payments. Amorta's article on <a href="comparing-loan-offers">comparing loan offers effectively</a> is especially relevant here because the periodic payment alone does not reveal the whole borrowing burden.</p>
+
+<h2>How balloon loans differ from negative amortisation</h2>
+<p>A balloon payment loan does not automatically imply <a href="negative-amortization">negative amortisation</a>. In negative amortisation, the required payment is too small to cover accrued interest, so unpaid interest is added to principal and the balance can grow. In a balloon loan, the balance usually still declines during the term because payments cover interest and at least some capital.</p>
+<p>The common feature is that both structures can leave a borrower with a larger future problem than the current payment suggests. But the mechanics differ. A balloon loan postpones principal that was never scheduled to be repaid during the short term. Negative amortisation adds new debt because even current interest was not fully paid.</p>
+
+<h2>What to check in the loan documents</h2>
+<p>Read the maturity date, the amortisation period used to compute the payment, and the exact definition of the balloon amount. Ask whether the final payment is a fixed figure from the original schedule or a balance that may change with rate resets, fees, or unpaid charges.</p>
+<p>You should also check whether voluntary capital reductions are allowed before maturity. If extra principal payments are permitted without penalty, the borrower may be able to reduce the balloon materially over time. That turns Amorta's article on <a href="extra-payments">the power of extra payments</a> into a practical planning tool for a balloon structure.</p>
+
+<h2>How borrowers usually exit a balloon loan</h2>
+<p>Most borrowers do one of four things before or at maturity: pay the balloon from cash reserves, sell the financed asset, refinance into a new loan, or negotiate an extension. Because none of those paths is risk-free, the safest time to test them is before the loan is signed. A balloon loan can be workable, but only when the exit strategy survives more than one optimistic assumption.</p>
+
+<h2>Conclusion</h2>
+<p>A balloon payment loan lowers scheduled payments by leaving a substantial balance to be paid at maturity. The structure is not mysterious once you see the maths: the regular payments are based on a longer amortisation path than the contract actually allows. The balloon is simply the remaining principal when that shorter term ends.</p>
+<p>That can be useful in limited situations where a well-defined sale, refinance, or cash event is genuinely likely. But it also introduces refinancing and liquidity risk that a standard fully amortising loan avoids. If you review the amortisation period, maturity date, balance path, and exit strategy with care, you can decide whether the lower scheduled payment is a real advantage or just delayed repayment wearing a more attractive monthly label.</p>

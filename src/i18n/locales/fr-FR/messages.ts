@@ -13,6 +13,7 @@ import articleFactorsAffectingMortgageRatesBody from './content/articles/article
 import articleNegativeAmortizationBody from './content/articles/article-negative-amortization-body.html.txt' with { type: 'text' }
 import articleComparingLoanOffersBody from './content/articles/article-comparing-loan-offers-body.html.txt' with { type: 'text' }
 import articleInterestOnlyLoanPeriodBody from './content/articles/article-interest-only-loan-period-body.html.txt' with { type: 'text' }
+import articleBalloonPaymentLoanBody from './content/articles/article-balloon-payment-loan-body.html.txt' with { type: 'text' }
 
 export const frFRMessages = {
   sharedResult: 'Résultat partagé',
@@ -357,4 +358,13 @@ export const frFRMessages = {
     "Qu'est-ce qu'une Période d'Intérêts Seuls sur un Prêt ? | Amorta",
   articleInterestOnlyLoanPeriodSeoDescription:
     "Découvrez ce qu'est une période d'intérêts seuls, son effet sur la mensualité, et pourquoi l'échéance future peut augmenter le coût total du prêt.",
+  articleBalloonPaymentLoanTitle: "Qu'est-ce qu'un Prêt à Paiement Ballon ?",
+  articleBalloonPaymentLoanDescription:
+    "Découvrez comment fonctionne un prêt à paiement ballon, pourquoi les échéances restent plus faibles, et quels risques apparaissent lorsqu'un solde final élevé devient exigible.",
+  articleBalloonPaymentLoanDate: '8 avril 2026',
+  articleBalloonPaymentLoanBody,
+  articleBalloonPaymentLoanSeoTitle:
+    "Qu'est-ce qu'un Prêt à Paiement Ballon ? | Amorta",
+  articleBalloonPaymentLoanSeoDescription:
+    "Découvrez comment fonctionne un prêt à paiement ballon, pourquoi il laisse un solde final élevé, et quels risques de liquidité et de refinancement vérifier.",
 }
