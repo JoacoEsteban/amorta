@@ -14,6 +14,7 @@ import articleNegativeAmortizationBody from './content/articles/article-negative
 import articleComparingLoanOffersBody from './content/articles/article-comparing-loan-offers-body.html.txt' with { type: 'text' }
 import articleInterestOnlyLoanPeriodBody from './content/articles/article-interest-only-loan-period-body.html.txt' with { type: 'text' }
 import articleBalloonPaymentLoanBody from './content/articles/article-balloon-payment-loan-body.html.txt' with { type: 'text' }
+import articleLoanOriginationFeeBody from './content/articles/article-loan-origination-fee-body.html.txt' with { type: 'text' }
 
 export const enUSMessages = {
   sharedResult: 'Shared Result',
@@ -362,4 +363,13 @@ export const enUSMessages = {
     'What Is a Balloon Payment Loan? | Amorta',
   articleBalloonPaymentLoanSeoDescription:
     'Learn how a balloon payment loan works, why it leaves a large final balance, and what refinancing and liquidity risks matter before signing.',
+  articleLoanOriginationFeeTitle: 'What Is a Loan Origination Fee?',
+  articleLoanOriginationFeeDescription:
+    'Learn what a loan origination fee covers, how it changes upfront cash needs, and why it can alter the true cost of borrowing.',
+  articleLoanOriginationFeeDate: 'April 9, 2026',
+  articleLoanOriginationFeeBody,
+  articleLoanOriginationFeeSeoTitle:
+    'What Is a Loan Origination Fee? | Amorta',
+  articleLoanOriginationFeeSeoDescription:
+    'Learn what a loan origination fee is, how it affects APR and closing costs, and when a higher fee may still lower your total borrowing cost.',
 }

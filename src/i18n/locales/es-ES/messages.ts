@@ -14,6 +14,7 @@ import articleNegativeAmortizationBody from './content/articles/article-negative
 import articleComparingLoanOffersBody from './content/articles/article-comparing-loan-offers-body.html.txt' with { type: 'text' }
 import articleInterestOnlyLoanPeriodBody from './content/articles/article-interest-only-loan-period-body.html.txt' with { type: 'text' }
 import articleBalloonPaymentLoanBody from './content/articles/article-balloon-payment-loan-body.html.txt' with { type: 'text' }
+import articleLoanOriginationFeeBody from './content/articles/article-loan-origination-fee-body.html.txt' with { type: 'text' }
 
 export const esESMessages = {
   sharedResult: 'Resultado Compartido',
@@ -369,4 +370,14 @@ export const esESMessages = {
     'Qué es un Préstamo con Pago Globo | Amorta',
   articleBalloonPaymentLoanSeoDescription:
     'Aprende cómo funciona un préstamo con pago globo, por qué deja un saldo final alto, y qué riesgos de liquidez y refinanciación debes revisar.',
+  articleLoanOriginationFeeTitle:
+    'Qué es la Comisión de Apertura de un Préstamo',
+  articleLoanOriginationFeeDescription:
+    'Aprende qué cubre la comisión de apertura, cómo cambia el dinero inicial que necesitas, y por qué modifica el coste real del préstamo.',
+  articleLoanOriginationFeeDate: '9 de Abril de 2026',
+  articleLoanOriginationFeeBody,
+  articleLoanOriginationFeeSeoTitle:
+    'Qué es la Comisión de Apertura de un Préstamo | Amorta',
+  articleLoanOriginationFeeSeoDescription:
+    'Aprende qué es la comisión de apertura, cómo afecta a la TAE y a los costes de cierre, y cuándo una comisión mayor puede compensar.',
 }
