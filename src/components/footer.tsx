@@ -5,6 +5,14 @@ import { LocaleSwitcher } from './locale-switcher.js'
 import React from 'react'
 import { match } from 'ts-pattern'
 
+// <a
+//   href="https://github.com/joacoesteban/amorta"
+//   target="_blank"
+//   rel="noopener noreferrer"
+// >
+//   GitHub
+// </a>
+
 export const Footer = () => {
   const { _ } = useTranslator()
   const currentLocale = useLocale()
@@ -23,13 +31,6 @@ export const Footer = () => {
               joaco.io
             </a>
           </span>
-          <a
-            href="https://github.com/joacoesteban/amorta"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
           <a href={buildLocalePath(currentLocale, '/blog')}>{_('articles')}</a>
           <a href={buildLocalePath(currentLocale, '/about')}>
             {_('aboutLink')}
