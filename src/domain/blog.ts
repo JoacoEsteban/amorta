@@ -11,6 +11,14 @@ export type Article = {
 
 export const ARTICLES: Article[] = [
   {
+    slug: 'prepayment-penalty',
+    titleKey: 'articlePrepaymentPenaltyTitle',
+    descriptionKey: 'articlePrepaymentPenaltyDescription',
+    dateKey: 'articlePrepaymentPenaltyDate',
+    bodyKey: 'articlePrepaymentPenaltyBody',
+    date: new Date('2026-04-10'),
+  },
+  {
     slug: 'loan-origination-fee',
     titleKey: 'articleLoanOriginationFeeTitle',
     descriptionKey: 'articleLoanOriginationFeeDescription',
@@ -120,6 +128,11 @@ export const getArticleBySlug = (slug: string): Article | undefined =>
   ARTICLES.find((a) => a.slug === slug)
 
 export const RELATED_ARTICLE_SLUGS: Record<string, readonly string[]> = {
+  'prepayment-penalty': [
+    'comparing-loan-offers',
+    'extra-payments',
+    'loan-origination-fee',
+  ],
   'loan-origination-fee': [
     'comparing-loan-offers',
     'apr-vs-ear',

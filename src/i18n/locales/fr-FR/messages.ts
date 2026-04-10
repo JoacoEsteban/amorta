@@ -15,6 +15,7 @@ import articleComparingLoanOffersBody from './content/articles/article-comparing
 import articleInterestOnlyLoanPeriodBody from './content/articles/article-interest-only-loan-period-body.html.txt' with { type: 'text' }
 import articleBalloonPaymentLoanBody from './content/articles/article-balloon-payment-loan-body.html.txt' with { type: 'text' }
 import articleLoanOriginationFeeBody from './content/articles/article-loan-origination-fee-body.html.txt' with { type: 'text' }
+import articlePrepaymentPenaltyBody from './content/articles/article-prepayment-penalty-body.html.txt' with { type: 'text' }
 
 export const frFRMessages = {
   sharedResult: 'Résultat partagé',
@@ -378,4 +379,14 @@ export const frFRMessages = {
     "Que sont les Frais de Montage d'un Prêt ? | Amorta",
   articleLoanOriginationFeeSeoDescription:
     "Découvrez ce que sont les frais de montage, leur effet sur le TAEG et les frais de signature, et quand des frais plus élevés peuvent se justifier.",
+  articlePrepaymentPenaltyTitle:
+    "Qu'est-ce qu'une Pénalité de Remboursement Anticipé ?",
+  articlePrepaymentPenaltyDescription:
+    "Découvrez ce qu'est une pénalité de remboursement anticipé, quand elle s'applique, et comment elle peut changer l'intérêt réel d'un refinancement ou d'un remboursement plus rapide.",
+  articlePrepaymentPenaltyDate: '10 avril 2026',
+  articlePrepaymentPenaltyBody,
+  articlePrepaymentPenaltySeoTitle:
+    "Qu'est-ce qu'une Pénalité de Remboursement Anticipé ? | Amorta",
+  articlePrepaymentPenaltySeoDescription:
+    "Découvrez ce qu'est une pénalité de remboursement anticipé, son calcul, et pourquoi elle compte en cas de refinancement, de vente ou de remboursement important.",
 }

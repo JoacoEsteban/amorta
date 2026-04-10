@@ -15,6 +15,7 @@ import articleComparingLoanOffersBody from './content/articles/article-comparing
 import articleInterestOnlyLoanPeriodBody from './content/articles/article-interest-only-loan-period-body.html.txt' with { type: 'text' }
 import articleBalloonPaymentLoanBody from './content/articles/article-balloon-payment-loan-body.html.txt' with { type: 'text' }
 import articleLoanOriginationFeeBody from './content/articles/article-loan-origination-fee-body.html.txt' with { type: 'text' }
+import articlePrepaymentPenaltyBody from './content/articles/article-prepayment-penalty-body.html.txt' with { type: 'text' }
 
 export const esESMessages = {
   sharedResult: 'Resultado Compartido',
@@ -380,4 +381,14 @@ export const esESMessages = {
     'Qué es la Comisión de Apertura de un Préstamo | Amorta',
   articleLoanOriginationFeeSeoDescription:
     'Aprende qué es la comisión de apertura, cómo afecta a la TAE y a los costes de cierre, y cuándo una comisión mayor puede compensar.',
+  articlePrepaymentPenaltyTitle:
+    'Qué es una Penalización por Reembolso Anticipado',
+  articlePrepaymentPenaltyDescription:
+    'Aprende qué es una penalización por reembolso anticipado, cuándo se aplica y cómo puede cambiar el valor real de refinanciar o amortizar antes.',
+  articlePrepaymentPenaltyDate: '10 de Abril de 2026',
+  articlePrepaymentPenaltyBody,
+  articlePrepaymentPenaltySeoTitle:
+    'Qué es una Penalización por Reembolso Anticipado | Amorta',
+  articlePrepaymentPenaltySeoDescription:
+    'Aprende qué es una penalización por reembolso anticipado, cómo se calcula y por qué importa al refinanciar, vender o hacer amortizaciones grandes.',
 }

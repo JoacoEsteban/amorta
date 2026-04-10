@@ -15,6 +15,7 @@ import articleComparingLoanOffersBody from './content/articles/article-comparing
 import articleInterestOnlyLoanPeriodBody from './content/articles/article-interest-only-loan-period-body.html.txt' with { type: 'text' }
 import articleBalloonPaymentLoanBody from './content/articles/article-balloon-payment-loan-body.html.txt' with { type: 'text' }
 import articleLoanOriginationFeeBody from './content/articles/article-loan-origination-fee-body.html.txt' with { type: 'text' }
+import articlePrepaymentPenaltyBody from './content/articles/article-prepayment-penalty-body.html.txt' with { type: 'text' }
 
 export const enGBMessages = {
   sharedResult: 'Shared Result',
@@ -372,4 +373,13 @@ export const enGBMessages = {
     'What Is a Loan Origination Fee? | Amorta',
   articleLoanOriginationFeeSeoDescription:
     'Learn what a loan origination fee is, how it affects APR and completion costs, and when a higher fee may still lower your total borrowing cost.',
+  articlePrepaymentPenaltyTitle: 'What Is a Prepayment Penalty?',
+  articlePrepaymentPenaltyDescription:
+    'Learn what a prepayment penalty is, when it applies, and how it can change the real value of remortgaging or making extra capital payments.',
+  articlePrepaymentPenaltyDate: '10 April 2026',
+  articlePrepaymentPenaltyBody,
+  articlePrepaymentPenaltySeoTitle:
+    'What Is a Prepayment Penalty? | Amorta',
+  articlePrepaymentPenaltySeoDescription:
+    'Learn what a prepayment penalty is, how lenders calculate it, and why it matters when remortgaging, selling, or making large overpayments.',
 }
