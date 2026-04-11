@@ -369,17 +369,16 @@ export const frFRMessages = {
   articleBalloonPaymentLoanSeoTitle:
     "Qu'est-ce qu'un Prêt à Paiement Ballon ? | Amorta",
   articleBalloonPaymentLoanSeoDescription:
-    "Découvrez comment fonctionne un prêt à paiement ballon, pourquoi il laisse un solde final élevé, et quels risques de liquidité et de refinancement vérifier.",
-  articleLoanOriginationFeeTitle:
-    "Que sont les Frais de Montage d'un Prêt ?",
+    'Découvrez comment fonctionne un prêt à paiement ballon, pourquoi il laisse un solde final élevé, et quels risques de liquidité et de refinancement vérifier.',
+  articleLoanOriginationFeeTitle: "Que sont les Frais de Montage d'un Prêt ?",
   articleLoanOriginationFeeDescription:
-    "Découvrez ce que couvrent les frais de montage, comment ils modifient la trésorerie initiale, et pourquoi ils changent le coût réel du crédit.",
+    'Découvrez ce que couvrent les frais de montage, comment ils modifient la trésorerie initiale, et pourquoi ils changent le coût réel du crédit.',
   articleLoanOriginationFeeDate: '9 avril 2026',
   articleLoanOriginationFeeBody,
   articleLoanOriginationFeeSeoTitle:
     "Que sont les Frais de Montage d'un Prêt ? | Amorta",
   articleLoanOriginationFeeSeoDescription:
-    "Découvrez ce que sont les frais de montage, leur effet sur le TAEG et les frais de signature, et quand des frais plus élevés peuvent se justifier.",
+    'Découvrez ce que sont les frais de montage, leur effet sur le TAEG et les frais de signature, et quand des frais plus élevés peuvent se justifier.',
   articlePrepaymentPenaltyTitle:
     "Qu'est-ce qu'une Pénalité de Remboursement Anticipé ?",
   articlePrepaymentPenaltyDescription:

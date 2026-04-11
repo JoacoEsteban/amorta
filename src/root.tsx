@@ -2,6 +2,7 @@ import { StrictMode, useEffect, useState } from 'react'
 import { Toaster } from 'react-hot-toast'
 import { bind } from '@react-rxjs/core'
 import { match, P } from 'ts-pattern'
+import { Analytics } from '@vercel/analytics/react'
 
 import { App } from './app'
 import { buildSeoMetadata } from './domain/seo'
@@ -189,6 +190,7 @@ export const AppRoot = ({
               },
             }}
           />
+          <Analytics />
         </>
       </ProvideLocale>
     </StrictMode>

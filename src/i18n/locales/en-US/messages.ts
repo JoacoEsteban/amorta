@@ -361,8 +361,7 @@ export const enUSMessages = {
     'Learn how a balloon payment loan works, why scheduled payments stay lower, and what risks arise when a large balance comes due at maturity.',
   articleBalloonPaymentLoanDate: 'April 8, 2026',
   articleBalloonPaymentLoanBody,
-  articleBalloonPaymentLoanSeoTitle:
-    'What Is a Balloon Payment Loan? | Amorta',
+  articleBalloonPaymentLoanSeoTitle: 'What Is a Balloon Payment Loan? | Amorta',
   articleBalloonPaymentLoanSeoDescription:
     'Learn how a balloon payment loan works, why it leaves a large final balance, and what refinancing and liquidity risks matter before signing.',
   articleLoanOriginationFeeTitle: 'What Is a Loan Origination Fee?',
@@ -370,8 +369,7 @@ export const enUSMessages = {
     'Learn what a loan origination fee covers, how it changes upfront cash needs, and why it can alter the true cost of borrowing.',
   articleLoanOriginationFeeDate: 'April 9, 2026',
   articleLoanOriginationFeeBody,
-  articleLoanOriginationFeeSeoTitle:
-    'What Is a Loan Origination Fee? | Amorta',
+  articleLoanOriginationFeeSeoTitle: 'What Is a Loan Origination Fee? | Amorta',
   articleLoanOriginationFeeSeoDescription:
     'Learn what a loan origination fee is, how it affects APR and closing costs, and when a higher fee may still lower your total borrowing cost.',
   articlePrepaymentPenaltyTitle: 'What Is a Prepayment Penalty?',
@@ -379,8 +377,7 @@ export const enUSMessages = {
     'Learn what a prepayment penalty is, when it applies, and how it can change the real value of refinancing or making extra principal payments.',
   articlePrepaymentPenaltyDate: 'April 10, 2026',
   articlePrepaymentPenaltyBody,
-  articlePrepaymentPenaltySeoTitle:
-    'What Is a Prepayment Penalty? | Amorta',
+  articlePrepaymentPenaltySeoTitle: 'What Is a Prepayment Penalty? | Amorta',
   articlePrepaymentPenaltySeoDescription:
     'Learn what a prepayment penalty is, how lenders calculate it, and why it matters when refinancing, selling, or making large extra payments.',
   articleMortgageRecastTitle: 'What Is a Mortgage Recast?',
