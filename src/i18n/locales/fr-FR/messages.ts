@@ -16,6 +16,7 @@ import articleInterestOnlyLoanPeriodBody from './content/articles/article-intere
 import articleBalloonPaymentLoanBody from './content/articles/article-balloon-payment-loan-body.html.txt' with { type: 'text' }
 import articleLoanOriginationFeeBody from './content/articles/article-loan-origination-fee-body.html.txt' with { type: 'text' }
 import articlePrepaymentPenaltyBody from './content/articles/article-prepayment-penalty-body.html.txt' with { type: 'text' }
+import articleMortgageRecastBody from './content/articles/article-mortgage-recast-body.html.txt' with { type: 'text' }
 
 export const frFRMessages = {
   sharedResult: 'Résultat partagé',
@@ -389,4 +390,13 @@ export const frFRMessages = {
     "Qu'est-ce qu'une Pénalité de Remboursement Anticipé ? | Amorta",
   articlePrepaymentPenaltySeoDescription:
     "Découvrez ce qu'est une pénalité de remboursement anticipé, son calcul, et pourquoi elle compte en cas de refinancement, de vente ou de remboursement important.",
+  articleMortgageRecastTitle: "Qu'est-ce qu'un Recast Hypothécaire ?",
+  articleMortgageRecastDescription:
+    "Découvrez comment fonctionne un recast hypothécaire, quand le prêteur l'accepte, et pourquoi un versement important de capital peut réduire votre mensualité obligatoire.",
+  articleMortgageRecastDate: '11 avril 2026',
+  articleMortgageRecastBody,
+  articleMortgageRecastSeoTitle:
+    "Qu'est-ce qu'un Recast Hypothécaire ? | Amorta",
+  articleMortgageRecastSeoDescription:
+    "Découvrez ce qu'est un recast hypothécaire, comment la mensualité est recalculée après un fort remboursement de capital, et quand il peut être préférable à un refinancement.",
 }

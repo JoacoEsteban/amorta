@@ -16,6 +16,7 @@ import articleInterestOnlyLoanPeriodBody from './content/articles/article-intere
 import articleBalloonPaymentLoanBody from './content/articles/article-balloon-payment-loan-body.html.txt' with { type: 'text' }
 import articleLoanOriginationFeeBody from './content/articles/article-loan-origination-fee-body.html.txt' with { type: 'text' }
 import articlePrepaymentPenaltyBody from './content/articles/article-prepayment-penalty-body.html.txt' with { type: 'text' }
+import articleMortgageRecastBody from './content/articles/article-mortgage-recast-body.html.txt' with { type: 'text' }
 
 export const enGBMessages = {
   sharedResult: 'Shared Result',
@@ -382,4 +383,12 @@ export const enGBMessages = {
     'What Is a Prepayment Penalty? | Amorta',
   articlePrepaymentPenaltySeoDescription:
     'Learn what a prepayment penalty is, how lenders calculate it, and why it matters when remortgaging, selling, or making large overpayments.',
+  articleMortgageRecastTitle: 'What Is a Mortgage Recast?',
+  articleMortgageRecastDescription:
+    'Learn how a mortgage recast works, when lenders allow it, and why a large principal payment can lower your required monthly instalment.',
+  articleMortgageRecastDate: '11 April 2026',
+  articleMortgageRecastBody,
+  articleMortgageRecastSeoTitle: 'What Is a Mortgage Recast? | Amorta',
+  articleMortgageRecastSeoDescription:
+    'Learn what a mortgage recast is, how lenders recalculate payments after a lump-sum principal reduction, and when it may fit better than refinancing.',
 }

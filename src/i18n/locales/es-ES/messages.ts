@@ -16,6 +16,7 @@ import articleInterestOnlyLoanPeriodBody from './content/articles/article-intere
 import articleBalloonPaymentLoanBody from './content/articles/article-balloon-payment-loan-body.html.txt' with { type: 'text' }
 import articleLoanOriginationFeeBody from './content/articles/article-loan-origination-fee-body.html.txt' with { type: 'text' }
 import articlePrepaymentPenaltyBody from './content/articles/article-prepayment-penalty-body.html.txt' with { type: 'text' }
+import articleMortgageRecastBody from './content/articles/article-mortgage-recast-body.html.txt' with { type: 'text' }
 
 export const esESMessages = {
   sharedResult: 'Resultado Compartido',
@@ -391,4 +392,12 @@ export const esESMessages = {
     'Qué es una Penalización por Reembolso Anticipado | Amorta',
   articlePrepaymentPenaltySeoDescription:
     'Aprende qué es una penalización por reembolso anticipado, cómo se calcula y por qué importa al refinanciar, vender o hacer amortizaciones grandes.',
+  articleMortgageRecastTitle: 'Qué es una Recast Hipotecaria',
+  articleMortgageRecastDescription:
+    'Aprende cómo funciona una recast hipotecaria, cuándo la permite la entidad y por qué un pago grande de capital puede reducir tu cuota obligatoria.',
+  articleMortgageRecastDate: '11 de Abril de 2026',
+  articleMortgageRecastBody,
+  articleMortgageRecastSeoTitle: 'Qué es una Recast Hipotecaria | Amorta',
+  articleMortgageRecastSeoDescription:
+    'Aprende qué es una recast hipotecaria, cómo se recalcula la cuota tras una gran amortización de capital y cuándo puede encajar mejor que refinanciar.',
 }
