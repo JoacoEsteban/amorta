@@ -55,7 +55,7 @@ export const Accordion = ({
         setInternalValue(next)
       }
 
-      onValueChange?.(isMultiple ? next : next[0] ?? '')
+      onValueChange?.(isMultiple ? next : (next[0] ?? ''))
     },
     [currentValue, isControlled, isMultiple, onValueChange],
   )
