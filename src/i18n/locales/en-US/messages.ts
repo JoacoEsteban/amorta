@@ -17,6 +17,7 @@ import articleBalloonPaymentLoanBody from './content/articles/article-balloon-pa
 import articleLoanOriginationFeeBody from './content/articles/article-loan-origination-fee-body.html.txt' with { type: 'text' }
 import articlePrepaymentPenaltyBody from './content/articles/article-prepayment-penalty-body.html.txt' with { type: 'text' }
 import articleMortgageRecastBody from './content/articles/article-mortgage-recast-body.html.txt' with { type: 'text' }
+import articleInterestAccrualBetweenPaymentsBody from './content/articles/article-interest-accrual-between-payments-body.html.txt' with { type: 'text' }
 
 export const enUSMessages = {
   sharedResult: 'Shared Result',
@@ -388,4 +389,14 @@ export const enUSMessages = {
   articleMortgageRecastSeoTitle: 'What Is a Mortgage Recast? | Amorta',
   articleMortgageRecastSeoDescription:
     'Learn what a mortgage recast is, how lenders recalculate payments after a lump-sum principal reduction, and when it may fit better than refinancing.',
+  articleInterestAccrualBetweenPaymentsTitle:
+    'How Interest Accrues Between Loan Payments',
+  articleInterestAccrualBetweenPaymentsDescription:
+    'Learn how lenders calculate interest between payment dates, why timing matters, and how balance changes and extra payments affect borrowing cost.',
+  articleInterestAccrualBetweenPaymentsDate: 'April 12, 2026',
+  articleInterestAccrualBetweenPaymentsBody,
+  articleInterestAccrualBetweenPaymentsSeoTitle:
+    'How Interest Accrues Between Loan Payments | Amorta',
+  articleInterestAccrualBetweenPaymentsSeoDescription:
+    'Learn how interest accrues between loan payments, how day counts and payment timing change charges, and why extra principal lowers future interest.',
 }

@@ -17,6 +17,7 @@ import articleBalloonPaymentLoanBody from './content/articles/article-balloon-pa
 import articleLoanOriginationFeeBody from './content/articles/article-loan-origination-fee-body.html.txt' with { type: 'text' }
 import articlePrepaymentPenaltyBody from './content/articles/article-prepayment-penalty-body.html.txt' with { type: 'text' }
 import articleMortgageRecastBody from './content/articles/article-mortgage-recast-body.html.txt' with { type: 'text' }
+import articleInterestAccrualBetweenPaymentsBody from './content/articles/article-interest-accrual-between-payments-body.html.txt' with { type: 'text' }
 
 export const frFRMessages = {
   sharedResult: 'Résultat partagé',
@@ -398,4 +399,14 @@ export const frFRMessages = {
     "Qu'est-ce qu'un Recast Hypothécaire ? | Amorta",
   articleMortgageRecastSeoDescription:
     "Découvrez ce qu'est un recast hypothécaire, comment la mensualité est recalculée après un fort remboursement de capital, et quand il peut être préférable à un refinancement.",
+  articleInterestAccrualBetweenPaymentsTitle:
+    "Comment les Intérêts s'Accumulent Entre Deux Échéances",
+  articleInterestAccrualBetweenPaymentsDescription:
+    "Découvrez comment les prêteurs calculent les intérêts entre deux dates de paiement, pourquoi le calendrier compte, et comment le coût réel évolue.",
+  articleInterestAccrualBetweenPaymentsDate: '12 avril 2026',
+  articleInterestAccrualBetweenPaymentsBody,
+  articleInterestAccrualBetweenPaymentsSeoTitle:
+    "Comment les Intérêts s'Accumulent Entre Deux Échéances | Amorta",
+  articleInterestAccrualBetweenPaymentsSeoDescription:
+    "Découvrez comment les intérêts s'accumulent entre deux paiements, comment les jours et le timing modifient le coût, et pourquoi plus de capital réduit les intérêts.",
 }

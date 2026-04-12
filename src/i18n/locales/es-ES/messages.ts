@@ -17,6 +17,7 @@ import articleBalloonPaymentLoanBody from './content/articles/article-balloon-pa
 import articleLoanOriginationFeeBody from './content/articles/article-loan-origination-fee-body.html.txt' with { type: 'text' }
 import articlePrepaymentPenaltyBody from './content/articles/article-prepayment-penalty-body.html.txt' with { type: 'text' }
 import articleMortgageRecastBody from './content/articles/article-mortgage-recast-body.html.txt' with { type: 'text' }
+import articleInterestAccrualBetweenPaymentsBody from './content/articles/article-interest-accrual-between-payments-body.html.txt' with { type: 'text' }
 
 export const esESMessages = {
   sharedResult: 'Resultado Compartido',
@@ -400,4 +401,14 @@ export const esESMessages = {
   articleMortgageRecastSeoTitle: 'Qué es una Recast Hipotecaria | Amorta',
   articleMortgageRecastSeoDescription:
     'Aprende qué es una recast hipotecaria, cómo se recalcula la cuota tras una gran amortización de capital y cuándo puede encajar mejor que refinanciar.',
+  articleInterestAccrualBetweenPaymentsTitle:
+    'Cómo se Acumulan los Intereses Entre Pagos',
+  articleInterestAccrualBetweenPaymentsDescription:
+    'Aprende cómo calculan las entidades los intereses entre fechas de pago, por qué importa el calendario y cómo cambia el coste real del préstamo.',
+  articleInterestAccrualBetweenPaymentsDate: '12 de Abril de 2026',
+  articleInterestAccrualBetweenPaymentsBody,
+  articleInterestAccrualBetweenPaymentsSeoTitle:
+    'Cómo se Acumulan los Intereses Entre Pagos | Amorta',
+  articleInterestAccrualBetweenPaymentsSeoDescription:
+    'Aprende cómo se acumulan los intereses entre pagos, cómo influyen los días y el momento del pago, y por qué amortizar capital reduce coste.',
 }

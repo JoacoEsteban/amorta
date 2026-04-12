@@ -11,6 +11,14 @@ export type Article = {
 
 export const ARTICLES: Article[] = [
   {
+    slug: 'interest-accrual-between-payments',
+    titleKey: 'articleInterestAccrualBetweenPaymentsTitle',
+    descriptionKey: 'articleInterestAccrualBetweenPaymentsDescription',
+    dateKey: 'articleInterestAccrualBetweenPaymentsDate',
+    bodyKey: 'articleInterestAccrualBetweenPaymentsBody',
+    date: new Date('2026-04-12'),
+  },
+  {
     slug: 'mortgage-recast',
     titleKey: 'articleMortgageRecastTitle',
     descriptionKey: 'articleMortgageRecastDescription',
@@ -136,6 +144,11 @@ export const getArticleBySlug = (slug: string): Article | undefined =>
   ARTICLES.find((a) => a.slug === slug)
 
 export const RELATED_ARTICLE_SLUGS: Record<string, readonly string[]> = {
+  'interest-accrual-between-payments': [
+    'understanding-amortization-schedule',
+    'extra-payments',
+    'biweekly-vs-monthly-payments',
+  ],
   'mortgage-recast': [
     'extra-payments',
     'calculating-remaining-loan-balance',
