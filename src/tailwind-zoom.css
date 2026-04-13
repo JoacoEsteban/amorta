@@ -15,5 +15,5 @@
 }
 
 @utility zoom-* {
-  zoom: --value(--zoom-*);
+  zoom: --value(--zoom- *);
 }

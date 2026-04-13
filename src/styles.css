@@ -1155,8 +1155,8 @@ ul {
 }
 
 .article-content code {
-  font-family:
-    ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo,
+    monospace;
   font-size: 0.9em;
   padding: 0.15em 0.4em;
   background: rgba(245, 158, 11, 0.12);
@@ -1214,8 +1214,7 @@ ul {
   padding: 1.5rem;
   border: 1px solid rgba(214, 211, 209, 0.88);
   border-radius: 1.75rem;
-  background:
-    radial-gradient(
+  background: radial-gradient(
       circle at top left,
       rgba(254, 243, 199, 0.75),
       rgba(255, 255, 255, 0) 40%
@@ -1233,8 +1232,7 @@ ul {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
+  background: linear-gradient(
       135deg,
       rgba(255, 255, 255, 0.34),
       rgba(255, 255, 255, 0) 45%

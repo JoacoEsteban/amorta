@@ -9,6 +9,7 @@
 ## SEO & Localization
 
 - [x] **Locale-prefixed routes for SEO**
+
   - Implemented: `/en-US`, `/en-GB`, `/es-ES`, `/es-AR` with index and result routes
   - `SUPPORTED_LOCALES` is the single source of truth — adding a locale requires only a new messages file
   - `<html lang="...">` and `<link rel="alternate" hreflang="...">` auto-generated per page
