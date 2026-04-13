@@ -1,5 +1,5 @@
 import { match } from 'ts-pattern'
-
+import path from 'path'
 import { assert } from '../lib/assert'
 
 export const SUPPORTED_LOCALES = [
@@ -10,6 +10,9 @@ export const SUPPORTED_LOCALES = [
   'fr-FR',
 ] as const
 export type SupportedLocale = (typeof SUPPORTED_LOCALES)[number]
+export type SupportedLanguage = SupportedLocale extends `${infer L}-${infer A}`
+  ? L
+  : never
 
 export const DEFAULT_LOCALE: SupportedLocale = 'en-US'
 
@@ -24,12 +27,11 @@ export const LOCALE_LABELS: Record<SupportedLocale, string> = {
 export const isValidLocale = (locale: string): locale is SupportedLocale =>
   SUPPORTED_LOCALES.includes(locale as SupportedLocale)
 
-const LANGUAGE_TO_LOCALE: Map<string, SupportedLocale> = (() => {
-  const map = new Map<string, SupportedLocale>()
+const LANGUAGE_TO_LOCALE = (() => {
+  const map = new Map<SupportedLanguage, SupportedLocale>()
   SUPPORTED_LOCALES.forEach((locale) => {
-    const lang = locale.split('-')[0]
+    const [lang] = locale.split('-') as [SupportedLanguage, unknown]
     assert(lang)
-    map.set(locale, locale)
     if (!map.has(lang)) map.set(lang, locale)
   })
   return map
@@ -41,10 +43,10 @@ export const resolveLocaleFromMaybeLanguage = (
   if (!maybeLanguageOrLocale) return null
 
   const candidate = maybeLanguageOrLocale.trim()
-  if (SUPPORTED_LOCALES.includes(candidate as SupportedLocale)) {
-    return candidate as SupportedLocale
+  if (isValidLocale(candidate)) {
+    return candidate
   }
-  const langFallback = LANGUAGE_TO_LOCALE.get(candidate)
+  const langFallback = LANGUAGE_TO_LOCALE.get(candidate as SupportedLanguage)
   return langFallback ?? null
 }
 
@@ -70,9 +72,22 @@ export const buildLocalePath = (
   locale: SupportedLocale,
   pathname: string,
 ): string => {
-  const cleanPath = pathname.startsWith('/') ? pathname : '/' + pathname
+  return buildLocalePathDecorated(locale, [pathname]).path
+}
+
+export const buildLocalePathDecorated = (
+  locale: SupportedLocale,
+  pathname: Array<string>,
+) => {
+  const cleanPath = path.join(...pathname)
 
   return match(locale)
-    .with(DEFAULT_LOCALE, () => cleanPath)
-    .otherwise((resolvedLocale) => `/${resolvedLocale}${cleanPath}`)
+    .with(DEFAULT_LOCALE, () => ({
+      path: path.join('/', cleanPath),
+      isRoot: true,
+    }))
+    .otherwise((resolvedLocale) => ({
+      path: path.join('/', resolvedLocale, cleanPath),
+      isRoot: false,
+    }))
 }
