@@ -18,6 +18,7 @@ import articleLoanOriginationFeeBody from './content/articles/article-loan-origi
 import articlePrepaymentPenaltyBody from './content/articles/article-prepayment-penalty-body.html.txt' with { type: 'text' }
 import articleMortgageRecastBody from './content/articles/article-mortgage-recast-body.html.txt' with { type: 'text' }
 import articleInterestAccrualBetweenPaymentsBody from './content/articles/article-interest-accrual-between-payments-body.html.txt' with { type: 'text' }
+import articleLoanGracePeriodBody from './content/articles/article-loan-grace-period-body.html.txt' with { type: 'text' }
 
 export const esESMessages = {
   sharedResult: 'Resultado Compartido',
@@ -411,4 +412,13 @@ export const esESMessages = {
     'Cómo se Acumulan los Intereses Entre Pagos | Amorta',
   articleInterestAccrualBetweenPaymentsSeoDescription:
     'Aprende cómo se acumulan los intereses entre pagos, cómo influyen los días y el momento del pago, y por qué amortizar capital reduce coste.',
+  articleLoanGracePeriodTitle: 'Qué es un Período de Gracia en un Préstamo',
+  articleLoanGracePeriodDescription:
+    'Aprende qué hace un período de gracia, qué no cambia y por qué pagar dentro de esa ventana no siempre evita intereses o reglas de mora.',
+  articleLoanGracePeriodDate: '13 de Abril de 2026',
+  articleLoanGracePeriodBody,
+  articleLoanGracePeriodSeoTitle:
+    'Qué es un Período de Gracia en un Préstamo | Amorta',
+  articleLoanGracePeriodSeoDescription:
+    'Aprende qué es un período de gracia, cuándo retrasa comisiones por demora, por qué normalmente no detiene intereses y cómo evitar la mora.',
 }

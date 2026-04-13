@@ -18,6 +18,7 @@ import articleLoanOriginationFeeBody from './content/articles/article-loan-origi
 import articlePrepaymentPenaltyBody from './content/articles/article-prepayment-penalty-body.html.txt' with { type: 'text' }
 import articleMortgageRecastBody from './content/articles/article-mortgage-recast-body.html.txt' with { type: 'text' }
 import articleInterestAccrualBetweenPaymentsBody from './content/articles/article-interest-accrual-between-payments-body.html.txt' with { type: 'text' }
+import articleLoanGracePeriodBody from './content/articles/article-loan-grace-period-body.html.txt' with { type: 'text' }
 
 export const frFRMessages = {
   sharedResult: 'Résultat partagé',
@@ -409,4 +410,13 @@ export const frFRMessages = {
     "Comment les Intérêts s'Accumulent Entre Deux Échéances | Amorta",
   articleInterestAccrualBetweenPaymentsSeoDescription:
     "Découvrez comment les intérêts s'accumulent entre deux paiements, comment les jours et le timing modifient le coût, et pourquoi plus de capital réduit les intérêts.",
+  articleLoanGracePeriodTitle: "Qu'est-ce qu'une Période de Grâce sur un Prêt ?",
+  articleLoanGracePeriodDescription:
+    "Découvrez ce qu'une période de grâce modifie, ce qu'elle ne change pas, et pourquoi payer dans cette fenêtre n'arrête pas forcément intérêts et retard.",
+  articleLoanGracePeriodDate: '13 avril 2026',
+  articleLoanGracePeriodBody,
+  articleLoanGracePeriodSeoTitle:
+    "Qu'est-ce qu'une Période de Grâce sur un Prêt ? | Amorta",
+  articleLoanGracePeriodSeoDescription:
+    "Découvrez ce qu'est une période de grâce, quand elle reporte des frais de retard, pourquoi elle n'arrête généralement pas les intérêts, et comment éviter l'impayé.",
 }

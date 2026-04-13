@@ -18,6 +18,7 @@ import articleLoanOriginationFeeBody from './content/articles/article-loan-origi
 import articlePrepaymentPenaltyBody from './content/articles/article-prepayment-penalty-body.html.txt' with { type: 'text' }
 import articleMortgageRecastBody from './content/articles/article-mortgage-recast-body.html.txt' with { type: 'text' }
 import articleInterestAccrualBetweenPaymentsBody from './content/articles/article-interest-accrual-between-payments-body.html.txt' with { type: 'text' }
+import articleLoanGracePeriodBody from './content/articles/article-loan-grace-period-body.html.txt' with { type: 'text' }
 
 export const enUSMessages = {
   sharedResult: 'Shared Result',
@@ -399,4 +400,12 @@ export const enUSMessages = {
     'How Interest Accrues Between Loan Payments | Amorta',
   articleInterestAccrualBetweenPaymentsSeoDescription:
     'Learn how interest accrues between loan payments, how day counts and payment timing change charges, and why extra principal lowers future interest.',
+  articleLoanGracePeriodTitle: 'What Is a Loan Grace Period?',
+  articleLoanGracePeriodDescription:
+    'Learn what a loan grace period does, what it does not do, and why a payment inside the window can still leave interest and servicing rules unchanged.',
+  articleLoanGracePeriodDate: 'April 13, 2026',
+  articleLoanGracePeriodBody,
+  articleLoanGracePeriodSeoTitle: 'What Is a Loan Grace Period? | Amorta',
+  articleLoanGracePeriodSeoDescription:
+    'Learn what a loan grace period is, when it delays late fees, why it usually does not stop interest accrual, and how to avoid accidental delinquency.',
 }
