@@ -421,4 +421,25 @@ export const esESMessages = {
     'Qué es un Período de Gracia en un Préstamo | Amorta',
   articleLoanGracePeriodSeoDescription:
     'Aprende qué es un período de gracia, cuándo retrasa comisiones por demora, por qué normalmente no detiene intereses y cómo evitar la mora.',
+  consentPrivacyPolicyLabel: 'Política de privacidad',
+  consentTermsLabel: 'Términos y condiciones',
+  consentAcceptAll: 'Aceptar todo',
+  consentRejectAll: 'Rechazar todo',
+  consentCustomize: 'Personalizar',
+  consentSavePreferences: 'Guardar preferencias',
+  consentCookieBannerTitle: 'Tu privacidad, tu decisión',
+  consentCookieBannerDescription:
+    'Usamos cookies para operar el sitio, medir uso y mostrar publicidad. Puedes aceptar, rechazar o personalizar tus preferencias.',
+  consentDialogTitle: 'Preferencias de privacidad',
+  consentDialogDescription:
+    'Controla cómo usamos cookies y tecnologías similares en Amorta.',
+  consentNecessaryTitle: 'Necesarias',
+  consentNecessaryDescription:
+    'Imprescindibles para el funcionamiento básico del sitio.',
+  consentMeasurementTitle: 'Medición',
+  consentMeasurementDescription:
+    'Nos ayudan a entender el uso del sitio para mejorarlo.',
+  consentMarketingTitle: 'Marketing',
+  consentMarketingDescription:
+    'Permiten mostrar anuncios más relevantes para ti.',
 }

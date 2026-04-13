@@ -12,6 +12,7 @@
     "prettier": "bun x prettier --write ."
   },
   "dependencies": {
+    "@c15t/react": "^1.8.6",
     "@lingui/core": "^5.9.3",
     "@lingui/react": "^5.9.3",
     "@react-rxjs/core": "latest",

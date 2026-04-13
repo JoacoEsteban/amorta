@@ -2,7 +2,6 @@ import { StrictMode, useEffect, useState } from 'react'
 import { Toaster } from 'react-hot-toast'
 import { bind } from '@react-rxjs/core'
 import { match, P } from 'ts-pattern'
-import { Analytics } from '@vercel/analytics/react'
 
 import { App } from './app'
 import { buildSeoMetadata } from './domain/seo'
@@ -21,6 +20,7 @@ import { createLocaleStore } from './state/locale-store'
 import { DEFAULT_LOCALE } from './i18n/lingui.config'
 import { assert } from './lib/assert'
 import type { ComponentMap } from './component-map'
+import { ConsentManager } from './components/consent-manager'
 
 type InvalidRouteState = {
   kind: 'result'
@@ -177,7 +177,7 @@ export const AppRoot = ({
   return (
     <StrictMode>
       <ProvideLocale store={localeStore}>
-        <>
+        <ConsentManager>
           <SeoHead routeState={routeState} siteUrl={siteUrl} />
           {appNode}
           <Toaster
@@ -190,8 +190,7 @@ export const AppRoot = ({
               },
             }}
           />
-          <Analytics />
-        </>
+        </ConsentManager>
       </ProvideLocale>
     </StrictMode>
   )

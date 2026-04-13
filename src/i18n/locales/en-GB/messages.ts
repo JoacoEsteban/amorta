@@ -408,4 +408,23 @@ export const enGBMessages = {
   articleLoanGracePeriodSeoTitle: 'What Is a Loan Grace Period? | Amorta',
   articleLoanGracePeriodSeoDescription:
     'Learn what a loan grace period is, when it delays late fees, why it usually does not stop interest accrual, and how to avoid accidental delinquency.',
+  consentPrivacyPolicyLabel: 'Privacy Policy',
+  consentTermsLabel: 'Terms & Conditions',
+  consentAcceptAll: 'Accept all',
+  consentRejectAll: 'Reject all',
+  consentCustomize: 'Customise',
+  consentSavePreferences: 'Save preferences',
+  consentCookieBannerTitle: 'Your privacy, your choice',
+  consentCookieBannerDescription:
+    'We use cookies to run the site, measure usage, and serve ads. You can accept, reject, or customise your preferences.',
+  consentDialogTitle: 'Privacy preferences',
+  consentDialogDescription:
+    'Control how we use cookies and similar technologies on Amorta.',
+  consentNecessaryTitle: 'Necessary',
+  consentNecessaryDescription: 'Required for basic site functionality.',
+  consentMeasurementTitle: 'Measurement',
+  consentMeasurementDescription:
+    'Helps us understand usage and improve the site.',
+  consentMarketingTitle: 'Marketing',
+  consentMarketingDescription: 'Used to show more relevant ads.',
 }

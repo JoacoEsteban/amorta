@@ -1,18 +1,5 @@
 const gaMeasurementId = Bun.env.GA_MEASUREMENT_ID ?? ''
 
-const buildGaScript = (measurementId: string): string =>
-  measurementId === ''
-    ? ''
-    : [
-        `<script async src="https://www.googletagmanager.com/gtag/js?id=${measurementId}"></script>`,
-        `<script>`,
-        `window.dataLayer = window.dataLayer || [];`,
-        `function gtag(){dataLayer.push(arguments);}`,
-        `gtag('js', new Date());`,
-        `gtag('config', '${measurementId}');`,
-        `</script>`,
-      ].join('')
-
 import { buildSeoMetadata } from '../domain/seo'
 import { DEFAULT_LOCALE, type SupportedLocale } from '../i18n/lingui.config'
 import type { RouteState } from '../domain/share'
@@ -50,8 +37,6 @@ const buildSeoHead = ({
     `<meta name="twitter:title" content="${metadata.title}" />`,
     `<meta name="twitter:description" content="${metadata.description}" />`,
     `<meta name="twitter:image" content="${metadata.openGraphImageUrl}" />`,
-    '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8407180754020844" crossorigin="anonymous"></script>',
-    buildGaScript(gaMeasurementId),
     `<script id="amorta-jsonld" type="application/ld+json">${metadata.jsonLd}</script>`,
   ].join('\n    ')
 
@@ -97,8 +82,7 @@ export const renderHtmlDocument = async ({
     .replace(/<link rel="alternate"[^>]*hreflang[^>]*>/g, '')
     .replace(/<link rel="icon"[^>]*>/, '')
     .replace(/<link rel="manifest"[^>]*>/, '')
-    .replace('__AMORTA_GA_SCRIPT__', buildGaScript(gaMeasurementId))
-    .replace(/<script[^>]+googlesyndication[^>]*><\/script>/, '')
+    .replaceAll('__AMORTA_GA_MEASUREMENT_ID__', gaMeasurementId)
     .replace(/<script id="amorta-jsonld"[^>]*>[\s\S]*?<\/script>/, '')
     .replace('</head>', `    ${buildSeoHead({ siteUrl, metadata })}\n  </head>`)
     .replace('<html lang="en">', `<html lang="${metadata.htmlLang}">`)

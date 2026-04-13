@@ -403,14 +403,15 @@ export const frFRMessages = {
   articleInterestAccrualBetweenPaymentsTitle:
     "Comment les Intérêts s'Accumulent Entre Deux Échéances",
   articleInterestAccrualBetweenPaymentsDescription:
-    "Découvrez comment les prêteurs calculent les intérêts entre deux dates de paiement, pourquoi le calendrier compte, et comment le coût réel évolue.",
+    'Découvrez comment les prêteurs calculent les intérêts entre deux dates de paiement, pourquoi le calendrier compte, et comment le coût réel évolue.',
   articleInterestAccrualBetweenPaymentsDate: '12 avril 2026',
   articleInterestAccrualBetweenPaymentsBody,
   articleInterestAccrualBetweenPaymentsSeoTitle:
     "Comment les Intérêts s'Accumulent Entre Deux Échéances | Amorta",
   articleInterestAccrualBetweenPaymentsSeoDescription:
     "Découvrez comment les intérêts s'accumulent entre deux paiements, comment les jours et le timing modifient le coût, et pourquoi plus de capital réduit les intérêts.",
-  articleLoanGracePeriodTitle: "Qu'est-ce qu'une Période de Grâce sur un Prêt ?",
+  articleLoanGracePeriodTitle:
+    "Qu'est-ce qu'une Période de Grâce sur un Prêt ?",
   articleLoanGracePeriodDescription:
     "Découvrez ce qu'une période de grâce modifie, ce qu'elle ne change pas, et pourquoi payer dans cette fenêtre n'arrête pas forcément intérêts et retard.",
   articleLoanGracePeriodDate: '13 avril 2026',
@@ -419,4 +420,25 @@ export const frFRMessages = {
     "Qu'est-ce qu'une Période de Grâce sur un Prêt ? | Amorta",
   articleLoanGracePeriodSeoDescription:
     "Découvrez ce qu'est une période de grâce, quand elle reporte des frais de retard, pourquoi elle n'arrête généralement pas les intérêts, et comment éviter l'impayé.",
+  consentPrivacyPolicyLabel: 'Politique de confidentialité',
+  consentTermsLabel: 'Conditions générales',
+  consentAcceptAll: 'Tout accepter',
+  consentRejectAll: 'Tout refuser',
+  consentCustomize: 'Personnaliser',
+  consentSavePreferences: 'Enregistrer les préférences',
+  consentCookieBannerTitle: 'Votre vie privée, votre choix',
+  consentCookieBannerDescription:
+    'Nous utilisons des cookies pour faire fonctionner le site, mesurer l’usage et afficher de la publicité. Vous pouvez accepter, refuser ou personnaliser vos préférences.',
+  consentDialogTitle: 'Préférences de confidentialité',
+  consentDialogDescription:
+    'Contrôlez comment nous utilisons les cookies et technologies similaires sur Amorta.',
+  consentNecessaryTitle: 'Nécessaires',
+  consentNecessaryDescription:
+    'Indispensables au fonctionnement de base du site.',
+  consentMeasurementTitle: 'Mesure',
+  consentMeasurementDescription:
+    'Nous aident à comprendre l’utilisation du site pour l’améliorer.',
+  consentMarketingTitle: 'Marketing',
+  consentMarketingDescription:
+    'Permettent d’afficher des publicités plus pertinentes.',
 }
