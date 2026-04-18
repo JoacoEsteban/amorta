@@ -1,0 +1,46 @@
+<p>Un relevé de solde de remboursement anticipé est le document qui indique le montant exact nécessaire pour solder intégralement un prêt à une date précise. Ce dernier point est essentiel. Beaucoup d'emprunteurs regardent le capital restant dû et supposent qu'il correspond automatiquement au montant de remboursement, mais le chiffre communiqué par le prêteur est généralement plus précis que le solde affiché sur un relevé classique.</p>
+<p>Cette différence existe parce qu'un prêt continue d'évoluer entre deux cycles de facturation. Les intérêts peuvent encore s'accumuler, certains frais peuvent rester impayés, et le prêteur peut avoir besoin d'une petite marge de temps pour clôturer correctement le dossier. Si vous vendez un bien, refinancez votre prêt ou prévoyez de rembourser une dette avec un versement unique important, comprendre ce document vous aide à ne pas envoyer trop peu ou trop d'argent.</p>
+
+<h2>Ce qu'un relevé de solde comprend</h2>
+<p>Au fond, ce document répond à une question simple : <strong>quelle somme doit être reçue pour que le prêteur considère la dette comme totalement éteinte ?</strong> Pour y répondre, le relevé additionne généralement plusieurs éléments au lieu de montrer uniquement le capital restant.</p>
+<ul>
+  <li>Le capital restant dû</li>
+  <li>Les intérêts accumulés jusqu'à une date donnée</li>
+  <li>Les frais ou pénalités encore exigibles</li>
+  <li>Parfois, un montant d'intérêt journalier pour chaque jour supplémentaire</li>
+  <li>Parfois, une note sur l'escrow, les remboursements ou le traitement d'un trop-perçu</li>
+</ul>
+<p>C'est pour cela qu'un relevé de solde est plus opérationnel qu'un relevé mensuel ordinaire. Un relevé classique indique ce qui est dû pour la prochaine échéance. Un relevé de solde indique ce qu'il faut payer pour mettre fin entièrement à la relation de crédit.</p>
+
+<h2>Pourquoi le montant de remboursement n'est pas toujours égal au solde</h2>
+<p>Les emprunteurs comparent souvent le montant de remboursement au chiffre affiché comme "solde restant" et s'étonnent lorsque le remboursement demandé est plus élevé. Dans la plupart des cas, l'explication est simple : le solde est une photographie du capital, alors que le relevé de solde est un chiffre de règlement.</p>
+<p>Imaginez un prêt avec un capital restant dû de 186 400 €. Si les intérêts se sont accumulés depuis le dernier paiement, le prêteur peut aussi réclamer plusieurs jours d'intérêts supplémentaires. L'article d'Amorta sur <a href="interest-accrual-between-payments">la façon dont les intérêts s'accumulent entre deux paiements</a> explique pourquoi. Le temps passe, le solde reste ouvert, et le prêteur continue de générer des intérêts jusqu'à la date de remboursement utilisée dans le calcul.</p>
+<p>D'autres ajustements peuvent également s'ajouter. S'il reste des frais de retard, des frais de service ou des frais de mainlevée, le montant demandé peut dépasser le capital pour cette raison aussi. Sur certains prêts, une <a href="prepayment-penalty">pénalité de remboursement anticipé</a> peut également s'appliquer lorsque la dette est soldée avant terme. Les composants exacts dépendent du contrat et des règles de gestion du prêteur, mais l'idée générale reste la même : le montant de remboursement est conçu pour clôturer le compte, pas seulement pour le décrire.</p>
+
+<h2>Que signifie « valable jusqu'au »</h2>
+<p>La plupart des relevés de solde sont liés à une date ou à une courte période de validité. Vous pouvez voir une mention comme « valable jusqu'au 20 mai 2026 » ou « valable si les fonds sont reçus au plus tard à la date indiquée ». Cette date compte parce que les intérêts continuent généralement de courir après l'émission du document.</p>
+<p>Supposons qu'un prêteur annonce un montant de remboursement de 187 112,44 € valable jusqu'au 20 mai. Si les fonds arrivent le 23 mai, il pourra demander un peu plus parce que trois jours d'intérêts supplémentaires se seront accumulés après la date indiquée. Beaucoup de relevés résolvent ce point en mentionnant un montant journalier, c'est-à-dire l'intérêt additionnel dû pour chaque jour en plus.</p>
+<p>Cette information évite les confusions lors d'une vente ou d'un refinancement. Notaires, intermédiaires, gestionnaires et emprunteurs ont tous besoin d'un chiffre cible exact pour une date connue. La période de validité et le montant journalier créent cette référence.</p>
+
+<h2>Un exemple concret</h2>
+<p>Supposons qu'un emprunteur veuille solder son hypothèque lors de la vente de son logement. Le capital restant dû est de 220 000 €, le taux annuel est de 6,00 %, et le prêteur prépare un relevé de solde pour le 15 avril. Entre la date du dernier paiement et le 15 avril, 18 jours d'intérêts se sont accumulés. En plus, des frais de 35 € pour l'enregistrement ou la mainlevée sont nécessaires pour clôturer le dossier.</p>
+<p>Le relevé de solde sera donc supérieur à 220 000 €. Il peut inclure le capital, les intérêts accumulés pendant ces 18 jours et les 35 € de frais. Si la vente se conclut plus tard que prévu, le notaire ou l'intermédiaire devra peut-être ajouter quelques jours supplémentaires selon l'intérêt journalier indiqué sur le document.</p>
+<p>Remarquez ce que cela signifie en pratique. Le prêteur ne facture pas quelque chose d'aléatoire. Il transforme simplement la position mouvante du prêt en un chiffre de règlement exact pour une date exacte. C'est précisément le rôle de ce document.</p>
+
+<h2>En quoi ce relevé diffère des autres documents du prêt</h2>
+<p>Un relevé mensuel concerne la prochaine échéance programmée. Un <a href="understanding-amortization-schedule">tableau d'amortissement</a> est une carte de long terme qui montre comment capital et intérêts devraient évoluer si les paiements arrivent comme prévu. Un relevé de solde est différent des deux. C'est un document de clôture dans le monde réel.</p>
+<p>C'est pourquoi il devient particulièrement important lorsque le calendrier réel diffère du calendrier théorique. Si des paiements ont été effectués en avance, en retard ou pour des montants irréguliers, le tableau propre et régulier peut ne plus décrire le montant exact nécessaire aujourd'hui. Dans cette situation, le chiffre communiqué par le prêteur devient la référence opérationnelle.</p>
+<p>Il reste toutefois utile de comprendre votre propre trajectoire de solde. Le guide d'Amorta sur <a href="calculating-remaining-loan-balance">le calcul du capital restant dû</a> aide à comprendre comment le capital devrait diminuer au fil du temps. Cette connaissance vous permet de vérifier si le relevé paraît cohérent. Mais le relevé de solde reste le document qui intègre les détails de gestion dépendant de la date.</p>
+
+<h2>Dans quels cas en a-t-on généralement besoin ?</h2>
+<p>Les emprunteurs demandent le plus souvent ce document dans trois situations. D'abord lors de la vente d'un actif financé, comme un logement ou une voiture. Ensuite lors d'un refinancement, quand un nouveau prêteur rembourse l'ancien. Enfin lorsqu'ils souhaitent effectuer un versement unique volontaire pour éteindre complètement la dette.</p>
+<p>Dans les trois cas, le besoin principal est la précision. Envoyer uniquement le capital visible peut laisser un petit reliquat si des intérêts ou des frais restaient dus. Envoyer une estimation approximative peut créer des retards si le prêteur ne peut pas lever sa garantie ou clôturer le compte tant que le montant total n'a pas été reçu et imputé.</p>
+<p>C'est aussi pour cela que les relevés de solde restent utiles même pour les emprunteurs qui effectuent régulièrement des <a href="extra-payments">versements supplémentaires</a>. Des remboursements de capital en avance réduisent les intérêts futurs et accélèrent la baisse du solde, mais le montant final exact dépend toujours de la date à laquelle le prêteur reçoit les derniers fonds.</p>
+
+<h2>Ce qu'il faut vérifier avant d'envoyer l'argent</h2>
+<p>Lisez le relevé avec attention et vérifiez la date de validité, les instructions de virement ou d'envoi, le numéro du prêt et le mode de paiement supposé dans le calcul. Vérifiez aussi si les week-ends et jours fériés bancaires modifient la date à laquelle les fonds sont considérés comme reçus. Si la date de signature change, demandez un relevé actualisé au lieu d'estimer vous-même.</p>
+<p>Il est également utile de demander ce qu'il advient d'un éventuel trop-perçu. Certains prêteurs remboursent automatiquement l'excédent plus tard, tandis que d'autres préfèrent que la partie qui règle l'opération envoie le montant exact. Si un compte d'escrow existe, vérifiez s'il réduit immédiatement le montant à régler ou s'il sera remboursé séparément après la clôture.</p>
+
+<h2>Conclusion</h2>
+<p>Un relevé de solde de remboursement anticipé est le calcul du prêteur, lié à une date précise, pour solder la dette intégralement. Il comprend souvent plus que le capital parce que les intérêts continuent de courir, que certains frais peuvent rester dus, et que le prêteur doit établir un montant de clôture exact pour une date donnée.</p>
+<p>Une fois cette fonction comprise, le document devient beaucoup plus facile à lire. Il ne contredit pas votre solde. Il transforme ce solde en montant exact nécessaire pour mettre fin correctement au prêt, à temps, et sans laisser subsister un reliquat.</p>

@@ -19,6 +19,7 @@ import articlePrepaymentPenaltyBody from './content/articles/article-prepayment-
 import articleMortgageRecastBody from './content/articles/article-mortgage-recast-body.html.txt' with { type: 'text' }
 import articleInterestAccrualBetweenPaymentsBody from './content/articles/article-interest-accrual-between-payments-body.html.txt' with { type: 'text' }
 import articleLoanGracePeriodBody from './content/articles/article-loan-grace-period-body.html.txt' with { type: 'text' }
+import articleLoanPayoffStatementBody from './content/articles/article-loan-payoff-statement-body.html.txt' with { type: 'text' }
 
 export const esARMessages = {
   sharedResult: 'Resultado Compartido',
@@ -421,6 +422,16 @@ export const esARMessages = {
     'Qué es un Período de Gracia en un Préstamo | Amorta',
   articleLoanGracePeriodSeoDescription:
     'Aprendé qué es un período de gracia, cuándo retrasa cargos por atraso, por qué normalmente no frena intereses y cómo evitar una mora accidental.',
+  articleLoanPayoffStatementTitle:
+    'Qué es un Estado de Cancelación de Préstamo',
+  articleLoanPayoffStatementDescription:
+    'Aprendé qué incluye un estado de cancelación, por qué no siempre coincide con tu saldo y cómo la entidad calcula el importe exacto de cierre.',
+  articleLoanPayoffStatementDate: '14 de Abril de 2026',
+  articleLoanPayoffStatementBody,
+  articleLoanPayoffStatementSeoTitle:
+    'Qué es un Estado de Cancelación de Préstamo | Amorta',
+  articleLoanPayoffStatementSeoDescription:
+    'Aprendé qué es un estado de cancelación, por qué el importe final difiere del saldo de capital y cómo influyen los intereses diarios.',
   consentPrivacyPolicyLabel: 'Política de privacidad',
   consentTermsLabel: 'Términos y condiciones',
   consentAcceptAll: 'Aceptar todo',

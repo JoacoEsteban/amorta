@@ -19,6 +19,7 @@ import articlePrepaymentPenaltyBody from './content/articles/article-prepayment-
 import articleMortgageRecastBody from './content/articles/article-mortgage-recast-body.html.txt' with { type: 'text' }
 import articleInterestAccrualBetweenPaymentsBody from './content/articles/article-interest-accrual-between-payments-body.html.txt' with { type: 'text' }
 import articleLoanGracePeriodBody from './content/articles/article-loan-grace-period-body.html.txt' with { type: 'text' }
+import articleLoanPayoffStatementBody from './content/articles/article-loan-payoff-statement-body.html.txt' with { type: 'text' }
 
 export const enGBMessages = {
   sharedResult: 'Shared Result',
@@ -408,6 +409,15 @@ export const enGBMessages = {
   articleLoanGracePeriodSeoTitle: 'What Is a Loan Grace Period? | Amorta',
   articleLoanGracePeriodSeoDescription:
     'Learn what a loan grace period is, when it delays late fees, why it usually does not stop interest accrual, and how to avoid accidental delinquency.',
+  articleLoanPayoffStatementTitle: 'What Is a Loan Payoff Statement?',
+  articleLoanPayoffStatementDescription:
+    'Learn what a loan payoff statement includes, why it differs from your balance, and how lenders quote an exact amount to settle the debt.',
+  articleLoanPayoffStatementDate: '14 April 2026',
+  articleLoanPayoffStatementBody,
+  articleLoanPayoffStatementSeoTitle:
+    'What Is a Loan Payoff Statement? | Amorta',
+  articleLoanPayoffStatementSeoDescription:
+    'Learn what a loan payoff statement is, why payoff amounts differ from the capital balance, and how per-diem interest affects the final settlement figure.',
   consentPrivacyPolicyLabel: 'Privacy Policy',
   consentTermsLabel: 'Terms & Conditions',
   consentAcceptAll: 'Accept all',

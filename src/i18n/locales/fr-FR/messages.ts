@@ -19,6 +19,7 @@ import articlePrepaymentPenaltyBody from './content/articles/article-prepayment-
 import articleMortgageRecastBody from './content/articles/article-mortgage-recast-body.html.txt' with { type: 'text' }
 import articleInterestAccrualBetweenPaymentsBody from './content/articles/article-interest-accrual-between-payments-body.html.txt' with { type: 'text' }
 import articleLoanGracePeriodBody from './content/articles/article-loan-grace-period-body.html.txt' with { type: 'text' }
+import articleLoanPayoffStatementBody from './content/articles/article-loan-payoff-statement-body.html.txt' with { type: 'text' }
 
 export const frFRMessages = {
   sharedResult: 'Résultat partagé',
@@ -420,6 +421,16 @@ export const frFRMessages = {
     "Qu'est-ce qu'une Période de Grâce sur un Prêt ? | Amorta",
   articleLoanGracePeriodSeoDescription:
     "Découvrez ce qu'est une période de grâce, quand elle reporte des frais de retard, pourquoi elle n'arrête généralement pas les intérêts, et comment éviter l'impayé.",
+  articleLoanPayoffStatementTitle:
+    "Qu'est-ce qu'un Relevé de Solde de Remboursement Anticipé ?",
+  articleLoanPayoffStatementDescription:
+    "Découvrez ce qu'un relevé de solde comprend, pourquoi il diffère du capital restant dû, et comment le prêteur calcule le montant exact à régler.",
+  articleLoanPayoffStatementDate: '14 avril 2026',
+  articleLoanPayoffStatementBody,
+  articleLoanPayoffStatementSeoTitle:
+    "Qu'est-ce qu'un Relevé de Solde de Remboursement Anticipé ? | Amorta",
+  articleLoanPayoffStatementSeoDescription:
+    "Découvrez ce qu'est un relevé de solde, pourquoi le montant final diffère du capital restant dû, et comment l'intérêt journalier influe sur le règlement.",
   consentPrivacyPolicyLabel: 'Politique de confidentialité',
   consentTermsLabel: 'Conditions générales',
   consentAcceptAll: 'Tout accepter',

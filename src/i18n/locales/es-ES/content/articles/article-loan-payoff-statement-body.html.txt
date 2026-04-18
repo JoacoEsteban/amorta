@@ -1,0 +1,46 @@
+<p>Un extracto de liquidación de préstamo es el documento que indica la cantidad exacta necesaria para cancelar un préstamo por completo en una fecha concreta. Ese último detalle importa mucho. Muchos prestatarios miran el saldo de capital actual y suponen que es lo mismo que el importe de cancelación, pero la cifra de liquidación que emite la entidad suele ser más precisa que el saldo mostrado en un extracto normal.</p>
+<p>La diferencia existe porque los préstamos siguen moviéndose entre ciclos de facturación. Los intereses pueden seguir acumulándose, puede haber comisiones pendientes y la entidad puede necesitar un pequeño margen temporal para cerrar correctamente la cuenta. Si vas a vender una vivienda, refinanciar o cancelar una deuda con un pago único grande, entender este documento te ayuda a no enviar dinero de menos ni de más.</p>
+
+<h2>Qué incluye un extracto de liquidación</h2>
+<p>En esencia, el documento responde a una pregunta: <strong>¿Qué cantidad debe recibirse para que la entidad marque la deuda como totalmente cancelada?</strong> Para hacerlo, normalmente combina varios importes en lugar de mostrar solo el capital pendiente.</p>
+<ul>
+  <li>El saldo de capital pendiente</li>
+  <li>Los intereses acumulados hasta una fecha determinada</li>
+  <li>Cualquier comisión o cargo pendiente que deba quedar saldado</li>
+  <li>A veces, un importe diario de intereses por cada día adicional</li>
+  <li>A veces, una nota sobre escrow, devoluciones o tratamiento de excesos</li>
+</ul>
+<p>Por eso este documento es más operativo que un recibo mensual normal. Un extracto ordinario te dice qué debes pagar en la próxima cuota programada. Un extracto de liquidación te dice qué hace falta para terminar por completo la relación con la entidad.</p>
+
+<h2>Por qué el importe de cancelación no siempre coincide con el saldo</h2>
+<p>Muchos prestatarios comparan el importe de liquidación con la cifra mostrada como "saldo pendiente" y se sorprenden cuando la liquidación es mayor. En la mayoría de los casos, la explicación es sencilla: el saldo es una fotografía del capital, mientras que el extracto de liquidación es una cifra de cierre.</p>
+<p>Imagina un préstamo con un saldo de capital de 186.400 €. Si los intereses se han seguido acumulando desde el último pago, la entidad también puede tener derecho a varios días de intereses adicionales. El artículo de Amorta sobre <a href="interest-accrual-between-payments">cómo se acumulan los intereses entre pagos</a> explica por qué ocurre. El tiempo pasa, el saldo sigue vivo y la entidad continúa devengando intereses hasta la fecha de cancelación usada en la cotización.</p>
+<p>También puede haber otros ajustes. Si existe una comisión por demora, una comisión de servicio o un gasto de cancelación pendiente, el importe de liquidación puede ser superior al saldo de capital por ese motivo. En algunos préstamos también puede aplicarse una <a href="prepayment-penalty">penalización por reembolso anticipado</a> si la deuda se cancela antes de tiempo. Los componentes exactos dependen del contrato y de las reglas de gestión de la entidad, pero la idea general es siempre la misma: el importe de liquidación está diseñado para cerrar la cuenta, no solo para describirla.</p>
+
+<h2>Qué significa “válido hasta”</h2>
+<p>La mayoría de los extractos de liquidación están vinculados a un rango de fechas. Puedes ver expresiones como "válido hasta el 20 de mayo de 2026" o "válido si se recibe en o antes de la fecha indicada". Esa fecha importa porque los intereses suelen seguir acumulándose después de emitirse el documento.</p>
+<p>Supón que la entidad indica una liquidación de 187.112,44 € válida hasta el 20 de mayo. Si el dinero llega el 23 de mayo, puede pedir algo más porque se habrán acumulado tres días adicionales de intereses después de la fecha cotizada. Muchos extractos resuelven esto indicando un importe diario, es decir, el interés extra que se cobra por cada día adicional.</p>
+<p>Esta función evita confusiones en ventas y refinanciaciones. Gestorías, notarías, intermediarios y prestatarios necesitan una cifra objetivo que sea correcta para una fecha conocida. La ventana de validez y el importe diario crean precisamente esa referencia.</p>
+
+<h2>Un ejemplo práctico</h2>
+<p>Supón que un prestatario quiere cancelar una hipoteca al vender una vivienda. El saldo de capital pendiente es de 220.000 €, el tipo anual es del 6,00 % y la entidad prepara una cotización de cancelación para el 15 de abril. Entre la fecha del último pago y el 15 de abril han transcurrido 18 días de intereses acumulados. Además, hay un cargo de 35 € por registro o cancelación necesario para cerrar la cuenta.</p>
+<p>El extracto de liquidación será por tanto superior a 220.000 €. Puede incluir el capital, los intereses acumulados durante esos 18 días y el cargo de 35 €. Si la venta se firma más tarde de lo previsto, la gestoría quizá tenga que añadir algunos días más según el interés diario que figure en el documento.</p>
+<p>Fíjate en lo que esto significa en la práctica. No se está cobrando al prestatario de forma arbitraria. La entidad simplemente está convirtiendo la posición cambiante del préstamo en una cifra exacta de liquidación para una fecha exacta. Ese es el servicio que presta este documento.</p>
+
+<h2>En qué se diferencia de otros documentos del préstamo</h2>
+<p>Un extracto mensual trata sobre la siguiente cuota programada. Un <a href="understanding-amortization-schedule">cuadro de amortización</a> es un mapa a largo plazo de cómo deberían evolucionar capital e intereses bajo una hipótesis de pagos puntuales. Un extracto de liquidación es distinto de ambos. Es un documento de cierre en el mundo real.</p>
+<p>Por eso es especialmente importante cuando el calendario real no coincide con el calendario ideal. Si hubo pagos adelantados, retrasados o por importes irregulares, la tabla teórica puede dejar de describir la cantidad exacta necesaria para cerrar hoy. En ese caso, la cifra de liquidación emitida por la entidad es la referencia operativa.</p>
+<p>Aun así, entender la trayectoria de tu saldo sigue siendo útil. La guía de Amorta sobre <a href="calculating-remaining-loan-balance">cómo calcular el saldo restante del préstamo</a> ayuda a explicar cómo debería bajar el capital con el tiempo. Ese conocimiento te permite comprobar si la cotización tiene sentido. Pero el extracto de liquidación sigue siendo el documento que incorpora los detalles de gestión dependientes de la fecha.</p>
+
+<h2>Cuándo suele hacer falta</h2>
+<p>Los prestatarios suelen solicitar este documento en tres situaciones. La primera, al vender un activo financiado como una vivienda o un coche. La segunda, al refinanciar con otra entidad que cancelará la deuda anterior. La tercera, al hacer un pago único deliberado para extinguir por completo el préstamo.</p>
+<p>En las tres situaciones la clave es la precisión. Enviar solo el saldo de capital visible puede dejar un pequeño resto pendiente si todavía existían intereses o cargos no cobrados. Enviar una estimación aproximada puede generar retrasos si la entidad no puede liberar la garantía o cerrar la cuenta hasta recibir y aplicar el importe completo.</p>
+<p>Por eso los extractos de liquidación también importan aunque hagas <a href="extra-payments">pagos extra</a> con frecuencia. Amortizar capital antes reduce intereses futuros y acelera la bajada del saldo, pero el importe final exacto sigue dependiendo de la fecha en que la entidad recibe el último dinero.</p>
+
+<h2>Qué conviene revisar antes de enviar el dinero</h2>
+<p>Lee el documento con atención y verifica la fecha de liquidación, las instrucciones de transferencia o remesa, el número de préstamo y si la cifra supone pago por transferencia, cheque u otro medio. Confirma si fines de semana y festivos bancarios cambian el momento en que los fondos cuentan como recibidos. Si la fecha de firma cambia, pide una cotización actualizada en lugar de adivinar.</p>
+<p>También conviene preguntar qué ocurre con un posible exceso de pago. Algunas entidades devuelven automáticamente la diferencia más tarde, mientras que otras prefieren que la parte pagadora envíe la cantidad exacta. Si existe una cuenta escrow, verifica si ese saldo reduce inmediatamente la liquidación o si se devolverá por separado después del cierre.</p>
+
+<h2>Conclusión</h2>
+<p>Un extracto de liquidación de préstamo es la cotización de la entidad, vinculada a una fecha, para cancelar la deuda por completo. Suele incluir más que el capital porque los intereses siguen acumulándose, puede haber cargos pendientes y la entidad debe calcular una cantidad exacta de cierre para una fecha concreta.</p>
+<p>Cuando entiendes ese propósito, el documento resulta mucho más fácil de leer. No contradice tu saldo. Lo traduce al importe exacto necesario para terminar correctamente el préstamo, a tiempo y sin dejar una cantidad residual pendiente.</p>

@@ -1,0 +1,46 @@
+<p>A loan payoff statement is a document that tells you the exact amount required to repay a loan in full on a specific date. That last detail matters. Many borrowers look at the current capital balance and assume it is the same thing as the payoff amount, but a lender's payoff figure is usually more precise than the balance shown on a standard statement.</p>
+<p>The difference exists because loans keep moving between billing cycles. Interest can continue to accrue, fees can remain unpaid, and the lender may need a small timing buffer so the account closes correctly. If you are selling a property, remortgaging, or planning to clear a debt with a lump-sum payment, understanding the payoff statement helps you avoid sending too little or too much.</p>
+
+<h2>What a payoff statement includes</h2>
+<p>At its core, the document answers one question: <strong>How much money must be received so the lender can mark this borrowing as fully settled?</strong> To do that, the statement usually combines several amounts instead of showing only capital.</p>
+<ul>
+  <li>The unpaid capital balance</li>
+  <li>Accrued interest up to a stated date</li>
+  <li>Any unpaid fees or charges that must be cleared</li>
+  <li>Sometimes a per-diem interest amount for each additional day</li>
+  <li>Sometimes a note about escrow, refunds, or overpayment handling</li>
+</ul>
+<p>This is why a payoff statement is more operational than a normal monthly bill. A regular statement tells you what is due for the next scheduled instalment. A payoff statement tells you what is required to end the loan relationship entirely.</p>
+
+<h2>Why the payoff amount is not always the same as the balance</h2>
+<p>Borrowers often compare the payoff amount with the number shown as "remaining balance" and are surprised when the payoff is higher. In most cases, the explanation is straightforward: the balance is a capital snapshot, while the payoff statement is a settlement figure.</p>
+<p>Imagine a loan with a capital balance of £186,400. If interest has been accruing since the last payment, the lender may also be owed several days of additional interest. Amorta's article on <a href="interest-accrual-between-payments">how interest accrues between loan payments</a> explains why that happens. Time passes, the balance is still outstanding, and the lender keeps earning interest until the payoff date used in the quote.</p>
+<p>There may also be other adjustments. If a late fee, service fee, or discharge-processing charge remains unpaid, the payoff amount can exceed the capital balance for that reason as well. On some loans, an <a href="prepayment-penalty">early repayment charge</a> may also apply when the debt is cleared early. The exact components depend on the contract and the lender's servicing rules, but the broad idea is constant: a payoff amount is designed to close the account, not merely describe it.</p>
+
+<h2>What “good through” or “valid through” means</h2>
+<p>Most payoff statements are tied to a date range. You may see language such as "good through 20 May 2026" or "valid if received on or before the stated payoff date." That date matters because interest usually continues to build after the statement is produced.</p>
+<p>Suppose a lender quotes a payoff of £187,112.44 good through 20 May. If the funds arrive on 23 May instead, the lender may require a little more money because three extra days of interest accrued after the quoted date. Many payoff statements solve this by listing a per-diem amount, which is the extra interest charged for each additional day.</p>
+<p>This feature prevents confusion during completions and remortgages. Conveyancers, settlement teams, and borrowers all need a target figure that is accurate for a known date. The validity window and the per-diem amount create that target.</p>
+
+<h2>A practical example</h2>
+<p>Assume a borrower wants to clear a mortgage while selling a home. The unpaid capital balance is £220,000, the annual rate is 6.00%, and the lender prepares a payoff quote for 15 April. Between the last payment date and 15 April, there are 18 days of accrued interest. In addition, there is a £35 recording or discharge fee required to close the account.</p>
+<p>The payoff statement will therefore be larger than £220,000. It might include the capital, the accrued interest for those 18 days, and the £35 fee. If the sale completes later than expected, the conveyancer may also need to add a few more days based on the daily interest amount shown on the statement.</p>
+<p>Notice what this means in practice. The borrower is not being charged randomly. The lender is simply converting the moving loan position into a precise settlement number for a precise date. That is the service a payoff statement provides.</p>
+
+<h2>How a payoff statement differs from other loan documents</h2>
+<p>A monthly statement is about the next scheduled payment. An <a href="understanding-amortization-schedule">amortisation schedule</a> is a long-run map of how capital and interest should evolve under assumed payment timing. A payoff statement is different from both. It is a real-world closure document.</p>
+<p>This is why payoff statements are especially important when actual timing differs from ideal schedule timing. If payments were made early, late, or in irregular amounts, the clean row-by-row table may no longer describe the exact settlement amount for today. In that situation, the lender's payoff quote is the authoritative operational figure.</p>
+<p>It is still useful to understand your own balance path. Amorta's guide on <a href="calculating-remaining-loan-balance">calculating the remaining loan balance</a> helps explain how capital should decline over time. That knowledge lets you sense-check the quote. But the payoff statement remains the document that incorporates date-sensitive servicing details.</p>
+
+<h2>When you usually need one</h2>
+<p>Borrowers commonly request payoff statements in three situations. First, when selling a financed asset such as a home or car. Second, when remortgaging with a new lender that will redeem the old one. Third, when making a deliberate lump-sum payment to clear the debt completely.</p>
+<p>In all three cases, the key need is accuracy. Sending only the visible capital balance can leave a small unpaid remainder if interest or fees were still outstanding. Sending a rough estimate can create delays if the lender cannot release its charge or close the account until the full amount is received and applied.</p>
+<p>That is also why payoff statements matter even for borrowers who regularly make <a href="extra-payments">extra payments</a>. Extra capital reduces future interest and speeds up balance decline, but the exact final amount still depends on the date the lender receives the last funds.</p>
+
+<h2>What to check before sending the money</h2>
+<p>Read the statement carefully and verify the payoff date, the bank or remittance instructions, the loan number, and whether the figure assumes payment by cheque, bank transfer, or some other method. Confirm whether weekends and bank holidays affect when funds count as received. If the completion date changes, request an updated quote rather than guessing.</p>
+<p>It is also wise to ask what happens to any overpayment. Some lenders automatically refund the excess later, while others prefer the settlement party to send the exact amount. If an escrow balance exists, verify whether that balance reduces the payoff immediately or whether it will be refunded separately after the account is closed.</p>
+
+<h2>Conclusion</h2>
+<p>A loan payoff statement is the lender's date-specific quote for settling the debt in full. It usually includes more than capital because interest continues to accrue, fees may still be due, and the lender must calculate an exact closure amount for a stated date.</p>
+<p>Once you understand that purpose, the document becomes much easier to read. It is not contradicting your balance. It is translating that balance into the exact amount needed to end the loan correctly, on time, and without leaving a residual amount behind.</p>
