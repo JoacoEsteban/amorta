@@ -16,6 +16,20 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Install jj (latest)
+        run: |
+          URL=$(curl -s https://api.github.com/repos/jj-vcs/jj/releases/latest \
+            | grep browser_download_url \
+            | grep x86_64-unknown-linux-musl.tar.gz \
+            | cut -d '"' -f 4)
+
+          curl -L "$URL" -o jj.tar.gz
+          tar -xzf jj.tar.gz
+          sudo mv ./jj /usr/local/bin/jj
+
+      - name: Verify jj
+        run: jj --version
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
         with:
