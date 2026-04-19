@@ -8,10 +8,15 @@ import type { Script, TranslationConfig } from 'c15t'
 import type { ReactNode } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import { match } from 'ts-pattern'
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 import { buildLocalePath, type SupportedLocale } from '../i18n/lingui.config'
 import { useLocale, useTranslator, type Translate } from '../state/locale'
+import {
+  cacheCountry,
+  readCachedCountry,
+  requiresConsentBanner,
+} from '../domain/consent-geo'
 
 const readGaMeasurementId = (): string =>
   match(typeof document)
@@ -145,6 +150,21 @@ const ConsentAwareAnalytics = () => {
 export const ConsentManager = ({ children }: { children: ReactNode }) => {
   const locale = useLocale()
   const { _ } = useTranslator()
+  const [country, setCountry] = useState<string | null>(() =>
+    readCachedCountry(),
+  )
+
+  useEffect(() => {
+    if (country !== null) return
+    fetch('/api/geo')
+      .then((r) => r.json())
+      .then(({ country: fetched }: { country: string }) => {
+        cacheCountry(fetched)
+        setCountry(fetched)
+      })
+  }, [country])
+
+  const consentEnabled = requiresConsentBanner(country)
 
   const translationConfig = useMemo(
     () => buildConsentTranslations({ locale, _ }),
@@ -154,6 +174,7 @@ export const ConsentManager = ({ children }: { children: ReactNode }) => {
   return (
     <ConsentManagerProvider
       options={{
+        enabled: consentEnabled,
         mode: 'offline',
         overrides: {
           language: locale,
@@ -174,8 +195,10 @@ export const ConsentManager = ({ children }: { children: ReactNode }) => {
       }}
     >
       {children}
-      <CookieBanner legalLinks={['privacyPolicy', 'termsOfService']} />
-      <ConsentManagerDialog />
+      {consentEnabled && (
+        <CookieBanner legalLinks={['privacyPolicy', 'termsOfService']} />
+      )}
+      {consentEnabled && <ConsentManagerDialog />}
       <ConsentLocaleSync
         locale={locale}
         translationConfig={translationConfig}
