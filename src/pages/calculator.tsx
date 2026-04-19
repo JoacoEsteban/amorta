@@ -13,7 +13,9 @@ import {
 import { QuotaTable } from '../components/quota-table'
 import { ExportModal } from '../components/export-modal'
 import { EducationalSection } from '../components/educational-section'
+import { ArticleRecommendations } from '../components/article-recommendations'
 import { ShareButton } from '../components/share-button'
+import { getHomepageRecommendedArticles } from '../domain/blog'
 import {
   InteractiveChart,
   StaticChartPreview,
@@ -314,6 +316,12 @@ export const CalculatorPage = ({
         </section>
 
         <EducationalSection />
+
+        <ArticleRecommendations
+          articles={getHomepageRecommendedArticles()}
+          titleKey="homepageArticlesTitle"
+          subtitleKey="homepageArticlesDescription"
+        />
 
         {match({ calculation, isPendingResult })
           .with(

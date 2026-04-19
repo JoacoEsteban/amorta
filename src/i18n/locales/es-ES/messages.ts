@@ -176,6 +176,9 @@ export const esESMessages = {
   relatedArticlesTitle: 'Artículos Relacionados',
   relatedArticlesDescription:
     'Continúa con temas cercanos para comparar mecánicas de amortización, conceptos de tasas y decisiones prácticas sobre préstamos.',
+  homepageArticlesTitle: 'Lo que conviene saber sobre préstamos',
+  homepageArticlesDescription:
+    'Lecturas breves sobre lo que hay detrás de un préstamo. Cómo se acumula el interés, cuánto cuestan las comisiones y las pequeñas decisiones que cambian el total.',
   articleCtaText: '¿Listo para hacer tu propio cálculo?',
   seoTitleBlogIndex: 'Artículos | Amorta',
   seoDescriptionBlogIndex:

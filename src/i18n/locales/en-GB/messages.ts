@@ -171,6 +171,9 @@ export const enGBMessages = {
   relatedArticlesTitle: 'Related Articles',
   relatedArticlesDescription:
     'Continue with nearby topics to compare repayment mechanics, rate concepts, and practical loan trade-offs.',
+  homepageArticlesTitle: 'What to know about loans',
+  homepageArticlesDescription:
+    'Quick reads on what actually goes into a loan. How interest builds, what fees really cost, and the small choices that change your total.',
   articleCtaText: 'Ready to run your own calculation?',
   seoTitleBlogIndex: 'Articles | Amorta',
   seoDescriptionBlogIndex:

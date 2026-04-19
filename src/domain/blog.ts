@@ -259,3 +259,6 @@ export const getRelatedArticles = (slug: string): Article[] => {
 
   return curatedArticles
 }
+
+export const getHomepageRecommendedArticles = (): Article[] =>
+  ARTICLES.slice(0, 5)

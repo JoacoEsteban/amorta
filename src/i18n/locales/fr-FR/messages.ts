@@ -173,6 +173,9 @@ export const frFRMessages = {
   relatedArticlesTitle: 'Articles Connexes',
   relatedArticlesDescription:
     "Poursuivez avec des sujets proches pour comparer les mécanismes de remboursement, les notions de taux, et les arbitrages pratiques autour d'un prêt.",
+  homepageArticlesTitle: "Ce qu'il faut savoir sur les prêts",
+  homepageArticlesDescription:
+    "De courtes lectures sur ce qu'il y a derrière un prêt. Comment les intérêts s'accumulent, ce que coûtent vraiment les frais, et les petits choix qui changent le total.",
   articleCtaText: 'Prêt à faire votre propre calcul ?',
   seoTitleBlogIndex: 'Articles | Amorta',
   seoDescriptionBlogIndex:
