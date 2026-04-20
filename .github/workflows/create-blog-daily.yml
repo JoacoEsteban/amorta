@@ -2,7 +2,7 @@ name: Create Daily Blog Post
 
 on:
   schedule:
-    - cron: '0 8 * * *' # 8am UTC = 5am UTC-3 (America/Argentina)
+    - cron: '0 8 */3 * *' # 8am UTC = 5am UTC-3 (America/Argentina), every 3 days
   workflow_dispatch: # Allow manual trigger
 
 jobs:
