@@ -21,8 +21,16 @@ jobs:
         with:
           bun-version: latest
 
+      - name: Install dependencies
+        run: bun install
+
       - name: Install pi
         run: bun install -g @mariozechner/pi-coding-agent && pi install npm:@feniix/pi-exa
+
+      - name: Configure git
+        run: |
+          git config user.name "Amorta Bot"
+          git config user.email "dev.joaco.esteban@gmail.com"
 
       - name: Create blog post
         run: bun run scripts/create-blog.ts
@@ -33,8 +41,21 @@ jobs:
           CREATE_BLOG_MODEL: ${{ vars.CREATE_BLOG_MODEL }}
           EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
 
-      - name: Install dependencies
-        run: bun install
+      - name: Commit any uncommitted changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "feat: add blog post"
+          fi
+
+      - name: Verify new commits exist
+        run: |
+          git fetch origin
+          NEW=$(git log origin/HEAD..HEAD --oneline | wc -l)
+          if [ "$NEW" -eq 0 ]; then
+            echo "Agent produced no commits. Failing."
+            exit 1
+          fi
 
       - name: Run tests
         run: bun test
