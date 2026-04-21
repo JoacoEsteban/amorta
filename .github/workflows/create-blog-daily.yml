@@ -40,6 +40,23 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           CREATE_BLOG_MODEL: ${{ vars.CREATE_BLOG_MODEL }}
           EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
+          PI_SESSION_DIR: /tmp/pi-session
+
+      - name: Export agent session
+        if: always()
+        run: |
+          SESSION=$(find /tmp/pi-session -name "session.jsonl" | head -1)
+          if [ -n "$SESSION" ]; then
+            pi --export "$SESSION" /tmp/agent-session.html
+          fi
+
+      - name: Upload agent session
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent-session-${{ github.run_id }}
+          path: /tmp/agent-session.html
+          if-no-files-found: warn
 
       - name: Commit any uncommitted changes
         run: |
