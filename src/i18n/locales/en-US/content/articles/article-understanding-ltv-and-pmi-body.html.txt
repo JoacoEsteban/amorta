@@ -1,0 +1,79 @@
+<p>The loan-to-value ratio (LTV) compares your mortgage amount to your home's value. Private mortgage insurance (PMI) is required when LTV exceeds 80%, protecting lenders from default risk. Understanding LTV and PMI helps you manage mortgage costs and build equity efficiently.</p>
+
+<h2>What is loan-to-value ratio (LTV)?</h2>
+<p>LTV is calculated as (Loan Amount ÷ Property Value) × 100. For a $350,000 home with a $280,000 mortgage, LTV is 80%. With a $35,000 down payment (10%), the loan becomes $315,000 and LTV rises to 90%. Lenders use the lower of purchase price or appraised value. A lower LTV means more equity and less risk for the lender.</p>
+
+<h2>Why 80% LTV is the critical threshold</h2>
+<p>Most lenders see 80% LTV as the dividing line between low-risk and higher-risk loans. Below 80%, you have at least 20% equity, providing a buffer against market declines. Above 80%, lenders require PMI to protect against potential losses. Historical data shows loans with less than 20% down have higher default rates. The Homeowners Protection Act of 1998 established rules for PMI cancellation at 80% and automatic termination at 78% LTV.</p>
+
+<h2>How private mortgage insurance (PMI) works</h2>
+<p>PMI protects the lender, not you. If you default and foreclosure doesn't cover the loan balance, PMI pays the lender. PMI typically costs 0.3% to 1.5% of your loan annually, divided monthly. Your rate depends on credit score, LTV, and loan type. For a $300,000 loan, 0.5% PMI adds $125 monthly. PMI applies to conventional loans with <20% down. Government loans have different structures: FHA has MIP, VA has a funding fee, USDA has guarantee fees.</p>
+
+<h2>A detailed worked example</h2>
+<p>Consider a $400,000 home with 10% down ($40,000), borrowing $360,000 at 6.5% effective annual rate for 30 years.</p>
+<p>First, LTV = ($360,000 ÷ $400,000) × 100 = 90% → PMI required.</p>
+<p>Assume 0.6% annual PMI rate: Monthly PMI = $360,000 × 0.006 ÷ 12 = $180.</p>
+<p>Monthly interest rate = (1 + 0.065)^(1/12) − 1 ≈ 0.00526169.</p>
+<p>Base payment = $360,000 × [0.00526169 ÷ (1 − (1 + 0.00526169)^(−360))] ≈ $2,218.32.</p>
+<p>Total payment with PMI = $2,218.32 + $180 = $2,398.32. Over the first year, you pay $2,160 in PMI alone—pure insurance cost.</p>
+
+<h2>How to remove PMI: The 80% and 78% rules</h2>
+<p>The Homeowners Protection Act provides two paths:</p>
+<ol>
+<li><strong>Request cancellation at 80% LTV:</strong> Ask your lender to cancel PMI once your balance reaches 80% of the original property value based on actual payments.</li>
+<li><strong>Automatic termination at 78% LTV:</strong> Lenders must automatically terminate PMI when the scheduled balance reaches 78% of the original value, provided you're current.</li>
+</ol>
+<p>Using our example: Original value $400,000, so 80% = $320,000, 78% = $312,000. Request cancellation when balance falls to $320,000. PMI terminates automatically when scheduled balance reaches $312,000.</p>
+<p>Note: These percentages use original value, not current market value. Appreciation may allow earlier cancellation via a new appraisal, but lenders aren't required to honor it.</p>
+
+<h2>The non-obvious insight: PMI timing depends on your amortization schedule</h2>
+<p>PMI automatic termination at 78% LTV is based on your original amortization schedule, not your actual balance. Even with extra payments reducing your balance faster, the automatic termination date doesn't change unless you request cancellation at 80%.</p>
+<p>In our example, scheduled balance reaches 78% ($312,000) in month 102. If extra payments get you there in month 60, PMI won't cancel until month 102 unless you request it. This creates a key incentive: Once your actual balance reaches 80% of original value, request PMI cancellation immediately in writing.</p>
+
+<h2>How LTV affects your interest rate and loan options</h2>
+<p>Beyond PMI requirements, your LTV ratio influences your interest rate and available loan programs. Lenders typically offer their best rates at 80% LTV or below. As LTV increases, rates often rise in increments:</p>
+<ul>
+<li>80-85% LTV: May add 0.125-0.25% to your rate</li>
+<li>85-90% LTV: May add 0.25-0.5%</li>
+<li>90-95% LTV: May add 0.5-0.75% or more</li>
+<li>Above 95% LTV: Limited program availability and highest rates</li>
+</ul>
+<p>These adjustments reflect the increased risk of higher-LTV loans. Even if you avoid PMI by putting down 20%, a 95% LTV loan will still have a higher rate than an 80% LTV loan. This is why <a href="factors-affecting-mortgage-rates">understanding mortgage rate factors</a> includes LTV as a key component.</p>
+<p>Maximum LTV limits also vary by loan type and property. Conventional loans typically allow up to 95% LTV for primary residences (97% for first-time buyers with certain programs), while investment properties max out at 80-85%. FHA loans allow up to 96.5% LTV, and VA loans offer 100% financing with no PMI.</p>
+
+<h2>Strategies to manage LTV and minimize PMI costs</h2>
+<p>If you're facing PMI, consider these approaches to reduce its impact:</p>
+<ol>
+<li><strong>Make a larger down payment:</strong> Even moving from 10% to 15% down reduces your LTV from 90% to 85%, which may lower both your PMI rate and interest rate.</li>
+<li><strong>Use lender-paid PMI:</strong> Some lenders offer a slightly higher interest rate in exchange for paying your PMI upfront. This can make sense if you plan to refinance or sell within a few years.</li>
+<li><strong>Make extra payments:</strong> Accelerating principal reduction helps you reach 80% LTV faster. Use Amorta's <a href="extra-payments">extra payments calculator</a> to see how additional payments affect your payoff timeline.</li>
+<li><strong>Consider a piggyback loan:</strong> Instead of one loan with PMI, you could take an 80% first mortgage and a 10% second mortgage (HELOC), avoiding PMI altogether. However, second mortgages often have higher rates and shorter terms.</li>
+<li><strong>Monitor home value appreciation:</strong> In rising markets, your LTV based on current value may drop below 80% sooner than scheduled. A new appraisal could support early PMI cancellation.</li>
+</ol>
+
+<h2>Common misconceptions and mistakes</h2>
+<p>Several misunderstandings about LTV and PMI can cost borrowers money:</p>
+<ul>
+<li><strong>"PMI protects me":</strong> PMI protects the lender, not you. It doesn't cover your payments if you lose your job or face financial hardship.</li>
+<li><strong>"PMI is tax-deductible":</strong> For most borrowers, PMI is not tax-deductible (though limited deductions existed for some taxpayers in certain years).</li>
+<li><strong>"I need 20% down to buy a home":</strong> While 20% avoids PMI, many programs allow lower down payments. The key is understanding the total cost including PMI.</li>
+<li><strong>"PMI automatically cancels at 80% LTV":</strong> You must request cancellation at 80%; automatic termination happens at 78% based on the schedule.</li>
+<li><strong>"A higher appraisal always helps remove PMI":</strong> Lenders can require appraisals to confirm value hasn't declined, but they're not required to accept appreciation for early cancellation.</li>
+</ul>
+<p>For a comprehensive approach to evaluating loan costs, see our guide on <a href="comparing-loan-offers">comparing loan offers</a>, which shows how to weigh PMI against other factors.</p>
+
+<h2>When LTV and PMI don't apply</h2>
+<p>Certain loan types operate outside standard LTV/PMI rules:</p>
+<ul>
+<li><strong>VA loans:</strong> No PMI regardless of LTV, but a funding fee applies (waived for disabled veterans).</li>
+<li><strong>USDA loans:</strong> No PMI, but upfront and annual guarantee fees function similarly.</li>
+<li><strong>Portfolio loans:</strong> Some lenders hold loans in their portfolio rather than selling them to Fannie Mae or Freddie Mac, allowing more flexible LTV requirements.</li>
+<li><strong>Non-conforming/jumbo loans:</strong> May have different PMI requirements or use alternative risk-based pricing.</li>
+<li><strong>Investment properties:</strong> Typically require 20-25% down regardless of PMI, with stricter LTV limits.</li>
+</ul>
+<p>Additionally, the 80%/78% rules don't apply to "high-risk" loans as defined by Fannie Mae and Freddie Mac, which may have different cancellation terms. Always review your specific loan documents for PMI cancellation procedures.</p>
+
+<h2>Using Amorta to model LTV and PMI scenarios</h2>
+<p>Amorta's French amortization calculator can help you visualize how different down payments affect your LTV and total borrowing costs. By adjusting the loan amount relative to a target property value, you can see how the payment schedule changes with various LTV levels.</p>
+<p>To estimate PMI impact, add the monthly PMI cost to your calculated payment. For example, if Amorta shows a $2,200 monthly payment on a $360,000 loan, add $180 for PMI to get your true monthly obligation. You can also model extra payments to see how quickly you reach 80% LTV and can request PMI cancellation.</p>
+<p>Understanding LTV and PMI empowers you to make informed decisions about down payment size, loan selection, and repayment strategy. By monitoring your LTV progression and proactively managing PMI cancellation, you can save thousands over the life of your mortgage.</p>

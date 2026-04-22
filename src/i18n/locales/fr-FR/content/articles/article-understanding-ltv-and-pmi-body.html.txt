@@ -1,0 +1,77 @@
+<p>Le ratio prêt-valeur (LTV) compare votre hypothèque à la valeur de votre maison. L'assurance hypothécaire privée (PMI) est requise lorsque LTV dépasse 80 %, protégeant le prêteur. Comprendre LTV et PMI vous aide à gérer les coûts hypothécaires et à bâtir du capital.</p>
+
+<h2>Qu'est-ce que le ratio prêt-valeur (LTV) ?</h2>
+<p>LTV = (Montant du Prêt ÷ Valeur de la Propriété) × 100. Pour une maison de 350 000 € avec hypothèque de 280 000 €, LTV est de 80 %. Avec un apport de 35 000 € (10 %), le prêt devient 315 000 € et LTV monte à 90 %. Les prêteurs utilisent le plus bas entre prix d'achat et estimation. Un LTV plus faible signifie plus de capital et moins de risque.</p>
+
+<h2>Pourquoi 80 % LTV est le seuil critique</h2>
+<p>La plupart des prêteurs voient 80 % LTV comme la ligne entre prêts à faible et plus haut risque. En dessous de 80 %, vous avez au moins 20 % de capital, amortissant les baisses du marché. Au-dessus de 80 %, les prêteurs exigent une assurance hypothécaire. Les données historiques montrent que les prêts avec moins de 20 % d'apport ont plus de défauts. Aux États-Unis, la Homeowners Protection Act établit des règles d'annulation à 80 % et résiliation automatique à 78 % LTV.</p>
+
+<h2>Comment fonctionne l'assurance hypothécaire privée (PMI)</h2>
+<p>Le PMI protège le prêteur, pas vous. Si vous faites défaut et que la saisie ne couvre pas le solde, le PMI paie le prêteur. Le PMI coûte typiquement 0,3 % à 1,5 % du prêt annuellement, divisé mensuellement. Votre taux dépend du score de crédit, LTV et type de prêt. Pour 300 000 €, 0,5 % ajoute 125 € mensuels. Le PMI s'applique aux prêts conventionnels avec <20 % d'apport. Les prêts gouvernementaux ont des structures différentes : FHA a MIP, VA a des frais de financement, USDA a des frais de garantie.</p>
+
+<h2>Un exemple détaillé</h2>
+<p>Maison de 400 000 € avec apport de 10 % (40 000 €), prêt de 360 000 € à 6,5 % effectif annuel sur 30 ans.</p>
+<p>LTV = (360 000 € ÷ 400 000 €) × 100 = 90 % → PMI requis.</p>
+<p>Supposons taux annuel PMI 0,6 % : PMI mensuel = 360 000 € × 0,006 ÷ 12 = 180 €.</p>
+<p>Taux mensuel = (1 + 0,065)^(1/12) − 1 ≈ 0,00526169.</p>
+<p>Paiement de base = 360 000 € × [0,00526169 ÷ (1 − (1 + 0,00526169)^(−360))] ≈ 2 218,32 €.</p>
+<p>Paiement total avec PMI = 2 218,32 € + 180 € = 2 398,32 €. La première année, vous payez environ 2 160 € en PMI seul—coût pur d'assurance.</p>
+
+<h2>Comment supprimer le PMI : règles à 80 % et 78 %</h2>
+<p>La Homeowners Protection Act donne deux voies :</p>
+<ol>
+<li><strong>Demande d'annulation à 80 % LTV :</strong> Demandez l'annulation lorsque votre solde atteint 80 % de la valeur originale basé sur paiements réels.</li>
+<li><strong>Résiliation automatique à 78 % LTV :</strong> Les prêteurs doivent automatiquement résilier le PMI lorsque le solde prévu atteint 78 % de la valeur originale.</li>
+</ol>
+<p>Avec notre exemple : Valeur originale 400 000 €, donc 80 % = 320 000 €, 78 % = 312 000 €. Demandez annulation lorsque solde tombe à 320 000 €. PMI se termine automatiquement lorsque solde prévu atteint 312 000 €.</p>
+<p>Note : Ces pourcentages utilisent la valeur originale, pas la valeur actuelle. L'appréciation peut permettre annulation plus tôt via nouvelle estimation, mais les prêteurs ne sont pas obligés de l'accepter.</p>
+
+<h2>L'idée non évidente : timing du PMI dépend de votre amortissement</h2>
+<p>La résiliation automatique à 78 % LTV est basée sur votre tableau d'amortissement original, pas votre solde réel. Même avec paiements supplémentaires réduisant votre solde plus vite, la date de résiliation ne change pas sauf demande d'annulation à 80 %.</p>
+<p>Dans notre exemple, solde prévu atteint 78 % (312 000 €) au mois 102. Si paiements supplémentaires vous y amènent au mois 60, PMI ne s'annule pas avant mois 102 sauf demande. Incitatif clé : Lorsque solde réel atteint 80 % de la valeur originale, demandez annulation par écrit immédiatement.</p>
+
+<h2>Comment LTV affecte votre taux d'intérêt</h2>
+<p>Au-delà des exigences PMI, LTV influence votre taux. Les prêteurs offrent meilleurs taux à 80 % LTV ou moins. Quand LTV augmente, taux montent :</p>
+<ul>
+<li>80-85 % LTV : +0,125-0,25 %</li>
+<li>85-90 % LTV : +0,25-0,5 %</li>
+<li>90-95 % LTV : +0,5-0,75 % ou plus</li>
+<li>>95 % LTV : disponibilité limitée, taux plus élevés</li>
+</ul>
+<p>Ces ajustements reflètent plus de risque. Même si vous évitez PMI avec 20 % d'apport, prêt à 95 % LTV aura taux plus haut qu'à 80 %. C'est pourquoi <a href="factors-affecting-mortgage-rates">comprendre les facteurs affectant votre taux hypothécaire</a> inclut LTV.</p>
+<p>Limites maximales varient : prêts conventionnels permettent jusqu'à 95 % LTV pour résidences principales (97 % premiers acheteurs), propriétés investissement 80-85 %. FHA permet jusqu'à 96,5 %, VA financement 100 % sans PMI.</p>
+
+<h2>Stratégies pour gérer LTV et minimiser PMI</h2>
+<ol>
+<li><strong>Apport plus important :</strong> Passer de 10 % à 15 % réduit LTV de 90 % à 85 %, pouvant baisser taux PMI et intérêt.</li>
+<li><strong>PMI payé par prêteur :</strong> Certains offrent taux légèrement plus haut en échange de paiement PMI d'avance.</li>
+<li><strong>Paiements supplémentaires :</strong> Accélère réduction capital pour atteindre 80 % LTV plus vite. Utilisez calculateur de <a href="extra-payments">paiements supplémentaires d'Amorta</a>.</li>
+<li><strong>Prêt combiné :</strong> Première hypothèque à 80 % et deuxième prêt (HELOC), évitant PMI. Deuxièmes prêts ont taux plus hauts.</li>
+<li><strong>Appréciation valeur :</strong> En marchés haussiers, LTV basée valeur actuelle peut tomber sous 80 % plus tôt. Nouvelle estimation pourrait soutenir annulation anticipée.</li>
+</ol>
+
+<h2>Idées fausses</h2>
+<ul>
+<li><strong>"Le PMI me protège" :</strong> Protège le prêteur, pas vous.</li>
+<li><strong>"PMI déductible d'impôt" :</strong> Pour la plupart, non déductible (déductions limitées certaines années).</li>
+<li><strong>"J'ai besoin de 20 % d'apport" :</strong> Beaucoup de programmes permettent apports plus faibles.</li>
+<li><strong>"PMI s'annule automatiquement à 80 % LTV" :</strong> Vous devez demander annulation ; résiliation automatique à 78 %.</li>
+<li><strong>"Estimation plus haute aide toujours" :</strong> Prêteurs non obligés d'accepter appréciation pour annulation anticipée.</li>
+</ul>
+<p>Pour approche complète, consultez guide sur <a href="comparing-loan-offers">comparaison des offres de prêt</a>.</p>
+
+<h2>Quand LTV et PMI ne s'appliquent pas</h2>
+<p>Certains prêts fonctionnent hors règles standard :</p>
+<ul>
+<li><strong>Prêts VA :</strong> Pas de PMI quel que soit LTV, frais de financement (exemptés vétérans handicapés).</li>
+<li><strong>Prêts USDA :</strong> Pas de PMI, frais de garantie initiaux/annuels similaires.</li>
+<li><strong>Prêts de portefeuille :</strong> Prêteurs gardent prêts, permettant LTV plus flexibles.</li>
+<li><strong>Prêts non conformes/jumbo :</strong> Exigences PMI différentes.</li>
+<li><strong>Propriétés investissement :</strong> Exigent 20-25 % d'apport indépendamment de PMI.</li>
+</ul>
+<p>Règles 80 %/78 % ne s'appliquent pas aux prêts "à haut risque" définis par Fannie Mae/Freddie Mac.</p>
+
+<h2>Utiliser Amorta pour modéliser LTV et PMI</h2>
+<p>Le calculateur d'amortissement français d'Amorta aide visualiser comment apports affectent LTV et coûts. Ajustez montant du prêt relatif à valeur cible pour voir changements dans calendrier de paiement.</p>
+<p>Pour estimer impact PMI, ajoutez coût mensuel PMI à paiement calculé. Exemple : si Amorta montre 2 218,32 € sur prêt de 360 000 €, ajoutez 180 € pour PMI. Modélisez paiements supplémentaires pour voir quand vous atteignez 80 % LTV et pouvez demander annulation.</p>
+<p>Comprendre LTV et PMI vous donne pouvoir pour décisions éclairées sur taille d'apport, sélection produit de prêt et stratégie de remboursement. En surveillant progression LTV et gérant annulation proactivement, vous pouvez économiser des milliers sur vie de votre hypothèque.</p>

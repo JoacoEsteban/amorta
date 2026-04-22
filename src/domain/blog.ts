@@ -11,6 +11,14 @@ export type Article = {
 
 export const ARTICLES: Article[] = [
   {
+    slug: 'understanding-ltv-and-pmi',
+    titleKey: 'articleUnderstandingLtvAndPmiTitle',
+    descriptionKey: 'articleUnderstandingLtvAndPmiDescription',
+    dateKey: 'articleUnderstandingLtvAndPmiDate',
+    bodyKey: 'articleUnderstandingLtvAndPmiBody',
+    date: new Date('2026-04-22'),
+  },
+  {
     slug: 'loan-payoff-statement',
     titleKey: 'articleLoanPayoffStatementTitle',
     descriptionKey: 'articleLoanPayoffStatementDescription',
@@ -249,6 +257,11 @@ export const RELATED_ARTICLE_SLUGS: Record<string, readonly string[]> = {
     'extra-payments',
     'loan-term-comparison',
     'apr-vs-ear',
+  ],
+  'understanding-ltv-and-pmi': [
+    'factors-affecting-mortgage-rates',
+    'comparing-loan-offers',
+    'calculating-remaining-loan-balance',
   ],
 }
 

@@ -20,6 +20,7 @@ import articleMortgageRecastBody from './content/articles/article-mortgage-recas
 import articleInterestAccrualBetweenPaymentsBody from './content/articles/article-interest-accrual-between-payments-body.html.txt' with { type: 'text' }
 import articleLoanGracePeriodBody from './content/articles/article-loan-grace-period-body.html.txt' with { type: 'text' }
 import articleLoanPayoffStatementBody from './content/articles/article-loan-payoff-statement-body.html.txt' with { type: 'text' }
+import articleUnderstandingLtvAndPmiBody from './content/articles/article-understanding-ltv-and-pmi-body.html.txt' with { type: 'text' }
 
 export const enGBMessages = {
   sharedResult: 'Shared Result',
@@ -412,6 +413,14 @@ export const enGBMessages = {
   articleLoanGracePeriodSeoTitle: 'What Is a Loan Grace Period? | Amorta',
   articleLoanGracePeriodSeoDescription:
     'Learn what a loan grace period is, when it delays late fees, why it usually does not stop interest accrual, and how to avoid accidental delinquency.',
+  articleUnderstandingLtvAndPmiTitle: 'Understanding LTV and Lenders Mortgage Insurance: The 80% Threshold',
+  articleUnderstandingLtvAndPmiDescription:
+    'Learn how loan-to-value ratio determines when lenders mortgage insurance is required, how LMI costs work, and strategies to minimise or avoid it.',
+  articleUnderstandingLtvAndPmiDate: '22 April 2026',
+  articleUnderstandingLtvAndPmiBody,
+  articleUnderstandingLtvAndPmiSeoTitle: 'Understanding LTV and Lenders Mortgage Insurance: The 80% Threshold | Amorta',
+  articleUnderstandingLtvAndPmiSeoDescription:
+    'Learn how loan-to-value ratio determines lenders mortgage insurance requirements, LMI costs, and strategies to minimise borrowing costs in the UK market.',
   articleLoanPayoffStatementTitle: 'What Is a Loan Payoff Statement?',
   articleLoanPayoffStatementDescription:
     'Learn what a loan payoff statement includes, why it differs from your balance, and how lenders quote an exact amount to settle the debt.',

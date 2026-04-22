@@ -20,6 +20,7 @@ import articleMortgageRecastBody from './content/articles/article-mortgage-recas
 import articleInterestAccrualBetweenPaymentsBody from './content/articles/article-interest-accrual-between-payments-body.html.txt' with { type: 'text' }
 import articleLoanGracePeriodBody from './content/articles/article-loan-grace-period-body.html.txt' with { type: 'text' }
 import articleLoanPayoffStatementBody from './content/articles/article-loan-payoff-statement-body.html.txt' with { type: 'text' }
+import articleUnderstandingLtvAndPmiBody from './content/articles/article-understanding-ltv-and-pmi-body.html.txt' with { type: 'text' }
 
 export const esESMessages = {
   sharedResult: 'Resultado Compartido',
@@ -425,6 +426,16 @@ export const esESMessages = {
     'Qué es un Período de Gracia en un Préstamo | Amorta',
   articleLoanGracePeriodSeoDescription:
     'Aprende qué es un período de gracia, cuándo retrasa comisiones por demora, por qué normalmente no detiene intereses y cómo evitar la mora.',
+  articleUnderstandingLtvAndPmiTitle:
+    'Entendiendo la Relación Préstamo-Valor y el Seguro de Protección de Pagos: El Umbral del 80%',
+  articleUnderstandingLtvAndPmiDescription:
+    'Aprende cómo la relación préstamo-valor determina cuándo se requiere el seguro de protección de pagos, cómo funcionan sus costes y las reglas para eliminarlo al 80% y 78% LTV.',
+  articleUnderstandingLtvAndPmiDate: '22 de Abril de 2026',
+  articleUnderstandingLtvAndPmiBody,
+  articleUnderstandingLtvAndPmiSeoTitle:
+    'Entendiendo la Relación Préstamo-Valor y el Seguro de Protección de Pagos | Amorta',
+  articleUnderstandingLtvAndPmiSeoDescription:
+    'Aprende cómo la relación préstamo-valor determina los requisitos del seguro de protección de pagos, sus costes y las reglas de cancelación en los umbrales del 80% y 78% LTV.',
   articleLoanPayoffStatementTitle:
     'Qué es un Extracto de Liquidación de Préstamo',
   articleLoanPayoffStatementDescription:

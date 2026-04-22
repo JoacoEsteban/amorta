@@ -1,0 +1,87 @@
+<p>The loan-to-value ratio (LTV) compares your mortgage amount to your home's value. Lenders mortgage insurance (LMI) is required when LTV exceeds 80%, protecting lenders from default risk. Understanding LTV and LMI helps you manage mortgage costs and build equity efficiently.</p>
+
+<h2>What is loan-to-value ratio (LTV)?</h2>
+<p>LTV is calculated as (Loan Amount ÷ Property Value) × 100. For a £350,000 home with a £280,000 mortgage, LTV is 80%. With a £35,000 deposit (10%), the loan becomes £315,000 and LTV rises to 90%. Lenders use the lower of purchase price or valuation. A lower LTV means more equity and less risk for the lender.</p>
+
+<h2>Why 80% LTV is the critical threshold</h2>
+<p>Most lenders see 80% LTV as the dividing line between low-risk and higher-risk loans. Below 80%, you have at least 20% equity, providing a buffer against market declines. Above 80%, lenders require LMI to protect against potential losses. Historical data shows loans with less than 20% deposit have higher default rates. Unlike the US, the UK has no statutory automatic LMI cancellation at specific LTV thresholds. LMI typically remains for the loan's life unless you remortgage with lower LTV.</p>
+
+<h2>How lenders mortgage insurance (LMI) works</h2>
+<p>LMI protects the lender, not you. If you default and repossession doesn't cover the loan balance, LMI pays the lender. LMI typically costs 0.3% to 1.5% of your loan, often as a one-off premium added to the loan. Your rate depends on credit score, LTV, and loan type. For a £300,000 loan, 0.5% LMI adds £1,500 upfront. LMI applies to most conventional mortgages with <20% deposit. Some lenders offer mortgages without LMI at higher rates, and government schemes like Help to Buy have different structures.</p>
+
+<h2>A detailed worked example</h2>
+<p>Consider a £400,000 home with 10% deposit (£40,000), borrowing £360,000 at 5.5% effective annual rate for 30 years.</p>
+<p>First, LTV = (£360,000 ÷ £400,000) × 100 = 90% → LMI required.</p>
+<p>Assume 0.6% LMI premium: £360,000 × 0.006 = £2,160 (added to loan).</p>
+<p>New balance = £362,160.</p>
+<p>Monthly rate = (1 + 0.055)^(1/12) − 1 ≈ 0.0044717.</p>
+<p>Payment = £362,160 × [0.0044717 ÷ (1 − (1 + 0.0044717)^(−360))] ≈ £2,018.50.</p>
+<p>Unlike US monthly PMI, UK LMI is usually a one-off premium, so your monthly payment doesn't include ongoing insurance.</p>
+
+<h2>How to avoid or minimise LMI costs</h2>
+<p>Since LMI in the UK is usually a one-off premium that can be substantial, consider these strategies:</p>
+<ol>
+<li><strong>Save a larger deposit:</strong> Moving from 10% to 15% deposit reduces your LTV from 90% to 85%, which can significantly lower your LMI premium.</li>
+<li><strong>Use a family guarantee:</strong> Some lenders accept a family member's savings as security for part of the loan, reducing the effective LTV below 80%.</li>
+<li><strong>Consider a 95% mortgage without LMI:</strong> Some lenders offer 95% LTV mortgages with higher interest rates instead of LMI. Calculate whether the higher rate costs more than the LMI premium over your expected ownership period.</li>
+<li><strong>Use government schemes:</strong> Help to Buy and other schemes can help you achieve a lower effective LTV without traditional LMI.</li>
+<li><strong>Shop around:</strong> LMI premiums vary significantly between lenders and insurers. Some lenders have relationships with specific insurers offering better rates.</li>
+</ol>
+
+<h2>The non-obvious insight: LMI timing differs from US PMI</h2>
+<p>Here's a key difference many borrowers miss: In the UK, LMI is typically a one-off premium paid at the start of the loan, whilst in the US, PMI is a monthly payment that continues until you reach 78% LTV. This structural difference has important implications:</p>
+<ul>
+<li><strong>UK advantage:</strong> Your monthly payment isn't increased by an insurance component after the initial premium.</li>
+<li><strong>UK disadvantage:</strong> The upfront premium can be substantial and is often added to your loan balance, meaning you pay interest on it for the life of the mortgage.</li>
+<li><strong>No automatic cancellation:</strong> Unlike US PMI which automatically cancels at 78% LTV, UK LMI doesn't have statutory cancellation rules. The premium is paid once and covers the lender for the life of the loan.</li>
+</ul>
+<p>This creates an important financial consideration: If you expect to remortgage within a few years, paying a large LMI premium might not make sense. You might be better off with a slightly higher interest rate product that doesn't require LMI, or waiting until you can save a larger deposit.</p>
+
+<h2>How LTV affects your interest rate and product options</h2>
+<p>Beyond LMI requirements, your LTV ratio significantly influences your interest rate and available mortgage products. Lenders typically offer their best rates at 60% LTV or below, with rates increasing as LTV rises:</p>
+<ul>
+<li>60-75% LTV: Best available rates</li>
+<li>75-80% LTV: Slightly higher rates</li>
+<li>80-85% LTV: Noticeably higher rates plus LMI</li>
+<li>85-90% LTV: Higher rates and substantial LMI</li>
+<li>90-95% LTV: Limited product availability and highest costs</li>
+</ul>
+<p>These adjustments reflect the increased risk of higher-LTV loans. Even within the same lender, moving from 75% to 90% LTV could increase your rate by 0.5% or more. This is why <a href="factors-affecting-mortgage-rates">understanding mortgage rate factors</a> includes LTV as a key component.</p>
+<p>Maximum LTV limits also vary by property type and borrower circumstances. Most high street lenders offer up to 90-95% LTV for residential mortgages, with stricter limits for buy-to-let properties (typically 75-80%).</p>
+
+<h2>Strategies to manage LTV and minimise borrowing costs</h2>
+<p>If you're facing high LTV and potential LMI costs, consider these approaches:</p>
+<ol>
+<li><strong>Make overpayments:</strong> Once you have your mortgage, making overpayments reduces your LTV faster. Use Amorta's <a href="extra-payments">extra payments calculator</a> to see how overpayments affect your equity position.</li>
+<li><strong>Monitor property value:</strong> In rising markets, your LTV based on current value may drop faster than scheduled. A new valuation when remortgaging could qualify you for better rates.</li>
+<li><strong>Consider offset mortgages:</strong> Some offset mortgages allow you to use savings to reduce the effective LTV for interest calculation purposes without actually paying down the loan.</li>
+<li><strong>Time your remortgage strategically:</strong> When your LTV crosses a key threshold (like 75% or 80%), you may qualify for significantly better rates. Plan your remortgage to coincide with these milestones.</li>
+<li><strong>Improve your credit score:</strong> A better credit score can help you access lower LMI premiums and better rates at higher LTVs.</li>
+</ol>
+
+<h2>Common misconceptions and mistakes</h2>
+<p>Several misunderstandings about LTV and LMI can cost borrowers money:</p>
+<ul>
+<li><strong>"LMI protects me":</strong> LMI protects the lender, not you. It doesn't cover your payments if you lose your job or face financial hardship.</li>
+<li><strong>"I need 20% deposit to buy a home":</strong> While 20% avoids LMI, many programmes allow 5-10% deposits. The key is understanding the total cost including LMI.</li>
+<li><strong>"LMI is the same as mortgage payment protection insurance":</strong> They're completely different. LMI protects the lender; payment protection insurance (PPI) was designed to cover your payments if you can't work (though PPI was widely mis-sold and is now heavily regulated).</li>
+<li><strong>"All lenders charge the same LMI":</strong> LMI premiums vary significantly. Some lenders have better relationships with insurers or absorb more of the cost.</li>
+<li><strong>"LMI is always a one-off payment":</strong> Whilst most common, some policies offer monthly payment options, though these are less frequent in the UK market.</li>
+</ul>
+<p>For a comprehensive approach to evaluating loan costs, see our guide on <a href="comparing-loan-offers">comparing loan offers</a>, which shows how to weigh LMI against other factors.</p>
+
+<h2>When LTV and LMI don't apply</h2>
+<p>Certain mortgage types operate outside standard LTV/LMI rules:</p>
+<ul>
+<li><strong>Help to Buy equity loans:</strong> The government lends up to 20% (40% in London) interest-free for five years, reducing the LTV on the main mortgage.</li>
+<li><strong>Shared ownership:</strong> You buy a share of the property (25-75%) and pay rent on the remainder, with different LTV calculations.</li>
+<li><strong>Guarantor mortgages:</strong> A family member guarantees part of the loan, allowing higher LTVs without LMI.</li>
+<li><strong>Portfolio landlord mortgages:</strong> Experienced landlords with multiple properties may access different LTV limits.</li>
+<li><strong>Specialist lenders:</strong> Some niche lenders offer higher LTVs without traditional LMI through different risk-pricing models.</li>
+</ul>
+<p>Additionally, some lenders offer "LMI-free" products at higher interest rates, effectively building the insurance cost into the rate rather than charging a separate premium.</p>
+
+<h2>Using Amorta to model LTV scenarios</h2>
+<p>Amorta's French amortisation calculator can help you visualise how different deposits affect your LTV and total borrowing costs. By adjusting the loan amount relative to a target property value, you can see how the payment schedule changes with various LTV levels.</p>
+<p>To estimate LMI impact, add the premium to your loan amount if financing it. For example, if Amorta shows payments on a £360,000 loan, add £2,160 for LMI to model the true starting balance of £362,160. You can also model overpayments to see how quickly you reduce your LTV and potentially qualify for better rates when remortgaging.</p>
+<p>Understanding LTV and LMI empowers you to make informed decisions about deposit size, mortgage product selection, and repayment strategy. By carefully considering your LTV position and shopping around for the best LMI terms, you can save thousands over your homeownership journey.</p>

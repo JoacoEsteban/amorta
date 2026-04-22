@@ -1,0 +1,78 @@
+<p>La relación préstamo-valor (LTV) compara tu hipoteca con el valor de tu vivienda. El seguro de protección de pagos es necesario cuando LTV supera el 80%, protegiendo al prestamista. Entender LTV y seguro te ayuda a gestionar costos hipotecarios y construir equidad.</p>
+
+<h2>¿Qué es la relación préstamo-valor (LTV)?</h2>
+<p>LTV = (Importe del Préstamo ÷ Valor de la Propiedad) × 100. Para una vivienda de 350.000 € con hipoteca de 280.000 €, LTV es 80%. Con entrada de 35.000 € (10%), el préstamo es 315.000 € y LTV sube a 90%. Los prestamistas usan el menor entre precio de compra y valoración. Menor LTV significa más equidad y menos riesgo.</p>
+
+<h2>Por qué el 80% LTV es el umbral crítico</h2>
+<p>La mayoría de prestamistas ven 80% LTV como línea entre préstamos de bajo y mayor riesgo. Por debajo del 80%, tenés al menos 20% de equidad, amortiguando caídas del mercado. Por encima del 80%, exigen seguro de protección de pagos. Los datos históricos muestran que préstamos con menos del 20% de entrada tienen más impagos. En Argentina, no hay cancelación automática por ley del seguro en umbrales específicos. El seguro suele mantenerse durante toda la vida del préstamo a menos que refinancies con LTV más baja.</p>
+
+<h2>Cómo funciona el seguro de protección de pagos</h2>
+<p>El seguro protege al prestamista, no a vos. Si incumplís y la ejecución hipotecaria no cubre el saldo, el seguro paga al prestamista. El seguro cuesta típicamente 0,3% a 1,5% del préstamo anual, dividido mensualmente. Tu tasa depende de historial crediticio, LTV y tipo de préstamo. Para 300.000 €, 0,5% agrega 125 € mensuales. El seguro aplica a hipotecas convencionales con <20% de entrada. Algunos prestamistas ofrecen hipotecas sin seguro a tasas más altas.</p>
+
+<h2>Un ejemplo detallado</h2>
+<p>Vivienda de 400.000 € con entrada del 10% (40.000 €), préstamo de 360.000 € al 5,5% efectivo anual a 30 años.</p>
+<p>LTV = (360.000 € ÷ 400.000 €) × 100 = 90% → seguro requerido.</p>
+<p>Supón tasa anual del seguro 0,6%: Seguro mensual = 360.000 € × 0,006 ÷ 12 = 180 €.</p>
+<p>Tasa mensual = (1 + 0,055)^(1/12) − 1 ≈ 0,0044717.</p>
+<p>Pago base = 360.000 € × [0,0044717 ÷ (1 − (1 + 0,0044717)^(−360))] ≈ 2.006,64 €.</p>
+<p>Pago total con seguro = 2.006,64 € + 180 € = 2.186,64 €. En el primer año, pagás 2.160 € solo en seguro—costo puro de seguro.</p>
+
+<h2>Cómo eliminar el seguro</h2>
+<p>En Argentina, las reglas son menos estandarizadas que en EE.UU. Generalmente, el seguro queda a menos que:</p>
+<ol>
+<li><strong>Refinancies:</strong> Al subrogar o novar, podés optar por producto sin seguro si tu LTV bajó por debajo del 80%.</li>
+<li><strong>Negocies con tu entidad:</strong> Algunas permiten cancelación cuando saldo alcanza 80% del valor original.</li>
+<li><strong>Pagues por adelantado:</strong> Algunas pólizas permiten prima total al inicio.</li>
+</ol>
+<p>Usando nuestro ejemplo: Valor original 400.000 €, 80% = 320.000 €. Negociá cancelación cuando saldo caiga a 320.000 €. No hay terminación automática al 78% por ley.</p>
+
+<h2>La perspectiva no obvia: El seguro depende de tu saldo real</h2>
+<p>La fecha para eliminar seguro depende de tu saldo real, no de calendario preestablecido. A diferencia de EE.UU. donde terminación automática se basa en amortización original, en Argentina necesitás acción proactiva.</p>
+<p>En nuestro ejemplo, saldo programado alcanza 80% (320.000 €) aproximadamente mes 102. Si pagos extra te llevan allí en mes 60, seguro no se cancela automáticamente—tenés que solicitarlo por escrito.</p>
+<p>Incentivo importante: Cuando saldo real alcance 80% del valor original, solicitá cancelación por escrito inmediatamente.</p>
+
+<h2>Cómo LTV afecta tu tasa de interés</h2>
+<p>Además de requisitos de seguro, LTV influye en tu tasa de interés. Prestamistas ofrecen mejores tasas al 80% LTV o menos. Al aumentar LTV, tasas suben:</p>
+<ul>
+<li>80-85% LTV: +0,125-0,25%</li>
+<li>85-90% LTV: +0,25-0,5%</li>
+<li>90-95% LTV: +0,5-0,75% o más</li>
+<li>>95% LTV: disponibilidad limitada, tasas más altas</li>
+</ul>
+<p>Estos ajustes reflejan mayor riesgo. Incluso evites seguro con 20% de entrada, préstamo al 95% LTV tendrá tasa más alta que al 80%. Por eso <a href="factors-affecting-mortgage-rates">entender factores que afectan tu tasa hipotecaria</a> incluye LTV.</p>
+<p>Límites máximos varían: hipotecas convencionales permiten hasta 95% LTV para residencias principales, propiedades inversión 80-85%.</p>
+
+<h2>Estrategias para gestionar LTV y minimizar seguro</h2>
+<ol>
+<li><strong>Entrada más grande:</strong> Pasar de 10% a 15% reduce LTV de 90% a 85%, bajando posiblemente tasa de seguro e interés.</li>
+<li><strong>Seguro pagado por entidad:</strong> Algunas ofrecen tasa ligeramente más alta a cambio de pagar seguro por adelantado.</li>
+<li><strong>Pagos extra:</strong> Acelera reducción de capital para alcanzar 80% LTV más rápido. Usá calculadora de <a href="extra-payments">pagos extra de Amorta</a>.</li>
+<li><strong>Préstamo combinado:</strong> Primera hipoteca al 80% y segundo préstamo para resto, evitando seguro. Segundos préstamos tienen tasas más altas.</li>
+<li><strong>Apreciación de valor:</strong> En mercados al alza, LTV basada en valor actual puede caer bajo 80% antes. Nueva tasación podría apoyar cancelación temprana.</li>
+</ol>
+
+<h2>Conceptos erróneos</h2>
+<ul>
+<li><strong>"El seguro me protege":</strong> Protege al prestamista, no a vos.</li>
+<li><strong>"Seguro deducible":</strong> Para mayoría en Argentina, no es deducible.</li>
+<li><strong>"Necesito 20% de entrada":</strong> Muchos programas permiten entradas más bajas.</li>
+<li><strong>"Seguro cancela automáticamente al 80% LTV":</strong> Tenés que solicitarlo.</li>
+<li><strong>"Tasación más alta siempre ayuda":</strong> Prestamistas no obligados a aceptar apreciación para cancelación temprana.</li>
+</ul>
+<p>Para evaluación integral, mirá guía sobre <a href="comparing-loan-offers">comparar ofertas de préstamos</a>.</p>
+
+<h2>Cuándo no aplican LTV y seguro</h2>
+<p>Algunos préstamos operan fuera reglas estándar:</p>
+<ul>
+<li><strong>Préstamos con garantía hipotecaria de vivienda habitual:</strong> Límites LTV específicos.</li>
+<li><strong>Préstamos con aval público:</strong> Reglas diferentes.</li>
+<li><strong>Préstamos de cartera:</strong> Prestamistas mantienen préstamos, permitiendo LTV más flexibles.</li>
+<li><strong>Préstamos no conformes:</strong> Requisitos diferentes.</li>
+<li><strong>Propiedades inversión:</strong> Típicamente requieren 20-25% entrada.</li>
+</ul>
+<p>Algunas entidades ofrecen productos "sin seguro" a tasas más altas.</p>
+
+<h2>Usando Amorta para modelar LTV y seguro</h2>
+<p>La calculadora de amortización francesa de Amorta ayuda a visualizar cómo entradas afectan LTV y costos. Ajustá importe del préstamo relativo a valor objetivo para ver cambios en calendario de pagos.</p>
+<p>Para estimar impacto del seguro, agregá costo mensual a pago calculado. Ejemplo: si Amorta muestra 2.006,64 € en préstamo de 360.000 €, agregá 180 € para seguro. Modelá pagos extra para ver cuándo alcanzás 80% LTV y podés solicitar cancelación.</p>
+<p>Entender LTV y seguro te empodera para decisiones informadas sobre entrada, producto de préstamo y estrategia de amortización. Monitoreando progresión de LTV y gestionando cancelación proactiva, podés ahorrar miles durante vida de tu hipoteca.</p>

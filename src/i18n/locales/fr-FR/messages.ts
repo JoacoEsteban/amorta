@@ -20,6 +20,7 @@ import articleMortgageRecastBody from './content/articles/article-mortgage-recas
 import articleInterestAccrualBetweenPaymentsBody from './content/articles/article-interest-accrual-between-payments-body.html.txt' with { type: 'text' }
 import articleLoanGracePeriodBody from './content/articles/article-loan-grace-period-body.html.txt' with { type: 'text' }
 import articleLoanPayoffStatementBody from './content/articles/article-loan-payoff-statement-body.html.txt' with { type: 'text' }
+import articleUnderstandingLtvAndPmiBody from './content/articles/article-understanding-ltv-and-pmi-body.html.txt' with { type: 'text' }
 
 export const frFRMessages = {
   sharedResult: 'Résultat partagé',
@@ -424,6 +425,16 @@ export const frFRMessages = {
     "Qu'est-ce qu'une Période de Grâce sur un Prêt ? | Amorta",
   articleLoanGracePeriodSeoDescription:
     "Découvrez ce qu'est une période de grâce, quand elle reporte des frais de retard, pourquoi elle n'arrête généralement pas les intérêts, et comment éviter l'impayé.",
+  articleUnderstandingLtvAndPmiTitle:
+    'Comprendre le Ratio Prêt-Valeur et l’Assurance Hypothécaire : Le Seuil des 80 %',
+  articleUnderstandingLtvAndPmiDescription:
+    'Découvrez comment le ratio prêt-valeur détermine quand l’assurance hypothécaire est requise, comment fonctionnent ses coûts, et les règles pour la supprimer à 80 % et 78 % LTV.',
+  articleUnderstandingLtvAndPmiDate: '22 avril 2026',
+  articleUnderstandingLtvAndPmiBody,
+  articleUnderstandingLtvAndPmiSeoTitle:
+    'Comprendre le Ratio Prêt-Valeur et l’Assurance Hypothécaire | Amorta',
+  articleUnderstandingLtvAndPmiSeoDescription:
+    'Découvrez comment le ratio prêt-valeur détermine les exigences d’assurance hypothécaire, ses coûts, et les règles de suppression aux seuils de 80 % et 78 % LTV.',
   articleLoanPayoffStatementTitle:
     "Qu'est-ce qu'un Relevé de Solde de Remboursement Anticipé ?",
   articleLoanPayoffStatementDescription:
