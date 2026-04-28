@@ -45,7 +45,7 @@ jobs:
       - name: Export agent session
         if: always()
         run: |
-          SESSION=$(find /tmp/pi-session -name "session.jsonl" | head -1)
+          SESSION=$(find /tmp/pi-session -name "*.jsonl" | head -1)
           if [ -n "$SESSION" ]; then
             pi --export "$SESSION" /tmp/agent-session.html
           fi
