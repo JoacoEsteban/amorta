@@ -21,6 +21,7 @@ import articleInterestAccrualBetweenPaymentsBody from './content/articles/articl
 import articleLoanGracePeriodBody from './content/articles/article-loan-grace-period-body.html.txt' with { type: 'text' }
 import articleLoanPayoffStatementBody from './content/articles/article-loan-payoff-statement-body.html.txt' with { type: 'text' }
 import articleUnderstandingLtvAndPmiBody from './content/articles/article-understanding-ltv-and-pmi-body.html.txt' with { type: 'text' }
+import articleMortgageDiscountPointsBody from './content/articles/article-mortgage-discount-points-body.html.txt' with { type: 'text' }
 
 export const enGBMessages = {
   sharedResult: 'Shared Result',
@@ -430,6 +431,14 @@ export const enGBMessages = {
     'What Is a Loan Payoff Statement? | Amorta',
   articleLoanPayoffStatementSeoDescription:
     'Learn what a loan payoff statement is, why payoff amounts differ from the capital balance, and how per-diem interest affects the final settlement figure.',
+  articleMortgageDiscountPointsTitle: 'What Are Mortgage Discount Points?',
+  articleMortgageDiscountPointsDescription:
+    'Learn how mortgage discount points work, what each point costs, and how to calculate whether buying points saves money over the life of your mortgage.',
+  articleMortgageDiscountPointsDate: '28 April 2026',
+  articleMortgageDiscountPointsBody,
+  articleMortgageDiscountPointsSeoTitle: 'What Are Mortgage Discount Points? | Amorta',
+  articleMortgageDiscountPointsSeoDescription:
+    'Learn what mortgage discount points are, how they lower your rate, how to calculate break-even, and when buying points makes financial sense.',
   consentPrivacyPolicyLabel: 'Privacy Policy',
   consentTermsLabel: 'Terms & Conditions',
   consentAcceptAll: 'Accept all',

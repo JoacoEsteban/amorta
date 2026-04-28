@@ -11,6 +11,14 @@ export type Article = {
 
 export const ARTICLES: Article[] = [
   {
+    slug: 'mortgage-discount-points',
+    titleKey: 'articleMortgageDiscountPointsTitle',
+    descriptionKey: 'articleMortgageDiscountPointsDescription',
+    dateKey: 'articleMortgageDiscountPointsDate',
+    bodyKey: 'articleMortgageDiscountPointsBody',
+    date: new Date('2026-04-28'),
+  },
+  {
     slug: 'understanding-ltv-and-pmi',
     titleKey: 'articleUnderstandingLtvAndPmiTitle',
     descriptionKey: 'articleUnderstandingLtvAndPmiDescription',
@@ -262,6 +270,11 @@ export const RELATED_ARTICLE_SLUGS: Record<string, readonly string[]> = {
     'factors-affecting-mortgage-rates',
     'comparing-loan-offers',
     'calculating-remaining-loan-balance',
+  ],
+  'mortgage-discount-points': [
+    'loan-origination-fee',
+    'comparing-loan-offers',
+    'extra-payments',
   ],
 }
 

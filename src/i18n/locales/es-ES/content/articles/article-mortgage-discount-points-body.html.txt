@@ -1,0 +1,56 @@
+<p>Un punto de descuento hipotecario es un pago anticipado equivalente al 1% del importe del préstamo que un prestatario puede abonar en la firma para obtener un tipo de interés más bajo durante toda la vida del préstamo. Cada punto reduce normalmente el tipo unas 0,25 unidades porcentuales, aunque el descuento exacto varía según el prestamista y las condiciones del mercado. Los puntos aparecen como «interés anticipado» en la documentación de cierre, no como un cargo administrativo independiente.</p>
+<p>Esto importa porque los prestamistas empaquetan el mismo préstamo con distintas combinaciones de tipo y puntos. Un tipo anunciado más bajo puede incluir ya puntos que usted no tenía previsto pagar, o bien puede tener la opción de comprar puntos y reducir el tipo de forma permanente. Entender la mecánica le permite decidir si ese desembolso inicial ahorra dinero de verdad a largo plazo.</p>
+<p>Si busca un marco de análisis que vaya más allá del tipo anunciado, el artículo de Amorta sobre cómo <a href="comparing-loan-offers">comparar ofertas de préstamo de forma eficaz</a> explica el enfoque de evaluación. Los puntos de descuento también se diferencian de comisiones administrativas como la <a href="loan-origination-fee">comisión de formalización</a>, que compensan al prestamista por tramitar el préstamo pero no reducen el tipo.</p>
+
+<h2>Cómo funcionan realmente los puntos de descuento</h2>
+<p>Cada punto de descuento cuesta exactamente el 1% del importe total del préstamo. En una hipoteca de 250.000 €, un punto son 2.500 €, dos puntos son 5.000 € y medio punto son 1.250 €. Normalmente puede comprar cualquier fracción de punto — 0,25, 0,5 o 0,75 — sin limitarse a números enteros.</p>
+<p>A cambio, el prestamista otorga a su préstamo un tipo de interés permanentemente reducido. La reducción estándar ronda las 0,25 unidades porcentuales por punto, aunque la cantidad exacta depende de la tabla de precios del prestamista. No existe ninguna garantía universal de que «un punto equivalga a un cuarto de punto porcentual».</p>
+<p>La reducción del tipo dura toda la vida del préstamo y se aplica a cada cuota restante. Esto diferencia los puntos de descuento permanentes de las bonificaciones temporales, donde el tipo se mantiene artificialmente bajo solo uno o dos años antes de volver al nivel completo.</p>
+
+<h2>Un ejemplo numérico concreto</h2>
+<p>Tome un préstamo a 30 años de 250.000 € con un tipo anual efectivo del 6,30%. Con la fórmula francesa de amortización, la cuota mensual es de aproximadamente <strong>1.558,16 €</strong>. Durante los 360 meses, usted pagaría en total unos <strong>310.936 €</strong>, de los cuales <strong>180.936 €</strong> son intereses.</p>
+<p>Suponga ahora que compra un punto de descuento en la firma. El coste es el 1% de 250.000 €, es decir, <strong>2.500 €</strong>. El prestamista reduce su tipo a aproximadamente <strong>6,05% TAE</strong>. Su nueva cuota mensual baja a unos <strong>1.522,34 €</strong>. El ahorro mensual es:</p>
+
+<pre><code>
+1.558,16 € − 1.522,34 € = 35,82 € al mes
+</code></pre>
+
+<p>A 30 años con ese tipo reducido, los pagos totales son de aproximadamente <strong>298.042 €</strong>, con <strong>168.042 €</strong> en intereses. Eso supone un ahorro en intereses de unos <strong>12.894 €</strong>. Tras restar los 2.500 € pagados por el punto en la firma, el ahorro neto es de unos <strong>10.394 €</strong>.</p>
+<p>La clave es que el ahorro neto equivale al ahorro en intereses menos el coste inicial del punto. Todo análisis de punto de equilibrio debe tenerlo en cuenta.</p>
+
+<h2>El cálculo del punto de equilibrio</h2>
+<p>El punto de equilibrio indica cuánto tiempo tarda su ahorro mensual en compensar el coste inicial:</p>
+
+<pre><code>
+Meses de equilibrio = Coste de los puntos ÷ Ahorro mensual en la cuota
+</code></pre>
+
+<p>En el ejemplo anterior, 2.500 € ÷ 35,82 € &asymp; 69,8 meses, lo que equivale a <strong>5 años y 10 meses</strong>. Si vende, refinancia o cancela el préstamo antes de ese plazo, no recuperará el coste del punto. Cada mes más allá del equilibrio genera un ahorro real.</p>
+<p>Hay un matiz que muchos compradores pasan por alto: el punto de equilibrio asume que mantiene el saldo completo. Si realiza <a href="extra-payments">amortizaciones anticipadas</a> importantes al inicio del préstamo, el punto de equilibrio efectivo será más largo — o en algunos casos, podría no alcanzarse nunca.</p>
+
+<h2>Cuándo comprar puntos tiene sentido financiero</h2>
+<p>Comprar puntos suele ser racional cuando se cumplen tres condiciones simultáneamente:</p>
+<ul>
+  <li><strong>Piensa mantener el préstamo mucho más allá del punto de equilibrio.</strong> Si su equilibrio es de 5 años y 10 meses y espera permanecer 7 a 10 años, los años restantes generan ahorro neto real.</li>
+  <li><strong>Dispone de liquidez en la firma.</strong> Financiar el punto dentro de un saldo mayor anula gran parte del beneficio, pues entonces paga intereses sobre el propio coste del punto.</li>
+  <li><strong>No espera refinanciar pronto.</strong> Refinanciar a un tipo más bajo elimina la ventaja del punto y le deja habiendo pagado miles de euros por una reducción de tipo que ya no mantiene.</li>
+</ul>
+<p>Cuando los tipos son elevados — el tipo fijo a 30 años rondaba el 6,30% en abril de 2026 según la <a href="https://www.freddiemac.com/pmms/index.html?intcmp=CWS-HP">Encuesta del Mercado Hipotecario Primario de Freddie Mac</a> —, comprar puntos puede ser un cobertizo más atractivo que en un entorno de tipos en rápido descenso. Pero el cálculo de punto de equilibrio sigue siendo el filtro que usted debe aplicar.</p>
+
+<h2>Cómo aparecen los puntos en las cotizaciones de tipo</h2>
+<p>Al comparar tipos entre prestamistas o ver tipos bajos anunciados en internet, esos tipos suelen incluir ya puntos de descuento en el precio. Un tipo anunciado del 5,87% puede sonar mejor que el 6,30%, pero el tipo más bajo puede exigir pagar 1,5 o 2 puntos en la firma.</p>
+<p>La <a href="apr-vs-ear">diferencia entre TAE y tipo nominal</a> puede revelar si los puntos se han incluido en la cifra anunciada. Una TAE significativamente superior al tipo contractual indica que los costes iniciales encarecen el coste de endeudamiento efectivo. Pida siempre a cada prestamista una oferta con cero puntos especificados para comparar en igualdad de condiciones.</p>
+<p>La reducción de tipo por punto tampoco está estandarizada. Un prestamista puede ofrecer 0,375% por punto mientras otro ofrece solo 0,125%. Compare el tipo y cuota reales que recibiría para un número concreto de puntos, no solo la regla abstracta.</p>
+
+<h2>Puntos y préstamos de tipo ajustable</h2>
+<p>Con un préstamo de tipo ajustable, comprar puntos solo reduce el tipo durante el periodo inicial fijo — típicamente tres, cinco, siete o diez años. Después, el tipo se ajusta según el índice y margen del contrato, independientemente de los puntos pagados. Comprar puntos en un préstamo de tipo ajustable rara vez merece la pena a menos que el punto de equilibrio quede bien dentro de la ventana inicial fija.</p>
+
+<h2>Tratamiento fiscal de los puntos de descuento</h2>
+<p>En Estados Unidos, el IRS permite generalmente deducir los puntos de descuento como interés anticipado en una hipoteca de compra para la vivienda principal, siempre que se paguen con fondos propios en la firma y el importe sea habitual en la zona. Sin embargo, para una refinanciación los puntos deben deducirse de forma proporcional a lo largo de la vida del nuevo préstamo. El <a href="https://www.irs.gov/taxtopics/tc504">Tema Fiscal 504 del IRS</a> recoge las normas detalladas sobre su deducción.</p>
+
+<h2>Errores frecuentes de los compradores</h2>
+<p>Los errores más comunes consisten en tratar los puntos como una simple herramienta de reducción de tipo sin calcular el punto de equilibrio, asumir que los tipos anunciados están disponibles sin puntos y comprar puntos en préstamos que el prestatario planea refinanciar pronto. Otro error habitual es confundir puntos con comisiones de formalización: los puntos reducen el tipo, mientras que las comisiones compensan al prestamista sin reducir el tipo.</p>
+
+<h2>Conclusión</h2>
+<p>Los puntos de descuento hipotecario permiten intercambiar dinero inicial por un tipo de interés permanentemente más bajo. Cada punto cuesta el 1% del importe del préstamo y reduce el tipo aproximadamente 0,25 unidades porcentuales. Si ese intercambio ahorra dinero depende de un cálculo crítico: el punto de equilibrio donde su ahorro mensual supera el coste inicial.</p>
+<p>Si su horizonte de permanencia supera sustancialmente ese punto de equilibrio, los puntos pueden generar ahorro neto real. Si es posible que se mude, refinancie o amortice anticipadamente antes de entonces, los puntos le cuestan dinero sin beneficio alguno. La única forma fiable de decidir es solicitar cotización con y sin puntos a cada prestamista, calcular el punto de equilibrio y contrastarlo honestamente con cuánto tiempo espera mantener el préstamo. La calculadora de Amorta le permite modelar el cuadro de amortización completo para cada escenario y ver exactamente cómo se comporta el tipo reducido mes a mes.</p>

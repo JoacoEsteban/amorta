@@ -1,0 +1,56 @@
+<p>A mortgage discount point is an upfront fee equal to 1% of the loan amount that a borrower can pay at completion in exchange for a lower interest rate over the life of the mortgage. One point typically reduces your rate by about 0.25 percentage points, although the exact discount varies by lender and market conditions. Points are listed as "prepaid interest" on settlement disclosures, not as a separate origination charge.</p>
+<p>This matters because lenders package the same mortgage with different combinations of rate and points. A lower headline rate may already include points you did not plan to pay, or you may have the option to buy points and permanently reduce the rate further. Understanding the mechanics lets you decide whether that upfront outlay actually saves money over the life of your mortgage.</p>
+<p>If you want a framework for looking beyond the headline rate, Amorta's article on <a href="comparing-loan-offers">comparing loan offers effectively</a> walks through the evaluation approach. Discount points also differ from administrative fees like <a href="loan-origination-fee">loan origination fees</a>, which compensate the lender for processing the mortgage rather than reducing the rate.</p>
+
+<h2>How discount points actually work</h2>
+<p>Each discount point costs exactly 1% of your total loan amount. On a £350,000 mortgage, one point is £3,500, two points are £7,000, and half a point is £1,750. You can typically buy any fraction of a point — 0.25, 0.5, or 0.75 — rather than being limited to whole numbers.</p>
+<p>In exchange, the lender credits your mortgage with a permanently reduced interest rate. The standard reduction is around 0.25 percentage points per point, although the precise amount is set by the lender's pricing grid. There is no universal "one point equals a quarter of a percent" guarantee.</p>
+<p>The rate reduction lasts for the entire mortgage term and becomes the contractual rate applied to every remaining payment. This separates permanent discount points from temporary buydowns, where the rate is artificially low for only one or two years before returning to the full amount.</p>
+
+<h2>A concrete numerical example</h2>
+<p>Assume a £350,000, 30-year fixed-rate mortgage at a 6.30% effective annual rate. Using the standard French amortisation formula, the monthly payment works out to approximately <strong>£2,181.42</strong>. Over the full 360 months, you would pay roughly <strong>£435,311</strong> in total, of which <strong>£285,311</strong> is interest.</p>
+<p>Now suppose you buy one discount point at completion. The cost is 1% of £350,000, which is <strong>£3,500</strong>. The lender reduces your rate to approximately <strong>6.05% EAR</strong>. Your new monthly payment becomes roughly <strong>£2,131.27</strong>. The monthly saving is:</p>
+
+<pre><code>
+£2,181.42 − £2,131.27 = £50.15 per month
+</code></pre>
+
+<p>Over 30 years at that reduced rate, total payments are approximately <strong>£417,258</strong>, with <strong>£267,258</strong> in interest. That is a total interest saving of roughly <strong>£18,053</strong> over the life of the mortgage. After subtracting the £3,500 you paid for the point at completion, the net interest saving is about <strong>£14,553</strong>.</p>
+<p>The important insight is that net saving equals headline interest saving minus the upfront cost of the point. Any break-even analysis must account for that subtraction.</p>
+
+<h2>The break-even calculation</h2>
+<p>The break-even point tells you how long it takes for monthly saving to offset the upfront cost:</p>
+
+<pre><code>
+Break-even months = Cost of points ÷ Monthly payment saving
+</code></pre>
+
+<p>In the example above, £3,500 ÷ £50.15 &asymp; 69.8 months, which is <strong>5 years and 10 months</strong>. If you sell, remortgage, or pay off the mortgage before that, you will not recover the point cost. Every month beyond break-even produces a genuine saving.</p>
+<p>There is a nuance many buyers overlook: the break-even assumes you keep the full balance. If you make substantial <a href="extra-payments">extra principal payments</a> early in the mortgage, the effective break-even may be longer — or in edge cases, you might never reach it.</p>
+
+<h2>When buying points makes financial sense</h2>
+<p>Buying points tends to be rational when three conditions are met simultaneously:</p>
+<ul>
+  <li><strong>You plan to hold the mortgage well beyond the break-even point.</strong> If your break-even is 5 years 10 months and you expect to stay 7 to 10 years, the remaining years generate genuine net savings.</li>
+  <li><strong>You have the cash at completion.</strong> Financing the point into a higher balance defeats much of the benefit, since you then pay interest on the point cost itself.</li>
+  <li><strong>You do not expect to remortgage soon.</strong> Remortgaging to a lower base rate erases the point's advantage and leaves you having paid thousands for a rate reduction you no longer hold.</li>
+</ul>
+<p>When rates are elevated — the 30-year fixed rate was around 6.30% in April 2026 per <a href="https://www.freddiemac.com/pmms/index.html?intcmp=CWS-HP">Freddie Mac's Primary Mortgage Market Survey</a> — buying points can be a more attractive hedge than in a rapidly falling rate environment. But the break-even maths remains the filter you should apply.</p>
+
+<h2>How points appear on rate quotes — and what to watch for</h2>
+<p>When you compare rate quotes from different lenders or see low rates advertised online, those rates often already include discount points baked into the pricing. An advertised rate of 5.87% might sound better than 6.30%, but the lower figure may require paying 1.5 or 2 points at completion.</p>
+<p>The <a href="apr-vs-ear">difference between APR and your note rate</a> can reveal whether points have been folded into the quoted price. A significantly higher APR than the contract rate signals that upfront costs are inflating the effective borrowing cost. Always ask each lender for a mortgage illustration with zero points specified.</p>
+<p>The rate reduction per point is also not standardised. One lender might offer 0.375% reduction per point whilst another offers only 0.125%. That means the same expenditure could produce very different monthly savings depending on the lender's pricing grid. Always compare the actual rate and payment you would receive for a specific number of points.</p>
+
+<h2>Points and adjustable-rate mortgages</h2>
+<p>With an ARM, buying points only reduces the rate during the initial fixed period — typically three, five, seven, or ten years. After that, the rate adjusts according to the index and margin, regardless of the points you paid. For this reason, buying points on an ARM is rarely worthwhile unless the break-even falls well inside the initial fixed-rate window.</p>
+
+<h2>Tax treatment of discount points</h2>
+<p>In the United States, the IRS generally allows discount points to be deducted as prepaid interest on a purchase mortgage for your principal residence, provided the points are paid from your own funds at completion and the amount is customary in your area. For a remortgage, however, points must be deducted ratably over the life of the new mortgage — meaning £3,500 in points on a 30-year remortgage generates about £117 per year, not a full write-off. <a href="https://www.irs.gov/taxtopics/tc504">IRS Tax Topic 504</a> provides the details.</p>
+
+<h2>Common mistakes buyers make</h2>
+<p>The most frequent errors involve treating points as a simple rate-reduction tool without computing break-even, assuming advertised rates are available without points, and buying points on mortgages the borrower plans to remortgage soon. Another common mistake is confusing points with origination fees — points lower your rate, whilst origination fees compensate the lender without reducing the rate.</p>
+
+<h2>Conclusion</h2>
+<p>Mortgage discount points let you trade upfront cash for a permanently lower interest rate. Each point costs 1% of the loan amount and typically reduces the rate by about 0.25 percentage points. Whether that trade saves money depends on one critical calculation: the break-even point where your monthly savings overtake the upfront cost.</p>
+<p>If your planned holding period substantially exceeds that break-even, points can produce real net savings over the life of the mortgage. If you might move, remortgage, or pay off the mortgage aggressively before then, the points cost you money without benefiting you. The only reliable way to evaluate the choice is to ask each lender for rate quotes with and without points, compute the break-even, and compare it honestly against how long you expect to carry the mortgage. Amorta's calculator helps you model the full amortisation schedule for each scenario so you can see exactly how the lower rate plays out month by month.</p>

@@ -21,6 +21,7 @@ import articleInterestAccrualBetweenPaymentsBody from './content/articles/articl
 import articleLoanGracePeriodBody from './content/articles/article-loan-grace-period-body.html.txt' with { type: 'text' }
 import articleLoanPayoffStatementBody from './content/articles/article-loan-payoff-statement-body.html.txt' with { type: 'text' }
 import articleUnderstandingLtvAndPmiBody from './content/articles/article-understanding-ltv-and-pmi-body.html.txt' with { type: 'text' }
+import articleMortgageDiscountPointsBody from './content/articles/article-mortgage-discount-points-body.html.txt' with { type: 'text' }
 
 export const frFRMessages = {
   sharedResult: 'Résultat partagé',
@@ -445,6 +446,14 @@ export const frFRMessages = {
     "Qu'est-ce qu'un Relevé de Solde de Remboursement Anticipé ? | Amorta",
   articleLoanPayoffStatementSeoDescription:
     "Découvrez ce qu'est un relevé de solde, pourquoi le montant final diffère du capital restant dû, et comment l'intérêt journalier influe sur le règlement.",
+  articleMortgageDiscountPointsTitle: 'Que sont les points de réduction hypothécaire ?',
+  articleMortgageDiscountPointsDescription:
+    "Découvrez le fonctionnement des points de réduction hypothécaire, ce que coûte chaque point, et comment calculer si l'achat de points économise de l'argent sur la durée du prêt.",
+  articleMortgageDiscountPointsDate: '28 avril 2026',
+  articleMortgageDiscountPointsBody,
+  articleMortgageDiscountPointsSeoTitle: 'Que sont les points de réduction hypothécaire ? | Amorta',
+  articleMortgageDiscountPointsSeoDescription:
+    "Découvrez les points de réduction hypothécaire, comment ils abaissent votre taux, comment calculer le point mort et quand l'achat de points est financièrement pertinent.",
   consentPrivacyPolicyLabel: 'Politique de confidentialité',
   consentTermsLabel: 'Conditions générales',
   consentAcceptAll: 'Tout accepter',

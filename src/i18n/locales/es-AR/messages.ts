@@ -21,6 +21,7 @@ import articleInterestAccrualBetweenPaymentsBody from './content/articles/articl
 import articleLoanGracePeriodBody from './content/articles/article-loan-grace-period-body.html.txt' with { type: 'text' }
 import articleLoanPayoffStatementBody from './content/articles/article-loan-payoff-statement-body.html.txt' with { type: 'text' }
 import articleUnderstandingLtvAndPmiBody from './content/articles/article-understanding-ltv-and-pmi-body.html.txt' with { type: 'text' }
+import articleMortgageDiscountPointsBody from './content/articles/article-mortgage-discount-points-body.html.txt' with { type: 'text' }
 
 export const esARMessages = {
   sharedResult: 'Resultado Compartido',
@@ -446,6 +447,14 @@ export const esARMessages = {
     'Qué es un Estado de Cancelación de Préstamo | Amorta',
   articleLoanPayoffStatementSeoDescription:
     'Aprendé qué es un estado de cancelación, por qué el importe final difiere del saldo de capital y cómo influyen los intereses diarios.',
+  articleMortgageDiscountPointsTitle: '¿Qué son los puntos de descuento hipotecario?',
+  articleMortgageDiscountPointsDescription:
+    'Aprendé cómo funcionan los puntos de descuento hipotecario, cuánto cuesta cada punto y cómo calcular si comprar puntos ahorra dinero durante la vida del préstamo.',
+  articleMortgageDiscountPointsDate: '28 de Abril de 2026',
+  articleMortgageDiscountPointsBody,
+  articleMortgageDiscountPointsSeoTitle: '¿Qué son los puntos de descuento hipotecario? | Amorta',
+  articleMortgageDiscountPointsSeoDescription:
+    'Aprendé qué son los puntos de descuento hipotecario, cómo reducen tu tasa, cómo calcular el punto de equilibrio y cuándo comprar puntos tiene sentido financiero.',
   consentPrivacyPolicyLabel: 'Política de privacidad',
   consentTermsLabel: 'Términos y condiciones',
   consentAcceptAll: 'Aceptar todo',

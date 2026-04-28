@@ -1,0 +1,56 @@
+<p>Un point de réduction hypothécaire constitue un frais anticipé équivalant à 1 % du montant du prêt qu'un emprunteur peut acquitter lors de la signature afin d'obtenir un taux d'intérêt plus bas pendant toute la durée du prêt. Chaque point réduit généralement le taux d'environ 0,25 point de pourcentage, bien que la réduction exacte varie selon le prêteur et les conditions du marché. Les points apparaissent comme « intérêts prépayés » dans les documents de clôture, et non comme des frais administratifs distincts.</p>
+<p>Cela importe car les prêteurs proposent un même prêt avec différentes combinaisons de taux et de points. Un taux annoncé plus faible peut déjà intégrer des points que vous n'aviez pas prévu de payer, ou bien vous pouvez avoir l'option d'acheter des points pour réduire le taux de façon permanente. Comprendre le mécanisme vous permet de décider si ce décaissement initial permet réellement d'économiser de l'argent sur la durée du prêt.</p>
+<p>Si vous cherchez un cadre d'analyse allant au-delà du taux affiché, l'article d'Amorta sur la <a href="comparing-loan-offers">comparaison efficace d'offres de prêt</a> explique l'approche d'évaluation. Les points de réduction diffèrent également des frais administratifs tels que les <a href="loan-origination-fee">frais de constitution de dossier</a>, qui rémunèrent le prêteur pour le traitement du prêt sans réduire le taux.</p>
+
+<h2>Comment fonctionnent réellement les points de réduction</h2>
+<p>Chaque point de réduction coûte exactement 1 % du montant total du prêt. Sur un prêt hypothécaire de 250 000 €, un point représente 2 500 €, deux points 5 000 € et un demi-point 1 250 €. Vous pouvez généralement acheter n'importe quelle fraction de point — 0,25, 0,5 ou 0,75 — sans vous limiter aux nombres entiers.</p>
+<p>En échange, le prêteur applique à votre prêt un taux d'intérêt réduit de manière permanente. La réduction standard avoisine 0,25 point de pourcentage par point, bien que le montant exact dépende de la grille tarifaire du prêteur. Il n'existe aucune garantie universelle qu'« un point équivaut à un quart de point de pourcentage ».</p>
+<p>La réduction du taux dure pendant toute la durée du prêt et s'applique à chaque échéance restante. Cela distingue les points de réduction permanents des remises temporaires, où le taux reste artificiellement bas pendant seulement un ou deux ans avant de revenir au plein taux.</p>
+
+<h2>Un exemple numérique concret</h2>
+<p>Prenons un prêt de 250 000 € sur 30 ans avec un taux annuel effectif de 6,30 %. Avec la formule française d'amortissement, la mensualité s'élève à environ <strong>1 558,16 €</strong>. Sur les 360 mois, vous paieriez au total environ <strong>310 936 €</strong>, dont <strong>180 936 €</strong> d'intérêts.</p>
+<p>Supposons maintenant que vous achetez un point de réduction à la signature. Le coût est de 1 % de 250 000 €, soit <strong>2 500 €</strong>. Le prêteur réduit votre taux à environ <strong>6,05 % TAEG</strong>. Votre nouvelle mensualité descend à environ <strong>1 522,34 €</strong>. L'économie mensuelle est de :</p>
+
+<pre><code>
+1 558,16 € − 1 522,34 € = 35,82 € par mois
+</code></pre>
+
+<p>Sur 30 ans avec ce taux réduit, les paiements totaux sont d'environ <strong>298 042 €</strong>, avec <strong>168 042 €</strong> d'intérêts. Cela représente une économie d'intérêts d'environ <strong>12 894 €</strong>. Après déduction des 2 500 € payés pour le point à la signature, l'économie nette est d'environ <strong>10 394 €</strong>.</p>
+<p>Le point clé est que l'économie nette équivaut à l'économie d'intérêts moins le coût initial du point. Toute analyse de point mort doit en tenir compte.</p>
+
+<h2>Le calcul du point mort</h2>
+<p>Le point mort indique combien de temps il faut avant que votre économie mensuelle ne compense le coût initial :</p>
+
+<pre><code>
+Mois de point mort = Coût des points ÷ Économie mensuelle sur la mensualité
+</code></pre>
+
+<p>Dans l'exemple ci-dessus, 2 500 € ÷ 35,82 € &asymp; 69,8 mois, ce qui correspond à <strong>5 ans et 10 mois</strong>. Si vous vendez, refinancer ou remboursez le prêt avant ce délai, vous ne récupérerez pas le coût du point. Chaque mois au-delà du point mort génère une véritable économie.</p>
+<p>Il y a une subtilité que beaucoup d'acheteurs négligent : le point mort suppose que vous conservez le capital initial. Si vous effectuez des <a href="extra-payments">remboursements anticipés</a> importants au début du prêt, le point mort effectif sera plus long — ou dans certains cas, pourrait ne jamais être atteint.</p>
+
+<h2>Quand acheter des points est financièrement pertinent</h2>
+<p>Acheter des points est généralement rationnel lorsque trois conditions sont réunies simultanément :</p>
+<ul>
+  <li><strong>Vous prévoyez de conserver le prêt bien au-delà du point mort.</strong> Si votre point mort est de 5 ans et 10 mois et que vous comptez rester 7 à 10 ans, les années restantes génèrent une économie nette réelle.</li>
+  <li><strong>Vous avez les liquidités nécessaires à la signature.</strong> Financer le point dans un capital plus élevé annule une grande partie du bénéfice, car vous payez alors des intérêts sur le coût du point lui-même.</li>
+  <li><strong>Vous ne comptez pas refinancer rapidement.</strong> Refinancer à un taux de base plus bas annule l'avantage du point et vous laisse avoir payé des milliers d'euros pour une réduction de taux que vous ne conservez plus.</li>
+</ul>
+<p>Quand les taux sont élevés — le taux fixe à 30 ans tournait autour de 6,30 % en avril 2026 selon <a href="https://www.freddiemac.com/pmms/index.html?intcmp=CWS-HP">l'enquête sur le marché hypothécaire de Freddie Mac</a> —, l'achat de points peut être plus attractif que dans un environnement de baisse rapide des taux. Mais le calcul du point mort reste le critère à appliquer.</p>
+
+<h2>Comment les points apparaissent dans les offres de taux</h2>
+<p>Lorsque vous comparez des taux entre prêteurs ou voyez des taux bas affichés en ligne, ces taux incluent souvent déjà des points de réduction intégrés au prix. Un taux affiché de 5,87 % peut sembler meilleur que 6,30 %, mais ce taux plus bas peut nécessiter de payer 1,5 ou 2 points à la signature.</p>
+<p>La <a href="apr-vs-ear">différence entre le TAEG et le taux nominal</a> peut révéler si les points ont été intégrés au prix annoncé. Un TAEG significativement supérieur au taux contractuel indique que les frais initiaux gonflent le coût réel du crédit. Demandez toujours à chaque prêteur une estimation avec zéro point spécifié pour comparer sur un pied d'égalité.</p>
+<p>La réduction de taux par point n'est pas non plus standardisée. Un prêteur peut offrir 0,375 % de réduction par point tandis qu'un autre n'offre que 0,125 %. Comparez le taux et la mensualité réels que vous recevriez pour un nombre précis de points, et pas seulement la règle abstraite.</p>
+
+<h2>Points et prêts à taux ajustable</h2>
+<p>Avec un prêt à taux adjustable (ARM), l'achat de points ne réduit le taux que pendant la période initiale fixe — généralement trois, cinq, sept ou dix ans. Ensuite, le taux s'ajuste selon l'indice et la marge du contrat, indépendamment des points payés. Acheter des points sur un prêt à taux adjustable n'est donc justifié que si le point mort est bien dans la fenêtre de taux fixe initiale.</p>
+
+<h2>Traitement fiscal des points de réduction</h2>
+<p>Aux États-Unis, l'IRS autorise généralement la déduction des points de réduction comme intérêts prépayés pour un emprunt immobilier d'acquisition de la résidence principale, à condition que les points soient payés avec vos propres fonds à la signature et que le montant soit habituel dans votre région. En revanche, pour un refinancement, les points doivent être déduits proportionnellement sur la durée du nouveau prêt. Le <a href="https://www.irs.gov/taxtopics/tc504">Topic fiscal 504 de l'IRS</a> détaille les règles de déductibilité.</p>
+
+<h2>Erreurs fréquentes des acheteurs</h2>
+<p>Les erreurs les plus courantes consistent à traiter les points comme un simple outil de réduction de taux sans calculer le point mort, à supposer que les taux annoncés sont disponibles sans points et à acheter des points sur des prêts que l'emprunteur prévoit de refinancer rapidement. Une autre erreur fréquente est de confondre points et frais de constitution de dossier : les points réduisent votre taux, tandis que les frais de constitution rémunèrent le prêteur sans réduire le taux.</p>
+
+<h2>Conclusion</h2>
+<p>Les points de réduction hypothécaire permettent d'échanger un décaissement initial contre un taux d'intérêt permanent plus bas. Chaque point coûte 1 % du montant du prêt et réduit le taux d'environ 0,25 point de pourcentage. Si cet échange permet d'économiser dépend d'un calcul critique : le point mort où votre économie mensuelle dépasse le coût initial.</p>
+<p>Si votre horizon de détention dépasse substantiellement ce point mort, les points peuvent générer une économie nette réelle. Si vous êtes susceptible de déménager, refinancer ou rembourser par anticipation avant ce délai, les points vous coûtent de l'argent sans avantage. La seule façon fiable de décider est de demander à chaque prêteur des offres avec et sans points, calculer le point mort et le confronter honnêtement à la durée pendant laquelle vous prévoyez de conserver le prêt. Le calculateur d'Amorta vous permet de modéliser le tableau d'amortissement complet pour chaque scénario afin de voir exactement comment le taux réduit évolue mois par mois.</p>
