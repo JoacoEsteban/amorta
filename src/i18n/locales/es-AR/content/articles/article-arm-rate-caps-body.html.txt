@@ -1,0 +1,58 @@
+<p>Un préstamo de tasa ajustable (ARM) modifica su tasa de interés periódicamente según varía el mercado. Los topes de tasa son los límites contractuales que controlan esas variaciones, definiendo cuánto puede subir tu tasa en cada ajuste y durante la vida del préstamo. Comprenderlos te indica el peor coste posible de una ARM.</p>
+
+<h2>Cómo se estructura la tasa de una ARM</h2>
+<p>Una ARM tiene dos componentes: un índice y un margen. El índice es una referencia publicada, como el SOFR o el rendimiento del Tesoro a un año. El margen es un porcentaje fijo fijado por tu prestamista. Tu tasa indexada completa equivale al índice más el margen. Cuando el índice se mueve, tu tasa se mueve igual, salvo que un tope lo limite.</p>
+<p>Por ejemplo, una ARM 5/1 con índice SOFR al 3,25 % y margen del 2,75 % tiene una tasa completa del 6,00 %. Si el SOFR sube al 4,50 %, la tasa sería del 7,25 %, pero solo si los topes lo permiten.</p>
+
+<h2>Los tres tipos de topes</h2>
+<p>Todo contrato ARM especifica tres valores, escritos como secuencia tipo 2/2/5:</p>
+<ul>
+<li><strong>Tope inicial:</strong> Limita el cambio en el primer ajuste. En una ARM 2/2/5, el primer ajuste no sube más de 2 puntos porcentuales.</li>
+<li><strong>Tope periódico:</strong> Limita cada ajuste posterior. En el ejemplo 2/2/5, cada ajuste anual se limita a 2 puntos porcentuales.</li>
+<li><strong>Tope vitalicio:</strong> Limita el aumento total. Un tope de 5 significa que la tasa nunca supera tu tasa inicial más 5 puntos.</li>
+</ul>
+<p>Estas protecciones están estandarizadas. La Oficina de Protección Financiera del Consumidor exige que las ARM revelen su estructura de topes antes del cierre.</p>
+
+<h2>Ejemplo con cifras reales</h2>
+<p>Considerá un préstamo de 320.000 € como ARM 5/1 con tasa inicial del 5,85 % y topes 2/2/5. El índice es el Tesoro a un año y el margen es del 2,6 %.</p>
+<p>Durante cinco años, la tasa queda al 5,85 %. Tu cuota mensual (amortización francés a 30 años):</p>
+<p>Tasa mensual = (1 + 0,0585)&sup(1/12) − 1 &asymp; 0,00475.</p>
+<p>Cuota = 320.000 € &times; [0,00475 / (1 − (1 + 0,00475)&sup(-360))] &asymp; 1.888 €.</p>
+<p>Ahora, en el año 5, el índice sube al 5,50 %. La tasa completa sería del 8,10 %. Pero el tope inicial es del 2 %, así que la tasa se ajusta a 7,85 %.</p>
+<p>Recalculando con 25 años restantes:</p>
+<p>Tasa mensual = (1 + 0,0785)&sup(1/12) − 1 &asymp; 0,00632. Saldo restante &asymp; 298.700 €.</p>
+<p>Nueva cuota = 298.700 € &times; [0,00632 / (1 − (1 + 0,00632)&sup(-300))] &asymp; 2.230 €.</p>
+<p>La cuota sube 342 € (18,1 %) aunque la tasa completa habría ido más alto. Sin el tope, al 8,10 % la cuota habría sido cerca de 2.254 €.</p>
+
+<h2>Ajustes posteriores</h2>
+<p>Tras el primer ajuste, el tope periódico rige cada cambio. Si la tasa completa alcanzara el 10,50 %, el tope de 2 puntos lo limita a 9,85 % como máximo.</p>
+<p>El tope vitalicio es la frontera final. Con un tope de 5 sobre el 5,85 %, el máximo es 10,85 %. Si el índice baja, la mayoría de ARM permiten que la tasa caiga libremente.</p>
+
+<h2>Lo no evidente: los topes pueden generar intereses diferidos</h2>
+<p>Cuando la tasa completa supera la tasa con tope, la diferencia no desaparece. Algunos contratos ARM acumulan el déficit de intereses y lo suman al saldo. Esto es <a href="negative-amortization">amortización negativa</a> disparada por topes.</p>
+<p>Por ejemplo, si la tasa completa es 11,00 % pero el tope la mantiene al 10,85 %, la diferencia del 0,15 % supone unos 450 € de intereses impagados sobre 300.000 €. Se suman al principal. El tope protege hoy pero puede elevar el coste total.</p>
+
+<h2>ARM versus hipotecas de tasa fija</h2>
+<p>Una hipoteca fija no tiene topes porque la tasa nunca cambia. La ARM arranca con tasa inferior, pero la incertidumbre empieza al acabar el período fijo. A abril de 2026, la tasa fija a 30 años promedio es ~6,30 % según <a href="https://fred.stlouisfed.org/series/MORTGAGE30US" target="_blank" rel="noopener">FRED</a>, mientras una ARM 5/1 podría empezar cerca del 5,85 %.</p>
+<p>Un tope ajustado (1/1/3) limita la exposición pero tiene tasa inicial más alta. Uno amplio (2/2/6) ofrece tasa menor pero más volatilidad. Consultá nuestra guía para <a href="comparing-loan-offers">comparar ofertas de préstamo</a> eficazmente.</p>
+
+<h2>Cómo leer la divulgación antes de firmar</h2>
+<p>Los prestamistas deben ilustrar el pago máximo posible en cada ajuste. Revisalo junto con:</p>
+<ol>
+<li><strong>Período fijo inicial:</strong> Una 5/1 fija cinco años; una 7/1 fija siete.</li>
+<li><strong>El margen:</strong> Oscila entre 2,25 % y 3,50 %. Es fijo toda la vida.</li>
+<li><strong>El índice:</strong> El SOFR reemplazó al LIBOR. Distintos índices se mueven diferente.</li>
+<li><strong>El pago máximo:</strong> Si la cuota máxima no encaja en tu presupuesto, reconsiderá. Leé sobre qué <a href="factors-affecting-mortgage-rates">impulsa las tasas hipotecarias</a>.</li>
+</ol>
+
+<h2>Cuándo los topes no te protegen</h2>
+<ul>
+<li><strong>Aumentos repetidos:</strong> Cinco ajustes con tope del 2 % pueden subir la tasa 10 puntos, doblando la cuota.</li>
+<li><strong>Refinanciación en tasas altas:</strong> El nuevo préstamo se valora en el entorno elevado. El tope no afecta la tasa de mercado.</li>
+<li><strong>Shock del primer ajuste:</strong> Un tope de 2 % añadió 342 € a una cuota de 1.888 € en nuestro ejemplo.</li>
+<li><strong>Suelos del índice:</strong> La mayoría de ARM no bajan de un mínimo establecido.</li>
+</ul>
+
+<h2>Conclusión</h2>
+<p>Los topes de ARM definen los límites: el inicial limita el primer ajuste, el periódico cada cambio posterior y el vitalicio el máximo. Impiden picos extremos pero no eliminan el riesgo.</p>
+<p>Modelá la trayectoria de pago máxima antes de elegir una ARM. Usá Amorta para calcular tu cuota en cada escenario: los números mostrarán si el ahorro justifica la incertidumbre. Cuando la tasa completa se acerca al techo, una alternativa fija puede ser más segura.

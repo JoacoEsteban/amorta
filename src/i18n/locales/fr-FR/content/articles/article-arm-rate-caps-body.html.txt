@@ -1,0 +1,58 @@
+<p>Un prêt à taux ajustable (ARM) modifie son taux d'intérêt périodiquement selon l'évolution du marché. Les plafonds de taux sont les limites contractuelles qui contrôlent ces variations, définissant de combien votre taux peut augmenter à chaque ajustement et sur la durée du prêt. Les comprendre vous indique le pire coût possible d'un ARM.</p>
+
+<h2>Structure d'un taux ARM</h2>
+<p>Un ARM comporte deux composantes : un indice et une marge. L'indice est une référence publiée, comme le SOFR ou le rendement du bon du Trésor à un an. La marge est un pourcentage fixe fixé par votre prêteur. Votre taux entièrement indexé égale l'indice plus la marge. Quand l'indice bouge, votre taux bouge pareillement, sauf si un plafond limite le changement.</p>
+<p>Par exemple, un ARM 5/1 avec indice SOFR à 3,25 % et marge de 2,75 % a un taux indexé de 6,00 %. Si le SOFR monte à 4,50 %, le taux serait à 7,25 %, mais seulement si les plafonds le permettent.</p>
+
+<h2>Les trois types de plafonds</h2>
+<p>Chaque contrat ARM spécifie trois valeurs, conventionnellement 2/2/5 :</p>
+<ul>
+<li><strong>Plafond initial :</strong> Limite la variation au premier ajustement. Dans un ARM 2/2/5, le premier ajustement ne peut pas dépasser 2 points de pourcentage.</li>
+<li><strong>Plafond périodique :</strong> Limite chaque ajustement suivant. Dans le même exemple, chaque ajustement annuel se limite à 2 points.</li>
+<li><strong>Plafond à vie :</strong> Limite l'augmentation totale. Un plafond de 5 signifie que le taux ne dépasse jamais votre taux initial plus 5 points.</li>
+</ul>
+<p>Ces protections sont standardisées. Le Consumer Financial Protection Bureau exige que les ARM divulguent leur structure avant la conclusion.</p>
+
+<h2>Exemple chiffré</h2>
+<p>Considérez un prêt de 320 000 € en ARM 5/1 avec taux initial de 5,85 % et plafonds 2/2/5. L'indice est le Trésor à un an et la marge est de 2,6 %.</p>
+<p>Pendant cinq ans, le taux reste à 5,85 %. Votre mensualité (amortissement français sur 30 ans) :</p>
+<p>Taux mensuel = (1 + 0,0585)&sup(1/12) − 1 &asymp; 0,00475.</p>
+<p>Mensualité = 320 000 € &times; [0,00475 / (1 − (1 + 0,00475)&sup(-360))] &asymp; 1 888 €.</p>
+<p>Au 5e année, l'indice atteint 5,50 %. Le taux complet serait de 8,10 %. Mais le plafond initial de 2 % limite le taux à 7,85 %.</p>
+<p>Recalcul avec 25 ans restants :</p>
+<p>Taux mensuel = (1 + 0,0785)&sup(1/12) − 1 &asymp; 0,00632. Capital restant &asymp; 298 700 €.</p>
+<p>Nouvelle mensualité = 298 700 € &times; [0,00632 / (1 − (1 + 0,00632)&sup(-300))] &asymp; 2 230 €.</p>
+<p>La mensualité augmente de 342 € (18,1 %) bien que le taux complet aurait été plus élevé. Sans le plafond, à 8,10 % elle aurait atteint près de 2 254 €.</p>
+
+<h2>Ajustements suivants</h2>
+<p>Après le premier ajustement, le plafond périodique régit chaque changement. Si le taux complet atteignait 10,50 %, le plafond de 2 points le limite à 9,85 %.</p>
+<p>Le plafond à vie est la frontière ultime. Avec un plafond de 5 sur 5,85 %, le maximum est 10,85 %. Si l'indice baisse, la plupart des ARM laissent le taux descendre librement.</p>
+
+<h2>Écart d'intérêts différés : un piège à connaître</h2>
+<p>Quand le taux complet dépasse le taux plafonné, la différence ne disparaît pas. Certains ARM accumulent le déficit d'intérêts et l'ajoutent au capital. C'est une forme d'<a href="negative-amortization">amortissement négatif</a> causée par les plafonds.</p>
+<p>Par exemple, si le taux complet est de 11,00 % mais que le plafond le garde à 10,85 %, l'écart de 0,15 % représente environ 450 € d'intérêts impayés sur 300 000 €. Le plafond protège aujourd'hui mais peut élever le coût total.</p>
+
+<h2>ARM versus prêt à taux fixe</h2>
+<p>Un prêt fixe n'a pas de plafonds car le taux ne change jamais. L'ARM démarre avec un taux inférieur, mais l'incertitude commence à la fin de la période fixe. En avril 2026, le taux fixe à 30 ans moyen est d'environ 6,30 % selon <a href="https://fred.stlouisfed.org/series/MORTGAGE30US" target="_blank" rel="noopener">FRED</a>, tandis qu'un ARM 5/1 pourrait débuter vers 5,85 %.</p>
+<p>Un plafond serré (1/1/3) limite l'exposition mais a un taux initial plus élevé. Un plafond large (2/2/6) offre un taux moindre mais plus de volatilité. Lisez notre guide pour <a href="comparing-loan-offers">comparer les offres de prêt</a> efficacement.</p>
+
+<h2>Que vérifier avant de signer</h2>
+<p>Les prêteurs doivent illustrer le paiement maximal à chaque ajustement. Vérifiez aussi :</p>
+<ol>
+<li><strong>Période fixe :</strong> Un 5/1 fixe 5 ans, un 7/1 fixe 7 ans.</li>
+<li><strong>La marge :</strong> Entre 2,25 % et 3,50 %. Elle est fixe toute la durée.</li>
+<li><strong>L'indice :</strong> Le SOFR a remplacé le LIBOR. Différents indices évoluent différemment.</li>
+<li><strong>Le paiement maximum :</strong> Si cette mensualité est trop lourde, reconsidérez le prêt. Voyez les <a href="factors-affecting-mortgage-rates">facteurs des taux hypothécaires</a>.</li>
+</ol>
+
+<h2>Quand les plafonds ne protègent pas</h2>
+<ul>
+<li><strong>Ajustements répétés :</strong> Cinq ajustements avec 2 % de plafond périodique peuvent faire monter le taux de 10 points, doublant la mensualité.</li>
+<li><strong>Refinancement en taux hauts :</strong> Le nouveau prêt se valorise dans l'environnement élevé. Le plafond n'affecte pas le taux du marché.</li>
+<li><strong>Choc au premier ajustement :</strong> Dans notre exemple, un saut de 2 % a ajouté 342 € à une mensualité de 1 888 €.</li>
+<li><strong>Plancher de l'indice :</strong> La plupart des ARM ne descendent pas sous un minimum établi.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>Les plafonds d'un ARM définissent les limites : le plafond initial limite le premier ajustement, le périodique chaque changement suivant et le plafond à vie le taux maximum. Ils empêchent les pics extrêmes mais n'éliminent pas le risque.</p>
+<p>Modélisez la trajectoire de paiement maximale avant de choisir un ARM. Utilisez Amorta pour calculer votre mensualité dans chaque scénario : les chiffres diront si l'économie initiale justifie l'incertitude future. Quand le taux complet approche du plafond, un taux fixe peut être plus sûr.

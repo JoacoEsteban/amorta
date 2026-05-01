@@ -1,0 +1,60 @@
+<p>An adjustable-rate mortgage (ARM) changes its interest rate periodically as markets move. Rate caps are the contractual limits that control those changes, defining the maximum amount your rate can rise at each adjustment and over the life of the loan. Understanding caps tells you the worst-case cost of an ARM.</p>
+
+<h2>How an ARM rate is structured</h2>
+<p>An ARM has two components: an index and a margin. The index is a published benchmark rate such as SOFR (Secured Overnight Financing Rate) or the one-year Treasury yield. The margin is a fixed percentage set by your lender when you originate the loan. Your fully indexed rate equals index plus margin. When the index moves, your rate moves by the same amount, unless a cap limits the change.</p>
+<p>For example, a lender might offer a 5/1 ARM with a SOFR index and a 2.75% margin. If SOFR is 3.25%, your fully indexed rate is 6.00%. If SOFR rises to 4.50%, your fully indexed rate would be 7.25% — but only if the caps allow it.</p>
+
+<h2>The three types of rate caps</h2>
+<p>Every ARM contract specifies three cap values, conventionally written as a sequence like 2/2/5:</p>
+<ul>
+<li><strong>Initial cap:</strong> Limits how much the rate can change at the first adjustment. For a 2/2/5 ARM, the first adjustment cannot increase the rate by more than 2 percentage points.</li>
+<li><strong>Periodic cap:</strong> Limits how much the rate can change at each subsequent adjustment. In the same 2/2/5 example, every annual adjustment after the first is capped at 2 percentage points up or down.</li>
+<li><strong>Lifetime cap:</strong> Limits the total increase over the life of the loan. A lifetime cap of 5 means the rate can never exceed your initial rate plus 5 percentage points, regardless of how high the index climbs.</li>
+</ul>
+<p>These protections are standardized and typically required by regulators. The Consumer Financial Protection Bureau notes that ARMs must disclose their cap structure clearly before closing.</p>
+
+<h2>A worked example with real numbers</h2>
+<p>Consider a £320,000 loan structured as a 5/1 ARM with a 5.85% initial rate and a 2/2/5 cap structure. The index is the one-year Treasury yield and the margin is 2.6%. At origination, the fully indexed rate is 5.85%, meaning the index was approximately 3.25%.</p>
+<p>For the first five years, the rate stays at 5.85%. Your monthly payment (using the French amortization method over 30 years) is calculated as follows:</p>
+<p>Monthly periodic rate = (1 + 0.0585)&sup(1/12) − 1 &asymp; 0.00475 &asymp; 0.475%.</p>
+<p>Monthly payment = £320,000 &times; [0.00475 / (1 − (1 + 0.00475)&sup(-360))] &asymp; $1,888.</p>
+<p>Now suppose that at year 5, the Treasury index has risen to 5.50%. Your fully indexed rate would be 5.50% + 2.6% = 8.10% — a jump of 2.25 percentage points from your starting rate. But the initial cap is 2%, so your rate adjusts to 7.85%, not 8.10%. The capped rate becomes 5.85% + 2.00% = 7.85%.</p>
+<p>Recalculating the payment at 7.85% with 25 years remaining:</p>
+<p>Monthly periodic rate = (1 + 0.0785)&sup(1/12) − 1 &asymp; 0.00632.</p>
+<p>Remaining balance after 5 years &asymp; £298,700.</p>
+<p>New monthly payment = £298,700 &times; [0.00632 / (1 − (1 + 0.00632)&sup(-300))] &asymp; $2,230.</p>
+<p>Your monthly payment rises by approximately £342 — an 18.1% increase — even though the fully indexed rate would have gone higher. Without the initial cap, the rate would have reached 8.10%, producing a payment closer to £2,254.</p>
+
+<h2>What happens at subsequent adjustments</h2>
+<p>After the first adjustment, the periodic cap governs each yearly change. Continuing our example, if the index keeps climbing and the fully indexed rate would reach 10.50% at the next adjustment, the periodic cap limits the increase to 2 percentage points, bringing the rate from 7.85% to at most 9.85%.</p>
+<p>The lifetime cap is the final boundary. With a lifetime cap of 5, the maximum rate on our 5.85% starting rate is 10.85%. Once the rate reaches that ceiling, further index increases cannot push it higher. If the index falls, most ARM contracts allow the rate to drop freely — caps typically restrict upward movement only.</p>
+
+<h2>The non-obvious insight: caps can create a deferred interest gap</h2>
+<p>When the fully indexed rate exceeds the capped rate, the difference does not disappear. Some ARM contracts accumulate the capped interest shortfall and add it to the principal balance, meaning your loan can grow even while you make regular payments. This is a form of <a href="negative-amortization">negative amortization</a> triggered by rate caps rather than contractually low payments.</p>
+<p>For example, if the fully indexed rate is 11.00% but the lifetime cap holds your rate at 10.85%, the 0.15% gap represents about £450 in unpaid interest on a £300,000 balance. That amount gets added to the principal, increasing the balance on which future interest is calculated. The cap shields your payment today but can raise total cost over the loan life.</p>
+
+<h2>ARM caps versus fixed-rate mortgages</h2>
+<p>A fixed-rate mortgage has no cap structure because the rate never changes. The tradeoff is straightforward: the initial ARM rate is typically lower than a comparable fixed rate, providing a window of cheaper payments, but uncertainty begins the moment the adjustment period starts. As of April 2026, the average 30-year fixed rate is approximately 6.30% according to data from <a href="https://fred.stlouisfed.org/series/MORTGAGE30US" target="_blank" rel="noopener">FRED</a>, while a 5/1 ARM might start near 5.85% or lower. The spread represents the market's pricing of rate risk.</p>
+<p>The cap structure determines how much of that risk transfers to you. A tight cap (e.g., 1/1/3) limits your exposure but often comes with a higher initial rate. A wider cap (e.g., 2/2/6) may offer a lower initial rate but greater payment volatility at each adjustment. The choice depends partly on your expected holding period and partly on comfort with uncertainty, topics covered in <a href="comparing-loan-offers">comparing loan offers effectively</a>.</p>
+
+<h2>How to read the cap disclosure before signing</h2>
+<p>Lenders must provide a clear illustration of the maximum possible payment at each adjustment over the life of the ARM. That illustration uses the cap structure and assumes the maximum allowed increase at every adjustment. You should review it carefully alongside three other items:</p>
+<ol>
+<li><strong>The initial fixed period:</strong> A 5/1 ARM fixes for five years. A 7/1 ARM fixes for seven. Longer fixed periods reduce near-term uncertainty but may carry higher initial rates.</li>
+<li><strong>The margin value:</strong> A lower margin means a lower fully indexed rate when the index is the same. Margins typically range from 2.25% to 3.50% depending on creditworthiness. The margin is fixed for the life of the loan, so it is a critical comparison point.</li>
+<li><strong>The index selection:</strong> SOFR has largely replaced LIBOR. Different indexes can move differently, meaning two ARMs with identical cap structures and margins may produce different actual rates over time.</li>
+<li><strong>The maximum payment:</strong> Look at the highest possible payment disclosed in the ARM illustration. If that number would strain your budget, the loan may not be suitable regardless of the attractive initial payment. See our guide on <a href="factors-affecting-mortgage-rates">what drives mortgage rates</a> to assess whether the index is likely to continue rising.</li>
+</ol>
+
+<h2>When caps do not protect you</h2>
+<p>Caps limit rate increases but do not eliminate them. Several situations leave borrowers exposed despite caps:</p>
+<ul>
+<li><strong>Rate increases hit the cap repeatedly:</strong> Over five adjustments with a 2% periodic cap, your rate can rise by 10 percentage points — potentially reaching the lifetime cap and a payment double or more what you started with.</li>
+<li><strong>You sell or refinance while rates are high:</strong> If the index has risen significantly and you need to refinance your ARM into a fixed-rate product, the new loan will price off the elevated rate environment. The cap limited your payments up to that point, but it does not affect the market rate for a new loan. This is worth understanding if you are evaluating <a href="loan-term-comparison">loan term tradeoffs</a>.</li>
+<li><strong>Payment shock at the first adjustment:</strong> Even a 2% initial cap can produce a substantial payment increase. In our example above, a 2% jump added roughly £342 per month to a £1,888 payment.</li>
+<li><strong>Index-floor provisions:</strong> Most ARMs cannot go below a stated floor. If the index falls to zero or negative rates, your payment may still be based on a minimum rate higher than you expect.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>ARM rate caps define the boundaries of uncertainty in an adjustable-rate mortgage. The initial cap limits the first adjustment, the periodic cap controls each subsequent change, and the lifetime cap sets the maximum rate you can ever be charged. They work together to prevent sudden or extreme rate spikes, but they do not eliminate the risk of rising payments over time.</p>
+<p>The key takeaway is to model the maximum-allowed payment path before choosing an ARM. Use Amorta to calculate your payment at each capped rate scenario — the numbers will show whether the initial savings justify the eventual uncertainty. When the fully indexed rate approaches the lifetime ceiling, a fixed-rate alternative may be safer.

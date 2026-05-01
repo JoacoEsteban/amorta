@@ -22,6 +22,7 @@ import articleLoanGracePeriodBody from './content/articles/article-loan-grace-pe
 import articleLoanPayoffStatementBody from './content/articles/article-loan-payoff-statement-body.html.txt' with { type: 'text' }
 import articleUnderstandingLtvAndPmiBody from './content/articles/article-understanding-ltv-and-pmi-body.html.txt' with { type: 'text' }
 import articleMortgageDiscountPointsBody from './content/articles/article-mortgage-discount-points-body.html.txt' with { type: 'text' }
+import articleArmRateCapsBody from './content/articles/article-arm-rate-caps-body.html.txt' with { type: 'text' }
 
 export const frFRMessages = {
   sharedResult: 'Résultat partagé',
@@ -454,6 +455,14 @@ export const frFRMessages = {
   articleMortgageDiscountPointsSeoTitle: 'Que sont les points de réduction hypothécaire ? | Amorta',
   articleMortgageDiscountPointsSeoDescription:
     "Découvrez les points de réduction hypothécaire, comment ils abaissent votre taux, comment calculer le point mort et quand l'achat de points est financièrement pertinent.",
+  articleArmRateCapsTitle: 'Plafonds de taux ARM : comment les prêts ajustables limitent votre risque',
+  articleArmRateCapsDescription:
+    'Découvrez le fonctionnement des plafonds de taux dans les prêts hypothécaires à taux ajustable, la structure 2/2/5 et pourquoi les plafonds peuvent créer des pièges d\'intérêts différés.',
+  articleArmRateCapsDate: '1 mai 2026',
+  articleArmRateCapsBody,
+  articleArmRateCapsSeoTitle: 'Plafonds de taux ARM : prêts ajustables et limites de risque | Amorta',
+  articleArmRateCapsSeoDescription:
+    'Comprenez comment fonctionnent les plafonds de taux dans les hypothèques ajustables, les trois types de plafond et pourquoi l\'écart d\'intérêts différés compte avant de signer.',
   consentPrivacyPolicyLabel: 'Politique de confidentialité',
   consentTermsLabel: 'Conditions générales',
   consentAcceptAll: 'Tout accepter',

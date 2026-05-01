@@ -170,6 +170,14 @@ export const ARTICLES: Article[] = [
     bodyKey: 'articleBiweeklyVsMonthlyPaymentsBody',
     date: new Date('2026-03-31'),
   },
+  {
+    slug: 'arm-rate-caps',
+    titleKey: 'articleArmRateCapsTitle',
+    descriptionKey: 'articleArmRateCapsDescription',
+    dateKey: 'articleArmRateCapsDate',
+    bodyKey: 'articleArmRateCapsBody',
+    date: new Date('2026-05-01'),
+  },
 ].sort((a, b) => b.date.getTime() - a.date.getTime())
 
 export const getArticleBySlug = (slug: string): Article | undefined =>
@@ -275,6 +283,11 @@ export const RELATED_ARTICLE_SLUGS: Record<string, readonly string[]> = {
     'loan-origination-fee',
     'comparing-loan-offers',
     'extra-payments',
+  ],
+  'arm-rate-caps': [
+    'negative-amortization',
+    'comparing-loan-offers',
+    'factors-affecting-mortgage-rates',
   ],
 }
 

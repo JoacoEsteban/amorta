@@ -22,6 +22,7 @@ import articleLoanGracePeriodBody from './content/articles/article-loan-grace-pe
 import articleLoanPayoffStatementBody from './content/articles/article-loan-payoff-statement-body.html.txt' with { type: 'text' }
 import articleUnderstandingLtvAndPmiBody from './content/articles/article-understanding-ltv-and-pmi-body.html.txt' with { type: 'text' }
 import articleMortgageDiscountPointsBody from './content/articles/article-mortgage-discount-points-body.html.txt' with { type: 'text' }
+import articleArmRateCapsBody from './content/articles/article-arm-rate-caps-body.html.txt' with { type: 'text' }
 
 export const enUSMessages = {
   sharedResult: 'Shared Result',
@@ -439,6 +440,14 @@ export const enUSMessages = {
   articleMortgageDiscountPointsSeoTitle: 'What Are Mortgage Discount Points? | Amorta',
   articleMortgageDiscountPointsSeoDescription:
     'Learn what mortgage discount points are, how they lower your rate, how to calculate break-even, and when buying points makes financial sense.',
+  articleArmRateCapsTitle: 'ARM Rate Caps: How Adjustable-Rate Mortgages Limit Your Risk',
+  articleArmRateCapsDescription:
+    'Learn how rate caps work in adjustable-rate mortgages, what the 2/2/5 structure means, and why caps can create deferred interest traps.',
+  articleArmRateCapsDate: 'May 1, 2026',
+  articleArmRateCapsBody,
+  articleArmRateCapsSeoTitle: 'ARM Rate Caps: How Adjustable-Rate Mortgages Limit Your Risk | Amorta',
+  articleArmRateCapsSeoDescription:
+    'Learn how rate caps work in adjustable-rate mortgages, the three types of caps, and why deferred interest traps matter before signing an ARM.',
   consentPrivacyPolicyLabel: 'Privacy Policy',
   consentTermsLabel: 'Terms & Conditions',
   consentAcceptAll: 'Accept all',

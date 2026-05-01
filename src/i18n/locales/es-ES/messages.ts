@@ -22,6 +22,7 @@ import articleLoanGracePeriodBody from './content/articles/article-loan-grace-pe
 import articleLoanPayoffStatementBody from './content/articles/article-loan-payoff-statement-body.html.txt' with { type: 'text' }
 import articleUnderstandingLtvAndPmiBody from './content/articles/article-understanding-ltv-and-pmi-body.html.txt' with { type: 'text' }
 import articleMortgageDiscountPointsBody from './content/articles/article-mortgage-discount-points-body.html.txt' with { type: 'text' }
+import articleArmRateCapsBody from './content/articles/article-arm-rate-caps-body.html.txt' with { type: 'text' }
 
 export const esESMessages = {
   sharedResult: 'Resultado Compartido',
@@ -455,6 +456,14 @@ export const esESMessages = {
   articleMortgageDiscountPointsSeoTitle: '¿Qué son los puntos de descuento hipotecario? | Amorta',
   articleMortgageDiscountPointsSeoDescription:
     'Aprende qué son los puntos de descuento hipotecario, cómo reducen tu tipo, cómo calcular el punto de equilibrio y cuándo comprar puntos tiene sentido financiero.',
+  articleArmRateCapsTitle: 'Topes de tasa en hipotecas ARM: cómo los límites protegen tu pago',
+  articleArmRateCapsDescription:
+    'Descubre cómo funcionan los topes de tasa en las hipotecas de tipo ajustable, qué significa la estructura 2/2/5 y por qué los topes pueden crear trampas de intereses diferidos.',
+  articleArmRateCapsDate: '1 de mayo de 2026',
+  articleArmRateCapsBody,
+  articleArmRateCapsSeoTitle: 'Topes de tasa en hipotecas ARM | Amorta',
+  articleArmRateCapsSeoDescription:
+    'Entiende cómo funcionan los topes de tasa en las hipotecas ajustables, los tres tipos de tope y por qué la brecha de intereses diferidos importa antes de firmar.',
   consentPrivacyPolicyLabel: 'Política de privacidad',
   consentTermsLabel: 'Términos y condiciones',
   consentAcceptAll: 'Aceptar todo',
