@@ -23,6 +23,7 @@ import articleLoanPayoffStatementBody from './content/articles/article-loan-payo
 import articleUnderstandingLtvAndPmiBody from './content/articles/article-understanding-ltv-and-pmi-body.html.txt' with { type: 'text' }
 import articleMortgageDiscountPointsBody from './content/articles/article-mortgage-discount-points-body.html.txt' with { type: 'text' }
 import articleArmRateCapsBody from './content/articles/article-arm-rate-caps-body.html.txt' with { type: 'text' }
+import articleMortgageEscrowAccountBody from './content/articles/article-mortgage-escrow-account-body.html.txt' with { type: 'text' }
 
 export const frFRMessages = {
   sharedResult: 'Résultat partagé',
@@ -463,6 +464,14 @@ export const frFRMessages = {
   articleArmRateCapsSeoTitle: 'Plafonds de taux ARM : prêts ajustables et limites de risque | Amorta',
   articleArmRateCapsSeoDescription:
     'Comprenez comment fonctionnent les plafonds de taux dans les hypothèques ajustables, les trois types de plafond et pourquoi l\'écart d\'intérêts différés compte avant de signer.',
+  articleMortgageEscrowAccountTitle: "Qu'est-ce qu'un compte séquestre hypothécaire ?",
+  articleMortgageEscrowAccountDescription:
+    "Découvrez comment fonctionne un compte séquestre hypothécaire, comment votre mensualité totale est calculée et pourquoi les taxes et assurances peuvent modifier votre paiement sans affecter votre solde.",
+  articleMortgageEscrowAccountDate: '4 mai 2026',
+  articleMortgageEscrowAccountBody,
+  articleMortgageEscrowAccountSeoTitle: "Compte séquestre hypothécaire | Amorta",
+  articleMortgageEscrowAccountSeoDescription:
+    "Découvrez le fonctionnement des comptes séquestres hypothécaires, comment les taxes et assurances augmentent votre mensualité et ce que permet la règle de réserve RESPA.",
   consentPrivacyPolicyLabel: 'Politique de confidentialité',
   consentTermsLabel: 'Conditions générales',
   consentAcceptAll: 'Tout accepter',

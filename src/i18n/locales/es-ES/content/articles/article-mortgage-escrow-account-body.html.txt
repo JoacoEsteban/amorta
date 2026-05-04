@@ -1,0 +1,79 @@
+<p>Una cuenta de depósito de garantía hipotecaria (cuenta escrow) es una cuenta separada que su entidad gestiona junto a su préstamo, utilizada para recaudar y conservar fondos para impuestos sobre bienes inmuebles y seguros del hogar. Cada mes, una parte de su pago se deposita en esta cuenta en lugar de destinarse al capital o a los intereses. Cuando llega la fecha de pago del impuesto o la prima del seguro, su administrador paga directamente desde la cuenta escrow. El propósito es proteger la garantía del prestamista — una propiedad sin seguro o con impuestos impagados pone en riesgo la hipoteca — al tiempo que ayuda al prestatario a evitar grandes pagos puntuales.</p>
+<p>La cuenta escrow es especialmente relevante porque afecta a su pago mensual total más allá del capital y los intereses. Un préstamo de 200.000 € al 4,50% podría tener un pago de capital e intereses de aproximadamente 1.014 € al mes, pero con la cuenta escrow incluida el pago total podría superar los 1.500 €. <a href="comparing-loan-offers">Comparar ofertas de préstamo de forma eficaz</a> requiere entender el pago escrow completo, no solo el importe hipotecario nominal.</p>
+
+<h2>Cómo funciona una cuenta escrow en la práctica</h2>
+<p>En el cierre, su entidad realiza un análisis de la cuenta escrow. Estima los impuestos anuales y los costes del seguro para el próximo año, divide entre 12 para obtener el depósito mensual, y puede además recaudar un colchón en la liquidación para asegurar que la cuenta nunca quede en negativo.</p>
+<p>Cada pago mensual se divide en tres o cuatro componentes:</p>
+<ul>
+<li><strong>Capital:</strong> Reduce el saldo pendiente del préstamo.</li>
+<li><strong>Intereses:</strong> El coste de pedir prestado, calculado sobre el saldo restante. Consulte <a href="understanding-amortization-schedule">cómo funciona el cuadro de amortización</a> para ver el desglose.</li>
+<li><strong>Escrow para impuestos:</strong> Depósito mensual hacia su impuesto anual sobre bienes inmuebles.</li>
+<li><strong>Escrow para seguros:</strong> Depósito mensual hacia su prima anual de seguro del hogar.</li>
+</ul>
+<p>La parte de escrow no tiene efecto sobre el saldo del préstamo ni sobre el coste de los intereses. Es simplemente dinero depositado en su nombre. Si su pago de capital e intereses permanece fijo en una hipoteca a 20 años, su pago mensual total puede seguir subiendo cuando los impuestos o seguros aumenten — porque la parte de escrow se ajusta en consecuencia.</p>
+
+<h2>Un ejemplo numérico trabajado con cifras reales</h2>
+<p>Asuma una hipoteca de 200.000 € al 4,50% tipo anual efectivo (TAE) a 20 años sobre una propiedad donde el tipo impositivo efectivo sobre bienes inmuebles es del 0,85% y el seguro anual del hogar es de 900 €.</p>
+<p>El cálculo del impuesto sería:</p>
+
+<pre><code>
+200.000 € × 0,85% = 1.700 € al año
+1.700 € ÷ 12 = 141,67 € al mes
+</code></pre>
+
+<p>El depósito del seguro es directo:</p>
+
+<pre><code>
+900 € ÷ 12 = 75,00 € al mes
+</code></pre>
+
+<p>El pago de capital e intereses al 4,50% TAE resulta en aproximadamente 1.266,71 € mensuales. Sumando los componentes escrow:</p>
+
+<pre><code>
+Capital e intereses:      1.266,71 €
+Escrow — impuestos:          141,67 €
+Escrow — seguro:              75,00 €
+─────────────────────────────────────
+Pago mensual total:       1.483,38 €
+</code></pre>
+
+<p>De los 1.483,38 € que paga cada mes, 216,67 € corresponden a escrow — aproximadamente el 17% del pago de capital e intereses — que ni reducen su deuda ni generan intereses para el prestamista. Es una parte significativa del coste total de su vivienda.</p>
+
+<h2>La regla del colchón: lo que permite la ley</h2>
+<p>En Estados Unidos, la Real Estate Settlement Procedures Act (RESPA) limita la cantidad adicional que su administrador puede exigir en escrow. Según el artículo <a href="https://www.consumerfinance.gov/rules-policy/regulations/1024/17" target="_blank" rel="noopener">12 CFR § 1024.17</a>, el colchón máximo es una sexta parte del total anual estimado de desembolsos de la cuenta escrow — aproximadamente dos mensualidades.</p>
+<p>En nuestro ejemplo, el total anual de desembolsos escrow sería 1.700 € + 900 € = 2.600 €. El colchón máximo permitido es:</p>
+
+<pre><code>
+2.600 € ÷ 6 = 433,33 €
+</code></pre>
+
+<p>Este colchón se recauda normalmente en el cierre o se añade al primer depósito mensual. Garantiza que si su factura de impuestos llega antes de lo previsto o las primas del seguro suben a mitad de año, el administrador puede cubrir el pago sin que la cuenta quede en descubierto. La conclusión no evidente es que el colchón <em>no</em> es una comisión — es su dinero, guardado como reserva, y cualquier sobrante superior a 50 € al final del año escrow debe devolvérsele según la normativa RESPA.</p>
+
+<h2>Análisis anual de escrow: déficits y sobrantes</h2>
+<p>Al menos una vez al año, su administrador debe realizar un análisis de la cuenta escrow para comparar los desembolsos reales con las estimaciones utilizadas para calcular su depósito mensual. Tres resultados son posibles:</p>
+<ul>
+<li><strong>Sin cambio:</strong> Las estimaciones coincidieron con las facturas reales. Su depósito mensual escrow se mantiene.</li>
+<li><strong>Déficit:</strong> Los impuestos o seguros fueron más altos de lo estimado. Si el déficit supera un mes de pago escrow, el administrador puede exigirle que lo pague en al menos 12 meses además del depósito regular. Esto eleva su pago hipotecario aunque la parte de capital e intereses no cambie.</li>
+<li><strong>Sobrante:</strong> La cuenta tenía más fondos de los necesarios. Si el sobrante supera 50 €, el administrador debe devolverle el exceso.</li>
+</ul>
+<p>Las revisiones fiscales son la causa más frecuente de déficits en escrow. Si el valor catastral de su vivienda sube tras una reforma o un mercado activo eleva las valoraciones locales, la nueva factura fiscal puede ser significativamente superior a la cifra del año anterior estimada por el administrador. Las primas del seguro del hogar también han subido debido al aumento de los costes de reconstrucción y los siniestros por fenómenos climáticos.</p>
+
+<h2>Cuándo es obligatorio el escrow y cuándo puede optar por no tenerlo</h2>
+<p>Las cuentas escrow no son opcionales en varias situaciones habituales:</p>
+<ul>
+<li><strong>Préstamos FHA y USDA:</strong> Estos programas respaldados por el gobierno exigen escrow durante toda la vida del préstamo.</li>
+<li><strong>Préstamos convencionales con menos del 20% de entrada:</strong> La mayoría de los prestamistas exigen escrow cuando su capital es inferior al 20%. Las directrices de Fannie Mae recomiendan encarecidamente el escrow para prestatarios con menor capital.</li>
+<li><strong>Préstamos hipotecarios de precio elevado:</strong> Según las enmiendas de la Regulación Z del CFPB, los préstamos hipotecarios de precio elevado de primer gravamen requieren escrow obligatorio durante al menos cinco años.</li>
+<li><strong>Escrrow del seguro hipotecario (PMI):</strong> Si su préstamo requiere seguro hipotecario privado, ese depósito escrow no puede renunciarse.</li>
+</ul>
+<p>Para préstamos convencionales con al menos un 20% de capital en la originación, muchos prestamistas permiten rechazar el escrow, a veces con una comisión. Entender las <a href="understanding-ltv-and-pmi">relaciones préstamo-valor y los requisitos del PMI</a> puede ayudarle a planificar ese umbral.</p>
+
+<h2>Lo que escrow no hace: ideas erróneas comunes</h2>
+<ul>
+<li><strong>El escrow no genera intereses.</strong> Los fondos en su cuenta escrow normalmente no generan intereses para el prestatario. El dinero permanece inactivo hasta que se desembolsa.</li>
+<li><strong>El escrow no reduce sus impuestos ni su seguro.</strong> Su administrador simplemente recauda y paga sus obligaciones. Una reclamación fiscal, comparar seguros o una exención es responsabilidad suya. Reducir cualquiera de las facturas baja su depósito escrow y, por tanto, su pago mensual total, como se explica en las guías sobre <a href="factors-affecting-mortgage-rates">factores que afectan a los costes hipotecarios</a>.</li>
+<li><strong>Los cambios en el escrow no afectan la fecha de liquidación del préstamo.</strong> Incluso si su pago mensual sube por un aumento fiscal, el importe adicional va a la reserva escrow, no al capital. Su fecha de pago final no cambia a menos que destine <a href="extra-payments">pagos extraordinarios al capital</a> deliberadamente.</li>
+</ul>
+
+<h2>Conclusión</h2>
+<p>Una cuenta de depósito de garantía hipotecaria añade un componente significativo a su pago mensual total que no afecta al plazo de amortización pero protege tanto a usted como al prestamista frente a impuestos o impagos de seguros. En una hipoteca de 200.000 €, el escrow puede añadir fácilmente 200 € o más al mes además del capital e intereses — y el importe se ajusta cada año cuando cambian los impuestos o seguros. Por ley, su administrador no puede retener más de un colchón de dos meses, y cualquier sobrante por encima de un umbral debe devolverse. Comprender cómo funciona el escrow le ayuda a anticipar cambios en los pagos y tomar decisiones informadas sobre si optar por esta figura o no cuando sea posible. Amorta le permite modelar su cuadro de pagos completo para ver exactamente cómo encajan los depósitos escrow junto con su saldo amortizado a lo largo del tiempo.</p>

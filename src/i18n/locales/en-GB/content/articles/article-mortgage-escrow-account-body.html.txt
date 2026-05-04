@@ -1,0 +1,80 @@
+<p>A mortgage escrow account is a separate account your lender manages alongside your loan, used to collect and hold funds for council tax equivalents and buildings insurance. Each month, a portion of your payment goes into this account instead of towards principal or interest. When the tax bill or insurance premium comes due, your servicer pays it directly from escrow. The purpose is to protect the lender's collateral — an uninsured or tax-delinquent property puts the mortgage at risk — whilst also helping borrowers avoid large lump-sum bills.</p>
+<p>Escrow is especially relevant because it affects your total monthly payment beyond just principal and interest. A £280,000 mortgage at 5.50% might have a principal-and-interest payment of roughly £1,600 per month, but with escrow included the actual payment you send to your servicer could exceed £2,000. <a href="comparing-loan-offers">Comparing loan offers effectively</a> requires understanding the full escrowed payment, not just the headline mortgage amount.</p>
+
+<h2>How an escrow account works in practice</h2>
+<p>At completion, your lender conducts an escrow account analysis. They estimate the annual property tax and insurance costs for the coming year, divide by 12 to get a monthly deposit, and may also collect a cushion at settlement to ensure the account never runs negative.</p>
+<p>Every monthly payment you make is split into three or four components:</p>
+<ul>
+<li><strong>Principal:</strong> Reduces your outstanding loan balance.</li>
+<li><strong>Interest:</strong> The cost of borrowing, calculated on the remaining balance. See <a href="understanding-amortization-schedule">how the amortisation schedule works</a> for the breakdown.</li>
+<li><strong>Escrow for taxes:</strong> Monthly deposit towards your annual property tax bill.</li>
+<li><strong>Escrow for insurance:</strong> Monthly deposit towards your annual buildings insurance premium.</li>
+</ul>
+<p>The escrow portion has no effect on your loan balance or interest cost. It is simply money held on your behalf. If your principal and interest payment stays fixed on a repayment mortgage, your total monthly payment can still rise when taxes or insurance increase — because the escrow portion adjusts accordingly.</p>
+
+<h2>A worked example with real figures</h2>
+<p>Assume a £280,000 mortgage at 5.50% effective annual rate over 25 years on a property where the effective council tax rate implies £3,200 per year and annual buildings insurance is £1,200.</p>
+<p>The tax deposit per month would be:</p>
+
+<pre><code>
+£3,200 ÷ 12 = £266.67 per month
+</code></pre>
+
+<p>The insurance deposit is straightforward:</p>
+
+<pre><code>
+£1,200 ÷ 12 = £100.00 per month
+</code></pre>
+
+<p>The principal-and-interest payment at 5.50% EAR works out to approximately £1,717.83. Adding escrow components:</p>
+
+<pre><code>
+Principal and interest:  £1,717.83
+Escrow — taxes:            £266.67
+Escrow — insurance:        £100.00
+────────────────────────────────
+Total monthly payment:   £2,084.50
+</code></pre>
+
+<p>Of the £2,084.50 you pay each month, £366.67 is escrow — or roughly 21% of the principal and interest payment — that neither reduces your debt nor accrues interest for the lender. It is a meaningful portion of your total housing cost.</p>
+
+<h2>The cushion rule: what the law allows</h2>
+<p>Escrow regulations in the United States limit how much extra money your servicer can require under the Real Estate Settlement Procedures Act (RESPA). Under the regulations, the maximum cushion is one-sixth of the estimated total annual escrow disbursements — roughly two months' worth.</p>
+<p>In our example, total annual escrow disbursements would be £3,200 + £1,200 = £4,400. The maximum cushion permitted is:</p>
+
+<pre><code>
+£4,400 ÷ 6 = £733.33
+</code></pre>
+
+<p>This cushion is typically collected at completion or added to the first monthly deposit. It ensures that if your tax bill arrives slightly earlier than anticipated or insurance premiums increase mid-year, the servicer can cover the payment without the account going negative. The non-obvious insight here is that the cushion is <em>not</em> a fee — it is your money, held in reserve, and any surplus above a small threshold at the end of the escrow year must be refunded to you.</p>
+
+<h2>Annual escrow analysis: shortages and surpluses</h2>
+<p>At least once per year, your servicer must perform an escrow account analysis to compare actual disbursements against the estimates used to calculate your monthly deposit. Three outcomes are possible:</p>
+<ul>
+<li><strong>No change:</strong> Estimates matched actual bills. Your monthly escrow deposit stays the same.</li>
+<li><strong>Shortage:</strong> Taxes or insurance were higher than estimated. If the shortage exceeds one month of your escrow payment, the servicer may require you to repay it over at least 12 months in addition to your regular deposit. This raises your total monthly mortgage payment even though the principal-and-interest portion is unchanged.</li>
+<li><strong>Surplus:</strong> The account held more than needed. If the surplus exceeds the permitted threshold, the servicer must refund the excess to you.</li>
+</ul>
+<p>Property tax reassessments are the most common cause of escrow shortages. If your home's assessed value increases after a renovation or a hot market raises local assessments, the new tax bill may be significantly higher than the prior year's figure the servicer estimated. Buildings insurance premiums have also been climbing due to increased rebuild costs and weather-related claims — which pushes escrow deposits upwards even for stable borrowers.</p>
+
+<h2>When escrow is required and when you can opt out</h2>
+<p>Escrow accounts are not optional in several common situations:</p>
+<ul>
+<li><strong>Government-backed loans:</strong> Certain programmes require escrow for the entire loan term.</li>
+<li><strong>Conventional loans with low deposits:</strong> Most lenders mandate escrow when your equity is below 20%. Lender guidelines strongly advocate escrow for borrowers with lower equity, though waivers are possible under certain written policies.</li>
+<li><strong>Higher-priced mortgage loans:</strong> Under regulatory rules, first-lien higher-priced mortgage loans require mandatory escrow for a minimum period.</li>
+<li><strong>Mortgage insurance escrow:</strong> If your loan requires mortgage insurance, the premium escrow cannot be waived regardless of your deposit amount.</li>
+</ul>
+<p>For conventional loans with 20% or more equity at origination, many lenders will allow you to decline escrow, sometimes for a fee. You would then pay property taxes and insurance directly. Understanding <a href="understanding-ltv-and-pmi">loan-to-value ratios and insurance requirements</a> can help you plan towards that threshold.</p>
+
+<h2>What escrow does not do: common misconceptions</h2>
+<p>Several important distinctions are worth noting:</p>
+<ul>
+<li><strong>Escrow is not interest-bearing.</strong> The funds in your escrow account do not typically earn interest for the borrower. The money sits idle until disbursed, which means you lose the opportunity cost of those funds compared to holding them in a savings account.</li>
+<li><strong>Escrow does not lower your taxes or insurance.</strong> Your servicer simply collects and pays your obligations. A property tax appeal, insurance shopping, or any exemption is your responsibility. Reducing either bill lowers your escrow deposit, which reduces your total monthly payment — a practical benefit discussed further in guides on <a href="factors-affecting-mortgage-rates">factors that affect overall mortgage costs</a>.</li>
+<li><strong>Escrow changes do not affect loan payoff timing.</strong> Even if your total monthly payment rises because of a tax increase, the extra amount goes into the escrow reserve, not towards principal. Your payoff date remains unchanged unless you deliberately direct <a href="extra-payments">extra payments towards principal</a>.</li>
+<li><strong>Advertised P&I rates often exclude escrow.</strong> When lenders quote a monthly payment, it is frequently principal and interest only. Always ask for the total payment to understand the true cash flow requirement.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>A mortgage escrow account adds a significant component to your total monthly payment that has no effect on loan payoff but protects both you and your lender from missed tax or insurance obligations. For a sizeable mortgage, escrow can easily add hundreds per month beyond principal and interest — and the amount adjusts every year when taxes or insurance change. By law, your servicer cannot hold more than a two-month cushion, and any surplus above a threshold must be refunded to you. Understanding how escrow works helps you anticipate payment changes, avoid surprises when tax bills rise, and make informed decisions about whether to opt in or out when the choice is available. Amorta lets you model your full payment schedule so you can see exactly how escrow deposits fit alongside your amortising balance over time.</p>

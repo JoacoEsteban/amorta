@@ -23,6 +23,7 @@ import articleLoanPayoffStatementBody from './content/articles/article-loan-payo
 import articleUnderstandingLtvAndPmiBody from './content/articles/article-understanding-ltv-and-pmi-body.html.txt' with { type: 'text' }
 import articleMortgageDiscountPointsBody from './content/articles/article-mortgage-discount-points-body.html.txt' with { type: 'text' }
 import articleArmRateCapsBody from './content/articles/article-arm-rate-caps-body.html.txt' with { type: 'text' }
+import articleMortgageEscrowAccountBody from './content/articles/article-mortgage-escrow-account-body.html.txt' with { type: 'text' }
 
 export const enGBMessages = {
   sharedResult: 'Shared Result',
@@ -448,6 +449,14 @@ export const enGBMessages = {
   articleArmRateCapsSeoTitle: 'ARM Rate Caps: How Adjustable-Rate Mortgages Limit Your Risk | Amorta',
   articleArmRateCapsSeoDescription:
     'Learn how rate caps work in adjustable-rate mortgages, the three types of caps, and why deferred interest traps matter before signing an ARM.',
+  articleMortgageEscrowAccountTitle: 'What Is a Mortgage Escrow Account?',
+  articleMortgageEscrowAccountDescription:
+    'Learn what a mortgage escrow account does, how your monthly payment is calculated, and why taxes and insurance can change your payment without affecting your loan balance.',
+  articleMortgageEscrowAccountDate: '4 May 2026',
+  articleMortgageEscrowAccountBody,
+  articleMortgageEscrowAccountSeoTitle: 'What Is a Mortgage Escrow Account? | Amorta',
+  articleMortgageEscrowAccountSeoDescription:
+    'Learn how mortgage escrow accounts work, how taxes and insurance raise your monthly payment, and what the RESPA cushion rule allows lenders to reserve.',
   consentPrivacyPolicyLabel: 'Privacy Policy',
   consentTermsLabel: 'Terms & Conditions',
   consentAcceptAll: 'Accept all',

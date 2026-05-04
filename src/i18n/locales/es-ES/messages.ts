@@ -23,6 +23,7 @@ import articleLoanPayoffStatementBody from './content/articles/article-loan-payo
 import articleUnderstandingLtvAndPmiBody from './content/articles/article-understanding-ltv-and-pmi-body.html.txt' with { type: 'text' }
 import articleMortgageDiscountPointsBody from './content/articles/article-mortgage-discount-points-body.html.txt' with { type: 'text' }
 import articleArmRateCapsBody from './content/articles/article-arm-rate-caps-body.html.txt' with { type: 'text' }
+import articleMortgageEscrowAccountBody from './content/articles/article-mortgage-escrow-account-body.html.txt' with { type: 'text' }
 
 export const esESMessages = {
   sharedResult: 'Resultado Compartido',
@@ -464,6 +465,14 @@ export const esESMessages = {
   articleArmRateCapsSeoTitle: 'Topes de tasa en hipotecas ARM | Amorta',
   articleArmRateCapsSeoDescription:
     'Entiende cómo funcionan los topes de tasa en las hipotecas ajustables, los tres tipos de tope y por qué la brecha de intereses diferidos importa antes de firmar.',
+  articleMortgageEscrowAccountTitle: '¿Qué es una Cuenta Escrow Hipotecaria?',
+  articleMortgageEscrowAccountDescription:
+    'Descubre cómo funciona una cuenta escrow hipotecaria, cómo se calcula tu pago mensual completo y por qué los impuestos y seguros cambian tu cuota sin afectar tu saldo.',
+  articleMortgageEscrowAccountDate: '4 de Mayo de 2026',
+  articleMortgageEscrowAccountBody,
+  articleMortgageEscrowAccountSeoTitle: 'Cuenta Escrow Hipotecaria | Amorta',
+  articleMortgageEscrowAccountSeoDescription:
+    'Aprende cómo funcionan las cuentas escrow hipotecarias, cómo los impuestos y seguros elevan tu pago mensual y qué permite la regla de reserva RESPA.',
   consentPrivacyPolicyLabel: 'Política de privacidad',
   consentTermsLabel: 'Términos y condiciones',
   consentAcceptAll: 'Aceptar todo',

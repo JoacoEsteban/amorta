@@ -1,0 +1,79 @@
+<p>Un compte séquestre hypothécaire (ou compte d'entiercement) est un compte séparé que votre prêteur gère parallèlement à votre prêt, utilisé pour collecter et conserver les fonds destinés aux taxes foncières et à l'assurance habitation. Chaque mois, une partie de votre paiement est versée sur ce compte au lieu d'être affectée au capital ou aux intérêts. Lorsque l'échéance fiscale ou la prime d'assurance arrive à terme, votre gestionnaire les paie directement depuis le compte séquestre. L'objectif est de protéger la garantie du prêteur — un bien non assuré ou avec des impayés fiscaux met l'hypothèque en péril — tout en aidant l'emprunteur à éviter de gros paiements ponctuels.</p>
+<p>Le compte séquestre est particulièrement important car il impacte votre mensualité totale au-delà du capital et des intérêts. Un prêt de 200 000 € à 4,50 % pourrait avoir une mensualité de capital et intérêts d'environ 1 266 €, mais avec le compte séquestre inclus, le paiement total pourrait dépasser 1 480 €. <a href="comparing-loan-offers">Comparer efficacement les offres de prêt</a> exige de comprendre le paiement séquestre complet, pas seulement le montant nominal du prêt.</p>
+
+<h2>Comment fonctionne un compte séquestre en pratique</h2>
+<p>Lors de la clôture, votre prêteur procède à une analyse du compte séquestre. Il estime les taxes annuelles et les coûts d'assurance pour l'année à venir, divise par 12 pour obtenir le dépôt mensuel, et peut également prélever une réserve à la liquidation pour garantir que le compte ne soit jamais à découvert.</p>
+<p>Chaque paiement mensuel se décompose en trois ou quatre composantes :</p>
+<ul>
+<li><strong>Capital :</strong> Réduit le solde restant du prêt.</li>
+<li><strong>Intérêts :</strong> Le coût du crédit, calculé sur le solde restant. Consultez <a href="understanding-amortization-schedule">le fonctionnement du tableau d'amortissement</a> pour le détail.</li>
+<li><strong>Séquestre pour les taxes :</strong> Dépôt mensuel pour votre taxe foncière annuelle.</li>
+<li><strong>Séquestre pour l'assurance :</strong> Dépôt mensuel pour votre prime d'assurance habitation annuelle.</li>
+</ul>
+<p>La partie séquestre n'a aucun effet sur le solde de votre prêt ni sur le coût des intérêts. C'est simplement de l'argent conservé en votre nom. Si votre paiement de capital et intérêts reste fixe sur un prêt de 20 ans, votre mensualité totale peut continuer d'augmenter lorsque les taxes ou les assurances augmentent — parce que la partie séquestre s'ajuste en conséquence.</p>
+
+<h2>Un exemple chiffré concret</h2>
+<p>Prenons un prêt hypothécaire de 200 000 € à un taux annuel effectif (TAEG) de 4,50 % sur 20 ans, sur un bien dont le taux effectif de taxe foncière est de 0,85 % et dont l'assurance habitation annuelle est de 900 €.</p>
+<p>Le calcul de la taxe serait :</p>
+
+<pre><code>
+200 000 € × 0,85 % = 1 700 € par an
+1 700 € ÷ 12 = 141,67 € par mois
+</code></pre>
+
+<p>Le dépôt d'assurance est simple :</p>
+
+<pre><code>
+900 € ÷ 12 = 75,00 € par mois
+</code></pre>
+
+<p>Le paiement de capital et intérêts au TAEG de 4,50 % s'élève à environ 1 266,71 € mensuels. En ajoutant les composantes séquestre :</p>
+
+<pre><code>
+Capital et intérêts :       1 266,71 €
+Séquestre — taxes :            141,67 €
+Séquestre — assurance :         75,00 €
+─────────────────────────────────────
+Mensualité totale :         1 483,38 €
+</code></pre>
+
+<p>Sur les 1 483,38 € que vous payez chaque mois, 216,67 € correspondent au séquestre — environ 17 % du paiement de capital et intérêts — qui ne réduisent ni votre dette ni ne génèrent d'intérêts pour le prêteur. C'est une part significative du coût total de votre logement.</p>
+
+<h2>La règle de la réserve : ce que permet la loi</h2>
+<p>Aux États-Unis, la loi Real Estate Settlement Procedures Act (RESPA) limite la quantité supplémentaire que votre gestionnaire peut exiger en séquestre. Selon le paragraphe <a href="https://www.consumerfinance.gov/rules-policy/regulations/1024/17" target="_blank" rel="noopener">12 CFR § 1024.17</a>, la réserve maximale est d'un sixième du total annuel estimé des débours du compte séquestre — soit environ deux mensuilités.</p>
+<p>Dans notre exemple, le total annuel des débours séquestre serait de 1 700 € + 900 € = 2 600 €. La réserve maximale autorisée est :</p>
+
+<pre><code>
+2 600 € ÷ 6 = 433,33 €
+</code></pre>
+
+<p>Cette réserve est généralement prélevée à la clôture ou ajoutée au premier dépôt mensuel. Elle garantit que si votre facture fiscale arrive plus tôt que prévu ou que les primes d'assurance augmentent en cours d'année, le gestionnaire peut couvrir le paiement sans que le compte ne soit à découvert. Le point non évident est que la réserve <em>n'est pas</em> une commission — c'est votre argent, gardé en réserve, et tout excédent supérieur à 50 € à la fin de l'année séquestre doit vous être remboursé conformément à la réglementation RESPA.</p>
+
+<h2>Analyse annuelle du séquestre : déficits et excédents</h2>
+<p>Au moins une fois par an, votre gestionnaire doit effectuer une analyse du compte séquestre pour comparer les débours réels aux estimations utilisées pour calculer votre dépôt mensuel. Trois résultats sont possibles :</p>
+<ul>
+<li><strong>Aucun changement :</strong> Les estimations correspondaient aux factures réelles. Votre dépôt mensuel séquestre reste identique.</li>
+<li><strong>Déficit :</strong> Les taxes ou assurances étaient plus élevées que prévu. Si le déficit dépasse un mois de paiement séquestre, le gestionnaire peut vous demander de le rembourser sur au moins 12 mois en plus de votre dépôt régulier. Cela augmente votre mensualité totale même si la partie capital et intérêts ne change pas.</li>
+<li><strong>Excédent :</strong> Le compte contenait plus de fonds que nécessaire. Si l'excédent dépasse 50 €, le gestionnaire doit vous restituer le surplus.</li>
+</ul>
+<p>Les réévaluations fiscales sont la cause la plus fréquente de déficits séquestre. Si la valeur de votre propriété augmente après une rénovation ou si un marché dynamique élève les évaluations locales, la nouvelle facture fiscale peut être nettement supérieure au chiffre de l'année précédente estimé par le gestionnaire. Les primes d'assurance habitation ont également augmenté en raison de la hausse des coûts de reconstruction et des sinistres climatiques.</p>
+
+<h2>Quand le séquestre est obligatoire et quand vous pouvez y renoncer</h2>
+<p>Les comptes séquestres ne sont pas facultatifs dans plusieurs situations courantes :</p>
+<ul>
+<li><strong>Prêts FHA et USDA :</strong> Ces programmes soutenus par le gouvernement exigent un compte séquestre pour toute la durée du prêt.</li>
+<li><strong>Prêts conventionnels avec moins de 20 % d'apport :</strong> La plupart des prêteurs imposent le séquestre lorsque votre capitalisation est inférieure à 20 %. Les directives de Fannie Mae recommandent fortement le séquestre pour les emprunteurs avec un capital plus faible.</li>
+<li><strong>Prêts hypothécaires à coût élevé :</strong> Selon les amendements de la Regulation Z du CFPB, les prêts hypothécaires à coût élevé de premier rang nécessitent un séquestre obligatoire pendant au moins cinq ans.</li>
+<li><strong>Séquestre d'assurance hypothécaire (PMI) :</strong> Si votre prêt nécessite une assurance hypothécaire privée, ce dépôt séquestre ne peut pas faire l'objet d'une renonciation.</li>
+</ul>
+<p>Pour les prêts conventionnels avec au moins 20 % de capitalisation à l'origine, de nombreux prêteurs permettent de refuser le séquestre, parfois moyennant des frais. Comprendre les <a href="understanding-ltv-and-pmi">ratios prêt-valeur et les exigences du PMI</a> peut vous aider à planifier cet objectif.</p>
+
+<h2>Ce que le séquestre ne fait pas : idées reçues fréquentes</h2>
+<ul>
+<li><strong>Le séquestre ne produit pas d'intérêts.</strong> Les fonds de votre compte séquestre ne génèrent généralement pas d'intérêts pour l'emprunteur. L'argent reste dormant jusqu'au débours.</li>
+<li><strong>Le séquestre ne réduit ni vos taxes ni votre assurance.</strong> Votre gestionnaire se contente de collecter et de payer vos obligations. Un recours fiscal, une comparaison d'assurances ou une exonération relève de votre responsabilité. Réduire l'une ou l'autre facture diminue votre dépôt séquestre et donc votre mensualité totale, comme expliqué dans les guides sur les <a href="factors-affecting-mortgage-rates">facteurs qui influencent les coûts hypothécaires</a>.</li>
+<li><strong>Les variations du séquestre n'affectent pas la date de remboursement du prêt.</strong> Même si votre mensualité augmente à cause d'une hausse fiscale, le supplément va dans la réserve séquestre, pas dans le capital. Votre date de paiement final ne change pas, sauf si vous dirigez délibérément des <a href="extra-payments">paiements supplémentaires vers le capital</a>.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>Un compte séquestre hypothécaire ajoute une composante significative à votre mensualité totale qui n'affecte pas la durée d'amortissement mais protège aussi bien l'emprunteur que le prêteur contre les impayés fiscaux ou d'assurance. Sur un prêt de 200 000 €, le séquestre peut facilement ajouter 200 € ou plus par mois en plus du capital et des intérêts — et ce montant s'ajuste chaque année lorsque les taxes ou les assurances changent. La loi impose que votre gestionnaire ne retienne pas plus d'une réserve de deux mois, et tout excédent au-delà d'un seuil doit être restitué. Comprendre le fonctionnement du séquestre vous aide à anticiper les évolutions de vos paiements et à prendre des décisions éclairées sur le choix d'adhérer ou non à ce mécanisme. Amorta vous permet de modéliser votre calendrier de paiement complet afin de visualiser exactement comment les dépôts séquestres s'intègrent à votre solde amorti au fil du temps.</p>
