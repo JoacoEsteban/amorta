@@ -1,0 +1,44 @@
+<p>Un bloqueo de tasa hipotecaria es un acuerdo entre un prestatario y una entidad que garantiza un tipo de interés específico durante un plazo fijo antes del cierre del préstamo. Los tipos cambian a diario. Un bloqueo de tasa impide que esos movimientos del mercado aumenten tu tipo mientras se procesa tu solicitud. En este artículo aprenderás cómo funciona, cuánto cuesta, cuándo puede anularse y por qué el momento importa tanto como el propio tipo.</p>
+
+<h2>Qué hace y qué no hace un bloqueo de tasa</h2>
+<p>Cuando una entidad emite un Préstamo Estimado, el documento debe indicar si el tipo está bloqueado y hasta cuándo. Si el tipo está bloqueado y los tipos del mercado suben, tu tipo no cambia. Si bajan, tu tipo tampoco cambia, a menos que tengas una opción de descuento.</p>
+<p>Un bloqueo garantiza un tipo, no una aprobación. La suscripción y la tasación deben completarse y tu perfil financiero debe mantenerse estable. La mayoría de las hipotecas se cierran en unos 43 días según Freddie Mac, por lo que los períodos suelen ser de 30, 45 o 60 días. Se ofrecen bloqueos más largos para transacciones lentas.</p>
+<p>El bloqueo cubre solo el tipo entre la solicitud y el cierre. No limita los tipos durante toda la vida del préstamo. Una vez que el préstamo comienza a amortizarse, el tipo bloqueado simplemente se convierte en tu tipo inicial. Consulta <a href="understanding-amortization-schedule">cómo leer tu calendario de amortización</a> para ver cómo ese tipo determina cada cuota.</p>
+
+<h2>Cómo se alinean los períodos de bloqueo con los plazos de cierre</h2>
+<p>Un bloqueo de 30 días es el más económico pero conlleva un riesgo real de expiración si el procesamiento se retrasa. Un bloqueo de 60 días cuesta un poco más pero elimina esa presión. Algunos prestamistas ofrecen bloqueos de 90 días para casos complejos o préstamos de construcción.</p>
+<p>Si tu cierre se retrasa y el bloqueo expira antes de firmar, tu tipo vuelve al tipo actual del mercado. Puedes ampliar el bloqueo, pero las ampliaciones rara vez son gratuitas. El <a href="comparing-loan-offers">enfoque sistemático para comparar ofertas</a> incluye que el período de bloqueo y el coste de la extensión aparezcan junto al tipo cotizado y la TAE.</p>
+
+<h2>Un ejemplo numérico con cifras reales</h2>
+<p>Supongamos un préstamo de 280.000 € a tipo fijo a 30 años con un tipo del 5,45% y un bloqueo de 45 días sin coste adicional. Usando la fórmula de amortización francesa:</p>
+<p>Tipo periódico mensual = (1 + 0,0545)&sup;(1/12) &minus; 1 &asymp; 0,00444 &asymp; 0,444%.</p>
+<p>Cuota mensual = 280.000 € &times; [0,00444 / (1 &minus; (1 + 0,00444)&sup;(&minus;360))] &asymp; 1.560 €.</p>
+<p>Intereses totales en 30 años &asymp; 281.600 €.</p>
+<p>Supongamos que no bloqueaste tu tipo y los tipos subieron a 5,85% antes del cierre. La cuota mensual aumenta a aproximadamente 1.646 €, un incremento de 86 € al mes. En 30 años, eso son 30.960 € más en intereses. Ese es el coste de no bloquear cuando los tipos son volátiles.</p>
+<p>Si los tipos bajaron al 5,15% y no bloqueaste, tu cuota bajaría a unos 1.526 €. Con el bloqueo vigente, pierdes esa oportunidad sin una opción de descuento.</p>
+
+<h2>Qué cuesta un bloqueo de tasa</h2>
+<p>Muchas entidades incluyen el coste del bloqueo en el tipo ofrecido. Cuando se cobra por separado, una comisión inicial típica es del 0,25% al 0,50% del importe. En 350.000 €, el 0,25% equivale a 875 €. Los períodos más largos suelen costar más: un bloqueo de 60 días puede costar el 0,375% y uno de 90 días el 0,50%.</p>
+<p>Si pagas el bloqueo como coste inicial, considera cómo interactúa con los puntos de descuento hipotecario. Nuestra guía sobre <a href="mortgage-discount-points">puntos de descuento</a> explica esa disyuntiva en detalle.</p>
+
+<h2>Opciones de descuento y extensiones</h2>
+<p>Una opción de descuento permite que tu tipo baje si los tipos del mercado caen durante el bloqueo. Suele activarse una sola vez y el tipo debe bajar al menos un 0,125% a 0,25%. Cuesta entre un 0,50% y un 1,00% adicional del importe.</p>
+<p>Si una opción cuesta el 0,75% en un préstamo de 280.000 €, son 2.100 €. Una bajada del 5,45% al 5,20% reduce la cuota en unos 43 €, recuperando los 2.100 € en unas 49 cuotas. Si planeas vender o refinanciar antes, no se justifica.</p>
+<p>Las extensiones de bloqueo dependen de cuánto se hayan movido los tipos. Algunas entidades ofrecen unos días de gracia sin coste. Confirma siempre la política antes de comprometerte.</p>
+
+<h2>Cuándo puede cambiar un tipo bloqueado</h2>
+<p>A pesar del bloqueo, varios eventos pueden reclasificar tu tipo:</p>
+<ul>
+<li><strong>Expiración:</strong> Si no cierras antes de que expire y no extiendes, el tipo vuelve al mercado.</li>
+<li><strong>Cambios de puntuación crediticia:</strong> Nueva deuda o pagos impagados pueden aumentar tu tipo o alterar la elegibilidad.</li>
+<li><strong>Tasación inferior:</strong> Tu relación préstamo-valor puede cambiar, empujándote a un tramo distinto. Ver <a href="understanding-ltv-and-pmi">LTV y seguro hipotecario</a> para el impacto en coste.</li>
+<li><strong>Cambios en el programa:</strong> Refinanciar o cambiar el importe pueden anular el bloqueo.</li>
+<li><strong>Ingresos no verificables:</strong> Si la entidad no documenta bonificaciones u horas extra, tus ingresos cualificadores pueden reducirse.</li>
+</ul>
+
+<h2>Cuándo no bloquear temprano</h2>
+<p>Bloquear demasiado pronto significa que, si los tipos bajan, quedas en un tipo más alto. Algunos intentan «flotar» su tipo esperando que mejore, pero es especulación. Un cuarto de punto extra en 280.000 € a 30 años supera los 22.000 € en intereses adicionales.</p>
+<p>Un mejor enfoque es bloquear cuando tienes contrato de compra, se ordenó la tasación y la fecha de cierre está dentro de tu período de bloqueo. Los préstamos respaldados por el gobierno (FHA, VA, USDA) pueden tardar más, y las <a href="loan-origination-fee">comisiones de originación</a> se suman al tiempo de procesamiento. El bloqueo es un seguro: pagas una pequeña prima para evitar una gran pérdida.</p>
+
+<h2>Conclusión</h2>
+<p>Un bloqueo de tasa hipotecaria garantiza tu tipo durante un período fijo entre la solicitud y el cierre. Para la mayoría de prestatarios, el riesgo de que los tipos suban durante el procesamiento supera el pequeño beneficio de flotar. Usa Amorta para modelar el impacto de diferentes tipos en tu cuota mensual y en el interés total: los números te dirán cuánto vale realmente un bloqueo de tasa en tu situación.

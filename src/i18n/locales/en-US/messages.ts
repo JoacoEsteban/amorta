@@ -24,6 +24,7 @@ import articleUnderstandingLtvAndPmiBody from './content/articles/article-unders
 import articleMortgageDiscountPointsBody from './content/articles/article-mortgage-discount-points-body.html.txt' with { type: 'text' }
 import articleArmRateCapsBody from './content/articles/article-arm-rate-caps-body.html.txt' with { type: 'text' }
 import articleMortgageEscrowAccountBody from './content/articles/article-mortgage-escrow-account-body.html.txt' with { type: 'text' }
+import articleMortgageRateLockBody from './content/articles/article-mortgage-rate-lock-body.html.txt' with { type: 'text' }
 
 export const enUSMessages = {
   sharedResult: 'Shared Result',
@@ -429,6 +430,14 @@ export const enUSMessages = {
     'Learn what a loan payoff statement includes, why it differs from your balance, and how lenders quote an exact amount to close the debt.',
   articleLoanPayoffStatementDate: 'April 14, 2026',
   articleLoanPayoffStatementBody,
+  articleMortgageRateLockTitle: 'How a Mortgage Rate Lock Works',
+  articleMortgageRateLockDescription:
+    'Learn what a mortgage rate lock is, how long you can lock your rate, what it costs, and why timing the lock matters before closing.',
+  articleMortgageRateLockDate: 'May 10, 2026',
+  articleMortgageRateLockBody,
+  articleMortgageRateLockSeoTitle: 'How a Mortgage Rate Lock Works | Amorta',
+  articleMortgageRateLockSeoDescription:
+    'Learn how mortgage rate locks protect your interest rate before closing, what they cost, when they can be voided, and how to choose the right lock period.',
   articleLoanPayoffStatementSeoTitle:
     'What Is a Loan Payoff Statement? | Amorta',
   articleLoanPayoffStatementSeoDescription:

@@ -11,6 +11,14 @@ export type Article = {
 
 export const ARTICLES: Article[] = [
   {
+    slug: 'mortgage-rate-lock',
+    titleKey: 'articleMortgageRateLockTitle',
+    descriptionKey: 'articleMortgageRateLockDescription',
+    dateKey: 'articleMortgageRateLockDate',
+    bodyKey: 'articleMortgageRateLockBody',
+    date: new Date('2026-05-10'),
+  },
+  {
     slug: 'mortgage-escrow-account',
     titleKey: 'articleMortgageEscrowAccountTitle',
     descriptionKey: 'articleMortgageEscrowAccountDescription',
@@ -301,6 +309,11 @@ export const RELATED_ARTICLE_SLUGS: Record<string, readonly string[]> = {
     'understanding-ltv-and-pmi',
     'comparing-loan-offers',
     'extra-payments',
+  ],
+  'mortgage-rate-lock': [
+    'comparing-loan-offers',
+    'factors-affecting-mortgage-rates',
+    'mortgage-discount-points',
   ],
 }
 

@@ -24,6 +24,7 @@ import articleUnderstandingLtvAndPmiBody from './content/articles/article-unders
 import articleMortgageDiscountPointsBody from './content/articles/article-mortgage-discount-points-body.html.txt' with { type: 'text' }
 import articleArmRateCapsBody from './content/articles/article-arm-rate-caps-body.html.txt' with { type: 'text' }
 import articleMortgageEscrowAccountBody from './content/articles/article-mortgage-escrow-account-body.html.txt' with { type: 'text' }
+import articleMortgageRateLockBody from './content/articles/article-mortgage-rate-lock-body.html.txt' with { type: 'text' }
 
 export const esARMessages = {
   sharedResult: 'Resultado Compartido',
@@ -439,6 +440,14 @@ export const esARMessages = {
     'Entendiendo la Relación Préstamo-Valor y el Seguro de Protección de Pagos | Amorta',
   articleUnderstandingLtvAndPmiSeoDescription:
     'Aprendé cómo la relación préstamo-valor determina los requisitos del seguro de protección de pagos, sus costos y las reglas de cancelación en los umbrales del 80% y 78% LTV.',
+  articleMortgageRateLockTitle: 'Cómo Funciona un Bloqueo de Tasa Hipotecaria',
+  articleMortgageRateLockDescription:
+    'Aprendé qué es un bloqueo de tasa hipotecaria, cuánto tiempo podés bloquear tu tipo, cuánto cuesta y por qué el momento del bloqueo importa antes del cierre.',
+  articleMortgageRateLockDate: '10 de Mayo de 2026',
+  articleMortgageRateLockBody,
+  articleMortgageRateLockSeoTitle: 'Bloqueo de Tasa Hipotecaria | Amorta',
+  articleMortgageRateLockSeoDescription:
+    'Descubrí cómo los bloqueos de tasa protegen tu tipo de interés antes del cierre, cuánto cuestan, cuándo pueden anularse y cómo elegir el período adecuado.',
   articleLoanPayoffStatementTitle:
     'Qué es un Estado de Cancelación de Préstamo',
   articleLoanPayoffStatementDescription:

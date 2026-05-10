@@ -1,0 +1,43 @@
+<p>Un blocage de taux hypothécaire est un accord entre un emprunteur et un prêteur qui garantit un taux d'intérêt spécifique pendant une période fixe avant la clôture du prêt. Les taux changent quotidiennement, plusieurs fois par jour. Un blocage empêche ces mouvements du marché d'augmenter votre taux pendant le traitement de votre demande. Vous apprendrez ici comment fonctionne un blocage, son coût, quand il peut être annulé et pourquoi le moment du blocage compte autant que le taux lui-même.</p>
+
+<h2>Ce qu'un blocage fait et ne fait pas</h2>
+<p>Lorsqu'un prêteur émet une estimation de prêt, le document doit indiquer si le taux est bloqué et jusqu'à quand. Si le taux est bloqué et que les taux du marché augmentent, votre taux ne change pas. Si les taux baissent, votre taux ne change pas non plus — sauf si vous disposez d'une option de baisse.</p>
+<p>Un blocage garantit un taux, pas une approbation. Vous devez satisfaire aux critères de souscription, l'évaluation doit être favorable et votre profil financier doit rester stable. La plupart des hypothèques clôturent en environ 43 jours selon Freddie Mac, les périodes de blocage sont donc généralement de 30, 45 ou 60 jours.</p>
+<p>Le blocage couvre uniquement le taux entre la demande et la clôture, pas sur toute la durée du prêt. Une fois le prêt amorti, le taux bloqué devient votre taux de départ. Consultez notre article sur la <a href="understanding-amortization-schedule">lecture de votre calendrier d'amortissement</a>.</p>
+
+<h2>Comment aligner la période de blocage avec les délais de clôture</h2>
+<p>Un blocage de 30 jours est le moins cher mais comporte un risque d'expiration si le traitement prend du retard. Un blocage de 60 jours coûte un peu plus mais supprime cette pression. Certains prêteurs proposent des blocages de 90 jours pour les cas complexes ou la construction neuve.</p>
+<p>Si la clôture est retardée et que le blocage expire, votre taux revient au taux actuel du marché. Vous pouvez prolonger le blocage, mais rarement gratuitement. L'<a href="comparing-loan-offers">approche pour comparer les offres</a> inclut de vérifier la période et le coût de prolongation aux côtés du taux et du TAEG.</p>
+
+<h2>Un exemple chiffré avec des chiffres réels</h2>
+<p>Supposons un emprunt de 295 000 € pour un achat à taux fixe sur 25 ans. Votre prêteur propose 3,90% avec un blocage de 45 jours sans frais. En utilisant la formule d'amortissement français :</p>
+<p>Taux périodique mensuel = (1 + 0,039)&sup;(1/12) &minus; 1 &asymp; 0,00320 &asymp; 0,320%.</p>
+<p>Mensualité = 295 000 € &times; [0,00320 / (1 &minus; (1 + 0,00320)&sup;(&minus;300))] &asymp; 1 537 €.</p>
+<p>Intérêts totaux sur 25 ans &asymp; 1 537 € &times; 300 &minus; 295 000 € = 166 100 €.</p>
+<p>Si vous n'avez pas bloqué et que les taux sont montés à 4,30%, la mensualité passe à environ 1 597 €, soit +60 € par mois. Sur 25 ans, les intérêts atteignent 184 100 €, soit 18 000 € de plus. Voilà le coût de ne pas bloquer.</p>
+<p>Si les taux descendaient à 3,65% et que vous aviez bloqué, votre mensualité resterait à 1 537 € au lieu des 1 510 € du marché — vous manquez cette opportunité sans une option de baisse.</p>
+
+<h2>Le coût d'un blocage de taux</h2>
+<p>De nombreux prêteurs incluent le coût dans le taux proposé. Lorsqu'ils sont facturés explicitement, les frais sont de 0,25% à 0,50% du montant du prêt. Sur un prêt de 300 000 €, des frais de 0,25% équivalent à 750 €. Les périodes plus longues coûtent plus cher : 0,375% pour 60 jours, 0,50% pour 90 jours.</p>
+<p>Si vous payez le blocage initialement, considérez l'interaction avec les points de réduction. Notre guide sur les <a href="mortgage-discount-points">points de réduction hypothécaire</a> explique ce compromis en détail.</p>
+
+<h2>Options de baisse et prolongations</h2>
+<p>Une option de baisse permet à votre taux de diminuer si les taux du marché chutent. Activable une seule fois, le taux doit baisser d'au moins 0,125% à 0,25%. Elle coûte entre 0,50% et 1,00% supplémentaires du montant du prêt.</p>
+<p>Si une option coûte 0,75% sur 295 000 €, cela représente 2 212 €. Une baisse de 3,90% à 3,65% réduit la mensualité d'environ 43 €, récupérant les 2 212 € en environ 51 mensualités. Si vous prévoyez de vendre avant, ce n'est pas justifié.</p>
+<p>Les prolongations dépendent du mouvement des taux actuels. Confirmez toujours la politique de prolongation avant de vous engager.</p>
+
+<h2>Quand un taux bloqué peut changer</h2>
+<ul>
+<li><strong>Expiration :</strong> Si vous ne clôturez pas avant et ne prolongez pas, le taux revient au marché.</li>
+<li><strong>Changements du score de crédit :</strong> Un nouveau crédit ou un impayé peut augmenter votre taux.</li>
+<li><strong>Écarts d'évaluation :</strong> Si l'évaluation est inférieure, votre ratio prêt-valeur peut changer. Voir les <a href="understanding-ltv-and-pmi">seuils de LTV et d'assurance</a>.</li>
+<li><strong>Modifications du prêt :</strong> Passer à un refinancement ou changer le montant peut annuler le blocage.</li>
+<li><strong>Revenus non vérifiables :</strong> Si le prêteur ne documente pas les revenus, votre tranche de taux peut changer.</li>
+</ul>
+
+<h2>Quand ne pas bloquer trop tôt</h2>
+<p>Bloquer trop tôt signifie qu'une baisse des taux vous laissera avec un taux plus élevé. Certains tentent de faire « flotter » leur type, mais c'est de la spéculation. Un quart de point sur 295 000 € en 25 ans coûte plus de 18 000 € d'intérêts supplémentaires.</p>
+<p>Bloquez une fois que vous avez un contrat d'achat, l'évaluation est commandée et la date de clôture est dans une marge confortable. Les <a href="loan-origination-fee">frais de constitution de dossier</a> et la souscription peuvent prendre plus de temps pour les prêts soutenus par le gouvernement. Le blocage est une assurance : vous payez une prime pour éviter une perte importante.</p>
+
+<h2>Conclusion</h2>
+<p>Un blocage de taux garantit votre intérêt pour une période fixe entre la demande et la clôture. Pour la plupart des emprunteurs, le risque d'une hausse des taux pendant le traitement dépasse le petit bénéfice de flotter. Choisissez une période alignée sur votre calendrier, confirmez les frais de prolongation, et n'ajoutez une option de baisse que si les calculs la justifient. Utilisez Amorta pour modéliser l'impact de différents taux sur votre mensualité et vos intérêts totaux — les chiffres vous diront combien vaut vraiment un blocage dans votre situation.

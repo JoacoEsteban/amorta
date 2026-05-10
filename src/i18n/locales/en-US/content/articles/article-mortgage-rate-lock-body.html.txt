@@ -1,0 +1,47 @@
+<p>A mortgage rate lock is an agreement between a borrower and a lender that guarantees a specific interest rate for a fixed period before closing. Mortgage rates change daily, sometimes multiple times per day. A rate lock prevents that market movement from increasing your rate while your loan is being processed. In this article, you will learn how a rate lock works, what it costs, when it can be voided, and why the timing of the lock matters just as much as the rate itself.</p>
+
+<h2>What a rate lock does and does not do</h2>
+<p>When a lender issues a Loan Estimate under the Truth in Lending Act, the document must disclose whether the rate is locked and, if so, until when. That disclosure appears at the top of page 1. If the rate is locked and market rates rise during the lock window, your rate does not change. If market rates fall, your rate also does not change — unless you have a float-down option.</p>
+<p>A rate lock guarantees a rate, not approval. You still must satisfy underwriting, the appraisal must come in, and your financial profile must remain stable. The lock is also time-bound. Most standard purchase mortgages close within about 43 days according to Freddie Mac data, so lock periods typically run 30, 45, or 60 days. Longer locks are available for slower transactions such as new construction.</p>
+<p>The key distinction is that a rate lock covers only the interest rate between application and closing. It does not cap rates over the life of the loan. Once you fund and the loan amortizes, the locked rate simply becomes the rate you started with. See our article on <a href="understanding-amortization-schedule">reading your amortization schedule</a> for how that initial rate drives every payment.</p>
+
+<h2>How lock periods align with closing timelines</h2>
+<p>The right lock period depends on how long your specific transaction will take. A 30-day lock is cheapest but carries a real risk of expiration if processing runs slow. A 60-day lock costs a bit more but removes that pressure entirely. Some lenders also offer 90-day locks for complex cases or construction loans that close months after initial underwriting.</p>
+<p>If your closing is delayed and the lock expires before you sign, your rate floats back to the current market rate. You can often extend the lock, but extensions are rarely free. Understanding your lender's processing timeline before choosing a lock period is critical. It is worth noting the <a href="comparing-loan-offers">systematic approach to comparing loan offers</a>: lock period and extension cost should appear alongside the quoted rate and APR when you evaluate competing lenders.</p>
+
+<h2>A worked example with real numbers</h2>
+<p>Suppose you borrow $340,000 for a 30-year fixed-rate purchase. Your lender quotes 6.68% and offers a 45-day lock at no upfront fee. Using the French amortization formula, the monthly payment is calculated as follows:</p>
+<p>Monthly periodic rate = (1 + 0.0668)&sup;(1/12) &minus; 1 &asymp; 0.00541 &asymp; 0.541%.</p>
+<p>Monthly payment = $340,000 &times; [0.00541 / (1 &minus; (1 + 0.00541)&sup;(&minus;360))] &asymp; $2,186.</p>
+<p>Total interest over 30 years &asymp; $340,000 &times; 360 &minus; $340,000 = $446,960.</p>
+<p>Now suppose you did not lock your rate and market rates rose to 7.00% before closing. Recalculating at 7.00%, the monthly payment rises to approximately $2,262 — an increase of $76 per month. Over 30 years, the total interest at 7.00% climbs to roughly $474,320, which is $27,360 more than at 6.68%. That is the cost of not locking when rates are volatile.</p>
+<p>Conversely, if rates dropped to 6.40% and you did not lock, your payment would fall to about $2,128. With the lock in place, you miss that opportunity unless you have a float-down option.</p>
+
+<h2>What a rate lock costs</h2>
+<p>Many lenders include the lock cost in the rate they offer, so there is no separate invoice. When charged explicitly, lock fees are typically measured in basis points. A common initial lock fee is 0.25% to 0.50% of the loan amount. On a $400,000 mortgage, a 0.25% fee equals $1,000.</p>
+<p>Longer lock periods generally carry higher fees. A 60-day lock may cost 0.375% of the loan amount, while a 90-day lock could cost 0.50%. These fees are sometimes rolled into closing costs rather than paid out of pocket. The CFPB notes that the Loan Estimate will show whether the rate is locked, but it will not disclose extension pricing — you must ask for that separately.</p>
+<p>If you choose to pay for your lock as an upfront cost, consider how it interacts with discount points. Some borrowers find that paying a rate lock fee and discount points simultaneously creates meaningful long-term savings, while others prefer to minimize cash at closing. Our guide on <a href="mortgage-discount-points">mortgage discount points</a> explains that tradeoff in detail.</p>
+
+<h2>Float-down options and lock extensions</h2>
+<p>A float-down option lets your locked rate decrease if market rates fall during the lock window. You can usually trigger it only once, and the rate must typically drop by at least 0.125% to 0.25% to qualify. Float-down options often cost an additional 0.50% to 1.00% of the loan amount, which is substantially more than a standard lock.</p>
+<p>If a float-down costs 0.75% on a $340,000 loan, that is $2,550. For the float-down to pay off, the rate reduction must generate savings that exceed that fee over the time you hold the loan. On $340,000, a rate drop from 6.68% to 6.43% reduces the monthly payment by roughly $53, which recovers the $2,550 fee in about 48 payments — four years. If you plan to sell or refinance before then, the float-down cost is not justified.</p>
+<p>Lock extensions work differently. If closing runs longer than your lock period, the lender will usually allow you to extend. Extension pricing depends on how far current rates have moved. Some lenders offer a short grace extension of a few days at no charge, while others charge a prorated portion of the lock fee. Always confirm the extension policy before committing.</p>
+
+<h2>When a locked rate can still change</h2>
+<p>Despite the lock, several events can cause your rate to be re-priced:</p>
+<ul>
+<li><strong>Lock expiration:</strong> If you do not close before the lock expires and do not extend, the rate floats to current market levels.</li>
+<li><strong>Credit score changes:</strong> Taking on new debt or missing a payment during underwriting can lower your score, which may increase your rate or alter eligibility.</li>
+<li><strong>Appraisal discrepancies:</strong> If the appraisal returns lower than expected, your loan-to-value ratio may shift, pushing you into a different pricing tier or triggering PMI requirements. See our discussion of <a href="understanding-ltv-and-pmi">LTV and PMI thresholds</a> for how that affects cost.</li>
+<li><strong>Loan program changes:</strong> Switching from a purchase loan to a refinance, changing loan amount, or altering the down payment can all void the lock.</li>
+<li><strong>Unverifiable income:</strong> If the lender cannot document stated income, bonuses, or overtime, your qualifying income may be reduced, affecting the rate tier you fall into.</li>
+</ul>
+
+<h2>When not to lock early</h2>
+<p>Locking too early carries a different risk: if rates fall, you are locked at a higher rate. Some borrowers attempt to "float" their rate — leaving it unlocked in hopes that market conditions improve — but this is speculation, not a strategy. Rates can move unpredictably, and the cost of being wrong compounds directly into every monthly payment over the life of the mortgage.</p>
+<p>The <a href="loan-origination-fee">loan origination fee</a> process and underwriting timeline can be longer than expected for government-backed loans (FHA, VA, USDA). In those cases, locking too early almost guarantees you will need a costly extension or face a rate adjustment. A more disciplined approach is to lock once you have a purchase contract, the appraisal is ordered, and the expected closing date is within a comfortable margin of your lock period.</p>
+<p>Also consider broader rate trends. If the Federal Reserve has signaled rate cuts and the 10-year Treasury yield is falling, floating briefly may be justified — but only for borrowers comfortable with the asymmetric downside. A quarter-point increase on a $340,000 loan over 30 years costs more than $27,000 in additional interest. The same rate drop saves the same amount. The lock is insurance: you pay a small premium to avoid a large loss.</p>
+
+<h2>Conclusion</h2>
+<p>A mortgage rate lock is a straightforward tool: it guarantees your interest rate for a fixed period between application and closing. For most borrowers, the risk of rates rising during processing far outweighs the small potential benefit of floating for a marginal rate drop. The cost of an incorrect lock decision compounds across every payment in your amortization schedule.</p>
+<p>Choose a lock period that aligns with your expected timeline, confirm extension fees, and ask about float-down options only if the math justifies the premium. Use Amorta to model the impact of different rates on your monthly payment and total interest — the numbers will tell you how much protection a rate lock is actually worth in your situation.

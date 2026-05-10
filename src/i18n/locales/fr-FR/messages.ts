@@ -24,6 +24,7 @@ import articleUnderstandingLtvAndPmiBody from './content/articles/article-unders
 import articleMortgageDiscountPointsBody from './content/articles/article-mortgage-discount-points-body.html.txt' with { type: 'text' }
 import articleArmRateCapsBody from './content/articles/article-arm-rate-caps-body.html.txt' with { type: 'text' }
 import articleMortgageEscrowAccountBody from './content/articles/article-mortgage-escrow-account-body.html.txt' with { type: 'text' }
+import articleMortgageRateLockBody from './content/articles/article-mortgage-rate-lock-body.html.txt' with { type: 'text' }
 
 export const frFRMessages = {
   sharedResult: 'Résultat partagé',
@@ -438,6 +439,14 @@ export const frFRMessages = {
     'Comprendre le Ratio Prêt-Valeur et l’Assurance Hypothécaire | Amorta',
   articleUnderstandingLtvAndPmiSeoDescription:
     'Découvrez comment le ratio prêt-valeur détermine les exigences d’assurance hypothécaire, ses coûts, et les règles de suppression aux seuils de 80 % et 78 % LTV.',
+  articleMortgageRateLockTitle: 'Comment Fonctionne le Blocage de Taux Hypothécaire',
+  articleMortgageRateLockDescription:
+    "Découvrez ce qu'est un blocage de taux hypothécaire, sa durée, son coût et pourquoi le moment du blocage compte avant la clôture.",
+  articleMortgageRateLockDate: '10 mai 2026',
+  articleMortgageRateLockBody,
+  articleMortgageRateLockSeoTitle: 'Blocage de Taux Hypothécaire | Amorta',
+  articleMortgageRateLockSeoDescription:
+    "Découvrez comment les blocages de taux protègent votre intérêt avant la clôture, leur coût, quand ils peuvent être annulés et comment choisir la période adaptée.",
   articleLoanPayoffStatementTitle:
     "Qu'est-ce qu'un Relevé de Solde de Remboursement Anticipé ?",
   articleLoanPayoffStatementDescription:

@@ -24,6 +24,7 @@ import articleUnderstandingLtvAndPmiBody from './content/articles/article-unders
 import articleMortgageDiscountPointsBody from './content/articles/article-mortgage-discount-points-body.html.txt' with { type: 'text' }
 import articleArmRateCapsBody from './content/articles/article-arm-rate-caps-body.html.txt' with { type: 'text' }
 import articleMortgageEscrowAccountBody from './content/articles/article-mortgage-escrow-account-body.html.txt' with { type: 'text' }
+import articleMortgageRateLockBody from './content/articles/article-mortgage-rate-lock-body.html.txt' with { type: 'text' }
 
 export const enGBMessages = {
   sharedResult: 'Shared Result',
@@ -424,6 +425,14 @@ export const enGBMessages = {
   articleUnderstandingLtvAndPmiSeoTitle: 'Understanding LTV and Lenders Mortgage Insurance: The 80% Threshold | Amorta',
   articleUnderstandingLtvAndPmiSeoDescription:
     'Learn how loan-to-value ratio determines lenders mortgage insurance requirements, LMI costs, and strategies to minimise borrowing costs in the UK market.',
+  articleMortgageRateLockTitle: 'How a Mortgage Rate Lock Works',
+  articleMortgageRateLockDescription:
+    'Learn what a mortgage rate lock is, how long you can lock your rate, what it costs, and why timing the lock matters before completion.',
+  articleMortgageRateLockDate: '10 May 2026',
+  articleMortgageRateLockBody,
+  articleMortgageRateLockSeoTitle: 'How a Mortgage Rate Lock Works | Amorta',
+  articleMortgageRateLockSeoDescription:
+    'Learn how mortgage rate locks protect your interest rate before completion, what they cost, when they can be voided, and how to choose the right lock period.',
   articleLoanPayoffStatementTitle: 'What Is a Loan Payoff Statement?',
   articleLoanPayoffStatementDescription:
     'Learn what a loan payoff statement includes, why it differs from your balance, and how lenders quote an exact amount to settle the debt.',
