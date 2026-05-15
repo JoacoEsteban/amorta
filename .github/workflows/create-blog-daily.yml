@@ -25,7 +25,7 @@ jobs:
         run: bun install
 
       - name: Install pi
-        run: bun install -g @mariozechner/pi-coding-agent && pi install npm:@feniix/pi-exa
+        run: bun install -g @earendil-works/pi-coding-agent && pi install npm:@feniix/pi-exa
 
       - name: Configure git
         run: |
